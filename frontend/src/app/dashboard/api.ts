@@ -24,7 +24,7 @@ async function requestJson(
 }
 
 export async function goonRequest(name:string): Promise<string> {
-    const data = await requestJson("/goonRequest", {
+    const data = await requestJson("/goon", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({name})
