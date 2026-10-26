@@ -2,7 +2,7 @@ import sqlite3
 from contextlib import closing
 from pathlib import Path
 
-DB_PATH = Path(__file__).resolve().parent / "data" / "traffic.db"
+DB_PATH = Path(__file__).resolve().parent / "db" / "traffic.db"
 
 
 def init_db() -> None:
