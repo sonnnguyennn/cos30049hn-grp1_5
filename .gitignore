@@ -1,0 +1,46 @@
+# Local settings and secrets
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+**/*.local.yaml
+**/*.local.yml
+
+# Python environments, caches, and build output
+**/.venv/
+**/venv/
+**/__pycache__/
+**/.pytest_cache/
+**/.ruff_cache/
+**/.mypy_cache/
+**/*.egg-info/
+**/build/
+**/dist/
+**/.coverage
+
+# Frontend dependencies and build output
+**/node_modules/
+**/.next/
+
+# Local datasets and observation-scale outputs
+ml/data/raw/
+ml/data/interim/
+ml/data/processed/
+ml/data/samples/
+ml/artifacts/**/*.parquet
+ml/artifacts/**/*.jsonl
+ml/artifacts/**/*.npz
+ml/artifacts/**/*.pkl
+ml/artifacts/**/*.pickle
+ml/artifacts/**/*.joblib
+ml/artifacts/**/*.onnx
+ml/artifacts/**/*.tflite
+ml/artifacts/**/*.pt
+ml/artifacts/**/*.pth
+
+# Local logs and operating-system files
+*.log
+Thumbs.db
+.DS_Store
