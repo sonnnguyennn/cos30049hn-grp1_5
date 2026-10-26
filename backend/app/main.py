@@ -23,4 +23,4 @@ class GoonResponse(BaseModel):
 
 @app.post("/goon")
 def goon(body: GoonRequest) -> GoonResponse:
-    return GoonResponse(message=f"Currently stroking {body.name} at the moment :3")
+    return GoonResponse(message=f"Message from server: Currently gooning {body.name} at the moment :3")
