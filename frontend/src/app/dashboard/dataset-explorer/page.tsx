@@ -52,7 +52,7 @@ export default function LogsPage() {
 
   return (
     <main className="mx-auto max-w-5xl space-y-4 p-6">
-      <h1 className="text-2xl font-bold">Activity logs</h1>
+      <h1 className="text-2xl font-bold text-black">Activity logs</h1>
       <button
         type="button"
         onClick={loadLogs}
@@ -62,11 +62,11 @@ export default function LogsPage() {
         {busy ? "Loading..." : "Load / refresh logs"}
       </button>
       {error && <p role="alert" className="text-red-600">{error}</p>}
-      {logs === null && <p>Click the button to load recent logs.</p>}
+      {logs === null && <p className='text-black'>Click the button to load recent logs.</p>}
       {logs?.length === 0 && <p>No logs yet. Inspect a file on the practice page first.</p>}
       {logs !== null && logs.length > 0 && (
         <div className="overflow-x-auto">
-          <table className="w-full border-collapse text-left text-sm">
+          <table className="w-full border-collapse text-left text-sm text-black">
             <thead>
               <tr>
                 <th className="border p-2">Time (UTC)</th>

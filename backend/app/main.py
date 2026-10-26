@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from contextlib import asynccontextmanager
 from starlette.concurrency import run_in_threadpool
-from log_store import init_db, read_logs, write_log
+from .log_store import init_db, read_logs, write_log
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
