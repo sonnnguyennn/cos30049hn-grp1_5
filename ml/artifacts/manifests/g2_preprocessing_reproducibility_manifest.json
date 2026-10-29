@@ -1,0 +1,46 @@
+{
+  "canonical_record_digest_scheme": "sha256:canonical-record-v1",
+  "canonical_traversal": {
+    "expected_row_count": 7062606,
+    "logical_source_count": 89,
+    "ordering_rule": "ascending exact logical_id; then physical data-row order",
+    "path": "artifacts/manifests/n_baiot_canonical_traversal_v1.csv",
+    "sha256": "599a3ecaa251e9f91e6a2124dee49ffd1fd0ecfc2c3499779caa59bfcfdf44bb"
+  },
+  "dry_run_deterministic_result_sha256": "6822a1d4947944be86e05ed18c8097a98fbc59dcefc7b2c71b2e11327f580792",
+  "duplicate_group_scheme": "sha256 over each exact UTF-8 source lexeme prefixed by unsigned 4-byte big-endian byte length, in 115-field contract order",
+  "expected_row_count": 7062606,
+  "feature_schema_sha256": "sha256:84a9391e57a872b4b73f50e4b7f552cb208ab10e177e5bb93cb7062bebe25607",
+  "g2a_contract_artifact_sha256": {
+    "artifacts/contracts/bot_iot_field_role_contract_v1.json": "5870fbfaa4d3d5179bb72f0efeda6c93e3f1ee3fa6e259e2b45e5596128e4c05",
+    "artifacts/contracts/bot_iot_secondary_source_contract_v1.json": "94c7d5a819ae50b4c2f300f35097feae9208c25bc4822190f5cc5278a8f54b44",
+    "artifacts/contracts/n_baiot_feature_contract_v1.json": "47ca15c45ba9f30182c4762b47f7291d934f6de07270147c844dd5e25e21fd50",
+    "artifacts/contracts/n_baiot_label_contract_v1.json": "bdffcdedf675941b9317935b7c124480bf6125092d2de82f49d03fe1aa8b6191",
+    "artifacts/contracts/n_baiot_record_contract_v1.json": "a076e9e0754dd2a2e693ec187f2daa093f0630cb4e93614d0c698069b29a9594",
+    "docs/contracts/primary_data_contract.md": "47c7d8d5f573451467f9207bfcccf9270b006a82927d0aa50a38e82083c1626b",
+    "docs/contracts/secondary_data_contract.md": "e67f9a4c28707017144ae5771c8832b9b8250bbc111e588453d7cbf9b6f877e7"
+  },
+  "g2b_checkpoint_commit": "9468f96bb6e0d2f2df14a80d6e9cbf10814541ed",
+  "label_contract_sha256": "bdffcdedf675941b9317935b7c124480bf6125092d2de82f49d03fe1aa8b6191",
+  "manifest_name": "IoTGuard G2 canonical preprocessing reproducibility manifest",
+  "no_learned_transform": true,
+  "no_machine_specific_absolute_paths": true,
+  "parser_semantics": {
+    "header": "exact 115-field order",
+    "labels": "exact A3 verified logical-source mapping",
+    "numeric_runtime": "Python float; every value finite; no clipping or imputation",
+    "streaming": true
+  },
+  "pipeline_version": "1.0.0",
+  "primary_source_manifest_sha256": {
+    "extracted": "5fe83238878dde2200dc88400ab06911348ceb6cff4eccff3384a4cb110635d5",
+    "raw": "ac4285c77662ce375d6138d05f6b3667a665154fd97640446146192a99212491"
+  },
+  "row_identity_scheme": "source-logical-id-plus-1-based-data-row-v1",
+  "software_runtime": {
+    "csv_module": "Python standard library csv",
+    "python_implementation": "CPython",
+    "python_version": "3.12.0"
+  },
+  "source_file_count": 89
+}

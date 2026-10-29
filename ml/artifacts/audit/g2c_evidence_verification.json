@@ -1,0 +1,56 @@
+{
+  "audit_batch": "G2C independent reproducibility and G2 closure verification",
+  "checks": {
+    "bot_four_canonical_headers_valid": true,
+    "bounded_sample_independent_rerun_identical": true,
+    "closure_checklist_all_true": true,
+    "closure_checklist_has_exact_mandatory_keys": true,
+    "dry_run_deterministic_hash_matches": true,
+    "full_dry_run_binary_counts_match_a3": true,
+    "full_dry_run_error_counters_zero": true,
+    "full_dry_run_family_counts_match_a3": true,
+    "full_dry_run_fine_counts_match_a3": true,
+    "full_dry_run_passed": true,
+    "full_dry_run_row_count_matches": true,
+    "g2_status_complete": true,
+    "g2a_artifact_hashes_match": true,
+    "g2a_manifest_hash_unchanged": true,
+    "g2b_checkpoint_reference_matches": true,
+    "known_a4_duplicate_pairs_reconciled": true,
+    "lexical_numeric_distinction_preserved": true,
+    "no_full_processed_or_learned_outputs": true,
+    "real_decimal_hex_sentinel_ports_valid": true,
+    "source_metadata_unchanged": true,
+    "traversal_has_89_unique_sources": true,
+    "traversal_hash_matches_reproducibility_manifest": true,
+    "traversal_ordinals_are_deterministic": true,
+    "traversal_rows_reconcile": true
+  },
+  "generated_at_utc": "2026-09-27T15:45:41.094263+00:00",
+  "overall_status": "PASS",
+  "recomputed": {
+    "bounded_record_count": 17,
+    "dry_run_result_sha256": "6822a1d4947944be86e05ed18c8097a98fbc59dcefc7b2c71b2e11327f580792",
+    "reproducibility_manifest_sha256": "86f967843a32ee084c319986dee74772e93ecc43d0ad6159cac986318c9af687",
+    "source_metadata": {
+      "bot_iot_raw": {
+        "file_count": 10,
+        "metadata_digest_sha256": "b704baf2494c4932a1a67daf85e054115887dd6e1a5955517897eb24077e73be",
+        "total_size_bytes": 1995570896
+      },
+      "n_baiot_extracted": {
+        "file_count": 80,
+        "metadata_digest_sha256": "b5a5729b6a604a23620ab6b5cbb4dcac59d185131745916d64308aaa05b37278",
+        "total_size_bytes": 7540406319
+      },
+      "n_baiot_raw": {
+        "file_count": 27,
+        "metadata_digest_sha256": "81e6638bef6458f9af934561c720d1ae427b166f73b07547a239b5697b138df9",
+        "total_size_bytes": 2193229785
+      }
+    },
+    "traversal_expected_rows": 7062606,
+    "traversal_source_count": 89
+  },
+  "verification_independence": "This verifier does not import the G2C driver. It independently reads source coordinates, re-encodes exact groups and canonical record digests, rechecks all four Bot headers and real port examples, recomputes hashes/counts, and audits source metadata plus forbidden outputs."
+}

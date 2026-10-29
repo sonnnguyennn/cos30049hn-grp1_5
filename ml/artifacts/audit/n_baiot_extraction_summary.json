@@ -1,0 +1,32 @@
+{
+  "archive_count": 16,
+  "audit_batch": "A2.0",
+  "errors": [],
+  "estimated_extraction_bytes": 7540406319,
+  "estimated_free_after_extraction_bytes": 47256291281,
+  "extracted_file_count": 80,
+  "extracted_manifest": "artifacts/manifests/n_baiot_extracted_manifest.csv",
+  "extracted_manifest_sha256": "5fe83238878dde2200dc88400ab06911348ceb6cff4eccff3384a4cb110635d5",
+  "extraction_failure_count": 0,
+  "extraction_success_count": 80,
+  "extraction_tool": {
+    "executable": "C:\\Program Files\\WinRAR\\UnRAR.exe",
+    "name": "UnRAR",
+    "version": "UNRAR 6.22 x64 freeware      Copyright (c) 1993-2023 Alexander Roshal"
+  },
+  "free_space_preflight_bytes": 54796697600,
+  "generated_at_utc": "2026-09-24T12:43:30.844579+00:00",
+  "hash_failure_count": 0,
+  "hash_success_count": 80,
+  "listed_archives": 16,
+  "listed_regular_members": 80,
+  "member_inventory": "artifacts/audit/n_baiot_archive_members.csv",
+  "member_inventory_sha256": "3833b9cd59a9cbf34fac50e552b7d48f0b9f1ebfa603f1a38dbb735316a2b329",
+  "minimum_required_free_after_extraction_bytes": 10737418240,
+  "overall_status": "PASS",
+  "parent_raw_manifest": "artifacts/manifests/n_baiot_raw_manifest.csv",
+  "parent_raw_manifest_sha256": "ac4285c77662ce375d6138d05f6b3667a665154fd97640446146192a99212491",
+  "source_root": "E:\\Document\\N_BaIoT_Dataset",
+  "total_extracted_bytes": 7540406319,
+  "work_root": "E:\\Document\\iotguard_dataset_work\\n_baiot_extracted"
+}

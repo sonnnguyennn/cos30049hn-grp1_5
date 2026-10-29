@@ -1,0 +1,24 @@
+{
+  "all_mandatory_checks_pass": true,
+  "checks": {
+    "cross_dataset_suitability_synthesis_completed": true,
+    "dataset_roles_formally_assigned": true,
+    "duplicate_audit_completed": true,
+    "g2_g3_constraints_handed_off": true,
+    "imbalance_audit_completed": true,
+    "leakage_split_feasibility_audit_completed": true,
+    "missing_invalid_audit_completed": true,
+    "raw_source_inventory_and_hashes_completed": true,
+    "source_datasets_remained_immutable": true,
+    "structural_schema_audit_completed": true,
+    "taxonomy_audit_completed": true
+  },
+  "closure_status": "COMPLETE",
+  "evidence_basis": {
+    "checkpoint_trace": "artifacts/audit/a7_decision_trace.csv",
+    "current_metadata_recheck": "required by A7 Phase 0 and recorded in the review report; no raw content read",
+    "role_decision": "artifacts/audit/a7_dataset_role_decision.json",
+    "source_immutability": "artifacts/audit/a5_audit_summary.json#source_safety"
+  },
+  "gate": "G1"
+}

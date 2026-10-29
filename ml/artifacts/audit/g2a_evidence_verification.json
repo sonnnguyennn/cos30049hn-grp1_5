@@ -1,0 +1,37 @@
+{
+  "audit_batch": "G2A independent contract verification",
+  "checks": {
+    "binary_target_is_benign_malicious": true,
+    "bot_canonical_source_is_four_all_feature_shards": true,
+    "bot_port_contract_preserves_unresolved_sentinel": true,
+    "bot_secondary_role_matches_a7": true,
+    "bot_source_schema_is_46_columns": true,
+    "bot_target_and_identifier_fields_prohibited": true,
+    "contract_artifact_hashes_match_manifest": true,
+    "contract_versions_are_v1_semver": true,
+    "cross_dataset_direct_merge_prohibited": true,
+    "duplicate_group_id_is_split_audit_metadata": true,
+    "exact_group_id_is_deterministic_and_sensitive": true,
+    "labels_and_provenance_not_predictors": true,
+    "n_baiot_exactly_115_ordered_fields": true,
+    "n_baiot_schema_signature_matches_a2": true,
+    "n_baiot_taxonomy_matches_a3": true,
+    "no_downstream_contract_keys": true,
+    "no_global_deduplication_decision": true,
+    "no_transform_split_resampling_execution": true,
+    "primary_role_matches_a7": true,
+    "source_evidence_hashes_match_manifest": true,
+    "ten_best_is_derived_reference_not_canonical": true
+  },
+  "contract_manifest_sha256": "8c387493caaddd10ceab1f95ca0b9cb40318e23b6a9d68c3a1f3b6242fb5548e",
+  "generated_at_utc": "2026-09-27T13:33:27.389746+00:00",
+  "overall_status": "PASS",
+  "recomputed": {
+    "bot_iot_canonical_shard_count": 4,
+    "bot_iot_column_count": 46,
+    "n_baiot_feature_count": 115,
+    "n_baiot_ordered_schema_sha256": "sha256:84a9391e57a872b4b73f50e4b7f552cb208ab10e177e5bb93cb7062bebe25607",
+    "synthetic_group_id": "sha256:aafc48ccd1c70422536cb2fa57cc3c79e8840dcacf429956f96d6185adbeac8d"
+  },
+  "verification_independence": "This verifier does not import scripts/generate_g2a_contracts.py. It independently recomputes schema signatures, taxonomy equality, synthetic exact-vector IDs, port parsing examples, artifact hashes, and scope boundaries from compact evidence."
+}

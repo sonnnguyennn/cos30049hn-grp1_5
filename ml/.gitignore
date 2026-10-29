@@ -1,0 +1,102 @@
+# Python caches and environments
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Environment and machine-local configuration
+.env
+.env.*
+!.env.example
+config/*.local.yaml
+config/*.local.yml
+*.tmp
+
+# IDE and OS-local state
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.example.json
+Thumbs.db
+.DS_Store
+
+# Logs and generated benchmark outputs
+*.log
+edge/benchmarks/*
+!edge/benchmarks/.gitkeep
+evidence/**/generated-*
+
+# Raw, interim, processed, and sample data are opt-in
+/N_BaIoT_Dataset/
+/Bot_IoT_Dataset/
+data/raw/**
+data/interim/**
+data/processed/**
+data/samples/**
+!data/processed/
+!data/processed/**/
+!data/processed/**/.gitkeep
+!data/**/.gitkeep
+!data/**/README.md
+
+# Dataset-like outputs under managed data/artifact directories
+data/**/*.csv
+data/**/*.parquet
+data/**/*.json
+data/**/*.jsonl
+data/**/*.npz
+data/**/*.pkl
+data/**/*.pickle
+data/**/*.joblib
+!data/manifests/*.csv
+!data/manifests/*.json
+!data/manifests/*.jsonl
+artifacts/**/*.csv
+artifacts/**/*.parquet
+artifacts/**/*.json
+artifacts/**/*.jsonl
+artifacts/**/*.npz
+artifacts/**/*.pkl
+artifacts/**/*.pickle
+artifacts/**/*.joblib
+!artifacts/manifests/*.csv
+!artifacts/manifests/*.json
+!artifacts/manifests/*.jsonl
+!artifacts/audit/
+!artifacts/audit/*.csv
+!artifacts/audit/*.json
+!artifacts/contracts/
+!artifacts/contracts/*.json
+!data/manifests/.gitkeep
+!artifacts/**/.gitkeep
+
+# Model binaries (source-code JSON is intentionally not ignored globally)
+*.joblib
+*.pkl
+*.pickle
+*.onnx
+*.tflite
+*.pt
+*.pth
+*.bin
+
+# Node / frontend build output
+node_modules/
+dist/
+build/
+
+# Packaging
+*.egg-info/
+.eggs/
+wheelhouse/
+
+# External audit working databases
+*.sqlite
+*.sqlite3
+*.db

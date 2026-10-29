@@ -1,0 +1,16 @@
+source_field,raw_value,canonical_field,canonical_value,mapping_scope
+attack,0,canonical_binary,benign,spelling/case normalization without source-label replacement
+attack,1,canonical_binary,malicious,spelling/case normalization without source-label replacement
+category,DDoS,canonical_category,ddos,spelling/case normalization without source-label replacement
+category,DoS,canonical_category,dos,spelling/case normalization without source-label replacement
+category,Normal,canonical_category,normal,spelling/case normalization without source-label replacement
+category,Reconnaissance,canonical_category,reconnaissance,spelling/case normalization without source-label replacement
+category,Theft,canonical_category,theft,spelling/case normalization without source-label replacement
+subcategory,Data_Exfiltration,canonical_subcategory,data_exfiltration,spelling/case normalization without source-label replacement
+subcategory,HTTP,canonical_subcategory,http,spelling/case normalization without source-label replacement
+subcategory,Keylogging,canonical_subcategory,keylogging,spelling/case normalization without source-label replacement
+subcategory,Normal,canonical_subcategory,normal,spelling/case normalization without source-label replacement
+subcategory,OS_Fingerprint,canonical_subcategory,os_fingerprint,spelling/case normalization without source-label replacement
+subcategory,Service_Scan,canonical_subcategory,service_scan,spelling/case normalization without source-label replacement
+subcategory,TCP,canonical_subcategory,tcp,spelling/case normalization without source-label replacement
+subcategory,UDP,canonical_subcategory,udp,spelling/case normalization without source-label replacement

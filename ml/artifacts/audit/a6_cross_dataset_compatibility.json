@@ -1,0 +1,48 @@
+{
+  "audit_batch": "A6 cross-dataset compatibility",
+  "bot_iot_all_features_observed_column_count": 46,
+  "defensible_direct_model_input_space": false,
+  "direct_cross_dataset_model_evaluation": "NOT_CURRENTLY_DEFENSIBLE",
+  "exact_named_feature_overlap": [],
+  "exact_named_feature_overlap_count": 0,
+  "meaningful_semantic_overlap": [
+    {
+      "bot_iot_examples": [
+        "mean",
+        "stddev",
+        "min",
+        "max"
+      ],
+      "compatibility": "conceptual only; entity/window conditioning and source definitions differ",
+      "concept": "summary location/dispersion statistics",
+      "n_baiot_examples": [
+        "MI_dir_L5_mean",
+        "HH_L5_std",
+        "MI_dir_L5_variance"
+      ]
+    },
+    {
+      "bot_iot_examples": [
+        "pkts",
+        "bytes",
+        "rate",
+        "srate",
+        "drate"
+      ],
+      "compatibility": "conceptual only; audited artifacts do not establish equivalence",
+      "concept": "traffic activity/rate summaries",
+      "n_baiot_examples": [
+        "MI_dir_L5_weight",
+        "HH_jit_L5_mean"
+      ]
+    }
+  ],
+  "n_baiot_feature_count": 115,
+  "reason": "There is no exact named input overlap, and conceptual statistical overlaps have different entity/window/flow definitions. A6 does not engineer a common space.",
+  "role_selection": "not performed",
+  "shared_target_semantics": {
+    "binary_benign_malicious_concept": true,
+    "explanation": "Both can be mapped to benign/malicious, but N-BaIoT family/fine labels and Bot-IoT category/subcategory labels describe different taxonomies.",
+    "taxonomy_directly_interchangeable": false
+  }
+}

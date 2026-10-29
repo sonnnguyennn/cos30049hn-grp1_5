@@ -1,0 +1,27 @@
+{
+  "audit_batch": "G3A numeric-equivalence audit",
+  "cross_label_conflict_examples": [],
+  "cross_label_numeric_group_count": 0,
+  "duplicate_group_cross_partition_overlap_count": 0,
+  "evaluation_group_cross_partition_overlap_count": 0,
+  "evaluation_group_scheme": {
+    "feature_count": 115,
+    "finite_required": true,
+    "hash": "SHA-256",
+    "identifier_format": "sha256:<64 lowercase hex>",
+    "name": "evaluation-group-binary64-be-v1",
+    "predictor_eligible": false,
+    "signed_zero_rule": "value == 0.0 is encoded as positive +0.0",
+    "value_encoding": "IEEE-754 binary64 big-endian",
+    "vector_encoding": "concatenation of 115 ordered 8-byte values"
+  },
+  "lexical_groups_eliminated_by_numeric_equivalence": 0,
+  "lexical_groups_in_numeric_merges": 0,
+  "lexical_groups_mapping_to_multiple_numeric_groups": 0,
+  "numeric_groups_merging_lexical_groups": 0,
+  "numeric_merge_examples": [],
+  "observations_in_numeric_merges": 0,
+  "overall_status": "PASS",
+  "unique_duplicate_group_count": 2482676,
+  "unique_evaluation_group_count": 2482676
+}

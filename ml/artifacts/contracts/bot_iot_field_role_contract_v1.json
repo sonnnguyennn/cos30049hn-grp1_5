@@ -1,0 +1,375 @@
+{
+  "canonical_representation": "all_features_5pct_shards",
+  "context_field_decision": "deferred to secondary experiment design",
+  "contract_name": "bot_iot_field_role_contract",
+  "contract_version": "1.0.0",
+  "dataset": "Bot-IoT",
+  "entity_context_sensitive": [
+    "saddr",
+    "sport",
+    "daddr",
+    "dport"
+  ],
+  "field_roles": [
+    {
+      "a5_audit_role": "explicit identifier/index",
+      "a5_risk_terminology": "IDENTIFIER LEAKAGE RISK",
+      "contract_role": "identifier_lineage_metadata",
+      "field_name": "pkSeqID",
+      "ordinary_predictor_eligibility": "prohibited"
+    },
+    {
+      "a5_audit_role": "temporal/order field",
+      "a5_risk_terminology": "TEMPORAL LEAKAGE RISK",
+      "contract_role": "temporal_order_sensitive",
+      "field_name": "stime",
+      "ordinary_predictor_eligibility": "deferred"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "flgs",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "flgs_number",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "proto",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "proto_number",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "network entity/context field",
+      "a5_risk_terminology": "ENTITY/CONTEXT MEMORIZATION RISK",
+      "contract_role": "entity_context_sensitive",
+      "field_name": "saddr",
+      "ordinary_predictor_eligibility": "deferred"
+    },
+    {
+      "a5_audit_role": "network entity/context field",
+      "a5_risk_terminology": "ENTITY/CONTEXT MEMORIZATION RISK",
+      "contract_role": "entity_context_sensitive",
+      "field_name": "sport",
+      "ordinary_predictor_eligibility": "deferred"
+    },
+    {
+      "a5_audit_role": "network entity/context field",
+      "a5_risk_terminology": "ENTITY/CONTEXT MEMORIZATION RISK",
+      "contract_role": "entity_context_sensitive",
+      "field_name": "daddr",
+      "ordinary_predictor_eligibility": "deferred"
+    },
+    {
+      "a5_audit_role": "network entity/context field",
+      "a5_risk_terminology": "ENTITY/CONTEXT MEMORIZATION RISK",
+      "contract_role": "entity_context_sensitive",
+      "field_name": "dport",
+      "ordinary_predictor_eligibility": "deferred"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "pkts",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "bytes",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "state",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "state_number",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "temporal/order field",
+      "a5_risk_terminology": "TEMPORAL LEAKAGE RISK",
+      "contract_role": "temporal_order_sensitive",
+      "field_name": "ltime",
+      "ordinary_predictor_eligibility": "deferred"
+    },
+    {
+      "a5_audit_role": "temporal/order field",
+      "a5_risk_terminology": "TEMPORAL LEAKAGE RISK",
+      "contract_role": "temporal_order_sensitive",
+      "field_name": "seq",
+      "ordinary_predictor_eligibility": "deferred"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "dur",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "mean",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "stddev",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "sum",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "min",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "max",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "spkts",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "dpkts",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "sbytes",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "dbytes",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "rate",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "srate",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "drate",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "TnBPSrcIP",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "TnBPDstIP",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "TnP_PSrcIP",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "TnP_PDstIP",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "TnP_PerProto",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "TnP_Per_Dport",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "AR_P_Proto_P_SrcIP",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "AR_P_Proto_P_DstIP",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "N_IN_Conn_P_DstIP",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "N_IN_Conn_P_SrcIP",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "AR_P_Proto_P_Sport",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "AR_P_Proto_P_Dport",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "Pkts_P_State_P_Protocol_P_DestIP",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "behavioral/statistical field",
+      "a5_risk_terminology": "audit role only; no final predictor decision",
+      "contract_role": "behavioral_statistical_candidate",
+      "field_name": "Pkts_P_State_P_Protocol_P_SrcIP",
+      "ordinary_predictor_eligibility": "candidate_not_selected"
+    },
+    {
+      "a5_audit_role": "label/target metadata",
+      "a5_risk_terminology": "DIRECT TARGET LEAKAGE",
+      "contract_role": "target_metadata",
+      "field_name": "attack",
+      "ordinary_predictor_eligibility": "prohibited"
+    },
+    {
+      "a5_audit_role": "label/target metadata",
+      "a5_risk_terminology": "DIRECT TARGET LEAKAGE",
+      "contract_role": "target_metadata",
+      "field_name": "category",
+      "ordinary_predictor_eligibility": "prohibited"
+    },
+    {
+      "a5_audit_role": "label/target metadata",
+      "a5_risk_terminology": "DIRECT TARGET LEAKAGE",
+      "contract_role": "target_metadata",
+      "field_name": "subcategory",
+      "ordinary_predictor_eligibility": "prohibited"
+    }
+  ],
+  "identifier_lineage_metadata": [
+    "pkSeqID"
+  ],
+  "port_lexical_contract": {
+    "decimal": "ASCII digits parsed in base 10",
+    "fields": [
+      "sport",
+      "dport"
+    ],
+    "hexadecimal": "0x/0X-prefixed hexadecimal digits parsed in base 16",
+    "implementation_status": "specified and unit-tested; no full dataset transformation",
+    "preserve_raw_lexeme": true,
+    "sentinel_semantics": "UNKNOWN; do not treat as an ordinary port or impute in G2A",
+    "unresolved_sentinel": "-1",
+    "verified_hex_lossless": true
+  },
+  "reference_only_physical_index": {
+    "field": "<unnamed_leading_index>",
+    "ordinary_predictor_eligibility": "prohibited",
+    "representation": "ten_best_full"
+  },
+  "role": "secondary",
+  "source_artifacts": {
+    "port_summary": "artifacts/audit/bot_iot_port_encoding_summary.json",
+    "port_summary_sha256": "2b7fa3608a69a6c3f6977723c653612a7df14913a85a0157034f0948c36ec1f5",
+    "risk_profile": "artifacts/audit/bot_iot_field_risk_profile.csv",
+    "risk_profile_sha256": "b86e6ddaba4fe656691e21cd54facf6dcc3bd6ebfe54a7faacbae98f6f81fa67"
+  },
+  "target_metadata": [
+    "attack",
+    "category",
+    "subcategory"
+  ],
+  "temporal_order_sensitive": [
+    "stime",
+    "ltime",
+    "seq"
+  ]
+}

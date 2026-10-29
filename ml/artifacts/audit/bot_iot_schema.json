@@ -1,0 +1,575 @@
+{
+  "all_features_ordered_schema_consistent": true,
+  "audit_batch": "A2.1",
+  "dataset": "bot_iot",
+  "documentation_cross_check": {
+    "case_insensitive_order_differences": [
+      {
+        "documented": "N_IN_Conn_P_SrcIP",
+        "observed": "N_IN_Conn_P_DstIP",
+        "position_one_based": 38
+      },
+      {
+        "documented": "N_IN_Conn_P_DstIP",
+        "observed": "N_IN_Conn_P_SrcIP",
+        "position_one_based": 39
+      }
+    ],
+    "case_insensitive_order_matches": false,
+    "case_only_naming_differences": [
+      {
+        "documented": "Stime",
+        "observed": "stime"
+      },
+      {
+        "documented": "Flgs",
+        "observed": "flgs"
+      },
+      {
+        "documented": "Proto",
+        "observed": "proto"
+      },
+      {
+        "documented": "Saddr",
+        "observed": "saddr"
+      },
+      {
+        "documented": "Sport",
+        "observed": "sport"
+      },
+      {
+        "documented": "Daddr",
+        "observed": "daddr"
+      },
+      {
+        "documented": "Dport",
+        "observed": "dport"
+      },
+      {
+        "documented": "Pkts",
+        "observed": "pkts"
+      },
+      {
+        "documented": "Bytes",
+        "observed": "bytes"
+      },
+      {
+        "documented": "State",
+        "observed": "state"
+      },
+      {
+        "documented": "Ltime",
+        "observed": "ltime"
+      },
+      {
+        "documented": "Seq",
+        "observed": "seq"
+      },
+      {
+        "documented": "Dur",
+        "observed": "dur"
+      },
+      {
+        "documented": "Mean",
+        "observed": "mean"
+      },
+      {
+        "documented": "Stddev",
+        "observed": "stddev"
+      },
+      {
+        "documented": "Sum",
+        "observed": "sum"
+      },
+      {
+        "documented": "Min",
+        "observed": "min"
+      },
+      {
+        "documented": "Max",
+        "observed": "max"
+      },
+      {
+        "documented": "Spkts",
+        "observed": "spkts"
+      },
+      {
+        "documented": "Dpkts",
+        "observed": "dpkts"
+      },
+      {
+        "documented": "Sbytes",
+        "observed": "sbytes"
+      },
+      {
+        "documented": "Dbytes",
+        "observed": "dbytes"
+      },
+      {
+        "documented": "Rate",
+        "observed": "rate"
+      },
+      {
+        "documented": "Srate",
+        "observed": "srate"
+      },
+      {
+        "documented": "Drate",
+        "observed": "drate"
+      },
+      {
+        "documented": "Attack",
+        "observed": "attack"
+      },
+      {
+        "documented": "Category",
+        "observed": "category"
+      },
+      {
+        "documented": "Subcategory",
+        "observed": "subcategory"
+      }
+    ],
+    "dataset_pdf": {
+      "difference_from_approximate_3_million": 668522,
+      "documented_approximate_5pct_rows": 3000000,
+      "documented_approximate_total_size_gb": 1.07,
+      "documented_row_count_is_approximate": true,
+      "observed_5pct_all_features_rows": 3668522,
+      "observed_documentation_fact": "The documented 5% subset comprises four files, approximately 1.07 GB and about 3 million records.",
+      "observed_total_size_bytes": 1017126824,
+      "sha256": "b1cfd05e10380ba0181b0720545a435cc90e8dc095300d77aea43785fb7222c2"
+    },
+    "documented_and_observed_feature_count_match": true,
+    "documented_feature_names": [
+      "pkSeqID",
+      "Stime",
+      "Flgs",
+      "flgs_number",
+      "Proto",
+      "proto_number",
+      "Saddr",
+      "Sport",
+      "Daddr",
+      "Dport",
+      "Pkts",
+      "Bytes",
+      "State",
+      "state_number",
+      "Ltime",
+      "Seq",
+      "Dur",
+      "Mean",
+      "Stddev",
+      "Sum",
+      "Min",
+      "Max",
+      "Spkts",
+      "Dpkts",
+      "Sbytes",
+      "Dbytes",
+      "Rate",
+      "Srate",
+      "Drate",
+      "TnBPSrcIP",
+      "TnBPDstIP",
+      "TnP_PSrcIP",
+      "TnP_PDstIP",
+      "TnP_PerProto",
+      "TnP_Per_Dport",
+      "AR_P_Proto_P_SrcIP",
+      "AR_P_Proto_P_DstIP",
+      "N_IN_Conn_P_SrcIP",
+      "N_IN_Conn_P_DstIP",
+      "AR_P_Proto_P_Sport",
+      "AR_P_Proto_P_Dport",
+      "Pkts_P_State_P_Protocol_P_DestIP",
+      "Pkts_P_State_P_Protocol_P_SrcIP",
+      "Attack",
+      "Category",
+      "Subcategory"
+    ],
+    "feature_workbook": "Dataset/Features_Explanation/Total Feature Description.xlsx",
+    "feature_workbook_sha256": "288ef526ced2e2319543201417581c4aafb5b9b3092def2cce0840fcb37fe756",
+    "missing_documented_columns_case_insensitive": [],
+    "missing_documented_columns_exact_match": [
+      "Stime",
+      "Flgs",
+      "Proto",
+      "Saddr",
+      "Sport",
+      "Daddr",
+      "Dport",
+      "Pkts",
+      "Bytes",
+      "State",
+      "Ltime",
+      "Seq",
+      "Dur",
+      "Mean",
+      "Stddev",
+      "Sum",
+      "Min",
+      "Max",
+      "Spkts",
+      "Dpkts",
+      "Sbytes",
+      "Dbytes",
+      "Rate",
+      "Srate",
+      "Drate",
+      "Attack",
+      "Category",
+      "Subcategory"
+    ],
+    "observed_all_features_names": [
+      "pkSeqID",
+      "stime",
+      "flgs",
+      "flgs_number",
+      "proto",
+      "proto_number",
+      "saddr",
+      "sport",
+      "daddr",
+      "dport",
+      "pkts",
+      "bytes",
+      "state",
+      "state_number",
+      "ltime",
+      "seq",
+      "dur",
+      "mean",
+      "stddev",
+      "sum",
+      "min",
+      "max",
+      "spkts",
+      "dpkts",
+      "sbytes",
+      "dbytes",
+      "rate",
+      "srate",
+      "drate",
+      "TnBPSrcIP",
+      "TnBPDstIP",
+      "TnP_PSrcIP",
+      "TnP_PDstIP",
+      "TnP_PerProto",
+      "TnP_Per_Dport",
+      "AR_P_Proto_P_SrcIP",
+      "AR_P_Proto_P_DstIP",
+      "N_IN_Conn_P_DstIP",
+      "N_IN_Conn_P_SrcIP",
+      "AR_P_Proto_P_Sport",
+      "AR_P_Proto_P_Dport",
+      "Pkts_P_State_P_Protocol_P_DestIP",
+      "Pkts_P_State_P_Protocol_P_SrcIP",
+      "attack",
+      "category",
+      "subcategory"
+    ],
+    "read_me_pdf": {
+      "observed_documentation_fact": "The documented Dataset/5% directory contains separate 10-best and All features representations.",
+      "sha256": "efcf563ed7903013c218696a083e03e7f5d920346ca28501d25afc119f242263"
+    },
+    "unexpected_observed_columns_case_insensitive": [],
+    "unexpected_observed_columns_exact_match": [
+      "stime",
+      "flgs",
+      "proto",
+      "saddr",
+      "sport",
+      "daddr",
+      "dport",
+      "pkts",
+      "bytes",
+      "state",
+      "ltime",
+      "seq",
+      "dur",
+      "mean",
+      "stddev",
+      "sum",
+      "min",
+      "max",
+      "spkts",
+      "dpkts",
+      "sbytes",
+      "dbytes",
+      "rate",
+      "srate",
+      "drate",
+      "attack",
+      "category",
+      "subcategory"
+    ]
+  },
+  "lineage_limits": "Row-count agreement alone does not establish record-level identity between the unsplit and predefined train/test 10-best representations.",
+  "parse_failures": 0,
+  "representation_groups": {
+    "all_features_5pct_shards": {
+      "column_counts": "[46]",
+      "delimiters": "[\"comma\"]",
+      "file_count": 4,
+      "ordered_schema_identical_within_group": true,
+      "relationship_note": "Four observed shards of one all-features 5% representation; do not concatenate with derived 10-best representations.",
+      "representation": "all_features_5pct_shards",
+      "schema_count": 1,
+      "total_rows": 3668522
+    },
+    "ten_best_full": {
+      "column_counts": "[20]",
+      "delimiters": "[\"semicolon\"]",
+      "file_count": 1,
+      "ordered_schema_identical_within_group": true,
+      "relationship_note": "Separate derived 10-best representation; semicolon-delimited local file includes an unnamed leading column.",
+      "representation": "ten_best_full",
+      "schema_count": 1,
+      "total_rows": 3668522
+    },
+    "ten_best_predefined_test": {
+      "column_counts": "[19]",
+      "delimiters": "[\"comma\"]",
+      "file_count": 1,
+      "ordered_schema_identical_within_group": true,
+      "relationship_note": "Supplied derived 10-best testing representation; not adopted as an IoTGuard split.",
+      "representation": "ten_best_predefined_test",
+      "schema_count": 1,
+      "total_rows": 733705
+    },
+    "ten_best_predefined_train": {
+      "column_counts": "[19]",
+      "delimiters": "[\"comma\"]",
+      "file_count": 1,
+      "ordered_schema_identical_within_group": true,
+      "relationship_note": "Supplied derived 10-best training representation; not adopted as an IoTGuard split.",
+      "representation": "ten_best_predefined_train",
+      "schema_count": 1,
+      "total_rows": 2934817
+    }
+  },
+  "schema_count": 3,
+  "schemas": [
+    {
+      "column_count": 19,
+      "file_count": 2,
+      "header_sha256": "11e6e60d4bfb7739479a953995bc6c22f8eadfff6dd44dceab6941bec90dcd46",
+      "logical_files": [
+        "bot_iot:ten_best_predefined_test:Dataset/5%/10-best features/10-best Training-Testing split/UNSW_2018_IoT_Botnet_Final_10_best_Testing.csv",
+        "bot_iot:ten_best_predefined_train:Dataset/5%/10-best features/10-best Training-Testing split/UNSW_2018_IoT_Botnet_Final_10_best_Training.csv"
+      ],
+      "ordered_columns": [
+        "pkSeqID",
+        "proto",
+        "saddr",
+        "sport",
+        "daddr",
+        "dport",
+        "seq",
+        "stddev",
+        "N_IN_Conn_P_SrcIP",
+        "min",
+        "state_number",
+        "mean",
+        "N_IN_Conn_P_DstIP",
+        "drate",
+        "srate",
+        "max",
+        "attack",
+        "category",
+        "subcategory"
+      ],
+      "schema_signature": "sha256:11e6e60d4bfb7739479a953995bc6c22f8eadfff6dd44dceab6941bec90dcd46"
+    },
+    {
+      "column_count": 20,
+      "file_count": 1,
+      "header_sha256": "1c66e1237e66363f4f321284c0c93f7d6e397c5133dcb1d097f288d42ba8e341",
+      "logical_files": [
+        "bot_iot:ten_best_full:Dataset/5%/10-best features/UNSW_2018_IoT_Botnet_Final_10_Best.csv"
+      ],
+      "ordered_columns": [
+        "",
+        "pkSeqID",
+        "proto",
+        "saddr",
+        "sport",
+        "daddr",
+        "dport",
+        "seq",
+        "stddev",
+        "N_IN_Conn_P_SrcIP",
+        "min",
+        "state_number",
+        "mean",
+        "N_IN_Conn_P_DstIP",
+        "drate",
+        "srate",
+        "max",
+        "attack",
+        "category",
+        "subcategory"
+      ],
+      "schema_signature": "sha256:1c66e1237e66363f4f321284c0c93f7d6e397c5133dcb1d097f288d42ba8e341"
+    },
+    {
+      "column_count": 46,
+      "file_count": 4,
+      "header_sha256": "3d1d5f0c993e51d34d81660ea9d81d438d966ecf5c0c397479c795c987910048",
+      "logical_files": [
+        "bot_iot:all_features_5pct_shards:Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_1.csv",
+        "bot_iot:all_features_5pct_shards:Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_2.csv",
+        "bot_iot:all_features_5pct_shards:Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_3.csv",
+        "bot_iot:all_features_5pct_shards:Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_4.csv"
+      ],
+      "ordered_columns": [
+        "pkSeqID",
+        "stime",
+        "flgs",
+        "flgs_number",
+        "proto",
+        "proto_number",
+        "saddr",
+        "sport",
+        "daddr",
+        "dport",
+        "pkts",
+        "bytes",
+        "state",
+        "state_number",
+        "ltime",
+        "seq",
+        "dur",
+        "mean",
+        "stddev",
+        "sum",
+        "min",
+        "max",
+        "spkts",
+        "dpkts",
+        "sbytes",
+        "dbytes",
+        "rate",
+        "srate",
+        "drate",
+        "TnBPSrcIP",
+        "TnBPDstIP",
+        "TnP_PSrcIP",
+        "TnP_PDstIP",
+        "TnP_PerProto",
+        "TnP_Per_Dport",
+        "AR_P_Proto_P_SrcIP",
+        "AR_P_Proto_P_DstIP",
+        "N_IN_Conn_P_DstIP",
+        "N_IN_Conn_P_SrcIP",
+        "AR_P_Proto_P_Sport",
+        "AR_P_Proto_P_Dport",
+        "Pkts_P_State_P_Protocol_P_DestIP",
+        "Pkts_P_State_P_Protocol_P_SrcIP",
+        "attack",
+        "category",
+        "subcategory"
+      ],
+      "schema_signature": "sha256:3d1d5f0c993e51d34d81660ea9d81d438d966ecf5c0c397479c795c987910048"
+    }
+  ],
+  "structural_discrepancies": [
+    "The 10-best full file is semicolon-delimited and has an unnamed leading column; the predefined train/test files are comma-delimited without it.",
+    "The feature workbook uses capitalization such as Stime/Flgs/Proto while the all-features CSV headers use stime/flgs/proto.",
+    "The feature workbook orders N_IN_Conn_P_SrcIP before N_IN_Conn_P_DstIP; the observed all-features CSV header orders destination before source."
+  ],
+  "ten_best": {
+    "full_columns_overlapping_all_features": [
+      "pkSeqID",
+      "proto",
+      "saddr",
+      "sport",
+      "daddr",
+      "dport",
+      "seq",
+      "stddev",
+      "N_IN_Conn_P_SrcIP",
+      "min",
+      "state_number",
+      "mean",
+      "N_IN_Conn_P_DstIP",
+      "drate",
+      "srate",
+      "max",
+      "attack",
+      "category",
+      "subcategory"
+    ],
+    "full_has_unnamed_leading_column": true,
+    "full_ordered_columns": [
+      "",
+      "pkSeqID",
+      "proto",
+      "saddr",
+      "sport",
+      "daddr",
+      "dport",
+      "seq",
+      "stddev",
+      "N_IN_Conn_P_SrcIP",
+      "min",
+      "state_number",
+      "mean",
+      "N_IN_Conn_P_DstIP",
+      "drate",
+      "srate",
+      "max",
+      "attack",
+      "category",
+      "subcategory"
+    ],
+    "full_overlap_count": 19,
+    "full_schema_without_unnamed_leading_column_matches_split": true,
+    "full_train_test_schemas_structurally_identical": false,
+    "predefined_test_ordered_columns": [
+      "pkSeqID",
+      "proto",
+      "saddr",
+      "sport",
+      "daddr",
+      "dport",
+      "seq",
+      "stddev",
+      "N_IN_Conn_P_SrcIP",
+      "min",
+      "state_number",
+      "mean",
+      "N_IN_Conn_P_DstIP",
+      "drate",
+      "srate",
+      "max",
+      "attack",
+      "category",
+      "subcategory"
+    ],
+    "predefined_train_ordered_columns": [
+      "pkSeqID",
+      "proto",
+      "saddr",
+      "sport",
+      "daddr",
+      "dport",
+      "seq",
+      "stddev",
+      "N_IN_Conn_P_SrcIP",
+      "min",
+      "state_number",
+      "mean",
+      "N_IN_Conn_P_DstIP",
+      "drate",
+      "srate",
+      "max",
+      "attack",
+      "category",
+      "subcategory"
+    ],
+    "train_test_ordered_schemas_identical": true
+  }
+}

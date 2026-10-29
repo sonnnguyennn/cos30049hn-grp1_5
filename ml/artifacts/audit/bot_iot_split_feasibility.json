@@ -1,0 +1,1380 @@
+{
+  "candidate_B1_supplied": {
+    "class_distributions": {
+      "test": {
+        "binary": {
+          "benign": 107,
+          "malicious": 733598
+        },
+        "category": {
+          "ddos": 385309,
+          "dos": 330112,
+          "normal": 107,
+          "reconnaissance": 18163,
+          "theft": 14
+        },
+        "subcategory": {
+          "http": 504,
+          "keylogging": 14,
+          "normal": 107,
+          "os_fingerprint": 3621,
+          "service_scan": 14542,
+          "tcp": 318337,
+          "udp": 396580
+        }
+      },
+      "train": {
+        "binary": {
+          "benign": 370,
+          "malicious": 2934447
+        },
+        "category": {
+          "ddos": 1541315,
+          "dos": 1320148,
+          "normal": 370,
+          "reconnaissance": 72919,
+          "theft": 65
+        },
+        "subcategory": {
+          "data_exfiltration": 6,
+          "http": 1970,
+          "keylogging": 59,
+          "normal": 370,
+          "os_fingerprint": 14293,
+          "service_scan": 58626,
+          "tcp": 1274843,
+          "udp": 1584650
+        }
+      }
+    },
+    "entity_overlap": {
+      "daddr": {
+        "test_row_overlap_percent": 99.99931852720098,
+        "test_rows": 733705,
+        "test_rows_with_value_seen_in_train": 733700,
+        "train_unique_values": 81
+      },
+      "daddr+proto": {
+        "test_row_overlap_percent": 99.99931852720098,
+        "test_rows": 733705,
+        "test_rows_with_value_seen_in_train": 733700,
+        "train_unique_values": 107
+      },
+      "dport": {
+        "test_row_overlap_percent": 99.8916458249569,
+        "test_rows": 733705,
+        "test_rows_with_value_seen_in_train": 732910,
+        "train_unique_values": 6906
+      },
+      "pkSeqID": {
+        "interpretation": "disjoint unique identifiers do not establish leakage-free entities",
+        "test_row_overlap_percent": 0.0,
+        "test_rows": 733705,
+        "test_rows_with_value_seen_in_train": 0
+      },
+      "proto": {
+        "test_row_overlap_percent": 100.0,
+        "test_rows": 733705,
+        "test_rows_with_value_seen_in_train": 733705,
+        "train_unique_values": 5
+      },
+      "saddr": {
+        "test_row_overlap_percent": 99.9997274108804,
+        "test_rows": 733705,
+        "test_rows_with_value_seen_in_train": 733703,
+        "train_unique_values": 20
+      },
+      "saddr+daddr": {
+        "test_row_overlap_percent": 99.99877334896178,
+        "test_rows": 733705,
+        "test_rows_with_value_seen_in_train": 733696,
+        "train_unique_values": 151
+      },
+      "saddr+dport": {
+        "test_row_overlap_percent": 99.82036377018011,
+        "test_rows": 733705,
+        "test_rows_with_value_seen_in_train": 732387,
+        "train_unique_values": 15649
+      },
+      "saddr+proto": {
+        "test_row_overlap_percent": 99.9997274108804,
+        "test_rows": 733705,
+        "test_rows_with_value_seen_in_train": 733703,
+        "train_unique_values": 49
+      },
+      "sport": {
+        "test_row_overlap_percent": 100.0,
+        "test_rows": 733705,
+        "test_rows_with_value_seen_in_train": 733705,
+        "train_unique_values": 65541
+      }
+    },
+    "id_order_risk": "pkSeqID sets are disjoint but label concentration by range is audited",
+    "numeric_representation_differs_from_full": true,
+    "status": "diagnostic only; not adopted",
+    "temporal_overlap": {
+      "test": {
+        "max": 1529380790.39201,
+        "min": 1526344031.66516,
+        "rows": 733705,
+        "within_train_range": 733705
+      },
+      "train": {
+        "max": 1529380791.13583,
+        "min": 1526344031.66514,
+        "rows": 2934817
+      }
+    }
+  },
+  "candidate_B2_random_stratified": {
+    "entity_overlap": {
+      "saddr": {
+        "shared_unique_values": 17,
+        "test_row_overlap_percent": 100.0,
+        "test_rows": 733705,
+        "test_rows_with_value_seen_in_train": 733705,
+        "test_unique_values": 17,
+        "train_rows": 2934817,
+        "train_unique_values": 21
+      },
+      "saddr+daddr": {
+        "shared_unique_values": 88,
+        "test_row_overlap_percent": 99.99904593808138,
+        "test_rows": 733705,
+        "test_rows_with_value_seen_in_train": 733698,
+        "test_unique_values": 94,
+        "train_rows": 2934817,
+        "train_unique_values": 150
+      }
+    },
+    "seed": 1729,
+    "stratification": "subcategory",
+    "test_distributions": {
+      "binary": {
+        "benign": 95,
+        "malicious": 733610
+      },
+      "category": {
+        "ddos": 385389,
+        "dos": 329988,
+        "normal": 95,
+        "reconnaissance": 18217,
+        "theft": 16
+      },
+      "subcategory": {
+        "data_exfiltration": 1,
+        "http": 495,
+        "keylogging": 15,
+        "normal": 95,
+        "os_fingerprint": 3583,
+        "service_scan": 14634,
+        "tcp": 318636,
+        "udp": 396246
+      }
+    },
+    "train_distributions": {
+      "binary": {
+        "benign": 382,
+        "malicious": 2934435
+      },
+      "category": {
+        "ddos": 1541235,
+        "dos": 1320272,
+        "normal": 382,
+        "reconnaissance": 72865,
+        "theft": 63
+      },
+      "subcategory": {
+        "data_exfiltration": 5,
+        "http": 1979,
+        "keylogging": 58,
+        "normal": 382,
+        "os_fingerprint": 14331,
+        "service_scan": 58534,
+        "tcp": 1274544,
+        "udp": 1584984
+      }
+    }
+  },
+  "candidate_B3_temporal": {
+    "entity_overlap": {
+      "saddr": {
+        "shared_unique_values": 5,
+        "test_row_overlap_percent": 100.0,
+        "test_rows": 733719,
+        "test_rows_with_value_seen_in_train": 733719,
+        "test_unique_values": 5,
+        "train_rows": 2934803,
+        "train_unique_values": 21
+      },
+      "saddr+daddr": {
+        "shared_unique_values": 9,
+        "test_row_overlap_percent": 100.0,
+        "test_rows": 733719,
+        "test_rows_with_value_seen_in_train": 733719,
+        "test_unique_values": 9,
+        "train_rows": 2934803,
+        "train_unique_values": 156
+      }
+    },
+    "stime_interpretation": "numeric/order only; no calendar/clock semantics inferred",
+    "test_distributions": {
+      "binary": {
+        "malicious": 733719
+      },
+      "category": {
+        "ddos": 733640,
+        "theft": 79
+      },
+      "subcategory": {
+        "data_exfiltration": 6,
+        "http": 989,
+        "keylogging": 73,
+        "udp": 732651
+      }
+    },
+    "test_rule": "stime >= observed 80th-percentile threshold 1528099325.49463",
+    "threshold": 1528099325.49463,
+    "train_distributions": {
+      "binary": {
+        "benign": 477,
+        "malicious": 2934326
+      },
+      "category": {
+        "ddos": 1192984,
+        "dos": 1650260,
+        "normal": 477,
+        "reconnaissance": 91082
+      },
+      "subcategory": {
+        "http": 1485,
+        "normal": 477,
+        "os_fingerprint": 17914,
+        "service_scan": 73168,
+        "tcp": 1593180,
+        "udp": 1248579
+      }
+    }
+  },
+  "candidate_B4_entity_grouped": {
+    "saddr": {
+      "assignment": "deterministic SHA-256 grouping at nominal 20% test",
+      "minimum_test_subcategory_support": 5,
+      "test_binary_coverage": 2,
+      "test_category_coverage": 5,
+      "test_distributions": {
+        "binary": {
+          "benign": 107,
+          "malicious": 895308
+        },
+        "category": {
+          "ddos": 456942,
+          "dos": 411240,
+          "normal": 107,
+          "reconnaissance": 27099,
+          "theft": 27
+        },
+        "subcategory": {
+          "data_exfiltration": 5,
+          "http": 763,
+          "keylogging": 22,
+          "normal": 107,
+          "os_fingerprint": 4653,
+          "service_scan": 22446,
+          "tcp": 373844,
+          "udp": 493575
+        }
+      },
+      "test_fraction_percent": 24.408058613250788,
+      "test_rows": 895415,
+      "test_subcategory_coverage": 8,
+      "train_distributions": {
+        "binary": {
+          "benign": 370,
+          "malicious": 2772737
+        },
+        "category": {
+          "ddos": 1469682,
+          "dos": 1239020,
+          "normal": 370,
+          "reconnaissance": 63983,
+          "theft": 52
+        },
+        "subcategory": {
+          "data_exfiltration": 1,
+          "http": 1711,
+          "keylogging": 51,
+          "normal": 370,
+          "os_fingerprint": 13261,
+          "service_scan": 50722,
+          "tcp": 1219336,
+          "udp": 1487655
+        }
+      },
+      "train_rows": 2773107
+    },
+    "saddr+daddr": {
+      "assignment": "deterministic SHA-256 grouping at nominal 20% test",
+      "minimum_test_subcategory_support": 51,
+      "test_binary_coverage": 2,
+      "test_category_coverage": 5,
+      "test_distributions": {
+        "binary": {
+          "benign": 56,
+          "malicious": 846020
+        },
+        "category": {
+          "ddos": 3237,
+          "dos": 828229,
+          "normal": 56,
+          "reconnaissance": 14503,
+          "theft": 51
+        },
+        "subcategory": {
+          "http": 299,
+          "keylogging": 51,
+          "normal": 56,
+          "os_fingerprint": 3446,
+          "service_scan": 11057,
+          "tcp": 316197,
+          "udp": 514970
+        }
+      },
+      "test_fraction_percent": 23.063130056191568,
+      "test_rows": 846076,
+      "test_subcategory_coverage": 7,
+      "train_distributions": {
+        "binary": {
+          "benign": 421,
+          "malicious": 2822025
+        },
+        "category": {
+          "ddos": 1923387,
+          "dos": 822031,
+          "normal": 421,
+          "reconnaissance": 76579,
+          "theft": 28
+        },
+        "subcategory": {
+          "data_exfiltration": 6,
+          "http": 2175,
+          "keylogging": 22,
+          "normal": 421,
+          "os_fingerprint": 14468,
+          "service_scan": 62111,
+          "tcp": 1276983,
+          "udp": 1466260
+        }
+      },
+      "train_rows": 2822446
+    }
+  },
+  "field_order_diagnostics": {
+    "pkSeqID": {
+      "bin_count": 20,
+      "bins": [
+        {
+          "bin": 0,
+          "binary_counts": {
+            "malicious": 183427
+          },
+          "category_counts": {
+            "dos": 183427
+          },
+          "inclusive_end": 183426,
+          "inclusive_start": 1,
+          "subcategory_counts": {
+            "http": 1485,
+            "tcp": 181942
+          }
+        },
+        {
+          "bin": 1,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "dos": 183426
+          },
+          "inclusive_end": 366852,
+          "inclusive_start": 183427,
+          "subcategory_counts": {
+            "tcp": 183426
+          }
+        },
+        {
+          "bin": 2,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "dos": 183426
+          },
+          "inclusive_end": 550278,
+          "inclusive_start": 366853,
+          "subcategory_counts": {
+            "tcp": 183426
+          }
+        },
+        {
+          "bin": 3,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "dos": 183426
+          },
+          "inclusive_end": 733704,
+          "inclusive_start": 550279,
+          "subcategory_counts": {
+            "tcp": 67006,
+            "udp": 116420
+          }
+        },
+        {
+          "bin": 4,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "dos": 183426
+          },
+          "inclusive_end": 917130,
+          "inclusive_start": 733705,
+          "subcategory_counts": {
+            "udp": 183426
+          }
+        },
+        {
+          "bin": 5,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "dos": 183426
+          },
+          "inclusive_end": 1100556,
+          "inclusive_start": 917131,
+          "subcategory_counts": {
+            "udp": 183426
+          }
+        },
+        {
+          "bin": 6,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "dos": 183426
+          },
+          "inclusive_end": 1283982,
+          "inclusive_start": 1100557,
+          "subcategory_counts": {
+            "udp": 183426
+          }
+        },
+        {
+          "bin": 7,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "dos": 183426
+          },
+          "inclusive_end": 1467408,
+          "inclusive_start": 1283983,
+          "subcategory_counts": {
+            "udp": 183426
+          }
+        },
+        {
+          "bin": 8,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "ddos": 575,
+            "dos": 182851
+          },
+          "inclusive_end": 1650834,
+          "inclusive_start": 1467409,
+          "subcategory_counts": {
+            "http": 575,
+            "udp": 182851
+          }
+        },
+        {
+          "bin": 9,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "ddos": 183426
+          },
+          "inclusive_end": 1834261,
+          "inclusive_start": 1650835,
+          "subcategory_counts": {
+            "http": 414,
+            "tcp": 183012
+          }
+        },
+        {
+          "bin": 10,
+          "binary_counts": {
+            "malicious": 183427
+          },
+          "category_counts": {
+            "ddos": 183427
+          },
+          "inclusive_end": 2017687,
+          "inclusive_start": 1834262,
+          "subcategory_counts": {
+            "tcp": 183427
+          }
+        },
+        {
+          "bin": 11,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "ddos": 183426
+          },
+          "inclusive_end": 2201113,
+          "inclusive_start": 2017688,
+          "subcategory_counts": {
+            "tcp": 183426
+          }
+        },
+        {
+          "bin": 12,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "ddos": 183426
+          },
+          "inclusive_end": 2384539,
+          "inclusive_start": 2201114,
+          "subcategory_counts": {
+            "tcp": 183426
+          }
+        },
+        {
+          "bin": 13,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "ddos": 183426
+          },
+          "inclusive_end": 2567965,
+          "inclusive_start": 2384540,
+          "subcategory_counts": {
+            "tcp": 183426
+          }
+        },
+        {
+          "bin": 14,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "ddos": 183426
+          },
+          "inclusive_end": 2751391,
+          "inclusive_start": 2567966,
+          "subcategory_counts": {
+            "tcp": 60663,
+            "udp": 122763
+          }
+        },
+        {
+          "bin": 15,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "ddos": 183426
+          },
+          "inclusive_end": 2934817,
+          "inclusive_start": 2751392,
+          "subcategory_counts": {
+            "udp": 183426
+          }
+        },
+        {
+          "bin": 16,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "ddos": 183426
+          },
+          "inclusive_end": 3118243,
+          "inclusive_start": 2934818,
+          "subcategory_counts": {
+            "udp": 183426
+          }
+        },
+        {
+          "bin": 17,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "ddos": 183426
+          },
+          "inclusive_end": 3301669,
+          "inclusive_start": 3118244,
+          "subcategory_counts": {
+            "udp": 183426
+          }
+        },
+        {
+          "bin": 18,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "ddos": 183426
+          },
+          "inclusive_end": 3485095,
+          "inclusive_start": 3301670,
+          "subcategory_counts": {
+            "udp": 183426
+          }
+        },
+        {
+          "bin": 19,
+          "binary_counts": {
+            "benign": 477,
+            "malicious": 182949
+          },
+          "category_counts": {
+            "ddos": 91788,
+            "normal": 477,
+            "reconnaissance": 91082,
+            "theft": 79
+          },
+          "inclusive_end": 3668522,
+          "inclusive_start": 3485096,
+          "subcategory_counts": {
+            "data_exfiltration": 6,
+            "keylogging": 73,
+            "normal": 477,
+            "os_fingerprint": 17914,
+            "service_scan": 73168,
+            "udp": 91788
+          }
+        }
+      ],
+      "finding": {
+        "concentrated_labels": [
+          {
+            "label": "benign",
+            "label_level": "binary",
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 477
+          },
+          {
+            "label": "normal",
+            "label_level": "category",
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 477
+          },
+          {
+            "label": "reconnaissance",
+            "label_level": "category",
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 91082
+          },
+          {
+            "label": "theft",
+            "label_level": "category",
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 79
+          },
+          {
+            "label": "data_exfiltration",
+            "label_level": "subcategory",
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 6
+          },
+          {
+            "label": "keylogging",
+            "label_level": "subcategory",
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 73
+          },
+          {
+            "label": "normal",
+            "label_level": "subcategory",
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 477
+          },
+          {
+            "label": "os_fingerprint",
+            "label_level": "subcategory",
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 17914
+          },
+          {
+            "label": "service_scan",
+            "label_level": "subcategory",
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 73168
+          }
+        ],
+        "criterion": "largest bin contains >=80% of a label or label occupies <=2 of 20 bins",
+        "interpretation": "IDENTIFIER LEAKAGE RISK, not a model result",
+        "strong_range_alignment_observed": true
+      },
+      "label_range_concentration": {
+        "binary": {
+          "benign": {
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 477
+          },
+          "malicious": {
+            "largest_single_bin_fraction": 0.050006747463567106,
+            "occupied_bins": 20,
+            "total": 3668045
+          }
+        },
+        "category": {
+          "ddos": {
+            "largest_single_bin_fraction": 0.0952064336372847,
+            "occupied_bins": 12,
+            "total": 1926624
+          },
+          "dos": {
+            "largest_single_bin_fraction": 0.11115036418503751,
+            "occupied_bins": 9,
+            "total": 1650260
+          },
+          "normal": {
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 477
+          },
+          "reconnaissance": {
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 91082
+          },
+          "theft": {
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 79
+          }
+        },
+        "subcategory": {
+          "data_exfiltration": {
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 6
+          },
+          "http": {
+            "largest_single_bin_fraction": 0.6002425222312046,
+            "occupied_bins": 3,
+            "total": 2474
+          },
+          "keylogging": {
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 73
+          },
+          "normal": {
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 477
+          },
+          "os_fingerprint": {
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 17914
+          },
+          "service_scan": {
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 73168
+          },
+          "tcp": {
+            "largest_single_bin_fraction": 0.1151326278261088,
+            "occupied_bins": 10,
+            "total": 1593180
+          },
+          "udp": {
+            "largest_single_bin_fraction": 0.09258188095274147,
+            "occupied_bins": 12,
+            "total": 1981230
+          }
+        }
+      }
+    },
+    "risk": "IDENTIFIER LEAKAGE RISK",
+    "unnamed_ten_best_index": {
+      "bin_count": 20,
+      "bins": [
+        {
+          "bin": 0,
+          "binary_counts": {
+            "malicious": 183427
+          },
+          "category_counts": {
+            "dos": 183427
+          },
+          "inclusive_end": 183426,
+          "inclusive_start": 1,
+          "subcategory_counts": {
+            "http": 1485,
+            "tcp": 181942
+          }
+        },
+        {
+          "bin": 1,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "dos": 183426
+          },
+          "inclusive_end": 366852,
+          "inclusive_start": 183427,
+          "subcategory_counts": {
+            "tcp": 183426
+          }
+        },
+        {
+          "bin": 2,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "dos": 183426
+          },
+          "inclusive_end": 550278,
+          "inclusive_start": 366853,
+          "subcategory_counts": {
+            "tcp": 183426
+          }
+        },
+        {
+          "bin": 3,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "dos": 183426
+          },
+          "inclusive_end": 733704,
+          "inclusive_start": 550279,
+          "subcategory_counts": {
+            "tcp": 67006,
+            "udp": 116420
+          }
+        },
+        {
+          "bin": 4,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "dos": 183426
+          },
+          "inclusive_end": 917130,
+          "inclusive_start": 733705,
+          "subcategory_counts": {
+            "udp": 183426
+          }
+        },
+        {
+          "bin": 5,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "dos": 183426
+          },
+          "inclusive_end": 1100556,
+          "inclusive_start": 917131,
+          "subcategory_counts": {
+            "udp": 183426
+          }
+        },
+        {
+          "bin": 6,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "dos": 183426
+          },
+          "inclusive_end": 1283982,
+          "inclusive_start": 1100557,
+          "subcategory_counts": {
+            "udp": 183426
+          }
+        },
+        {
+          "bin": 7,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "dos": 183426
+          },
+          "inclusive_end": 1467408,
+          "inclusive_start": 1283983,
+          "subcategory_counts": {
+            "udp": 183426
+          }
+        },
+        {
+          "bin": 8,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "ddos": 575,
+            "dos": 182851
+          },
+          "inclusive_end": 1650834,
+          "inclusive_start": 1467409,
+          "subcategory_counts": {
+            "http": 575,
+            "udp": 182851
+          }
+        },
+        {
+          "bin": 9,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "ddos": 183426
+          },
+          "inclusive_end": 1834261,
+          "inclusive_start": 1650835,
+          "subcategory_counts": {
+            "http": 414,
+            "tcp": 183012
+          }
+        },
+        {
+          "bin": 10,
+          "binary_counts": {
+            "malicious": 183427
+          },
+          "category_counts": {
+            "ddos": 183427
+          },
+          "inclusive_end": 2017687,
+          "inclusive_start": 1834262,
+          "subcategory_counts": {
+            "tcp": 183427
+          }
+        },
+        {
+          "bin": 11,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "ddos": 183426
+          },
+          "inclusive_end": 2201113,
+          "inclusive_start": 2017688,
+          "subcategory_counts": {
+            "tcp": 183426
+          }
+        },
+        {
+          "bin": 12,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "ddos": 183426
+          },
+          "inclusive_end": 2384539,
+          "inclusive_start": 2201114,
+          "subcategory_counts": {
+            "tcp": 183426
+          }
+        },
+        {
+          "bin": 13,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "ddos": 183426
+          },
+          "inclusive_end": 2567965,
+          "inclusive_start": 2384540,
+          "subcategory_counts": {
+            "tcp": 183426
+          }
+        },
+        {
+          "bin": 14,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "ddos": 183426
+          },
+          "inclusive_end": 2751391,
+          "inclusive_start": 2567966,
+          "subcategory_counts": {
+            "tcp": 60663,
+            "udp": 122763
+          }
+        },
+        {
+          "bin": 15,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "ddos": 183426
+          },
+          "inclusive_end": 2934817,
+          "inclusive_start": 2751392,
+          "subcategory_counts": {
+            "udp": 183426
+          }
+        },
+        {
+          "bin": 16,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "ddos": 183426
+          },
+          "inclusive_end": 3118243,
+          "inclusive_start": 2934818,
+          "subcategory_counts": {
+            "udp": 183426
+          }
+        },
+        {
+          "bin": 17,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "ddos": 183426
+          },
+          "inclusive_end": 3301669,
+          "inclusive_start": 3118244,
+          "subcategory_counts": {
+            "udp": 183426
+          }
+        },
+        {
+          "bin": 18,
+          "binary_counts": {
+            "malicious": 183426
+          },
+          "category_counts": {
+            "ddos": 183426
+          },
+          "inclusive_end": 3485095,
+          "inclusive_start": 3301670,
+          "subcategory_counts": {
+            "udp": 183426
+          }
+        },
+        {
+          "bin": 19,
+          "binary_counts": {
+            "benign": 477,
+            "malicious": 182949
+          },
+          "category_counts": {
+            "ddos": 91788,
+            "normal": 477,
+            "reconnaissance": 91082,
+            "theft": 79
+          },
+          "inclusive_end": 3668522,
+          "inclusive_start": 3485096,
+          "subcategory_counts": {
+            "data_exfiltration": 6,
+            "keylogging": 73,
+            "normal": 477,
+            "os_fingerprint": 17914,
+            "service_scan": 73168,
+            "udp": 91788
+          }
+        }
+      ],
+      "finding": {
+        "concentrated_labels": [
+          {
+            "label": "benign",
+            "label_level": "binary",
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 477
+          },
+          {
+            "label": "normal",
+            "label_level": "category",
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 477
+          },
+          {
+            "label": "reconnaissance",
+            "label_level": "category",
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 91082
+          },
+          {
+            "label": "theft",
+            "label_level": "category",
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 79
+          },
+          {
+            "label": "data_exfiltration",
+            "label_level": "subcategory",
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 6
+          },
+          {
+            "label": "keylogging",
+            "label_level": "subcategory",
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 73
+          },
+          {
+            "label": "normal",
+            "label_level": "subcategory",
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 477
+          },
+          {
+            "label": "os_fingerprint",
+            "label_level": "subcategory",
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 17914
+          },
+          {
+            "label": "service_scan",
+            "label_level": "subcategory",
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 73168
+          }
+        ],
+        "criterion": "largest bin contains >=80% of a label or label occupies <=2 of 20 bins",
+        "interpretation": "IDENTIFIER LEAKAGE RISK, not a model result",
+        "strong_range_alignment_observed": true
+      },
+      "label_range_concentration": {
+        "binary": {
+          "benign": {
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 477
+          },
+          "malicious": {
+            "largest_single_bin_fraction": 0.050006747463567106,
+            "occupied_bins": 20,
+            "total": 3668045
+          }
+        },
+        "category": {
+          "ddos": {
+            "largest_single_bin_fraction": 0.0952064336372847,
+            "occupied_bins": 12,
+            "total": 1926624
+          },
+          "dos": {
+            "largest_single_bin_fraction": 0.11115036418503751,
+            "occupied_bins": 9,
+            "total": 1650260
+          },
+          "normal": {
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 477
+          },
+          "reconnaissance": {
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 91082
+          },
+          "theft": {
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 79
+          }
+        },
+        "subcategory": {
+          "data_exfiltration": {
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 6
+          },
+          "http": {
+            "largest_single_bin_fraction": 0.6002425222312046,
+            "occupied_bins": 3,
+            "total": 2474
+          },
+          "keylogging": {
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 73
+          },
+          "normal": {
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 477
+          },
+          "os_fingerprint": {
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 17914
+          },
+          "service_scan": {
+            "largest_single_bin_fraction": 1.0,
+            "occupied_bins": 1,
+            "total": 73168
+          },
+          "tcp": {
+            "largest_single_bin_fraction": 0.1151326278261088,
+            "occupied_bins": 10,
+            "total": 1593180
+          },
+          "udp": {
+            "largest_single_bin_fraction": 0.09258188095274147,
+            "occupied_bins": 12,
+            "total": 1981230
+          }
+        }
+      }
+    }
+  },
+  "temporal_audit": {
+    "documentation": {
+      "ltime": "Record last time",
+      "seq": "Argus sequence number",
+      "stime": "Record start time"
+    },
+    "global_numeric_ranges": {
+      "ltime_max": 1529381808.18636,
+      "ltime_min": 1526344227.07794,
+      "stime_max": 1529380791.13583,
+      "stime_min": 1526344031.66514
+    },
+    "physical_order_stime_decrease_count": 1499,
+    "ranges_by_category": {
+      "ddos": {
+        "max": 1528102962.8547,
+        "min": 1528095721.76218,
+        "rows": 1926624
+      },
+      "dos": {
+        "max": 1528088552.0746,
+        "min": 1528081321.63668,
+        "rows": 1650260
+      },
+      "normal": {
+        "max": 1526351824.99386,
+        "min": 1526344031.66514,
+        "rows": 477
+      },
+      "reconnaissance": {
+        "max": 1526876544.97085,
+        "min": 1526344326.38904,
+        "rows": 91082
+      },
+      "theft": {
+        "max": 1529380791.13583,
+        "min": 1529283912.92552,
+        "rows": 79
+      }
+    },
+    "ranges_by_source_shard": {
+      "bot_iot:all_features_5pct_shards:Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_1.csv": {
+        "ltime_max": 1528090077.70659,
+        "ltime_min": 1528081321.75066,
+        "rows": 1000000,
+        "stime_max": 1528088552.0746,
+        "stime_min": 1528081321.63668
+      },
+      "bot_iot:all_features_5pct_shards:Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_2.csv": {
+        "ltime_max": 1528103076.41209,
+        "ltime_min": 1528084954.67975,
+        "rows": 1000000,
+        "stime_max": 1528102962.8547,
+        "stime_min": 1528084952.58206
+      },
+      "bot_iot:all_features_5pct_shards:Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_3.csv": {
+        "ltime_max": 1528099352.32019,
+        "ltime_min": 1528095756.4446,
+        "rows": 1000000,
+        "stime_max": 1528099338.28798,
+        "stime_min": 1528095746.13175
+      },
+      "bot_iot:all_features_5pct_shards:Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_4.csv": {
+        "ltime_max": 1529381808.18636,
+        "ltime_min": 1526344227.07794,
+        "rows": 668522,
+        "stime_max": 1529380791.13583,
+        "stime_min": 1526344031.66514
+      }
+    },
+    "semantic_limit": "numeric/order relationships only; no calendar/clock interpretation",
+    "stime_ranges_by_binary": {
+      "benign": {
+        "max": 1526351824.99386,
+        "min": 1526344031.66514,
+        "rows": 477
+      },
+      "malicious": {
+        "max": 1529380791.13583,
+        "min": 1526344326.38904,
+        "rows": 3668045
+      }
+    },
+    "supplied_train_test": {
+      "temporally_interleaved": true,
+      "test": {
+        "max": 1529380790.39201,
+        "min": 1526344031.66516,
+        "rows": 733705,
+        "within_train_range": 733705
+      },
+      "test_rows_within_train_numeric_range_percent": 100.0,
+      "train": {
+        "max": 1529380791.13583,
+        "min": 1526344031.66514,
+        "rows": 2934817
+      }
+    }
+  }
+}

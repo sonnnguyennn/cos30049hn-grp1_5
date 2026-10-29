@@ -1,0 +1,223 @@
+{
+  "all_features_label_purity": {
+    "daddr": {
+      "binary_pure_value_count": 77,
+      "category_pure_value_count": 76,
+      "interpretation": "potential context memorization / scenario dependence",
+      "low_frequency_row_count": 143,
+      "low_frequency_threshold": 5,
+      "low_frequency_value_count": 63,
+      "row_count": 3668522,
+      "unique_value_count": 84,
+      "weighted_binary_entropy_bits": 0.00022287623091663184,
+      "weighted_binary_purity": 0.9999869157115591,
+      "weighted_category_entropy_bits": 0.5777449678989153,
+      "weighted_category_purity": 0.8644522235385259
+    },
+    "daddr+proto": {
+      "binary_pure_value_count": 99,
+      "category_pure_value_count": 86,
+      "interpretation": "potential context memorization / scenario dependence",
+      "low_frequency_row_count": 151,
+      "low_frequency_threshold": 5,
+      "low_frequency_value_count": 65,
+      "row_count": 3668522,
+      "unique_value_count": 110,
+      "weighted_binary_entropy_bits": 0.00018166174044968885,
+      "weighted_binary_purity": 0.9999869157115591,
+      "weighted_category_entropy_bits": 0.5583905688981157,
+      "weighted_category_purity": 0.8652958875536252
+    },
+    "dport": {
+      "binary_pure_value_count": 7683,
+      "category_pure_value_count": 7525,
+      "interpretation": "potential context memorization / scenario dependence",
+      "low_frequency_row_count": 4205,
+      "low_frequency_threshold": 5,
+      "low_frequency_value_count": 4065,
+      "row_count": 3668522,
+      "unique_value_count": 7698,
+      "weighted_binary_entropy_bits": 0.0003060451601489356,
+      "weighted_binary_purity": 0.9999378496299054,
+      "weighted_category_entropy_bits": 0.9731573112651415,
+      "weighted_category_purity": 0.5499664442519357
+    },
+    "flgs": {
+      "binary_pure_value_count": 7,
+      "category_pure_value_count": 3,
+      "interpretation": "potential context memorization / scenario dependence",
+      "low_frequency_row_count": 5,
+      "low_frequency_threshold": 5,
+      "low_frequency_value_count": 2,
+      "row_count": 3668522,
+      "unique_value_count": 9,
+      "weighted_binary_entropy_bits": 0.00175868221695088,
+      "weighted_binary_purity": 0.9998713378303306,
+      "weighted_category_entropy_bits": 1.0960890166663035,
+      "weighted_category_purity": 0.5474676177490554
+    },
+    "proto": {
+      "binary_pure_value_count": 2,
+      "category_pure_value_count": 1,
+      "interpretation": "potential context memorization / scenario dependence",
+      "low_frequency_row_count": 0,
+      "low_frequency_threshold": 5,
+      "low_frequency_value_count": 0,
+      "row_count": 3668522,
+      "unique_value_count": 5,
+      "weighted_binary_entropy_bits": 0.001669058652704332,
+      "weighted_binary_purity": 0.9998721555983582,
+      "weighted_category_entropy_bits": 1.1052922834908967,
+      "weighted_category_purity": 0.5507381446806098
+    },
+    "saddr": {
+      "binary_pure_value_count": 13,
+      "category_pure_value_count": 13,
+      "interpretation": "potential context memorization / scenario dependence",
+      "low_frequency_row_count": 19,
+      "low_frequency_threshold": 5,
+      "low_frequency_value_count": 8,
+      "row_count": 3668522,
+      "unique_value_count": 21,
+      "weighted_binary_entropy_bits": 0.0012401593227756454,
+      "weighted_binary_purity": 0.9998942353351022,
+      "weighted_category_entropy_bits": 1.126716939721908,
+      "weighted_category_purity": 0.526920923467271
+    },
+    "saddr+daddr": {
+      "binary_pure_value_count": 156,
+      "category_pure_value_count": 139,
+      "interpretation": "potential context memorization / scenario dependence",
+      "low_frequency_row_count": 238,
+      "low_frequency_threshold": 5,
+      "low_frequency_value_count": 102,
+      "row_count": 3668522,
+      "unique_value_count": 156,
+      "weighted_binary_entropy_bits": 0.0,
+      "weighted_binary_purity": 1.0,
+      "weighted_category_entropy_bits": 0.3426364533485437,
+      "weighted_category_purity": 0.8729504688809281
+    },
+    "saddr+dport": {
+      "binary_pure_value_count": 16776,
+      "category_pure_value_count": 16761,
+      "interpretation": "potential context memorization / scenario dependence",
+      "low_frequency_row_count": 23504,
+      "low_frequency_threshold": 5,
+      "low_frequency_value_count": 11526,
+      "row_count": 3668522,
+      "unique_value_count": 16799,
+      "weighted_binary_entropy_bits": 0.00010769415257787434,
+      "weighted_binary_purity": 0.9999610197240196,
+      "weighted_category_entropy_bits": 0.9719190821540002,
+      "weighted_category_purity": 0.550037862659676
+    },
+    "saddr+proto": {
+      "binary_pure_value_count": 31,
+      "category_pure_value_count": 24,
+      "interpretation": "potential context memorization / scenario dependence",
+      "low_frequency_row_count": 27,
+      "low_frequency_threshold": 5,
+      "low_frequency_value_count": 11,
+      "row_count": 3668522,
+      "unique_value_count": 50,
+      "weighted_binary_entropy_bits": 0.0009143473736519985,
+      "weighted_binary_purity": 0.9999239475734369,
+      "weighted_category_entropy_bits": 1.1025810232949145,
+      "weighted_category_purity": 0.5517426364077959
+    },
+    "sport": {
+      "binary_pure_value_count": 65194,
+      "category_pure_value_count": 3,
+      "interpretation": "potential context memorization / scenario dependence",
+      "low_frequency_row_count": 0,
+      "low_frequency_threshold": 5,
+      "low_frequency_value_count": 0,
+      "row_count": 3668522,
+      "unique_value_count": 65541,
+      "weighted_binary_entropy_bits": 0.0008460925968864383,
+      "weighted_binary_purity": 0.999869974883618,
+      "weighted_category_entropy_bits": 1.0143660894334932,
+      "weighted_category_purity": 0.5432841891094016
+    },
+    "state": {
+      "binary_pure_value_count": 7,
+      "category_pure_value_count": 5,
+      "interpretation": "potential context memorization / scenario dependence",
+      "low_frequency_row_count": 0,
+      "low_frequency_threshold": 5,
+      "low_frequency_value_count": 0,
+      "row_count": 3668522,
+      "unique_value_count": 11,
+      "weighted_binary_entropy_bits": 0.0008332856169523431,
+      "weighted_binary_purity": 0.9998906916736495,
+      "weighted_category_entropy_bits": 1.078754337646247,
+      "weighted_category_purity": 0.5525282388929383
+    }
+  },
+  "interpretation": "High purity indicates potential context memorization/scenario dependence, not automatic causal leakage.",
+  "low_frequency_caveat": "Pure low-frequency values may be unstable and are reported separately.",
+  "risk_terminology": "ENTITY/CONTEXT MEMORIZATION RISK",
+  "supplied_train_test_row_weighted_overlap": {
+    "daddr": {
+      "test_row_overlap_percent": 99.99931852720098,
+      "test_rows": 733705,
+      "test_rows_with_value_seen_in_train": 733700,
+      "train_unique_values": 81
+    },
+    "daddr+proto": {
+      "test_row_overlap_percent": 99.99931852720098,
+      "test_rows": 733705,
+      "test_rows_with_value_seen_in_train": 733700,
+      "train_unique_values": 107
+    },
+    "dport": {
+      "test_row_overlap_percent": 99.8916458249569,
+      "test_rows": 733705,
+      "test_rows_with_value_seen_in_train": 732910,
+      "train_unique_values": 6906
+    },
+    "pkSeqID": {
+      "interpretation": "disjoint unique identifiers do not establish leakage-free entities",
+      "test_row_overlap_percent": 0.0,
+      "test_rows": 733705,
+      "test_rows_with_value_seen_in_train": 0
+    },
+    "proto": {
+      "test_row_overlap_percent": 100.0,
+      "test_rows": 733705,
+      "test_rows_with_value_seen_in_train": 733705,
+      "train_unique_values": 5
+    },
+    "saddr": {
+      "test_row_overlap_percent": 99.9997274108804,
+      "test_rows": 733705,
+      "test_rows_with_value_seen_in_train": 733703,
+      "train_unique_values": 20
+    },
+    "saddr+daddr": {
+      "test_row_overlap_percent": 99.99877334896178,
+      "test_rows": 733705,
+      "test_rows_with_value_seen_in_train": 733696,
+      "train_unique_values": 151
+    },
+    "saddr+dport": {
+      "test_row_overlap_percent": 99.82036377018011,
+      "test_rows": 733705,
+      "test_rows_with_value_seen_in_train": 732387,
+      "train_unique_values": 15649
+    },
+    "saddr+proto": {
+      "test_row_overlap_percent": 99.9997274108804,
+      "test_rows": 733705,
+      "test_rows_with_value_seen_in_train": 733703,
+      "train_unique_values": 49
+    },
+    "sport": {
+      "test_row_overlap_percent": 100.0,
+      "test_rows": 733705,
+      "test_rows_with_value_seen_in_train": 733705,
+      "train_unique_values": 65541
+    }
+  }
+}

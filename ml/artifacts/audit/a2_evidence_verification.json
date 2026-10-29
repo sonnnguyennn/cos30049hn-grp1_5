@@ -1,0 +1,140 @@
+{
+  "artifact_reconciliation": {
+    "archive_member_inventory_rows": 80,
+    "archive_member_inventory_unique_archives": 16,
+    "bot_iot_structure_rows": 7,
+    "bot_iot_unique_logical_ids": 7,
+    "counts_match_expected": true,
+    "extracted_manifest_rows": 80,
+    "extracted_manifest_unique_members": 80,
+    "json_artifacts_parsed": [
+      "artifacts/audit/source_inventory_summary.json",
+      "artifacts/audit/n_baiot_extraction_summary.json",
+      "artifacts/audit/n_baiot_schema.json",
+      "artifacts/audit/bot_iot_schema.json",
+      "artifacts/audit/structural_audit_summary.json"
+    ],
+    "n_baiot_structure_rows": 89,
+    "n_baiot_unique_logical_ids": 89
+  },
+  "audit_batch": "A2",
+  "extracted_member_hash_samples": [
+    {
+      "expected_sha256": "99755635b255c1b05f1605259dbbf3f77200fc284930be888d4c3423a95815d9",
+      "get_file_hash_sha256": "99755635b255c1b05f1605259dbbf3f77200fc284930be888d4c3423a95815d9",
+      "match": true,
+      "relative_path": "Danmini_Doorbell/gafgyt_attacks/combo.csv"
+    },
+    {
+      "expected_sha256": "606bb98a6ffd746e2a33dffc373e8910762f81a90048d2d497a7e0734ed594fb",
+      "get_file_hash_sha256": "606bb98a6ffd746e2a33dffc373e8910762f81a90048d2d497a7e0734ed594fb",
+      "match": true,
+      "relative_path": "SimpleHome_XCS7_1003_WHT_Security_Camera/mirai_attacks/udpplain.csv"
+    }
+  ],
+  "generated_at_utc": "2026-09-24T13:16:55.219023+00:00",
+  "independent_row_and_schema_samples": [
+    {
+      "expected_data_rows": 49548,
+      "expected_schema_signature": "sha256:84a9391e57a872b4b73f50e4b7f552cb208ab10e177e5bb93cb7062bebe25607",
+      "logical_id": "n_baiot:source:Danmini_Doorbell/benign_traffic.csv",
+      "method": "binary physical-line count and direct first-line delimiter split",
+      "observed_data_rows": 49548,
+      "observed_schema_signature": "sha256:84a9391e57a872b4b73f50e4b7f552cb208ab10e177e5bb93cb7062bebe25607",
+      "path": "E:\\Document\\N_BaIoT_Dataset\\Danmini_Doorbell\\benign_traffic.csv",
+      "row_count_match": true,
+      "schema_signature_match": true
+    },
+    {
+      "expected_data_rows": 59718,
+      "expected_schema_signature": "sha256:84a9391e57a872b4b73f50e4b7f552cb208ab10e177e5bb93cb7062bebe25607",
+      "logical_id": "n_baiot:extracted:Danmini_Doorbell/gafgyt_attacks/combo.csv",
+      "method": "binary physical-line count and direct first-line delimiter split",
+      "observed_data_rows": 59718,
+      "observed_schema_signature": "sha256:84a9391e57a872b4b73f50e4b7f552cb208ab10e177e5bb93cb7062bebe25607",
+      "path": "E:\\Document\\iotguard_dataset_work\\n_baiot_extracted\\Danmini_Doorbell\\gafgyt_attacks\\combo.csv",
+      "row_count_match": true,
+      "schema_signature_match": true
+    },
+    {
+      "expected_data_rows": 1000000,
+      "expected_schema_signature": "sha256:3d1d5f0c993e51d34d81660ea9d81d438d966ecf5c0c397479c795c987910048",
+      "logical_id": "bot_iot:all_features_5pct_shards:Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_1.csv",
+      "method": "binary physical-line count and direct first-line delimiter split",
+      "observed_data_rows": 1000000,
+      "observed_schema_signature": "sha256:3d1d5f0c993e51d34d81660ea9d81d438d966ecf5c0c397479c795c987910048",
+      "path": "E:\\Document\\Bot_IoT_Dataset\\Dataset\\5%\\All features\\UNSW_2018_IoT_Botnet_Full5pc_1.csv",
+      "row_count_match": true,
+      "schema_signature_match": true
+    },
+    {
+      "expected_data_rows": 3668522,
+      "expected_schema_signature": "sha256:1c66e1237e66363f4f321284c0c93f7d6e397c5133dcb1d097f288d42ba8e341",
+      "logical_id": "bot_iot:ten_best_full:Dataset/5%/10-best features/UNSW_2018_IoT_Botnet_Final_10_Best.csv",
+      "method": "binary physical-line count and direct first-line delimiter split",
+      "observed_data_rows": 3668522,
+      "observed_schema_signature": "sha256:1c66e1237e66363f4f321284c0c93f7d6e397c5133dcb1d097f288d42ba8e341",
+      "path": "E:\\Document\\Bot_IoT_Dataset\\Dataset\\5%\\10-best features\\UNSW_2018_IoT_Botnet_Final_10_Best.csv",
+      "row_count_match": true,
+      "schema_signature_match": true
+    }
+  ],
+  "overall_status": "PASS",
+  "source_safety": {
+    "bot_iot": {
+      "expected_file_count": 10,
+      "manifest": "artifacts/manifests/bot_iot_raw_manifest.csv",
+      "metadata_match": true,
+      "missing_paths": [],
+      "modified_time_mismatches": [],
+      "observed_file_count": 10,
+      "relative_paths_match": true,
+      "root": "E:\\Document\\Bot_IoT_Dataset",
+      "size_mismatches": [],
+      "unexpected_paths": []
+    },
+    "hash_samples": {
+      "bot_iot": [
+        {
+          "expected_sha256": "3940b549851ac2ce0335f3075c8308b060ecfea8973b104060e5e30867c438e3",
+          "get_file_hash_sha256": "3940b549851ac2ce0335f3075c8308b060ecfea8973b104060e5e30867c438e3",
+          "match": true,
+          "relative_path": "Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_1.csv"
+        }
+      ],
+      "n_baiot": [
+        {
+          "expected_sha256": "16e98ece8eaa23d8ded2e17f95fe7cbfd1b1380f74f0ae38d2a78fa66142ef03",
+          "get_file_hash_sha256": "16e98ece8eaa23d8ded2e17f95fe7cbfd1b1380f74f0ae38d2a78fa66142ef03",
+          "match": true,
+          "relative_path": "Danmini_Doorbell/gafgyt_attacks.rar"
+        },
+        {
+          "expected_sha256": "1d94b20b7663d4398f4b33f07962bd7d9a22645e8ba3aa7c62bec94318c00283",
+          "get_file_hash_sha256": "1d94b20b7663d4398f4b33f07962bd7d9a22645e8ba3aa7c62bec94318c00283",
+          "match": true,
+          "relative_path": "SimpleHome_XCS7_1003_WHT_Security_Camera/mirai_attacks.rar"
+        },
+        {
+          "expected_sha256": "866083fd18f52b6ddde94e47b4d27925432bb83d5f547868f143d87c50354650",
+          "get_file_hash_sha256": "866083fd18f52b6ddde94e47b4d27925432bb83d5f547868f143d87c50354650",
+          "match": true,
+          "relative_path": "Danmini_Doorbell/benign_traffic.csv"
+        }
+      ]
+    },
+    "independent_hash_tool": "PowerShell 7 Get-FileHash -Algorithm SHA256",
+    "n_baiot": {
+      "expected_file_count": 27,
+      "manifest": "artifacts/manifests/n_baiot_raw_manifest.csv",
+      "metadata_match": true,
+      "missing_paths": [],
+      "modified_time_mismatches": [],
+      "observed_file_count": 27,
+      "relative_paths_match": true,
+      "root": "E:\\Document\\N_BaIoT_Dataset",
+      "size_mismatches": [],
+      "unexpected_paths": []
+    }
+  }
+}

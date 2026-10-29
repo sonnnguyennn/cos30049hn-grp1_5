@@ -1,0 +1,205 @@
+{
+  "all_features_5pct_shards": {
+    "all_43_observed_non_label_fields": {
+      "across_source_files": {
+        "excess_rows": 0,
+        "group_count": 0,
+        "row_occurrences": 0
+      },
+      "by_source_file": {
+        "bot_iot:all_features_5pct_shards:Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_1.csv": {
+          "row_count": 1000000,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "bot_iot:all_features_5pct_shards:Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_2.csv": {
+          "row_count": 1000000,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "bot_iot:all_features_5pct_shards:Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_3.csv": {
+          "row_count": 1000000,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "bot_iot:all_features_5pct_shards:Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_4.csv": {
+          "row_count": 668522,
+          "within_file_duplicate_excess_rows": 0
+        }
+      },
+      "candidate_detection": "pandas deterministic 64-bit candidate hash",
+      "candidate_rows_exactly_reconciled": 0,
+      "different_attack": {
+        "excess_rows": 0,
+        "group_count": 0,
+        "row_occurrences": 0
+      },
+      "different_category": {
+        "excess_rows": 0,
+        "group_count": 0,
+        "row_occurrences": 0
+      },
+      "different_subcategory": {
+        "excess_rows": 0,
+        "group_count": 0,
+        "row_occurrences": 0
+      },
+      "duplicate_excess_ratio_percent": "0",
+      "duplicate_excess_rows": 0,
+      "duplicate_group_count": 0,
+      "duplicate_row_occurrences": 0,
+      "exact_confirmation": "length-prefixed UTF-8 source-field tuples grouped by exact compressed bytes; SHA-256 is retained only as a compact group identifier",
+      "same_labels": {
+        "excess_rows": 0,
+        "group_count": 0,
+        "row_occurrences": 0
+      },
+      "total_rows": 3668522,
+      "unique_records": 3668522,
+      "within_source_file_duplicate_excess_rows": 0
+    },
+    "full_46_observed_fields": {
+      "across_source_files": {
+        "excess_rows": 0,
+        "group_count": 0,
+        "row_occurrences": 0
+      },
+      "by_source_file": {
+        "bot_iot:all_features_5pct_shards:Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_1.csv": {
+          "row_count": 1000000,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "bot_iot:all_features_5pct_shards:Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_2.csv": {
+          "row_count": 1000000,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "bot_iot:all_features_5pct_shards:Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_3.csv": {
+          "row_count": 1000000,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "bot_iot:all_features_5pct_shards:Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_4.csv": {
+          "row_count": 668522,
+          "within_file_duplicate_excess_rows": 0
+        }
+      },
+      "candidate_detection": "pandas deterministic 64-bit candidate hash",
+      "candidate_rows_exactly_reconciled": 0,
+      "duplicate_excess_ratio_percent": "0",
+      "duplicate_excess_rows": 0,
+      "duplicate_group_count": 0,
+      "duplicate_row_occurrences": 0,
+      "exact_confirmation": "length-prefixed UTF-8 source-field tuples grouped by exact compressed bytes; SHA-256 is retained only as a compact group identifier",
+      "total_rows": 3668522,
+      "unique_records": 3668522,
+      "within_source_file_duplicate_excess_rows": 0
+    }
+  },
+  "ten_best_full": {
+    "all_17_observed_non_label_fields_including_unnamed": {
+      "across_source_files": {
+        "excess_rows": 0,
+        "group_count": 0,
+        "row_occurrences": 0
+      },
+      "by_source_file": {
+        "bot_iot:ten_best_full:Dataset/5%/10-best features/UNSW_2018_IoT_Botnet_Final_10_Best.csv": {
+          "row_count": 3668522,
+          "within_file_duplicate_excess_rows": 0
+        }
+      },
+      "candidate_detection": "pandas deterministic 64-bit candidate hash",
+      "candidate_rows_exactly_reconciled": 0,
+      "different_attack": {
+        "excess_rows": 0,
+        "group_count": 0,
+        "row_occurrences": 0
+      },
+      "different_category": {
+        "excess_rows": 0,
+        "group_count": 0,
+        "row_occurrences": 0
+      },
+      "different_subcategory": {
+        "excess_rows": 0,
+        "group_count": 0,
+        "row_occurrences": 0
+      },
+      "duplicate_excess_ratio_percent": "0",
+      "duplicate_excess_rows": 0,
+      "duplicate_group_count": 0,
+      "duplicate_row_occurrences": 0,
+      "exact_confirmation": "length-prefixed UTF-8 source-field tuples grouped by exact compressed bytes; SHA-256 is retained only as a compact group identifier",
+      "same_labels": {
+        "excess_rows": 0,
+        "group_count": 0,
+        "row_occurrences": 0
+      },
+      "total_rows": 3668522,
+      "unique_records": 3668522,
+      "within_source_file_duplicate_excess_rows": 0
+    },
+    "full_20_observed_fields": {
+      "across_source_files": {
+        "excess_rows": 0,
+        "group_count": 0,
+        "row_occurrences": 0
+      },
+      "by_source_file": {
+        "bot_iot:ten_best_full:Dataset/5%/10-best features/UNSW_2018_IoT_Botnet_Final_10_Best.csv": {
+          "row_count": 3668522,
+          "within_file_duplicate_excess_rows": 0
+        }
+      },
+      "candidate_detection": "pandas deterministic 64-bit candidate hash",
+      "candidate_rows_exactly_reconciled": 0,
+      "duplicate_excess_ratio_percent": "0",
+      "duplicate_excess_rows": 0,
+      "duplicate_group_count": 0,
+      "duplicate_row_occurrences": 0,
+      "exact_confirmation": "length-prefixed UTF-8 source-field tuples grouped by exact compressed bytes; SHA-256 is retained only as a compact group identifier",
+      "total_rows": 3668522,
+      "unique_records": 3668522,
+      "within_source_file_duplicate_excess_rows": 0
+    },
+    "named_16_non_label_fields_excluding_unnamed": {
+      "across_source_files": {
+        "excess_rows": 0,
+        "group_count": 0,
+        "row_occurrences": 0
+      },
+      "by_source_file": {
+        "bot_iot:ten_best_full:Dataset/5%/10-best features/UNSW_2018_IoT_Botnet_Final_10_Best.csv": {
+          "row_count": 3668522,
+          "within_file_duplicate_excess_rows": 0
+        }
+      },
+      "candidate_detection": "pandas deterministic 64-bit candidate hash",
+      "candidate_rows_exactly_reconciled": 0,
+      "different_attack": {
+        "excess_rows": 0,
+        "group_count": 0,
+        "row_occurrences": 0
+      },
+      "different_category": {
+        "excess_rows": 0,
+        "group_count": 0,
+        "row_occurrences": 0
+      },
+      "different_subcategory": {
+        "excess_rows": 0,
+        "group_count": 0,
+        "row_occurrences": 0
+      },
+      "duplicate_excess_ratio_percent": "0",
+      "duplicate_excess_rows": 0,
+      "duplicate_group_count": 0,
+      "duplicate_row_occurrences": 0,
+      "exact_confirmation": "length-prefixed UTF-8 source-field tuples grouped by exact compressed bytes; SHA-256 is retained only as a compact group identifier",
+      "same_labels": {
+        "excess_rows": 0,
+        "group_count": 0,
+        "row_occurrences": 0
+      },
+      "total_rows": 3668522,
+      "unique_records": 3668522,
+      "within_source_file_duplicate_excess_rows": 0
+    }
+  }
+}

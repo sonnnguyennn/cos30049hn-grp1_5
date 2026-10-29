@@ -1,0 +1,48 @@
+{
+  "both_failures_are_same_9052_rows": true,
+  "decimal_parse_failure_cooccurrence": {
+    "both_parse_failure_rows": 9052,
+    "dport_parse_failure_rows": 9052,
+    "either_parse_failure_rows": 9052,
+    "sport_parse_failure_rows": 9052
+  },
+  "dport": {
+    "bounded_other_token_examples": {},
+    "hexadecimal_parsed_max": 65400,
+    "hexadecimal_parsed_min": 0,
+    "hexadecimal_parses_losslessly_as_base16": true,
+    "hexadecimal_unique_token_count": 1080,
+    "hexadecimal_values_above_65535": 0,
+    "lexical_category_counts": {
+      "decimal_integer": 3659257,
+      "hexadecimal_style": 9052,
+      "negative_decimal": 213
+    },
+    "total_values": 3668522,
+    "unique_negative_tokens": {
+      "-1": 213
+    }
+  },
+  "implementation_status": "not implemented; A5 diagnostic only",
+  "negative_token_semantics": "UNKNOWN SEMANTICS; source feature documentation is silent",
+  "non_binding_preprocessing_contract_candidate": "Preserve raw lexical token; deterministically parse decimal or 0x-prefixed base-16; represent documented sentinel separately if later source evidence defines one.",
+  "source_representation": "all_features_5pct_shards",
+  "sport": {
+    "bounded_other_token_examples": {},
+    "hexadecimal_parsed_max": 771,
+    "hexadecimal_parsed_min": 8,
+    "hexadecimal_parses_losslessly_as_base16": true,
+    "hexadecimal_unique_token_count": 4,
+    "hexadecimal_values_above_65535": 0,
+    "lexical_category_counts": {
+      "decimal_integer": 3659257,
+      "hexadecimal_style": 9052,
+      "negative_decimal": 213
+    },
+    "total_values": 3668522,
+    "unique_negative_tokens": {
+      "-1": 213
+    }
+  },
+  "standard_port_range_reference": "0..65535 used only as protocol-range check; source documentation supplies no alternate range"
+}

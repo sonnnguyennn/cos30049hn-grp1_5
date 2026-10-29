@@ -1,0 +1,417 @@
+{
+  "audit_batch": "G2C bounded canonical materialization and compatibility checks",
+  "bot_iot_canonical_headers": [
+    {
+      "canonical_source_accepted": true,
+      "column_count": 46,
+      "header_order_exact": true,
+      "source_relative_path": "Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_1.csv"
+    },
+    {
+      "canonical_source_accepted": true,
+      "column_count": 46,
+      "header_order_exact": true,
+      "source_relative_path": "Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_2.csv"
+    },
+    {
+      "canonical_source_accepted": true,
+      "column_count": 46,
+      "header_order_exact": true,
+      "source_relative_path": "Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_3.csv"
+    },
+    {
+      "canonical_source_accepted": true,
+      "column_count": 46,
+      "header_order_exact": true,
+      "source_relative_path": "Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_4.csv"
+    }
+  ],
+  "bot_iot_reference_policy": {
+    "canonical_shards_accepted": 4,
+    "supplied_train_test_is_official_split": false,
+    "ten_best_full_canonical": false
+  },
+  "bounded_materialization": {
+    "canonical_record_digest_scheme": "sha256:canonical-record-v1",
+    "first_run_sha256": "79510dbf85b3033c254aa82790ada9555be79af5fe63416e7a23b34468017b07",
+    "raw_feature_rows_persisted": false,
+    "record_count": 17,
+    "records": [
+      {
+        "canonical_record_digest": "sha256:canonical-record-v1:7a78b6c230c58367ba6b35d140c10dcacf346b5468c4b68ee476cb7aaa5ded31",
+        "duplicate_group_id": "sha256:97796ec1db13d292f978e24dd86a65214bf51c7cad2bc20d0d1312a4ec43f544",
+        "feature_count": 115,
+        "label_family": "gafgyt",
+        "label_fine": "gafgyt_combo",
+        "source_data_row_index": 1,
+        "source_logical_id": "n_baiot:extracted:Danmini_Doorbell/gafgyt_attacks/combo.csv",
+        "target_binary": "malicious"
+      },
+      {
+        "canonical_record_digest": "sha256:canonical-record-v1:d642fd94b020e0dad1ec1e1cbe3ef97dfa16f56fea5fdec5bc68444c4430243b",
+        "duplicate_group_id": "sha256:e5303e5095a33db0a7e3ee6231c01671969c9c8ef8e601c917f5053a54506454",
+        "feature_count": 115,
+        "label_family": "gafgyt",
+        "label_fine": "gafgyt_junk",
+        "source_data_row_index": 1,
+        "source_logical_id": "n_baiot:extracted:Danmini_Doorbell/gafgyt_attacks/junk.csv",
+        "target_binary": "malicious"
+      },
+      {
+        "canonical_record_digest": "sha256:canonical-record-v1:c2fc684b2842e80e83ed2d42b917268d4800f4959f72484285671d4253525b9a",
+        "duplicate_group_id": "sha256:de8c2a5eb1011322e8ca3578ca175621b959d8ee467ea014348425b035e711b9",
+        "feature_count": 115,
+        "label_family": "gafgyt",
+        "label_fine": "gafgyt_scan",
+        "source_data_row_index": 1,
+        "source_logical_id": "n_baiot:extracted:Danmini_Doorbell/gafgyt_attacks/scan.csv",
+        "target_binary": "malicious"
+      },
+      {
+        "canonical_record_digest": "sha256:canonical-record-v1:8a1d0ce183577382882964921ccee6f35bab05c10b469e767085cbf9480bfabe",
+        "duplicate_group_id": "sha256:b5a538ef54c1ff5c328a3fded7ffe506383cc691aa7063090c4995aa2e46e69e",
+        "feature_count": 115,
+        "label_family": "gafgyt",
+        "label_fine": "gafgyt_tcp",
+        "source_data_row_index": 1,
+        "source_logical_id": "n_baiot:extracted:Danmini_Doorbell/gafgyt_attacks/tcp.csv",
+        "target_binary": "malicious"
+      },
+      {
+        "canonical_record_digest": "sha256:canonical-record-v1:af54a6c2b2169d375cd27445a667937ff37db3863d79096cbb0e33bdb2532673",
+        "duplicate_group_id": "sha256:43487842cdc62b4e5831af9c57a1db763c46af6fc0153fd6b6d2abf72920710c",
+        "feature_count": 115,
+        "label_family": "gafgyt",
+        "label_fine": "gafgyt_udp",
+        "source_data_row_index": 1,
+        "source_logical_id": "n_baiot:extracted:Danmini_Doorbell/gafgyt_attacks/udp.csv",
+        "target_binary": "malicious"
+      },
+      {
+        "canonical_record_digest": "sha256:canonical-record-v1:6047511760edfdd8c63b14fd244e8958aec2b339570983e023f9257deec9a3d5",
+        "duplicate_group_id": "sha256:000007814a08459ffbce3b35a6a1db0e1bf8a2839435477f20aa3db33604e6b5",
+        "feature_count": 115,
+        "label_family": "gafgyt",
+        "label_fine": "gafgyt_udp",
+        "source_data_row_index": 98715,
+        "source_logical_id": "n_baiot:extracted:Danmini_Doorbell/gafgyt_attacks/udp.csv",
+        "target_binary": "malicious"
+      },
+      {
+        "canonical_record_digest": "sha256:canonical-record-v1:cc01f9848fa2979cc4fe9c9c8b250971d2f1ebcb3b225997098a05f65a7d4f7b",
+        "duplicate_group_id": "sha256:64324afb653a93ee314832b7242b56dbe31a3033428ffed72b27ba21b4ac1bd7",
+        "feature_count": 115,
+        "label_family": "mirai",
+        "label_fine": "mirai_ack",
+        "source_data_row_index": 1,
+        "source_logical_id": "n_baiot:extracted:Danmini_Doorbell/mirai_attacks/ack.csv",
+        "target_binary": "malicious"
+      },
+      {
+        "canonical_record_digest": "sha256:canonical-record-v1:c35497260b17e66c16b9b4470935895bfebd8e8dff728d65d8c37b6a750203b1",
+        "duplicate_group_id": "sha256:fcd34687a86f485c9bc3d217c9c19dd486acddc93ac6bd0b9d2a00c022a8538a",
+        "feature_count": 115,
+        "label_family": "mirai",
+        "label_fine": "mirai_scan",
+        "source_data_row_index": 1,
+        "source_logical_id": "n_baiot:extracted:Danmini_Doorbell/mirai_attacks/scan.csv",
+        "target_binary": "malicious"
+      },
+      {
+        "canonical_record_digest": "sha256:canonical-record-v1:bd8503c64454b06fb55493c64332d888e9131f86a7a3666f90c9b6c10eed6dcd",
+        "duplicate_group_id": "sha256:29cbe138ae146b4c8129598f6007b7698c043956223fc079e085e9dc8d80ddb9",
+        "feature_count": 115,
+        "label_family": "mirai",
+        "label_fine": "mirai_syn",
+        "source_data_row_index": 1,
+        "source_logical_id": "n_baiot:extracted:Danmini_Doorbell/mirai_attacks/syn.csv",
+        "target_binary": "malicious"
+      },
+      {
+        "canonical_record_digest": "sha256:canonical-record-v1:5b8e4432593fc7a12149fe8f17094d4c8d7ac78cf574c820964981b7419bffb5",
+        "duplicate_group_id": "sha256:fb24f833e98b7d8a095d21d00124547badf86b5f053b5289addf50fa8faa2ea1",
+        "feature_count": 115,
+        "label_family": "mirai",
+        "label_fine": "mirai_udp",
+        "source_data_row_index": 1,
+        "source_logical_id": "n_baiot:extracted:Danmini_Doorbell/mirai_attacks/udp.csv",
+        "target_binary": "malicious"
+      },
+      {
+        "canonical_record_digest": "sha256:canonical-record-v1:d9f057232d17c00eb64d7736ddf0922eb7d6121fd43a637fdd728ceae96297ad",
+        "duplicate_group_id": "sha256:e30a67b4226a1cd3000cd0eb5e8c1b329392aacbfebd6959551ff4e4aeb18cef",
+        "feature_count": 115,
+        "label_family": "mirai",
+        "label_fine": "mirai_udpplain",
+        "source_data_row_index": 1,
+        "source_logical_id": "n_baiot:extracted:Danmini_Doorbell/mirai_attacks/udpplain.csv",
+        "target_binary": "malicious"
+      },
+      {
+        "canonical_record_digest": "sha256:canonical-record-v1:1504bc19b2e38358f8f3eebb47ac20334fd71a2ca30d927f38f49cfd934eb342",
+        "duplicate_group_id": "sha256:000007814a08459ffbce3b35a6a1db0e1bf8a2839435477f20aa3db33604e6b5",
+        "feature_count": 115,
+        "label_family": "gafgyt",
+        "label_fine": "gafgyt_udp",
+        "source_data_row_index": 91700,
+        "source_logical_id": "n_baiot:extracted:Ecobee_Thermostat/gafgyt_attacks/udp.csv",
+        "target_binary": "malicious"
+      },
+      {
+        "canonical_record_digest": "sha256:canonical-record-v1:6f1156086fc9c3e1b17a6ac5cf1f7a8626049ead50a564068122c3fe37965b6b",
+        "duplicate_group_id": "sha256:00000cfe4eddc4919cd39e2b6ea3f9272cac47444cd7db3ca3fbc7b2d787ec03",
+        "feature_count": 115,
+        "label_family": "mirai",
+        "label_fine": "mirai_ack",
+        "source_data_row_index": 93346,
+        "source_logical_id": "n_baiot:extracted:Ecobee_Thermostat/mirai_attacks/ack.csv",
+        "target_binary": "malicious"
+      },
+      {
+        "canonical_record_digest": "sha256:canonical-record-v1:f655014968b202c8772256be894615d4b805b152c2c6a556d468c307c0363374",
+        "duplicate_group_id": "sha256:000024571036e9687c173e8f78940c3543369798d05ec29ab7ef9ee75bc501fb",
+        "feature_count": 115,
+        "label_family": "mirai",
+        "label_fine": "mirai_scan",
+        "source_data_row_index": 37721,
+        "source_logical_id": "n_baiot:extracted:Ecobee_Thermostat/mirai_attacks/scan.csv",
+        "target_binary": "malicious"
+      },
+      {
+        "canonical_record_digest": "sha256:canonical-record-v1:444a8b1eb4635891e67c2948b1e3cf2d53f681a8f426870dea589fd35d759d90",
+        "duplicate_group_id": "sha256:00000cfe4eddc4919cd39e2b6ea3f9272cac47444cd7db3ca3fbc7b2d787ec03",
+        "feature_count": 115,
+        "label_family": "mirai",
+        "label_fine": "mirai_ack",
+        "source_data_row_index": 90983,
+        "source_logical_id": "n_baiot:extracted:SimpleHome_XCS7_1002_WHT_Security_Camera/mirai_attacks/ack.csv",
+        "target_binary": "malicious"
+      },
+      {
+        "canonical_record_digest": "sha256:canonical-record-v1:221ed6608fa4514fd5f41b22eabd614d7e0b570b88c24ff27529973e8f7dd1be",
+        "duplicate_group_id": "sha256:000024571036e9687c173e8f78940c3543369798d05ec29ab7ef9ee75bc501fb",
+        "feature_count": 115,
+        "label_family": "mirai",
+        "label_fine": "mirai_scan",
+        "source_data_row_index": 40567,
+        "source_logical_id": "n_baiot:extracted:SimpleHome_XCS7_1002_WHT_Security_Camera/mirai_attacks/scan.csv",
+        "target_binary": "malicious"
+      },
+      {
+        "canonical_record_digest": "sha256:canonical-record-v1:21d25999a5da6d126712bf8ca4dd2f6a347c809bac98221c0436e38ff6a70a52",
+        "duplicate_group_id": "sha256:877003fca2126eef1b1835db1d9be17417c2a5a2516a898e4ab9ab40c82a5bf6",
+        "feature_count": 115,
+        "label_family": "benign",
+        "label_fine": "benign",
+        "source_data_row_index": 1,
+        "source_logical_id": "n_baiot:source:Danmini_Doorbell/benign_traffic.csv",
+        "target_binary": "benign"
+      }
+    ],
+    "rerun_identical": true,
+    "second_run_sha256": "79510dbf85b3033c254aa82790ada9555be79af5fe63416e7a23b34468017b07",
+    "selection_rule": "first source-row for every fine label plus both observations from the first three verified A4 cross-file duplicate pairs"
+  },
+  "execution_boundaries": {
+    "clustering_runs": 0,
+    "deduplication_performed": false,
+    "full_processed_dataset_written": false,
+    "learned_transform_fit": false,
+    "model_training_runs": 0,
+    "resampling_performed": false,
+    "split_selected_or_written": false
+  },
+  "known_a4_duplicate_pairs": [
+    {
+      "a4_exact_group_sha256": "000007814a08459ffbce3b35a6a1db0e1bf8a2839435477f20aa3db33604e6b5",
+      "first_source_observation": [
+        "n_baiot:extracted:Danmini_Doorbell/gafgyt_attacks/udp.csv",
+        98715
+      ],
+      "g2b_digest_matches_a4": true,
+      "g2b_duplicate_group_id": "sha256:000007814a08459ffbce3b35a6a1db0e1bf8a2839435477f20aa3db33604e6b5",
+      "g2b_group_ids_equal": true,
+      "independent_exact_source_tuple_equal": true,
+      "second_source_observation": [
+        "n_baiot:extracted:Ecobee_Thermostat/gafgyt_attacks/udp.csv",
+        91700
+      ]
+    },
+    {
+      "a4_exact_group_sha256": "00000cfe4eddc4919cd39e2b6ea3f9272cac47444cd7db3ca3fbc7b2d787ec03",
+      "first_source_observation": [
+        "n_baiot:extracted:Ecobee_Thermostat/mirai_attacks/ack.csv",
+        93346
+      ],
+      "g2b_digest_matches_a4": true,
+      "g2b_duplicate_group_id": "sha256:00000cfe4eddc4919cd39e2b6ea3f9272cac47444cd7db3ca3fbc7b2d787ec03",
+      "g2b_group_ids_equal": true,
+      "independent_exact_source_tuple_equal": true,
+      "second_source_observation": [
+        "n_baiot:extracted:SimpleHome_XCS7_1002_WHT_Security_Camera/mirai_attacks/ack.csv",
+        90983
+      ]
+    },
+    {
+      "a4_exact_group_sha256": "000024571036e9687c173e8f78940c3543369798d05ec29ab7ef9ee75bc501fb",
+      "first_source_observation": [
+        "n_baiot:extracted:Ecobee_Thermostat/mirai_attacks/scan.csv",
+        37721
+      ],
+      "g2b_digest_matches_a4": true,
+      "g2b_duplicate_group_id": "sha256:000024571036e9687c173e8f78940c3543369798d05ec29ab7ef9ee75bc501fb",
+      "g2b_group_ids_equal": true,
+      "independent_exact_source_tuple_equal": true,
+      "second_source_observation": [
+        "n_baiot:extracted:SimpleHome_XCS7_1002_WHT_Security_Camera/mirai_attacks/scan.csv",
+        40567
+      ]
+    }
+  ],
+  "lexical_numeric_distinction": [
+    {
+      "duplicate_group_id": "sha256:76479386ed7f8818f10e629436b483ec51243e52f8287b0f767295395f718ddd",
+      "parsed_value": 1.0,
+      "source_lexeme": "1"
+    },
+    {
+      "duplicate_group_id": "sha256:38970d926693b27e7994a5100a2b4dce81472d681b001caa9309e2817e8c49a2",
+      "parsed_value": 1.0,
+      "source_lexeme": "1.0"
+    },
+    {
+      "duplicate_group_id": "sha256:f2199a70e11f70b865f4f75dbc99f42fd0e8befd5b5719c824137cee28c9018c",
+      "parsed_value": 1.0,
+      "source_lexeme": "1e0"
+    }
+  ],
+  "overall_status": "PASS",
+  "real_bot_port_examples": [
+    {
+      "expected_kind": "decimal",
+      "matching_ports": {
+        "dport": {
+          "kind": "decimal",
+          "raw": "80",
+          "value": 80
+        },
+        "sport": {
+          "kind": "decimal",
+          "raw": "49960",
+          "value": 49960
+        }
+      },
+      "source_data_row_index": 1,
+      "source_logical_id": "bot_iot:all_features_5pct_shards:Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_1.csv"
+    },
+    {
+      "expected_kind": "unresolved_sentinel",
+      "matching_ports": {
+        "dport": {
+          "kind": "unresolved_sentinel",
+          "raw": "-1",
+          "value": null
+        },
+        "sport": {
+          "kind": "unresolved_sentinel",
+          "raw": "-1",
+          "value": null
+        }
+      },
+      "source_data_row_index": 2,
+      "source_logical_id": "bot_iot:all_features_5pct_shards:Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_1.csv"
+    },
+    {
+      "expected_kind": "hex",
+      "matching_ports": {
+        "dport": {
+          "kind": "hex",
+          "raw": "0x5000",
+          "value": 20480
+        },
+        "sport": {
+          "kind": "hex",
+          "raw": "0x0303",
+          "value": 771
+        }
+      },
+      "source_data_row_index": 632280,
+      "source_logical_id": "bot_iot:all_features_5pct_shards:Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_1.csv"
+    }
+  ],
+  "source_safety": {
+    "after": {
+      "bot_iot_raw": {
+        "file_count": 10,
+        "metadata_digest_sha256": "b704baf2494c4932a1a67daf85e054115887dd6e1a5955517897eb24077e73be",
+        "total_size_bytes": 1995570896
+      },
+      "n_baiot_extracted": {
+        "file_count": 80,
+        "metadata_digest_sha256": "b5a5729b6a604a23620ab6b5cbb4dcac59d185131745916d64308aaa05b37278",
+        "total_size_bytes": 7540406319
+      },
+      "n_baiot_raw": {
+        "file_count": 27,
+        "metadata_digest_sha256": "81e6638bef6458f9af934561c720d1ae427b166f73b07547a239b5697b138df9",
+        "total_size_bytes": 2193229785
+      }
+    },
+    "before": {
+      "bot_iot_raw": {
+        "file_count": 10,
+        "metadata_digest_sha256": "b704baf2494c4932a1a67daf85e054115887dd6e1a5955517897eb24077e73be",
+        "total_size_bytes": 1995570896
+      },
+      "n_baiot_extracted": {
+        "file_count": 80,
+        "metadata_digest_sha256": "b5a5729b6a604a23620ab6b5cbb4dcac59d185131745916d64308aaa05b37278",
+        "total_size_bytes": 7540406319
+      },
+      "n_baiot_raw": {
+        "file_count": 27,
+        "metadata_digest_sha256": "81e6638bef6458f9af934561c720d1ae427b166f73b07547a239b5697b138df9",
+        "total_size_bytes": 2193229785
+      }
+    },
+    "expected_a5_baseline": {
+      "bot_iot_raw": {
+        "file_count": 10,
+        "metadata_digest_sha256": "b704baf2494c4932a1a67daf85e054115887dd6e1a5955517897eb24077e73be",
+        "total_size_bytes": 1995570896
+      },
+      "n_baiot_extracted": {
+        "file_count": 80,
+        "metadata_digest_sha256": "b5a5729b6a604a23620ab6b5cbb4dcac59d185131745916d64308aaa05b37278",
+        "total_size_bytes": 7540406319
+      },
+      "n_baiot_raw": {
+        "file_count": 27,
+        "metadata_digest_sha256": "81e6638bef6458f9af934561c720d1ae427b166f73b07547a239b5697b138df9",
+        "total_size_bytes": 2193229785
+      }
+    },
+    "matches_a5_baseline": true,
+    "unchanged_during_run": true
+  },
+  "stable_source_observation_identity": {
+    "distinct_from_duplicate_group_id": true,
+    "fields": [
+      "source_logical_id",
+      "source_data_row_index"
+    ],
+    "header_excluded": true,
+    "predictor_eligible": false,
+    "row_index_base": 1,
+    "scheme": "source-logical-id-plus-1-based-data-row-v1"
+  },
+  "traversal": {
+    "byte_identical_rerun": true,
+    "expected_row_count": 7062606,
+    "first_generation_sha256": "599a3ecaa251e9f91e6a2124dee49ffd1fd0ecfc2c3499779caa59bfcfdf44bb",
+    "logical_source_count": 89,
+    "ordering_rule": "ascending exact logical_id; then physical data-row order",
+    "second_generation_sha256": "599a3ecaa251e9f91e6a2124dee49ffd1fd0ecfc2c3499779caa59bfcfdf44bb",
+    "traversal_ordinal_base": 1
+  }
+}

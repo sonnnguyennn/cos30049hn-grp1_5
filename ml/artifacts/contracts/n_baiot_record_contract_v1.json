@@ -1,0 +1,58 @@
+{
+  "api_payload_status": "deferred; this internal record is not an inference API design",
+  "contract_name": "n_baiot_record_contract",
+  "contract_scope": "internal data/ML logical record; not the FastAPI payload",
+  "contract_version": "1.0.0",
+  "dataset": "N-BaIoT",
+  "fields": [
+    {
+      "cardinality": 115,
+      "contract_ref": "n_baiot_feature_contract_v1.json",
+      "name": "features",
+      "role": "canonical_candidate_features",
+      "type": "ordered finite numeric vector"
+    },
+    {
+      "name": "target_binary",
+      "predictor_eligible": false,
+      "role": "target_metadata"
+    },
+    {
+      "name": "label_family",
+      "predictor_eligible": false,
+      "role": "analysis_label"
+    },
+    {
+      "name": "label_fine",
+      "predictor_eligible": false,
+      "role": "analysis_label"
+    },
+    {
+      "name": "device",
+      "predictor_eligible": false,
+      "role": "provenance_split_metadata"
+    },
+    {
+      "name": "source_logical_id",
+      "predictor_eligible": false,
+      "role": "provenance_split_metadata"
+    },
+    {
+      "name": "archive_or_source_family",
+      "predictor_eligible": false,
+      "role": "provenance_split_metadata"
+    },
+    {
+      "name": "source_member_filename",
+      "predictor_eligible": false,
+      "role": "provenance_split_metadata"
+    },
+    {
+      "name": "duplicate_group_id",
+      "predictor_eligible": false,
+      "role": "split_audit_metadata"
+    }
+  ],
+  "predictor_boundary": "only the ordered features vector is the canonical candidate set; labels and provenance/split metadata are never predictors",
+  "role": "primary"
+}

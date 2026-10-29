@@ -1,0 +1,58 @@
+{
+  "audit_batch": "G2B independent deterministic preprocessing verification",
+  "checks": {
+    "all_source_metadata_matches_manifests": true,
+    "bot_iot_has_46_ordered_fields": true,
+    "bot_iot_schema_signature_matches": true,
+    "g2a_artifact_hashes_match": true,
+    "g2a_manifest_hash_unchanged": true,
+    "g2a_source_evidence_hashes_match": true,
+    "invalid_port_is_rejected": true,
+    "invalid_provenance_is_rejected": true,
+    "known_provenance_examples_match": true,
+    "n_baiot_has_115_ordered_fields": true,
+    "n_baiot_schema_signature_matches": true,
+    "no_fitted_model_preprocessor_or_split_outputs": true,
+    "no_forbidden_execution_in_smoke": true,
+    "port_parser_matches_independent_examples": true,
+    "smoke_bot_records_are_46_width": true,
+    "smoke_is_deterministic": true,
+    "smoke_n_baiot_records_are_115_width": true,
+    "smoke_source_metadata_unchanged": true,
+    "smoke_status_is_pass": true,
+    "source_tree_metadata_digests_unchanged_from_a5": true,
+    "synthetic_group_matches_independent_sha256": true
+  },
+  "generated_at_utc": "2026-09-27T14:29:44.613634+00:00",
+  "overall_status": "PASS",
+  "recomputed": {
+    "bot_iot_column_count": 46,
+    "bot_iot_schema_signature": "sha256:3d1d5f0c993e51d34d81660ea9d81d438d966ecf5c0c397479c795c987910048",
+    "n_baiot_feature_count": 115,
+    "n_baiot_schema_signature": "sha256:84a9391e57a872b4b73f50e4b7f552cb208ab10e177e5bb93cb7062bebe25607",
+    "source_metadata_matches": {
+      "bot_iot_raw": true,
+      "n_baiot_extracted": true,
+      "n_baiot_raw": true
+    },
+    "source_tree_metadata": {
+      "bot_iot_raw": {
+        "file_count": 10,
+        "metadata_digest_sha256": "b704baf2494c4932a1a67daf85e054115887dd6e1a5955517897eb24077e73be",
+        "total_size_bytes": 1995570896
+      },
+      "n_baiot_extracted": {
+        "file_count": 80,
+        "metadata_digest_sha256": "b5a5729b6a604a23620ab6b5cbb4dcac59d185131745916d64308aaa05b37278",
+        "total_size_bytes": 7540406319
+      },
+      "n_baiot_raw": {
+        "file_count": 27,
+        "metadata_digest_sha256": "81e6638bef6458f9af934561c720d1ae427b166f73b07547a239b5697b138df9",
+        "total_size_bytes": 2193229785
+      }
+    },
+    "synthetic_group_id": "sha256:76479386ed7f8818f10e629436b483ec51243e52f8287b0f767295395f718ddd"
+  },
+  "verification_independence": "The verifier recomputes G2A hashes and schema signatures, exact-vector bytes, port semantics, manifest/source metadata, smoke widths, and forbidden-output boundaries independently; parser calls are compared with independent expectations."
+}

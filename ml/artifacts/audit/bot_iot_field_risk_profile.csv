@@ -1,0 +1,48 @@
+field_name,observed_in,audit_role,risk_terminology,documentation_evidence,final_predictor_status
+pkSeqID,all_features,explicit identifier/index,IDENTIFIER LEAKAGE RISK,Feature workbook defines pkSeqID as Row Identifier; A4 proved uniqueness.,unresolved; A5 diagnostic only
+stime,all_features,temporal/order field,TEMPORAL LEAKAGE RISK,Feature workbook definition: Record start time.,unresolved; A5 diagnostic only
+flgs,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+flgs_number,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+proto,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+proto_number,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+saddr,all_features,network entity/context field,ENTITY/CONTEXT MEMORIZATION RISK,Documented address/port context; predictiveness alone is not called leakage.,unresolved; A5 diagnostic only
+sport,all_features,network entity/context field,ENTITY/CONTEXT MEMORIZATION RISK,Documented address/port context; predictiveness alone is not called leakage.,unresolved; A5 diagnostic only
+daddr,all_features,network entity/context field,ENTITY/CONTEXT MEMORIZATION RISK,Documented address/port context; predictiveness alone is not called leakage.,unresolved; A5 diagnostic only
+dport,all_features,network entity/context field,ENTITY/CONTEXT MEMORIZATION RISK,Documented address/port context; predictiveness alone is not called leakage.,unresolved; A5 diagnostic only
+pkts,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+bytes,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+state,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+state_number,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+ltime,all_features,temporal/order field,TEMPORAL LEAKAGE RISK,Feature workbook definition: Record last time.,unresolved; A5 diagnostic only
+seq,all_features,temporal/order field,TEMPORAL LEAKAGE RISK,Feature workbook definition: Argus sequence number.,unresolved; A5 diagnostic only
+dur,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+mean,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+stddev,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+sum,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+min,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+max,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+spkts,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+dpkts,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+sbytes,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+dbytes,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+rate,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+srate,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+drate,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+TnBPSrcIP,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+TnBPDstIP,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+TnP_PSrcIP,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+TnP_PDstIP,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+TnP_PerProto,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+TnP_Per_Dport,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+AR_P_Proto_P_SrcIP,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+AR_P_Proto_P_DstIP,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+N_IN_Conn_P_DstIP,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+N_IN_Conn_P_SrcIP,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+AR_P_Proto_P_Sport,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+AR_P_Proto_P_Dport,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+Pkts_P_State_P_Protocol_P_DestIP,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+Pkts_P_State_P_Protocol_P_SrcIP,all_features,behavioral/statistical field,audit role only; no final predictor decision,Documented traffic-derived or encoded protocol/state statistic.,unresolved; A5 diagnostic only
+attack,all_features,label/target metadata,DIRECT TARGET LEAKAGE,Observed target field in every representation.,unresolved; A5 diagnostic only
+category,all_features,label/target metadata,DIRECT TARGET LEAKAGE,Observed target field in every representation.,unresolved; A5 diagnostic only
+subcategory,all_features,label/target metadata,DIRECT TARGET LEAKAGE,Observed target field in every representation.,unresolved; A5 diagnostic only
+<unnamed_leading_index>,ten_best_full,explicit identifier/index,IDENTIFIER LEAKAGE RISK,A4 proved the 10-best leading value equals zero-based physical row position.,unresolved; A5 diagnostic only

@@ -1,0 +1,1034 @@
+{
+  "a5_checkpoint_commit": "483c8ace60ad91f75f724e53159b1b57ffc4a1f9",
+  "a7_unresolved": [
+    "primary and secondary dataset role assignment",
+    "final evaluation protocol",
+    "final representation and predictor eligibility",
+    "preprocessing and imbalance policy",
+    "clustering protocol",
+    "processed Assignment-2 package",
+    "versioned API/inference contract",
+    "Raspberry Pi performance benchmark"
+  ],
+  "artifact_sha256": {
+    "artifacts/audit/a6_cross_dataset_compatibility.json": "a45ea0a4ffcf2b79be0516a72aba7720950bffb4aa91316bc2d675bca65bdc7b",
+    "artifacts/audit/a6_dataset_suitability_matrix.csv": "f7bbba912cbd199de66d56493e5df9dbb00c5f6adab4a1aa04b28e3cc088fd98",
+    "artifacts/audit/a6_primary_requirement_matrix.csv": "f3f1bb99ec8611596ecd4f8146efb4f886de868d0fcb76ea49b128790716f8a4",
+    "artifacts/audit/a6_secondary_use_case_matrix.csv": "0a9f0be4f54614da96a6b477c8dc6be0d1ab57bda8effb59e77952fdf3ccc5d9",
+    "docs/analysis/dataset_suitability_comparison.md": "278b66e58229641c61cd78e6b65f2485bb72f110dfbddaad78719cf4cd3a7fcf"
+  },
+  "audit_batch": "A6 cross-dataset suitability synthesis",
+  "bot_entity_purity_baseline_adjustment": {
+    "binary": {
+      "global_majority_baseline_percent": 99.9869974883618,
+      "increase_over_baseline_percentage_points": 0.013002511638204872,
+      "observed_weighted_purity_percent": 100.0
+    },
+    "category": {
+      "global_majority_baseline_percent": 52.51771694431709,
+      "increase_over_baseline_percentage_points": 34.777329943775726,
+      "observed_weighted_purity_percent": 87.29504688809281
+    },
+    "interpretation": "Binary purity is nearly explained by the global malicious majority; category purity and near-total supplied-split entity overlap are more informative context-risk evidence."
+  },
+  "classification_readiness": {
+    "bot_iot": "MIXED because benign/rare support and context/representation risks constrain claims",
+    "n_baiot": "FAVORABLE with unresolved split/predictor/weighting decisions"
+  },
+  "clustering_readiness": {
+    "algorithm_selected": false,
+    "bot_iot": "MIXED; deterministic path requires encoding and risky-field treatment",
+    "n_baiot": "MIXED; deterministic numeric matrix, unresolved scaling/weighting/sampling"
+  },
+  "cross_dataset_compatibility": {
+    "audit_batch": "A6 cross-dataset compatibility",
+    "bot_iot_all_features_observed_column_count": 46,
+    "defensible_direct_model_input_space": false,
+    "direct_cross_dataset_model_evaluation": "NOT_CURRENTLY_DEFENSIBLE",
+    "exact_named_feature_overlap": [],
+    "exact_named_feature_overlap_count": 0,
+    "meaningful_semantic_overlap": [
+      {
+        "bot_iot_examples": [
+          "mean",
+          "stddev",
+          "min",
+          "max"
+        ],
+        "compatibility": "conceptual only; entity/window conditioning and source definitions differ",
+        "concept": "summary location/dispersion statistics",
+        "n_baiot_examples": [
+          "MI_dir_L5_mean",
+          "HH_L5_std",
+          "MI_dir_L5_variance"
+        ]
+      },
+      {
+        "bot_iot_examples": [
+          "pkts",
+          "bytes",
+          "rate",
+          "srate",
+          "drate"
+        ],
+        "compatibility": "conceptual only; audited artifacts do not establish equivalence",
+        "concept": "traffic activity/rate summaries",
+        "n_baiot_examples": [
+          "MI_dir_L5_weight",
+          "HH_jit_L5_mean"
+        ]
+      }
+    ],
+    "n_baiot_feature_count": 115,
+    "reason": "There is no exact named input overlap, and conceptual statistical overlaps have different entity/window/flow definitions. A6 does not engineer a common space.",
+    "role_selection": "not performed",
+    "shared_target_semantics": {
+      "binary_benign_malicious_concept": true,
+      "explanation": "Both can be mapped to benign/malicious, but N-BaIoT family/fine labels and Bot-IoT category/subcategory labels describe different taxonomies.",
+      "taxonomy_directly_interchangeable": false
+    }
+  },
+  "effective_sample_interpretation": {
+    "bot_iot": {
+      "candidate_test_benign_counts": {
+        "B1 supplied train/test": 107,
+        "B2 random stratified record": 95,
+        "B3 chronological numeric-order": 0,
+        "B4 entity grouped by saddr": 107,
+        "B4 entity grouped by saddr+daddr": 56
+      },
+      "full_binary_counts": {
+        "benign": 477,
+        "malicious": 3668045
+      },
+      "interpretation": "Total rows do not compensate for sparse benign and rare-label support.",
+      "one_benign_error_granularity_percent": {
+        "B1 supplied train/test": 0.9345794392523364,
+        "B2 random stratified record": 1.0526315789473684,
+        "B3 chronological numeric-order": null,
+        "B4 entity grouped by saddr": 0.9345794392523364,
+        "B4 entity grouped by saddr+daddr": 1.7857142857142858
+      }
+    },
+    "n_baiot": {
+      "interpretation": "Blind deduplication changes the observed distribution; group-aware boundaries can prevent exact-vector leakage without deleting rows.",
+      "raw_benign_percent": 7.871485397882878,
+      "raw_binary_counts": {
+        "benign": 555932,
+        "malicious": 6506674
+      },
+      "raw_rows": 7062606,
+      "unique_exact_vectors": 2482676,
+      "unique_vector_benign_percent": 20.683206346700093,
+      "unique_vector_binary_counts": {
+        "benign": 513497,
+        "malicious": 1969179
+      }
+    }
+  },
+  "evaluation_protocols": {
+    "bot_iot": [
+      {
+        "candidate": "B1 supplied train/test",
+        "levels": {
+          "binary": {
+            "classes_present_in_test": 2,
+            "coverage_complete": true,
+            "minimum_support_among_represented_classes": 107,
+            "missing_classes": [],
+            "present_classes": [
+              "benign",
+              "malicious"
+            ],
+            "total_classes_expected": 2
+          },
+          "category": {
+            "classes_present_in_test": 5,
+            "coverage_complete": true,
+            "minimum_support_among_represented_classes": 14,
+            "missing_classes": [],
+            "present_classes": [
+              "ddos",
+              "dos",
+              "normal",
+              "reconnaissance",
+              "theft"
+            ],
+            "total_classes_expected": 5
+          },
+          "subcategory": {
+            "classes_present_in_test": 7,
+            "coverage_complete": false,
+            "minimum_support_among_represented_classes": 14,
+            "missing_classes": [
+              "data_exfiltration"
+            ],
+            "present_classes": [
+              "http",
+              "keylogging",
+              "normal",
+              "os_fingerprint",
+              "service_scan",
+              "tcp",
+              "udp"
+            ],
+            "total_classes_expected": 8
+          }
+        },
+        "test_binary_counts": {
+          "benign": 107,
+          "malicious": 733598
+        }
+      },
+      {
+        "candidate": "B2 random stratified record",
+        "levels": {
+          "binary": {
+            "classes_present_in_test": 2,
+            "coverage_complete": true,
+            "minimum_support_among_represented_classes": 95,
+            "missing_classes": [],
+            "present_classes": [
+              "benign",
+              "malicious"
+            ],
+            "total_classes_expected": 2
+          },
+          "category": {
+            "classes_present_in_test": 5,
+            "coverage_complete": true,
+            "minimum_support_among_represented_classes": 16,
+            "missing_classes": [],
+            "present_classes": [
+              "ddos",
+              "dos",
+              "normal",
+              "reconnaissance",
+              "theft"
+            ],
+            "total_classes_expected": 5
+          },
+          "subcategory": {
+            "classes_present_in_test": 8,
+            "coverage_complete": true,
+            "minimum_support_among_represented_classes": 1,
+            "missing_classes": [],
+            "present_classes": [
+              "data_exfiltration",
+              "http",
+              "keylogging",
+              "normal",
+              "os_fingerprint",
+              "service_scan",
+              "tcp",
+              "udp"
+            ],
+            "total_classes_expected": 8
+          }
+        },
+        "test_binary_counts": {
+          "benign": 95,
+          "malicious": 733610
+        }
+      },
+      {
+        "candidate": "B3 chronological numeric-order",
+        "levels": {
+          "binary": {
+            "classes_present_in_test": 1,
+            "coverage_complete": false,
+            "minimum_support_among_represented_classes": 733719,
+            "missing_classes": [
+              "benign"
+            ],
+            "present_classes": [
+              "malicious"
+            ],
+            "total_classes_expected": 2
+          },
+          "category": {
+            "classes_present_in_test": 2,
+            "coverage_complete": false,
+            "minimum_support_among_represented_classes": 79,
+            "missing_classes": [
+              "dos",
+              "normal",
+              "reconnaissance"
+            ],
+            "present_classes": [
+              "ddos",
+              "theft"
+            ],
+            "total_classes_expected": 5
+          },
+          "subcategory": {
+            "classes_present_in_test": 4,
+            "coverage_complete": false,
+            "minimum_support_among_represented_classes": 6,
+            "missing_classes": [
+              "normal",
+              "os_fingerprint",
+              "service_scan",
+              "tcp"
+            ],
+            "present_classes": [
+              "data_exfiltration",
+              "http",
+              "keylogging",
+              "udp"
+            ],
+            "total_classes_expected": 8
+          }
+        },
+        "test_binary_counts": {
+          "malicious": 733719
+        }
+      },
+      {
+        "candidate": "B4 entity grouped by saddr",
+        "levels": {
+          "binary": {
+            "classes_present_in_test": 2,
+            "coverage_complete": true,
+            "minimum_support_among_represented_classes": 107,
+            "missing_classes": [],
+            "present_classes": [
+              "benign",
+              "malicious"
+            ],
+            "total_classes_expected": 2
+          },
+          "category": {
+            "classes_present_in_test": 5,
+            "coverage_complete": true,
+            "minimum_support_among_represented_classes": 27,
+            "missing_classes": [],
+            "present_classes": [
+              "ddos",
+              "dos",
+              "normal",
+              "reconnaissance",
+              "theft"
+            ],
+            "total_classes_expected": 5
+          },
+          "subcategory": {
+            "classes_present_in_test": 8,
+            "coverage_complete": true,
+            "minimum_support_among_represented_classes": 5,
+            "missing_classes": [],
+            "present_classes": [
+              "data_exfiltration",
+              "http",
+              "keylogging",
+              "normal",
+              "os_fingerprint",
+              "service_scan",
+              "tcp",
+              "udp"
+            ],
+            "total_classes_expected": 8
+          }
+        },
+        "test_binary_counts": {
+          "benign": 107,
+          "malicious": 895308
+        }
+      },
+      {
+        "candidate": "B4 entity grouped by saddr+daddr",
+        "levels": {
+          "binary": {
+            "classes_present_in_test": 2,
+            "coverage_complete": true,
+            "minimum_support_among_represented_classes": 56,
+            "missing_classes": [],
+            "present_classes": [
+              "benign",
+              "malicious"
+            ],
+            "total_classes_expected": 2
+          },
+          "category": {
+            "classes_present_in_test": 5,
+            "coverage_complete": true,
+            "minimum_support_among_represented_classes": 51,
+            "missing_classes": [],
+            "present_classes": [
+              "ddos",
+              "dos",
+              "normal",
+              "reconnaissance",
+              "theft"
+            ],
+            "total_classes_expected": 5
+          },
+          "subcategory": {
+            "classes_present_in_test": 7,
+            "coverage_complete": false,
+            "minimum_support_among_represented_classes": 51,
+            "missing_classes": [
+              "data_exfiltration"
+            ],
+            "present_classes": [
+              "http",
+              "keylogging",
+              "normal",
+              "os_fingerprint",
+              "service_scan",
+              "tcp",
+              "udp"
+            ],
+            "total_classes_expected": 8
+          }
+        },
+        "test_binary_counts": {
+          "benign": 56,
+          "malicious": 846020
+        }
+      }
+    ],
+    "n_baiot": {
+      "N2": {
+        "coverage": {
+          "classes_present_in_test": 11,
+          "coverage_complete": true,
+          "minimum_support_among_represented_classes": 51596,
+          "missing_classes": [],
+          "present_classes": [
+            "benign",
+            "gafgyt_combo",
+            "gafgyt_junk",
+            "gafgyt_scan",
+            "gafgyt_tcp",
+            "gafgyt_udp",
+            "mirai_ack",
+            "mirai_scan",
+            "mirai_syn",
+            "mirai_udp",
+            "mirai_udpplain"
+          ],
+          "total_classes_expected": 11
+        },
+        "exact_feature_overlap_rows": 0,
+        "generalization_claim": "unseen exact 115-feature vectors, not unseen devices or contexts",
+        "maximum_distribution_drift_percentage_points": 0.08876287275528227,
+        "minimum_test_fine_class_support": 51596,
+        "test_rows": 1412589,
+        "train_rows": 5650017
+      },
+      "N3": [
+        {
+          "device": "Danmini_Doorbell",
+          "fine_class_coverage": {
+            "classes_present_in_test": 11,
+            "coverage_complete": true,
+            "missing_classes": [],
+            "present_classes": [
+              "benign",
+              "gafgyt_combo",
+              "gafgyt_junk",
+              "gafgyt_scan",
+              "gafgyt_tcp",
+              "gafgyt_udp",
+              "mirai_ack",
+              "mirai_scan",
+              "mirai_syn",
+              "mirai_udp",
+              "mirai_udpplain"
+            ],
+            "total_classes_expected": 11
+          },
+          "generalization_claim": "held-out device identity, but not unseen exact feature vectors",
+          "test_rows": 1018298,
+          "test_rows_with_exact_train_vector_percent": 90.76370571286598
+        },
+        {
+          "device": "Ecobee_Thermostat",
+          "fine_class_coverage": {
+            "classes_present_in_test": 11,
+            "coverage_complete": true,
+            "missing_classes": [],
+            "present_classes": [
+              "benign",
+              "gafgyt_combo",
+              "gafgyt_junk",
+              "gafgyt_scan",
+              "gafgyt_tcp",
+              "gafgyt_udp",
+              "mirai_ack",
+              "mirai_scan",
+              "mirai_syn",
+              "mirai_udp",
+              "mirai_udpplain"
+            ],
+            "total_classes_expected": 11
+          },
+          "generalization_claim": "held-out device identity, but not unseen exact feature vectors",
+          "test_rows": 835876,
+          "test_rows_with_exact_train_vector_percent": 97.35391373840139
+        },
+        {
+          "device": "Ennio_Doorbell",
+          "fine_class_coverage": {
+            "classes_present_in_test": 6,
+            "coverage_complete": false,
+            "missing_classes": [
+              "mirai_ack",
+              "mirai_scan",
+              "mirai_syn",
+              "mirai_udp",
+              "mirai_udpplain"
+            ],
+            "present_classes": [
+              "benign",
+              "gafgyt_combo",
+              "gafgyt_junk",
+              "gafgyt_scan",
+              "gafgyt_tcp",
+              "gafgyt_udp"
+            ],
+            "total_classes_expected": 11
+          },
+          "generalization_claim": "held-out device identity, but not unseen exact feature vectors",
+          "test_rows": 355500,
+          "test_rows_with_exact_train_vector_percent": 88.88579465541491
+        },
+        {
+          "device": "Philips_B120N10_Baby_Monitor",
+          "fine_class_coverage": {
+            "classes_present_in_test": 11,
+            "coverage_complete": true,
+            "missing_classes": [],
+            "present_classes": [
+              "benign",
+              "gafgyt_combo",
+              "gafgyt_junk",
+              "gafgyt_scan",
+              "gafgyt_tcp",
+              "gafgyt_udp",
+              "mirai_ack",
+              "mirai_scan",
+              "mirai_syn",
+              "mirai_udp",
+              "mirai_udpplain"
+            ],
+            "total_classes_expected": 11
+          },
+          "generalization_claim": "held-out device identity, but not unseen exact feature vectors",
+          "test_rows": 1098677,
+          "test_rows_with_exact_train_vector_percent": 83.85075868521868
+        },
+        {
+          "device": "Provision_PT_737E_Security_Camera",
+          "fine_class_coverage": {
+            "classes_present_in_test": 11,
+            "coverage_complete": true,
+            "missing_classes": [],
+            "present_classes": [
+              "benign",
+              "gafgyt_combo",
+              "gafgyt_junk",
+              "gafgyt_scan",
+              "gafgyt_tcp",
+              "gafgyt_udp",
+              "mirai_ack",
+              "mirai_scan",
+              "mirai_syn",
+              "mirai_udp",
+              "mirai_udpplain"
+            ],
+            "total_classes_expected": 11
+          },
+          "generalization_claim": "held-out device identity, but not unseen exact feature vectors",
+          "test_rows": 828260,
+          "test_rows_with_exact_train_vector_percent": 90.6710453239321
+        },
+        {
+          "device": "Provision_PT_838_Security_Camera",
+          "fine_class_coverage": {
+            "classes_present_in_test": 11,
+            "coverage_complete": true,
+            "missing_classes": [],
+            "present_classes": [
+              "benign",
+              "gafgyt_combo",
+              "gafgyt_junk",
+              "gafgyt_scan",
+              "gafgyt_tcp",
+              "gafgyt_udp",
+              "mirai_ack",
+              "mirai_scan",
+              "mirai_syn",
+              "mirai_udp",
+              "mirai_udpplain"
+            ],
+            "total_classes_expected": 11
+          },
+          "generalization_claim": "held-out device identity, but not unseen exact feature vectors",
+          "test_rows": 836891,
+          "test_rows_with_exact_train_vector_percent": 87.36119757531148
+        },
+        {
+          "device": "Samsung_SNH_1011_N_Webcam",
+          "fine_class_coverage": {
+            "classes_present_in_test": 6,
+            "coverage_complete": false,
+            "missing_classes": [
+              "mirai_ack",
+              "mirai_scan",
+              "mirai_syn",
+              "mirai_udp",
+              "mirai_udpplain"
+            ],
+            "present_classes": [
+              "benign",
+              "gafgyt_combo",
+              "gafgyt_junk",
+              "gafgyt_scan",
+              "gafgyt_tcp",
+              "gafgyt_udp"
+            ],
+            "total_classes_expected": 11
+          },
+          "generalization_claim": "held-out device identity, but not unseen exact feature vectors",
+          "test_rows": 375222,
+          "test_rows_with_exact_train_vector_percent": 85.58213537585749
+        },
+        {
+          "device": "SimpleHome_XCS7_1002_WHT_Security_Camera",
+          "fine_class_coverage": {
+            "classes_present_in_test": 11,
+            "coverage_complete": true,
+            "missing_classes": [],
+            "present_classes": [
+              "benign",
+              "gafgyt_combo",
+              "gafgyt_junk",
+              "gafgyt_scan",
+              "gafgyt_tcp",
+              "gafgyt_udp",
+              "mirai_ack",
+              "mirai_scan",
+              "mirai_syn",
+              "mirai_udp",
+              "mirai_udpplain"
+            ],
+            "total_classes_expected": 11
+          },
+          "generalization_claim": "held-out device identity, but not unseen exact feature vectors",
+          "test_rows": 863056,
+          "test_rows_with_exact_train_vector_percent": 94.20628557127232
+        },
+        {
+          "device": "SimpleHome_XCS7_1003_WHT_Security_Camera",
+          "fine_class_coverage": {
+            "classes_present_in_test": 11,
+            "coverage_complete": true,
+            "missing_classes": [],
+            "present_classes": [
+              "benign",
+              "gafgyt_combo",
+              "gafgyt_junk",
+              "gafgyt_scan",
+              "gafgyt_tcp",
+              "gafgyt_udp",
+              "mirai_ack",
+              "mirai_scan",
+              "mirai_syn",
+              "mirai_udp",
+              "mirai_udpplain"
+            ],
+            "total_classes_expected": 11
+          },
+          "generalization_claim": "held-out device identity, but not unseen exact feature vectors",
+          "test_rows": 850826,
+          "test_rows_with_exact_train_vector_percent": 96.01175798576912
+        }
+      ],
+      "N4": [
+        {
+          "device": "Danmini_Doorbell",
+          "exact_feature_overlap_percent": 0.0,
+          "fine_class_coverage": {
+            "classes_present_in_test": 11,
+            "coverage_complete": true,
+            "missing_classes": [],
+            "present_classes": [
+              "benign",
+              "gafgyt_combo",
+              "gafgyt_junk",
+              "gafgyt_scan",
+              "gafgyt_tcp",
+              "gafgyt_udp",
+              "mirai_ack",
+              "mirai_scan",
+              "mirai_syn",
+              "mirai_udp",
+              "mirai_udpplain"
+            ],
+            "total_classes_expected": 11
+          },
+          "generalization_claim": "held-out device plus exact-vector novelty",
+          "test_rows": 1018298,
+          "training_rows_excluded": 3048680,
+          "training_rows_excluded_percent": 50.43885917130629
+        },
+        {
+          "device": "Ecobee_Thermostat",
+          "exact_feature_overlap_percent": 0.0,
+          "fine_class_coverage": {
+            "classes_present_in_test": 11,
+            "coverage_complete": true,
+            "missing_classes": [],
+            "present_classes": [
+              "benign",
+              "gafgyt_combo",
+              "gafgyt_junk",
+              "gafgyt_scan",
+              "gafgyt_tcp",
+              "gafgyt_udp",
+              "mirai_ack",
+              "mirai_scan",
+              "mirai_syn",
+              "mirai_udp",
+              "mirai_udpplain"
+            ],
+            "total_classes_expected": 11
+          },
+          "generalization_claim": "held-out device plus exact-vector novelty",
+          "test_rows": 835876,
+          "training_rows_excluded": 3395116,
+          "training_rows_excluded_percent": 54.52486296980919
+        },
+        {
+          "device": "Ennio_Doorbell",
+          "exact_feature_overlap_percent": 0.0,
+          "fine_class_coverage": {
+            "classes_present_in_test": 6,
+            "coverage_complete": false,
+            "missing_classes": [
+              "mirai_ack",
+              "mirai_scan",
+              "mirai_syn",
+              "mirai_udp",
+              "mirai_udpplain"
+            ],
+            "present_classes": [
+              "benign",
+              "gafgyt_combo",
+              "gafgyt_junk",
+              "gafgyt_scan",
+              "gafgyt_tcp",
+              "gafgyt_udp"
+            ],
+            "total_classes_expected": 11
+          },
+          "generalization_claim": "held-out device plus exact-vector novelty",
+          "test_rows": 355500,
+          "training_rows_excluded": 2438469,
+          "training_rows_excluded_percent": 36.35650010600697
+        },
+        {
+          "device": "Philips_B120N10_Baby_Monitor",
+          "exact_feature_overlap_percent": 0.0,
+          "fine_class_coverage": {
+            "classes_present_in_test": 11,
+            "coverage_complete": true,
+            "missing_classes": [],
+            "present_classes": [
+              "benign",
+              "gafgyt_combo",
+              "gafgyt_junk",
+              "gafgyt_scan",
+              "gafgyt_tcp",
+              "gafgyt_udp",
+              "mirai_ack",
+              "mirai_scan",
+              "mirai_syn",
+              "mirai_udp",
+              "mirai_udpplain"
+            ],
+            "total_classes_expected": 11
+          },
+          "generalization_claim": "held-out device plus exact-vector novelty",
+          "test_rows": 1098677,
+          "training_rows_excluded": 3045141,
+          "training_rows_excluded_percent": 51.05931006220899
+        },
+        {
+          "device": "Provision_PT_737E_Security_Camera",
+          "exact_feature_overlap_percent": 0.0,
+          "fine_class_coverage": {
+            "classes_present_in_test": 11,
+            "coverage_complete": true,
+            "missing_classes": [],
+            "present_classes": [
+              "benign",
+              "gafgyt_combo",
+              "gafgyt_junk",
+              "gafgyt_scan",
+              "gafgyt_tcp",
+              "gafgyt_udp",
+              "mirai_ack",
+              "mirai_scan",
+              "mirai_syn",
+              "mirai_udp",
+              "mirai_udpplain"
+            ],
+            "total_classes_expected": 11
+          },
+          "generalization_claim": "held-out device plus exact-vector novelty",
+          "test_rows": 828260,
+          "training_rows_excluded": 2901563,
+          "training_rows_excluded_percent": 46.54157789766561
+        },
+        {
+          "device": "Provision_PT_838_Security_Camera",
+          "exact_feature_overlap_percent": 0.0,
+          "fine_class_coverage": {
+            "classes_present_in_test": 11,
+            "coverage_complete": true,
+            "missing_classes": [],
+            "present_classes": [
+              "benign",
+              "gafgyt_combo",
+              "gafgyt_junk",
+              "gafgyt_scan",
+              "gafgyt_tcp",
+              "gafgyt_udp",
+              "mirai_ack",
+              "mirai_scan",
+              "mirai_syn",
+              "mirai_udp",
+              "mirai_udpplain"
+            ],
+            "total_classes_expected": 11
+          },
+          "generalization_claim": "held-out device plus exact-vector novelty",
+          "test_rows": 836891,
+          "training_rows_excluded": 2851427,
+          "training_rows_excluded_percent": 45.800795571271735
+        },
+        {
+          "device": "Samsung_SNH_1011_N_Webcam",
+          "exact_feature_overlap_percent": 0.0,
+          "fine_class_coverage": {
+            "classes_present_in_test": 6,
+            "coverage_complete": false,
+            "missing_classes": [
+              "mirai_ack",
+              "mirai_scan",
+              "mirai_syn",
+              "mirai_udp",
+              "mirai_udpplain"
+            ],
+            "present_classes": [
+              "benign",
+              "gafgyt_combo",
+              "gafgyt_junk",
+              "gafgyt_scan",
+              "gafgyt_tcp",
+              "gafgyt_udp"
+            ],
+            "total_classes_expected": 11
+          },
+          "generalization_claim": "held-out device plus exact-vector novelty",
+          "test_rows": 375222,
+          "training_rows_excluded": 2456739,
+          "training_rows_excluded_percent": 36.73692134323377
+        },
+        {
+          "device": "SimpleHome_XCS7_1002_WHT_Security_Camera",
+          "exact_feature_overlap_percent": 0.0,
+          "fine_class_coverage": {
+            "classes_present_in_test": 11,
+            "coverage_complete": true,
+            "missing_classes": [],
+            "present_classes": [
+              "benign",
+              "gafgyt_combo",
+              "gafgyt_junk",
+              "gafgyt_scan",
+              "gafgyt_tcp",
+              "gafgyt_udp",
+              "mirai_ack",
+              "mirai_scan",
+              "mirai_syn",
+              "mirai_udp",
+              "mirai_udpplain"
+            ],
+            "total_classes_expected": 11
+          },
+          "generalization_claim": "held-out device plus exact-vector novelty",
+          "test_rows": 863056,
+          "training_rows_excluded": 3378582,
+          "training_rows_excluded_percent": 54.497213507431994
+        },
+        {
+          "device": "SimpleHome_XCS7_1003_WHT_Security_Camera",
+          "exact_feature_overlap_percent": 0.0,
+          "fine_class_coverage": {
+            "classes_present_in_test": 11,
+            "coverage_complete": true,
+            "missing_classes": [],
+            "present_classes": [
+              "benign",
+              "gafgyt_combo",
+              "gafgyt_junk",
+              "gafgyt_scan",
+              "gafgyt_tcp",
+              "gafgyt_udp",
+              "mirai_ack",
+              "mirai_scan",
+              "mirai_syn",
+              "mirai_udp",
+              "mirai_udpplain"
+            ],
+            "total_classes_expected": 11
+          },
+          "generalization_claim": "held-out device plus exact-vector novelty",
+          "test_rows": 850826,
+          "training_rows_excluded": 3402783,
+          "training_rows_excluded_percent": 54.77951569437424
+        }
+      ]
+    }
+  },
+  "framework": {
+    "allowed_primary_requirement_statuses": [
+      "NOT_SUPPORTED",
+      "PARTIALLY_SUPPORTED",
+      "SUPPORTED",
+      "UNKNOWN"
+    ],
+    "allowed_suitability_statuses": [
+      "ADVERSE",
+      "FAVORABLE",
+      "MIXED",
+      "UNKNOWN / NOT YET MEASURED"
+    ],
+    "numeric_scoring": "prohibited",
+    "suitability_dimensions": [
+      "1. Provenance and integrity",
+      "2. Local structural completeness",
+      "3. Schema consistency",
+      "4. Label/taxonomy clarity",
+      "5. Core benign-vs-malicious suitability",
+      "6. Fine/multiclass support",
+      "7. Missing/invalid-data burden",
+      "8. Duplicate/effective-sample burden",
+      "9. Leakage-controlled split feasibility",
+      "10. Generalization/stress-test feasibility",
+      "11. Preprocessing complexity",
+      "12. Representation/provenance ambiguity",
+      "13. Classification readiness",
+      "14. Clustering readiness",
+      "15. Structured inference-contract complexity",
+      "16. Raspberry-Pi structural deployability",
+      "17. FastAPI/web input-contract practicality",
+      "18. Assignment-2 packaging/reproducibility",
+      "19. Value as a secondary/additional dataset",
+      "20. Cross-dataset compatibility"
+    ]
+  },
+  "generated_at_utc": "2026-09-26T16:09:57.363610+00:00",
+  "integration_scope": {
+    "bot_iot": "heterogeneous pre-extracted schema requiring representation and parser lock",
+    "n_baiot": "stable 115-number pre-extracted vector; high-dimensional contract",
+    "pi_benchmark_performed": false,
+    "web_without_pi_required": true
+  },
+  "method": {
+    "clustering_runs": 0,
+    "models_trained": 0,
+    "numeric_total_score": false,
+    "primary_dataset_selected": false,
+    "processed_splits_written": 0,
+    "raw_dataset_reads": 0,
+    "secondary_dataset_selected": false,
+    "winner_selected": false
+  },
+  "overall_status": "PASS",
+  "pass_semantics": "The synthesis is complete and internally consistent; PASS does not assign roles, adopt a split, select predictors, or assert either dataset is universally suitable.",
+  "primary_requirements": {
+    "P1": {
+      "bot_iot_status": "PARTIALLY_SUPPORTED",
+      "capability": "Core binary support",
+      "n_baiot_status": "SUPPORTED"
+    },
+    "P2": {
+      "bot_iot_status": "SUPPORTED",
+      "capability": "Leakage-controlled evaluation candidate",
+      "n_baiot_status": "SUPPORTED"
+    },
+    "P3": {
+      "bot_iot_status": "NOT_SUPPORTED",
+      "capability": "Reasonable evaluation resolution",
+      "n_baiot_status": "SUPPORTED"
+    },
+    "P4": {
+      "bot_iot_status": "PARTIALLY_SUPPORTED",
+      "capability": "Deterministic inference contract",
+      "n_baiot_status": "SUPPORTED"
+    },
+    "P5": {
+      "bot_iot_status": "PARTIALLY_SUPPORTED",
+      "capability": "Classification without direct target/record identifiers",
+      "n_baiot_status": "SUPPORTED"
+    },
+    "P6": {
+      "bot_iot_status": "PARTIALLY_SUPPORTED",
+      "capability": "Practical clustering path",
+      "n_baiot_status": "PARTIALLY_SUPPORTED"
+    },
+    "P7": {
+      "bot_iot_status": "PARTIALLY_SUPPORTED",
+      "capability": "Reproducible processed Assignment-2 package",
+      "n_baiot_status": "PARTIALLY_SUPPORTED"
+    },
+    "P8": {
+      "bot_iot_status": "PARTIALLY_SUPPORTED",
+      "capability": "Structural Pi/FastAPI plausibility",
+      "n_baiot_status": "PARTIALLY_SUPPORTED"
+    }
+  },
+  "project_requirements_held_fixed": [
+    "core supervised benign-vs-malicious IoT traffic classification",
+    "classification and clustering branches",
+    "leakage-controlled reproducible evaluation",
+    "processed Assignment-2 package independent of raw multi-GB sources",
+    "structured-feature Raspberry Pi and FastAPI/React integration",
+    "web application runnable without Raspberry Pi"
+  ],
+  "role_selection": "not performed",
+  "secondary_use_case_count": {
+    "bot_iot": 4,
+    "n_baiot": 4
+  },
+  "source_artifact_sha256": {
+    "a4_audit_summary.json": "ea0702a90488f3faad16ea2ad9474f314003f223f21e228ec91125c6e0ab2290",
+    "a5_audit_summary.json": "b4908074119751848342becbdeea8b1f44d1d27e9eb0f24675b63421245948b5",
+    "a5_evidence_verification.json": "69ce776630cec8566870a6c4af7a284b10120e4bee2f9b166743f9e0e0fdffb0",
+    "bot_iot_duplicate_summary.json": "43409cfc76e0b57cb0f790cc70fd77191b61528c888fe106b91950bd9c00ca03",
+    "bot_iot_effective_imbalance.csv": "b2c20f4c724fea7f4ae948d61fb367d8b2b9f3335ec0b8647c2ac86900c38250",
+    "bot_iot_entity_overlap_summary.json": "0814ee970467354722ee6d92589352d6e738d2e484425be48f6a46e234cf8e7c",
+    "bot_iot_field_risk_profile.csv": "b86e6ddaba4fe656691e21cd54facf6dcc3bd6ebfe54a7faacbae98f6f81fa67",
+    "bot_iot_identity_free_duplicate_summary.json": "1eeaf98e2890b025c26a5fcc243175138e886dacfa8c5b8bc93d858c2544b77d",
+    "bot_iot_numeric_lineage_analysis.json": "3e189a7d077d3dc7ba216db3222551c4c3ddf5f720ef301d0aa0e9d98267f03b",
+    "bot_iot_port_encoding_summary.json": "2b7fa3608a69a6c3f6977723c653612a7df14913a85a0157034f0948c36ec1f5",
+    "bot_iot_quality_summary.csv": "b29af6539ca259a537d5348a2575c07c701a55d652268bb6664aeee5d343ecbe",
+    "bot_iot_schema.json": "e647d536aeab74b01bcd376475af4cd6541bdbb14555b841298e7909e9bd3175",
+    "bot_iot_split_feasibility.json": "732afd638f6b29d2879f09d7f7d02de001f48efa02ec7f89bc74d028bc19d634",
+    "candidate_split_comparison.csv": "4e1120b37c486fc2bf3b51d568ccdafecca42bec8a00b65faa9a36f3ea0607d9",
+    "label_audit_summary.json": "0673be52327b1b235c6e10b1fbcab4063e679b3a11c0eaf9f068e44f4f5fd154",
+    "n_baiot_device_holdout_matrix.csv": "d35b2f10fe09c354d1a207afc28e62dc4c20105b92bbf8297b38e7cf4b2f0ebe",
+    "n_baiot_duplicate_summary.json": "1ac8e92ad7f837d865f2c1a009c0c3557b979f343c16795de1e9af622d45de34",
+    "n_baiot_effective_imbalance.csv": "324a1cb5a8df98b83ce74ed76ca2c472d99ab22267262ec060466ca02d14e272",
+    "n_baiot_quality_summary.csv": "56e17f90f16c0ff0658d4ce2dc1b56ee4990850d5773268d0c2cc5bf298478ad",
+    "n_baiot_schema.json": "c9ffb3d6b1132f010f380e2a1cec58f2256fd5dc3cc5969736749c46547883fa",
+    "n_baiot_split_leakage_summary.json": "7d9bc180da6e1378af98b32face3e32592911fcf426fdce777ddea2da4ab6d49",
+    "source_inventory_summary.json": "43d0309e092575a95262754872f90ece09e5cb7db3fcb72c332bddf80af08e5a",
+    "structural_audit_summary.json": "2db8cf29135a04c5f50efd79b54a75bea7c24d351b13f1a644d88a28011f39f9"
+  }
+}

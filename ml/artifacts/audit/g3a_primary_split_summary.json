@@ -1,0 +1,345 @@
+{
+  "acceptance_gates": {
+    "all_class_coverage": true,
+    "all_nine_devices_have_all_partitions": true,
+    "cross_label_numeric_groups_zero": true,
+    "duplicate_group_overlap_zero": true,
+    "evaluation_group_overlap_zero": true,
+    "lexical_group_maps_to_one_numeric_group": true,
+    "maximum_fine_prevalence_drift_0_25_percentage_points": true,
+    "source_metadata_unchanged": true,
+    "test_benign_support_50000": true,
+    "test_fraction_14_5_to_15_5_percent": true,
+    "test_minimum_fine_support_25000": true,
+    "total_rows_exact": true,
+    "train_fraction_69_5_to_70_5_percent": true,
+    "validation_benign_support_50000": true,
+    "validation_fraction_14_5_to_15_5_percent": true,
+    "validation_minimum_fine_support_25000": true
+  },
+  "audit_batch": "G3A final primary evaluation split assignment",
+  "class_counts": {
+    "TEST": {
+      "binary": {
+        "benign": 83532,
+        "malicious": 977734
+      },
+      "family": {
+        "benign": 83532,
+        "gafgyt": 427880,
+        "mirai": 549854
+      },
+      "fine": {
+        "benign": 83532,
+        "gafgyt_combo": 77639,
+        "gafgyt_junk": 39817,
+        "gafgyt_scan": 38501,
+        "gafgyt_tcp": 129888,
+        "gafgyt_udp": 142035,
+        "mirai_ack": 96293,
+        "mirai_scan": 80766,
+        "mirai_syn": 110091,
+        "mirai_udp": 184312,
+        "mirai_udpplain": 78392
+      }
+    },
+    "TRAIN": {
+      "binary": {
+        "benign": 388965,
+        "malicious": 4556003
+      },
+      "family": {
+        "benign": 388965,
+        "gafgyt": 1986371,
+        "mirai": 2569632
+      },
+      "fine": {
+        "benign": 388965,
+        "gafgyt_combo": 360649,
+        "gafgyt_junk": 183516,
+        "gafgyt_scan": 178681,
+        "gafgyt_tcp": 603031,
+        "gafgyt_udp": 660494,
+        "mirai_ack": 451121,
+        "mirai_scan": 376899,
+        "mirai_syn": 512748,
+        "mirai_udp": 861690,
+        "mirai_udpplain": 367174
+      }
+    },
+    "VALIDATION": {
+      "binary": {
+        "benign": 83435,
+        "malicious": 972937
+      },
+      "family": {
+        "benign": 83435,
+        "gafgyt": 424021,
+        "mirai": 548916
+      },
+      "fine": {
+        "benign": 83435,
+        "gafgyt_combo": 76868,
+        "gafgyt_junk": 38456,
+        "gafgyt_scan": 37929,
+        "gafgyt_tcp": 126931,
+        "gafgyt_udp": 143837,
+        "mirai_ack": 96407,
+        "mirai_scan": 80314,
+        "mirai_syn": 110460,
+        "mirai_udp": 183997,
+        "mirai_udpplain": 77738
+      }
+    }
+  },
+  "coverage_diagnostics": {
+    "all_89_sources_have_all_partitions": true,
+    "all_nine_devices_have_all_partitions": true,
+    "device_count": 9,
+    "main_split_is_device_held_out": false,
+    "source_design_absences": {
+      "Ennio_Doorbell_mirai": "ABSENT_BY_SOURCE_DESIGN",
+      "Samsung_SNH_1011_N_Webcam_mirai": "ABSENT_BY_SOURCE_DESIGN"
+    },
+    "source_identity_leakage_claimed": false
+  },
+  "execution": {
+    "clustering_runs": 0,
+    "disk_free_bytes_after": 36128591872,
+    "disk_free_bytes_before": 36890767360,
+    "learned_transform_fit": false,
+    "model_training_runs": 0,
+    "resampling_performed": false,
+    "row_scale_split_artifact_written": false,
+    "runtime_seconds": 2652.6971801000036,
+    "temporary_database": "E:\\Document\\iotguard_dataset_work\\g3a_split_v1\\g3a_primary.sqlite",
+    "temporary_database_size_bytes": 762232832
+  },
+  "golden_examples": {
+    "TEST": [
+      {
+        "duplicate_group_id": "sha256:7f1c3ef3967deee59922e7a835978c44b53e1db410b712b87b3e1d82d8b2929f",
+        "evaluation_group_id_v1": "sha256:9e0bcbe92f6aa15e2b75058597f06ca44a6ca228ccbca0cac704c2b26c5fa193",
+        "label_family": "gafgyt",
+        "label_fine": "gafgyt_combo",
+        "source_data_row_index": 4,
+        "source_logical_id": "n_baiot:extracted:Danmini_Doorbell/gafgyt_attacks/combo.csv",
+        "split": "TEST",
+        "target_binary": "malicious"
+      },
+      {
+        "duplicate_group_id": "sha256:d26d39cafbfc7cd7de1a334397f93d1118705fe8f0b966956e354f6a93a84b85",
+        "evaluation_group_id_v1": "sha256:d3621fe5fdc97ef50d621e35f09feb5adbe3d2dfa11ae88f9a1953e2cfad5a41",
+        "label_family": "gafgyt",
+        "label_fine": "gafgyt_combo",
+        "source_data_row_index": 12,
+        "source_logical_id": "n_baiot:extracted:Danmini_Doorbell/gafgyt_attacks/combo.csv",
+        "split": "TEST",
+        "target_binary": "malicious"
+      },
+      {
+        "duplicate_group_id": "sha256:a4adf7ee97665e75831fc6a7eb922a158a391bf801a323a0030a49be47f47a59",
+        "evaluation_group_id_v1": "sha256:e8b747487fc5b6bf1a3edf9342e8afb7f5849ae2962eb2a16686cb804863e3da",
+        "label_family": "gafgyt",
+        "label_fine": "gafgyt_combo",
+        "source_data_row_index": 25,
+        "source_logical_id": "n_baiot:extracted:Danmini_Doorbell/gafgyt_attacks/combo.csv",
+        "split": "TEST",
+        "target_binary": "malicious"
+      },
+      {
+        "duplicate_group_id": "sha256:a2913a83a0d8633a1830ea73170f25678528f8b4724785b7962a2be0885d0c49",
+        "evaluation_group_id_v1": "sha256:a24c0b11c415f7204db742e9ae9929d8688bc60a05f6f30e8fb0d49be781fa22",
+        "label_family": "gafgyt",
+        "label_fine": "gafgyt_combo",
+        "source_data_row_index": 26,
+        "source_logical_id": "n_baiot:extracted:Danmini_Doorbell/gafgyt_attacks/combo.csv",
+        "split": "TEST",
+        "target_binary": "malicious"
+      },
+      {
+        "duplicate_group_id": "sha256:7c9fc5c23ba98e757ccd30e2a12335c01da6eb5830096ee406bbabf3c7b5deaa",
+        "evaluation_group_id_v1": "sha256:19228d844efa8d68d1c82ac2c378f218aaa5106296fd9e0c1a0b51483f04e600",
+        "label_family": "gafgyt",
+        "label_fine": "gafgyt_combo",
+        "source_data_row_index": 34,
+        "source_logical_id": "n_baiot:extracted:Danmini_Doorbell/gafgyt_attacks/combo.csv",
+        "split": "TEST",
+        "target_binary": "malicious"
+      }
+    ],
+    "TRAIN": [
+      {
+        "duplicate_group_id": "sha256:97796ec1db13d292f978e24dd86a65214bf51c7cad2bc20d0d1312a4ec43f544",
+        "evaluation_group_id_v1": "sha256:d34f1a6826dbffcf92c5ad770c5123260ac500daeabbad4b0d1255da8f7026af",
+        "label_family": "gafgyt",
+        "label_fine": "gafgyt_combo",
+        "source_data_row_index": 1,
+        "source_logical_id": "n_baiot:extracted:Danmini_Doorbell/gafgyt_attacks/combo.csv",
+        "split": "TRAIN",
+        "target_binary": "malicious"
+      },
+      {
+        "duplicate_group_id": "sha256:7d3d7e28279b2d9f95ea6e5911b1c88a9913df1b43e31e3937d96d04f082abb3",
+        "evaluation_group_id_v1": "sha256:989df5f21327e1db1cb64622906bd9961302a7e985a507143dafd3ea181132aa",
+        "label_family": "gafgyt",
+        "label_fine": "gafgyt_combo",
+        "source_data_row_index": 2,
+        "source_logical_id": "n_baiot:extracted:Danmini_Doorbell/gafgyt_attacks/combo.csv",
+        "split": "TRAIN",
+        "target_binary": "malicious"
+      },
+      {
+        "duplicate_group_id": "sha256:1c409efab99c2ff3fd85e8656729cdb634afb4fabb661ebb7b2ccad23a28545b",
+        "evaluation_group_id_v1": "sha256:17585c2146f0c45844466e4fa782c5be7b33cef793521a98e49f7cb5de655367",
+        "label_family": "gafgyt",
+        "label_fine": "gafgyt_combo",
+        "source_data_row_index": 3,
+        "source_logical_id": "n_baiot:extracted:Danmini_Doorbell/gafgyt_attacks/combo.csv",
+        "split": "TRAIN",
+        "target_binary": "malicious"
+      },
+      {
+        "duplicate_group_id": "sha256:4121fcdc001599ccc1cfd59a8e31ca33a577288293fcc8de23657827837e0808",
+        "evaluation_group_id_v1": "sha256:21ef41f175b441088d869dc239e5d2c6dd860401b65245beaee1f75340822f80",
+        "label_family": "gafgyt",
+        "label_fine": "gafgyt_combo",
+        "source_data_row_index": 5,
+        "source_logical_id": "n_baiot:extracted:Danmini_Doorbell/gafgyt_attacks/combo.csv",
+        "split": "TRAIN",
+        "target_binary": "malicious"
+      },
+      {
+        "duplicate_group_id": "sha256:20259bfb71d0171eac2c0f6f821fdbd5d15ca8b203a9a174a46fd73afee2a8e0",
+        "evaluation_group_id_v1": "sha256:b31f5e1f93d186ce4db4e5f12636645706d2efb5a593a16c0cc3bb9041cc0044",
+        "label_family": "gafgyt",
+        "label_fine": "gafgyt_combo",
+        "source_data_row_index": 6,
+        "source_logical_id": "n_baiot:extracted:Danmini_Doorbell/gafgyt_attacks/combo.csv",
+        "split": "TRAIN",
+        "target_binary": "malicious"
+      }
+    ],
+    "VALIDATION": [
+      {
+        "duplicate_group_id": "sha256:7d5bd732f1919c13bdfdbef7d850dc67a5f999aff8d6b7adc89c005b030773d3",
+        "evaluation_group_id_v1": "sha256:0a82611119e850fd6ff2b26dd6a4f696efe972cdac17eb8179785289091f896b",
+        "label_family": "gafgyt",
+        "label_fine": "gafgyt_combo",
+        "source_data_row_index": 28,
+        "source_logical_id": "n_baiot:extracted:Danmini_Doorbell/gafgyt_attacks/combo.csv",
+        "split": "VALIDATION",
+        "target_binary": "malicious"
+      },
+      {
+        "duplicate_group_id": "sha256:c67f3c06a7d3282e8c57580ec40133371c331a43b0eaf80da6f3992cc53d52ff",
+        "evaluation_group_id_v1": "sha256:61bd4a362e13ef2fdb32c343557b5ed90b985c0e60ede7a88d409d6a099c1686",
+        "label_family": "gafgyt",
+        "label_fine": "gafgyt_combo",
+        "source_data_row_index": 30,
+        "source_logical_id": "n_baiot:extracted:Danmini_Doorbell/gafgyt_attacks/combo.csv",
+        "split": "VALIDATION",
+        "target_binary": "malicious"
+      },
+      {
+        "duplicate_group_id": "sha256:3707a7c318e047d05d9a382110abfbb2d3f06ef722dd2e1feca64a68ef587f97",
+        "evaluation_group_id_v1": "sha256:55e8255bd34973e8ce06c27c02ace1a47c1bad03d62976adc32ff6b005c16392",
+        "label_family": "gafgyt",
+        "label_fine": "gafgyt_combo",
+        "source_data_row_index": 44,
+        "source_logical_id": "n_baiot:extracted:Danmini_Doorbell/gafgyt_attacks/combo.csv",
+        "split": "VALIDATION",
+        "target_binary": "malicious"
+      },
+      {
+        "duplicate_group_id": "sha256:e8341dc6a9ecf4e3639c06e50617d0120985aeba367ac1f49bd81ca2429c4530",
+        "evaluation_group_id_v1": "sha256:b79a06a3c77d5f043aef687b8637b0f1b4121e4f7fe8917d16a4a122b3c0a364",
+        "label_family": "gafgyt",
+        "label_fine": "gafgyt_combo",
+        "source_data_row_index": 46,
+        "source_logical_id": "n_baiot:extracted:Danmini_Doorbell/gafgyt_attacks/combo.csv",
+        "split": "VALIDATION",
+        "target_binary": "malicious"
+      },
+      {
+        "duplicate_group_id": "sha256:ab36066b88ac9741da72833d9a8f5d79deb35ea9d23e2b0eb901d579b55beb31",
+        "evaluation_group_id_v1": "sha256:70685bd0f606734df0221c4abf39d1df3e078b799a81366f1f578223c04e2f85",
+        "label_family": "gafgyt",
+        "label_fine": "gafgyt_combo",
+        "source_data_row_index": 47,
+        "source_logical_id": "n_baiot:extracted:Danmini_Doorbell/gafgyt_attacks/combo.csv",
+        "split": "VALIDATION",
+        "target_binary": "malicious"
+      }
+    ]
+  },
+  "logical_sources": 89,
+  "maximum_all_level_prevalence_drift_percentage_points": 0.2164599858275409,
+  "maximum_fine_prevalence_drift_percentage_points": 0.2164599858275409,
+  "membership_digest": {
+    "fields": [
+      "source_logical_id",
+      "source_data_row_index",
+      "evaluation_group_id_v1",
+      "split_name"
+    ],
+    "order": "canonical traversal: ascending logical ID, then physical data-row order",
+    "scheme": "sha256:length-prefixed-utf8-membership-v1",
+    "sha256": "edfeb1d96cd2031e0b459fed16e59ef5b1203a56bd2af2306b15968331a0958c"
+  },
+  "minimum_test_fine_support": 38501,
+  "minimum_validation_fine_support": 37929,
+  "overall_status": "ADOPTED",
+  "source_safety": {
+    "after": {
+      "bot_iot_raw": {
+        "file_count": 10,
+        "metadata_digest_sha256": "b704baf2494c4932a1a67daf85e054115887dd6e1a5955517897eb24077e73be",
+        "total_size_bytes": 1995570896
+      },
+      "n_baiot_extracted": {
+        "file_count": 80,
+        "metadata_digest_sha256": "b5a5729b6a604a23620ab6b5cbb4dcac59d185131745916d64308aaa05b37278",
+        "total_size_bytes": 7540406319
+      },
+      "n_baiot_raw": {
+        "file_count": 27,
+        "metadata_digest_sha256": "81e6638bef6458f9af934561c720d1ae427b166f73b07547a239b5697b138df9",
+        "total_size_bytes": 2193229785
+      }
+    },
+    "before": {
+      "bot_iot_raw": {
+        "file_count": 10,
+        "metadata_digest_sha256": "b704baf2494c4932a1a67daf85e054115887dd6e1a5955517897eb24077e73be",
+        "total_size_bytes": 1995570896
+      },
+      "n_baiot_extracted": {
+        "file_count": 80,
+        "metadata_digest_sha256": "b5a5729b6a604a23620ab6b5cbb4dcac59d185131745916d64308aaa05b37278",
+        "total_size_bytes": 7540406319
+      },
+      "n_baiot_raw": {
+        "file_count": 27,
+        "metadata_digest_sha256": "81e6638bef6458f9af934561c720d1ae427b166f73b07547a239b5697b138df9",
+        "total_size_bytes": 2193229785
+      }
+    },
+    "unchanged": true
+  },
+  "split_counts": {
+    "TEST": {
+      "fraction": 0.15026549690015273,
+      "row_count": 1061266
+    },
+    "TRAIN": {
+      "fraction": 0.7001619515515944,
+      "row_count": 4944968
+    },
+    "VALIDATION": {
+      "fraction": 0.14957255154825286,
+      "row_count": 1056372
+    }
+  },
+  "total_rows": 7062606
+}

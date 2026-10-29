@@ -1,0 +1,172 @@
+{
+  "acceptance_gates": {
+    "all_class_coverage": true,
+    "all_nine_devices_have_all_partitions": true,
+    "cross_label_numeric_groups_zero": true,
+    "duplicate_group_overlap_zero": true,
+    "evaluation_group_overlap_zero": true,
+    "lexical_group_maps_to_one_numeric_group": true,
+    "maximum_fine_prevalence_drift_0_25_percentage_points": true,
+    "source_metadata_unchanged": true,
+    "test_benign_support_50000": true,
+    "test_fraction_14_5_to_15_5_percent": true,
+    "test_minimum_fine_support_25000": true,
+    "total_rows_exact": true,
+    "train_fraction_69_5_to_70_5_percent": true,
+    "validation_benign_support_50000": true,
+    "validation_fraction_14_5_to_15_5_percent": true,
+    "validation_minimum_fine_support_25000": true
+  },
+  "canonical_traversal_sha256": "599a3ecaa251e9f91e6a2124dee49ffd1fd0ecfc2c3499779caa59bfcfdf44bb",
+  "contract_name": "n_baiot_primary_split_contract",
+  "contract_version": "1.0.0",
+  "created_at_utc": "2026-09-27T16:46:32.483156+00:00",
+  "delimiter": "ASCII Unit Separator U+001F encoded as one byte 0x1f",
+  "evaluation_group_scheme": {
+    "feature_count": 115,
+    "finite_required": true,
+    "hash": "SHA-256",
+    "identifier_format": "sha256:<64 lowercase hex>",
+    "name": "evaluation-group-binary64-be-v1",
+    "predictor_eligible": false,
+    "signed_zero_rule": "value == 0.0 is encoded as positive +0.0",
+    "value_encoding": "IEEE-754 binary64 big-endian",
+    "vector_encoding": "concatenation of 115 ordered 8-byte values"
+  },
+  "feature_contract_hash": "47ca15c45ba9f30182c4762b47f7291d934f6de07270147c844dd5e25e21fd50",
+  "feature_schema_hash": "sha256:84a9391e57a872b4b73f50e4b7f552cb208ab10e177e5bb93cb7062bebe25607",
+  "g2_reproducibility_manifest_sha256": "86f967843a32ee084c319986dee74772e93ecc43d0ad6159cac986318c9af687",
+  "hash_algorithm": "SHA-256; first 8 bytes as unsigned big-endian uint64",
+  "label_contract_hash": "bdffcdedf675941b9317935b7c124480bf6125092d2de82f49d03fe1aa8b6191",
+  "learned_transform_fit_partition": "TRAIN",
+  "membership_digest": {
+    "fields": [
+      "source_logical_id",
+      "source_data_row_index",
+      "evaluation_group_id_v1",
+      "split_name"
+    ],
+    "order": "canonical traversal: ascending logical ID, then physical data-row order",
+    "scheme": "sha256:length-prefixed-utf8-membership-v1",
+    "sha256": "edfeb1d96cd2031e0b459fed16e59ef5b1203a56bd2af2306b15968331a0958c"
+  },
+  "observed_class_counts": {
+    "TEST": {
+      "binary": {
+        "benign": 83532,
+        "malicious": 977734
+      },
+      "family": {
+        "benign": 83532,
+        "gafgyt": 427880,
+        "mirai": 549854
+      },
+      "fine": {
+        "benign": 83532,
+        "gafgyt_combo": 77639,
+        "gafgyt_junk": 39817,
+        "gafgyt_scan": 38501,
+        "gafgyt_tcp": 129888,
+        "gafgyt_udp": 142035,
+        "mirai_ack": 96293,
+        "mirai_scan": 80766,
+        "mirai_syn": 110091,
+        "mirai_udp": 184312,
+        "mirai_udpplain": 78392
+      }
+    },
+    "TRAIN": {
+      "binary": {
+        "benign": 388965,
+        "malicious": 4556003
+      },
+      "family": {
+        "benign": 388965,
+        "gafgyt": 1986371,
+        "mirai": 2569632
+      },
+      "fine": {
+        "benign": 388965,
+        "gafgyt_combo": 360649,
+        "gafgyt_junk": 183516,
+        "gafgyt_scan": 178681,
+        "gafgyt_tcp": 603031,
+        "gafgyt_udp": 660494,
+        "mirai_ack": 451121,
+        "mirai_scan": 376899,
+        "mirai_syn": 512748,
+        "mirai_udp": 861690,
+        "mirai_udpplain": 367174
+      }
+    },
+    "VALIDATION": {
+      "binary": {
+        "benign": 83435,
+        "malicious": 972937
+      },
+      "family": {
+        "benign": 83435,
+        "gafgyt": 424021,
+        "mirai": 548916
+      },
+      "fine": {
+        "benign": 83435,
+        "gafgyt_combo": 76868,
+        "gafgyt_junk": 38456,
+        "gafgyt_scan": 37929,
+        "gafgyt_tcp": 126931,
+        "gafgyt_udp": 143837,
+        "mirai_ack": 96407,
+        "mirai_scan": 80314,
+        "mirai_syn": 110460,
+        "mirai_udp": 183997,
+        "mirai_udpplain": 77738
+      }
+    }
+  },
+  "observed_counts": {
+    "TEST": {
+      "fraction": 0.15026549690015273,
+      "row_count": 1061266
+    },
+    "TRAIN": {
+      "fraction": 0.7001619515515944,
+      "row_count": 4944968
+    },
+    "VALIDATION": {
+      "fraction": 0.14957255154825286,
+      "row_count": 1056372
+    }
+  },
+  "observed_drift": {
+    "maximum_all_levels_percentage_points": 0.2164599858275409,
+    "maximum_fine_percentage_points": 0.2164599858275409
+  },
+  "primary_dataset": "N-BaIoT",
+  "source_manifest_hashes": {
+    "extracted": "5fe83238878dde2200dc88400ab06911348ceb6cff4eccff3384a4cb110635d5",
+    "raw": "ac4285c77662ce375d6138d05f6b3667a665154fd97640446146192a99212491"
+  },
+  "split_hash_input": "UTF-8 namespace + 0x1f + ASCII evaluation_group_id_v1 text",
+  "split_namespace": "iotguard-primary-split-v1",
+  "split_version": "primary_split_v1",
+  "status": "ADOPTED",
+  "target_fractions": {
+    "TEST": 0.15,
+    "TRAIN": 0.7,
+    "VALIDATION": 0.15
+  },
+  "test_access_policy": "no access until one candidate configuration is frozen under G3B",
+  "test_set_status": "SEALED",
+  "thresholds": {
+    "conceptual": {
+      "TEST": "u >= 0.85",
+      "TRAIN": "u < 0.70",
+      "VALIDATION": "0.70 <= u < 0.85"
+    },
+    "integer_train_upper_exclusive": 12912720851596686132,
+    "integer_validation_upper_exclusive": 15679732462653118874,
+    "uint64_space": 18446744073709551616
+  },
+  "validation_policy": "hyperparameter selection, model comparison, preprocessing choice, and later explicit threshold choice only"
+}

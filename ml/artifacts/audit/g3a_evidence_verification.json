@@ -1,0 +1,81 @@
+{
+  "audit_batch": "G3A independent whole-corpus split verification",
+  "checks": {
+    "all_89_sources_have_all_partitions": true,
+    "all_g2a_contract_artifact_hashes_unchanged": true,
+    "all_nine_devices_have_all_partitions": true,
+    "binary_coverage_2_of_2_each_split": true,
+    "bounded_examples_independently_reproduce": true,
+    "canonical_expected_rows_are_7062606": true,
+    "canonical_source_count_is_89": true,
+    "canonical_traversal_hash_unchanged": true,
+    "class_counts_match_primary_evidence": true,
+    "contract_is_adopted_and_test_is_sealed": true,
+    "cross_label_numeric_group_conflict_zero": true,
+    "duplicate_group_overlap_zero": true,
+    "evaluation_group_overlap_zero": true,
+    "family_coverage_3_of_3_each_split": true,
+    "fine_coverage_11_of_11_each_split": true,
+    "g2_reproducibility_manifest_hash_unchanged": true,
+    "g2a_contract_manifest_hash_unchanged": true,
+    "lexical_group_count_matches_primary_evidence": true,
+    "maximum_fine_prevalence_drift_passes": true,
+    "membership_digest_reproducible": true,
+    "no_final_model_preprocessor_or_row_split_files": true,
+    "numeric_group_count_matches_primary_evidence": true,
+    "primary_source_manifest_hashes_unchanged": true,
+    "primary_source_total_is_7062606": true,
+    "source_metadata_unchanged": true,
+    "split_counts_match_primary_evidence": true,
+    "split_counts_sum_exactly": true,
+    "test_benign_support_passes": true,
+    "test_fraction_passes": true,
+    "test_minimum_fine_support_passes": true,
+    "train_fraction_passes": true,
+    "validation_benign_support_passes": true,
+    "validation_fraction_passes": true,
+    "validation_minimum_fine_support_passes": true
+  },
+  "generated_at_utc": "2026-09-27T17:26:00.433070+00:00",
+  "overall_status": "PASS",
+  "recomputed": {
+    "all_sources_have_all_partitions": true,
+    "cross_label_numeric_group_count": 0,
+    "device_count": 9,
+    "duplicate_group_overlap_count": 0,
+    "evaluation_group_overlap_count": 0,
+    "forbidden_outputs": [],
+    "golden_examples_checked": 15,
+    "maximum_fine_prevalence_drift_percentage_points": 0.2164599858275409,
+    "membership_sha256": "edfeb1d96cd2031e0b459fed16e59ef5b1203a56bd2af2306b15968331a0958c",
+    "minimum_test_fine_support": 38501,
+    "minimum_validation_fine_support": 37929,
+    "source_metadata": {
+      "bot_iot_raw": {
+        "file_count": 10,
+        "metadata_digest_sha256": "b704baf2494c4932a1a67daf85e054115887dd6e1a5955517897eb24077e73be",
+        "total_size_bytes": 1995570896
+      },
+      "n_baiot_extracted": {
+        "file_count": 80,
+        "metadata_digest_sha256": "b5a5729b6a604a23620ab6b5cbb4dcac59d185131745916d64308aaa05b37278",
+        "total_size_bytes": 7540406319
+      },
+      "n_baiot_raw": {
+        "file_count": 27,
+        "metadata_digest_sha256": "81e6638bef6458f9af934561c720d1ae427b166f73b07547a239b5697b138df9",
+        "total_size_bytes": 2193229785
+      }
+    },
+    "split_counts": {
+      "TEST": 1061266,
+      "TRAIN": 4944968,
+      "VALIDATION": 1056372
+    },
+    "total_rows": 7062606,
+    "unique_duplicate_group_count": 2482676,
+    "unique_evaluation_group_count": 2482676
+  },
+  "temporary_database_retained": "E:\\Document\\iotguard_dataset_work\\g3a_split_v1\\g3a_verify.sqlite",
+  "verification_independence": "This verifier does not import the G3A driver or split module. It independently implements binary64 serialization, split hashing, membership framing, full class counts, and SQLite whole-corpus group reconciliation."
+}

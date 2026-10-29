@@ -1,0 +1,152 @@
+{
+  "audit_batch": "A3",
+  "bot_iot": {
+    "aggregate_distribution_comparisons": {
+      "attack": {
+        "all_features_matches_ten_best_full": true,
+        "train_plus_test_matches_ten_best_full": true
+      },
+      "attack_category_subcategory": {
+        "all_features_matches_ten_best_full": true,
+        "train_plus_test_matches_ten_best_full": true
+      },
+      "category": {
+        "all_features_matches_ten_best_full": true,
+        "train_plus_test_matches_ten_best_full": true
+      },
+      "subcategory": {
+        "all_features_matches_ten_best_full": true,
+        "train_plus_test_matches_ten_best_full": true
+      }
+    },
+    "all_features_attack_counts": {
+      "0": 477,
+      "1": 3668045
+    },
+    "all_features_category_counts": {
+      "DDoS": 1926624,
+      "DoS": 1650260,
+      "Normal": 477,
+      "Reconnaissance": 91082,
+      "Theft": 79
+    },
+    "all_features_subcategory_counts": {
+      "Data_Exfiltration": 6,
+      "HTTP": 2474,
+      "Keylogging": 73,
+      "Normal": 477,
+      "OS_Fingerprint": 17914,
+      "Service_Scan": 73168,
+      "TCP": 1593180,
+      "UDP": 1981230
+    },
+    "artifact_distribution_mismatch_count": 0,
+    "first_all_features_shard_independent_profile": {
+      "attack_counts": {
+        "1": 1000000
+      },
+      "category_counts": {
+        "DoS": 1000000
+      },
+      "relative_path": "Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_1.csv",
+      "row_count": 1000000,
+      "subcategory_counts": {
+        "HTTP": 1485,
+        "TCP": 615800,
+        "UDP": 382715
+      }
+    },
+    "invalid_or_missing_label_rows": {
+      "all_features_5pct_shards": 0,
+      "ten_best_full": 0,
+      "ten_best_predefined_test": 0,
+      "ten_best_predefined_train": 0
+    },
+    "method": "pandas chunked usecols aggregation with string dtype and NA coercion disabled",
+    "record_identity_proven": false,
+    "representation_row_counts": {
+      "all_features_5pct_shards": 3668522,
+      "ten_best_full": 3668522,
+      "ten_best_predefined_test": 733705,
+      "ten_best_predefined_train": 2934817
+    },
+    "status": "PASS"
+  },
+  "evidence_sha256": {
+    "artifacts/audit/bot_iot_canonical_label_mapping.csv": "05c23d5b2c661443e0caa06b1a4eac1b3debd5d5af5d9e309ee73b65d5c98585",
+    "artifacts/audit/bot_iot_label_distribution.csv": "40da2aa8bd30c6edde5cbe68fa8a370f8217d0d908ad1917ea7f056b5141fd83",
+    "artifacts/audit/bot_iot_label_relationships.csv": "54d8de770c4cf68bf3f81163b7a246a708747b0f5f0a5291c143551fbafdc322",
+    "artifacts/audit/bot_iot_label_values.csv": "ba2464d2ce8d4cb693acc9263057cb1d4d2ec620c56ec9d58c2e931080094fae",
+    "artifacts/audit/bot_iot_representation_label_comparison.csv": "a088a4be3130d9c90895472d87ff1b9cfb7f8f4a4cd55b31ca8d8fdbcfcb0528",
+    "artifacts/audit/label_audit_summary.json": "0673be52327b1b235c6e10b1fbcab4063e679b3a11c0eaf9f068e44f4f5fd154",
+    "artifacts/audit/n_baiot_device_label_distribution.csv": "9565debebb864324b7c59c4b8feb35c61c2d97ddf4411852c6674e24bd12aa6d",
+    "artifacts/audit/n_baiot_label_distribution.csv": "8db8caa4984e774c3a6ba72d2a63b43d24b909bbdc5e9303f92e6729c2b34433",
+    "artifacts/audit/n_baiot_label_mapping.csv": "5c9d55421730c2be254c268fb163a065dd9101c07940dd90499bb5dddc0b27c1"
+  },
+  "generated_at_utc": "2026-09-24T15:09:15.959048+00:00",
+  "n_baiot": {
+    "all_logical_csvs_map_once": true,
+    "binary_distribution": {
+      "benign": 555932,
+      "malicious": 6506674
+    },
+    "collision_free": true,
+    "family_distribution": {
+      "benign": 555932,
+      "gafgyt": 2838272,
+      "mirai": 3668402
+    },
+    "family_qualified_scan_and_udp_preserved": true,
+    "fine_class_distribution": {
+      "benign": 555932,
+      "gafgyt_combo": 515156,
+      "gafgyt_junk": 261789,
+      "gafgyt_scan": 255111,
+      "gafgyt_tcp": 859850,
+      "gafgyt_udp": 946366,
+      "mirai_ack": 643821,
+      "mirai_scan": 537979,
+      "mirai_syn": 733299,
+      "mirai_udp": 1229999,
+      "mirai_udpplain": 523304
+    },
+    "fine_class_total": 7062606,
+    "logical_csv_count": 89,
+    "mapping_mismatch_count": 0,
+    "method": "independent strict provenance mapper over A2 structure evidence",
+    "status": "PASS"
+  },
+  "overall_status": "PASS",
+  "source_safety": {
+    "bot_iot_raw": {
+      "expected_file_count": 10,
+      "metadata_match": true,
+      "missing_paths": [],
+      "modified_time_mismatches": [],
+      "observed_file_count": 10,
+      "root": "E:\\Document\\Bot_IoT_Dataset",
+      "size_mismatches": [],
+      "unexpected_paths": []
+    },
+    "n_baiot_extracted": {
+      "expected_file_count": 80,
+      "metadata_match": true,
+      "missing_paths": [],
+      "note": "The extraction manifest stores hashes and sizes but not timestamps.",
+      "observed_file_count": 80,
+      "root": "E:\\Document\\iotguard_dataset_work\\n_baiot_extracted",
+      "size_mismatches": [],
+      "unexpected_paths": []
+    },
+    "n_baiot_raw": {
+      "expected_file_count": 27,
+      "metadata_match": true,
+      "missing_paths": [],
+      "modified_time_mismatches": [],
+      "observed_file_count": 27,
+      "root": "E:\\Document\\N_BaIoT_Dataset",
+      "size_mismatches": [],
+      "unexpected_paths": []
+    }
+  }
+}

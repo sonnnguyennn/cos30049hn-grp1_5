@@ -1,0 +1,57 @@
+{
+  "candidate_hash_groups": {
+    "all_non_label_excluding_pkseqid_with_seq": 0,
+    "all_non_label_excluding_pkseqid_without_seq": 0,
+    "ten_best_non_label_excluding_pkseqid_index_with_seq": 0,
+    "ten_best_non_label_excluding_pkseqid_index_without_seq": 185
+  },
+  "eligibility_status": "diagnostic views only; no final predictor set selected",
+  "exact_confirmation": {
+    "all_non_label_excluding_pkseqid_with_seq": {
+      "conflicting_attack_groups": 0,
+      "conflicting_category_groups": 0,
+      "conflicting_subcategory_groups": 0,
+      "duplicate_excess": 0,
+      "duplicate_groups": 0,
+      "rows_in_duplicate_groups": 0,
+      "total_rows": 3668522,
+      "unique_tuples": 3668522
+    },
+    "all_non_label_excluding_pkseqid_without_seq": {
+      "conflicting_attack_groups": 0,
+      "conflicting_category_groups": 0,
+      "conflicting_subcategory_groups": 0,
+      "duplicate_excess": 0,
+      "duplicate_groups": 0,
+      "rows_in_duplicate_groups": 0,
+      "total_rows": 3668522,
+      "unique_tuples": 3668522
+    },
+    "ten_best_non_label_excluding_pkseqid_index_with_seq": {
+      "conflicting_attack_groups": 0,
+      "conflicting_category_groups": 0,
+      "conflicting_subcategory_groups": 0,
+      "duplicate_excess": 0,
+      "duplicate_groups": 0,
+      "rows_in_duplicate_groups": 0,
+      "total_rows": 3668522,
+      "unique_tuples": 3668522
+    },
+    "ten_best_non_label_excluding_pkseqid_index_without_seq": {
+      "conflicting_attack_groups": 0,
+      "conflicting_category_groups": 0,
+      "conflicting_subcategory_groups": 0,
+      "duplicate_excess": 185,
+      "duplicate_groups": 185,
+      "rows_in_duplicate_groups": 370,
+      "total_rows": 3668522,
+      "unique_tuples": 3668337
+    }
+  },
+  "view_definitions": {
+    "all_non_label_excluding_pkseqid_with_seq": "all All-features fields except labels and pkSeqID; seq retained",
+    "all_non_label_excluding_pkseqid_without_seq": "same diagnostic view with documented Argus sequence number removed",
+    "ten_best_non_label_excluding_pkseqid_index_with_seq": "named 10-best fields except labels and pkSeqID; unnamed physical index excluded; seq retained",
+    "ten_best_non_label_excluding_pkseqid_index_without_seq": "same diagnostic view with seq removed"
+  }
+}

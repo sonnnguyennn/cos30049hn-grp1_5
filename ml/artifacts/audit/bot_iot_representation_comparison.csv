@@ -1,0 +1,5 @@
+representation,file_count,total_rows,column_counts,schema_count,ordered_schema_identical_within_group,delimiters,relationship_note
+all_features_5pct_shards,4,3668522,[46],1,True,"[""comma""]",Four observed shards of one all-features 5% representation; do not concatenate with derived 10-best representations.
+ten_best_full,1,3668522,[20],1,True,"[""semicolon""]",Separate derived 10-best representation; semicolon-delimited local file includes an unnamed leading column.
+ten_best_predefined_test,1,733705,[19],1,True,"[""comma""]",Supplied derived 10-best testing representation; not adopted as an IoTGuard split.
+ten_best_predefined_train,1,2934817,[19],1,True,"[""comma""]",Supplied derived 10-best training representation; not adopted as an IoTGuard split.

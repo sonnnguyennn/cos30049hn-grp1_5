@@ -1,0 +1,53 @@
+{
+  "audit_batch": "A7 independent verification",
+  "checks": {
+    "a6_primary_gate_statuses_match_sources": true,
+    "adr_matches_machine_decision": true,
+    "bot_benign_support_is_477": true,
+    "bot_candidate_test_benign_range_is_0_to_107": true,
+    "cross_dataset_exact_feature_overlap_is_zero": true,
+    "decision_source_hashes_match": true,
+    "decision_trace_contains_a0_through_a6": true,
+    "decision_trace_hashes_match": true,
+    "g1_checklist_complete": true,
+    "g2_g3_deferrals_present": true,
+    "jira_handoff_covers_iotg_42_through_50": true,
+    "n2_zero_exact_vector_overlap_and_11_class_coverage": true,
+    "no_clustering_algorithm_selected": true,
+    "no_direct_cross_dataset_input_space_claim": true,
+    "no_final_predictors_adopted": true,
+    "no_final_split_adopted": true,
+    "no_numeric_score_or_ranking": true,
+    "no_preprocessing_implementation": true,
+    "rejected_alternative_present": true,
+    "role_assignment_follows_primary_gate": true,
+    "secondary_ml_use_is_required": true
+  },
+  "generated_at_utc": "2026-09-27T13:05:32.126465+00:00",
+  "overall_status": "PASS",
+  "recomputed_from_a0_a6": {
+    "bot_candidate_test_benign_max": 107,
+    "bot_candidate_test_benign_min": 0,
+    "bot_iot_benign_rows": 477,
+    "bot_iot_p1_p2_p3": {
+      "P1": "PARTIALLY_SUPPORTED",
+      "P2": "SUPPORTED",
+      "P3": "NOT_SUPPORTED"
+    },
+    "cross_dataset_exact_named_feature_overlap_count": 0,
+    "n2_exact_feature_overlap_rows": 0,
+    "n2_fine_class_coverage": 11,
+    "n_baiot_p1_p2_p3": {
+      "P1": "SUPPORTED",
+      "P2": "SUPPORTED",
+      "P3": "SUPPORTED"
+    }
+  },
+  "verification_independence": "This verifier does not import scripts/dataset_role_decision.py. It reads A0-A6 compact evidence directly, recomputes the role gate and key support facts, and cross-checks the ADR, decision, trace, and G1 closure artifacts.",
+  "verified_output_sha256": {
+    "artifacts/audit/a7_dataset_role_decision.json": "ac20878f86641a2b2b37b464650c21f2e1fbad2ac7d3ed452a3d02a006596c63",
+    "artifacts/audit/a7_decision_trace.csv": "58117d96944c138b4e84f2dc929fffdb47a97f85853070799f681bdc2e0b1ba9",
+    "artifacts/audit/a7_g1_closure_checklist.json": "973b1525a6ba225336ac131aa963f1b84bd9bbfaeb884d68dcf30d1b399daee5",
+    "docs/decisions/ADR-001-dataset-role-selection.md": "ff08b19ad5e0cee3944ae14c6abdf13b72920ae5b5b9b53502579e2b13363bc7"
+  }
+}

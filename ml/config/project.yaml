@@ -1,0 +1,28 @@
+project:
+  name: "IoTGuard"
+  topic: "Network Traffic Classification for Anomaly Detection"
+
+ml:
+  primary_task:
+    type: "classification"
+    target_form: "binary_benign_vs_malicious"
+  candidate_classifiers:
+    - logistic_regression
+    - random_forest
+    - xgboost
+  clustering:
+    candidates:
+      - kmeans
+      - minibatch_kmeans
+
+data:
+  primary_dataset: "n_baiot"
+  secondary_datasets: ["bot_iot"]
+
+edge:
+  platform: "Raspberry Pi 4"
+  required_for_core_pipeline: false
+
+web:
+  frontend: "React.js"
+  backend: "FastAPI"

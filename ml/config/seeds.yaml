@@ -1,0 +1,5 @@
+# Fixed defaults for future reproducible experiments; usage must be recorded per run.
+random_seeds:
+  python: 42
+  numpy: 42
+  scikit_learn: 42

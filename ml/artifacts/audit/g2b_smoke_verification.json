@@ -1,0 +1,287 @@
+{
+  "audit_batch": "G2B bounded real-source smoke verification",
+  "bot_iot": [
+    {
+      "relative_path": "Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_1.csv",
+      "rows": [
+        {
+          "data_row_index": 1,
+          "identifier_field_count": 1,
+          "observed_column_count": 46,
+          "port_kinds": {
+            "dport": "decimal",
+            "sport": "decimal"
+          },
+          "target_metadata": {
+            "attack": "1",
+            "category": "DoS",
+            "subcategory": "HTTP"
+          },
+          "validation_result": "PASS"
+        },
+        {
+          "data_row_index": 2,
+          "identifier_field_count": 1,
+          "observed_column_count": 46,
+          "port_kinds": {
+            "dport": "unresolved_sentinel",
+            "sport": "unresolved_sentinel"
+          },
+          "target_metadata": {
+            "attack": "1",
+            "category": "DoS",
+            "subcategory": "HTTP"
+          },
+          "validation_result": "PASS"
+        },
+        {
+          "data_row_index": 3,
+          "identifier_field_count": 1,
+          "observed_column_count": 46,
+          "port_kinds": {
+            "dport": "decimal",
+            "sport": "decimal"
+          },
+          "target_metadata": {
+            "attack": "1",
+            "category": "DoS",
+            "subcategory": "HTTP"
+          },
+          "validation_result": "PASS"
+        }
+      ],
+      "source_logical_id": "bot_iot:all_features_5pct_shards:Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_1.csv"
+    },
+    {
+      "relative_path": "Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_2.csv",
+      "rows": [
+        {
+          "data_row_index": 1,
+          "identifier_field_count": 1,
+          "observed_column_count": 46,
+          "port_kinds": {
+            "dport": "decimal",
+            "sport": "decimal"
+          },
+          "target_metadata": {
+            "attack": "1",
+            "category": "DoS",
+            "subcategory": "UDP"
+          },
+          "validation_result": "PASS"
+        },
+        {
+          "data_row_index": 2,
+          "identifier_field_count": 1,
+          "observed_column_count": 46,
+          "port_kinds": {
+            "dport": "decimal",
+            "sport": "decimal"
+          },
+          "target_metadata": {
+            "attack": "1",
+            "category": "DoS",
+            "subcategory": "UDP"
+          },
+          "validation_result": "PASS"
+        },
+        {
+          "data_row_index": 3,
+          "identifier_field_count": 1,
+          "observed_column_count": 46,
+          "port_kinds": {
+            "dport": "decimal",
+            "sport": "decimal"
+          },
+          "target_metadata": {
+            "attack": "1",
+            "category": "DoS",
+            "subcategory": "UDP"
+          },
+          "validation_result": "PASS"
+        }
+      ],
+      "source_logical_id": "bot_iot:all_features_5pct_shards:Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_2.csv"
+    }
+  ],
+  "determinism": {
+    "bot_iot_first_records_identical_on_repeat": true,
+    "n_baiot_first_records_identical_on_repeat": true,
+    "timestamp_or_randomness_in_canonical_records": false
+  },
+  "execution_counts": {
+    "clustering_runs": 0,
+    "deduplicated_rows": 0,
+    "model_training_runs": 0,
+    "resampling_runs": 0,
+    "split_files_written": 0,
+    "transform_fit_runs": 0
+  },
+  "generated_at_utc": "2026-09-27T13:41:05.568201+00:00",
+  "n_baiot": [
+    {
+      "relative_path": "Danmini_Doorbell/benign_traffic.csv",
+      "rows": [
+        {
+          "data_row_index": 1,
+          "duplicate_group_id": "sha256:877003fca2126eef1b1835db1d9be17417c2a5a2516a898e4ab9ab40c82a5bf6",
+          "feature_count": 115,
+          "label_family": "benign",
+          "label_fine": "benign",
+          "target_binary": "benign",
+          "validation_result": "PASS"
+        },
+        {
+          "data_row_index": 2,
+          "duplicate_group_id": "sha256:bea0737c23615c0baa540712b25d05d481d4814aa2820332518044c5423bc790",
+          "feature_count": 115,
+          "label_family": "benign",
+          "label_fine": "benign",
+          "target_binary": "benign",
+          "validation_result": "PASS"
+        },
+        {
+          "data_row_index": 3,
+          "duplicate_group_id": "sha256:647b312e691e7c0df0f2449054be4eea8d7054e86257d8877d5365c9f92eb381",
+          "feature_count": 115,
+          "label_family": "benign",
+          "label_fine": "benign",
+          "target_binary": "benign",
+          "validation_result": "PASS"
+        }
+      ],
+      "source_logical_id": "n_baiot:source:Danmini_Doorbell/benign_traffic.csv"
+    },
+    {
+      "relative_path": "Danmini_Doorbell/gafgyt_attacks/combo.csv",
+      "rows": [
+        {
+          "data_row_index": 1,
+          "duplicate_group_id": "sha256:97796ec1db13d292f978e24dd86a65214bf51c7cad2bc20d0d1312a4ec43f544",
+          "feature_count": 115,
+          "label_family": "gafgyt",
+          "label_fine": "gafgyt_combo",
+          "target_binary": "malicious",
+          "validation_result": "PASS"
+        },
+        {
+          "data_row_index": 2,
+          "duplicate_group_id": "sha256:7d3d7e28279b2d9f95ea6e5911b1c88a9913df1b43e31e3937d96d04f082abb3",
+          "feature_count": 115,
+          "label_family": "gafgyt",
+          "label_fine": "gafgyt_combo",
+          "target_binary": "malicious",
+          "validation_result": "PASS"
+        },
+        {
+          "data_row_index": 3,
+          "duplicate_group_id": "sha256:1c409efab99c2ff3fd85e8656729cdb634afb4fabb661ebb7b2ccad23a28545b",
+          "feature_count": 115,
+          "label_family": "gafgyt",
+          "label_fine": "gafgyt_combo",
+          "target_binary": "malicious",
+          "validation_result": "PASS"
+        }
+      ],
+      "source_logical_id": "n_baiot:extracted:Danmini_Doorbell/gafgyt_attacks/combo.csv"
+    },
+    {
+      "relative_path": "Danmini_Doorbell/mirai_attacks/udpplain.csv",
+      "rows": [
+        {
+          "data_row_index": 1,
+          "duplicate_group_id": "sha256:e30a67b4226a1cd3000cd0eb5e8c1b329392aacbfebd6959551ff4e4aeb18cef",
+          "feature_count": 115,
+          "label_family": "mirai",
+          "label_fine": "mirai_udpplain",
+          "target_binary": "malicious",
+          "validation_result": "PASS"
+        },
+        {
+          "data_row_index": 2,
+          "duplicate_group_id": "sha256:0c40e2d6c358a7f42c90aad7bc1413e2b6f3a546292ec8d58b716e31cabb5619",
+          "feature_count": 115,
+          "label_family": "mirai",
+          "label_fine": "mirai_udpplain",
+          "target_binary": "malicious",
+          "validation_result": "PASS"
+        },
+        {
+          "data_row_index": 3,
+          "duplicate_group_id": "sha256:98f24d031d5cf116c2ed2d1de8f030b0cd1a3091cf588911fb2ae4c68fdcf04b",
+          "feature_count": 115,
+          "label_family": "mirai",
+          "label_fine": "mirai_udpplain",
+          "target_binary": "malicious",
+          "validation_result": "PASS"
+        }
+      ],
+      "source_logical_id": "n_baiot:extracted:Danmini_Doorbell/mirai_attacks/udpplain.csv"
+    }
+  ],
+  "overall_status": "PASS",
+  "scope": {
+    "bot_iot_canonical_shards": 2,
+    "full_dataset_materialized": false,
+    "n_baiot_logical_sources": 3,
+    "rows_per_source": 3,
+    "source_rows_read_for_results": 15
+  },
+  "source_safety": {
+    "selected_file_metadata_after": [
+      {
+        "modified_time_ns": 1684794142000000000,
+        "relative_path": "Danmini_Doorbell/benign_traffic.csv",
+        "size_bytes": 46537568
+      },
+      {
+        "modified_time_ns": 1508226125902362800,
+        "relative_path": "Danmini_Doorbell/gafgyt_attacks/combo.csv",
+        "size_bytes": 105833909
+      },
+      {
+        "modified_time_ns": 1508228798963259400,
+        "relative_path": "Danmini_Doorbell/mirai_attacks/udpplain.csv",
+        "size_bytes": 120365536
+      },
+      {
+        "modified_time_ns": 1789518360000000000,
+        "relative_path": "Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_1.csv",
+        "size_bytes": 272335105
+      },
+      {
+        "modified_time_ns": 1789518420000000000,
+        "relative_path": "Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_2.csv",
+        "size_bytes": 273082424
+      }
+    ],
+    "selected_file_metadata_before": [
+      {
+        "modified_time_ns": 1684794142000000000,
+        "relative_path": "Danmini_Doorbell/benign_traffic.csv",
+        "size_bytes": 46537568
+      },
+      {
+        "modified_time_ns": 1508226125902362800,
+        "relative_path": "Danmini_Doorbell/gafgyt_attacks/combo.csv",
+        "size_bytes": 105833909
+      },
+      {
+        "modified_time_ns": 1508228798963259400,
+        "relative_path": "Danmini_Doorbell/mirai_attacks/udpplain.csv",
+        "size_bytes": 120365536
+      },
+      {
+        "modified_time_ns": 1789518360000000000,
+        "relative_path": "Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_1.csv",
+        "size_bytes": 272335105
+      },
+      {
+        "modified_time_ns": 1789518420000000000,
+        "relative_path": "Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_2.csv",
+        "size_bytes": 273082424
+      }
+    ],
+    "selected_file_metadata_unchanged": true
+  }
+}

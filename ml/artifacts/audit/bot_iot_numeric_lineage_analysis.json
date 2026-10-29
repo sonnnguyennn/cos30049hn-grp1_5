@@ -1,0 +1,631 @@
+{
+  "all_features_vs_ten_best_full": {
+    "drate": {
+      "absolute_delta": {
+        "count": 70508,
+        "max": 7.275957614183426e-12,
+        "min": 1.0842021724855044e-19,
+        "p50": 6.938893903907228e-18,
+        "p90": 2.7755575615628914e-17,
+        "p99": 2.842170943040401e-14
+      },
+      "bounded_examples": [
+        {
+          "absolute_delta": 1.7763568394002505e-15,
+          "all_features": 14.511893,
+          "pkSeqID": 1,
+          "ten_best_full": 14.511892999999999
+        },
+        {
+          "absolute_delta": 1.7763568394002505e-15,
+          "all_features": 15.578993,
+          "pkSeqID": 4,
+          "ten_best_full": 15.578992999999999
+        },
+        {
+          "absolute_delta": 1.7763568394002505e-15,
+          "all_features": 15.858039,
+          "pkSeqID": 7,
+          "ten_best_full": 15.858039000000002
+        },
+        {
+          "absolute_delta": 1.7763568394002505e-15,
+          "all_features": 15.882343,
+          "pkSeqID": 8,
+          "ten_best_full": 15.882342999999999
+        },
+        {
+          "absolute_delta": 1.7763568394002505e-15,
+          "all_features": 15.896735,
+          "pkSeqID": 9,
+          "ten_best_full": 15.896735000000001
+        },
+        {
+          "absolute_delta": 1.1102230246251565e-16,
+          "all_features": 0.568417,
+          "pkSeqID": 22,
+          "ten_best_full": 0.5684170000000001
+        },
+        {
+          "absolute_delta": 1.1102230246251565e-16,
+          "all_features": 0.565568,
+          "pkSeqID": 24,
+          "ten_best_full": 0.5655680000000001
+        },
+        {
+          "absolute_delta": 1.1102230246251565e-16,
+          "all_features": 0.564259,
+          "pkSeqID": 26,
+          "ten_best_full": 0.5642590000000001
+        },
+        {
+          "absolute_delta": 5.551115123125783e-17,
+          "all_features": 0.436642,
+          "pkSeqID": 28,
+          "ten_best_full": 0.43664200000000003
+        },
+        {
+          "absolute_delta": 5.551115123125783e-17,
+          "all_features": 0.434826,
+          "pkSeqID": 30,
+          "ten_best_full": 0.43482600000000005
+        }
+      ],
+      "differing_rows": 70508,
+      "relative_delta_where_all_features_nonzero": {
+        "count": 70508,
+        "max": 2.2204371675016434e-16,
+        "min": 1.1102941007959529e-16,
+        "p50": 1.5299408881040764e-16,
+        "p90": 1.9797694381886013e-16,
+        "p99": 2.1949148002933012e-16
+      },
+      "rounding_conclusion": "consistent decimal rounding candidate observed; not adopted",
+      "rounding_rule_candidate_digits_with_all_differences_explained": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    "max": {
+      "absolute_delta": {
+        "count": 810962,
+        "max": 8.881784197001252e-16,
+        "min": 8.470329472543003e-22,
+        "p50": 4.440892098500626e-16,
+        "p90": 8.881784197001252e-16,
+        "p99": 8.881784197001252e-16
+      },
+      "bounded_examples": [
+        {
+          "absolute_delta": 2.7755575615628914e-17,
+          "all_features": 0.128988,
+          "pkSeqID": 3,
+          "ten_best_full": 0.12898800000000002
+        },
+        {
+          "absolute_delta": 2.7755575615628914e-17,
+          "all_features": 0.125812,
+          "pkSeqID": 9,
+          "ten_best_full": 0.12581199999999998
+        },
+        {
+          "absolute_delta": 1.3877787807814457e-17,
+          "all_features": 0.122221,
+          "pkSeqID": 10,
+          "ten_best_full": 0.12222100000000001
+        },
+        {
+          "absolute_delta": 1.3877787807814457e-17,
+          "all_features": 0.121568,
+          "pkSeqID": 11,
+          "ten_best_full": 0.12156800000000001
+        },
+        {
+          "absolute_delta": 4.440892098500626e-16,
+          "all_features": 3.502166,
+          "pkSeqID": 19,
+          "ten_best_full": 3.5021660000000003
+        },
+        {
+          "absolute_delta": 4.440892098500626e-16,
+          "all_features": 3.53627,
+          "pkSeqID": 24,
+          "ten_best_full": 3.5362699999999996
+        },
+        {
+          "absolute_delta": 4.440892098500626e-16,
+          "all_features": 3.541963,
+          "pkSeqID": 25,
+          "ten_best_full": 3.5419629999999995
+        },
+        {
+          "absolute_delta": 4.440892098500626e-16,
+          "all_features": 3.544469,
+          "pkSeqID": 26,
+          "ten_best_full": 3.5444690000000003
+        },
+        {
+          "absolute_delta": 8.881784197001252e-16,
+          "all_features": 4.628544,
+          "pkSeqID": 33,
+          "ten_best_full": 4.628544000000001
+        },
+        {
+          "absolute_delta": 8.881784197001252e-16,
+          "all_features": 4.698401,
+          "pkSeqID": 41,
+          "ten_best_full": 4.6984010000000005
+        }
+      ],
+      "differing_rows": 810962,
+      "relative_delta_where_all_features_nonzero": {
+        "count": 810962,
+        "max": 2.220444383917025e-16,
+        "min": 1.1102274655350186e-16,
+        "p50": 1.7784027138823007e-16,
+        "p90": 2.1687428404056297e-16,
+        "p99": 2.2081977284997572e-16
+      },
+      "rounding_conclusion": "consistent decimal rounding candidate observed; not adopted",
+      "rounding_rule_candidate_digits_with_all_differences_explained": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    "mean": {
+      "absolute_delta": {
+        "count": 909514,
+        "max": 8.881784197001252e-16,
+        "min": 8.470329472543003e-22,
+        "p50": 4.440892098500626e-16,
+        "p90": 4.440892098500626e-16,
+        "p99": 8.881784197001252e-16
+      },
+      "bounded_examples": [
+        {
+          "absolute_delta": 1.3877787807814457e-17,
+          "all_features": 0.064494,
+          "pkSeqID": 3,
+          "ten_best_full": 0.06449400000000001
+        },
+        {
+          "absolute_delta": 1.3877787807814457e-17,
+          "all_features": 0.062906,
+          "pkSeqID": 9,
+          "ten_best_full": 0.06290599999999999
+        },
+        {
+          "absolute_delta": 6.938893903907228e-18,
+          "all_features": 0.060784,
+          "pkSeqID": 11,
+          "ten_best_full": 0.060784000000000005
+        },
+        {
+          "absolute_delta": 1.1102230246251565e-16,
+          "all_features": 0.714818,
+          "pkSeqID": 13,
+          "ten_best_full": 0.7148180000000001
+        },
+        {
+          "absolute_delta": 2.220446049250313e-16,
+          "all_features": 1.751083,
+          "pkSeqID": 19,
+          "ten_best_full": 1.7510830000000002
+        },
+        {
+          "absolute_delta": 2.220446049250313e-16,
+          "all_features": 1.759272,
+          "pkSeqID": 22,
+          "ten_best_full": 1.7592720000000002
+        },
+        {
+          "absolute_delta": 2.220446049250313e-16,
+          "all_features": 1.768135,
+          "pkSeqID": 24,
+          "ten_best_full": 1.7681349999999998
+        },
+        {
+          "absolute_delta": 2.220446049250313e-16,
+          "all_features": 1.772235,
+          "pkSeqID": 26,
+          "ten_best_full": 1.7722349999999998
+        },
+        {
+          "absolute_delta": 4.440892098500626e-16,
+          "all_features": 2.314272,
+          "pkSeqID": 33,
+          "ten_best_full": 2.3142720000000003
+        },
+        {
+          "absolute_delta": 1.1102230246251565e-16,
+          "all_features": 0.618666,
+          "pkSeqID": 49,
+          "ten_best_full": 0.6186659999999999
+        }
+      ],
+      "differing_rows": 909514,
+      "relative_delta_where_all_features_nonzero": {
+        "count": 909514,
+        "max": 2.2204449390278435e-16,
+        "min": 1.1102274655350186e-16,
+        "p50": 1.3248943276380168e-16,
+        "p90": 2.0517362881129523e-16,
+        "p99": 2.2073937301240892e-16
+      },
+      "rounding_conclusion": "consistent decimal rounding candidate observed; not adopted",
+      "rounding_rule_candidate_digits_with_all_differences_explained": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    "min": {
+      "absolute_delta": {
+        "count": 441606,
+        "max": 8.881784197001252e-16,
+        "min": 8.470329472543003e-22,
+        "p50": 4.440892098500626e-16,
+        "p90": 4.440892098500626e-16,
+        "p99": 8.881784197001252e-16
+      },
+      "bounded_examples": [
+        {
+          "absolute_delta": 2.710505431213761e-20,
+          "all_features": 0.000142,
+          "pkSeqID": 46,
+          "ten_best_full": 0.00014199999999999998
+        },
+        {
+          "absolute_delta": 1.0842021724855044e-19,
+          "all_features": 0.000506,
+          "pkSeqID": 52,
+          "ten_best_full": 0.0005059999999999999
+        },
+        {
+          "absolute_delta": 2.710505431213761e-20,
+          "all_features": 0.000163,
+          "pkSeqID": 59,
+          "ten_best_full": 0.00016299999999999998
+        },
+        {
+          "absolute_delta": 1.3552527156068805e-20,
+          "all_features": 0.000115,
+          "pkSeqID": 64,
+          "ten_best_full": 0.00011499999999999999
+        },
+        {
+          "absolute_delta": 1.3552527156068805e-20,
+          "all_features": 0.000116,
+          "pkSeqID": 65,
+          "ten_best_full": 0.00011599999999999999
+        },
+        {
+          "absolute_delta": 1.3552527156068805e-20,
+          "all_features": 0.000116,
+          "pkSeqID": 75,
+          "ten_best_full": 0.00011599999999999999
+        },
+        {
+          "absolute_delta": 5.421010862427522e-20,
+          "all_features": 0.000358,
+          "pkSeqID": 77,
+          "ten_best_full": 0.00035800000000000003
+        },
+        {
+          "absolute_delta": 1.3552527156068805e-20,
+          "all_features": 9.3e-05,
+          "pkSeqID": 80,
+          "ten_best_full": 9.300000000000001e-05
+        },
+        {
+          "absolute_delta": 5.421010862427522e-20,
+          "all_features": 0.000347,
+          "pkSeqID": 91,
+          "ten_best_full": 0.00034700000000000003
+        },
+        {
+          "absolute_delta": 2.710505431213761e-20,
+          "all_features": 0.000209,
+          "pkSeqID": 93,
+          "ten_best_full": 0.00020899999999999998
+        }
+      ],
+      "differing_rows": 441606,
+      "relative_delta_where_all_features_nonzero": {
+        "count": 441606,
+        "max": 2.2204449390278435e-16,
+        "min": 1.110226910419343e-16,
+        "p50": 1.3277900559236023e-16,
+        "p90": 2.1648019791775338e-16,
+        "p99": 2.2086760147676166e-16
+      },
+      "rounding_conclusion": "consistent decimal rounding candidate observed; not adopted",
+      "rounding_rule_candidate_digits_with_all_differences_explained": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    "srate": {
+      "absolute_delta": {
+        "count": 1014295,
+        "max": 7.275957614183426e-12,
+        "min": 1.0842021724855044e-19,
+        "p50": 5.551115123125783e-17,
+        "p90": 1.1102230246251565e-16,
+        "p99": 8.881784197001252e-16
+      },
+      "bounded_examples": [
+        {
+          "absolute_delta": 1.1102230246251565e-16,
+          "all_features": 0.567668,
+          "pkSeqID": 7,
+          "ten_best_full": 0.5676680000000001
+        },
+        {
+          "absolute_delta": 1.1102230246251565e-16,
+          "all_features": 0.568011,
+          "pkSeqID": 10,
+          "ten_best_full": 0.5680109999999999
+        },
+        {
+          "absolute_delta": 1.1102230246251565e-16,
+          "all_features": 0.568212,
+          "pkSeqID": 15,
+          "ten_best_full": 0.5682119999999999
+        },
+        {
+          "absolute_delta": 1.1102230246251565e-16,
+          "all_features": 0.568265,
+          "pkSeqID": 16,
+          "ten_best_full": 0.5682649999999999
+        },
+        {
+          "absolute_delta": 1.1102230246251565e-16,
+          "all_features": 0.568373,
+          "pkSeqID": 18,
+          "ten_best_full": 0.5683729999999999
+        },
+        {
+          "absolute_delta": 1.1102230246251565e-16,
+          "all_features": 0.569205,
+          "pkSeqID": 24,
+          "ten_best_full": 0.5692050000000001
+        },
+        {
+          "absolute_delta": 1.1102230246251565e-16,
+          "all_features": 0.56927,
+          "pkSeqID": 26,
+          "ten_best_full": 0.5692699999999999
+        },
+        {
+          "absolute_delta": 1.1102230246251565e-16,
+          "all_features": 0.569305,
+          "pkSeqID": 27,
+          "ten_best_full": 0.5693050000000001
+        },
+        {
+          "absolute_delta": 1.1102230246251565e-16,
+          "all_features": 0.569636,
+          "pkSeqID": 35,
+          "ten_best_full": 0.5696359999999999
+        },
+        {
+          "absolute_delta": 1.1102230246251565e-16,
+          "all_features": 0.569718,
+          "pkSeqID": 37,
+          "ten_best_full": 0.5697180000000001
+        }
+      ],
+      "differing_rows": 1014295,
+      "relative_delta_where_all_features_nonzero": {
+        "count": 1014295,
+        "max": 2.2204127430591669e-16,
+        "min": 1.1102274655350186e-16,
+        "p50": 1.3208465337422255e-16,
+        "p90": 2.0358513368366593e-16,
+        "p99": 2.2134824335144763e-16
+      },
+      "rounding_conclusion": "consistent decimal rounding candidate observed; not adopted",
+      "rounding_rule_candidate_digits_with_all_differences_explained": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    "stddev": {
+      "absolute_delta": {
+        "count": 909708,
+        "max": 4.440892098500626e-16,
+        "min": 8.470329472543003e-22,
+        "p50": 2.220446049250313e-16,
+        "p90": 2.220446049250313e-16,
+        "p99": 4.440892098500626e-16
+      },
+      "bounded_examples": [
+        {
+          "absolute_delta": 1.3877787807814457e-17,
+          "all_features": 0.064494,
+          "pkSeqID": 3,
+          "ten_best_full": 0.06449400000000001
+        },
+        {
+          "absolute_delta": 1.3877787807814457e-17,
+          "all_features": 0.062906,
+          "pkSeqID": 9,
+          "ten_best_full": 0.06290599999999999
+        },
+        {
+          "absolute_delta": 6.938893903907228e-18,
+          "all_features": 0.060784,
+          "pkSeqID": 11,
+          "ten_best_full": 0.060784000000000005
+        },
+        {
+          "absolute_delta": 1.1102230246251565e-16,
+          "all_features": 0.714818,
+          "pkSeqID": 13,
+          "ten_best_full": 0.7148180000000001
+        },
+        {
+          "absolute_delta": 2.220446049250313e-16,
+          "all_features": 1.751083,
+          "pkSeqID": 19,
+          "ten_best_full": 1.7510830000000002
+        },
+        {
+          "absolute_delta": 2.220446049250313e-16,
+          "all_features": 1.759272,
+          "pkSeqID": 22,
+          "ten_best_full": 1.7592720000000002
+        },
+        {
+          "absolute_delta": 2.220446049250313e-16,
+          "all_features": 1.768135,
+          "pkSeqID": 24,
+          "ten_best_full": 1.7681349999999998
+        },
+        {
+          "absolute_delta": 2.220446049250313e-16,
+          "all_features": 1.772235,
+          "pkSeqID": 26,
+          "ten_best_full": 1.7722349999999998
+        },
+        {
+          "absolute_delta": 4.440892098500626e-16,
+          "all_features": 2.314272,
+          "pkSeqID": 33,
+          "ten_best_full": 2.3142720000000003
+        },
+        {
+          "absolute_delta": 1.1102230246251565e-16,
+          "all_features": 0.637028,
+          "pkSeqID": 45,
+          "ten_best_full": 0.6370279999999999
+        }
+      ],
+      "differing_rows": 909708,
+      "relative_delta_where_all_features_nonzero": {
+        "count": 909708,
+        "max": 2.2204449390278435e-16,
+        "min": 1.110226910419343e-16,
+        "p50": 1.2783518614420096e-16,
+        "p90": 1.9910758085297194e-16,
+        "p99": 2.2029983026929848e-16
+      },
+      "rounding_conclusion": "consistent decimal rounding candidate observed; not adopted",
+      "rounding_rule_candidate_digits_with_all_differences_explained": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    }
+  },
+  "classification_definitions": {
+    "equals_all_features_only": "supplied value equals only All-features",
+    "equals_both": "supplied value equals All-features and 10-best full",
+    "equals_neither": "supplied value equals neither representation",
+    "equals_ten_best_full_only": "supplied value equals only 10-best full"
+  },
+  "three_way_supplied_split": {
+    "ten_best_predefined_test": {
+      "drate": {
+        "equals_all_features_only": 8639,
+        "equals_both": 719618,
+        "equals_neither": 1300,
+        "equals_ten_best_full_only": 4148
+      },
+      "max": {
+        "equals_all_features_only": 82335,
+        "equals_both": 571601,
+        "equals_neither": 37365,
+        "equals_ten_best_full_only": 42404
+      },
+      "mean": {
+        "equals_all_features_only": 116619,
+        "equals_both": 551817,
+        "equals_neither": 11097,
+        "equals_ten_best_full_only": 54172
+      },
+      "min": {
+        "equals_all_features_only": 59233,
+        "equals_both": 645104,
+        "equals_neither": 5401,
+        "equals_ten_best_full_only": 23967
+      },
+      "srate": {
+        "equals_all_features_only": 131139,
+        "equals_both": 531149,
+        "equals_neither": 19074,
+        "equals_ten_best_full_only": 52343
+      },
+      "stddev": {
+        "equals_all_features_only": 115410,
+        "equals_both": 551192,
+        "equals_neither": 7678,
+        "equals_ten_best_full_only": 59425
+      }
+    },
+    "ten_best_predefined_train": {
+      "drate": {
+        "equals_all_features_only": 34465,
+        "equals_both": 2878396,
+        "equals_neither": 5306,
+        "equals_ten_best_full_only": 16650
+      },
+      "max": {
+        "equals_all_features_only": 329506,
+        "equals_both": 2285959,
+        "equals_neither": 150505,
+        "equals_ten_best_full_only": 168847
+      },
+      "mean": {
+        "equals_all_features_only": 466271,
+        "equals_both": 2207191,
+        "equals_neither": 43325,
+        "equals_ten_best_full_only": 218030
+      },
+      "min": {
+        "equals_all_features_only": 236737,
+        "equals_both": 2581812,
+        "equals_neither": 21155,
+        "equals_ten_best_full_only": 95113
+      },
+      "srate": {
+        "equals_all_features_only": 525010,
+        "equals_both": 2123078,
+        "equals_neither": 77389,
+        "equals_ten_best_full_only": 209340
+      },
+      "stddev": {
+        "equals_all_features_only": 459350,
+        "equals_both": 2207622,
+        "equals_neither": 30153,
+        "equals_ten_best_full_only": 237692
+      }
+    }
+  },
+  "upstream_processing_conclusion": "No unobserved upstream transformation is inferred."
+}

@@ -1,0 +1,77 @@
+{
+  "archive_policy": {
+    "extraction_performed": false,
+    "standard_library_inspection": [
+      "zip",
+      "tar",
+      "tar.gz",
+      "tgz"
+    ],
+    "unsupported_member_listing": [
+      "rar",
+      "7z",
+      "gz"
+    ]
+  },
+  "audit_type": "raw_source_inventory",
+  "datasets": {
+    "bot_iot": {
+      "archive_count": 0,
+      "archive_inspection_failures": 0,
+      "archive_inspection_unsupported": 0,
+      "archives_inspected": 0,
+      "file_count": 10,
+      "hash_failures": 0,
+      "hashed_ok": 10,
+      "manifest": "artifacts/manifests/bot_iot_raw_manifest.csv",
+      "manifest_sha256": "17e522c1a9a585011212c0d7f82b749c1c46056c832cb3286a807f2e69eecc22",
+      "root": "E:\\Document\\Bot_IoT_Dataset",
+      "root_configuration_source": "command_line",
+      "skipped_symlinks": 0,
+      "total_size_bytes": 1995570896,
+      "traversal_errors": []
+    },
+    "n_baiot": {
+      "archive_count": 16,
+      "archive_inspection_failures": 0,
+      "archive_inspection_unsupported": 16,
+      "archives_inspected": 0,
+      "file_count": 27,
+      "hash_failures": 0,
+      "hashed_ok": 27,
+      "manifest": "artifacts/manifests/n_baiot_raw_manifest.csv",
+      "manifest_sha256": "ac4285c77662ce375d6138d05f6b3667a665154fd97640446146192a99212491",
+      "root": "E:\\Document\\N_BaIoT_Dataset",
+      "root_configuration_source": "command_line",
+      "skipped_symlinks": 0,
+      "total_size_bytes": 2193229785,
+      "traversal_errors": []
+    }
+  },
+  "generated_at_utc": "2026-09-24T12:22:40.345684+00:00",
+  "hash_algorithm": "sha256",
+  "hash_chunk_size_bytes": 4194304,
+  "implementation": {
+    "arguments": [
+      "--n-baiot-root",
+      "E:\\Document\\N_BaIoT_Dataset",
+      "--bot-iot-root",
+      "E:\\Document\\Bot_IoT_Dataset"
+    ],
+    "script": "scripts/dataset_inventory.py",
+    "script_sha256": "6209b9d52da1d7db69a0514b3fe86bb6ee8b9a914c6d01463a1361681a64e793"
+  },
+  "overall_status": "PASS",
+  "runtime": {
+    "executable": "E:\\Document\\iotguard\\.venv\\Scripts\\python.exe",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python_implementation": "CPython",
+    "python_version": "3.12.0"
+  },
+  "traversal": {
+    "manifest_sort_key": "relative_path",
+    "recursive": true,
+    "relative_path_style": "posix",
+    "symlinks_followed": false
+  }
+}

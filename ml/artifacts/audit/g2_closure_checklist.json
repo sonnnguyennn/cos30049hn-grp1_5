@@ -1,0 +1,28 @@
+{
+  "checks": {
+    "canonical_traversal_defined": true,
+    "exact_group_semantics_reconciled_with_a4_a5": true,
+    "g1_role_decision_complete": true,
+    "g2a_contracts_committed": true,
+    "g2b_parser_implementation_committed": true,
+    "learned_transform_boundary_documented": true,
+    "no_final_split": true,
+    "no_full_processed_dataset": true,
+    "no_model_training": true,
+    "no_pre_split_fit": true,
+    "primary_feature_contract_locked": true,
+    "primary_full_dry_validation_passed": true,
+    "primary_label_contract_locked": true,
+    "primary_label_counts_reconciled": true,
+    "primary_row_counts_reconciled": true,
+    "reproducibility_manifest_created": true,
+    "secondary_four_shard_headers_validated": true,
+    "secondary_port_parser_real_examples_validated": true,
+    "secondary_source_contract_locked": true,
+    "source_data_immutable": true,
+    "stable_source_row_identity_defined": true
+  },
+  "completion_semantics": "Canonical data layer reproducibility only; downstream split, learned transforms, resampling, predictor selection, model, clustering, and final dataset remain deferred.",
+  "gate": "G2",
+  "overall_status": "COMPLETE"
+}

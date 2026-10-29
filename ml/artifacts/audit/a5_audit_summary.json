@@ -1,0 +1,153 @@
+{
+  "a4_checkpoint_commit": "6bf4505fc01000a99f31ed7de3b41c56f058def4",
+  "artifact_sha256": {
+    "bot_iot_effective_imbalance.csv": "b2c20f4c724fea7f4ae948d61fb367d8b2b9f3335ec0b8647c2ac86900c38250",
+    "bot_iot_entity_overlap_summary.json": "0814ee970467354722ee6d92589352d6e738d2e484425be48f6a46e234cf8e7c",
+    "bot_iot_field_risk_profile.csv": "b86e6ddaba4fe656691e21cd54facf6dcc3bd6ebfe54a7faacbae98f6f81fa67",
+    "bot_iot_identity_free_duplicate_summary.json": "1eeaf98e2890b025c26a5fcc243175138e886dacfa8c5b8bc93d858c2544b77d",
+    "bot_iot_numeric_lineage_analysis.json": "3e189a7d077d3dc7ba216db3222551c4c3ddf5f720ef301d0aa0e9d98267f03b",
+    "bot_iot_port_encoding_summary.json": "2b7fa3608a69a6c3f6977723c653612a7df14913a85a0157034f0948c36ec1f5",
+    "bot_iot_split_feasibility.json": "732afd638f6b29d2879f09d7f7d02de001f48efa02ec7f89bc74d028bc19d634",
+    "candidate_split_comparison.csv": "4e1120b37c486fc2bf3b51d568ccdafecca42bec8a00b65faa9a36f3ea0607d9",
+    "n_baiot_device_holdout_matrix.csv": "d35b2f10fe09c354d1a207afc28e62dc4c20105b92bbf8297b38e7cf4b2f0ebe",
+    "n_baiot_effective_imbalance.csv": "324a1cb5a8df98b83ce74ed76ca2c472d99ab22267262ec060466ca02d14e272",
+    "n_baiot_split_leakage_summary.json": "7d9bc180da6e1378af98b32face3e32592911fcf426fdce777ddea2da4ab6d49"
+  },
+  "audit_batch": "A5",
+  "bot_iot": {
+    "identity_free_views": {
+      "all_non_label_excluding_pkseqid_with_seq": {
+        "conflicting_attack_groups": 0,
+        "conflicting_category_groups": 0,
+        "conflicting_subcategory_groups": 0,
+        "duplicate_excess": 0,
+        "duplicate_groups": 0,
+        "rows_in_duplicate_groups": 0,
+        "total_rows": 3668522,
+        "unique_tuples": 3668522
+      },
+      "all_non_label_excluding_pkseqid_without_seq": {
+        "conflicting_attack_groups": 0,
+        "conflicting_category_groups": 0,
+        "conflicting_subcategory_groups": 0,
+        "duplicate_excess": 0,
+        "duplicate_groups": 0,
+        "rows_in_duplicate_groups": 0,
+        "total_rows": 3668522,
+        "unique_tuples": 3668522
+      },
+      "ten_best_non_label_excluding_pkseqid_index_with_seq": {
+        "conflicting_attack_groups": 0,
+        "conflicting_category_groups": 0,
+        "conflicting_subcategory_groups": 0,
+        "duplicate_excess": 0,
+        "duplicate_groups": 0,
+        "rows_in_duplicate_groups": 0,
+        "total_rows": 3668522,
+        "unique_tuples": 3668522
+      },
+      "ten_best_non_label_excluding_pkseqid_index_without_seq": {
+        "conflicting_attack_groups": 0,
+        "conflicting_category_groups": 0,
+        "conflicting_subcategory_groups": 0,
+        "duplicate_excess": 185,
+        "duplicate_groups": 185,
+        "rows_in_duplicate_groups": 370,
+        "total_rows": 3668522,
+        "unique_tuples": 3668337
+      }
+    },
+    "numeric_lineage_fields": [
+      "stddev",
+      "min",
+      "mean",
+      "drate",
+      "srate",
+      "max"
+    ],
+    "port_parse_failures_cooccur_on_same_9052_rows": true,
+    "total_rows": 3668522
+  },
+  "generated_at_utc": "2026-09-25T19:06:31.511808+00:00",
+  "n_baiot": {
+    "group_aware_exact_overlap_groups": 0,
+    "naive_random_overlap_percent_range": [
+      84.69332491339952,
+      84.70805035818937
+    ],
+    "total_rows": 7062606,
+    "unique_exact_vectors": 2482676
+  },
+  "overall_status": "PASS",
+  "pass_semantics": "Audit completed and reconciled; PASS does not mean datasets are safe.",
+  "risk_terminology": [
+    "DIRECT TARGET LEAKAGE",
+    "IDENTIFIER LEAKAGE RISK",
+    "ENTITY/CONTEXT MEMORIZATION RISK",
+    "DUPLICATE LEAKAGE",
+    "TEMPORAL LEAKAGE RISK",
+    "CLASS IMBALANCE"
+  ],
+  "scope": "diagnostic only; no final split, predictors, preprocessing, or dataset roles selected",
+  "source_safety": {
+    "bot_iot_raw": {
+      "after": {
+        "file_count": 10,
+        "metadata_digest_sha256": "b704baf2494c4932a1a67daf85e054115887dd6e1a5955517897eb24077e73be",
+        "root": "E:\\Document\\Bot_IoT_Dataset",
+        "total_size_bytes": 1995570896
+      },
+      "before": {
+        "file_count": 10,
+        "metadata_digest_sha256": "b704baf2494c4932a1a67daf85e054115887dd6e1a5955517897eb24077e73be",
+        "root": "E:\\Document\\Bot_IoT_Dataset",
+        "total_size_bytes": 1995570896
+      },
+      "metadata_unchanged": true
+    },
+    "n_baiot_extracted": {
+      "after": {
+        "file_count": 80,
+        "metadata_digest_sha256": "b5a5729b6a604a23620ab6b5cbb4dcac59d185131745916d64308aaa05b37278",
+        "root": "E:\\Document\\iotguard_dataset_work\\n_baiot_extracted",
+        "total_size_bytes": 7540406319
+      },
+      "before": {
+        "file_count": 80,
+        "metadata_digest_sha256": "b5a5729b6a604a23620ab6b5cbb4dcac59d185131745916d64308aaa05b37278",
+        "root": "E:\\Document\\iotguard_dataset_work\\n_baiot_extracted",
+        "total_size_bytes": 7540406319
+      },
+      "metadata_unchanged": true
+    },
+    "n_baiot_raw": {
+      "after": {
+        "file_count": 27,
+        "metadata_digest_sha256": "81e6638bef6458f9af934561c720d1ae427b166f73b07547a239b5697b138df9",
+        "root": "E:\\Document\\N_BaIoT_Dataset",
+        "total_size_bytes": 2193229785
+      },
+      "before": {
+        "file_count": 27,
+        "metadata_digest_sha256": "81e6638bef6458f9af934561c720d1ae427b166f73b07547a239b5697b138df9",
+        "root": "E:\\Document\\N_BaIoT_Dataset",
+        "total_size_bytes": 2193229785
+      },
+      "metadata_unchanged": true
+    }
+  },
+  "temporary_state": {
+    "consumed_bytes": 704753664,
+    "free_bytes_after": 36232278016,
+    "free_bytes_before": 36937031680,
+    "path": "E:\\Document\\iotguard_dataset_work\\a5_leakage_phase0_retry1_20260926",
+    "retention": "retain until independent A5 verification passes"
+  },
+  "unresolved": [
+    "final predictor set",
+    "final preprocessing policy",
+    "final train/validation/test split",
+    "final dataset representation",
+    "primary/secondary dataset roles"
+  ]
+}

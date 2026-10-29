@@ -1,0 +1,60 @@
+dataset,representation,view,label_level,label,count,percentage,majority_to_class_ratio,majority_to_minority_ratio,one_error_granularity_percent
+bot_iot,all_features_5pct_shards,raw_rows,binary,benign,477,0.013002511638201979,7689.82180293501,7689.82180293501,not applicable
+bot_iot,all_features_5pct_shards,raw_rows,binary,malicious,3668045,99.9869974883618,1.0,7689.82180293501,not applicable
+bot_iot,all_features_5pct_shards,raw_rows,category,ddos,1926624,52.51771694431709,1.0,24387.645569620254,not applicable
+bot_iot,all_features_5pct_shards,raw_rows,category,dos,1650260,44.98432883869853,1.1674669446026686,24387.645569620254,not applicable
+bot_iot,all_features_5pct_shards,raw_rows,category,normal,477,0.013002511638201979,4039.0440251572327,24387.645569620254,not applicable
+bot_iot,all_features_5pct_shards,raw_rows,category,reconnaissance,91082,2.482798249540278,21.15263169451703,24387.645569620254,not applicable
+bot_iot,all_features_5pct_shards,raw_rows,category,theft,79,0.002153455805907665,24387.645569620254,24387.645569620254,not applicable
+bot_iot,all_features_5pct_shards,raw_rows,subcategory,data_exfiltration,6,0.00016355360551197458,330205.0,330205.0,not applicable
+bot_iot,all_features_5pct_shards,raw_rows,subcategory,http,2474,0.06743860333943752,800.8205335489087,330205.0,not applicable
+bot_iot,all_features_5pct_shards,raw_rows,subcategory,keylogging,73,0.0019899022003956905,27140.13698630137,330205.0,not applicable
+bot_iot,all_features_5pct_shards,raw_rows,subcategory,normal,477,0.013002511638201979,4153.522012578616,330205.0,not applicable
+bot_iot,all_features_5pct_shards,raw_rows,subcategory,os_fingerprint,17914,0.4883165481902521,110.59673997990399,330205.0,not applicable
+bot_iot,all_features_5pct_shards,raw_rows,subcategory,service_scan,73168,1.994481701350026,27.0778209053138,330205.0,not applicable
+bot_iot,all_features_5pct_shards,raw_rows,subcategory,tcp,1593180,43.428388871594606,1.243569464843897,330205.0,not applicable
+bot_iot,all_features_5pct_shards,raw_rows,subcategory,udp,1981230,54.006218308081564,1.0,330205.0,not applicable
+bot_iot,ten_best_full,raw_rows,binary,benign,477,0.013002511638201979,7689.82180293501,7689.82180293501,not applicable
+bot_iot,ten_best_full,raw_rows,binary,malicious,3668045,99.9869974883618,1.0,7689.82180293501,not applicable
+bot_iot,ten_best_full,raw_rows,category,ddos,1926624,52.51771694431709,1.0,24387.645569620254,not applicable
+bot_iot,ten_best_full,raw_rows,category,dos,1650260,44.98432883869853,1.1674669446026686,24387.645569620254,not applicable
+bot_iot,ten_best_full,raw_rows,category,normal,477,0.013002511638201979,4039.0440251572327,24387.645569620254,not applicable
+bot_iot,ten_best_full,raw_rows,category,reconnaissance,91082,2.482798249540278,21.15263169451703,24387.645569620254,not applicable
+bot_iot,ten_best_full,raw_rows,category,theft,79,0.002153455805907665,24387.645569620254,24387.645569620254,not applicable
+bot_iot,ten_best_full,raw_rows,subcategory,data_exfiltration,6,0.00016355360551197458,330205.0,330205.0,not applicable
+bot_iot,ten_best_full,raw_rows,subcategory,http,2474,0.06743860333943752,800.8205335489087,330205.0,not applicable
+bot_iot,ten_best_full,raw_rows,subcategory,keylogging,73,0.0019899022003956905,27140.13698630137,330205.0,not applicable
+bot_iot,ten_best_full,raw_rows,subcategory,normal,477,0.013002511638201979,4153.522012578616,330205.0,not applicable
+bot_iot,ten_best_full,raw_rows,subcategory,os_fingerprint,17914,0.4883165481902521,110.59673997990399,330205.0,not applicable
+bot_iot,ten_best_full,raw_rows,subcategory,service_scan,73168,1.994481701350026,27.0778209053138,330205.0,not applicable
+bot_iot,ten_best_full,raw_rows,subcategory,tcp,1593180,43.428388871594606,1.243569464843897,330205.0,not applicable
+bot_iot,ten_best_full,raw_rows,subcategory,udp,1981230,54.006218308081564,1.0,330205.0,not applicable
+bot_iot,ten_best_predefined_train,raw_rows,binary,benign,370,0.012607259669001508,7930.937837837838,7930.937837837838,not applicable
+bot_iot,ten_best_predefined_train,raw_rows,binary,malicious,2934447,99.987392740331,1.0,7930.937837837838,not applicable
+bot_iot,ten_best_predefined_train,raw_rows,category,ddos,1541315,52.51826604520827,1.0,23712.53846153846,not applicable
+bot_iot,ten_best_predefined_train,raw_rows,category,dos,1320148,44.98229361490001,1.1675319736877987,23712.53846153846,not applicable
+bot_iot,ten_best_predefined_train,raw_rows,category,normal,370,0.012607259669001508,4165.716216216216,23712.53846153846,not applicable
+bot_iot,ten_best_predefined_train,raw_rows,category,reconnaissance,72919,2.4846182913619486,21.137357890261796,23712.53846153846,not applicable
+bot_iot,ten_best_predefined_train,raw_rows,category,theft,65,0.0022147888607705352,23712.53846153846,23712.53846153846,not applicable
+bot_iot,ten_best_predefined_train,raw_rows,subcategory,data_exfiltration,6,0.00020444204868651095,264108.3333333333,264108.3333333333,not applicable
+bot_iot,ten_best_predefined_train,raw_rows,subcategory,http,1970,0.06712513931873776,804.3908629441624,264108.3333333333,not applicable
+bot_iot,ten_best_predefined_train,raw_rows,subcategory,keylogging,59,0.0020103468120840243,26858.474576271186,264108.3333333333,not applicable
+bot_iot,ten_best_predefined_train,raw_rows,subcategory,normal,370,0.012607259669001508,4282.8378378378375,264108.3333333333,not applicable
+bot_iot,ten_best_predefined_train,raw_rows,subcategory,os_fingerprint,14293,0.48701503364605014,110.86895683201567,264108.3333333333,not applicable
+bot_iot,ten_best_predefined_train,raw_rows,subcategory,service_scan,58626,1.9976032577158984,27.029816122539486,264108.3333333333,not applicable
+bot_iot,ten_best_predefined_train,raw_rows,subcategory,tcp,1274843,43.438585778942944,1.24301580665227,264108.3333333333,not applicable
+bot_iot,ten_best_predefined_train,raw_rows,subcategory,udp,1584650,53.994848741846596,1.0,264108.3333333333,not applicable
+bot_iot,ten_best_predefined_test,raw_rows,binary,benign,107,0.014583517898883066,6856.056074766355,6856.056074766355,0.9345794392523364
+bot_iot,ten_best_predefined_test,raw_rows,binary,malicious,733598,99.98541648210112,1.0,6856.056074766355,0.00013631443924329127
+bot_iot,ten_best_predefined_test,raw_rows,category,ddos,385309,52.51552054299753,1.0,27522.071428571428,0.000259531960063222
+bot_iot,ten_best_predefined_test,raw_rows,category,dos,330112,44.992469725570906,1.1672068873594417,27522.071428571428,0.00030292749127568824
+bot_iot,ten_best_predefined_test,raw_rows,category,normal,107,0.014583517898883066,3601.0186915887853,27522.071428571428,0.9345794392523364
+bot_iot,ten_best_predefined_test,raw_rows,category,reconnaissance,18163,2.47551808969545,21.213951439740132,27522.071428571428,0.005505698397841766
+bot_iot,ten_best_predefined_test,raw_rows,category,theft,14,0.0019081238372370367,27522.071428571428,27522.071428571428,7.142857142857143
+bot_iot,ten_best_predefined_test,raw_rows,subcategory,http,504,0.06869245814053332,786.8650793650794,28327.14285714286,0.1984126984126984
+bot_iot,ten_best_predefined_test,raw_rows,subcategory,keylogging,14,0.0019081238372370367,28327.14285714286,28327.14285714286,7.142857142857143
+bot_iot,ten_best_predefined_test,raw_rows,subcategory,normal,107,0.014583517898883066,3706.355140186916,28327.14285714286,0.9345794392523364
+bot_iot,ten_best_predefined_test,raw_rows,subcategory,os_fingerprint,3621,0.49352260104537926,109.52223142778239,28327.14285714286,0.027616680475006903
+bot_iot,ten_best_predefined_test,raw_rows,subcategory,service_scan,14542,1.9819954886500706,27.271351946087197,28327.14285714286,0.006876633200385091
+bot_iot,ten_best_predefined_test,raw_rows,subcategory,tcp,318337,43.38760128389475,1.2457866977448426,28327.14285714286,0.0003141325073742606
+bot_iot,ten_best_predefined_test,raw_rows,subcategory,udp,396580,54.05169652653314,1.0,28327.14285714286,0.0002521559332291089

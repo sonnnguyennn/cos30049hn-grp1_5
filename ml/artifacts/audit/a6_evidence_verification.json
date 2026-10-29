@@ -1,0 +1,50 @@
+{
+  "audit_batch": "A6 independent verification",
+  "checks": {
+    "all_bot_coverage_matches": true,
+    "artifact_hashes_match": true,
+    "bot_candidate_benign_error_granularity_matches": true,
+    "bot_coverage_matches": {
+      "B1 supplied train/test": true,
+      "B2 random stratified record": true,
+      "B3 chronological numeric-order": true,
+      "B4 entity grouped by saddr": true,
+      "B4 entity grouped by saddr+daddr": true
+    },
+    "bot_entity_purity_compared_to_global_baselines": true,
+    "cross_dataset_overlap_and_classification_match": true,
+    "every_suitability_row_has_evidence_limitation_source": true,
+    "missing_class_candidates_not_described_as_complete": true,
+    "n2_coverage_matches": true,
+    "n_baiot_raw_and_unique_totals_match_sources": true,
+    "no_model_or_clustering_execution_declared": true,
+    "no_numeric_score_or_ranking": true,
+    "no_primary_or_secondary_role_assignment": true,
+    "no_raw_dataset_reads_declared": true,
+    "primary_requirements_P1_P8_complete": true,
+    "primary_requirements_allowed_values": true,
+    "secondary_use_cases_are_ml_for_both_datasets": true,
+    "source_artifact_hashes_match": true,
+    "suitability_allowed_values": true,
+    "suitability_has_fixed_20_dimensions": true
+  },
+  "generated_at_utc": "2026-09-26T17:19:29.826209+00:00",
+  "overall_status": "PASS",
+  "recomputed": {
+    "bot_binary_purity_baseline_adjustment": {
+      "global_majority_baseline_percent": 99.9869974883618,
+      "increase_over_baseline_percentage_points": 0.013002511638204872,
+      "observed_weighted_purity_percent": 100.0
+    },
+    "bot_category_purity_baseline_adjustment": {
+      "global_majority_baseline_percent": 52.51771694431709,
+      "increase_over_baseline_percentage_points": 34.777329943775726,
+      "observed_weighted_purity_percent": 87.29504688809281
+    },
+    "exact_named_feature_overlap": [],
+    "n_baiot_raw_rows": 7062606,
+    "n_baiot_unique_exact_vectors": 2482676
+  },
+  "source_a6_summary_sha256": "f83ce4bb2ca306673d5dae343ac7ded26a629eb6d6d5f7b8ee327cf617bdc740",
+  "verification_independence": "This verifier does not import scripts/dataset_suitability_audit.py. It parses A0-A5 sources directly and independently checks hashes, ratios, coverage, statuses, baseline-adjusted purity, feature overlap, and A6 decision guards."
+}

@@ -1,0 +1,46 @@
+{
+  "contract_name": "n_baiot_label_contract",
+  "contract_version": "1.0.0",
+  "core_supervised_target": {
+    "level": "binary",
+    "values": [
+      "benign",
+      "malicious"
+    ]
+  },
+  "dataset": "N-BaIoT",
+  "label_source": "verified file and archive-member provenance",
+  "levels": {
+    "binary": [
+      "benign",
+      "malicious"
+    ],
+    "family": [
+      "benign",
+      "gafgyt",
+      "mirai"
+    ],
+    "fine": [
+      "benign",
+      "gafgyt_combo",
+      "gafgyt_junk",
+      "gafgyt_scan",
+      "gafgyt_tcp",
+      "gafgyt_udp",
+      "mirai_ack",
+      "mirai_scan",
+      "mirai_syn",
+      "mirai_udp",
+      "mirai_udpplain"
+    ]
+  },
+  "mapping_mutability": "immutable within v1; changes require a new contract version",
+  "predictor_eligible": false,
+  "preserved_analysis_labels": [
+    "family",
+    "fine"
+  ],
+  "role": "primary",
+  "source_artifact": "artifacts/audit/label_audit_summary.json",
+  "source_artifact_sha256": "0673be52327b1b235c6e10b1fbcab4063e679b3a11c0eaf9f068e44f4f5fd154"
+}

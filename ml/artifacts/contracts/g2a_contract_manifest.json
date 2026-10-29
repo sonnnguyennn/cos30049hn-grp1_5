@@ -1,0 +1,60 @@
+{
+  "a7_checkpoint_commit": "3219aae72391115cc24bcd7da930f32c1f118438",
+  "artifact_sha256": {
+    "artifacts/contracts/bot_iot_field_role_contract_v1.json": "5870fbfaa4d3d5179bb72f0efeda6c93e3f1ee3fa6e259e2b45e5596128e4c05",
+    "artifacts/contracts/bot_iot_secondary_source_contract_v1.json": "94c7d5a819ae50b4c2f300f35097feae9208c25bc4822190f5cc5278a8f54b44",
+    "artifacts/contracts/n_baiot_feature_contract_v1.json": "47ca15c45ba9f30182c4762b47f7291d934f6de07270147c844dd5e25e21fd50",
+    "artifacts/contracts/n_baiot_label_contract_v1.json": "bdffcdedf675941b9317935b7c124480bf6125092d2de82f49d03fe1aa8b6191",
+    "artifacts/contracts/n_baiot_record_contract_v1.json": "a076e9e0754dd2a2e693ec187f2daa093f0630cb4e93614d0c698069b29a9594",
+    "docs/contracts/primary_data_contract.md": "47c7d8d5f573451467f9207bfcccf9270b006a82927d0aa50a38e82083c1626b",
+    "docs/contracts/secondary_data_contract.md": "e67f9a4c28707017144ae5771c8832b9b8250bbc111e588453d7cbf9b6f877e7"
+  },
+  "contract_set": "IoTGuard G2A canonical data contracts",
+  "contract_set_version": "1.0.0",
+  "deferred": [
+    "evaluation split",
+    "fitted transforms and feature selectors",
+    "duplicate weighting",
+    "imbalance policy",
+    "processed Assignment-2 submission data",
+    "inference API payload",
+    "Raspberry Pi benchmark"
+  ],
+  "execution_counts": {
+    "clustering_runs": 0,
+    "resampling_runs": 0,
+    "rows_transformed": 0,
+    "source_rows_read": 0,
+    "split_files_written": 0,
+    "training_runs": 0
+  },
+  "gate": "G2A",
+  "generated_at_utc": "2026-09-27T13:16:22.417679+00:00",
+  "source_evidence_sha256": {
+    "artifacts/audit/a4_audit_summary.json": "ea0702a90488f3faad16ea2ad9474f314003f223f21e228ec91125c6e0ab2290",
+    "artifacts/audit/a7_dataset_role_decision.json": "ac20878f86641a2b2b37b464650c21f2e1fbad2ac7d3ed452a3d02a006596c63",
+    "artifacts/audit/bot_iot_field_risk_profile.csv": "b86e6ddaba4fe656691e21cd54facf6dcc3bd6ebfe54a7faacbae98f6f81fa67",
+    "artifacts/audit/bot_iot_port_encoding_summary.json": "2b7fa3608a69a6c3f6977723c653612a7df14913a85a0157034f0948c36ec1f5",
+    "artifacts/audit/bot_iot_schema.json": "e647d536aeab74b01bcd376475af4cd6541bdbb14555b841298e7909e9bd3175",
+    "artifacts/audit/label_audit_summary.json": "0673be52327b1b235c6e10b1fbcab4063e679b3a11c0eaf9f068e44f4f5fd154",
+    "artifacts/audit/n_baiot_schema.json": "c9ffb3d6b1132f010f380e2a1cec58f2256fd5dc3cc5969736749c46547883fa",
+    "artifacts/manifests/bot_iot_raw_manifest.csv": "17e522c1a9a585011212c0d7f82b749c1c46056c832cb3286a807f2e69eecc22",
+    "artifacts/manifests/n_baiot_extracted_manifest.csv": "5fe83238878dde2200dc88400ab06911348ceb6cff4eccff3384a4cb110635d5",
+    "artifacts/manifests/n_baiot_raw_manifest.csv": "ac4285c77662ce375d6138d05f6b3667a665154fd97640446146192a99212491",
+    "docs/decisions/ADR-001-dataset-role-selection.md": "ff08b19ad5e0cee3944ae14c6abdf13b72920ae5b5b9b53502579e2b13363bc7"
+  },
+  "status": "SPECIFIED",
+  "versioning_policy": {
+    "compatibility_breaking_change": "increment the major version",
+    "immutability": "published v1 artifacts are never silently altered",
+    "scheme": "semantic versioning",
+    "version_change_required_for": [
+      "ordered predictor candidate fields",
+      "feature semantics",
+      "label mapping",
+      "numeric parsing semantics",
+      "canonical secondary representation",
+      "duplicate-group equality semantics"
+    ]
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "artifact_sha256": {
+    "artifacts/audit/bot_iot_canonical_label_mapping.csv": "05c23d5b2c661443e0caa06b1a4eac1b3debd5d5af5d9e309ee73b65d5c98585",
+    "artifacts/audit/bot_iot_label_distribution.csv": "40da2aa8bd30c6edde5cbe68fa8a370f8217d0d908ad1917ea7f056b5141fd83",
+    "artifacts/audit/bot_iot_label_relationships.csv": "54d8de770c4cf68bf3f81163b7a246a708747b0f5f0a5291c143551fbafdc322",
+    "artifacts/audit/bot_iot_label_values.csv": "ba2464d2ce8d4cb693acc9263057cb1d4d2ec620c56ec9d58c2e931080094fae",
+    "artifacts/audit/bot_iot_representation_label_comparison.csv": "a088a4be3130d9c90895472d87ff1b9cfb7f8f4a4cd55b31ca8d8fdbcfcb0528",
+    "artifacts/audit/n_baiot_device_label_distribution.csv": "9565debebb864324b7c59c4b8feb35c61c2d97ddf4411852c6674e24bd12aa6d",
+    "artifacts/audit/n_baiot_label_distribution.csv": "8db8caa4984e774c3a6ba72d2a63b43d24b909bbdc5e9303f92e6729c2b34433",
+    "artifacts/audit/n_baiot_label_mapping.csv": "5c9d55421730c2be254c268fb163a065dd9101c07940dd90499bb5dddc0b27c1"
+  },
+  "audit_batch": "A3",
+  "bot_iot": {
+    "aggregate_distribution_comparisons": {
+      "attack": {
+        "all_features_matches_ten_best_full": true,
+        "train_plus_test_matches_ten_best_full": true
+      },
+      "attack_category": {
+        "all_features_matches_ten_best_full": true,
+        "train_plus_test_matches_ten_best_full": true
+      },
+      "attack_category_subcategory": {
+        "all_features_matches_ten_best_full": true,
+        "train_plus_test_matches_ten_best_full": true
+      },
+      "category": {
+        "all_features_matches_ten_best_full": true,
+        "train_plus_test_matches_ten_best_full": true
+      },
+      "category_subcategory": {
+        "all_features_matches_ten_best_full": true,
+        "train_plus_test_matches_ten_best_full": true
+      },
+      "subcategory": {
+        "all_features_matches_ten_best_full": true,
+        "train_plus_test_matches_ten_best_full": true
+      }
+    },
+    "all_features_raw_distributions": {
+      "attack": {
+        "0": 477,
+        "1": 3668045
+      },
+      "category": {
+        "DDoS": 1926624,
+        "DoS": 1650260,
+        "Normal": 477,
+        "Reconnaissance": 91082,
+        "Theft": 79
+      },
+      "subcategory": {
+        "Data_Exfiltration": 6,
+        "HTTP": 2474,
+        "Keylogging": 73,
+        "Normal": 477,
+        "OS_Fingerprint": 17914,
+        "Service_Scan": 73168,
+        "TCP": 1593180,
+        "UDP": 1981230
+      }
+    },
+    "all_features_rows": 3668522,
+    "attack_unique_count": 2,
+    "canonical_mappings": {
+      "attack": {
+        "0": "benign",
+        "1": "malicious"
+      },
+      "category": {
+        "DDoS": "ddos",
+        "DoS": "dos",
+        "Normal": "normal",
+        "Reconnaissance": "reconnaissance",
+        "Theft": "theft"
+      },
+      "subcategory": {
+        "Data_Exfiltration": "data_exfiltration",
+        "HTTP": "http",
+        "Keylogging": "keylogging",
+        "Normal": "normal",
+        "OS_Fingerprint": "os_fingerprint",
+        "Service_Scan": "service_scan",
+        "TCP": "tcp",
+        "UDP": "udp"
+      }
+    },
+    "casefold_variant_groups": {
+      "attack": {},
+      "category": {},
+      "subcategory": {}
+    },
+    "category_unique_count": 5,
+    "invalid_or_missing_label_rows": 0,
+    "observed_column_terminology": "46 observed columns; predictor eligibility undecided",
+    "proven_relationships": {
+      "attack_derivable_from_category": true,
+      "attack_derivable_from_subcategory": true,
+      "benign_attack_raw_value": "0",
+      "malicious_attack_raw_value": "1",
+      "normal_category_raw_value": "Normal",
+      "semantic_conflict_rows": 0,
+      "subcategories_under_multiple_categories": [
+        "HTTP",
+        "TCP",
+        "UDP"
+      ]
+    },
+    "record_identity_proven": false,
+    "representation_row_counts": {
+      "all_features_5pct_shards": 3668522,
+      "ten_best_full": 3668522,
+      "ten_best_predefined_test": 733705,
+      "ten_best_predefined_train": 2934817
+    },
+    "row_width_mismatches": 0,
+    "subcategory_unique_count": 8,
+    "whitespace_variants": {
+      "attack": [],
+      "category": [],
+      "subcategory": []
+    }
+  },
+  "generated_at_utc": "2026-09-24T13:25:17.402090+00:00",
+  "label_target_metadata": [
+    "attack",
+    "category",
+    "subcategory"
+  ],
+  "method": {
+    "bot_iot": "streamed Python csv reads limited to attack/category/subcategory",
+    "n_baiot": "derived from verified A2 logical-file provenance and row counts",
+    "source_rows_modified": false
+  },
+  "n_baiot": {
+    "binary_class_count": 2,
+    "binary_distribution": {
+      "benign": 555932,
+      "malicious": 6506674
+    },
+    "coverage_notes": [
+      "Ennio_Doorbell and Samsung_SNH_1011_N_Webcam have no observed Mirai archive; this is recorded coverage, not inferred corruption."
+    ],
+    "devices_without_observed_mirai": [
+      "Ennio_Doorbell",
+      "Samsung_SNH_1011_N_Webcam"
+    ],
+    "family_class_count": 3,
+    "family_distribution": {
+      "benign": 555932,
+      "gafgyt": 2838272,
+      "mirai": 3668402
+    },
+    "fine_class_count": 11,
+    "fine_class_distribution": {
+      "benign": 555932,
+      "gafgyt_combo": 515156,
+      "gafgyt_junk": 261789,
+      "gafgyt_scan": 255111,
+      "gafgyt_tcp": 859850,
+      "gafgyt_udp": 946366,
+      "mirai_ack": 643821,
+      "mirai_scan": 537979,
+      "mirai_syn": 733299,
+      "mirai_udp": 1229999,
+      "mirai_udpplain": 523304
+    },
+    "logical_csv_count": 89,
+    "total_rows": 7062606,
+    "unmapped_logical_files": 0
+  },
+  "overall_status": "PASS"
+}

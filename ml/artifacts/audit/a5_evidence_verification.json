@@ -1,0 +1,713 @@
+{
+  "artifact_hashes_match": true,
+  "audit_batch": "A5 independent verification",
+  "bot_iot": {
+    "class_support_match": true,
+    "direct_identity_free_duplicate_samples": [
+      {
+        "direct_source_values_match_persisted_exact_group": true,
+        "pkSeqID": 3638990,
+        "scope": "ten_best_non_label_excluding_pkseqid_index_without_seq"
+      },
+      {
+        "direct_source_values_match_persisted_exact_group": true,
+        "pkSeqID": 3639161,
+        "scope": "ten_best_non_label_excluding_pkseqid_index_without_seq"
+      },
+      {
+        "direct_source_values_match_persisted_exact_group": true,
+        "pkSeqID": 3639809,
+        "scope": "ten_best_non_label_excluding_pkseqid_index_without_seq"
+      },
+      {
+        "direct_source_values_match_persisted_exact_group": true,
+        "pkSeqID": 3660077,
+        "scope": "ten_best_non_label_excluding_pkseqid_index_without_seq"
+      },
+      {
+        "direct_source_values_match_persisted_exact_group": true,
+        "pkSeqID": 3661229,
+        "scope": "ten_best_non_label_excluding_pkseqid_index_without_seq"
+      },
+      {
+        "direct_source_values_match_persisted_exact_group": true,
+        "pkSeqID": 3663177,
+        "scope": "ten_best_non_label_excluding_pkseqid_index_without_seq"
+      }
+    ],
+    "direct_numeric_lineage_samples": [
+      {
+        "absolute_all_vs_full_deltas": {
+          "drate": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0,
+          "srate": 1.3877787807814457e-17,
+          "stddev": 0.0
+        },
+        "classifications": {
+          "drate": "equals_both",
+          "max": "equals_both",
+          "mean": "equals_both",
+          "min": "equals_both",
+          "srate": "equals_all_features_only",
+          "stddev": "equals_both"
+        },
+        "pkSeqID": 23249,
+        "representation": "ten_best_predefined_train"
+      },
+      {
+        "absolute_all_vs_full_deltas": {
+          "drate": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0,
+          "srate": 0.0,
+          "stddev": 0.0
+        },
+        "classifications": {
+          "drate": "equals_both",
+          "max": "equals_both",
+          "mean": "equals_both",
+          "min": "equals_both",
+          "srate": "equals_both",
+          "stddev": "equals_both"
+        },
+        "pkSeqID": 56836,
+        "representation": "ten_best_predefined_train"
+      },
+      {
+        "absolute_all_vs_full_deltas": {
+          "drate": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0,
+          "srate": 2.7755575615628914e-17,
+          "stddev": 4.440892098500626e-16
+        },
+        "classifications": {
+          "drate": "equals_both",
+          "max": "equals_both",
+          "mean": "equals_both",
+          "min": "equals_both",
+          "srate": "equals_ten_best_full_only",
+          "stddev": "equals_all_features_only"
+        },
+        "pkSeqID": 303688,
+        "representation": "ten_best_predefined_test"
+      },
+      {
+        "absolute_all_vs_full_deltas": {
+          "drate": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0,
+          "srate": 0.0,
+          "stddev": 2.220446049250313e-16
+        },
+        "classifications": {
+          "drate": "equals_both",
+          "max": "equals_both",
+          "mean": "equals_both",
+          "min": "equals_both",
+          "srate": "equals_both",
+          "stddev": "equals_all_features_only"
+        },
+        "pkSeqID": 409928,
+        "representation": "ten_best_predefined_train"
+      },
+      {
+        "absolute_all_vs_full_deltas": {
+          "drate": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0,
+          "srate": 0.0,
+          "stddev": 0.0
+        },
+        "classifications": {
+          "drate": "equals_both",
+          "max": "equals_both",
+          "mean": "equals_both",
+          "min": "equals_both",
+          "srate": "equals_both",
+          "stddev": "equals_both"
+        },
+        "pkSeqID": 420025,
+        "representation": "ten_best_predefined_test"
+      },
+      {
+        "absolute_all_vs_full_deltas": {
+          "drate": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0,
+          "srate": 0.0,
+          "stddev": 2.220446049250313e-16
+        },
+        "classifications": {
+          "drate": "equals_both",
+          "max": "equals_both",
+          "mean": "equals_both",
+          "min": "equals_both",
+          "srate": "equals_both",
+          "stddev": "equals_ten_best_full_only"
+        },
+        "pkSeqID": 628716,
+        "representation": "ten_best_predefined_test"
+      },
+      {
+        "absolute_all_vs_full_deltas": {
+          "drate": 0.0,
+          "max": 4.440892098500626e-16,
+          "mean": 0.0,
+          "min": 0.0,
+          "srate": 0.0,
+          "stddev": 0.0
+        },
+        "classifications": {
+          "drate": "equals_both",
+          "max": "equals_all_features_only",
+          "mean": "equals_both",
+          "min": "equals_both",
+          "srate": "equals_both",
+          "stddev": "equals_both"
+        },
+        "pkSeqID": 781262,
+        "representation": "ten_best_predefined_train"
+      },
+      {
+        "absolute_all_vs_full_deltas": {
+          "drate": 0.0,
+          "max": 0.0,
+          "mean": 4.440892098500626e-16,
+          "min": 0.0,
+          "srate": 2.7755575615628914e-17,
+          "stddev": 0.0
+        },
+        "classifications": {
+          "drate": "equals_both",
+          "max": "equals_both",
+          "mean": "equals_all_features_only",
+          "min": "equals_both",
+          "srate": "equals_all_features_only",
+          "stddev": "equals_both"
+        },
+        "pkSeqID": 787741,
+        "representation": "ten_best_predefined_train"
+      },
+      {
+        "absolute_all_vs_full_deltas": {
+          "drate": 0.0,
+          "max": 8.881784197001252e-16,
+          "mean": 0.0,
+          "min": 0.0,
+          "srate": 0.0,
+          "stddev": 0.0
+        },
+        "classifications": {
+          "drate": "equals_both",
+          "max": "equals_neither",
+          "mean": "equals_both",
+          "min": "equals_both",
+          "srate": "equals_both",
+          "stddev": "equals_both"
+        },
+        "pkSeqID": 792371,
+        "representation": "ten_best_predefined_test"
+      },
+      {
+        "absolute_all_vs_full_deltas": {
+          "drate": 0.0,
+          "max": 4.440892098500626e-16,
+          "mean": 4.440892098500626e-16,
+          "min": 0.0,
+          "srate": 0.0,
+          "stddev": 0.0
+        },
+        "classifications": {
+          "drate": "equals_both",
+          "max": "equals_ten_best_full_only",
+          "mean": "equals_all_features_only",
+          "min": "equals_both",
+          "srate": "equals_both",
+          "stddev": "equals_both"
+        },
+        "pkSeqID": 909045,
+        "representation": "ten_best_predefined_train"
+      },
+      {
+        "absolute_all_vs_full_deltas": {
+          "drate": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0,
+          "srate": 0.0,
+          "stddev": 0.0
+        },
+        "classifications": {
+          "drate": "equals_both",
+          "max": "equals_both",
+          "mean": "equals_both",
+          "min": "equals_both",
+          "srate": "equals_both",
+          "stddev": "equals_both"
+        },
+        "pkSeqID": 1021348,
+        "representation": "ten_best_predefined_train"
+      },
+      {
+        "absolute_all_vs_full_deltas": {
+          "drate": 0.0,
+          "max": 4.440892098500626e-16,
+          "mean": 0.0,
+          "min": 0.0,
+          "srate": 2.7755575615628914e-17,
+          "stddev": 0.0
+        },
+        "classifications": {
+          "drate": "equals_both",
+          "max": "equals_ten_best_full_only",
+          "mean": "equals_both",
+          "min": "equals_both",
+          "srate": "equals_all_features_only",
+          "stddev": "equals_both"
+        },
+        "pkSeqID": 1061387,
+        "representation": "ten_best_predefined_test"
+      },
+      {
+        "absolute_all_vs_full_deltas": {
+          "drate": 0.0,
+          "max": 8.881784197001252e-16,
+          "mean": 0.0,
+          "min": 0.0,
+          "srate": 0.0,
+          "stddev": 2.220446049250313e-16
+        },
+        "classifications": {
+          "drate": "equals_both",
+          "max": "equals_ten_best_full_only",
+          "mean": "equals_both",
+          "min": "equals_both",
+          "srate": "equals_both",
+          "stddev": "equals_ten_best_full_only"
+        },
+        "pkSeqID": 1064106,
+        "representation": "ten_best_predefined_test"
+      },
+      {
+        "absolute_all_vs_full_deltas": {
+          "drate": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0,
+          "srate": 5.551115123125783e-17,
+          "stddev": 2.220446049250313e-16
+        },
+        "classifications": {
+          "drate": "equals_both",
+          "max": "equals_both",
+          "mean": "equals_both",
+          "min": "equals_both",
+          "srate": "equals_all_features_only",
+          "stddev": "equals_all_features_only"
+        },
+        "pkSeqID": 1240757,
+        "representation": "ten_best_predefined_train"
+      },
+      {
+        "absolute_all_vs_full_deltas": {
+          "drate": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0,
+          "srate": 2.7755575615628914e-17,
+          "stddev": 3.469446951953614e-18
+        },
+        "classifications": {
+          "drate": "equals_both",
+          "max": "equals_both",
+          "mean": "equals_both",
+          "min": "equals_both",
+          "srate": "equals_all_features_only",
+          "stddev": "equals_neither"
+        },
+        "pkSeqID": 1429027,
+        "representation": "ten_best_predefined_train"
+      },
+      {
+        "absolute_all_vs_full_deltas": {
+          "drate": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0,
+          "srate": 0.0,
+          "stddev": 0.0
+        },
+        "classifications": {
+          "drate": "equals_both",
+          "max": "equals_both",
+          "mean": "equals_both",
+          "min": "equals_both",
+          "srate": "equals_both",
+          "stddev": "equals_both"
+        },
+        "pkSeqID": 1479476,
+        "representation": "ten_best_predefined_train"
+      },
+      {
+        "absolute_all_vs_full_deltas": {
+          "drate": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0,
+          "srate": 0.0,
+          "stddev": 0.0
+        },
+        "classifications": {
+          "drate": "equals_both",
+          "max": "equals_both",
+          "mean": "equals_both",
+          "min": "equals_both",
+          "srate": "equals_both",
+          "stddev": "equals_both"
+        },
+        "pkSeqID": 1762365,
+        "representation": "ten_best_predefined_train"
+      },
+      {
+        "absolute_all_vs_full_deltas": {
+          "drate": 1.3877787807814457e-17,
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0,
+          "srate": 0.0,
+          "stddev": 3.469446951953614e-18
+        },
+        "classifications": {
+          "drate": "equals_all_features_only",
+          "max": "equals_both",
+          "mean": "equals_both",
+          "min": "equals_both",
+          "srate": "equals_both",
+          "stddev": "equals_all_features_only"
+        },
+        "pkSeqID": 1793063,
+        "representation": "ten_best_predefined_test"
+      },
+      {
+        "absolute_all_vs_full_deltas": {
+          "drate": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0,
+          "srate": 5.551115123125783e-17,
+          "stddev": 5.551115123125783e-17
+        },
+        "classifications": {
+          "drate": "equals_both",
+          "max": "equals_both",
+          "mean": "equals_both",
+          "min": "equals_both",
+          "srate": "equals_ten_best_full_only",
+          "stddev": "equals_all_features_only"
+        },
+        "pkSeqID": 1976315,
+        "representation": "ten_best_predefined_train"
+      },
+      {
+        "absolute_all_vs_full_deltas": {
+          "drate": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0,
+          "srate": 0.0,
+          "stddev": 0.0
+        },
+        "classifications": {
+          "drate": "equals_both",
+          "max": "equals_both",
+          "mean": "equals_both",
+          "min": "equals_both",
+          "srate": "equals_both",
+          "stddev": "equals_both"
+        },
+        "pkSeqID": 2003856,
+        "representation": "ten_best_predefined_test"
+      },
+      {
+        "absolute_all_vs_full_deltas": {
+          "drate": 0.0,
+          "max": 8.881784197001252e-16,
+          "mean": 4.440892098500626e-16,
+          "min": 0.0,
+          "srate": 0.0,
+          "stddev": 2.220446049250313e-16
+        },
+        "classifications": {
+          "drate": "equals_both",
+          "max": "equals_ten_best_full_only",
+          "mean": "equals_all_features_only",
+          "min": "equals_both",
+          "srate": "equals_both",
+          "stddev": "equals_all_features_only"
+        },
+        "pkSeqID": 2012355,
+        "representation": "ten_best_predefined_test"
+      },
+      {
+        "absolute_all_vs_full_deltas": {
+          "drate": 0.0,
+          "max": 8.881784197001252e-16,
+          "mean": 0.0,
+          "min": 0.0,
+          "srate": 0.0,
+          "stddev": 5.551115123125783e-17
+        },
+        "classifications": {
+          "drate": "equals_both",
+          "max": "equals_ten_best_full_only",
+          "mean": "equals_both",
+          "min": "equals_both",
+          "srate": "equals_both",
+          "stddev": "equals_all_features_only"
+        },
+        "pkSeqID": 2056418,
+        "representation": "ten_best_predefined_test"
+      },
+      {
+        "absolute_all_vs_full_deltas": {
+          "drate": 0.0,
+          "max": 0.0,
+          "mean": 4.440892098500626e-16,
+          "min": 0.0,
+          "srate": 0.0,
+          "stddev": 5.551115123125783e-17
+        },
+        "classifications": {
+          "drate": "equals_both",
+          "max": "equals_both",
+          "mean": "equals_all_features_only",
+          "min": "equals_both",
+          "srate": "equals_both",
+          "stddev": "equals_all_features_only"
+        },
+        "pkSeqID": 2118009,
+        "representation": "ten_best_predefined_test"
+      },
+      {
+        "absolute_all_vs_full_deltas": {
+          "drate": 0.0,
+          "max": 0.0,
+          "mean": 4.440892098500626e-16,
+          "min": 0.0,
+          "srate": 5.551115123125783e-17,
+          "stddev": 0.0
+        },
+        "classifications": {
+          "drate": "equals_both",
+          "max": "equals_both",
+          "mean": "equals_all_features_only",
+          "min": "equals_both",
+          "srate": "equals_all_features_only",
+          "stddev": "equals_both"
+        },
+        "pkSeqID": 2432264,
+        "representation": "ten_best_predefined_train"
+      },
+      {
+        "absolute_all_vs_full_deltas": {
+          "drate": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0,
+          "srate": 0.0,
+          "stddev": 2.220446049250313e-16
+        },
+        "classifications": {
+          "drate": "equals_both",
+          "max": "equals_both",
+          "mean": "equals_both",
+          "min": "equals_both",
+          "srate": "equals_both",
+          "stddev": "equals_all_features_only"
+        },
+        "pkSeqID": 2795650,
+        "representation": "ten_best_predefined_test"
+      },
+      {
+        "absolute_all_vs_full_deltas": {
+          "drate": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0,
+          "srate": 0.0,
+          "stddev": 0.0
+        },
+        "classifications": {
+          "drate": "equals_both",
+          "max": "equals_both",
+          "mean": "equals_both",
+          "min": "equals_both",
+          "srate": "equals_both",
+          "stddev": "equals_both"
+        },
+        "pkSeqID": 3008812,
+        "representation": "ten_best_predefined_test"
+      },
+      {
+        "absolute_all_vs_full_deltas": {
+          "drate": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0,
+          "srate": 5.551115123125783e-17,
+          "stddev": 0.0
+        },
+        "classifications": {
+          "drate": "equals_both",
+          "max": "equals_both",
+          "mean": "equals_both",
+          "min": "equals_both",
+          "srate": "equals_all_features_only",
+          "stddev": "equals_both"
+        },
+        "pkSeqID": 3142762,
+        "representation": "ten_best_predefined_train"
+      },
+      {
+        "absolute_all_vs_full_deltas": {
+          "drate": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0,
+          "srate": 0.0,
+          "stddev": 0.0
+        },
+        "classifications": {
+          "drate": "equals_both",
+          "max": "equals_both",
+          "mean": "equals_both",
+          "min": "equals_both",
+          "srate": "equals_both",
+          "stddev": "equals_both"
+        },
+        "pkSeqID": 3257991,
+        "representation": "ten_best_predefined_train"
+      },
+      {
+        "absolute_all_vs_full_deltas": {
+          "drate": 0.0,
+          "max": 0.0,
+          "mean": 4.440892098500626e-16,
+          "min": 4.440892098500626e-16,
+          "srate": 0.0,
+          "stddev": 0.0
+        },
+        "classifications": {
+          "drate": "equals_both",
+          "max": "equals_both",
+          "mean": "equals_all_features_only",
+          "min": "equals_all_features_only",
+          "srate": "equals_both",
+          "stddev": "equals_both"
+        },
+        "pkSeqID": 3258414,
+        "representation": "ten_best_predefined_test"
+      },
+      {
+        "absolute_all_vs_full_deltas": {
+          "drate": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0,
+          "srate": 0.0,
+          "stddev": 0.0
+        },
+        "classifications": {
+          "drate": "equals_both",
+          "max": "equals_both",
+          "mean": "equals_both",
+          "min": "equals_both",
+          "srate": "equals_both",
+          "stddev": "equals_both"
+        },
+        "pkSeqID": 3406860,
+        "representation": "ten_best_predefined_train"
+      },
+      {
+        "absolute_all_vs_full_deltas": {
+          "drate": 0.0,
+          "max": 0.0,
+          "mean": 4.440892098500626e-16,
+          "min": 0.0,
+          "srate": 0.0,
+          "stddev": 0.0
+        },
+        "classifications": {
+          "drate": "equals_both",
+          "max": "equals_both",
+          "mean": "equals_all_features_only",
+          "min": "equals_both",
+          "srate": "equals_both",
+          "stddev": "equals_both"
+        },
+        "pkSeqID": 3445141,
+        "representation": "ten_best_predefined_test"
+      },
+      {
+        "absolute_all_vs_full_deltas": {
+          "drate": 0.0,
+          "max": 8.673617379884035e-19,
+          "mean": 8.673617379884035e-19,
+          "min": 8.673617379884035e-19,
+          "srate": 0.0,
+          "stddev": 0.0
+        },
+        "classifications": {
+          "drate": "equals_both",
+          "max": "equals_ten_best_full_only",
+          "mean": "equals_ten_best_full_only",
+          "min": "equals_ten_best_full_only",
+          "srate": "equals_both",
+          "stddev": "equals_both"
+        },
+        "pkSeqID": 3652525,
+        "representation": "ten_best_predefined_test"
+      }
+    ],
+    "identity_free_direct_source_samples_match": true,
+    "identity_free_exact_database_reconciles": true,
+    "identity_free_whole_dataset_candidate_scan_matches": true,
+    "identity_verification_method": "independent SQL grouping over retained collision-confirmed exact rows; candidate hash counts are separately persisted by the primary audit",
+    "independent_candidate_hash_groups": {
+      "all_non_label_excluding_pkseqid_with_seq": 0,
+      "all_non_label_excluding_pkseqid_without_seq": 0,
+      "ten_best_non_label_excluding_pkseqid_index_with_seq": 0,
+      "ten_best_non_label_excluding_pkseqid_index_without_seq": 185
+    },
+    "numeric_lineage_samples_supported": true,
+    "pkseqid_order_bin_profiles_match": true,
+    "port_lexical_profiles_match": true,
+    "status": "PASS",
+    "supplied_entity_overlap_match": true,
+    "temporal_split_counts_match": true
+  },
+  "generated_at_utc": "2026-09-26T15:24:49.738057+00:00",
+  "n_baiot": {
+    "group_aware_whole_dataset_zero_overlap_reconciles": true,
+    "independent_raw_rows": 7062606,
+    "independent_unique_vectors": 2482676,
+    "leave_one_device_out_results_match": true,
+    "random_split_runs_match": true,
+    "raw_and_unique_class_counts_match": true,
+    "status": "PASS"
+  },
+  "overall_status": "PASS",
+  "verification_free_space": {
+    "free_bytes_after": 36082741248,
+    "free_bytes_before": 36200157184
+  },
+  "verification_independence": "This verifier does not import scripts/dataset_leakage_audit.py. It independently recomputes N-BaIoT group membership diagnostics, streams Bot-IoT labels, ports, identifier bins, entity overlap, temporal counts, and direct lineage samples."
+}

@@ -1,0 +1,11 @@
+datasets:
+  bot_iot:
+    root: "E:/path/to/Bot_IoT_Dataset"
+    role: "secondary"
+  n_baiot:
+    root: "E:/path/to/N_BaIoT_Dataset"
+    role: "primary"
+
+repository:
+  processed_data_root: "data/processed"
+  manifest_root: "data/manifests"

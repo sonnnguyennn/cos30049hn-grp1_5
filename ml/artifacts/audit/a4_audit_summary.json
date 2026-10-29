@@ -1,0 +1,946 @@
+{
+  "artifact_sha256": {
+    "artifacts/audit/a4_flagged_examples.csv": "6006b165271429c1bed9c1a29522fcc4797ee974ad3d9a7dfdb931da0ce354ae",
+    "artifacts/audit/bot_iot_duplicate_summary.json": "43409cfc76e0b57cb0f790cc70fd77191b61528c888fe106b91950bd9c00ca03",
+    "artifacts/audit/bot_iot_lineage_summary.json": "56b24907703489eb0940ce5988890b7d5ff0bad9f1e5f44da087b0decaa4ee67",
+    "artifacts/audit/bot_iot_quality_summary.csv": "b29af6539ca259a537d5348a2575c07c701a55d652268bb6664aeee5d343ecbe",
+    "artifacts/audit/n_baiot_duplicate_summary.json": "1ac8e92ad7f837d865f2c1a009c0c3557b979f343c16795de1e9af622d45de34",
+    "artifacts/audit/n_baiot_quality_summary.csv": "56e17f90f16c0ff0658d4ce2dc1b56ee4990850d5773268d0c2cc5bf298478ad"
+  },
+  "audit_batch": "A4",
+  "duplicate_findings": {
+    "bot_iot": {
+      "all_features_5pct_shards": {
+        "all_43_observed_non_label_fields": {
+          "across_source_files": {
+            "excess_rows": 0,
+            "group_count": 0,
+            "row_occurrences": 0
+          },
+          "by_source_file": {
+            "bot_iot:all_features_5pct_shards:Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_1.csv": {
+              "row_count": 1000000,
+              "within_file_duplicate_excess_rows": 0
+            },
+            "bot_iot:all_features_5pct_shards:Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_2.csv": {
+              "row_count": 1000000,
+              "within_file_duplicate_excess_rows": 0
+            },
+            "bot_iot:all_features_5pct_shards:Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_3.csv": {
+              "row_count": 1000000,
+              "within_file_duplicate_excess_rows": 0
+            },
+            "bot_iot:all_features_5pct_shards:Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_4.csv": {
+              "row_count": 668522,
+              "within_file_duplicate_excess_rows": 0
+            }
+          },
+          "candidate_detection": "pandas deterministic 64-bit candidate hash",
+          "candidate_rows_exactly_reconciled": 0,
+          "different_attack": {
+            "excess_rows": 0,
+            "group_count": 0,
+            "row_occurrences": 0
+          },
+          "different_category": {
+            "excess_rows": 0,
+            "group_count": 0,
+            "row_occurrences": 0
+          },
+          "different_subcategory": {
+            "excess_rows": 0,
+            "group_count": 0,
+            "row_occurrences": 0
+          },
+          "duplicate_excess_ratio_percent": "0",
+          "duplicate_excess_rows": 0,
+          "duplicate_group_count": 0,
+          "duplicate_row_occurrences": 0,
+          "exact_confirmation": "length-prefixed UTF-8 source-field tuples grouped by exact compressed bytes; SHA-256 is retained only as a compact group identifier",
+          "same_labels": {
+            "excess_rows": 0,
+            "group_count": 0,
+            "row_occurrences": 0
+          },
+          "total_rows": 3668522,
+          "unique_records": 3668522,
+          "within_source_file_duplicate_excess_rows": 0
+        },
+        "full_46_observed_fields": {
+          "across_source_files": {
+            "excess_rows": 0,
+            "group_count": 0,
+            "row_occurrences": 0
+          },
+          "by_source_file": {
+            "bot_iot:all_features_5pct_shards:Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_1.csv": {
+              "row_count": 1000000,
+              "within_file_duplicate_excess_rows": 0
+            },
+            "bot_iot:all_features_5pct_shards:Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_2.csv": {
+              "row_count": 1000000,
+              "within_file_duplicate_excess_rows": 0
+            },
+            "bot_iot:all_features_5pct_shards:Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_3.csv": {
+              "row_count": 1000000,
+              "within_file_duplicate_excess_rows": 0
+            },
+            "bot_iot:all_features_5pct_shards:Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_4.csv": {
+              "row_count": 668522,
+              "within_file_duplicate_excess_rows": 0
+            }
+          },
+          "candidate_detection": "pandas deterministic 64-bit candidate hash",
+          "candidate_rows_exactly_reconciled": 0,
+          "duplicate_excess_ratio_percent": "0",
+          "duplicate_excess_rows": 0,
+          "duplicate_group_count": 0,
+          "duplicate_row_occurrences": 0,
+          "exact_confirmation": "length-prefixed UTF-8 source-field tuples grouped by exact compressed bytes; SHA-256 is retained only as a compact group identifier",
+          "total_rows": 3668522,
+          "unique_records": 3668522,
+          "within_source_file_duplicate_excess_rows": 0
+        }
+      },
+      "ten_best_full": {
+        "all_17_observed_non_label_fields_including_unnamed": {
+          "across_source_files": {
+            "excess_rows": 0,
+            "group_count": 0,
+            "row_occurrences": 0
+          },
+          "by_source_file": {
+            "bot_iot:ten_best_full:Dataset/5%/10-best features/UNSW_2018_IoT_Botnet_Final_10_Best.csv": {
+              "row_count": 3668522,
+              "within_file_duplicate_excess_rows": 0
+            }
+          },
+          "candidate_detection": "pandas deterministic 64-bit candidate hash",
+          "candidate_rows_exactly_reconciled": 0,
+          "different_attack": {
+            "excess_rows": 0,
+            "group_count": 0,
+            "row_occurrences": 0
+          },
+          "different_category": {
+            "excess_rows": 0,
+            "group_count": 0,
+            "row_occurrences": 0
+          },
+          "different_subcategory": {
+            "excess_rows": 0,
+            "group_count": 0,
+            "row_occurrences": 0
+          },
+          "duplicate_excess_ratio_percent": "0",
+          "duplicate_excess_rows": 0,
+          "duplicate_group_count": 0,
+          "duplicate_row_occurrences": 0,
+          "exact_confirmation": "length-prefixed UTF-8 source-field tuples grouped by exact compressed bytes; SHA-256 is retained only as a compact group identifier",
+          "same_labels": {
+            "excess_rows": 0,
+            "group_count": 0,
+            "row_occurrences": 0
+          },
+          "total_rows": 3668522,
+          "unique_records": 3668522,
+          "within_source_file_duplicate_excess_rows": 0
+        },
+        "full_20_observed_fields": {
+          "across_source_files": {
+            "excess_rows": 0,
+            "group_count": 0,
+            "row_occurrences": 0
+          },
+          "by_source_file": {
+            "bot_iot:ten_best_full:Dataset/5%/10-best features/UNSW_2018_IoT_Botnet_Final_10_Best.csv": {
+              "row_count": 3668522,
+              "within_file_duplicate_excess_rows": 0
+            }
+          },
+          "candidate_detection": "pandas deterministic 64-bit candidate hash",
+          "candidate_rows_exactly_reconciled": 0,
+          "duplicate_excess_ratio_percent": "0",
+          "duplicate_excess_rows": 0,
+          "duplicate_group_count": 0,
+          "duplicate_row_occurrences": 0,
+          "exact_confirmation": "length-prefixed UTF-8 source-field tuples grouped by exact compressed bytes; SHA-256 is retained only as a compact group identifier",
+          "total_rows": 3668522,
+          "unique_records": 3668522,
+          "within_source_file_duplicate_excess_rows": 0
+        },
+        "named_16_non_label_fields_excluding_unnamed": {
+          "across_source_files": {
+            "excess_rows": 0,
+            "group_count": 0,
+            "row_occurrences": 0
+          },
+          "by_source_file": {
+            "bot_iot:ten_best_full:Dataset/5%/10-best features/UNSW_2018_IoT_Botnet_Final_10_Best.csv": {
+              "row_count": 3668522,
+              "within_file_duplicate_excess_rows": 0
+            }
+          },
+          "candidate_detection": "pandas deterministic 64-bit candidate hash",
+          "candidate_rows_exactly_reconciled": 0,
+          "different_attack": {
+            "excess_rows": 0,
+            "group_count": 0,
+            "row_occurrences": 0
+          },
+          "different_category": {
+            "excess_rows": 0,
+            "group_count": 0,
+            "row_occurrences": 0
+          },
+          "different_subcategory": {
+            "excess_rows": 0,
+            "group_count": 0,
+            "row_occurrences": 0
+          },
+          "duplicate_excess_ratio_percent": "0",
+          "duplicate_excess_rows": 0,
+          "duplicate_group_count": 0,
+          "duplicate_row_occurrences": 0,
+          "exact_confirmation": "length-prefixed UTF-8 source-field tuples grouped by exact compressed bytes; SHA-256 is retained only as a compact group identifier",
+          "same_labels": {
+            "excess_rows": 0,
+            "group_count": 0,
+            "row_occurrences": 0
+          },
+          "total_rows": 3668522,
+          "unique_records": 3668522,
+          "within_source_file_duplicate_excess_rows": 0
+        }
+      }
+    },
+    "candidate_rows_exactly_reconciled": {
+      "bot_iot:all_features_5pct_shards:all_43_observed_non_label_fields": 0,
+      "bot_iot:all_features_5pct_shards:full_46_observed_fields": 0,
+      "bot_iot:ten_best_full:all_17_observed_non_label_fields_including_unnamed": 0,
+      "bot_iot:ten_best_full:full_20_observed_fields": 0,
+      "bot_iot:ten_best_full:named_16_non_label_fields_excluding_unnamed": 0,
+      "n_baiot:all_115_features": 6471566
+    },
+    "n_baiot": {
+      "across_devices": {
+        "excess_rows": 4537367,
+        "group_count": 1871053,
+        "row_occurrences": 6408420
+      },
+      "across_logical_csvs": {
+        "excess_rows": 4537367,
+        "group_count": 1871053,
+        "row_occurrences": 6408420
+      },
+      "by_logical_csv": {
+        "n_baiot:extracted:Danmini_Doorbell/gafgyt_attacks/combo.csv": {
+          "row_count": 59718,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Danmini_Doorbell/gafgyt_attacks/junk.csv": {
+          "row_count": 29068,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Danmini_Doorbell/gafgyt_attacks/scan.csv": {
+          "row_count": 29849,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Danmini_Doorbell/gafgyt_attacks/tcp.csv": {
+          "row_count": 92141,
+          "within_file_duplicate_excess_rows": 6914
+        },
+        "n_baiot:extracted:Danmini_Doorbell/gafgyt_attacks/udp.csv": {
+          "row_count": 105874,
+          "within_file_duplicate_excess_rows": 5692
+        },
+        "n_baiot:extracted:Danmini_Doorbell/mirai_attacks/ack.csv": {
+          "row_count": 102195,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Danmini_Doorbell/mirai_attacks/scan.csv": {
+          "row_count": 107685,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Danmini_Doorbell/mirai_attacks/syn.csv": {
+          "row_count": 122573,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Danmini_Doorbell/mirai_attacks/udp.csv": {
+          "row_count": 237665,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Danmini_Doorbell/mirai_attacks/udpplain.csv": {
+          "row_count": 81982,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Ecobee_Thermostat/gafgyt_attacks/combo.csv": {
+          "row_count": 53012,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Ecobee_Thermostat/gafgyt_attacks/junk.csv": {
+          "row_count": 30312,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Ecobee_Thermostat/gafgyt_attacks/scan.csv": {
+          "row_count": 27494,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Ecobee_Thermostat/gafgyt_attacks/tcp.csv": {
+          "row_count": 95021,
+          "within_file_duplicate_excess_rows": 7144
+        },
+        "n_baiot:extracted:Ecobee_Thermostat/gafgyt_attacks/udp.csv": {
+          "row_count": 104791,
+          "within_file_duplicate_excess_rows": 5596
+        },
+        "n_baiot:extracted:Ecobee_Thermostat/mirai_attacks/ack.csv": {
+          "row_count": 113285,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Ecobee_Thermostat/mirai_attacks/scan.csv": {
+          "row_count": 43192,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Ecobee_Thermostat/mirai_attacks/syn.csv": {
+          "row_count": 116807,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Ecobee_Thermostat/mirai_attacks/udp.csv": {
+          "row_count": 151481,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Ecobee_Thermostat/mirai_attacks/udpplain.csv": {
+          "row_count": 87368,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Ennio_Doorbell/gafgyt_attacks/combo.csv": {
+          "row_count": 53014,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Ennio_Doorbell/gafgyt_attacks/junk.csv": {
+          "row_count": 29797,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Ennio_Doorbell/gafgyt_attacks/scan.csv": {
+          "row_count": 28120,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Ennio_Doorbell/gafgyt_attacks/tcp.csv": {
+          "row_count": 101536,
+          "within_file_duplicate_excess_rows": 7633
+        },
+        "n_baiot:extracted:Ennio_Doorbell/gafgyt_attacks/udp.csv": {
+          "row_count": 103933,
+          "within_file_duplicate_excess_rows": 5578
+        },
+        "n_baiot:extracted:Philips_B120N10_Baby_Monitor/gafgyt_attacks/combo.csv": {
+          "row_count": 58152,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Philips_B120N10_Baby_Monitor/gafgyt_attacks/junk.csv": {
+          "row_count": 28349,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Philips_B120N10_Baby_Monitor/gafgyt_attacks/scan.csv": {
+          "row_count": 27859,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Philips_B120N10_Baby_Monitor/gafgyt_attacks/tcp.csv": {
+          "row_count": 92581,
+          "within_file_duplicate_excess_rows": 6953
+        },
+        "n_baiot:extracted:Philips_B120N10_Baby_Monitor/gafgyt_attacks/udp.csv": {
+          "row_count": 105782,
+          "within_file_duplicate_excess_rows": 5689
+        },
+        "n_baiot:extracted:Philips_B120N10_Baby_Monitor/mirai_attacks/ack.csv": {
+          "row_count": 91123,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Philips_B120N10_Baby_Monitor/mirai_attacks/scan.csv": {
+          "row_count": 103621,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Philips_B120N10_Baby_Monitor/mirai_attacks/syn.csv": {
+          "row_count": 118128,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Philips_B120N10_Baby_Monitor/mirai_attacks/udp.csv": {
+          "row_count": 217034,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Philips_B120N10_Baby_Monitor/mirai_attacks/udpplain.csv": {
+          "row_count": 80808,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Provision_PT_737E_Security_Camera/gafgyt_attacks/combo.csv": {
+          "row_count": 61380,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Provision_PT_737E_Security_Camera/gafgyt_attacks/junk.csv": {
+          "row_count": 30898,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Provision_PT_737E_Security_Camera/gafgyt_attacks/scan.csv": {
+          "row_count": 29297,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Provision_PT_737E_Security_Camera/gafgyt_attacks/tcp.csv": {
+          "row_count": 104510,
+          "within_file_duplicate_excess_rows": 7852
+        },
+        "n_baiot:extracted:Provision_PT_737E_Security_Camera/gafgyt_attacks/udp.csv": {
+          "row_count": 104011,
+          "within_file_duplicate_excess_rows": 5587
+        },
+        "n_baiot:extracted:Provision_PT_737E_Security_Camera/mirai_attacks/ack.csv": {
+          "row_count": 60554,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Provision_PT_737E_Security_Camera/mirai_attacks/scan.csv": {
+          "row_count": 96781,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Provision_PT_737E_Security_Camera/mirai_attacks/syn.csv": {
+          "row_count": 65746,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Provision_PT_737E_Security_Camera/mirai_attacks/udp.csv": {
+          "row_count": 156248,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Provision_PT_737E_Security_Camera/mirai_attacks/udpplain.csv": {
+          "row_count": 56681,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Provision_PT_838_Security_Camera/gafgyt_attacks/combo.csv": {
+          "row_count": 57530,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Provision_PT_838_Security_Camera/gafgyt_attacks/junk.csv": {
+          "row_count": 29068,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Provision_PT_838_Security_Camera/gafgyt_attacks/scan.csv": {
+          "row_count": 28397,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Provision_PT_838_Security_Camera/gafgyt_attacks/tcp.csv": {
+          "row_count": 89387,
+          "within_file_duplicate_excess_rows": 6700
+        },
+        "n_baiot:extracted:Provision_PT_838_Security_Camera/gafgyt_attacks/udp.csv": {
+          "row_count": 104658,
+          "within_file_duplicate_excess_rows": 5630
+        },
+        "n_baiot:extracted:Provision_PT_838_Security_Camera/mirai_attacks/ack.csv": {
+          "row_count": 57997,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Provision_PT_838_Security_Camera/mirai_attacks/scan.csv": {
+          "row_count": 97096,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Provision_PT_838_Security_Camera/mirai_attacks/syn.csv": {
+          "row_count": 61851,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Provision_PT_838_Security_Camera/mirai_attacks/udp.csv": {
+          "row_count": 158608,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Provision_PT_838_Security_Camera/mirai_attacks/udpplain.csv": {
+          "row_count": 53785,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Samsung_SNH_1011_N_Webcam/gafgyt_attacks/combo.csv": {
+          "row_count": 58669,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Samsung_SNH_1011_N_Webcam/gafgyt_attacks/junk.csv": {
+          "row_count": 28305,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Samsung_SNH_1011_N_Webcam/gafgyt_attacks/scan.csv": {
+          "row_count": 27698,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:Samsung_SNH_1011_N_Webcam/gafgyt_attacks/tcp.csv": {
+          "row_count": 97783,
+          "within_file_duplicate_excess_rows": 7329
+        },
+        "n_baiot:extracted:Samsung_SNH_1011_N_Webcam/gafgyt_attacks/udp.csv": {
+          "row_count": 110617,
+          "within_file_duplicate_excess_rows": 5934
+        },
+        "n_baiot:extracted:SimpleHome_XCS7_1002_WHT_Security_Camera/gafgyt_attacks/combo.csv": {
+          "row_count": 54283,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:SimpleHome_XCS7_1002_WHT_Security_Camera/gafgyt_attacks/junk.csv": {
+          "row_count": 28579,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:SimpleHome_XCS7_1002_WHT_Security_Camera/gafgyt_attacks/scan.csv": {
+          "row_count": 27825,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:SimpleHome_XCS7_1002_WHT_Security_Camera/gafgyt_attacks/tcp.csv": {
+          "row_count": 88816,
+          "within_file_duplicate_excess_rows": 6669
+        },
+        "n_baiot:extracted:SimpleHome_XCS7_1002_WHT_Security_Camera/gafgyt_attacks/udp.csv": {
+          "row_count": 103720,
+          "within_file_duplicate_excess_rows": 5539
+        },
+        "n_baiot:extracted:SimpleHome_XCS7_1002_WHT_Security_Camera/mirai_attacks/ack.csv": {
+          "row_count": 111480,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:SimpleHome_XCS7_1002_WHT_Security_Camera/mirai_attacks/scan.csv": {
+          "row_count": 45930,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:SimpleHome_XCS7_1002_WHT_Security_Camera/mirai_attacks/syn.csv": {
+          "row_count": 125715,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:SimpleHome_XCS7_1002_WHT_Security_Camera/mirai_attacks/udp.csv": {
+          "row_count": 151879,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:SimpleHome_XCS7_1002_WHT_Security_Camera/mirai_attacks/udpplain.csv": {
+          "row_count": 78244,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:SimpleHome_XCS7_1003_WHT_Security_Camera/gafgyt_attacks/combo.csv": {
+          "row_count": 59398,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:SimpleHome_XCS7_1003_WHT_Security_Camera/gafgyt_attacks/junk.csv": {
+          "row_count": 27413,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:SimpleHome_XCS7_1003_WHT_Security_Camera/gafgyt_attacks/scan.csv": {
+          "row_count": 28572,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:SimpleHome_XCS7_1003_WHT_Security_Camera/gafgyt_attacks/tcp.csv": {
+          "row_count": 98075,
+          "within_file_duplicate_excess_rows": 7366
+        },
+        "n_baiot:extracted:SimpleHome_XCS7_1003_WHT_Security_Camera/gafgyt_attacks/udp.csv": {
+          "row_count": 102980,
+          "within_file_duplicate_excess_rows": 5542
+        },
+        "n_baiot:extracted:SimpleHome_XCS7_1003_WHT_Security_Camera/mirai_attacks/ack.csv": {
+          "row_count": 107187,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:SimpleHome_XCS7_1003_WHT_Security_Camera/mirai_attacks/scan.csv": {
+          "row_count": 43674,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:SimpleHome_XCS7_1003_WHT_Security_Camera/mirai_attacks/syn.csv": {
+          "row_count": 122479,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:SimpleHome_XCS7_1003_WHT_Security_Camera/mirai_attacks/udp.csv": {
+          "row_count": 157084,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:extracted:SimpleHome_XCS7_1003_WHT_Security_Camera/mirai_attacks/udpplain.csv": {
+          "row_count": 84436,
+          "within_file_duplicate_excess_rows": 0
+        },
+        "n_baiot:source:Danmini_Doorbell/benign_traffic.csv": {
+          "row_count": 49548,
+          "within_file_duplicate_excess_rows": 9153
+        },
+        "n_baiot:source:Ecobee_Thermostat/benign_traffic.csv": {
+          "row_count": 13113,
+          "within_file_duplicate_excess_rows": 2
+        },
+        "n_baiot:source:Ennio_Doorbell/benign_traffic.csv": {
+          "row_count": 39100,
+          "within_file_duplicate_excess_rows": 3690
+        },
+        "n_baiot:source:Philips_B120N10_Baby_Monitor/benign_traffic.csv": {
+          "row_count": 175240,
+          "within_file_duplicate_excess_rows": 10099
+        },
+        "n_baiot:source:Provision_PT_737E_Security_Camera/benign_traffic.csv": {
+          "row_count": 62154,
+          "within_file_duplicate_excess_rows": 6985
+        },
+        "n_baiot:source:Provision_PT_838_Security_Camera/benign_traffic.csv": {
+          "row_count": 98514,
+          "within_file_duplicate_excess_rows": 4519
+        },
+        "n_baiot:source:Samsung_SNH_1011_N_Webcam/benign_traffic.csv": {
+          "row_count": 52150,
+          "within_file_duplicate_excess_rows": 2591
+        },
+        "n_baiot:source:SimpleHome_XCS7_1002_WHT_Security_Camera/benign_traffic.csv": {
+          "row_count": 46585,
+          "within_file_duplicate_excess_rows": 3801
+        },
+        "n_baiot:source:SimpleHome_XCS7_1003_WHT_Security_Camera/benign_traffic.csv": {
+          "row_count": 19528,
+          "within_file_duplicate_excess_rows": 1592
+        }
+      },
+      "candidate_detection": "pandas deterministic 64-bit candidate hash",
+      "candidate_rows_exactly_reconciled": 6471566,
+      "duplicate_excess_ratio_percent": "64.84759308391265207205385661",
+      "duplicate_excess_rows": 4579930,
+      "duplicate_group_count": 1891636,
+      "duplicate_row_occurrences": 6471566,
+      "exact_confirmation": "length-prefixed UTF-8 source-field tuples grouped by exact compressed bytes; SHA-256 is retained only as a compact group identifier",
+      "same_feature_benign_malicious_conflict": {
+        "excess_rows": 0,
+        "group_count": 0,
+        "row_occurrences": 0
+      },
+      "same_feature_different_family": {
+        "excess_rows": 0,
+        "group_count": 0,
+        "row_occurrences": 0
+      },
+      "same_feature_different_fine_label": {
+        "excess_rows": 0,
+        "group_count": 0,
+        "row_occurrences": 0
+      },
+      "same_feature_same_fine_label": {
+        "excess_rows": 4579930,
+        "group_count": 1891636,
+        "row_occurrences": 6471566
+      },
+      "total_rows": 7062606,
+      "unique_records": 2482676,
+      "within_same_logical_csv_duplicate_excess_rows": 157779
+    }
+  },
+  "generated_at_utc": "2026-09-25T17:44:00.254256+00:00",
+  "lineage_findings": {
+    "all_features": {
+      "pk_duplicate_count": 0,
+      "pk_max": 3668522,
+      "pk_min": 1,
+      "pk_missing_count": 0,
+      "pk_numeric_parse_failure_count": 0,
+      "pk_unique_count": 3668522,
+      "row_count": 3668522
+    },
+    "conclusions": {
+      "comparison_semantics": "pkSeqID is an integer key; documented numeric fields are compared as finite IEEE-754 values so 1 and 1.0 compare equal; proto/address/port/category/subcategory fields are compared as exact source strings because local port values include nonnumeric lexical forms",
+      "feature_selection_process_inferred": false,
+      "predefined_train_test_are_exact_observed_partition_of_ten_best_full": false,
+      "split_suitability_or_leakage_freedom_inferred": false,
+      "ten_best_full_is_exact_observed_all_features_projection": false
+    },
+    "pkseqid_sets": {
+      "all_features_vs_ten_best_full_missing_from_all_features": 0,
+      "all_features_vs_ten_best_full_missing_from_ten_best_full": 0,
+      "train_test_are_disjoint": true,
+      "train_test_intersection_count": 0,
+      "train_test_union_count": 3668522,
+      "train_test_union_equals_full": true
+    },
+    "ten_best_full": {
+      "difference_count_per_field": {
+        "N_IN_Conn_P_DstIP": 0,
+        "N_IN_Conn_P_SrcIP": 0,
+        "attack": 0,
+        "category": 0,
+        "daddr": 0,
+        "dport": 0,
+        "drate": 34764,
+        "max": 412424,
+        "mean": 334207,
+        "min": 154574,
+        "pkSeqID": 0,
+        "proto": 0,
+        "saddr": 0,
+        "seq": 0,
+        "sport": 0,
+        "srate": 534488,
+        "state_number": 0,
+        "stddev": 371236,
+        "subcategory": 0
+      },
+      "matched_ids": 3668522,
+      "pk_duplicate_count": 0,
+      "pk_max": 3668522,
+      "pk_min": 1,
+      "pk_missing_count": 0,
+      "pk_numeric_parse_failure_count": 0,
+      "pk_unique_count": 3668522,
+      "records_all_19_fields_equal": 2235054,
+      "records_with_field_differences": 1433468,
+      "row_count": 3668522,
+      "row_order_matches_all_features": true
+    },
+    "ten_best_predefined_test": {
+      "difference_count_per_field": {
+        "N_IN_Conn_P_DstIP": 0,
+        "N_IN_Conn_P_SrcIP": 0,
+        "attack": 0,
+        "category": 0,
+        "daddr": 0,
+        "dport": 0,
+        "drate": 1628,
+        "max": 72495,
+        "mean": 57633,
+        "min": 25699,
+        "pkSeqID": 0,
+        "proto": 0,
+        "saddr": 0,
+        "seq": 0,
+        "sport": 0,
+        "srate": 44112,
+        "state_number": 0,
+        "stddev": 55177,
+        "subcategory": 0
+      },
+      "matched_ids": 733705,
+      "pk_duplicate_count": 0,
+      "pk_max": 3668507,
+      "pk_min": 2,
+      "pk_missing_count": 0,
+      "pk_numeric_parse_failure_count": 0,
+      "pk_unique_count": 733705,
+      "preserves_full_relative_order": false,
+      "records_all_19_fields_equal": 519670,
+      "records_with_field_differences": 214035,
+      "row_count": 733705
+    },
+    "ten_best_predefined_train": {
+      "difference_count_per_field": {
+        "N_IN_Conn_P_DstIP": 0,
+        "N_IN_Conn_P_SrcIP": 0,
+        "attack": 0,
+        "category": 0,
+        "daddr": 0,
+        "dport": 0,
+        "drate": 6307,
+        "max": 289857,
+        "mean": 230878,
+        "min": 101868,
+        "pkSeqID": 0,
+        "proto": 0,
+        "saddr": 0,
+        "seq": 0,
+        "sport": 0,
+        "srate": 178007,
+        "state_number": 0,
+        "stddev": 219843,
+        "subcategory": 0
+      },
+      "matched_ids": 2934817,
+      "pk_duplicate_count": 0,
+      "pk_max": 3668522,
+      "pk_min": 1,
+      "pk_missing_count": 0,
+      "pk_numeric_parse_failure_count": 0,
+      "pk_unique_count": 2934817,
+      "preserves_full_relative_order": false,
+      "records_all_19_fields_equal": 2079018,
+      "records_with_field_differences": 855799,
+      "row_count": 2934817
+    },
+    "unnamed_leading_column": {
+      "duplicate_count": 0,
+      "equals_zero_based_physical_row_position": true,
+      "equals_zero_based_physical_row_position_count": 3668522,
+      "integer_count": 3668522,
+      "max": 3668521.0,
+      "min": 0.0,
+      "numeric_parse_failure_count": 0,
+      "previous_value": 3668521.0,
+      "row_count": 3668522,
+      "strict_step_one_monotonic": true,
+      "unique_count": 3668522
+    }
+  },
+  "overall_status": "PASS",
+  "quality_findings": {
+    "bot_iot": {
+      "all_features_5pct_shards": {
+        "column_count": 46,
+        "columns_with_empty_fields": [],
+        "columns_with_explicit_null_tokens": [],
+        "columns_with_nan": [],
+        "columns_with_negative_finite_values": [
+          "dport",
+          "sport"
+        ],
+        "columns_with_negative_inf": [],
+        "columns_with_numeric_parse_failures": [
+          "dport",
+          "sport"
+        ],
+        "columns_with_outer_whitespace": [],
+        "columns_with_positive_inf": [],
+        "empty_field_total": 0,
+        "explicit_null_token_total": 0,
+        "missing_any_rows": 0,
+        "nan_total": 0,
+        "negative_inf_total": 0,
+        "nonfinite_any_rows": 0,
+        "numeric_parse_failure_total": 18104,
+        "outer_whitespace_total": 0,
+        "parse_failure_any_rows": 9052,
+        "positive_inf_total": 0,
+        "row_count": 3668522
+      },
+      "ten_best_full": {
+        "column_count": 20,
+        "columns_with_empty_fields": [],
+        "columns_with_explicit_null_tokens": [],
+        "columns_with_nan": [],
+        "columns_with_negative_finite_values": [
+          "dport",
+          "sport"
+        ],
+        "columns_with_negative_inf": [],
+        "columns_with_numeric_parse_failures": [
+          "dport",
+          "sport"
+        ],
+        "columns_with_outer_whitespace": [],
+        "columns_with_positive_inf": [],
+        "empty_field_total": 0,
+        "explicit_null_token_total": 0,
+        "missing_any_rows": 0,
+        "nan_total": 0,
+        "negative_inf_total": 0,
+        "nonfinite_any_rows": 0,
+        "numeric_parse_failure_total": 18104,
+        "outer_whitespace_total": 0,
+        "parse_failure_any_rows": 9052,
+        "positive_inf_total": 0,
+        "row_count": 3668522
+      },
+      "ten_best_predefined_test": {
+        "column_count": 19,
+        "columns_with_empty_fields": [],
+        "columns_with_explicit_null_tokens": [],
+        "columns_with_nan": [],
+        "columns_with_negative_finite_values": [
+          "dport",
+          "sport"
+        ],
+        "columns_with_negative_inf": [],
+        "columns_with_numeric_parse_failures": [
+          "dport",
+          "sport"
+        ],
+        "columns_with_outer_whitespace": [],
+        "columns_with_positive_inf": [],
+        "empty_field_total": 0,
+        "explicit_null_token_total": 0,
+        "missing_any_rows": 0,
+        "nan_total": 0,
+        "negative_inf_total": 0,
+        "nonfinite_any_rows": 0,
+        "numeric_parse_failure_total": 3648,
+        "outer_whitespace_total": 0,
+        "parse_failure_any_rows": 1824,
+        "positive_inf_total": 0,
+        "row_count": 733705
+      },
+      "ten_best_predefined_train": {
+        "column_count": 19,
+        "columns_with_empty_fields": [],
+        "columns_with_explicit_null_tokens": [],
+        "columns_with_nan": [],
+        "columns_with_negative_finite_values": [
+          "dport",
+          "sport"
+        ],
+        "columns_with_negative_inf": [],
+        "columns_with_numeric_parse_failures": [
+          "dport",
+          "sport"
+        ],
+        "columns_with_outer_whitespace": [],
+        "columns_with_positive_inf": [],
+        "empty_field_total": 0,
+        "explicit_null_token_total": 0,
+        "missing_any_rows": 0,
+        "nan_total": 0,
+        "negative_inf_total": 0,
+        "nonfinite_any_rows": 0,
+        "numeric_parse_failure_total": 14456,
+        "outer_whitespace_total": 0,
+        "parse_failure_any_rows": 7228,
+        "positive_inf_total": 0,
+        "row_count": 2934817
+      }
+    },
+    "n_baiot": {
+      "column_count": 115,
+      "columns_with_empty_fields": [],
+      "columns_with_explicit_null_tokens": [],
+      "columns_with_nan": [],
+      "columns_with_negative_finite_values": [
+        "HH_L0.01_covariance",
+        "HH_L0.01_pcc",
+        "HH_L0.1_covariance",
+        "HH_L0.1_pcc",
+        "HH_L1_covariance",
+        "HH_L1_pcc",
+        "HH_L3_covariance",
+        "HH_L3_pcc",
+        "HH_L5_covariance",
+        "HH_L5_pcc",
+        "HpHp_L0.01_covariance",
+        "HpHp_L0.01_pcc",
+        "HpHp_L0.1_covariance",
+        "HpHp_L0.1_pcc",
+        "HpHp_L1_covariance",
+        "HpHp_L1_pcc",
+        "HpHp_L3_covariance",
+        "HpHp_L3_pcc",
+        "HpHp_L5_covariance",
+        "HpHp_L5_pcc"
+      ],
+      "columns_with_negative_inf": [],
+      "columns_with_numeric_parse_failures": [],
+      "columns_with_outer_whitespace": [],
+      "columns_with_positive_inf": [],
+      "empty_field_total": 0,
+      "explicit_null_token_total": 0,
+      "logical_file_count": 89,
+      "missing_any_rows": 0,
+      "nan_total": 0,
+      "negative_inf_total": 0,
+      "nonfinite_any_rows": 0,
+      "numeric_parse_failure_total": 0,
+      "outer_whitespace_total": 0,
+      "parse_failure_any_rows": 0,
+      "positive_inf_total": 0,
+      "row_count": 7062606,
+      "total_rows": 7062606
+    },
+    "negative_finite_values_are_observations_not_automatically_invalid": true
+  },
+  "scope_exclusions": [
+    "no cleaning, imputation, row or column removal",
+    "no deduplication or feature selection",
+    "no train/test split selection or validation",
+    "no class balancing, scaling, encoding, or model training",
+    "no primary/secondary dataset decision"
+  ],
+  "status_semantics": "PASS means the audit completed and reconciled; it does not mean no quality or duplicate findings were observed.",
+  "temporary_data": {
+    "database": "E:\\Document\\iotguard_dataset_work\\a4_fingerprints_phase0_retry2_20260925\\a4_audit.sqlite",
+    "directory": "E:\\Document\\iotguard_dataset_work\\a4_fingerprints_phase0_retry2_20260925",
+    "free_bytes_after_primary_audit": 27726905344,
+    "free_bytes_before": 37980368896,
+    "retention_status": "retained_until_independent_verification"
+  }
+}

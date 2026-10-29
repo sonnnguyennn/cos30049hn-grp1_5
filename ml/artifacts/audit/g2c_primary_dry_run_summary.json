@@ -1,0 +1,51 @@
+{
+  "audit_batch": "G2C full primary streaming dry validation",
+  "deterministic_result": {
+    "binary_counts": {
+      "benign": 555932,
+      "malicious": 6506674
+    },
+    "error_counts": {
+      "nonfinite_errors": 0,
+      "numeric_parse_errors": 0,
+      "other_parse_errors": 0,
+      "provenance_mapping_errors": 0,
+      "record_width_errors": 0,
+      "schema_errors": 0,
+      "source_identity_errors": 0,
+      "source_row_count_errors": 0
+    },
+    "failure": null,
+    "family_counts": {
+      "benign": 555932,
+      "gafgyt": 2838272,
+      "mirai": 3668402
+    },
+    "feature_count_per_record": 115,
+    "fine_counts": {
+      "benign": 555932,
+      "gafgyt_combo": 515156,
+      "gafgyt_junk": 261789,
+      "gafgyt_scan": 255111,
+      "gafgyt_tcp": 859850,
+      "gafgyt_udp": 946366,
+      "mirai_ack": 643821,
+      "mirai_scan": 537979,
+      "mirai_syn": 733299,
+      "mirai_udp": 1229999,
+      "mirai_udpplain": 523304
+    },
+    "logical_sources_completed": 89,
+    "reconciliation_status": "PASS",
+    "source_metadata_unchanged": true,
+    "total_rows": 7062606
+  },
+  "deterministic_result_sha256": "6822a1d4947944be86e05ed18c8097a98fbc59dcefc7b2c71b2e11327f580792",
+  "execution_metadata": {
+    "full_processed_dataset_written": false,
+    "records_retained_after_validation": 0,
+    "runtime_seconds": 2027.422722400006,
+    "started_at_utc": "2026-09-27T14:43:18.842011+00:00"
+  },
+  "overall_status": "PASS"
+}

@@ -1,0 +1,43 @@
+{
+  "artifact_sha256": {
+    "artifacts/audit/bot_iot_csv_structure.csv": "6fcbfe709821331c8613bebcd4e8288ad9f62635fe04438ef9cfd366b2329677",
+    "artifacts/audit/bot_iot_representation_comparison.csv": "468f6e0b72c8ed3c1b82dff1e8626f7bb7ad61709d270d47acf92f142063750d",
+    "artifacts/audit/bot_iot_schema.json": "e647d536aeab74b01bcd376475af4cd6541bdbb14555b841298e7909e9bd3175",
+    "artifacts/audit/n_baiot_csv_structure.csv": "9911fea192929212e9f049eeb8dea139ee5b17f273ec973abec8c720b76c3355",
+    "artifacts/audit/n_baiot_schema.json": "c9ffb3d6b1132f010f380e2a1cec58f2256fd5dc3cc5969736749c46547883fa"
+  },
+  "audit_batch": "A2",
+  "bot_iot": {
+    "all_features_file_count": 4,
+    "all_features_rows": 3668522,
+    "all_features_schema_count": 1,
+    "all_features_shard_rows": {
+      "Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_1.csv": 1000000,
+      "Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_2.csv": 1000000,
+      "Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_3.csv": 1000000,
+      "Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_4.csv": 668522
+    },
+    "parse_failures": 0,
+    "representation_schema_count": 3,
+    "ten_best_full_rows": 3668522,
+    "ten_best_test_rows": 733705,
+    "ten_best_train_rows": 2934817,
+    "ten_best_train_test_sum": 3668522,
+    "ten_best_unsplit_vs_split_row_count_match": true
+  },
+  "generated_at_utc": "2026-09-24T12:55:32.230732+00:00",
+  "n_baiot": {
+    "attack_archive_count": 16,
+    "attack_member_csv_count": 80,
+    "canonical_schema_consistent": true,
+    "logical_csv_count": 89,
+    "observed_column_count": [
+      115
+    ],
+    "parse_failures": 0,
+    "schema_count": 1,
+    "source_benign_csv_count": 9,
+    "total_data_rows": 7062606
+  },
+  "overall_status": "PASS"
+}
