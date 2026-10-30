@@ -10,7 +10,10 @@
     "resolved_configuration",
     "train_population_sha256",
     "validation_population_sha256",
-    "metrics"
+    "metrics",
+    "package_version",
+    "package_manifest_sha256",
+    "dirty_worktree"
   ],
   "properties": {
     "schema_version": {
@@ -212,6 +215,17 @@
     "validation_population_sha256": {
       "type": "string",
       "pattern": "^[0-9a-f]{64}$"
+    },
+    "package_version": {
+      "type": "string",
+      "pattern": ".*\\S.*"
+    },
+    "package_manifest_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "dirty_worktree": {
+      "type": "boolean"
     }
   }
 }

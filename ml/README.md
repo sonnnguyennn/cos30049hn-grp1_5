@@ -68,3 +68,5 @@ Historical audit evidence is preserved byte-for-byte from the source checkout. S
 ## G3B primary data package
 
 The full primary package is READY_FOR_TEAM after independent relocated loading; TEAM_VERIFIED awaits a recipient run. See [G3B handoff](docs/handoffs/G3B_PRIMARY_DATA_HANDOFF.md) for exact package paths, checksums, commands and raw/scaled loading. The package is stored outside Git. Classification, clustering and final inference packaging remain pending.
+
+The builder now emits the portable loader, README and standalone verifier itself; no post-build patching is needed. Experiment results require package version, manifest checksum and boolean dirty-worktree status, and selection enforces package/protocol/population identity. See [build and identity repair](docs/handoffs/G3B_BUILD_IDENTITY_FIX.md) and the updated [primary protocol](docs/protocols/primary_experiments_v1.md) before baseline comparisons.

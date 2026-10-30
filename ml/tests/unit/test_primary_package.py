@@ -5,7 +5,12 @@ import pytest
 from sklearn.preprocessing import StandardScaler
 
 from iotguard.data.primary_package import PrimaryPackage
-from iotguard.evaluation.primary import binary_metrics, select_validation
+from iotguard.evaluation.primary import (
+    binary_metrics,
+    experiment_result,
+    resolve_configuration,
+    select_validation,
+)
 
 
 def test_known_confusion():
@@ -45,8 +50,11 @@ def test_selection_tolerance_and_population():
         m["macro_f1"] = score
         m["fpr"] = fpr
         m["per_class"]["malicious"]["recall"] = recall
-        return {"train_population_sha256": "a", "validation_population_sha256": "b",
-                "metrics": m}
+        return experiment_result("candidate", m, configuration=resolve_configuration(
+            input_view="raw", parameters={}), code_revision="unit-test",
+            package_version="primary_package_v1", package_manifest_sha256="c" * 64,
+            dirty_worktree=False, train_population_sha256="a" * 64,
+            validation_population_sha256="b" * 64)
     a, b = candidate(0.8, 0.2, 0.8), candidate(0.7999995, 0.1, 0.7)
     assert select_validation([a, b]) is b
     c = candidate(0.8, 0.1, 0.9)
@@ -136,12 +144,16 @@ def test_result_envelope_resolves_seeds_and_requires_identity():
     assert config["seeds"] == {"python": 42, "numpy": 42, "scikit_learn": 42}
     result = experiment_result("synthetic", binary_metrics([0, 1], [0.1, 0.8]),
                                configuration=config, code_revision="unit-test",
+                               package_version="primary_package_v1",
+                               package_manifest_sha256="c" * 64, dirty_worktree=False,
                                train_population_sha256="a" * 64,
                                validation_population_sha256="b" * 64)
     assert result["schema_version"] == "primary_result_v1"
     json.dumps(result, allow_nan=False)
     with pytest.raises(ValueError):
         experiment_result("x", result["metrics"], configuration={}, code_revision="x",
+                          package_version="primary_package_v1",
+                          package_manifest_sha256="c" * 64, dirty_worktree=False,
                           train_population_sha256="a" * 64,
                           validation_population_sha256="b" * 64)
 

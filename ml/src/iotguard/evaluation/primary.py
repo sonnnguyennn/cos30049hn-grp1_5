@@ -19,21 +19,48 @@ def resolve_configuration(*, input_view, parameters, seed_file=None):
             "threshold": 0.5, "protocol_revision": "primary_experiments_v1"}
 
 
-def experiment_result(run_id, metrics, *, configuration, code_revision,
+def _experiment_identity(result):
+    required = ("package_version", "package_manifest_sha256", "protocol_revision",
+                "train_population_sha256", "validation_population_sha256", "dirty_worktree")
+    if any(key not in result for key in required):
+        raise ValueError("Missing required experiment identity")
+    for key in ("package_version", "protocol_revision"):
+        if not isinstance(result[key], str) or not result[key].strip():
+            raise ValueError(f"Invalid {key}")
+    for key in ("package_manifest_sha256", "train_population_sha256",
+                "validation_population_sha256"):
+        value = result[key]
+        if (not isinstance(value, str) or len(value) != 64
+                or any(c not in "0123456789abcdef" for c in value)):
+            raise ValueError(f"{key} must be SHA-256 hex")
+    if type(result["dirty_worktree"]) is not bool:
+        raise ValueError("dirty_worktree must be an explicit boolean")
+    if result.get("resolved_configuration", {}).get("protocol_revision") != result[
+            "protocol_revision"]:
+        raise ValueError("Protocol revision must match resolved configuration")
+    return tuple(result[key] for key in required if key != "dirty_worktree")
+
+
+def experiment_result(run_id, metrics, *, configuration, code_revision, package_version,
+                      package_manifest_sha256, dirty_worktree,
                       train_population_sha256, validation_population_sha256):
     """Construct the shared JSON result envelope with explicit resolved configuration."""
     if not run_id or not code_revision or not configuration.get("seeds"):
         raise ValueError("Run identity, code revision and resolved seeds are required")
-    for fingerprint in (train_population_sha256, validation_population_sha256):
-        if len(fingerprint) != 64 or any(c not in "0123456789abcdef" for c in fingerprint):
-            raise ValueError("Population fingerprints must be SHA-256 hex")
     if metrics.get("schema_version") != "primary_metrics_v1":
         raise ValueError("Incompatible metrics")
-    return {"schema_version": "primary_result_v1", "run_id": run_id,
-            "protocol_revision": "primary_experiments_v1", "code_revision": code_revision,
+    if configuration.get("protocol_revision") != "primary_experiments_v1":
+        raise ValueError("Unsupported primary experiment protocol revision")
+    result = {"schema_version": "primary_result_v1", "run_id": run_id,
+            "protocol_revision": configuration.get("protocol_revision"),
+            "code_revision": code_revision, "package_version": package_version,
+            "package_manifest_sha256": package_manifest_sha256,
+            "dirty_worktree": dirty_worktree,
             "resolved_configuration": deepcopy(configuration), "metrics": deepcopy(metrics),
             "train_population_sha256": train_population_sha256,
             "validation_population_sha256": validation_population_sha256}
+    _experiment_identity(result)
+    return result
 
 
 def binary_metrics(y_true, probabilities, *, partition="VALIDATION", threshold=0.5):
@@ -70,14 +97,14 @@ def binary_metrics(y_true, probabilities, *, partition="VALIDATION", threshold=0
 
 
 def select_validation(results):
-    """Compare identical population fingerprints; apply 1e-6 macro-F1 tolerance."""
+    """Require package/protocol/population identity; apply 1e-6 macro-F1 tolerance."""
     if not results:
         raise ValueError("No candidates")
     population = None
     for r in results:
-        identity = (r["train_population_sha256"], r["validation_population_sha256"])
+        identity = _experiment_identity(r)
         if population is not None and identity != population:
-            raise ValueError("Comparisons must use identical populations")
+            raise ValueError("Comparisons must use identical package, protocol and populations")
         population = identity
         m = r["metrics"]
         if m["schema_version"] != "primary_metrics_v1" or m["partition"] != "VALIDATION":

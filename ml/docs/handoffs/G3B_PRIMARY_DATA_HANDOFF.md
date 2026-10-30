@@ -2,6 +2,8 @@
 
 Date: 2026-10-30. **READY_FOR_TEAM**, not TEAM_VERIFIED. Hiếu or Minh Sơn must run the copied package on their own machine before claiming TEAM_VERIFIED.
 
+Build/identity repair: see [G3B_BUILD_IDENTITY_FIX.md](G3B_BUILD_IDENTITY_FIX.md) and the current primary protocol before new builds or baseline comparisons. This handoff records the original package run; that accepted package remains unchanged. The repaired builder now performs the portable packaging steps automatically.
+
 ## Checkout and verified outcome
 
 Repository: `E:\Document\iotguard-cos30049hn-grp1-5`. Started on clean `chore/import-g3a-ml-foundation` at foundation HEAD `290fbef4ae2e42d6aadd43ea8231976fd095f610`; implementation branch `feat/g3b-primary-data-package`. No reset or automatic merge occurred. The local checkpoint containing this document identifies the final implementation (`git log -1 --format=%H -- ml/docs/handoffs/G3B_PRIMARY_DATA_HANDOFF.md`). The materialisation manifest records the foundation revision and dirty implementation state; exact implementation hashes are recorded separately in the same manifest. No push/merge is part of this task.

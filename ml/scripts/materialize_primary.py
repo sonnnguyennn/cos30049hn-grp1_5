@@ -9,6 +9,7 @@ import subprocess
 import sys
 from collections import Counter
 from datetime import UTC, datetime
+from importlib.metadata import version
 from itertools import islice
 from pathlib import Path
 
@@ -28,6 +29,13 @@ from iotguard.data.split import (
 
 PARTITIONS = ("TRAIN", "VALIDATION", "TEST")
 META = np.dtype([("source", "<u2"), ("row", "<u8")])
+IMPLEMENTATION_PATHS = (
+    "scripts/materialize_primary.py", "scripts/verify_primary_package.py",
+    "src/iotguard/data/primary_package.py", "src/iotguard/data/n_baiot.py",
+    "src/iotguard/data/split.py", "src/iotguard/data/contracts.py",
+    "config/seeds.yaml", "docs/package/PRIMARY_PACKAGE_README.md",
+    "artifacts/audit/n_baiot_label_mapping.csv",
+)
 
 
 def write_json(path, value):
@@ -45,6 +53,8 @@ def main():
     args = parser.parse_args()
     if args.chunk_size < 1 or args.rows_per_source < 1:
         parser.error("Positive chunk and smoke sizes required")
+    implementation_hashes = {"ml/" + name: sha256_file(PROJECT_ROOT / name)
+                             for name in IMPLEMENTATION_PATHS}
     safety = json.loads((PROJECT_ROOT / "artifacts/audit/a4_evidence_verification.json")
                         .read_text())["source_safety"]
     roots = {k: Path(v["root"]) for k, v in safety.items()}
@@ -179,8 +189,15 @@ def main():
                "n_samples_seen": int(scaler.n_samples_seen_), "mean": scaler.mean_.tolist(),
                "var": scaler.var_.tolist(), "scale": scaler.scale_.tolist(),
                "with_mean": True, "with_std": True})
+    if implementation_hashes != {"ml/" + name: sha256_file(PROJECT_ROOT / name)
+                                  for name in IMPLEMENTATION_PATHS}:
+        raise ValueError("Implementation/configuration changed during build")
     shutil.copyfile(PROJECT_ROOT / "src/iotguard/data/primary_package.py",
                     output / "primary_package.py")
+    shutil.copyfile(PROJECT_ROOT / "scripts/verify_primary_package.py",
+                    output / "verify_primary_package.py")
+    shutil.copyfile(PROJECT_ROOT / "docs/package/PRIMARY_PACKAGE_README.md",
+                    output / "README.md")
     hashes = {}
     for path in (PROJECT_ROOT / "artifacts/contracts").glob("n_baiot_*v1.json"):
         shutil.copyfile(path, output / path.name)
@@ -198,6 +215,9 @@ def main():
                 "split_version": "primary_split_v1", "test_status": "SEALED",
                 "counts": counts, "class_counts": classes, "fine_class_counts": fine,
                 "membership_sha256": membership.hexdigest(), "files": files,
+                "implementation_sha256": implementation_hashes,
+                "environment": {"python": sys.version, "numpy": version("numpy"),
+                                "scikit-learn": version("scikit-learn")},
                 "sources": source_results, "contract_sha256": hashes,
                 "traversal_sha256": sha256_file(traversal_path), "code_revision": revision,
                 "dirty_worktree": dirty, "command": [sys.executable, *sys.argv],
