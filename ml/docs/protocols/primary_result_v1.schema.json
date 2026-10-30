@@ -1,0 +1,217 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Primary experiment result v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "run_id",
+    "protocol_revision",
+    "code_revision",
+    "resolved_configuration",
+    "train_population_sha256",
+    "validation_population_sha256",
+    "metrics"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "primary_result_v1"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "code_revision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "protocol_revision": {
+      "const": "primary_experiments_v1"
+    },
+    "resolved_configuration": {
+      "type": "object",
+      "required": [
+        "seeds",
+        "parameters",
+        "input_view",
+        "threshold",
+        "protocol_revision"
+      ]
+    },
+    "metrics": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "partition",
+        "threshold",
+        "positive_class",
+        "confusion_order",
+        "TN",
+        "FP",
+        "FN",
+        "TP",
+        "accuracy",
+        "macro_f1",
+        "fpr",
+        "per_class"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "primary_metrics_v1"
+        },
+        "partition": {
+          "enum": [
+            "TRAIN",
+            "VALIDATION"
+          ]
+        },
+        "threshold": {
+          "const": 0.5
+        },
+        "positive_class": {
+          "const": "malicious"
+        },
+        "confusion_order": {
+          "const": [
+            "benign",
+            "malicious"
+          ]
+        },
+        "TN": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "FP": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "FN": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "TP": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "accuracy": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "macro_f1": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "fpr": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "per_class": {
+          "type": "object",
+          "required": [
+            "benign",
+            "malicious"
+          ],
+          "properties": {
+            "benign": {
+              "type": "object",
+              "required": [
+                "precision",
+                "recall",
+                "f1",
+                "support"
+              ],
+              "properties": {
+                "precision": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "recall": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "f1": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "support": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            },
+            "malicious": {
+              "type": "object",
+              "required": [
+                "precision",
+                "recall",
+                "f1",
+                "support"
+              ],
+              "properties": {
+                "precision": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "recall": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "f1": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "support": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "train_population_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "validation_population_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  }
+}

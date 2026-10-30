@@ -1,0 +1,194 @@
+{
+  "status": "VERIFIED",
+  "counts": {
+    "TRAIN": 4944968,
+    "VALIDATION": 1056372,
+    "TEST": 1061266
+  },
+  "checked_membership_rows": 7062606,
+  "membership_sha256": "edfeb1d96cd2031e0b459fed16e59ef5b1203a56bd2af2306b15968331a0958c",
+  "payload_checksums": "PASS",
+  "train_only_scaler_moments": "PASS",
+  "test_default_denied": true,
+  "loader_requires_raw_sources": false,
+  "manifest_sha256": "6ab99e86397242e219bfa1f8490d8e03b169ec87a092af80cb3e7aef1e61147b",
+  "readiness": "READY_FOR_TEAM",
+  "team_verified": false,
+  "sender_package": "E:\\Document\\iotguard_primary_packages\\g3b_primary_v1",
+  "relocated_package": "E:\\Document\\iotguard_primary_packages\\recipient_check_v1",
+  "package_bytes": 6575404266,
+  "files": {
+    "n_baiot_feature_contract_v1.json": {
+      "bytes": 5922,
+      "sha256": "47ca15c45ba9f30182c4762b47f7291d934f6de07270147c844dd5e25e21fd50"
+    },
+    "n_baiot_label_contract_v1.json": {
+      "bytes": 1030,
+      "sha256": "bdffcdedf675941b9317935b7c124480bf6125092d2de82f49d03fe1aa8b6191"
+    },
+    "n_baiot_primary_split_contract_v1.json": {
+      "bytes": 5811,
+      "sha256": "f9097635b235e69f78c6467e7b97a013a2038504fae9d868d9f0ca52edbe9996"
+    },
+    "n_baiot_record_contract_v1.json": {
+      "bytes": 1626,
+      "sha256": "a076e9e0754dd2a2e693ec187f2daa093f0630cb4e93614d0c698069b29a9594"
+    },
+    "primary_package.py": {
+      "bytes": 5157,
+      "sha256": "2521cc787286964eff8a97836cf407fc1f47d04c80d99bbc32c1a6e21f49e673"
+    },
+    "scaler.json": {
+      "bytes": 8761,
+      "sha256": "f166f5982b8b7d6e6809f85047fda727b6523253ce3acef97266ff212161e394"
+    },
+    "TEST_metadata.npy": {
+      "bytes": 10612788,
+      "sha256": "a12cc62efb5dccb68f4a27b1bf1db16529ebd852e6bebeef55c4e77cf31f51be"
+    },
+    "TEST_X.npy": {
+      "bytes": 976364848,
+      "sha256": "4aadc25ef8cb22d32c13d9649ad6dbee5072b3b35b94d00e08767615a4d22a20"
+    },
+    "TEST_y.npy": {
+      "bytes": 1061394,
+      "sha256": "f33819b4b6ce05117c6d5e3ebd22f99ee86eb4bcf9347d6f30f49fd8745bc673"
+    },
+    "TRAIN_metadata.npy": {
+      "bytes": 49449808,
+      "sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080"
+    },
+    "TRAIN_X.npy": {
+      "bytes": 4549370688,
+      "sha256": "b70dd028f5168881ffd36fd36211c2d6e36086fd590b506d7d8870c5ea5d40e4"
+    },
+    "TRAIN_y.npy": {
+      "bytes": 4945096,
+      "sha256": "e5d8aa74dd9c5dc0c28ef35bb5dd73b0a8f116a708c79076f81cb5d4b683bece"
+    },
+    "VALIDATION_metadata.npy": {
+      "bytes": 10563848,
+      "sha256": "2d44c7b63c3c16fb19105ce504b39f6e31fa4145588c07c1d50f2417fad69103"
+    },
+    "VALIDATION_X.npy": {
+      "bytes": 971862368,
+      "sha256": "061d4cec649d5fd6aa8efa7e49f301962dd0abe969a2512de034449f5943aff3"
+    },
+    "VALIDATION_y.npy": {
+      "bytes": 1056500,
+      "sha256": "4b0dafa2e0caef115c1474e4caa2c6982f93c743805285c9de703b0823b70d71"
+    },
+    "README.md": {
+      "bytes": 2096,
+      "sha256": "e96e82eb00c08cb64c40d5f27ca136529d4c11eac41bab5150cbb8533cd6c5c4"
+    },
+    "verify_primary_package.py": {
+      "bytes": 5404,
+      "sha256": "6ae3acdf644005ea4f90f67a0086cdaa60b396bc643b32b05f2eace5fa4b0cfb"
+    }
+  },
+  "independent_command": [
+    "E:\\Document\\iotguard_primary_packages\\handoff_clean_env\\Scripts\\python.exe",
+    "-I",
+    "-B",
+    "E:\\Document\\iotguard_primary_packages\\recipient_check_v1\\verify_primary_package.py",
+    "E:\\Document\\iotguard_primary_packages\\recipient_check_v1",
+    "--output",
+    "E:\\Document\\iotguard_primary_packages\\g3b_independent_verification.json"
+  ],
+  "clean_env_has_iotguard": false,
+  "clean_env_has_sklearn": false,
+  "foundation_head": "290fbef4ae2e42d6aadd43ea8231976fd095f610",
+  "branch": "feat/g3b-primary-data-package",
+  "pytest": {
+    "passed": 215,
+    "failed": 0,
+    "skipped": 0,
+    "blocked": 0
+  },
+  "ruff": "PASS",
+  "historical_evidence_files_byte_identical": 80,
+  "class_counts": {
+    "TRAIN": {
+      "malicious": 4556003,
+      "benign": 388965
+    },
+    "VALIDATION": {
+      "malicious": 972937,
+      "benign": 83435
+    },
+    "TEST": {
+      "malicious": 977734,
+      "benign": 83532
+    }
+  },
+  "fine_class_counts": {
+    "TRAIN": {
+      "gafgyt_combo": 360649,
+      "gafgyt_junk": 183516,
+      "gafgyt_scan": 178681,
+      "gafgyt_tcp": 603031,
+      "gafgyt_udp": 660494,
+      "mirai_ack": 451121,
+      "mirai_scan": 376899,
+      "mirai_syn": 512748,
+      "mirai_udp": 861690,
+      "mirai_udpplain": 367174,
+      "benign": 388965
+    },
+    "VALIDATION": {
+      "gafgyt_combo": 76868,
+      "gafgyt_junk": 38456,
+      "gafgyt_scan": 37929,
+      "gafgyt_tcp": 126931,
+      "gafgyt_udp": 143837,
+      "mirai_ack": 96407,
+      "mirai_scan": 80314,
+      "mirai_syn": 110460,
+      "mirai_udp": 183997,
+      "mirai_udpplain": 77738,
+      "benign": 83435
+    },
+    "TEST": {
+      "gafgyt_combo": 77639,
+      "gafgyt_junk": 39817,
+      "gafgyt_scan": 38501,
+      "gafgyt_tcp": 129888,
+      "gafgyt_udp": 142035,
+      "mirai_ack": 96293,
+      "mirai_scan": 80766,
+      "mirai_syn": 110091,
+      "mirai_udp": 184312,
+      "mirai_udpplain": 78392,
+      "benign": 83532
+    }
+  },
+  "resources_preflight": {
+    "available_ram_bytes": 2613338112,
+    "disk_free_bytes": 57807413248,
+    "estimated_array_bytes": 6575286186
+  },
+  "build_command": [
+    "E:\\Document\\iotguard-cos30049hn-grp1-5\\ml\\.venv\\Scripts\\python.exe",
+    "scripts/materialize_primary.py",
+    "--full",
+    "--output",
+    "E:/Document/iotguard_primary_packages/g3b_primary_v1"
+  ],
+  "environment": {
+    "python": "3.11.15 (main, Mar  3 2026, 14:55:34) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.4.6",
+    "scikit-learn": "1.9.1",
+    "pandas": "2.3.3",
+    "PyYAML": "6.0.3",
+    "psutil": "7.2.2"
+  },
+  "implementation_sha256": {
+    "ml\\scripts\\materialize_primary.py": "90d0e3cfd5ad48d6fa08dceda039fb0a134ad7ea89fca62fb6364a8a693454fb",
+    "ml\\scripts\\verify_primary_package.py": "6ae3acdf644005ea4f90f67a0086cdaa60b396bc643b32b05f2eace5fa4b0cfb",
+    "ml\\src\\iotguard\\data\\primary_package.py": "2521cc787286964eff8a97836cf407fc1f47d04c80d99bbc32c1a6e21f49e673",
+    "ml\\src\\iotguard\\evaluation\\primary.py": "bf611dbd8c1d5870fba1506dd7c2d36431563b4121311b5590e98954d7b2c5c9"
+  },
+  "scope": "primary preprocessing and data handoff only; no classifier/clustering training or TEST model evaluation",
+  "diagnostic_note": "An auxiliary comparison initially flagged a pre-existing scaffold .gitkeep CRLF/LF normalization difference; all 80 actual evidence files were independently checked against the import SHA-256 manifest and are unchanged."
+}

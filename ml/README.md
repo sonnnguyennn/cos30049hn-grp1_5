@@ -1,6 +1,6 @@
 # IoTGuard
 
-> **Internal engineering documentation — not assessment submission content.**
+> **Internal engineering documentation â€” not assessment submission content.**
 
 **Topic:** Network Traffic Classification for Anomaly Detection
 
@@ -12,13 +12,13 @@ Build a reproducible network-traffic machine-learning pipeline, evaluate supervi
 
 Core path:
 
-`dataset → preprocessing → ML evaluation → packaged inference → FastAPI → React`
+`dataset â†’ preprocessing â†’ ML evaluation â†’ packaged inference â†’ FastAPI â†’ React`
 
 Parallel edge path:
 
-`candidate/final models → Raspberry Pi compatibility → latency/resource benchmark`
+`candidate/final models â†’ Raspberry Pi compatibility â†’ latency/resource benchmark`
 
-Raspberry Pi evaluation is important, but it must not block the core Assignment 2 → Assignment 3 path. Raw datasets remain outside this Git repository. ADR-001 assigns N-BaIoT as the primary dataset and Bot-IoT as the secondary dataset for this project-specific workflow.
+Raspberry Pi evaluation is important, but it must not block the core Assignment 2 â†’ Assignment 3 path. Raw datasets remain outside this Git repository. ADR-001 assigns N-BaIoT as the primary dataset and Bot-IoT as the secondary dataset for this project-specific workflow.
 
 ## Current status
 
@@ -27,7 +27,7 @@ Raspberry Pi evaluation is important, but it must not block the core Assignment 
 - **G2 complete, independently verified, and committed:** G2A/G2B implement contracts and
   parsers; G2C reconciles the complete primary corpus and closes the canonical data layer
 - **G3 in progress:** G3A's fixed primary split is ADOPTED and independently verified across all
-  7,062,606 rows; TEST is SEALED and G3B has not started
+  7,062,606 rows; TEST is SEALED. G3B primary preprocessing and independent data handoff are now verified
 
 The read-only A1-A4 evidence is stored under `artifacts/manifests/` and `artifacts/audit/`;
 extracted N-BaIoT working files remain outside the repository. A4 measures lexical and
@@ -64,3 +64,7 @@ pytest
 Do not place raw datasets, generated model files, secrets, or assessment prose in this repository.
 
 Historical audit evidence is preserved byte-for-byte from the source checkout. Some historical records include absolute Windows paths; use CLI arguments, documented environment variables, or ignored local YAML for current paths. The bounded G2/G3 tools also recover historical roots from evidence by default; override their documented root arguments or G3A `--n-baiot-raw-root`, `--n-baiot-extracted-root`, and `--bot-iot-root` arguments when relocating datasets. See `docs/handoffs/G3A_IMPORT_HANDOFF.md` for migration validation and limitations.
+
+## G3B primary data package
+
+The full primary package is READY_FOR_TEAM after independent relocated loading; TEAM_VERIFIED awaits a recipient run. See [G3B handoff](docs/handoffs/G3B_PRIMARY_DATA_HANDOFF.md) for exact package paths, checksums, commands and raw/scaled loading. The package is stored outside Git. Classification, clustering and final inference packaging remain pending.

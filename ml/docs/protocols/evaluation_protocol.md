@@ -1,6 +1,6 @@
 # Evaluation protocol
 
-> Experiment template. G3A has adopted primary_split_v1; TEST is SEALED. Model and learned preprocessing decisions remain pending. See evaluation_split_protocol.md.
+> G3A has adopted primary_split_v1; TEST is SEALED. G3B primary policy is locked in [primary_experiments_v1.md](primary_experiments_v1.md). This general template remains for experiment-specific details and later clustering decisions.
 
 ## Experiment identity
 
@@ -8,15 +8,15 @@
 - Dataset manifest/version: TBD
 - Feature schema/version: TBD
 - Code revision and environment: TBD
-- Random seeds: TBD and recorded for every stochastic component
+- Random seeds: resolve Python/NumPy/scikit-learn defaults (42) from `config/seeds.yaml`; record the resolved values for every run
 
 ## Split strategy
 
 - Selected primary strategy: deterministic numeric-equivalence-grouped primary_split_v1
-- Unit of separation (row/device/session/time/scenario): TBD
+- Primary unit of separation: numeric-equivalence group `evaluation_group_id_v1`
 - Train/validation/test proportions: fixed 70/15/15 hash boundaries; adopted counts are recorded in evaluation_split_protocol.md
-- Justification and leakage controls: TBD
-- Duplicate and group handling: TBD
+- Primary leakage control: deterministic group-disjoint G3A boundary; TEST stays sealed
+- Primary duplicate policy: retain all observations and original row weighting; no resampling
 
 ## Classification reporting
 
