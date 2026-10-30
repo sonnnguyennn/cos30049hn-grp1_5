@@ -70,3 +70,7 @@ Historical audit evidence is preserved byte-for-byte from the source checkout. S
 The full primary package is READY_FOR_TEAM after independent relocated loading; TEAM_VERIFIED awaits a recipient run. See [G3B handoff](docs/handoffs/G3B_PRIMARY_DATA_HANDOFF.md) for exact package paths, checksums, commands and raw/scaled loading. The package is stored outside Git. Classification, clustering and final inference packaging remain pending.
 
 The builder now emits the portable loader, README and standalone verifier itself; no post-build patching is needed. Experiment results require package version, manifest checksum and boolean dirty-worktree status, and selection enforces package/protocol/population identity. See [build and identity repair](docs/handoffs/G3B_BUILD_IDENTITY_FIX.md) and the updated [primary protocol](docs/protocols/primary_experiments_v1.md) before baseline comparisons.
+
+## Kaggle LR + Dummy workflow
+
+The [integrated Kaggle guide](docs/experiments/kaggle_lr.md) and [baseline extension protocol](docs/protocols/kaggle_lr_baseline_v1.md) describe the two unexecuted notebooks under `notebooks/kaggle/`. Export a standalone code ZIP with `python scripts/build_kaggle_lr_bundle.py --output <new external ZIP path>`; shared source is copied into the export directly from canonical files. No vendored duplicate implementation is maintained in this checkout. LR/Dummy fitting has not been run locally or on Kaggle as part of integration.
