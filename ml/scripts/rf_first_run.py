@@ -92,6 +92,7 @@ def main():
     np.random.seed(seeds['numpy'])
     seed_sample = seeds['numpy']
     seed_model = seeds['scikit_learn']
+    print('1. Read arg complete')
 
     # ----- 2. Open the package -----
     sys.path.insert(0, str(args.package.resolve()))
@@ -99,6 +100,7 @@ def main():
     package = PrimaryPackage(args.package, verify=False)
     manifest = package.manifest
     x_train, y_train, _ = package.load('TRAIN')
+    print('2. Open package complete')
 
     # ----- 3. Build training sample -----
     t0 = time.perf_counter()
@@ -107,6 +109,7 @@ def main():
     y = np.asarray(y_train)[idx]
     t_load = time.perf_counter() - t0
     idx_hash = hashlib.sha256(idx.tobytes()).hexdigest()
+    print('3. Build sample complete')
 
     # ----- 4. Train Random Forest -----
     model = RandomForestClassifier(n_estimators=args.trees, n_jobs=args.jobs, random_state=seed_model)
@@ -114,12 +117,14 @@ def main():
     model.fit(X, y)
     t_fit = time.perf_counter() - t0
     assert list(model.classes_) == [0, 1]
+    print('4. RF Train complete')
 
     # ----- 5. Evaluate on VALIDATION -----
     t0 = time.perf_counter()
     y_true, proba = predict_validation(model, package, args.chunk_size)
     metrics = binary_metrics(y_true, proba)
     t_eval = time.perf_counter() - t0
+    print('5. Evaluation complete')
 
     # ----- 6. Build result -----
     run_id = f"rf_frac{args.fraction:g}_seed{seed_model}"
