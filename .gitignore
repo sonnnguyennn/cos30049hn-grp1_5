@@ -44,3 +44,6 @@ ml/artifacts/**/*.pth
 *.log
 Thumbs.db
 .DS_Store
+
+*.db
+backend/app/db/traffic.db
