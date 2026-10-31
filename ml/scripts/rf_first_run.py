@@ -167,7 +167,7 @@ def main():
             'load_sample_seconds': round(t_load, 1),
             'fit_seconds': round(t_fit, 1),
             'validation_predict_seconds': round(t_eval, 1),
-            'model_size_mb': round((run_dir / 'model.joblib').stat().st_size() / 2**20, 1),
+            'model_size_mb': round((run_dir / 'model.joblib').stat().st_size / 2**20, 1),
             'peak_memory_mb': peak_memory_mb()
         },
         'environment': {'python': platform.python_version(), 'numpy': np.__version__, 'scikit_learn': sklearn.__version__},
