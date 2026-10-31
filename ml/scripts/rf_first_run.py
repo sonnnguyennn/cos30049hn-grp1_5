@@ -50,8 +50,12 @@ def git_output(*args):
 def peak_memory_mb():
     try:
         import psutil
-        process = psutil.Process()
-        return process.memory_info().rss / (1024*1024)
+        info = psutil.Process().memory_info()
+        to_mb = lambda b: round(b / 2**20, 1)
+        return {
+            "peak_working_set_mb": to_mb(getattr(info, "peak_wset", info.rss)),
+            "peak_private_mb": to_mb(info.peak_pagefile) if hasattr(info, "peak_pagefile") else None
+        }
 
     except Exception:
         return None
@@ -92,7 +96,7 @@ def main():
     np.random.seed(seeds['numpy'])
     seed_sample = seeds['numpy']
     seed_model = seeds['scikit_learn']
-    print('1. Read arg complete')
+    print('1. Read args complete')
 
     # ----- 2. Open the package -----
     sys.path.insert(0, str(args.package.resolve()))
@@ -168,7 +172,7 @@ def main():
             'fit_seconds': round(t_fit, 1),
             'validation_predict_seconds': round(t_eval, 1),
             'model_size_mb': round((run_dir / 'model.joblib').stat().st_size / 2**20, 1),
-            'peak_memory_mb': peak_memory_mb()
+            'peak_memory': peak_memory_mb()
         },
         'environment': {'python': platform.python_version(), 'numpy': np.__version__, 'scikit_learn': sklearn.__version__},
         'uncommitted_files_at_start': changed[:20],
