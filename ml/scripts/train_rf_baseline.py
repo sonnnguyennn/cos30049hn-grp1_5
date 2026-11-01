@@ -108,7 +108,11 @@ def main():
 
     # ----- 3. Build training sample -----
     t0 = time.perf_counter()
-    idx = stratified_indices(np.asarray(y_train), args.fraction, seed_sample)
+    full_train = args.fraction == 1
+    if full_train:
+        idx = np.arange(len(y_train), dtype=np.int64)
+    else:
+        idx = stratified_indices(np.asarray(y_train), args.fraction, seed_sample)
     X = gather_float32(x_train, idx)
     y = np.asarray(y_train)[idx]
     t_load = time.perf_counter() - t0
@@ -121,7 +125,7 @@ def main():
     model.fit(X, y)
     t_fit = time.perf_counter() - t0
     assert list(model.classes_) == [0, 1]
-    print('4. RF Train complete')
+    print('4. RF train complete')
 
     # ----- 5. Evaluate on VALIDATION -----
     t0 = time.perf_counter()
@@ -139,9 +143,9 @@ def main():
         'random_state': seed_model,
         'fit_dtype': 'float32',
         'train_sampling': {
-            'method': 'random sample inside TRAIN, same fraction per class, seeded, TRAIN only',
+            'method': ("none: all TRAIN rows" if full_train else "random sample inside TRAIN, same fraction per class, seeded, TRAIN only"),
             'fraction': args.fraction,
-            'seed': seed_sample,
+            'seed': None if full_train else seed_sample,
             'rows': int(len(idx)),
             'rows_in_train': int(manifest['counts']['TRAIN']),
             'class_counts': {"benign": int((y == 0).sum()), "malicious": int((y == 1).sum())},
