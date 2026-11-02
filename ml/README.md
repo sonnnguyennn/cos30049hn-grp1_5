@@ -65,6 +65,17 @@ Do not place raw datasets, generated model files, secrets, or assessment prose i
 
 Historical audit evidence is preserved byte-for-byte from the source checkout. Some historical records include absolute Windows paths; use CLI arguments, documented environment variables, or ignored local YAML for current paths. The bounded G2/G3 tools also recover historical roots from evidence by default; override their documented root arguments or G3A `--n-baiot-raw-root`, `--n-baiot-extracted-root`, and `--bot-iot-root` arguments when relocating datasets. See `docs/handoffs/G3A_IMPORT_HANDOFF.md` for migration validation and limitations.
 
+## Optional XGBoost dependency
+
+The primary XGBoost script requires XGBoost 2.x or 3.x. Install its optional extra
+from `ml/` with `python -m pip install -e ".[dev,kaggle,xgboost]"`, or use
+`uv sync --locked --extra dev --extra kaggle --extra xgboost`.
+The lockfile resolves compatible releases for the selected Python version.
+
+Dependency installation does not approve the legacy RF/XGB runners for an official
+comparison. Their actual TRAIN population identity and Kaggle export still need
+review. All classifier/clustering fitting, including smoke, must run on Kaggle.
+
 ## G3B primary data package
 
 The full primary package is READY_FOR_TEAM after independent relocated loading; TEAM_VERIFIED awaits a recipient run. See [G3B handoff](docs/handoffs/G3B_PRIMARY_DATA_HANDOFF.md) for exact package paths, checksums, commands and raw/scaled loading. The package is stored outside Git. Classification, clustering and final inference packaging remain pending.

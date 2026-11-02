@@ -1,0 +1,55 @@
+{
+  "status": "PASS_LINT_AND_DEPENDENCY_RESOLUTION_ONLY",
+  "base_git_revision": "b609fcae5448bda668a927e12d57b54e202feaf7",
+  "ruff_version": "0.16.8",
+  "checks": {
+    "full_ml_python_and_notebooks_ruff": "PASS",
+    "snapshot_python_and_notebook_files": 101,
+    "two_script_format_check": "PASS",
+    "normalized_AST_equivalence": "PASS; import ordering and local lambda-to-def canonicalized",
+    "two_script_python_compilation": "PASS",
+    "uv_lock_check_offline": "PASS",
+    "existing_lock_package_version_pairs_preserved": 35
+  },
+  "optional_extra": {
+    "name": "xgboost",
+    "requirement": "xgboost>=2,<4"
+  },
+  "new_lock_entries": [
+    [
+      "xgboost",
+      "3.2.0"
+    ],
+    [
+      "xgboost",
+      "3.4.1"
+    ],
+    [
+      "nvidia-nccl-cu12",
+      "2.32.3"
+    ],
+    [
+      "nvidia-nccl-cu13",
+      "2.32.3"
+    ]
+  ],
+  "payload_sha256": {
+    "ml/scripts/train_rf_baseline.py": "9221a9ef47aa274c5494cc426d17417cdc9fb960ba891194a53a271dde9466d7",
+    "ml/scripts/train_xgb_baseline.py": "9d1e8b25c779a4261a1a4fb87f1ac3f8e654fe83a175f12ed2b2c0a29f2e7901",
+    "ml/pyproject.toml": "f6a3aab853a094d9dd12e0c82fe54c0fbcc3ad47499bade6b4164eaf8379c80e",
+    "ml/uv.lock": "9b474688062862de41530626b88a0839090622eb15a8c6a550d35b2a71c6b50a",
+    "ml/README.md": "19ff98b520cdcb19c68507e2f3ddb69d5fcc8af177174aa05ced19a5ac3afeec",
+    "ml/docs/handoffs/PR1_LINT_DEPENDENCY_FOLLOWUP.md": "5b3d0b33262edff01d75f5ae2593b80cd0d772ab23e9e447f9b327abdbc0c915"
+  },
+  "classifier_clustering_fits": 0,
+  "TEST_performance_evaluated": false,
+  "historical_375_tests_rerun": false,
+  "XGBoost_training_or_import_validation": false,
+  "remaining": [
+    "RF/XGB actual subset/full population identity repair",
+    "Primary RF/XGB Kaggle bundle, smoke/full execution and persisted prediction evidence",
+    "Clustering implementation/results and report drafts",
+    "Reviewer approval before PR merge"
+  ],
+  "historical_evidence_rewritten": false
+}
