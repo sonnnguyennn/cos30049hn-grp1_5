@@ -1,0 +1,226 @@
+{
+  "contract_name": "bot_iot_secondary_ml_candidate",
+  "contract_version": "1.0.0",
+  "status": "PROPOSED_FOR_REVIEW",
+  "ready_for_training": false,
+  "scope": "A2 independent binary within-corpus Bot-IoT experiment; never merge N-BaIoT feature matrices",
+  "canonical_sources": [
+    "Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_1.csv",
+    "Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_2.csv",
+    "Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_3.csv",
+    "Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_4.csv"
+  ],
+  "ordered_predictors": [
+    "pkts",
+    "bytes",
+    "dur",
+    "spkts",
+    "dpkts",
+    "sbytes",
+    "dbytes",
+    "rate",
+    "srate",
+    "drate",
+    "flgs",
+    "proto",
+    "state"
+  ],
+  "numeric_predictors": [
+    "pkts",
+    "bytes",
+    "dur",
+    "spkts",
+    "dpkts",
+    "sbytes",
+    "dbytes",
+    "rate",
+    "srate",
+    "drate"
+  ],
+  "categorical_predictors": [
+    "flgs",
+    "proto",
+    "state"
+  ],
+  "field_decisions": [
+    {
+      "fields": [
+        "pkts",
+        "bytes",
+        "dur",
+        "spkts",
+        "dpkts",
+        "sbytes",
+        "dbytes",
+        "rate",
+        "srate",
+        "drate"
+      ],
+      "decision": "INCLUDE",
+      "reason": "Transaction packet/byte counts, duration and directional packet rates; simple nonnegative numeric inputs."
+    },
+    {
+      "fields": [
+        "flgs",
+        "proto",
+        "state"
+      ],
+      "decision": "INCLUDE",
+      "reason": "Text transaction flags/protocol/state; TRAIN-only one-hot, no ordinal meaning."
+    },
+    {
+      "fields": [
+        "flgs_number",
+        "proto_number",
+        "state_number"
+      ],
+      "decision": "EXCLUDE",
+      "reason": "Duplicate representation of selected text fields; avoid arbitrary code ordering."
+    },
+    {
+      "fields": [
+        "attack",
+        "category",
+        "subcategory"
+      ],
+      "decision": "TARGET_METADATA_ONLY",
+      "reason": "attack maps exactly 0=benign,1=malicious; category/subcategory are metadata, never X."
+    },
+    {
+      "fields": [
+        "pkSeqID"
+      ],
+      "decision": "LINEAGE_ONLY",
+      "reason": "Unique row identifier with audited label-range alignment."
+    },
+    {
+      "fields": [
+        "stime",
+        "ltime",
+        "seq"
+      ],
+      "decision": "EXCLUDE",
+      "reason": "Time/order confounding; not default predictors. Preserve as metadata."
+    },
+    {
+      "fields": [
+        "saddr",
+        "daddr",
+        "sport",
+        "dport"
+      ],
+      "decision": "EXCLUDE",
+      "reason": "Entity/context memorisation; no claim of unseen-network generalisation. Ports parsed losslessly in metadata."
+    },
+    {
+      "fields": [
+        "mean",
+        "stddev",
+        "sum",
+        "min",
+        "max"
+      ],
+      "decision": "DEFER_EXCLUDE",
+      "reason": "Workbook defines duration of aggregated records; aggregation boundaries/window and point-in-time availability unresolved."
+    },
+    {
+      "fields": [
+        "TnBPSrcIP",
+        "TnBPDstIP",
+        "TnP_PSrcIP",
+        "TnP_PDstIP",
+        "TnP_PerProto",
+        "TnP_Per_Dport",
+        "AR_P_Proto_P_SrcIP",
+        "AR_P_Proto_P_DstIP",
+        "N_IN_Conn_P_DstIP",
+        "N_IN_Conn_P_SrcIP",
+        "AR_P_Proto_P_Sport",
+        "AR_P_Proto_P_Dport",
+        "Pkts_P_State_P_Protocol_P_DestIP",
+        "Pkts_P_State_P_Protocol_P_SrcIP"
+      ],
+      "decision": "DEFER_EXCLUDE",
+      "reason": "Workbook: bytes/packets per IP, protocol or dport (Tn*); average rates per protocol and IP/port (AR_P_*); inbound connections per IP (N_IN_Conn_*); packets grouped by flow state/protocol/IP (Pkts_P_State_*). Cross-record grouping documented; window, causal availability and split-local recomputation unproven. Do not use supplied aggregates."
+    }
+  ],
+  "target_mapping": {
+    "0": "benign",
+    "1": "malicious"
+  },
+  "metadata_outside_X": [
+    "attack",
+    "category",
+    "subcategory",
+    "pkSeqID",
+    "source_shard",
+    "data_row_index",
+    "stime",
+    "ltime",
+    "seq",
+    "saddr",
+    "daddr",
+    "sport",
+    "dport"
+  ],
+  "validation_policy": {
+    "numeric_dtype": "float64; finite and nonnegative; count fields integral and <=2**53",
+    "categorical": "Exact case and internal whitespace preserved; reject empty, outer whitespace, nan/null/none tokens; text only",
+    "ports": "canonical parser decimal/hex/-1; -1 -> value null with unresolved_sentinel kind; not port0; excluded from X",
+    "missing_sentinel": "Fail closed for selected fields; no imputation, clipping, dropped rows or sentinel substitution",
+    "preprocessing": "StandardScaler numeric and OneHotEncoder text; fit once on TRAIN only; VALIDATION/TEST transform-only; unknown categories fail closed; persist actual encoded feature order/vocabulary and scaler. No PCA/SMOTE."
+  },
+  "split_proposal": {
+    "status": "PLANNED_CONDITIONAL_ON_FULL_EFFECTIVE_EQUIVALENCE_AUDIT",
+    "method": "Binary-stratified equivalence-group allocation 60/20/20 TRAIN/VALIDATION/TEST; no row of an equivalence group crosses partitions",
+    "seed": 1729,
+    "algorithm": "Canonical group key is JSON array of ordered parsed values (finite float64 numeric, signed-zero normalized, exact categorical strings), compact separators and ensure_ascii=True, SHA256. Confirm exact tuples in hash groups. Reject conflicting-label groups pending review. For each binary class, sort groups by SHA256 of ASCII seed + colon + group digest (tie by digest); greedily place each whole group into partition with largest remaining row deficit to 60/20/20 target (tie TRAIN,VALIDATION,TEST). Do not retry seeds based on scores. Fail support gate instead of breaking groups. Persist exact memberships.",
+    "minimum_rows_per_class": {
+      "TRAIN": 100,
+      "VALIDATION": 50,
+      "TEST": 50
+    },
+    "minimum_distinct_groups_per_class": {
+      "TRAIN": 20,
+      "VALIDATION": 10,
+      "TEST": 10
+    },
+    "benign_ungrouped_nominal_counts": [
+      286,
+      95,
+      96
+    ],
+    "actual_counts": "NOT_COMPUTED; rounding/group sizes change counts; nominal counts are not evidence",
+    "controls": "Report group-size distribution, conflicts, class/attack subtype supports, benign entity/time coverage, row and group weights, cross-partition equivalence overlap=0 and no missing classes; resampling before split prohibited. Unknown held-out category => BLOCKED, revise reviewed protocol without model scores.",
+    "resource_policy": "Full TRAIN preferred; malicious TRAIN downsampling requires separate reviewed deterministic group-level policy and new actual population identity; never modify VALIDATION/TEST prevalence."
+  },
+  "population_identity": {
+    "membership": "Before training serialize sorted rows as UTF-8 compact JSON arrays [source_relative_path,1-based data_row_index,pkSeqID,attack,equivalence_sha256], one LF per row; hash exact bytes per partition; include actual counts and group counts. Never assign full population hash to subset.",
+    "package": "New secondary namespace/version; raw file hashes, source/ML/split contract byte hashes, code revision and dirty flag, dependency versions, actual membership hashes, encoded order and fitted preprocessing hashes, all payload checksums. Manifest SHA256 identifies package. No official package materialised yet."
+  },
+  "generalisation_limit": "Within audited All-features 5% capture only. Shared devices/campaigns may remain; no unseen device, future-time, full Bot-IoT, N-BaIoT transfer or deployment claim. Tiny benign support requires uncertainty intervals and support counts.",
+  "evidence": {
+    "docs/contracts/secondary_data_contract.md": "e67f9a4c28707017144ae5771c8832b9b8250bbc111e588453d7cbf9b6f877e7",
+    "artifacts/contracts/bot_iot_secondary_source_contract_v1.json": "94c7d5a819ae50b4c2f300f35097feae9208c25bc4822190f5cc5278a8f54b44",
+    "artifacts/contracts/bot_iot_field_role_contract_v1.json": "5870fbfaa4d3d5179bb72f0efeda6c93e3f1ee3fa6e259e2b45e5596128e4c05",
+    "artifacts/audit/bot_iot_quality_summary.csv": "b29af6539ca259a537d5348a2575c07c701a55d652268bb6664aeee5d343ecbe",
+    "artifacts/audit/bot_iot_effective_imbalance.csv": "b2c20f4c724fea7f4ae948d61fb367d8b2b9f3335ec0b8647c2ac86900c38250",
+    "artifacts/audit/bot_iot_duplicate_summary.json": "43409cfc76e0b57cb0f790cc70fd77191b61528c888fe106b91950bd9c00ca03",
+    "artifacts/audit/bot_iot_identity_free_duplicate_summary.json": "1eeaf98e2890b025c26a5fcc243175138e886dacfa8c5b8bc93d858c2544b77d",
+    "artifacts/audit/bot_iot_lineage_summary.json": "56b24907703489eb0940ce5988890b7d5ff0bad9f1e5f44da087b0decaa4ee67",
+    "artifacts/audit/bot_iot_numeric_lineage_analysis.json": "3e189a7d077d3dc7ba216db3222551c4c3ddf5f720ef301d0aa0e9d98267f03b",
+    "artifacts/audit/bot_iot_split_feasibility.json": "732afd638f6b29d2879f09d7f7d02de001f48efa02ec7f89bc74d028bc19d634",
+    "artifacts/audit/bot_iot_entity_overlap_summary.json": "0814ee970467354722ee6d92589352d6e738d2e484425be48f6a46e234cf8e7c",
+    "artifacts/audit/bot_iot_port_encoding_summary.json": "2b7fa3608a69a6c3f6977723c653612a7df14913a85a0157034f0948c36ec1f5"
+  },
+  "semantic_workbook": {
+    "path": "E:/Document/Bot_IoT_Dataset/Dataset/Features_Explanation/Total Feature Description.xlsx",
+    "sha256": "288ef526ced2e2319543201417581c4aafb5b9b3092def2cce0840fcb37fe756"
+  },
+  "blockers": [
+    "Reviewer adoption of predictor, preprocessing and evaluation proposal",
+    "Full candidate-specific equivalence/label-conflict/group-support scan; old duplicate views are insufficient",
+    "Actual deterministic three-way membership and support gates, category coverage and package integrity verification",
+    "Kaggle-only classifier/clustering smoke and full runs after review; no local model fit"
+  ]
+}

@@ -1,0 +1,358 @@
+{
+  "status": "VERIFIED_ARCHIVE_AND_SOURCE_LINEAGE",
+  "original_review": "E:\\Document\\iotguard_run_reviews\\20261102\\REVIEW.md",
+  "original_verification": "E:\\Document\\iotguard_run_reviews\\20261102\\verification.json",
+  "original_review_sha256": "e07e9ebd61d59e55f48b1db26ec4319bd443b89956ed9a62cad74e9d966f1437",
+  "original_verification_sha256": "4c86117037492f78ac09f3d6d2922422f0c54b014c9a011b8a0c117175b6dc61",
+  "release_zip": "E:\\Document\\iotguard_kaggle_exports\\ea57689\\IoTGuard_Kaggle_LR_Bundle.zip",
+  "release_zip_sha256": "a879615bc61ce0a5ecdad654605b6826e1609618a4b0f76afa9aabdde500e6c6",
+  "original_package_manifest": "E:\\Document\\iotguard_primary_packages\\g3b_primary_v1\\manifest.json",
+  "original_package_manifest_sha256": "6ab99e86397242e219bfa1f8490d8e03b169ec87a092af80cb3e7aef1e61147b",
+  "source_revision_kind": "Git commit; ea57689 is its abbreviated object ID",
+  "actual_source_revision": "ea57689eb73322e2536eb47d3bfa574b68cc6404",
+  "source_dirty_worktree": false,
+  "bundle_id": "iotguard_primary_lr_kaggle_v2",
+  "bundle_manifest_sha256": "4faf0ffc20ac1ceae960260b15b629f69888174ab641a9fcd03eb0cb56fd81f0",
+  "exact_source_sha256": {
+    "ml/src/iotguard/experiments/kaggle_lr.py": "0b8e737ee573645165619bc8d0059300794f8555ec7d51c9b8466e389927755c",
+    "ml/src/iotguard/data/primary_package.py": "2521cc787286964eff8a97836cf407fc1f47d04c80d99bbc32c1a6e21f49e673",
+    "ml/src/iotguard/evaluation/primary.py": "a58dc4d218447aa58d5400b51be5035cd7c6a661077424b20a15d3259b805d43",
+    "ml/config/seeds.yaml": "1240b44e74918d987c1bfe0371b2b8c3dcb4f6022fba4a0353ae0d930c291e29",
+    "ml/docs/protocols/primary_experiments_v1.md": "a62b82522f340f6fa8e38b1ab3130b84b6f1df5af3c002942ca6b142a97c04ca",
+    "ml/docs/protocols/primary_result_v1.schema.json": "4ee546e26c374aab7fe3df2ad4bd9ae479b0d70e07decab7ce0f8633d5dd0d88",
+    "ml/docs/protocols/kaggle_lr_baseline_v1.md": "cb2fe222763ca10457e08c3df5b88c13c7cf6a864a3a56785452ead6c3aca626",
+    "ml/docs/experiments/kaggle_lr.md": "8bf54629fe6b54d63ddb065cce4a87196cc37ad771f980efe107aa98dc8ff148",
+    "ml/notebooks/kaggle/requirements.txt": "dd969f7baca8aa80f4708abd30095c2bd0f2f5a2ab7ccdd0dd7a88ea36ca9f26",
+    "ml/notebooks/kaggle/01_IoTGuard_LR_Smoke.ipynb": "11b186d812e63eee173a4d3a6c8281be0424e989b389dec72b869f352d747b0a",
+    "ml/notebooks/kaggle/02_IoTGuard_LR_Full.ipynb": "8cb6f3a3fbdd352b5bd94b773a549782ad10c876bc89891e0c806c5a48e589a3"
+  },
+  "source_git_blob_lineage": {
+    "ml/src/iotguard/experiments/kaggle_lr.py": {
+      "git_blob_sha256": "e5533efa86af808fc11f5ec0405343b11d0aa8a1fbc749a482181d5dd4490a7c",
+      "exact_snapshot_recipe": "replace LF bytes with CRLF bytes in Git blob"
+    },
+    "ml/src/iotguard/data/primary_package.py": {
+      "git_blob_sha256": "2521cc787286964eff8a97836cf407fc1f47d04c80d99bbc32c1a6e21f49e673",
+      "exact_snapshot_recipe": "identity"
+    },
+    "ml/src/iotguard/evaluation/primary.py": {
+      "git_blob_sha256": "a58dc4d218447aa58d5400b51be5035cd7c6a661077424b20a15d3259b805d43",
+      "exact_snapshot_recipe": "identity"
+    },
+    "ml/config/seeds.yaml": {
+      "git_blob_sha256": "1240b44e74918d987c1bfe0371b2b8c3dcb4f6022fba4a0353ae0d930c291e29",
+      "exact_snapshot_recipe": "identity"
+    },
+    "ml/docs/protocols/primary_experiments_v1.md": {
+      "git_blob_sha256": "a62b82522f340f6fa8e38b1ab3130b84b6f1df5af3c002942ca6b142a97c04ca",
+      "exact_snapshot_recipe": "identity"
+    },
+    "ml/docs/protocols/primary_result_v1.schema.json": {
+      "git_blob_sha256": "4ee546e26c374aab7fe3df2ad4bd9ae479b0d70e07decab7ce0f8633d5dd0d88",
+      "exact_snapshot_recipe": "identity"
+    },
+    "ml/docs/protocols/kaggle_lr_baseline_v1.md": {
+      "git_blob_sha256": "cb2fe222763ca10457e08c3df5b88c13c7cf6a864a3a56785452ead6c3aca626",
+      "exact_snapshot_recipe": "identity"
+    },
+    "ml/docs/experiments/kaggle_lr.md": {
+      "git_blob_sha256": "a873ede3e5003fabb587fbfe67e92c3ea11ba2f1d6884966afd3d7b903d1e83d",
+      "exact_snapshot_recipe": "replace LF bytes with CRLF bytes in Git blob"
+    },
+    "ml/notebooks/kaggle/requirements.txt": {
+      "git_blob_sha256": "dd969f7baca8aa80f4708abd30095c2bd0f2f5a2ab7ccdd0dd7a88ea36ca9f26",
+      "exact_snapshot_recipe": "identity"
+    },
+    "ml/notebooks/kaggle/01_IoTGuard_LR_Smoke.ipynb": {
+      "git_blob_sha256": "11b186d812e63eee173a4d3a6c8281be0424e989b389dec72b869f352d747b0a",
+      "exact_snapshot_recipe": "identity"
+    },
+    "ml/notebooks/kaggle/02_IoTGuard_LR_Full.ipynb": {
+      "git_blob_sha256": "8cb6f3a3fbdd352b5bd94b773a549782ad10c876bc89891e0c806c5a48e589a3",
+      "exact_snapshot_recipe": "identity"
+    }
+  },
+  "exact_snapshot_sha256": {
+    "01_IoTGuard_LR_Smoke.ipynb": "11b186d812e63eee173a4d3a6c8281be0424e989b389dec72b869f352d747b0a",
+    "02_IoTGuard_LR_Full.ipynb": "8cb6f3a3fbdd352b5bd94b773a549782ad10c876bc89891e0c806c5a48e589a3",
+    "LOCAL_QA.json": "e2e173ee423d40f60621a80a2984be00ebf2df2bf2226a5b80c0e4691c9d05f4",
+    "README.md": "8bf54629fe6b54d63ddb065cce4a87196cc37ad771f980efe107aa98dc8ff148",
+    "bundle_manifest.json": "4faf0ffc20ac1ceae960260b15b629f69888174ab641a9fcd03eb0cb56fd81f0",
+    "config/seeds.yaml": "1240b44e74918d987c1bfe0371b2b8c3dcb4f6022fba4a0353ae0d930c291e29",
+    "kaggle_lr_runner.py": "0b8e737ee573645165619bc8d0059300794f8555ec7d51c9b8466e389927755c",
+    "protocols/kaggle_lr_baseline_v1.md": "cb2fe222763ca10457e08c3df5b88c13c7cf6a864a3a56785452ead6c3aca626",
+    "protocols/primary_experiments_v1.md": "a62b82522f340f6fa8e38b1ab3130b84b6f1df5af3c002942ca6b142a97c04ca",
+    "protocols/primary_result_v1.schema.json": "4ee546e26c374aab7fe3df2ad4bd9ae479b0d70e07decab7ce0f8633d5dd0d88",
+    "requirements.txt": "dd969f7baca8aa80f4708abd30095c2bd0f2f5a2ab7ccdd0dd7a88ea36ca9f26",
+    "vendor/iotguard/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "vendor/iotguard/data/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "vendor/iotguard/data/primary_package.py": "2521cc787286964eff8a97836cf407fc1f47d04c80d99bbc32c1a6e21f49e673",
+    "vendor/iotguard/evaluation/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "vendor/iotguard/evaluation/primary.py": "a58dc4d218447aa58d5400b51be5035cd7c6a661077424b20a15d3259b805d43"
+  },
+  "runs": {
+    "smoke": {
+      "archive": "E:\\Document\\iotguard_lr_smoke_20261102T010830365927Z.zip",
+      "archive_sha256": "436b2791ab745bb6e05b9abb1a85f7ee3b5e21a486c0c8b160f613d530f4e660",
+      "run_id": "iotguard_lr_smoke_20261102T010830365927Z",
+      "verified_output_files": 36,
+      "status": {
+        "status": "SMOKE_PASS",
+        "mode": "smoke",
+        "output_directory": "/kaggle/working/iotguard_lr_smoke_20261102T010830365927Z",
+        "package_manifest_sha256": "6ab99e86397242e219bfa1f8490d8e03b169ec87a092af80cb3e7aef1e61147b",
+        "bundle_manifest_sha256": "4faf0ffc20ac1ceae960260b15b629f69888174ab641a9fcd03eb0cb56fd81f0",
+        "smoke_receipt": null,
+        "training_location": "Kaggle",
+        "TEST_evaluated": false,
+        "run_configuration": {
+          "max_iter": 1000,
+          "threads": 4,
+          "chunk_size": 8192,
+          "smoke_train": 50000,
+          "smoke_validation": 10000
+        },
+        "eligible_for_official_comparison": false,
+        "fit_seconds": {
+          "dummy": 0.007232358999999633,
+          "lr": 0.9750228359999937
+        },
+        "train_rows": 50000,
+        "validation_rows": 10000,
+        "elapsed_seconds": 3.0738829670000314,
+        "peak_process_rss_bytes": 2613207040
+      },
+      "metrics": {
+        "dummy": {
+          "schema_version": "primary_metrics_v1",
+          "partition": "VALIDATION",
+          "threshold": 0.5,
+          "positive_class": "malicious",
+          "confusion_order": [
+            "benign",
+            "malicious"
+          ],
+          "TN": 0,
+          "FP": 790,
+          "FN": 0,
+          "TP": 9210,
+          "accuracy": 0.921,
+          "per_class": {
+            "benign": {
+              "precision": null,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 790
+            },
+            "malicious": {
+              "precision": 0.921,
+              "recall": 1.0,
+              "f1": 0.9588755856324831,
+              "support": 9210
+            }
+          },
+          "macro_f1": 0.47943779281624155,
+          "fpr": 1.0,
+          "undefined_policy": "null"
+        },
+        "lr": {
+          "schema_version": "primary_metrics_v1",
+          "partition": "VALIDATION",
+          "threshold": 0.5,
+          "positive_class": "malicious",
+          "confusion_order": [
+            "benign",
+            "malicious"
+          ],
+          "TN": 788,
+          "FP": 2,
+          "FN": 4,
+          "TP": 9206,
+          "accuracy": 0.9994,
+          "per_class": {
+            "benign": {
+              "precision": 0.9949494949494949,
+              "recall": 0.9974683544303797,
+              "f1": 0.9962073324905183,
+              "support": 790
+            },
+            "malicious": {
+              "precision": 0.9997827975673328,
+              "recall": 0.9995656894679696,
+              "f1": 0.9996742317298295,
+              "support": 9210
+            }
+          },
+          "macro_f1": 0.9979407821101739,
+          "fpr": 0.002531645569620253,
+          "undefined_policy": "null"
+        }
+      },
+      "result_identities": {
+        "dummy": {
+          "run_id": "dummy_smoke_20261102T010830365927Z",
+          "protocol_revision": "primary_experiments_v1",
+          "code_revision": "ea57689eb73322e2536eb47d3bfa574b68cc6404",
+          "package_version": "primary_package_v1",
+          "package_manifest_sha256": "6ab99e86397242e219bfa1f8490d8e03b169ec87a092af80cb3e7aef1e61147b",
+          "dirty_worktree": false,
+          "train_population_sha256": "13bf8ebc95bfcb41e9f15aca275df709af30f2ffe3949c8a28104d3f46b84850",
+          "validation_population_sha256": "38a4c79f5b9cbe60495a21e640bfd8bfeb116c2d0e56d6ae763e37e027af4972",
+          "run_mode": "smoke",
+          "diagnostic_only": true,
+          "eligible_for_official_comparison": false
+        },
+        "lr": {
+          "run_id": "lr_smoke_20261102T010830365927Z",
+          "protocol_revision": "primary_experiments_v1",
+          "code_revision": "ea57689eb73322e2536eb47d3bfa574b68cc6404",
+          "package_version": "primary_package_v1",
+          "package_manifest_sha256": "6ab99e86397242e219bfa1f8490d8e03b169ec87a092af80cb3e7aef1e61147b",
+          "dirty_worktree": false,
+          "train_population_sha256": "13bf8ebc95bfcb41e9f15aca275df709af30f2ffe3949c8a28104d3f46b84850",
+          "validation_population_sha256": "38a4c79f5b9cbe60495a21e640bfd8bfeb116c2d0e56d6ae763e37e027af4972",
+          "run_mode": "smoke",
+          "diagnostic_only": true,
+          "eligible_for_official_comparison": false
+        }
+      }
+    },
+    "full": {
+      "archive": "E:\\Document\\iotguard_lr_full_20261102T011513018213Z.zip",
+      "archive_sha256": "cc6f7cf0ea126deac2e5a72d305d9aee8e94dd74626781e23f55f7774738d65b",
+      "run_id": "iotguard_lr_full_20261102T011513018213Z",
+      "verified_output_files": 34,
+      "status": {
+        "status": "BASELINES_COMPLETE",
+        "mode": "full",
+        "output_directory": "/kaggle/working/iotguard_lr_full_20261102T011513018213Z",
+        "package_manifest_sha256": "6ab99e86397242e219bfa1f8490d8e03b169ec87a092af80cb3e7aef1e61147b",
+        "bundle_manifest_sha256": "4faf0ffc20ac1ceae960260b15b629f69888174ab641a9fcd03eb0cb56fd81f0",
+        "smoke_receipt": {
+          "receipt_path": "/kaggle/input/datasets/sonnnguyenn/iotguard-lr-smoke-20261102t010830365927z/run_status.json",
+          "receipt_sha256": "6e12bc53f2bdd1a95935c15502bd0a157afa9ce4e629e27b29168df959b86b64",
+          "smoke_fit_seconds": {
+            "dummy": 0.007232358999999633,
+            "lr": 0.9750228359999937
+          },
+          "smoke_peak_process_rss_bytes": 2613207040
+        },
+        "training_location": "Kaggle",
+        "TEST_evaluated": false,
+        "run_configuration": {
+          "max_iter": 1000,
+          "threads": 4,
+          "chunk_size": 8192,
+          "smoke_train": 50000,
+          "smoke_validation": 10000
+        },
+        "eligible_for_official_comparison": true,
+        "fit_seconds": {
+          "dummy": 0.20889688700003717,
+          "lr": 71.31620375199998
+        },
+        "train_rows": 4944968,
+        "validation_rows": 1056372,
+        "elapsed_seconds": 96.487955167,
+        "peak_process_rss_bytes": 9371308032
+      },
+      "metrics": {
+        "dummy": {
+          "schema_version": "primary_metrics_v1",
+          "partition": "VALIDATION",
+          "threshold": 0.5,
+          "positive_class": "malicious",
+          "confusion_order": [
+            "benign",
+            "malicious"
+          ],
+          "TN": 0,
+          "FP": 83435,
+          "FN": 0,
+          "TP": 972937,
+          "accuracy": 0.9210174067468657,
+          "per_class": {
+            "benign": {
+              "precision": null,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 83435
+            },
+            "malicious": {
+              "precision": 0.9210174067468657,
+              "recall": 1.0,
+              "f1": 0.958885019482001,
+              "support": 972937
+            }
+          },
+          "macro_f1": 0.4794425097410005,
+          "fpr": 1.0,
+          "undefined_policy": "null"
+        },
+        "lr": {
+          "schema_version": "primary_metrics_v1",
+          "partition": "VALIDATION",
+          "threshold": 0.5,
+          "positive_class": "malicious",
+          "confusion_order": [
+            "benign",
+            "malicious"
+          ],
+          "TN": 83189,
+          "FP": 246,
+          "FN": 220,
+          "TP": 972717,
+          "accuracy": 0.9995588675201539,
+          "per_class": {
+            "benign": {
+              "precision": 0.9973623949453896,
+              "recall": 0.9970515970515971,
+              "f1": 0.9972069717820239,
+              "support": 83435
+            },
+            "malicious": {
+              "precision": 0.9997471640750984,
+              "recall": 0.9997738805287496,
+              "f1": 0.999760522123439,
+              "support": 972937
+            }
+          },
+          "macro_f1": 0.9984837469527315,
+          "fpr": 0.0029484029484029483,
+          "undefined_policy": "null"
+        }
+      },
+      "result_identities": {
+        "dummy": {
+          "run_id": "dummy_full_20261102T011513018213Z",
+          "protocol_revision": "primary_experiments_v1",
+          "code_revision": "ea57689eb73322e2536eb47d3bfa574b68cc6404",
+          "package_version": "primary_package_v1",
+          "package_manifest_sha256": "6ab99e86397242e219bfa1f8490d8e03b169ec87a092af80cb3e7aef1e61147b",
+          "dirty_worktree": false,
+          "train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+          "validation_population_sha256": "2d44c7b63c3c16fb19105ce504b39f6e31fa4145588c07c1d50f2417fad69103",
+          "run_mode": "full",
+          "diagnostic_only": false,
+          "eligible_for_official_comparison": true
+        },
+        "lr": {
+          "run_id": "lr_full_20261102T011513018213Z",
+          "protocol_revision": "primary_experiments_v1",
+          "code_revision": "ea57689eb73322e2536eb47d3bfa574b68cc6404",
+          "package_version": "primary_package_v1",
+          "package_manifest_sha256": "6ab99e86397242e219bfa1f8490d8e03b169ec87a092af80cb3e7aef1e61147b",
+          "dirty_worktree": false,
+          "train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+          "validation_population_sha256": "2d44c7b63c3c16fb19105ce504b39f6e31fa4145588c07c1d50f2417fad69103",
+          "run_mode": "full",
+          "diagnostic_only": false,
+          "eligible_for_official_comparison": true
+        }
+      }
+    }
+  },
+  "metrics_evidence_status": "REPORTED_BY_ORIGINAL_INDEPENDENT_AUDIT; result JSON equality rechecked, metrics not recomputed here",
+  "model_reload_parity": "REPORTED_BY_RUNNER; models not deserialized",
+  "TEST": "SEALED; no TEST evaluation artifacts"
+}

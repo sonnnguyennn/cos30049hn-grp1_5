@@ -1,0 +1,129 @@
+{
+  "status": "VERIFIED_BOUNDED_PREPROCESSING_ONLY",
+  "candidate_status": "PROPOSED_FOR_REVIEW",
+  "ready_for_training": false,
+  "scan_reason": "New transaction-only feature equivalence and real benign/hex/sentinel assembly coverage; reuse prior full audits, scan only shard4 plus prefixes",
+  "root": "E:\\Document\\Bot_IoT_Dataset",
+  "scanned_data_rows": {
+    "Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_1.csv": 2048,
+    "Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_2.csv": 2048,
+    "Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_3.csv": 2048,
+    "Dataset/5%/All features/UNSW_2018_IoT_Botnet_Full5pc_4.csv": 668522
+  },
+  "runtime": {
+    "numpy": "2.4.6",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.9.1"
+  },
+  "implementation_sha256": {
+    "scripts\\verify_bot_iot_secondary_smoke.py": "2553351b3fb56abe1f701639a79a894800bf89c0784668730b5062a005b7a181",
+    "src\\iotguard\\data\\bot_iot_secondary.py": "9347cbb62f8c05007b5b110a8c713d333950c9b7f05d1975de7e8bb0e70a498f"
+  },
+  "candidate_contract_sha256": "b4b3710ba7f9a475e38532c41bc57767f101c308e9dfc98c6a909667798062b4",
+  "assembled_rows": 10328,
+  "prefix_rows_per_shard": 2048,
+  "sampling": "Each shard prefix; shard4 tail2048 and first32 per benign/hex/sentinel",
+  "predictor_order": [
+    "pkts",
+    "bytes",
+    "dur",
+    "spkts",
+    "dpkts",
+    "sbytes",
+    "dbytes",
+    "rate",
+    "srate",
+    "drate",
+    "flgs",
+    "proto",
+    "state"
+  ],
+  "label_counts": {
+    "1": 10280,
+    "0": 48
+  },
+  "distinct_effective_groups_per_class_in_sample": {
+    "0": 48,
+    "1": 4116
+  },
+  "categorical_values": {
+    "flgs": [
+      "e",
+      "e *",
+      "e d",
+      "e s",
+      "eU"
+    ],
+    "proto": [
+      "arp",
+      "icmp",
+      "tcp",
+      "udp"
+    ],
+    "state": [
+      "CON",
+      "ECO",
+      "FIN",
+      "INT",
+      "MAS",
+      "REQ",
+      "RST",
+      "TST",
+      "URP"
+    ]
+  },
+  "port_kinds": {
+    "decimal": 20508,
+    "unresolved_sentinel": 84,
+    "hex": 64
+  },
+  "deterministic_reassembly": true,
+  "assembled_X_sha256": "06256d894bee0d7b0d16db917047227bb247ffb1a851721c7c7f0a43dd37865d",
+  "sample_membership_sha256": "345366054cdeac4b51157b06e1a8d27283952201dd7a32d30d5f32cf1aad0f9e",
+  "duplicate_groups_in_sample": 1365,
+  "duplicate_excess_in_sample": 6164,
+  "conflicting_binary_groups_in_sample": 0,
+  "preprocessing_diagnostic_train_rows": 8265,
+  "preprocessing_diagnostic_assignment": "every fifth row held out; first representative of each sampled category forced into TRAIN",
+  "preprocessing_diagnostic_transform_shape": [
+    2063,
+    28
+  ],
+  "encoded_feature_order": [
+    "numeric__pkts",
+    "numeric__bytes",
+    "numeric__dur",
+    "numeric__spkts",
+    "numeric__dpkts",
+    "numeric__sbytes",
+    "numeric__dbytes",
+    "numeric__rate",
+    "numeric__srate",
+    "numeric__drate",
+    "categorical__flgs_e",
+    "categorical__flgs_e *",
+    "categorical__flgs_e d",
+    "categorical__flgs_e s",
+    "categorical__flgs_eU",
+    "categorical__proto_arp",
+    "categorical__proto_icmp",
+    "categorical__proto_tcp",
+    "categorical__proto_udp",
+    "categorical__state_CON",
+    "categorical__state_ECO",
+    "categorical__state_FIN",
+    "categorical__state_INT",
+    "categorical__state_MAS",
+    "categorical__state_REQ",
+    "categorical__state_RST",
+    "categorical__state_TST",
+    "categorical__state_URP"
+  ],
+  "limitations": [
+    "Nonrandom diagnostic sample; no performance estimate",
+    "No full candidate-equivalence scan or official membership",
+    "No adopted split, official package, classifier or clustering fit",
+    "Sample category coverage is not full-domain validation",
+    "Raw shard hashes inherited from audit; not recomputed by this smoke"
+  ]
+}
