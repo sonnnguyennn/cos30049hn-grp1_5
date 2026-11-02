@@ -6,10 +6,12 @@ import importlib.util
 import json
 import subprocess
 import sys
+import tempfile
 import zipfile
 from pathlib import Path
 
 import nbformat
+import pytest
 
 
 def test_secondary_export_snapshot_notebooks_and_standalone_guard(tmp_path):
@@ -56,3 +58,48 @@ print('PASS standalone bundle integrity and local guard; zero classifier fits')
         check=True,
     )
     assert "zero classifier fits" in result.stdout
+
+
+def test_notebook_discovery_accepts_identical_smoke_snapshot_but_not_mixed_versions(tmp_path):
+    notebook = Path(__file__).resolve().parents[2] / (
+        "notebooks/kaggle/bot_iot_secondary_v2/02_Bot_IoT_Secondary_Full.ipynb")
+    source = "".join(json.loads(notebook.read_bytes())["cells"][1]["source"])
+    function = next(n for n in ast.parse(source).body
+                    if isinstance(n, ast.FunctionDef) and n.name == "find_code_bundle")
+    namespace = {"hashlib": hashlib, "json": json, "zipfile": zipfile,
+                 "tempfile": tempfile, "Path": Path, "BUNDLE_ID": "code-id"}
+    exec(compile(ast.Module(body=[function], type_ignores=[]), "bootstrap", "exec"), namespace)
+    first, snapshot, working = tmp_path / "code", tmp_path / "smoke/source", tmp_path / "working"
+    for p in (first, snapshot, working):
+        p.mkdir(parents=True)
+    raw = json.dumps({"bundle_id": "code-id", "version": 1}).encode()
+    for p in (first, snapshot):
+        (p / "bundle_manifest.json").write_bytes(raw)
+    with zipfile.ZipFile(tmp_path / "code.zip", "w") as archive:
+        archive.writestr("bundle_manifest.json", raw)
+    find = namespace["find_code_bundle"]
+    assert find(tmp_path, working) == first.resolve()
+    (snapshot / "bundle_manifest.json").write_text(
+        json.dumps({"bundle_id": "code-id", "version": 2}))
+    with pytest.raises(ValueError, match="one code version"):
+        find(tmp_path, working)
+
+
+def test_notebook_zip_bootstrap_is_fresh_and_rejects_path_escape(tmp_path):
+    notebook = Path(__file__).resolve().parents[2] / (
+        "notebooks/kaggle/bot_iot_secondary_v2/01_Bot_IoT_Secondary_Smoke.ipynb")
+    tree = ast.parse("".join(json.loads(notebook.read_bytes())["cells"][1]["source"]))
+    function = next(n for n in tree.body if isinstance(n, ast.FunctionDef))
+    namespace = {"hashlib": hashlib, "json": json, "zipfile": zipfile,
+                 "tempfile": tempfile, "Path": Path, "BUNDLE_ID": "code-id"}
+    exec(compile(ast.Module(body=[function], type_ignores=[]), "bootstrap", "exec"), namespace)
+    inputs, work = tmp_path / "input", tmp_path / "work"
+    inputs.mkdir()
+    work.mkdir()
+    archive_path = inputs / "code.zip"
+    with zipfile.ZipFile(archive_path, "w") as archive:
+        archive.writestr("bundle_manifest.json", json.dumps({"bundle_id": "code-id"}))
+        archive.writestr("../escape.py", "raise RuntimeError")
+    with pytest.raises(ValueError, match="Unsafe"):
+        namespace["find_code_bundle"](inputs, work)
+    assert not (work / "escape.py").exists()

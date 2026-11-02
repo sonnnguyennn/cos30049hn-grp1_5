@@ -606,6 +606,7 @@ def run(mode, *, package_directory=None, smoke_receipt=None):
             "feature_order_sha256": hashlib.sha256(json_bytes(feature_order)).hexdigest(),
             "configuration": configuration(),
             "runtime_packages": runtime["packages"],
+            "runtime_python": runtime["python"],
         }
         accepted = None
         if mode == "full":
