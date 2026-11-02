@@ -1,0 +1,493 @@
+{
+  "status": "VERIFIED_SCAN_SPLIT_BLOCKED",
+  "candidate_status": "PROPOSED_FOR_REVIEW",
+  "ready_for_training": false,
+  "utc_started": "2026-11-02T02:12:14.401306+00:00",
+  "source_revision": "18ddf599ce3d137e3d234b91349e3349023cc3f2",
+  "git_status_at_start": "",
+  "contract_sha256": "fc5a44ef1a5ea13e12e2249c1243ec28b8747a08d65b3d3740f2e95cdfe1c64d",
+  "protocol_sha256": "53b813a91bfebb1d2ed3baf1513e800a574e853a8ac2fc2761a0c4ef81d689c3",
+  "implementation_sha256": {
+    "scripts/verify_bot_iot_candidate_full.py": "7956aaef890d85215c59791f96ea8106eb15558225b117c69311c568b0670fc0",
+    "src/iotguard/data/bot_iot_candidate_scan.py": "434c270a7bf663000e68dd65176e20f1f67bdcc86858e716e23b9e4c1a54c2af",
+    "src/iotguard/data/bot_iot_secondary.py": "9347cbb62f8c05007b5b110a8c713d333950c9b7f05d1975de7e8bb0e70a498f",
+    "src/iotguard/data/bot_iot.py": "e03004ed5c1b5597539aabaac52fbd0849a3c1ce4e3780aceff72affff05f94d"
+  },
+  "runtime": {
+    "python": "3.11.15",
+    "sqlite": "3.50.4",
+    "numpy": "2.4.6",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.9.1",
+    "psutil": "7.2.2"
+  },
+  "sources": [
+    {
+      "path": "E:\\Document\\Bot_IoT_Dataset\\Dataset\\5%\\All features\\UNSW_2018_IoT_Botnet_Full5pc_1.csv",
+      "rows": 1000000,
+      "expected_rows": 1000000,
+      "bytes": 272335105,
+      "mtime_ns_before": 1789518360000000000,
+      "mtime_ns_after": 1789518360000000000,
+      "manifest_sha256": "3940b549851ac2ce0335f3075c8308b060ecfea8973b104060e5e30867c438e3",
+      "pre_sha256": "3940b549851ac2ce0335f3075c8308b060ecfea8973b104060e5e30867c438e3",
+      "streamed_sha256": "3940b549851ac2ce0335f3075c8308b060ecfea8973b104060e5e30867c438e3",
+      "post_sha256": "3940b549851ac2ce0335f3075c8308b060ecfea8973b104060e5e30867c438e3",
+      "immutable": true,
+      "final_sha256": "3940b549851ac2ce0335f3075c8308b060ecfea8973b104060e5e30867c438e3",
+      "immutable_through_allocation": true
+    },
+    {
+      "path": "E:\\Document\\Bot_IoT_Dataset\\Dataset\\5%\\All features\\UNSW_2018_IoT_Botnet_Full5pc_2.csv",
+      "rows": 1000000,
+      "expected_rows": 1000000,
+      "bytes": 273082424,
+      "mtime_ns_before": 1789518420000000000,
+      "mtime_ns_after": 1789518420000000000,
+      "manifest_sha256": "1f87b8f1528a3357c9fb74d9d728d798f1996441805c668675cb82403c73d168",
+      "pre_sha256": "1f87b8f1528a3357c9fb74d9d728d798f1996441805c668675cb82403c73d168",
+      "streamed_sha256": "1f87b8f1528a3357c9fb74d9d728d798f1996441805c668675cb82403c73d168",
+      "post_sha256": "1f87b8f1528a3357c9fb74d9d728d798f1996441805c668675cb82403c73d168",
+      "immutable": true,
+      "final_sha256": "1f87b8f1528a3357c9fb74d9d728d798f1996441805c668675cb82403c73d168",
+      "immutable_through_allocation": true
+    },
+    {
+      "path": "E:\\Document\\Bot_IoT_Dataset\\Dataset\\5%\\All features\\UNSW_2018_IoT_Botnet_Full5pc_3.csv",
+      "rows": 1000000,
+      "expected_rows": 1000000,
+      "bytes": 282131555,
+      "mtime_ns_before": 1789518420000000000,
+      "mtime_ns_after": 1789518420000000000,
+      "manifest_sha256": "3f05d6827ece70b38d4fd90a9ae3a94a549bc8884fd990be1326f263cc29a747",
+      "pre_sha256": "3f05d6827ece70b38d4fd90a9ae3a94a549bc8884fd990be1326f263cc29a747",
+      "streamed_sha256": "3f05d6827ece70b38d4fd90a9ae3a94a549bc8884fd990be1326f263cc29a747",
+      "post_sha256": "3f05d6827ece70b38d4fd90a9ae3a94a549bc8884fd990be1326f263cc29a747",
+      "immutable": true,
+      "final_sha256": "3f05d6827ece70b38d4fd90a9ae3a94a549bc8884fd990be1326f263cc29a747",
+      "immutable_through_allocation": true
+    },
+    {
+      "path": "E:\\Document\\Bot_IoT_Dataset\\Dataset\\5%\\All features\\UNSW_2018_IoT_Botnet_Full5pc_4.csv",
+      "rows": 668522,
+      "expected_rows": 668522,
+      "bytes": 189577740,
+      "mtime_ns_before": 1789518420000000000,
+      "mtime_ns_after": 1789518420000000000,
+      "manifest_sha256": "ba7f6b36638246d0fde33a0ba31a0d243bfa700b1e71aebfae7e0346c076a8c9",
+      "pre_sha256": "ba7f6b36638246d0fde33a0ba31a0d243bfa700b1e71aebfae7e0346c076a8c9",
+      "streamed_sha256": "ba7f6b36638246d0fde33a0ba31a0d243bfa700b1e71aebfae7e0346c076a8c9",
+      "post_sha256": "ba7f6b36638246d0fde33a0ba31a0d243bfa700b1e71aebfae7e0346c076a8c9",
+      "immutable": true,
+      "final_sha256": "ba7f6b36638246d0fde33a0ba31a0d243bfa700b1e71aebfae7e0346c076a8c9",
+      "immutable_through_allocation": true
+    }
+  ],
+  "invalid_rows": 0,
+  "blockers": [
+    "Cross-label exact-X conflicts; diagnostic membership only",
+    "Valid-but-unseen categories: TEST; no vocab expansion"
+  ],
+  "full_statistics": {
+    "total_observations": 3668522,
+    "unique_X_groups": 672607,
+    "repeated_groups": 497259,
+    "duplicate_excess_rows": 2995915,
+    "rows_involved_in_duplicates": 3493174
+  },
+  "class_counts": {
+    "0": {
+      "rows": 477,
+      "groups": 406
+    },
+    "1": {
+      "rows": 3668045,
+      "groups": 672202
+    }
+  },
+  "row_reconciliation": {
+    "source_observations": 3668522,
+    "valid_observations": 3668522,
+    "invalid_observations": 0,
+    "group_observations": 3668522
+  },
+  "sha256_collision_buckets": 0,
+  "equality_authority": "Exact canonical tuple BLOB UNIQUE; SHA256 not equality key",
+  "binary_label_conflicts": {
+    "groups": 1,
+    "rows": 3744,
+    "benign_rows": 11,
+    "malicious_rows": 3733,
+    "minority_label_rows": 11,
+    "examples": [
+      {
+        "sha256": "413952c7fb9dc5b9ed4e85b5bd90fcf56ad147a666dacec19fd8ada49a90b844",
+        "tuple": [
+          1.0,
+          60.0,
+          0.0,
+          1.0,
+          0.0,
+          60.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          "e",
+          "udp",
+          "INT"
+        ],
+        "benign": 11,
+        "malicious": 3733
+      }
+    ]
+  },
+  "smoke_addendum": {
+    "historical_evidence_sha256": "525279265ca15da87ada2c21e4418837937e4916450ec6bc71002d9b9334189d",
+    "total_observations": 10328,
+    "unique_X_groups": 4164,
+    "repeated_groups": 1365,
+    "duplicate_excess_rows": 6164,
+    "rows_involved_in_duplicates": 7529,
+    "assembled_X_sha256": "06256d894bee0d7b0d16db917047227bb247ffb1a851721c7c7f0a43dd37865d",
+    "sample_membership_sha256": "345366054cdeac4b51157b06e1a8d27283952201dd7a32d30d5f32cf1aad0f9e",
+    "historical_hashes_match": true,
+    "terminology": "1365 = repeated groups, not all unique groups or duplicated rows"
+  },
+  "split": {
+    "rows_by_class": [
+      [
+        286,
+        2200828
+      ],
+      [
+        96,
+        733608
+      ],
+      [
+        95,
+        733609
+      ]
+    ],
+    "groups_by_class": [
+      [
+        248,
+        396019
+      ],
+      [
+        77,
+        137983
+      ],
+      [
+        81,
+        138200
+      ]
+    ],
+    "ordered_group_assignment_sha256": "9289c56067b83da61d999989294314219cc705253f2b47741f8265e103dc3b18",
+    "deterministic_replay_match": true,
+    "partitions": {
+      "TRAIN": {
+        "rows": 2201114,
+        "binary_rows": {
+          "benign": 286,
+          "malicious": 2200828
+        },
+        "distinct_X_groups": 396266,
+        "distinct_groups_per_class": {
+          "benign": 248,
+          "malicious": 396019
+        },
+        "membership_sha256": "60113558b7f65dba48c398bd035e538847e5417132b2a3ad514318596d541a3e",
+        "categorical_coverage": {
+          "flgs": {
+            "e": 1392730,
+            "e   t": 4,
+            "e  D": 1,
+            "e &": 3,
+            "e *": 461,
+            "e d": 88,
+            "e g": 55818,
+            "e s": 732625,
+            "eU": 19384
+          },
+          "proto": {
+            "arp": 131,
+            "icmp": 8422,
+            "tcp": 1013205,
+            "udp": 1179356
+          },
+          "state": {
+            "ACC": 1407,
+            "CON": 319,
+            "ECO": 42,
+            "FIN": 3710,
+            "INT": 1179228,
+            "MAS": 8,
+            "REQ": 551093,
+            "RST": 456935,
+            "TST": 7,
+            "URP": 8365
+          }
+        },
+        "largest_group": {
+          "sha256": "140d2b5ba60f8f65cf7aebb06d5767b98f6f6f3e95dbedb719ffc67cc4db53b6",
+          "benign": 0,
+          "malicious": 84240,
+          "rows": 84240,
+          "fraction_of_partition": 0.03827152977992053
+        },
+        "label_metadata_support": {
+          "category": {
+            "DDoS": 1168300,
+            "DoS": 974766,
+            "Normal": 286,
+            "Reconnaissance": 57718,
+            "Theft": 44
+          },
+          "subcategory": {
+            "Data_Exfiltration": 5,
+            "HTTP": 1484,
+            "Keylogging": 39,
+            "Normal": 286,
+            "OS_Fingerprint": 10731,
+            "Service_Scan": 46987,
+            "TCP": 972412,
+            "UDP": 1169170
+          }
+        },
+        "support_gates": {
+          "benign": {
+            "rows_pass": true,
+            "groups_pass": true
+          },
+          "malicious": {
+            "rows_pass": true,
+            "groups_pass": true
+          }
+        }
+      },
+      "VALIDATION": {
+        "rows": 733704,
+        "binary_rows": {
+          "benign": 96,
+          "malicious": 733608
+        },
+        "distinct_X_groups": 138060,
+        "distinct_groups_per_class": {
+          "benign": 77,
+          "malicious": 137983
+        },
+        "membership_sha256": "161376d656b8fe967f6a12549e92f4642c302f9cae46d07980910d16cd6aca1f",
+        "categorical_coverage": {
+          "flgs": {
+            "e": 452138,
+            "e *": 174,
+            "e d": 30,
+            "e g": 19178,
+            "e s": 254623,
+            "eU": 7561
+          },
+          "proto": {
+            "arp": 32,
+            "icmp": 299,
+            "tcp": 323163,
+            "udp": 410210
+          },
+          "state": {
+            "ACC": 573,
+            "CON": 86,
+            "ECO": 13,
+            "FIN": 1383,
+            "INT": 410165,
+            "MAS": 4,
+            "REQ": 162242,
+            "RST": 158956,
+            "TST": 6,
+            "URP": 276
+          }
+        },
+        "largest_group": {
+          "sha256": "e97ca03fc8aa44e442f8ecf9fd6221d1deed9ab10441b72acbc4284b65ba7c63",
+          "benign": 0,
+          "malicious": 753,
+          "rows": 753,
+          "fraction_of_partition": 0.0010262994341042164
+        },
+        "label_metadata_support": {
+          "category": {
+            "DDoS": 380420,
+            "DoS": 336641,
+            "Normal": 96,
+            "Reconnaissance": 16532,
+            "Theft": 15
+          },
+          "subcategory": {
+            "HTTP": 531,
+            "Keylogging": 15,
+            "Normal": 96,
+            "OS_Fingerprint": 3744,
+            "Service_Scan": 12788,
+            "TCP": 308820,
+            "UDP": 407710
+          }
+        },
+        "support_gates": {
+          "benign": {
+            "rows_pass": true,
+            "groups_pass": true
+          },
+          "malicious": {
+            "rows_pass": true,
+            "groups_pass": true
+          }
+        },
+        "valid_but_unseen_categories": {
+          "flgs": {},
+          "proto": {},
+          "state": {}
+        }
+      },
+      "TEST": {
+        "rows": 733704,
+        "binary_rows": {
+          "benign": 95,
+          "malicious": 733609
+        },
+        "distinct_X_groups": 138281,
+        "distinct_groups_per_class": {
+          "benign": 81,
+          "malicious": 138200
+        },
+        "membership_sha256": "156f75e15b95ae4a0811c43814de37c14841a653b8cc97d3d216b8438f64c5c0",
+        "categorical_coverage": {
+          "flgs": {
+            "e": 448577,
+            "e &": 2,
+            "e *": 181,
+            "e d": 19,
+            "e g": 19348,
+            "e s": 257923,
+            "eU": 7654
+          },
+          "proto": {
+            "arp": 50,
+            "icmp": 331,
+            "ipv6-icmp": 8,
+            "tcp": 326444,
+            "udp": 406871
+          },
+          "state": {
+            "ACC": 496,
+            "CON": 121,
+            "ECO": 15,
+            "FIN": 1294,
+            "INT": 406815,
+            "MAS": 4,
+            "NRS": 8,
+            "REQ": 165362,
+            "RST": 159277,
+            "TST": 3,
+            "URP": 309
+          }
+        },
+        "largest_group": {
+          "sha256": "c3e14df91a149a541f3137381ff0847b0e366c00e0480a68c8b40f122ba817cc",
+          "benign": 0,
+          "malicious": 1193,
+          "rows": 1193,
+          "fraction_of_partition": 0.00162599631459008
+        },
+        "label_metadata_support": {
+          "category": {
+            "DDoS": 377904,
+            "DoS": 338853,
+            "Normal": 95,
+            "Reconnaissance": 16832,
+            "Theft": 20
+          },
+          "subcategory": {
+            "Data_Exfiltration": 1,
+            "HTTP": 459,
+            "Keylogging": 19,
+            "Normal": 95,
+            "OS_Fingerprint": 3439,
+            "Service_Scan": 13393,
+            "TCP": 311948,
+            "UDP": 404350
+          }
+        },
+        "support_gates": {
+          "benign": {
+            "rows_pass": true,
+            "groups_pass": true
+          },
+          "malicious": {
+            "rows_pass": true,
+            "groups_pass": true
+          }
+        },
+        "valid_but_unseen_categories": {
+          "flgs": {},
+          "proto": {
+            "ipv6-icmp": 8
+          },
+          "state": {
+            "NRS": 8
+          }
+        }
+      }
+    },
+    "blockers": [
+      "Valid-but-unseen categories: TEST; no vocab expansion"
+    ],
+    "exact_group_overlap": 0,
+    "unassigned_observations": 0
+  },
+  "database_integrity": "ok",
+  "external_files": {
+    "candidate.sqlite": {
+      "bytes": 366944256,
+      "sha256": "c7f0c3883c785f889ccd62ae3f9b9713127eea6ea8980f2af93b86bbe4ee21c2"
+    },
+    "conflicting_groups.jsonl": {
+      "bytes": 195,
+      "sha256": "7337ff1d7f5877e8cfbcf8cccffc7f4fe767b0d8d5e88ba1fe25c27621a5e64f"
+    },
+    "frozen_candidate_contract.json": {
+      "bytes": 12937,
+      "sha256": "fc5a44ef1a5ea13e12e2249c1243ec28b8747a08d65b3d3740f2e95cdfe1c64d"
+    },
+    "frozen_protocol.md": {
+      "bytes": 10925,
+      "sha256": "53b813a91bfebb1d2ed3baf1513e800a574e853a8ac2fc2761a0c4ef81d689c3"
+    },
+    "group_size_histogram.json": {
+      "bytes": 2480,
+      "sha256": "3a9bab937e1de29af1669485b7b1ac93a3e885e766803629c0beadce58ea95c7"
+    },
+    "invalid_rows.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "TEST_membership.jsonl": {
+      "bytes": 110468233,
+      "sha256": "156f75e15b95ae4a0811c43814de37c14841a653b8cc97d3d216b8438f64c5c0"
+    },
+    "TRAIN_membership.jsonl": {
+      "bytes": 331449106,
+      "sha256": "60113558b7f65dba48c398bd035e538847e5417132b2a3ad514318596d541a3e"
+    },
+    "VALIDATION_membership.jsonl": {
+      "bytes": 110473962,
+      "sha256": "161376d656b8fe967f6a12549e92f4642c302f9cae46d07980910d16cd6aca1f"
+    }
+  },
+  "resources": {
+    "elapsed_seconds": 719.2184569000019,
+    "cpu_seconds": 714.671875,
+    "peak_rss_bytes": 323428352,
+    "sqlite_cache_limit_bytes": 67108864,
+    "batch_rows": 8192
+  },
+  "external_work_dir": "E:\\Document\\iotguard_secondary_candidate_reviews\\20261102_full_v1"
+}

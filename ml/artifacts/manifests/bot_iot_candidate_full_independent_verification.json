@@ -1,0 +1,72 @@
+{
+  "status": "PASS_INDEPENDENT_READ_ONLY_REPLAY",
+  "groups_checked": 672607,
+  "observations_checked": 3668522,
+  "partition_rows": [
+    2201114,
+    733704,
+    733704
+  ],
+  "group_label_count_disagreements": 0,
+  "rational_allocation_mismatches": 0,
+  "ordered_group_assignment_sha256": "9289c56067b83da61d999989294314219cc705253f2b47741f8265e103dc3b18",
+  "membership_sha256": {
+    "TRAIN": "60113558b7f65dba48c398bd035e538847e5417132b2a3ad514318596d541a3e",
+    "VALIDATION": "161376d656b8fe967f6a12549e92f4642c302f9cae46d07980910d16cd6aca1f",
+    "TEST": "156f75e15b95ae4a0811c43814de37c14841a653b8cc97d3d216b8438f64c5c0"
+  },
+  "source_content_hashes_rechecked": true,
+  "largest_groups_by_class": {
+    "TRAIN": {
+      "benign": {
+        "sha256": "9c7511dbc95b8ff8dd46739e00811a9e0bf87cd749fda6f4c737cd1fd7e8b9a0",
+        "class_rows": 18,
+        "total_group_rows": 18,
+        "fraction_of_partition_class": 0.06293706293706294,
+        "fraction_of_full_class": 0.03773584905660377
+      },
+      "malicious": {
+        "sha256": "140d2b5ba60f8f65cf7aebb06d5767b98f6f6f3e95dbedb719ffc67cc4db53b6",
+        "class_rows": 84240,
+        "total_group_rows": 84240,
+        "fraction_of_partition_class": 0.03827650320697483,
+        "fraction_of_full_class": 0.02296591235930857
+      }
+    },
+    "VALIDATION": {
+      "benign": {
+        "sha256": "55aa34d007b36fc1f48bc070068bc0e764b31673898ebf7c43e1ec29a26b1ae7",
+        "class_rows": 18,
+        "total_group_rows": 18,
+        "fraction_of_partition_class": 0.1875,
+        "fraction_of_full_class": 0.03773584905660377
+      },
+      "malicious": {
+        "sha256": "e97ca03fc8aa44e442f8ecf9fd6221d1deed9ab10441b72acbc4284b65ba7c63",
+        "class_rows": 753,
+        "total_group_rows": 753,
+        "fraction_of_partition_class": 0.0010264337357280729,
+        "fraction_of_full_class": 0.0002052864673143323
+      }
+    },
+    "TEST": {
+      "benign": {
+        "sha256": "97a05e6d92e36548931e35adb20285dffcd5064aeb74a877ea9c1ea96a2876cf",
+        "class_rows": 8,
+        "total_group_rows": 8,
+        "fraction_of_partition_class": 0.08421052631578947,
+        "fraction_of_full_class": 0.016771488469601678
+      },
+      "malicious": {
+        "sha256": "c3e14df91a149a541f3137381ff0847b0e366c00e0480a68c8b40f122ba817cc",
+        "class_rows": 1193,
+        "total_group_rows": 1193,
+        "fraction_of_partition_class": 0.0016262068758698435,
+        "fraction_of_full_class": 0.0003252413751739687
+      }
+    }
+  },
+  "verification_sha256": "4560b9bfbf12d96fd72161139b75738ae9437584c2d6e24150c266961094c045",
+  "implementation_sha256": "dbcca24b11a7294532112c3f737d9e4fd27bccf79c4071b6744ebb2de3d0a9e1",
+  "elapsed_seconds": 67.33562090000487
+}

@@ -171,7 +171,7 @@
     "preprocessing": "StandardScaler numeric and OneHotEncoder text; fit once on TRAIN only; VALIDATION/TEST transform-only; unknown categories fail closed; persist actual encoded feature order/vocabulary and scaler. No PCA/SMOTE."
   },
   "split_proposal": {
-    "status": "PLANNED_CONDITIONAL_ON_FULL_EFFECTIVE_EQUIVALENCE_AUDIT",
+    "status": "DIAGNOSTIC_MEMBERSHIP_COMPUTED_BLOCKED_FOR_ADOPTION",
     "method": "Binary-stratified equivalence-group allocation 60/20/20 TRAIN/VALIDATION/TEST; no row of an equivalence group crosses partitions",
     "seed": 1729,
     "algorithm": "See scan_policy.allocation and scan_policy.equivalence; frozen algorithm_id bot_iot_candidate_group_split_v1. Retain mixed-label groups in diagnostic membership; conflicts block adoption.",
@@ -190,7 +190,21 @@
       95,
       96
     ],
-    "actual_counts": "NOT_COMPUTED; rounding/group sizes change counts; nominal counts are not evidence",
+    "actual_counts": {
+      "TRAIN": {
+        "benign": 286,
+        "malicious": 2200828
+      },
+      "VALIDATION": {
+        "benign": 96,
+        "malicious": 733608
+      },
+      "TEST": {
+        "benign": 95,
+        "malicious": 733609
+      },
+      "evidence": "artifacts/manifests/bot_iot_candidate_proposed_split_summary.json"
+    },
     "controls": "Report group-size distribution, conflicts, class/attack subtype supports, benign entity/time coverage, row and group weights, cross-partition equivalence overlap=0 and no missing classes; resampling before split prohibited. Unknown held-out category => BLOCKED, revise reviewed protocol without model scores.",
     "resource_policy": "Full TRAIN preferred; malicious TRAIN downsampling requires separate reviewed deterministic group-level policy and new actual population identity; never modify VALIDATION/TEST prevalence."
   },
@@ -218,10 +232,10 @@
     "sha256": "288ef526ced2e2319543201417581c4aafb5b9b3092def2cce0840fcb37fe756"
   },
   "blockers": [
-    "Reviewer adoption of predictor, preprocessing and evaluation proposal",
-    "Full candidate-specific equivalence/label-conflict/group-support scan; old duplicate views are insufficient",
-    "Actual deterministic three-way membership and support gates, category coverage and package integrity verification",
-    "Kaggle-only classifier/clustering smoke and full runs after review; no local model fit"
+    "Cross-label exact-X group:11 benign/3733 malicious; all labels retained, adoption blocked under frozen policy",
+    "TEST valid-but-unseen proto=ipv6-icmp and state=NRS on same8 observations; frozen TRAIN-only vocabulary/error policy blocks transform",
+    "PM/Hi\u1ebfu review of conflict handling, unseen handling, group-concentrated benign uncertainty and candidate adoption",
+    "No official secondary package or approved training runner/resource preflight; no model fitting in this checkpoint"
   ],
   "policy_revision": "candidate_validation_v2_pre_scan",
   "scan_policy": {
@@ -236,5 +250,15 @@
     "membership": "For each partition order observations by canonical source list order (lexicographic relative paths here) then 1-based numeric data-row index. UTF8 compact JSON array [relative_path,index,pkSeqID string,attack string,equivalence SHA256 hex], one LF per record. No header. Record SHA256 per file. Hash collision does not join groups; assignment digest includes exact tuple bytes.",
     "gates": "Keep existing rows100/50/50 and class groups20/10/10, zero cross-partition exact-X groups, no invalid/source mismatch or dropped/unassigned rows; no unseen categorical values. Cross-label conflicts block adoption independently of support gates.",
     "no_training": "No scaler/encoder/classifier/clustering fit in this full scan; category sets are diagnostics only. No official package."
+  },
+  "validation_checkpoint": {
+    "status": "FULL_SCAN_VERIFIED_SPLIT_BLOCKED_FOR_ADOPTION",
+    "scan_source_revision": "18ddf599ce3d137e3d234b91349e3349023cc3f2",
+    "frozen_contract_sha256": "fc5a44ef1a5ea13e12e2249c1243ec28b8747a08d65b3d3740f2e95cdfe1c64d",
+    "frozen_contract_external_path": "E:\\Document\\iotguard_secondary_candidate_reviews\\20261102_full_v1\\frozen_candidate_contract.json",
+    "annotation_rule": "This object and split completion/blocker annotations were added after scan. scan_policy, predictors, labels, seed and encoding unchanged. Run provenance remains the frozen pre-scan revision/hash.",
+    "verification": "artifacts/manifests/bot_iot_candidate_full_verification.json",
+    "independent_verification": "artifacts/manifests/bot_iot_candidate_full_independent_verification.json",
+    "proposed_split_summary": "artifacts/manifests/bot_iot_candidate_proposed_split_summary.json"
   }
 }

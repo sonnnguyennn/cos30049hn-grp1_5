@@ -125,11 +125,12 @@ per class for TRAIN/VALIDATION/TEST. These proposed minima prevent undefined est
 they do not guarantee precise benign performance. At support95 one error changes recall
 by ~1.05 percentage points. Report binomial intervals and group-aware uncertainty.
 
-The bounded smoke already finds 1,365 duplicate groups (6,164 excess rows) in this new
-feature space. Historical zero duplicates in all-fields-minus-ID/seq does not transfer to
-13 predictors. **Full candidate-specific equivalence/group-support scanning is still
-required before adoption and official membership.** This targeted new question justifies
-a later scan; it is not a rerun of all G1/G2 audits.
+At preparation checkpoint b77e58d, bounded smoke found 1,365 repeated groups
+(6,164 excess rows) in this new feature space. Historical zero duplicates in
+all-fields-minus-ID/seq did not transfer to13 predictors. Full candidate-specific
+equivalence/group-support scanning was pending then; it is now completed by the
+additive full-validation outcome below. Adoption remains blocked by its findings.
+This targeted scan answers a new question; it does not rerun all G1/G2 audits.
 
 Preserve all evaluation rows and natural row weights/prevalence. Report row-weighted
 metrics plus group-weighted sensitivity to repeated observations. Keep TEST sealed for
@@ -154,3 +155,41 @@ Conclusions apply to the audited 5% capture with shared environments/campaigns p
 remaining across partitions. They do not establish future-time, unseen-device/network,
 full Bot-IoT, N-BaIoT transfer or deployment performance. Entity-grouped sensitivity can
 be reviewed separately. All classifier/clustering fitting, including smoke, runs on Kaggle.
+
+
+## Full validation outcome — additive post-scan annotation
+
+The frozen scan source is `18ddf599ce3d137e3d234b91349e3349023cc3f2`;
+contract SHA256 `fc5a44ef1a5ea13e12e2249c1243ec28b8747a08d65b3d3740f2e95cdfe1c64d`.
+Current contract/protocol add completion evidence; they do not replace the frozen bytes
+or retrospectively change run provenance. `scan_policy`, features, labels, seed and
+unseen-category handling are unchanged. Status remains **PROPOSED_FOR_REVIEW**.
+
+All 3,668,522 observations validated, with raw hashes identical before/during/after scan
+and after allocation. Exact groups:672,607; repeated groups:497,259;
+excess rows:2,995,915; rows in repeated groups:3,493,174. Source/group/observation counts
+reconcile. SQL overlap of exact tuple across partitions is0; allocation and membership
+were independently replayed with rational arithmetic and exact bytes.
+
+| Partition | Rows | Benign / malicious rows | Benign / malicious distinct groups |
+| --- | ---: | --- | --- |
+| TRAIN | 2,201,114 | 286 / 2,200,828 | 248 / 396,019 |
+| VALIDATION | 733,704 | 96 / 733,608 | 77 / 137,983 |
+| TEST | 733,704 | 95 / 733,609 | 81 / 138,200 |
+
+All proposed support minima pass, but adoption is **BLOCKED**:
+
+- One exact-X conflict group has11 benign and3,733 malicious observations (all shard4;
+  Normal/Normal versus Reconnaissance/Service_Scan), retained intact in TRAIN.
+- TEST has8 observations with valid `proto=ipv6-icmp`, `state=NRS`, absent from TRAIN.
+  They are valid-but-unseen, not invalid source values; frozen preprocessing would reject
+  them. No vocabulary was learned from held-out data and no encoder was fitted here.
+- Largest benign group occupies18/96 VALIDATION benign rows (18.75%); row support
+  alone does not justify independent-observation uncertainty estimates.
+
+Do not reroll, relabel, drop, split conflicting X groups or force rare categories into TRAIN.
+PM/Hiếu must review alternative conflict/unseen policies explicitly in a later version.
+No alternative is adopted here. Detailed evidence and handoff:
+[full validation](../handoffs/BOT_IOT_CANDIDATE_FULL_VALIDATION.md),
+[verification](../../artifacts/manifests/bot_iot_candidate_full_verification.json),
+[split summary](../../artifacts/manifests/bot_iot_candidate_proposed_split_summary.json).
