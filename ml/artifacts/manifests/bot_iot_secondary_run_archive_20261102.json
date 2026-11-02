@@ -1,0 +1,422 @@
+{
+  "status": "VERIFIED_ARCHIVE_VALIDATION_EVIDENCE",
+  "historical_run_source_revision": "84f3068386f1c11a5691d5383b2c4a46c8591b21",
+  "integration_checkout_revision": "9a850b5d3a63e1b592b8ca1e1ec3089e12fa29a2",
+  "archive_verifier_sha256": "31f00c2983105bf0201ddfce6baaee9838e0a4390f3c7a05a8c915dbc5f73bd3",
+  "package_manifest_sha256": "dd4fdc2551df68f294968f38ca3ecced0c27ac8bc2d1e1ae22239b7d676bae7c",
+  "release_zip_sha256": "0fb3ade6dd8e07857cd921f6ce77353f1e40fb66c1ebfa28f303a2b1fb4f015a",
+  "review_reference": "https://github.com/sonnnguyennn/cos30049hn-grp1_5/pull/1",
+  "archive_directory": "E:\\Document\\iotguard_run_reviews\\bot_iot_20261102_pr1_archive_01",
+  "runs": {
+    "smoke": {
+      "original_zip": "E:\\Document\\bot_iot_secondary_smoke_20261102T055131920288Z.zip",
+      "archived_zip": "E:\\Document\\iotguard_run_reviews\\bot_iot_20261102_pr1_archive_01\\bot_iot_secondary_smoke_20261102T055131920288Z.zip",
+      "zip_sha256": "043a12b177791d624e34c44c4b1c7a0c6c69d80bd853dbc0380f6251ae69a2d7",
+      "zip_bytes": 23244706,
+      "output_checksums_verified": 33,
+      "run_status_sha256": "e330753d5086e11001d046a5962957f10af2b42710767a4b6cc3f74e8739469f",
+      "run_id": "bot_iot_secondary_smoke_20261102T055131920288Z",
+      "identity": {
+        "bundle_id": "iotguard_bot_iot_secondary_v2_kaggle_v1",
+        "bundle_manifest_sha256": "06c19f532414cd28ccb977f0f957c7c0e4436990c45f23798b3963604e8a0b75",
+        "configuration": {
+          "chunk_size": 8192,
+          "dummy": {
+            "random_state": 1729,
+            "strategy": "most_frequent"
+          },
+          "lr": {
+            "C": 1.0,
+            "class_weight": null,
+            "fit_intercept": true,
+            "max_iter": 1000,
+            "penalty": "l2",
+            "random_state": 1729,
+            "solver": "lbfgs",
+            "tol": 0.0001
+          },
+          "protocol": "bot_iot_secondary_kaggle_baseline_v1",
+          "smoke": {
+            "TRAIN": "first8192 hash-ranked groups union fixed mixed-label anchor; retain every row, no duplication or label balancing",
+            "VALIDATION": "entire fixed VALIDATION",
+            "anchor": "413952c7fb9dc5b9ed4e85b5bd90fcf56ad147a666dacec19fd8ada49a90b844",
+            "group_limit": 8192,
+            "ordering": "sha256(ASCII bot-iot-v2-smoke:1729: + group_hex),tie group_hex",
+            "seed": 1729
+          },
+          "threads": 4,
+          "threshold": 0.5
+        },
+        "data_contract_sha256": "f4ec67e7c5ee6a53d3c01520b8b0e0749a41def875a46000889d98d0c5fd47ed",
+        "data_protocol_sha256": "b9ce67010367f926157fa9962b6615883bea5dcc22b030f505ac10dc1921bf2e",
+        "experiment_protocol_sha256": "b42df94db2a3eb0fab5b5043c596f68f8b059cfb2f6b21a7a6f49f310f03af26",
+        "feature_order_sha256": "df76e9c3d144b153a7b94dc11267f9ce2540e78a3c4d599b82ef7c4cdce59d8f",
+        "package_manifest_sha256": "dd4fdc2551df68f294968f38ca3ecced0c27ac8bc2d1e1ae22239b7d676bae7c",
+        "preprocessor_sha256": "6714eefbc631f46d5dfe948b6de2d0b0194ac377439f656570980fdcb71074da",
+        "runtime_packages": {
+          "joblib": "1.6.0",
+          "numpy": "2.1.3",
+          "psutil": "5.9.5",
+          "scikit-learn": "1.6.1",
+          "threadpoolctl": "3.6.0"
+        },
+        "runtime_python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+        "source_dirty_worktree": false,
+        "source_git_revision": "84f3068386f1c11a5691d5383b2c4a46c8591b21"
+      },
+      "status": "SMOKE_PASS",
+      "training_rows": 45817,
+      "validation_rows": 733704,
+      "train_population_sha256": "356554ea1a075355cb27f4cbd1c09dd280ea097f0eaaa48ea8eed1d78f9f65d0",
+      "validation_population_sha256": "161376d656b8fe967f6a12549e92f4642c302f9cae46d07980910d16cd6aca1f",
+      "smoke_plan": {
+        "binary_rows": [
+          17,
+          45800
+        ],
+        "groups": 8193,
+        "groups_sha256": "ac1e1e04285b05b62f4d88d3e4a9dc0cf6b8b15543412d54c0107d6c2c47c99c",
+        "membership_sha256": "356554ea1a075355cb27f4cbd1c09dd280ea097f0eaaa48ea8eed1d78f9f65d0",
+        "rows": 45817
+      },
+      "models": {
+        "dummy": {
+          "converged": true,
+          "fit_seconds": 0.0030772490000003927,
+          "iterations": null,
+          "metrics": {
+            "group_sensitivity": {
+              "FPR": 1.0,
+              "accuracy_supplementary": 0.9994422714761698,
+              "benign_recall": 0.0,
+              "class_supports": {
+                "benign": 77.0,
+                "malicious": 137983.00000000003
+              },
+              "confusion": {
+                "FN": 0.0,
+                "FP": 77.0,
+                "TN": 0.0,
+                "TP": 137983.00000000003
+              },
+              "confusion_kind": "weighted masses",
+              "macro_f1": 0.49986052897555816,
+              "malicious_precision": 0.9994422714761698,
+              "malicious_recall": 1.0,
+              "undefined": "null",
+              "weighting": "1/n_g original exact-X group"
+            },
+            "row_primary": {
+              "FPR": 1.0,
+              "accuracy_supplementary": 0.9998691570442576,
+              "benign_recall": 0.0,
+              "class_supports": {
+                "benign": 96,
+                "malicious": 733608
+              },
+              "confusion": {
+                "FN": 0,
+                "FP": 96,
+                "TN": 0,
+                "TP": 733608
+              },
+              "confusion_kind": "integer counts",
+              "macro_f1": 0.4999672871209395,
+              "malicious_precision": 0.9998691570442576,
+              "malicious_recall": 1.0,
+              "undefined": "null",
+              "weighting": "1 per observation"
+            }
+          },
+          "reload_max_probability_delta": 0.0,
+          "reload_parity": "PASS",
+          "warnings": []
+        },
+        "lr": {
+          "converged": true,
+          "fit_seconds": 0.258315615000015,
+          "iterations": [
+            18
+          ],
+          "metrics": {
+            "group_sensitivity": {
+              "FPR": 1.0,
+              "accuracy_supplementary": 0.9994350282485875,
+              "benign_recall": 0.0,
+              "class_supports": {
+                "benign": 77.0,
+                "malicious": 137983.00000000003
+              },
+              "confusion": {
+                "FN": 1.0,
+                "FP": 77.0,
+                "TN": 0.0,
+                "TP": 137982.00000000003
+              },
+              "confusion_kind": "weighted masses",
+              "macro_f1": 0.4998587171517378,
+              "malicious_precision": 0.9994422674363859,
+              "malicious_recall": 0.9999927527304088,
+              "undefined": "null",
+              "weighting": "1/n_g original exact-X group"
+            },
+            "row_primary": {
+              "FPR": 1.0,
+              "accuracy_supplementary": 0.9998677940968019,
+              "benign_recall": 0.0,
+              "class_supports": {
+                "benign": 96,
+                "malicious": 733608
+              },
+              "confusion": {
+                "FN": 1,
+                "FP": 96,
+                "TN": 0,
+                "TP": 733607
+              },
+              "confusion_kind": "integer counts",
+              "macro_f1": 0.499966946339256,
+              "malicious_precision": 0.9998691568659254,
+              "malicious_recall": 0.999998636874189,
+              "undefined": "null",
+              "weighting": "1 per observation"
+            }
+          },
+          "reload_max_probability_delta": 0.0,
+          "reload_parity": "PASS",
+          "warnings": [
+            {
+              "category": "DeprecationWarning",
+              "message": "scipy.optimize: The `disp` and `iprint` options of the L-BFGS-B solver are deprecated and will be removed in SciPy 1.18.0."
+            }
+          ]
+        }
+      },
+      "eligible_for_full_population_comparison": false,
+      "elapsed_seconds": 121.13525560700003,
+      "peak_runner_rss_bytes": 657694720,
+      "executed_notebook": {
+        "original": "E:\\Downloads\\01-bot-iot-secondary-smoke.ipynb",
+        "sha256": "4e6ab35504d93b9ce915ac2c8e1449d1f330ce9a885485614ebcd123bd87b026",
+        "bytes": 5842,
+        "execution_counts": [
+          1,
+          3,
+          4
+        ],
+        "mode": "smoke",
+        "template_algorithm_match": true,
+        "note": "Execution transcript; not reexecuted. Only Full receipt input path differs.",
+        "archived": "E:\\Document\\iotguard_run_reviews\\bot_iot_20261102_pr1_archive_01\\01-bot-iot-secondary-smoke.ipynb"
+      },
+      "independent_saved_VALIDATION_metrics_recomputation": "PASS"
+    },
+    "full": {
+      "original_zip": "E:\\Document\\bot_iot_secondary_full_20261102T062917639798Z.zip",
+      "archived_zip": "E:\\Document\\iotguard_run_reviews\\bot_iot_20261102_pr1_archive_01\\bot_iot_secondary_full_20261102T062917639798Z.zip",
+      "zip_sha256": "dc7ca7e5cf3ce91367673622c0591ea318cabba8b0fad4d2b9d0dcea3c20f377",
+      "zip_bytes": 54077898,
+      "output_checksums_verified": 33,
+      "run_status_sha256": "855b211ac3f12210b7d113d92aae4412a0446639338fc138608f5b9702dba60d",
+      "run_id": "bot_iot_secondary_full_20261102T062917639798Z",
+      "identity": {
+        "bundle_id": "iotguard_bot_iot_secondary_v2_kaggle_v1",
+        "bundle_manifest_sha256": "06c19f532414cd28ccb977f0f957c7c0e4436990c45f23798b3963604e8a0b75",
+        "configuration": {
+          "chunk_size": 8192,
+          "dummy": {
+            "random_state": 1729,
+            "strategy": "most_frequent"
+          },
+          "lr": {
+            "C": 1.0,
+            "class_weight": null,
+            "fit_intercept": true,
+            "max_iter": 1000,
+            "penalty": "l2",
+            "random_state": 1729,
+            "solver": "lbfgs",
+            "tol": 0.0001
+          },
+          "protocol": "bot_iot_secondary_kaggle_baseline_v1",
+          "smoke": {
+            "TRAIN": "first8192 hash-ranked groups union fixed mixed-label anchor; retain every row, no duplication or label balancing",
+            "VALIDATION": "entire fixed VALIDATION",
+            "anchor": "413952c7fb9dc5b9ed4e85b5bd90fcf56ad147a666dacec19fd8ada49a90b844",
+            "group_limit": 8192,
+            "ordering": "sha256(ASCII bot-iot-v2-smoke:1729: + group_hex),tie group_hex",
+            "seed": 1729
+          },
+          "threads": 4,
+          "threshold": 0.5
+        },
+        "data_contract_sha256": "f4ec67e7c5ee6a53d3c01520b8b0e0749a41def875a46000889d98d0c5fd47ed",
+        "data_protocol_sha256": "b9ce67010367f926157fa9962b6615883bea5dcc22b030f505ac10dc1921bf2e",
+        "experiment_protocol_sha256": "b42df94db2a3eb0fab5b5043c596f68f8b059cfb2f6b21a7a6f49f310f03af26",
+        "feature_order_sha256": "df76e9c3d144b153a7b94dc11267f9ce2540e78a3c4d599b82ef7c4cdce59d8f",
+        "package_manifest_sha256": "dd4fdc2551df68f294968f38ca3ecced0c27ac8bc2d1e1ae22239b7d676bae7c",
+        "preprocessor_sha256": "6714eefbc631f46d5dfe948b6de2d0b0194ac377439f656570980fdcb71074da",
+        "runtime_packages": {
+          "joblib": "1.6.0",
+          "numpy": "2.1.3",
+          "psutil": "5.9.5",
+          "scikit-learn": "1.6.1",
+          "threadpoolctl": "3.6.0"
+        },
+        "runtime_python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+        "source_dirty_worktree": false,
+        "source_git_revision": "84f3068386f1c11a5691d5383b2c4a46c8591b21"
+      },
+      "status": "BASELINES_COMPLETE",
+      "training_rows": 2201114,
+      "validation_rows": 733704,
+      "train_population_sha256": "60113558b7f65dba48c398bd035e538847e5417132b2a3ad514318596d541a3e",
+      "validation_population_sha256": "161376d656b8fe967f6a12549e92f4642c302f9cae46d07980910d16cd6aca1f",
+      "smoke_plan": {
+        "binary_rows": [
+          17,
+          45800
+        ],
+        "groups": 8193,
+        "groups_sha256": "ac1e1e04285b05b62f4d88d3e4a9dc0cf6b8b15543412d54c0107d6c2c47c99c",
+        "membership_sha256": "356554ea1a075355cb27f4cbd1c09dd280ea097f0eaaa48ea8eed1d78f9f65d0",
+        "rows": 45817
+      },
+      "models": {
+        "dummy": {
+          "converged": true,
+          "fit_seconds": 0.09937348899995868,
+          "iterations": null,
+          "metrics": {
+            "group_sensitivity": {
+              "FPR": 1.0,
+              "accuracy_supplementary": 0.9994422714761698,
+              "benign_recall": 0.0,
+              "class_supports": {
+                "benign": 77.0,
+                "malicious": 137983.00000000003
+              },
+              "confusion": {
+                "FN": 0.0,
+                "FP": 77.0,
+                "TN": 0.0,
+                "TP": 137983.00000000003
+              },
+              "confusion_kind": "weighted masses",
+              "macro_f1": 0.49986052897555816,
+              "malicious_precision": 0.9994422714761698,
+              "malicious_recall": 1.0,
+              "undefined": "null",
+              "weighting": "1/n_g original exact-X group"
+            },
+            "row_primary": {
+              "FPR": 1.0,
+              "accuracy_supplementary": 0.9998691570442576,
+              "benign_recall": 0.0,
+              "class_supports": {
+                "benign": 96,
+                "malicious": 733608
+              },
+              "confusion": {
+                "FN": 0,
+                "FP": 96,
+                "TN": 0,
+                "TP": 733608
+              },
+              "confusion_kind": "integer counts",
+              "macro_f1": 0.4999672871209395,
+              "malicious_precision": 0.9998691570442576,
+              "malicious_recall": 1.0,
+              "undefined": "null",
+              "weighting": "1 per observation"
+            }
+          },
+          "reload_max_probability_delta": 0.0,
+          "reload_parity": "PASS",
+          "warnings": []
+        },
+        "lr": {
+          "converged": true,
+          "fit_seconds": 5.4092477609999605,
+          "iterations": [
+            14
+          ],
+          "metrics": {
+            "group_sensitivity": {
+              "FPR": 0.9090909090909091,
+              "accuracy_supplementary": 0.9994712443864986,
+              "benign_recall": 0.09090909090909091,
+              "class_supports": {
+                "benign": 77.0,
+                "malicious": 137983.00000000003
+              },
+              "confusion": {
+                "FN": 3.0,
+                "FP": 70.0,
+                "TN": 7.0,
+                "TP": 137980.00000000003
+              },
+              "confusion_kind": "weighted masses",
+              "macro_f1": 0.5803275395483074,
+              "malicious_precision": 0.9994929373415429,
+              "malicious_recall": 0.9999782581912264,
+              "undefined": "null",
+              "weighting": "1/n_g original exact-X group"
+            },
+            "row_primary": {
+              "FPR": 0.9270833333333334,
+              "accuracy_supplementary": 0.9998746088340802,
+              "benign_recall": 0.07291666666666667,
+              "class_supports": {
+                "benign": 96,
+                "malicious": 733608
+              },
+              "confusion": {
+                "FN": 3,
+                "FP": 89,
+                "TN": 7,
+                "TP": 733605
+              },
+              "confusion_kind": "integer counts",
+              "macro_f1": 0.5660063857929672,
+              "malicious_precision": 0.9998786960231377,
+              "malicious_recall": 0.9999959106225669,
+              "undefined": "null",
+              "weighting": "1 per observation"
+            }
+          },
+          "reload_max_probability_delta": 0.0,
+          "reload_parity": "PASS",
+          "warnings": [
+            {
+              "category": "DeprecationWarning",
+              "message": "scipy.optimize: The `disp` and `iprint` options of the L-BFGS-B solver are deprecated and will be removed in SciPy 1.18.0."
+            }
+          ]
+        }
+      },
+      "eligible_for_full_population_comparison": true,
+      "elapsed_seconds": 146.788555676,
+      "peak_runner_rss_bytes": 1144868864,
+      "executed_notebook": {
+        "original": "E:\\Downloads\\02-bot-iot-secondary-full.ipynb",
+        "sha256": "0bb4c8fd557512247c906953749b63a80414599c49c3100bd71d2797b2d155b2",
+        "bytes": 6157,
+        "execution_counts": [
+          1,
+          2,
+          3
+        ],
+        "mode": "full",
+        "template_algorithm_match": true,
+        "note": "Execution transcript; not reexecuted. Only Full receipt input path differs.",
+        "archived": "E:\\Document\\iotguard_run_reviews\\bot_iot_20261102_pr1_archive_01\\02-bot-iot-secondary-full.ipynb"
+      },
+      "independent_saved_VALIDATION_metrics_recomputation": "PASS"
+    }
+  },
+  "current_TEST_payloads_opened": false,
+  "model_deserialization_or_fit": false,
+  "reload_parity_evidence": "REPORTED_BY_ARCHIVED_RUNNER; model files hash-checked only",
+  "package_standalone_evidence": "REPORTED_KAGGLE_PASS; receipt hash verified, not rerun"
+}
