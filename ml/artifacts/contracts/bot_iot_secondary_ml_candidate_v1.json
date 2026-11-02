@@ -165,7 +165,7 @@
   ],
   "validation_policy": {
     "numeric_dtype": "float64; finite and nonnegative; count fields integral and <=2**53",
-    "categorical": "Exact case and internal whitespace preserved; reject empty, outer whitespace, nan/null/none tokens; text only",
+    "categorical": "See scan_policy.category_validity and unseen_policy: validity is lexical, unseen is relative to TRAIN and remains valid. Fail unseen transform without vocabulary expansion.",
     "ports": "canonical parser decimal/hex/-1; -1 -> value null with unresolved_sentinel kind; not port0; excluded from X",
     "missing_sentinel": "Fail closed for selected fields; no imputation, clipping, dropped rows or sentinel substitution",
     "preprocessing": "StandardScaler numeric and OneHotEncoder text; fit once on TRAIN only; VALIDATION/TEST transform-only; unknown categories fail closed; persist actual encoded feature order/vocabulary and scaler. No PCA/SMOTE."
@@ -174,7 +174,7 @@
     "status": "PLANNED_CONDITIONAL_ON_FULL_EFFECTIVE_EQUIVALENCE_AUDIT",
     "method": "Binary-stratified equivalence-group allocation 60/20/20 TRAIN/VALIDATION/TEST; no row of an equivalence group crosses partitions",
     "seed": 1729,
-    "algorithm": "Canonical group key is JSON array of ordered parsed values (finite float64 numeric, signed-zero normalized, exact categorical strings), compact separators and ensure_ascii=True, SHA256. Confirm exact tuples in hash groups. Reject conflicting-label groups pending review. For each binary class, sort groups by SHA256 of ASCII seed + colon + group digest (tie by digest); greedily place each whole group into partition with largest remaining row deficit to 60/20/20 target (tie TRAIN,VALIDATION,TEST). Do not retry seeds based on scores. Fail support gate instead of breaking groups. Persist exact memberships.",
+    "algorithm": "See scan_policy.allocation and scan_policy.equivalence; frozen algorithm_id bot_iot_candidate_group_split_v1. Retain mixed-label groups in diagnostic membership; conflicts block adoption.",
     "minimum_rows_per_class": {
       "TRAIN": 100,
       "VALIDATION": 50,
@@ -222,5 +222,19 @@
     "Full candidate-specific equivalence/label-conflict/group-support scan; old duplicate views are insufficient",
     "Actual deterministic three-way membership and support gates, category coverage and package integrity verification",
     "Kaggle-only classifier/clustering smoke and full runs after review; no local model fit"
-  ]
+  ],
+  "policy_revision": "candidate_validation_v2_pre_scan",
+  "scan_policy": {
+    "algorithm_id": "bot_iot_candidate_group_split_v1",
+    "freeze_rule": "Commit this policy and implementation before full scan. No feature/seed/label/encoding changes based on diagnostics.",
+    "equivalence": "Ordered 13 values from assemble_secondary: first10 Python float/IEEE754 binary64, finite nonnegative, counts exact integral <=2**53 using Decimal; normalize either signed zero to +0.0. Last3 exact source Unicode strings, case and internal whitespace retained; no numeric aliases. Canonical tuple bytes=json.dumps(list(values),ensure_ascii=True,allow_nan=False,separators=(comma,colon)).encode(ASCII), no LF. Python float shortest round-trip decimal formatting; versions recorded. Exact tuple BLOB equality is authority; SHA256 only compact identifier/order key. Labels/metadata excluded.",
+    "category_validity": "Invalid: empty, leading/trailing whitespace or case-insensitive nan/null/none tokens. Any other exact text is structurally valid, including a valid value absent from TRAIN. No full-corpus vocabulary used for encoding.",
+    "unseen_policy": "Freeze handle_unknown=error. Derive vocabulary from proposed TRAIN only. Count valid-but-unseen held-out values diagnostically; any unseen value blocks this candidate preprocessing/split combination. Never append held-out values, force representatives into TRAIN, recode as invalid, reroll seed or change membership to pass.",
+    "grouping": "SQLite UNIQUE canonical tuple BLOB; aggregate n0/n1 into SAME group. Never group by (X,label). Persist every valid observation with lineage and original label. Report invalid rows separately and block full-corpus split if any; no silent drops.",
+    "allocation": "Seed1729. First mixed-label groups, then pure benign groups, then pure malicious groups. Within each stratum order by SHA256(ASCII(1729:)+lowercase_hex_SHA256(tuple)), then lowercase hex tuple digest, then exact tuple BLOB, ascending bytewise. For each whole group, active labels={y:n_y>0}. Partition score=sum over active labels of (weight[p]*TOTAL_y -5*assigned[p,y]); weights TRAIN3,VALIDATION1,TEST1. Choose maximum exact integer score; ties TRAIN then VALIDATION then TEST. Add BOTH original-label counts for mixed groups. Pure-group allocation reproduces prior single-class largest-absolute-deficit rule. Never split/relabel/drop a conflict; any cross-label conflict blocks adoption even when diagnostic membership can be computed.",
+    "conflicts": "Mixed-first allocation is a frozen diagnostic extension, not adoption or conflict resolution. Report all conflicting group tuples/n0/n1 externally and aggregate counts/minority-label rows in Git.",
+    "membership": "For each partition order observations by canonical source list order (lexicographic relative paths here) then 1-based numeric data-row index. UTF8 compact JSON array [relative_path,index,pkSeqID string,attack string,equivalence SHA256 hex], one LF per record. No header. Record SHA256 per file. Hash collision does not join groups; assignment digest includes exact tuple bytes.",
+    "gates": "Keep existing rows100/50/50 and class groups20/10/10, zero cross-partition exact-X groups, no invalid/source mismatch or dropped/unassigned rows; no unseen categorical values. Cross-label conflicts block adoption independently of support gates.",
+    "no_training": "No scaler/encoder/classifier/clustering fit in this full scan; category sets are diagnostics only. No official package."
+  }
 }

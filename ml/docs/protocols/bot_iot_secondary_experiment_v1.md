@@ -1,5 +1,48 @@
 # Bot-IoT secondary experiment v1 — PROPOSED_FOR_REVIEW
 
+## Pre-scan policy addendum — candidate_validation_v2_pre_scan
+
+The 13 predictors and seed1729 remain unchanged. The candidate JSON `scan_policy`
+freezes exact tuple serialization, category validity/unseen handling, group allocation,
+tie rules, conflict handling, gate checks and membership serialization before diagnostics.
+No vocabulary, scaler or model is fitted in the targeted full scan.
+
+Equality is the exact ordered normalized tuple (stored as a UNIQUE SQLite BLOB), not its
+hash and never `(X,label)`. Numeric values are parsed binary64, signed zero becomes +0.0;
+counts are also checked as exact Decimal integers <=2**53. Text remains exact Unicode,
+including case/internal spaces. Compact ensure_ascii JSON of the 13 values, ASCII bytes,
+no newline is the canonical serialization. SHA256 is a compact identifier and ordering key;
+different tuple bytes sharing a digest remain different groups.
+
+Allocation uses exact integer deficits, weights3/1/1 over denominator5. Process mixed-label
+groups first, then pure benign, then pure malicious. Sort each stratum by
+SHA256(`1729:` + tuple digest hex), then tuple digest, then tuple bytes, bytewise ascending.
+For each intact group choose the partition maximizing the sum, over labels present in that
+group, of `weight[p]*total_class_rows - 5*already_assigned_class_rows[p]`. Break ties in
+TRAIN/VALIDATION/TEST order. Mixed groups retain both counts and block adoption; computing
+their diagnostic membership neither resolves conflicts nor removes observations.
+Without mixed groups this reproduces the prior pure-class absolute-deficit proposal.
+
+Invalid category means empty, outer whitespace or case-insensitive nan/null/none token.
+Any other source string is structurally valid. Valid-but-unseen relative to TRAIN is a
+separate diagnostic and blocks the frozen `handle_unknown=error` preprocessing. Do not
+expand vocabulary from VALIDATION/TEST, force category representatives into TRAIN,
+reinterpret unseen values as invalid, or change features/seed/labels based on diagnostics.
+The prior smoke's forced category coverage was a diagnostic fixture; it is not reused here.
+
+Membership is source-list order then numeric 1-based source row order, exact compact UTF8
+JSON arrays `[relative_path,index,pkSeqID_string,attack_string,equivalence_digest_hex]`,
+one LF per row. Store external diagnostic membership files and SHA256s, no X training
+matrices or official package. Replay allocation independently from fixed exact groups.
+Support minima remain rows100/50/50 and groups20/10/10 per class. Failures are blockers;
+do not reroll. All policy/implementation changes are committed before the real full scan.
+
+Smoke terminology clarification, to be confirmed against the same selected source rows:
+10,328 observations minus6,164 excess =4,164 unique X groups. Of those,1,365 are repeated
+groups and2,799 singletons; rows involved in repeats =6,164+1,365=7,529. The earlier term
+"duplicate groups" means repeated groups, not all groups or duplicated observations.
+Historical smoke JSON/handoff are retained; full verification provides a separate addendum.
+
 This is an independent A2 binary benign/malicious experiment proposal, **not ADOPTED**.
 Machine-readable authority for this proposal:
 [candidate contract](../../artifacts/contracts/bot_iot_secondary_ml_candidate_v1.json).
