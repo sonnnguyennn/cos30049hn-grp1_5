@@ -1,0 +1,47 @@
+{
+  "archive": "E:/Downloads/IoTGuard_Kaggle_LR_Bundle.zip",
+  "archive_sha256": "8bc4be5d8ee5935266cb6b84f0fdb0de62186b4c39c8049e1188fa39f840c7c1",
+  "original_bundle_manifest": {
+    "bundle_id": "iotguard_primary_lr_kaggle_v1",
+    "upstream_commit": "e478e8e7ff0d374d9fd6f53e411bd4f414ce1c14",
+    "training_environment": "Kaggle only",
+    "execution_status": "NOT_RUN",
+    "expected_data_manifest_sha256": "6ab99e86397242e219bfa1f8490d8e03b169ec87a092af80cb3e7aef1e61147b",
+    "files": {
+      "01_IoTGuard_LR_Smoke.ipynb": "0b99f623a513c8043b8e612811d789222f98120e97b4d5a6e5dfe91d0fcbff03",
+      "02_IoTGuard_LR_Full.ipynb": "5f2835766141eb3147683d9d6672397a9bab088aa7e409a07cd00d32fbe27564",
+      "LOCAL_QA.json": "a9e60dc256a41a2913acf9323098d2f786dd68956afc553d3d3d491859a5a442",
+      "README.md": "83109ce193cec3e483dfc93ace346fc929f7ddc761b0f3fbf1aad83a56b4a7e4",
+      "config/seeds.yaml": "1240b44e74918d987c1bfe0371b2b8c3dcb4f6022fba4a0353ae0d930c291e29",
+      "kaggle_lr_runner.py": "54d03ee060052f4a32cbcf53a8bb2780d35fad048d34b7836550fc45c6c418e3",
+      "primary_package.py": "2521cc787286964eff8a97836cf407fc1f47d04c80d99bbc32c1a6e21f49e673",
+      "protocols/primary_experiments_v1.md": "a62b82522f340f6fa8e38b1ab3130b84b6f1df5af3c002942ca6b142a97c04ca",
+      "protocols/primary_result_v1.schema.json": "4ee546e26c374aab7fe3df2ad4bd9ae479b0d70e07decab7ce0f8633d5dd0d88",
+      "requirements.txt": "dd969f7baca8aa80f4708abd30095c2bd0f2f5a2ab7ccdd0dd7a88ea36ca9f26",
+      "vendor/iotguard/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "vendor/iotguard/evaluation/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "vendor/iotguard/evaluation/primary.py": "a58dc4d218447aa58d5400b51be5035cd7c6a661077424b20a15d3259b805d43"
+    }
+  },
+  "original_LOCAL_QA_REPORTED_not_rerun": {
+    "python_syntax": "PASS",
+    "notebook_schema_and_cell_syntax": "PASS",
+    "bundle_checksums": "PASS",
+    "local_training_guard": "PASS",
+    "diagnostic_sampling_without_model_fit": "PASS",
+    "reviewed_vendor_source_bytes": "PASS",
+    "local_model_fits_executed": 0,
+    "kaggle_execution": "NOT_RUN"
+  },
+  "staging": "E:\\Document\\iotguard_bundle_staging\\8bc4be5d8ee59352",
+  "import_base_commit": "e478e8e7ff0d374d9fd6f53e411bd4f414ce1c14",
+  "shared_sources_byte_identical": [
+    "primary_package.py",
+    "vendor/iotguard/evaluation/primary.py",
+    "config/seeds.yaml",
+    "protocols/primary_experiments_v1.md",
+    "protocols/primary_result_v1.schema.json"
+  ],
+  "training_execution": "NOT_RUN",
+  "notes": "Archive instructions treated as reference; no external upload, account execution, or local model fitting performed."
+}

@@ -1,0 +1,173 @@
+{
+  "status": "PREPARED_PENDING_REVIEW",
+  "source_checkpoint": "c8d1de7135c4134851bd8601c52a0732b50b6db7",
+  "branch": "codex/bot-iot-secondary-package-v2",
+  "build": {
+    "status": "PREPARED_PENDING_REVIEW",
+    "package": "E:\\Document\\iotguard_secondary_packages\\bot_iot_secondary_v2_20261102_01",
+    "manifest_sha256": "dd4fdc2551df68f294968f38ca3ecced0c27ac8bc2d1e1ae22239b7d676bae7c",
+    "bytes": 1436802269,
+    "files": 27,
+    "source_git_revision": "b170be91f8a610e05f8d24e602e8b19958c36fc5",
+    "source_dirty_worktree": false,
+    "policy_git_revision": "5cbd568e249c5f8e999bc76fe4e60bb733a94fad",
+    "preprocessor_sha256": "6714eefbc631f46d5dfe948b6de2d0b0194ac377439f656570980fdcb71074da",
+    "preprocessing_parity_rows": 3668522,
+    "unknowns": {
+      "TRAIN": {
+        "per_field": [
+          0,
+          0,
+          0
+        ],
+        "observations": 0
+      },
+      "VALIDATION": {
+        "per_field": [
+          0,
+          0,
+          0
+        ],
+        "observations": 0
+      },
+      "TEST": {
+        "per_field": [
+          0,
+          8,
+          8
+        ],
+        "observations": 8
+      }
+    },
+    "elapsed_seconds": 135.01578339999833,
+    "peak_rss_bytes": 644632576,
+    "standalone_verification": "NOT_YET_RUN; separate immutable receipt required",
+    "classifier_clustering_fitted": false,
+    "TEST_performance_evaluated": false
+  },
+  "relocation": {
+    "source": "E:\\Document\\iotguard_secondary_packages\\bot_iot_secondary_v2_20261102_01",
+    "relocated": "E:\\Document\\iotguard_secondary_relocation_checks\\v2_20261102_01\\relocated_bot_iot_v2",
+    "manifest_sha256": "dd4fdc2551df68f294968f38ca3ecced0c27ac8bc2d1e1ae22239b7d676bae7c",
+    "copy_bytes": 1436802269,
+    "copy_elapsed_seconds": 7.000104700004158,
+    "environment": {
+      "python": "3.11.15 (main, Mar  3 2026, 14:55:34) [MSC v.1944 64 bit (AMD64)]",
+      "numpy": "2.4.6",
+      "absent": {
+        "iotguard": true,
+        "sklearn": true,
+        "pandas": true,
+        "pytest": true
+      },
+      "sys_path": [
+        "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.11-windows-x86_64-none\\python311.zip",
+        "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.11-windows-x86_64-none\\DLLs",
+        "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.11-windows-x86_64-none\\Lib",
+        "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.11-windows-x86_64-none",
+        "E:\\Document\\iotguard_secondary_verification_envs\\numpy_only_v2_20261102",
+        "E:\\Document\\iotguard_secondary_verification_envs\\numpy_only_v2_20261102\\Lib\\site-packages"
+      ]
+    },
+    "environment_sha256": "d3a01d65b9e27935dfd2382a0eaba05430859b47bc515211ee4d48a36c0e7e03"
+  },
+  "standalone_verification": {
+    "status": "PASS_STANDALONE_FULL_VERIFICATION",
+    "package_status": "PREPARED_PENDING_REVIEW",
+    "manifest_sha256": "dd4fdc2551df68f294968f38ca3ecced0c27ac8bc2d1e1ae22239b7d676bae7c",
+    "counts": {
+      "TRAIN": {
+        "rows": 2201114,
+        "binary": [
+          286,
+          2200828
+        ],
+        "groups": 396266
+      },
+      "VALIDATION": {
+        "rows": 733704,
+        "binary": [
+          96,
+          733608
+        ],
+        "groups": 138060
+      },
+      "TEST": {
+        "rows": 733704,
+        "binary": [
+          95,
+          733609
+        ],
+        "groups": 138281
+      }
+    },
+    "unknowns": {
+      "TRAIN": {
+        "per_field": [
+          0,
+          0,
+          0
+        ],
+        "observations": 0
+      },
+      "VALIDATION": {
+        "per_field": [
+          0,
+          0,
+          0
+        ],
+        "observations": 0
+      },
+      "TEST": {
+        "per_field": [
+          0,
+          8,
+          8
+        ],
+        "observations": 8
+      }
+    },
+    "encoded_features": 36,
+    "original_exact_X_overlap": 0,
+    "group_label_mismatches": 0,
+    "TRAIN_only_vocabulary_and_scaler": true,
+    "TEST_default_seal": true,
+    "raw_dataset_or_checkout_required": false,
+    "performance_metrics_computed": false,
+    "elapsed_seconds": 121.86501329999737
+  },
+  "evidence": {
+    "build_receipt": {
+      "path": "E:\\Document\\iotguard_secondary_packages\\bot_iot_secondary_v2_20261102_01_build_receipt.json",
+      "sha256": "2da22643fd4b37a3e0a7727e000a3d9416a01409e5fac0f4b5c1291920e2ca7e"
+    },
+    "relocation_receipt": {
+      "path": "E:\\Document\\iotguard_secondary_relocation_checks\\v2_20261102_01\\relocation.json",
+      "sha256": "87c61790824fab7d8a3039deba5a301976db160e4bf1de17fd2295b99cefcd9a"
+    },
+    "standalone_receipt": {
+      "path": "E:\\Document\\iotguard_secondary_relocation_checks\\v2_20261102_01\\standalone_verification.json",
+      "sha256": "2495597a651ddd2b6b46391efa6bcdd541bf6180740abdda9e28ca8eccf1463a"
+    },
+    "environment_receipt": {
+      "path": "E:\\Document\\iotguard_secondary_verification_envs\\numpy_only_v2_20261102\\ENVIRONMENT.json",
+      "sha256": "d3a01d65b9e27935dfd2382a0eaba05430859b47bc515211ee4d48a36c0e7e03"
+    }
+  },
+  "checks": {
+    "targeted_tests": 105,
+    "test_seconds": 5.58,
+    "ruff": "PASS",
+    "historical_v1_unchanged": true,
+    "no_classifier_or_clustering_fit": true,
+    "no_TEST_performance_metrics": true
+  },
+  "remaining_review": [
+    "PM/Hi\u1ebfu review of package/protocol and group-aware reporting",
+    "Kaggle resource/runtime validation and all future classifier/clustering fits"
+  ],
+  "status_not_promoted_to": [
+    "READY_FOR_TRAINING",
+    "TEAM_VERIFIED"
+  ]
+}

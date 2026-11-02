@@ -1,0 +1,38 @@
+{
+  "release": {
+    "zip": "E:\\Document\\iotguard_kaggle_exports\\bot_iot_secondary_v2_20261102_02\\IoTGuard_BotIoT_Secondary_v2_Kaggle_Bundle.zip",
+    "bytes": 29633,
+    "zip_sha256": "0fb3ade6dd8e07857cd921f6ce77353f1e40fb66c1ebfa28f303a2b1fb4f015a",
+    "bundle_manifest_sha256": "06c19f532414cd28ccb977f0f957c7c0e4436990c45f23798b3963604e8a0b75",
+    "source_git_revision": "84f3068386f1c11a5691d5383b2c4a46c8591b21",
+    "source_dirty_worktree": false,
+    "package_manifest_sha256": "dd4fdc2551df68f294968f38ca3ecced0c27ac8bc2d1e1ae22239b7d676bae7c",
+    "files": 11,
+    "model_fits_executed_locally": 0,
+    "Kaggle_execution": "NOT_RUN"
+  },
+  "QA": {
+    "status": "PASS_CODE_NOTEBOOK_PACKAGING_ONLY",
+    "bundle_integrity": "11-file exact coverage PASS",
+    "canonical_sources_and_git_blobs": "exact bytes PASS",
+    "notebook_sha256": {
+      "01_Bot_IoT_Secondary_Smoke.ipynb": "76c991cca7fec6e6dad41d71c76731a1d3c70c881723a18aa5cef268e2484772",
+      "02_Bot_IoT_Secondary_Full.ipynb": "941105dc1866b76c6e1f0902051c7957fbd4bbef3ed76e837a4f0f21274a18b8"
+    },
+    "standalone_import_and_guard": "PASS: standalone bundle integrity/import/local guard; zero model fits",
+    "environment": "NumPy-only venv, -I, no iotguard/sklearn, cwd outside checkout",
+    "tests_passed": 30,
+    "test_seconds": 1.74,
+    "ruff": "PASS incl notebook cells",
+    "duplicate_smoke_source_and_mixed_versions_tests": "PASS",
+    "unsafe_ZIP_path_test": "PASS",
+    "local_classifier_fits": 0,
+    "Kaggle_execution": "NOT_RUN",
+    "package_manifest_unchanged": "dd4fdc2551df68f294968f38ca3ecced0c27ac8bc2d1e1ae22239b7d676bae7c"
+  },
+  "release_receipt_sha256": "cc55d01e4bd013f9cb0c63918f59a8e4aaecfc14d912c5b23a8dcfa9cf70cb4a",
+  "release_QA_sha256": "b077f4a0a95ee688b61be5ff1a2684f30f5f4a7286d6a3987d0d5484a269e728",
+  "Hi\u1ebfu_review_and_run": "PENDING",
+  "package_status": "PREPARED_PENDING_REVIEW; unchanged",
+  "release_note": "Use release _02; _01 is superseded local draft, not for execution."
+}

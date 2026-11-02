@@ -1,0 +1,68 @@
+{
+  "status": "INTEGRATED_PENDING_REVIEW",
+  "pr": "https://github.com/sonnnguyennn/cos30049hn-grp1_5/pull/1",
+  "worktree": "C:\\Users\\Admin\\.codex\\worktrees\\iotguard-pr1-integration\\iotguard-cos30049hn-grp1-5",
+  "original_checkout": "E:/Document/iotguard-cos30049hn-grp1-5",
+  "original_checkout_preserved": true,
+  "PR_head_before": "8d5f76f8fb1d32eded8abf7317da26b23c2a4a7a",
+  "origin_main_integrated": "b91a419b72e895efebbaa114bbf231030019b946",
+  "merge_commit": "9a850b5d3a63e1b592b8ca1e1ec3089e12fa29a2",
+  "merge_strategy": "ort --no-ff",
+  "conflicts": [],
+  "common_modified_paths": [],
+  "both_parent_changed_blobs_preserved": true,
+  "historical_run_source_revision": "84f3068386f1c11a5691d5383b2c4a46c8591b21",
+  "checks": {
+    "environment": "uv sync --locked --extra dev --extra kaggle; dedicated worktree venv; iotguard imported from worktree/src",
+    "pytest": {
+      "passed": 375,
+      "seconds": 27.33,
+      "command": "ml/.venv/Scripts/python.exe -m pytest ml/tests/unit ml/tests/test_configuration.py ml/tests/integration/test_kaggle_bundle.py ml/tests/integration/test_kaggle_secondary_bundle.py -q",
+      "scope": "Unit/configuration and both Kaggle packaging integrations; excludes real-source primary rematerialisation/portability integration. TEST use in unit fixtures is synthetic; no official TEST payload opened."
+    },
+    "ruff_full_ml": {
+      "status": "FAIL_INHERITED_MAIN",
+      "errors": 20,
+      "files": [
+        "ml/scripts/train_rf_baseline.py",
+        "ml/scripts/train_xgb_baseline.py"
+      ],
+      "files_identical_to_origin_main": true
+    },
+    "ruff_remaining_ml": "PASS including notebook cells and new archive script; explicit exclusion only of two inherited RF/XGB scripts",
+    "frontend_dependency_install": "npm ci --no-audit --no-fund PASS",
+    "frontend_lint": {
+      "command": "npm run lint",
+      "status": "PASS",
+      "errors": 0,
+      "warnings": 1,
+      "warning": "dataset-explorer/page.tsx: unused inter; inherited main"
+    },
+    "frontend_build": {
+      "command": "npm run build",
+      "status": "PASS",
+      "next": "16.4.2",
+      "typescript": "PASS",
+      "static_pages": 10
+    },
+    "backend_compile": {
+      "command": "ml/.venv/Scripts/python.exe -m compileall -q backend/app",
+      "status": "PASS"
+    },
+    "archive_validation": "PASS both ZIPs/notebooks/checksum coverage/source/population identity and saved VALIDATION metrics; no models deserialized/fitted",
+    "git_diff_check": "PASS"
+  },
+  "unchanged_RF_XGB_sha256": {
+    "ml/scripts/train_rf_baseline.py": "60d2b22d3fa24378da8e9465f211b0670e39037446ccd96d02a049917134dc77",
+    "ml/scripts/train_xgb_baseline.py": "70cc9d7333e152321a851a2a99c515968010df4923897f71fdcdb18a4404e33f"
+  },
+  "remaining_blockers": [
+    "20 pre-existing RF/XGB Ruff violations; no blanket full-ML-lint PASS claimed",
+    "RF/XGB subset/full identity repair, xgboost dependency declaration and Kaggle export remain separate work; neither script executed",
+    "PR remains draft; reviewer approval, clustering checkpoint and report figures remain pending"
+  ],
+  "no_classifier_clustering_fit": true,
+  "no_official_TEST_payload_access": true,
+  "no_Bot_IoT_tuning": true,
+  "no_package_manifest_or_historical_receipt_changes": true
+}

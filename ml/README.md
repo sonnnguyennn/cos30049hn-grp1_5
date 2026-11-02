@@ -65,8 +65,23 @@ Do not place raw datasets, generated model files, secrets, or assessment prose i
 
 Historical audit evidence is preserved byte-for-byte from the source checkout. Some historical records include absolute Windows paths; use CLI arguments, documented environment variables, or ignored local YAML for current paths. The bounded G2/G3 tools also recover historical roots from evidence by default; override their documented root arguments or G3A `--n-baiot-raw-root`, `--n-baiot-extracted-root`, and `--bot-iot-root` arguments when relocating datasets. See `docs/handoffs/G3A_IMPORT_HANDOFF.md` for migration validation and limitations.
 
+## Optional XGBoost dependency
+
+The primary XGBoost script requires XGBoost 2.x or 3.x. Install its optional extra
+from `ml/` with `python -m pip install -e ".[dev,kaggle,xgboost]"`, or use
+`uv sync --locked --extra dev --extra kaggle --extra xgboost`.
+The lockfile resolves compatible releases for the selected Python version.
+
+Dependency installation does not approve the legacy RF/XGB runners for an official
+comparison. Their actual TRAIN population identity and Kaggle export still need
+review. All classifier/clustering fitting, including smoke, must run on Kaggle.
+
 ## G3B primary data package
 
 The full primary package is READY_FOR_TEAM after independent relocated loading; TEAM_VERIFIED awaits a recipient run. See [G3B handoff](docs/handoffs/G3B_PRIMARY_DATA_HANDOFF.md) for exact package paths, checksums, commands and raw/scaled loading. The package is stored outside Git. Classification, clustering and final inference packaging remain pending.
 
 The builder now emits the portable loader, README and standalone verifier itself; no post-build patching is needed. Experiment results require package version, manifest checksum and boolean dirty-worktree status, and selection enforces package/protocol/population identity. See [build and identity repair](docs/handoffs/G3B_BUILD_IDENTITY_FIX.md) and the updated [primary protocol](docs/protocols/primary_experiments_v1.md) before baseline comparisons.
+
+## Kaggle LR + Dummy workflow
+
+The [integrated Kaggle guide](docs/experiments/kaggle_lr.md) and [baseline extension protocol](docs/protocols/kaggle_lr_baseline_v1.md) describe the two unexecuted notebooks under `notebooks/kaggle/`. Export a standalone code ZIP with `python scripts/build_kaggle_lr_bundle.py --output <new external ZIP path>`; shared source is copied into the export directly from canonical files. No vendored duplicate implementation is maintained in this checkout. LR/Dummy fitting has not been run locally or on Kaggle as part of integration.
