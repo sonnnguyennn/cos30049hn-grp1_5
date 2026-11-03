@@ -3,6 +3,7 @@ import hashlib
 import json
 import platform
 import random
+import re
 import subprocess
 import sys
 import time
@@ -72,6 +73,26 @@ def peak_memory_mb():
         return None
 
 
+def parse_max_features(text):
+    if text in ("sqrt", "log2"):
+        return text
+    try:
+        count = int(text)
+    except ValueError:
+        pass
+    else:
+        if count < 1:
+            raise argparse.ArgumentTypeError("a count must be at least 1")
+        return count
+    try:
+        fraction = float(text)
+    except ValueError:
+        raise argparse.ArgumentTypeError("use sqrt, log2, a fraction like 0.3, or a whole number like 20") from None
+    if not 0 < fraction <= 1:
+        raise argparse.ArgumentTypeError("a fraction must be in (0, 1]")
+    return fraction
+
+
 def main():
     # ----- 1. Read command-line arguments -----
     ap = argparse.ArgumentParser(
@@ -86,14 +107,28 @@ def main():
         help="path to seeds.yaml (random_seeds: python/numpy/scikit_learn)",
     )
     ap.add_argument("--trees", type=int, default=100)
+    ap.add_argument("--max-depth", type=int, default=None, help="maximum tree depth (default: no limit)")
+    ap.add_argument("--min-samples-leaf", type=int, default=1, help="minimum rows in a leaf (default 1)")
+    ap.add_argument(
+        "--max-features", type=parse_max_features, default="sqrt",
+        help="features tried per split: sqrt, log2, a fraction such as 0.3, or a count (default sqrt)"
+    )
     ap.add_argument("--jobs", type=int, default=2)
     ap.add_argument("--chunk-size", type=int, default=50000)
     ap.add_argument(
         "--out", required=True, type=Path, help="results folder; keep it OUTSIDE the git repo"
     )
+    ap.add_argument("--tag", default="", help="short label added to the run name, e.g. leaf5 (letters, digits, . _ -)")
+    ap.add_argument("--overwrite", action="store_true", help="allow replacing a finished run that has the same name")
     args = ap.parse_args()
     if not 0 < args.fraction <= 1:
         sys.exit("--fraction must be in (0, 1]")
+    if args.tag and not re.fullmatch(r"[A-Za-z0-9._-]+", args.tag):
+        sys.exit("--tag may contain only letters, digits, dot, dash and underscore")
+    if args.max_depth is not None and args.max_depth < 1:
+        sys.exit("--max-depth must be at least 1")
+    if args.min_samples_leaf < 1:
+        sys.exit("--min-samples-leaf must be at least 1")
 
     try:
         code_revision = git_output("rev-parse", "HEAD").strip()
@@ -120,6 +155,12 @@ def main():
     np.random.seed(seeds["numpy"])
     seed_sample = seeds["numpy"]
     seed_model = seeds["scikit_learn"]
+
+    run_id = f"rf_frac{args.fraction:g}_seed{seed_model}" + (f"_{args.tag}" if args.tag else "")
+    run_dir = args.out / run_id
+    if (run_dir / "result.json").exists() and not args.overwrite:
+        sys.exit(f"{run_dir} already holds a finished run.\n"
+                 "  Give this run its own name with --tag, or add --overwrite to replace it.")
     print("1. Read args complete")
 
     # ----- 2. Open the package -----
@@ -146,7 +187,8 @@ def main():
 
     # ----- 4. Train Random Forest -----
     model = RandomForestClassifier(
-        n_estimators=args.trees, n_jobs=args.jobs, random_state=seed_model
+        n_estimators=args.trees, n_jobs=args.jobs, random_state=seed_model,
+        max_depth=args.max_depth, min_samples_leaf=args.min_samples_leaf, max_features=args.max_features
     )
     t0 = time.perf_counter()
     model.fit(X, y)
@@ -162,7 +204,6 @@ def main():
     print("5. Evaluation complete")
 
     # ----- 6. Build result -----
-    run_id = f"rf_frac{args.fraction:g}_seed{seed_model}"
     config = resolve_configuration(
         input_view="raw",
         seed_file=args.seeds,
@@ -171,6 +212,9 @@ def main():
             "n_estimators": args.trees,
             "class_weight": None,
             "random_state": seed_model,
+            "max_depth": args.max_depth,
+            "min_samples_leaf": args.min_samples_leaf,
+            "max_features": args.max_features,
             "fit_dtype": "float32",
             "train_sampling": {
                 "method": (
@@ -200,7 +244,6 @@ def main():
     )
 
     # ----- 7. Save everything -----
-    run_dir = args.out / run_id
     run_dir.mkdir(parents=True, exist_ok=True)
     np.save(run_dir / "train_sample_indices.npy", idx)
     joblib.dump(model, run_dir / "model.joblib")
