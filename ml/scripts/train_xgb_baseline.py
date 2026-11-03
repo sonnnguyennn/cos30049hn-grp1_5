@@ -3,6 +3,7 @@ import hashlib
 import json
 import platform
 import random
+import re
 import subprocess
 import sys
 import time
@@ -110,6 +111,10 @@ def main():
     ap.add_argument("--max-depth", type=int, default=6)
     ap.add_argument("--learning-rate", type=float, default=0.3)
     ap.add_argument("--max-bin", type=int, default=256)
+    ap.add_argument("--min-child-weight", type=float, default=1.0, help="minimum weight a leaf must hold (default 1)")
+    ap.add_argument("--subsample", type=float, default=1.0, help="share of rows used for each tree (default 1)")
+    ap.add_argument("--colsample-bytree", type=float, default=1.0, help="share of features used for each tree (default 1)")
+    ap.add_argument("--reg-lambda", type=float, default=1.0, help="L2 regularisation strength (default 1)")
     ap.add_argument("--jobs", type=int, default=2)
     ap.add_argument(
         "--block-rows", type=int, default=100000, help="TRAIN rows per block (100k = ~46 MB)"
@@ -118,11 +123,19 @@ def main():
     ap.add_argument(
         "--out", required=True, type=Path, help="results folder; keep it OUTSIDE the git repo"
     )
+    ap.add_argument("--tag", default="", help="short label added to the run name, e.g. lr01 (letters, digits, . _ -)")
+    ap.add_argument("--overwrite", action="store_true", help="allow replacing a finished run that has the same name")
     args = ap.parse_args()
     if not 0 < args.fraction <= 1:
         sys.exit("--fraction must be in (0, 1]")
     if int(xgb.__version__.split(".")[0]) < 2:
         sys.exit(f"xgboost {xgb.__version__} is too old; run: pip install -U xgboost")
+    if args.tag and not re.fullmatch(r"[A-Za-z0-9._-]+", args.tag):
+        sys.exit("--tag may contain only letters, digits, dot, dash and underscore")
+    if not 0 < args.subsample <= 1 or not 0 < args.colsample_bytree <= 1:
+        sys.exit("--subsample and --colsample-bytree must be in (0, 1]")
+    if args.min_child_weight < 0 or args.reg_lambda < 0:
+        sys.exit("--min-child-weight and --reg-lambda must not be negative")
 
     try:
         code_revision = git_output("rev-parse", "HEAD").strip()
@@ -149,6 +162,12 @@ def main():
     np.random.seed(seeds["numpy"])
     seed_sample = seeds["numpy"]
     seed_model = seeds["scikit_learn"]
+
+    run_id = f"xgb_frac{args.fraction:g}_seed{seed_model}" + (f"_{args.tag}" if args.tag else "")
+    run_dir = args.out / run_id
+    if (run_dir / "result.json").exists() and not args.overwrite:
+        sys.exit(f"{run_dir} already holds a finished run.\n"
+                 "  Give this run its own name with --tag, or add --overwrite to replace it.")
     print("1. Read args complete")
 
     # ----- 2. Open the package -----
@@ -189,6 +208,10 @@ def main():
         "max_bin": args.max_bin,
         "nthread": args.jobs,
         "seed": seed_model,
+        "min_child_weight": args.min_child_weight,
+        "subsample": args.subsample,
+        "colsample_bytree":args.colsample_bytree,
+        "lambda": args.reg_lambda
     }
     t0 = time.perf_counter()
     model = xgb.train(params, dtrain, args.rounds)
@@ -204,7 +227,6 @@ def main():
     print("6. Evaluation complete")
 
     # ----- 7. Build result -----
-    run_id = f"xgb_frac{args.fraction:g}_seed{seed_model}"
     config = resolve_configuration(
         input_view="raw",
         seed_file=args.seeds,
@@ -216,8 +238,10 @@ def main():
             "max_depth": args.max_depth,
             "learning_rate": args.learning_rate,
             "max_bin": args.max_bin,
-            "subsample": 1.0,
-            "colsample_bytree": 1.0,
+            "min_child_weight": args.min_child_weight,
+            "subsample": args.subsample,
+            "colsample_bytree": args.colsample_bytree,
+            "reg_lambda": args.reg_lambda,
             "scale_pos_weight": None,
             "early_stopping": False,
             "nthread": args.jobs,
@@ -251,7 +275,6 @@ def main():
     )
 
     # ----- 8. Save everything -----
-    run_dir = args.out / run_id
     run_dir.mkdir(parents=True, exist_ok=True)
     np.save(run_dir / "train_sample_indices.npy", idx)
     model.save_model(run_dir / "model.json")
