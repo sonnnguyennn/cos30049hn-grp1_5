@@ -6,7 +6,8 @@ from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
-from src.iotguard.evaluation.primary import select_validation
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+from iotguard.evaluation.primary import select_validation
 
 # Settings shown in the table, per algorithm: (short name, key in "parameters", default).
 # A run that lacks a key (older scripts) used the default, so it counts as "not changed".
@@ -106,8 +107,14 @@ def identity_problems(pool):
             problems.append((key, dict(who)))
     return problems
 
+def run_id_of(run):
+    return run["result"]["run_id"]
+
+def excluded_run_id(pair):
+    return run_id_of(pair[0])
+
 def rank_pool(pool):
-    remaining = sorted(pool, key=lambda run: run["result"]["run_id"])
+    remaining = sorted(pool, key=run_id_of)
     ranking = []
     while remaining:
         best = select_validation([run["result"] for run in remaining])
@@ -126,7 +133,7 @@ def main():
     ap.add_argument("--out", type=Path, default=None,
                     help="where to write comparison.csv and selection.json (default: the runs folder)")
     args = ap.parse_args()
-    if not args.run_dir.is_dir():
+    if not args.runs_dir.is_dir():
         sys.exit(f"{args.runs_dir} is not a folder")
     out = args.out or args.runs_dir
     out.mkdir(parents=True, exist_ok=True)
@@ -181,13 +188,18 @@ def main():
     # ----- 5. Write files -----
     rank_of = {run["result"]["run_id"]: i + 1 for i, run in enumerate(ranking)}
     reason_of = {run["result"]["run_id"]: why for run, why in excluded}
+    def csv_sort_key(item):
+        run_id = item[0]
+        return (rank_of.get(run_id, 10**6), run_id)
     fields = ["rank", "run_id", "algorithm", "settings", "train_fraction", "train_rows", "TN", "FP", "FN", "TP",
               "wrong_rows", "macro_f1", "fpr", "malicious_recall", "train_seconds", "peak_private_mb",
               "peak_working_set_mb", "model_size_mb", "dirty_worktree", "code_revision", "not_in_pool_because"]
+    
     with open(out / "comparison.csv", "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=fields); w.writeheader()
-        for run_id, row in sorted(rows.items(), key=lambda kv: (rank_of.get(kv[0], 10**6), kv[0])):
+        for run_id, row in sorted(rows.items(), key=csv_sort_key):
             w.writerow({**row, "rank": rank_of.get(run_id, ""), "not_in_pool_because": reason_of.get(run_id, "")})
+    
     selection = {
         "generated_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "rule": "highest VALIDATION macro-F1; within 1e-6 lower FPR, then higher malicious recall (primary.select_validation)",
@@ -201,6 +213,7 @@ def main():
         "skipped_files": dict(skipped),
         "test_partition_used": False,
     }
+    
     (out / "selection.json").write_text(json.dumps(selection, indent=2))
 
     # ----- 6. Print table -----
@@ -230,7 +243,7 @@ def main():
         print("  [dirty] = run from a checkout with uncommitted changes; allowed, but rerun the winner clean before reporting.")
     if excluded:
         print("\nNOT IN THE POOL (listed in comparison.csv too):")
-        for run, why in sorted(excluded, key=lambda x: x[0]["result"]["run_id"]):
+        for run, why in sorted(excluded, key=excluded_run_id):
             print(f"  {run['result']['run_id']:32} {why}")
     print(f"\nWrote {out / 'comparison.csv'} and {out / 'selection.json'}")
     print("Selection used VALIDATION only; TEST stays sealed.")
