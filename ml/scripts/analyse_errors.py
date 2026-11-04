@@ -16,12 +16,16 @@ def load_model(run_dir):
     if joblib_path.exists():
         import joblib
         model = joblib.load(joblib_path)
-        return "RandomForest", lambda X: model.predict_proba(X.astype(np.float32))[:, 1]
+        def predict_rf(X):
+            return model.predict_proba(X.astype(np.float32))[:, 1]
+        return "RandomForest", predict_rf
     if json_path.exists():
         import xgboost as xgb
         model = xgb.Booster()
         model.load_model(str(json_path))
-        return "XGBoost", lambda X: model.predict(xgb.DMatrix(X.astype(np.float32)))
+        def predict_xgb(X):
+            return model.predict(xgb.DMatrix(X.astype(np.float32)))
+        return "XGBoost", predict_xgb
 
     sys.exit(f"No model.joblib or model.json found in {run_dir}")
 
@@ -29,6 +33,27 @@ def vector_id(row):
     v = np.array(row, dtype=np.float64)
     v[v == 0] = 0.0
     return hashlib.sha256(v.astype(">f8").tobytes()).hexdigest()[:16]
+
+def type_counts():
+    return {"rows": 0, "errors": 0}
+ 
+def device_counts():
+    return {"rows": 0, "FP": 0, "FN": 0}
+ 
+def near(rows):
+    return sum(abs(r["p_malicious"] - THRESHOLD) <= 0.1 for r in rows)
+ 
+def med(rows):
+    return float(np.median([r["p_malicious"] for r in rows])) if rows else None
+ 
+def type_errors_desc(kv):
+    return -kv[1]["errors"]
+ 
+def device_errors_desc(kv):
+    return -(kv[1]["FP"] + kv[1]["FN"])
+ 
+def source_errors_desc(r):
+    return -r["errors"]
 
 def main():
     # ----- 1. Read arguments -----
@@ -81,8 +106,8 @@ def main():
 
     # ----- 4. Aggregate per source, attack type, device -----
     per_source = []
-    by_type = defaultdict(lambda: {"rows": 0, "errors": 0})
-    by_device = defaultdict(lambda: {"rows": 0, "FP": 0, "FN": 0})
+    by_type = defaultdict(type_counts)
+    by_device = defaultdict(device_counts)
     for k, s in enumerate(sources):
         n, e = int(support[k]), int(errors[k])
         kind = "FP" if s["canonical_binary"] == "benign" else "FN"
@@ -105,10 +130,8 @@ def main():
     id_counts = Counter(r["vector_id"] for r in wrong_rows)
 
     # ----- 6. How confident were the wrong predictions? -----
-    near = lambda rows: sum(abs(r["p_malicious"] - THRESHOLD) <= 0.1 for r in rows)
     fn_rows = [r for r in wrong_rows if r["type"].startswith("FN")]
     fp_rows = [r for r in wrong_rows if r["type"].startswith("FP")]
-    med = lambda rows: (float(np.median([r["p_malicious"] for r in rows])) if rows else None)
     summary = {
         "model": model_name, "run_dir": str(args.run_dir), "validation_rows": int(len(y)),
         "wrong_rows": n_wrong_total, "false_positives": fp, "false_negatives": fn,
@@ -138,13 +161,13 @@ def main():
         print(f"         NOTE: the two lines above cover only the first {len(wrong_rows)} wrong rows "
               f"(raise --max-rows to see all {n_wrong_total}); all counts and tables below are complete")
     print("\nBY TRAFFIC TYPE (sorted by mistakes)")
-    for k, v in sorted(by_type.items(), key=lambda kv: -kv[1]["errors"]):
+    for k, v in sorted(by_type.items(), key=type_errors_desc):
         print(f"  {k:16s} rows {v['rows']:>9,}   wrong {v['errors']:>4}   rate {v['errors'] / max(v['rows'], 1):.6f}")
     print("\nBY DEVICE (sorted by mistakes)")
-    for k, v in sorted(by_device.items(), key=lambda kv: -(kv[1]["FP"] + kv[1]["FN"])):
+    for k, v in sorted(by_device.items(), key=device_errors_desc):
         print(f"  {k:42s} rows {v['rows']:>9,}   FP {v['FP']:>3}   FN {v['FN']:>3}")
     print("\nTOP SOURCES (device x traffic type)")
-    for r in sorted(per_source, key=lambda r: -r["errors"])[:10]:
+    for r in sorted(per_source, key=source_errors_desc)[:10]:
         if r["errors"]:
             print(f"  {r['device']:42s} {r['traffic_type']:16s} wrong {r['errors']:>3} of {r['rows']:>8,}  ({r['error_kind']})")
     print(f"\nFiles written to {out}")
