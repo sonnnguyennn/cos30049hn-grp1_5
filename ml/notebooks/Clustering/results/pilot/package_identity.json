@@ -1,0 +1,24 @@
+{
+  "manifest_relative_path": "manifest.json",
+  "manifest_sha256": "6ab99e86397242e219bfa1f8490d8e03b169ec87a092af80cb3e7aef1e61147b",
+  "partitions": {
+    "TRAIN": {
+      "shape": [
+        4944968,
+        115
+      ],
+      "dtype": "float64",
+      "metadata_relative_path": "TRAIN_metadata.npy",
+      "metadata_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080"
+    },
+    "VALIDATION": {
+      "shape": [
+        1056372,
+        115
+      ],
+      "dtype": "float64",
+      "metadata_relative_path": "VALIDATION_metadata.npy",
+      "metadata_sha256": "2d44c7b63c3c16fb19105ce504b39f6e31fa4145588c07c1d50f2417fad69103"
+    }
+  }
+}

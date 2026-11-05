@@ -1,0 +1,34 @@
+{
+  "TRAIN": {
+    "rows": 4944968,
+    "cluster_counts": [
+      1673250,
+      25665,
+      1361,
+      3205079,
+      13879,
+      2153,
+      903,
+      22678
+    ],
+    "sse": 305813496.8247818,
+    "mean_squared_distance": 61.84337225736987,
+    "labels_sha256": "aa3278b2d1b6e7ea1564367ce5c5e717903dd091e9a8d90d41401d757d1af032"
+  },
+  "VALIDATION": {
+    "rows": 1056372,
+    "cluster_counts": [
+      356197,
+      5608,
+      204,
+      685835,
+      3012,
+      496,
+      174,
+      4846
+    ],
+    "sse": 65710831.40561192,
+    "mean_squared_distance": 62.20425324186169,
+    "labels_sha256": "ad8409ebbe7b3dceb2623eab5be739454911350aaa5927dd5e3d967bcefad74a"
+  }
+}
