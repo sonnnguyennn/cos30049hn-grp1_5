@@ -13,7 +13,10 @@ import numpy as np
 import xgboost as xgb
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+from iotguard.evaluation.population import selected_population
 from iotguard.evaluation.primary import binary_metrics, experiment_result, resolve_configuration
+from iotguard.evaluation.primary_runtime import verified_package
+from iotguard.experiments.kaggle_lr import assert_kaggle
 
 
 def stratified_indices(y, fraction, seed):
@@ -95,6 +98,7 @@ def peak_memory_mb():
 
 
 def main():
+    assert_kaggle()
     # ----- 1. Read command-line arguments -----
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
@@ -111,10 +115,24 @@ def main():
     ap.add_argument("--max-depth", type=int, default=6)
     ap.add_argument("--learning-rate", type=float, default=0.3)
     ap.add_argument("--max-bin", type=int, default=256)
-    ap.add_argument("--min-child-weight", type=float, default=1.0, help="minimum weight a leaf must hold (default 1)")
-    ap.add_argument("--subsample", type=float, default=1.0, help="share of rows used for each tree (default 1)")
-    ap.add_argument("--colsample-bytree", type=float, default=1.0, help="share of features used for each tree (default 1)")
-    ap.add_argument("--reg-lambda", type=float, default=1.0, help="L2 regularisation strength (default 1)")
+    ap.add_argument(
+        "--min-child-weight",
+        type=float,
+        default=1.0,
+        help="minimum weight a leaf must hold (default 1)",
+    )
+    ap.add_argument(
+        "--subsample", type=float, default=1.0, help="share of rows used for each tree (default 1)"
+    )
+    ap.add_argument(
+        "--colsample-bytree",
+        type=float,
+        default=1.0,
+        help="share of features used for each tree (default 1)",
+    )
+    ap.add_argument(
+        "--reg-lambda", type=float, default=1.0, help="L2 regularisation strength (default 1)"
+    )
     ap.add_argument("--jobs", type=int, default=2)
     ap.add_argument(
         "--block-rows", type=int, default=100000, help="TRAIN rows per block (100k = ~46 MB)"
@@ -123,8 +141,16 @@ def main():
     ap.add_argument(
         "--out", required=True, type=Path, help="results folder; keep it OUTSIDE the git repo"
     )
-    ap.add_argument("--tag", default="", help="short label added to the run name, e.g. lr01 (letters, digits, . _ -)")
-    ap.add_argument("--overwrite", action="store_true", help="allow replacing a finished run that has the same name")
+    ap.add_argument(
+        "--tag",
+        default="",
+        help="short label added to the run name, e.g. lr01 (letters, digits, . _ -)",
+    )
+    ap.add_argument(
+        "--overwrite",
+        action="store_true",
+        help="allow replacing a finished run that has the same name",
+    )
     args = ap.parse_args()
     if not 0 < args.fraction <= 1:
         sys.exit("--fraction must be in (0, 1]")
@@ -166,17 +192,19 @@ def main():
     run_id = f"xgb_frac{args.fraction:g}_seed{seed_model}" + (f"_{args.tag}" if args.tag else "")
     run_dir = args.out / run_id
     if (run_dir / "result.json").exists() and not args.overwrite:
-        sys.exit(f"{run_dir} already holds a finished run.\n"
-                 "  Give this run its own name with --tag, or add --overwrite to replace it.")
+        sys.exit(
+            f"{run_dir} already holds a finished run.\n"
+            "  Give this run its own name with --tag, or add --overwrite to replace it."
+        )
     print("1. Read args complete")
 
     # ----- 2. Open the package -----
     sys.path.insert(0, str(args.package.resolve()))
-    from primary_package import PrimaryPackage, sha256_file
+    from primary_package import sha256_file
 
-    package = PrimaryPackage(args.package, verify=False)
+    package, package_verification = verified_package(args.package)
     manifest = package.manifest
-    x_train, y_train, _ = package.load("TRAIN")
+    x_train, y_train, train_metadata = package.load("TRAIN")
     print("2. Open package complete")
 
     # ----- 3. Build training sample -----
@@ -187,6 +215,7 @@ def main():
         idx = np.arange(len(labels_all), dtype=np.int64)
     else:
         idx = stratified_indices(labels_all, args.fraction, seed_sample)
+    actual_population = selected_population(train_metadata, idx)
     y = labels_all[idx]
     idx_hash = hashlib.sha256(idx.tobytes()).hexdigest()
     t_load = time.perf_counter() - t0
@@ -210,8 +239,8 @@ def main():
         "seed": seed_model,
         "min_child_weight": args.min_child_weight,
         "subsample": args.subsample,
-        "colsample_bytree":args.colsample_bytree,
-        "lambda": args.reg_lambda
+        "colsample_bytree": args.colsample_bytree,
+        "lambda": args.reg_lambda,
     }
     t0 = time.perf_counter()
     model = xgb.train(params, dtrain, args.rounds)
@@ -270,13 +299,16 @@ def main():
         dirty_worktree=dirty_worktree,
         package_version=manifest["package_version"],
         package_manifest_sha256=sha256_file(package.root / "manifest.json"),
-        train_population_sha256=manifest["files"]["TRAIN_metadata.npy"]["sha256"],
+        train_population_sha256=actual_population["train_population_sha256"],
         validation_population_sha256=manifest["files"]["VALIDATION_metadata.npy"]["sha256"],
     )
 
+    result["parent_train_population_sha256"] = manifest["files"]["TRAIN_metadata.npy"]["sha256"]
+    result["actual_train_membership"] = actual_population
     # ----- 8. Save everything -----
     run_dir.mkdir(parents=True, exist_ok=True)
     np.save(run_dir / "train_sample_indices.npy", idx)
+    (run_dir / "package_verification.json").write_text(json.dumps(package_verification, indent=2))
     model.save_model(run_dir / "model.json")
     (run_dir / "result.json").write_text(json.dumps(result, indent=2))
     notes = {
