@@ -1,0 +1,403 @@
+{
+  "schema_version": "primary_final_evaluation_v1",
+  "status": "FINAL_TEST_COMPLETE",
+  "created_utc": "2026-11-05T07:32:02.542633+00:00",
+  "freeze": {
+    "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\frozen_model.json",
+    "sha256": "c9d3024579bf68c8c1ac85449a93dcbed07feb745ec89e43d2617c28b33a3397",
+    "bytes": 17105
+  },
+  "selected_run_id": "xgb_frac1_seed42_lr01",
+  "model": {
+    "path": "E:\\Document\\iotguard-cos30049hn-grp1-5\\xgb-rf-experiments\\xgb_frac1_seed42_lr01\\model.json",
+    "sha256": "cb090afa6ad4c3618e20d7c5d635e89aa2d122667ea00835a0acc2f75a4455e6",
+    "bytes": 508170
+  },
+  "training_source_revision": "4e2761146a610409d7a956cb82b95aee4dadd78e",
+  "evaluation_source": {
+    "revision": "07ae4615c9c59c52bda60e1530adde28bcf0aff3",
+    "dirty_worktree": false,
+    "implementation": {
+      "primary_runtime.py": {
+        "path": "C:\\Users\\Admin\\.codex\\worktrees\\iotguard-pr1-integration\\iotguard-cos30049hn-grp1-5\\ml\\src\\iotguard\\evaluation\\primary_runtime.py",
+        "sha256": "3f973f261b19523d2113605d46055aac7cbf369cf97541823e5cb717d61de099",
+        "bytes": 10576
+      },
+      "primary.py": {
+        "path": "C:\\Users\\Admin\\.codex\\worktrees\\iotguard-pr1-integration\\iotguard-cos30049hn-grp1-5\\ml\\src\\iotguard\\evaluation\\primary.py",
+        "sha256": "89affbbebae6854ee20142623803d205d6bd1b05b0619ca6c12d9f1e6c01a4cf",
+        "bytes": 6474
+      },
+      "population.py": {
+        "path": "C:\\Users\\Admin\\.codex\\worktrees\\iotguard-pr1-integration\\iotguard-cos30049hn-grp1-5\\ml\\src\\iotguard\\evaluation\\population.py",
+        "sha256": "dcaca231929c92d1246aa32b38d9fe0f0667fadc1970e3bcee175b08f04b84fb",
+        "bytes": 1736
+      },
+      "primary_final_evaluation.py": {
+        "path": "C:\\Users\\Admin\\.codex\\worktrees\\iotguard-pr1-integration\\iotguard-cos30049hn-grp1-5\\ml\\src\\iotguard\\evaluation\\primary_final_evaluation.py",
+        "sha256": "9fd32ce3e7e7c8af62ce1275088ff3e358a1feb1dcbee4eec300fae70b8621e9",
+        "bytes": 12525
+      },
+      "comparison.py": {
+        "path": "C:\\Users\\Admin\\.codex\\worktrees\\iotguard-pr1-integration\\iotguard-cos30049hn-grp1-5\\ml\\src\\iotguard\\evaluation\\comparison.py",
+        "sha256": "0118ee790f88184b527a5844e9128ac59338ad0803e95f3e723d4e4b580bb3df",
+        "bytes": 8342
+      },
+      "primary_acceptance.py": {
+        "path": "C:\\Users\\Admin\\.codex\\worktrees\\iotguard-pr1-integration\\iotguard-cos30049hn-grp1-5\\ml\\src\\iotguard\\evaluation\\primary_acceptance.py",
+        "sha256": "be163ac08f727565bfae9e229d0838632698c7d8c4b09dc54870d048372fdcf1",
+        "bytes": 13945
+      },
+      "final_primary_evaluation.py": {
+        "path": "C:\\Users\\Admin\\.codex\\worktrees\\iotguard-pr1-integration\\iotguard-cos30049hn-grp1-5\\ml\\scripts\\final_primary_evaluation.py",
+        "sha256": "7ea0ab3c4d58fe4644306ad09a3eee94f541a2759e959173e8b6f879e3c00eef",
+        "bytes": 1287
+      },
+      "primary_final_evaluation_v1.md": {
+        "path": "C:\\Users\\Admin\\.codex\\worktrees\\iotguard-pr1-integration\\iotguard-cos30049hn-grp1-5\\ml\\docs\\protocols\\primary_final_evaluation_v1.md",
+        "sha256": "261421706f903827741a9d726171443fb57609834372bda2e75c4ee9cd747dd0",
+        "bytes": 5156
+      }
+    }
+  },
+  "package_manifest_sha256": "6ab99e86397242e219bfa1f8490d8e03b169ec87a092af80cb3e7aef1e61147b",
+  "TEST_population_sha256": "a12cc62efb5dccb68f4a27b1bf1db16529ebd852e6bebeef55c4e77cf31f51be",
+  "metrics": {
+    "schema_version": "primary_final_metrics_v1",
+    "partition": "TEST",
+    "threshold": 0.5,
+    "positive_class": "malicious",
+    "confusion_order": [
+      "benign",
+      "malicious"
+    ],
+    "TN": 83531,
+    "FP": 1,
+    "FN": 11,
+    "TP": 977723,
+    "accuracy": 0.9999886927499797,
+    "per_class": {
+      "benign": {
+        "precision": 0.9998683297024251,
+        "recall": 0.9999880285399607,
+        "f1": 0.9999281755389827,
+        "support": 83532
+      },
+      "malicious": {
+        "precision": 0.9999989772164741,
+        "recall": 0.9999887494962842,
+        "f1": 0.9999938633302276,
+        "support": 977734
+      }
+    },
+    "macro_f1": 0.9999610194346051,
+    "fpr": 1.1971460039266389e-05,
+    "undefined_policy": "null"
+  },
+  "inference": {
+    "reload_parity": "PASS",
+    "max_probability_delta": 0.0,
+    "rows": 1061266,
+    "model_state": {
+      "features": 115,
+      "rounds": 300,
+      "persisted_config": {
+        "learner": {
+          "generic_param": {
+            "device": "cpu",
+            "fail_on_invalid_gpu_id": "0",
+            "n_jobs": "2",
+            "nthread": "2",
+            "random_state": "0",
+            "seed": "0",
+            "seed_per_iteration": "0",
+            "validate_parameters": "1"
+          },
+          "gradient_booster": {
+            "gbtree_model_param": {
+              "num_parallel_tree": "1",
+              "num_trees": "300"
+            },
+            "gbtree_train_param": {
+              "process_type": "default",
+              "tree_method": "auto",
+              "updater": "grow_quantile_histmaker",
+              "updater_seq": "grow_quantile_histmaker"
+            },
+            "name": "gbtree",
+            "specified_updater": false,
+            "tree_train_param": {
+              "alpha": "0",
+              "colsample_bylevel": "1",
+              "colsample_bynode": "1",
+              "colsample_bytree": "1",
+              "eta": "0.300000012",
+              "gamma": "0",
+              "grow_policy": "depthwise",
+              "interaction_constraints": "",
+              "lambda": "1",
+              "learning_rate": "0.300000012",
+              "max_bin": "256",
+              "max_cat_threshold": "64",
+              "max_cat_to_onehot": "4",
+              "max_delta_step": "0",
+              "max_depth": "6",
+              "max_leaves": "0",
+              "min_child_weight": "1",
+              "min_split_loss": "0",
+              "monotone_constraints": "()",
+              "refresh_leaf": "1",
+              "reg_alpha": "0",
+              "reg_lambda": "1",
+              "sampling_method": "uniform",
+              "sparse_threshold": "0.20000000000000001",
+              "subsample": "1"
+            },
+            "updater": [
+              {
+                "hist_train_param": {
+                  "debug_synchronize": "0",
+                  "max_cached_hist_node": "18446744073709551615"
+                },
+                "name": "grow_quantile_histmaker"
+              }
+            ]
+          },
+          "learner_model_param": {
+            "base_score": "[9.2134124E-1]",
+            "boost_from_average": "1",
+            "num_class": "0",
+            "num_feature": "115",
+            "num_target": "1"
+          },
+          "learner_train_param": {
+            "booster": "gbtree",
+            "disable_default_eval_metric": "0",
+            "multi_strategy": "one_output_per_tree",
+            "objective": "binary:logistic"
+          },
+          "metrics": [],
+          "objective": {
+            "name": "binary:logistic",
+            "reg_loss_param": {
+              "scale_pos_weight": "1"
+            }
+          }
+        },
+        "version": [
+          3,
+          2,
+          0
+        ]
+      },
+      "limitation": "Model JSON does not retain every historical training parameter; original result plus exact Git implementation supplies those parameters.",
+      "load_warnings": []
+    },
+    "input_contract": {
+      "family": "XGB",
+      "input_view": "raw",
+      "fit_dtype": "float32",
+      "feature_order": [
+        "MI_dir_L5_weight",
+        "MI_dir_L5_mean",
+        "MI_dir_L5_variance",
+        "MI_dir_L3_weight",
+        "MI_dir_L3_mean",
+        "MI_dir_L3_variance",
+        "MI_dir_L1_weight",
+        "MI_dir_L1_mean",
+        "MI_dir_L1_variance",
+        "MI_dir_L0.1_weight",
+        "MI_dir_L0.1_mean",
+        "MI_dir_L0.1_variance",
+        "MI_dir_L0.01_weight",
+        "MI_dir_L0.01_mean",
+        "MI_dir_L0.01_variance",
+        "H_L5_weight",
+        "H_L5_mean",
+        "H_L5_variance",
+        "H_L3_weight",
+        "H_L3_mean",
+        "H_L3_variance",
+        "H_L1_weight",
+        "H_L1_mean",
+        "H_L1_variance",
+        "H_L0.1_weight",
+        "H_L0.1_mean",
+        "H_L0.1_variance",
+        "H_L0.01_weight",
+        "H_L0.01_mean",
+        "H_L0.01_variance",
+        "HH_L5_weight",
+        "HH_L5_mean",
+        "HH_L5_std",
+        "HH_L5_magnitude",
+        "HH_L5_radius",
+        "HH_L5_covariance",
+        "HH_L5_pcc",
+        "HH_L3_weight",
+        "HH_L3_mean",
+        "HH_L3_std",
+        "HH_L3_magnitude",
+        "HH_L3_radius",
+        "HH_L3_covariance",
+        "HH_L3_pcc",
+        "HH_L1_weight",
+        "HH_L1_mean",
+        "HH_L1_std",
+        "HH_L1_magnitude",
+        "HH_L1_radius",
+        "HH_L1_covariance",
+        "HH_L1_pcc",
+        "HH_L0.1_weight",
+        "HH_L0.1_mean",
+        "HH_L0.1_std",
+        "HH_L0.1_magnitude",
+        "HH_L0.1_radius",
+        "HH_L0.1_covariance",
+        "HH_L0.1_pcc",
+        "HH_L0.01_weight",
+        "HH_L0.01_mean",
+        "HH_L0.01_std",
+        "HH_L0.01_magnitude",
+        "HH_L0.01_radius",
+        "HH_L0.01_covariance",
+        "HH_L0.01_pcc",
+        "HH_jit_L5_weight",
+        "HH_jit_L5_mean",
+        "HH_jit_L5_variance",
+        "HH_jit_L3_weight",
+        "HH_jit_L3_mean",
+        "HH_jit_L3_variance",
+        "HH_jit_L1_weight",
+        "HH_jit_L1_mean",
+        "HH_jit_L1_variance",
+        "HH_jit_L0.1_weight",
+        "HH_jit_L0.1_mean",
+        "HH_jit_L0.1_variance",
+        "HH_jit_L0.01_weight",
+        "HH_jit_L0.01_mean",
+        "HH_jit_L0.01_variance",
+        "HpHp_L5_weight",
+        "HpHp_L5_mean",
+        "HpHp_L5_std",
+        "HpHp_L5_magnitude",
+        "HpHp_L5_radius",
+        "HpHp_L5_covariance",
+        "HpHp_L5_pcc",
+        "HpHp_L3_weight",
+        "HpHp_L3_mean",
+        "HpHp_L3_std",
+        "HpHp_L3_magnitude",
+        "HpHp_L3_radius",
+        "HpHp_L3_covariance",
+        "HpHp_L3_pcc",
+        "HpHp_L1_weight",
+        "HpHp_L1_mean",
+        "HpHp_L1_std",
+        "HpHp_L1_magnitude",
+        "HpHp_L1_radius",
+        "HpHp_L1_covariance",
+        "HpHp_L1_pcc",
+        "HpHp_L0.1_weight",
+        "HpHp_L0.1_mean",
+        "HpHp_L0.1_std",
+        "HpHp_L0.1_magnitude",
+        "HpHp_L0.1_radius",
+        "HpHp_L0.1_covariance",
+        "HpHp_L0.1_pcc",
+        "HpHp_L0.01_weight",
+        "HpHp_L0.01_mean",
+        "HpHp_L0.01_std",
+        "HpHp_L0.01_magnitude",
+        "HpHp_L0.01_radius",
+        "HpHp_L0.01_covariance",
+        "HpHp_L0.01_pcc"
+      ],
+      "feature_contract": {
+        "path": "E:\\Document\\iotguard_primary_packages\\g3b_primary_v1\\n_baiot_feature_contract_v1.json",
+        "sha256": "47ca15c45ba9f30182c4762b47f7291d934f6de07270147c844dd5e25e21fd50",
+        "bytes": 5922
+      },
+      "scaler": {
+        "path": "E:\\Document\\iotguard_primary_packages\\g3b_primary_v1\\scaler.json",
+        "sha256": "f166f5982b8b7d6e6809f85047fda727b6523253ce3acef97266ff212161e394",
+        "bytes": 8761
+      },
+      "label_mapping": {
+        "benign": 0,
+        "malicious": 1
+      },
+      "threshold": 0.5
+    }
+  },
+  "elapsed_seconds": 81.65703319999739,
+  "peak_process_rss_bytes": 1312362496,
+  "payloads": {
+    "environment.json": {
+      "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\final_test_01\\environment.json",
+      "sha256": "dc787119f4fbfcee1c1068ae95327ba1f236951c4195b38277ece87e6ddf0050",
+      "bytes": 252
+    },
+    "execution.jsonl": {
+      "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\final_test_01\\execution.jsonl",
+      "sha256": "2afade7cbd707cf0c3df4c7d5b020659e5b347dbdcb98bc8b8f5e56754ced475",
+      "bytes": 752
+    },
+    "labels.npy": {
+      "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\final_test_01\\labels.npy",
+      "sha256": "f33819b4b6ce05117c6d5e3ebd22f99ee86eb4bcf9347d6f30f49fd8745bc673",
+      "bytes": 1061394
+    },
+    "metadata.npy": {
+      "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\final_test_01\\metadata.npy",
+      "sha256": "a12cc62efb5dccb68f4a27b1bf1db16529ebd852e6bebeef55c4e77cf31f51be",
+      "bytes": 10612788
+    },
+    "metrics.json": {
+      "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\final_test_01\\metrics.json",
+      "sha256": "84406c7ce5a52ca07b7ef76c182e64d8b55b5650e4838284e56953657a47678b",
+      "bytes": 733
+    },
+    "predictions.npy": {
+      "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\final_test_01\\predictions.npy",
+      "sha256": "f218d4beb4ace7b09973f85b05576a777a3eb75348ddf1acf219f22ad896b8e7",
+      "bytes": 1061394
+    },
+    "pretest_gate.json": {
+      "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\final_test_01\\pretest_gate.json",
+      "sha256": "def8137456d1dd8e4d3bab0e8f03213b6f9ee147a23790efa035e579ef979a5f",
+      "bytes": 10316
+    },
+    "probabilities.npy": {
+      "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\final_test_01\\probabilities.npy",
+      "sha256": "df7e6e0ac844083163bef49d4f193d493634b344bcf1e93da2eee0d02ea8168a",
+      "bytes": 8490256
+    }
+  },
+  "pretest_validation_payloads": {
+    "labels.npy": {
+      "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\final_test_01\\pretest_validation_replay\\labels.npy",
+      "sha256": "4b0dafa2e0caef115c1474e4caa2c6982f93c743805285c9de703b0823b70d71",
+      "bytes": 1056500
+    },
+    "metadata.npy": {
+      "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\final_test_01\\pretest_validation_replay\\metadata.npy",
+      "sha256": "2d44c7b63c3c16fb19105ce504b39f6e31fa4145588c07c1d50f2417fad69103",
+      "bytes": 10563848
+    },
+    "predictions.npy": {
+      "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\final_test_01\\pretest_validation_replay\\predictions.npy",
+      "sha256": "83582e87ec37813403a9b0927c3c3e8af885a65035bb781143bff949952a3682",
+      "bytes": 1056500
+    },
+    "probabilities.npy": {
+      "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\final_test_01\\pretest_validation_replay\\probabilities.npy",
+      "sha256": "bc68c15d46a4e87ab0af4d64d0f9e53c2b6f74f57bbce52f8a7260817d0139f1",
+      "bytes": 8451104
+    }
+  },
+  "classifiers_fitted": false,
+  "threshold_changed": false,
+  "post_TEST_reselection_allowed": false
+}

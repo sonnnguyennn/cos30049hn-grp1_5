@@ -1,0 +1,102 @@
+{
+  "schema_version": "primary_a2_checks_v1",
+  "date_local": "2026-11-05",
+  "timezone": "Asia/Saigon",
+  "status": "PASS",
+  "tested_implementation_revision": "aeca4e5e7df8949bd7edde7723f2b545659cb2ca",
+  "pytest": {
+    "command": "ml/.venv/Scripts/python.exe -m pytest ml/tests/unit ml/tests/test_configuration.py ml/tests/integration/test_kaggle_bundle.py ml/tests/integration/test_kaggle_secondary_bundle.py -q",
+    "passed": 424,
+    "seconds": 43.81,
+    "log": {
+      "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\final_pytest.log",
+      "sha256": "3bc1f433d813e384bb7848a6ddd0e93d0e93ad4ef6a34ad8c1b8e55025edf66d",
+      "bytes": 508
+    },
+    "scope": "Unit/config plus two Kaggle export integration suites; not real-source rematerialisation integration"
+  },
+  "no_classifier_fitting_in_tests": {
+    "basis": "Reviewed test AST and call sites; existing fit calls are SecondaryPreprocessor/StandardScaler only; added suites use fixed arrays and inference stubs"
+  },
+  "static_checks": [
+    {
+      "command": [
+        "ml/.venv/Scripts/ruff.exe",
+        "check",
+        "ml"
+      ],
+      "exit_code": 0,
+      "output": "All checks passed!\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\.codex\\worktrees\\iotguard-pr1-integration\\iotguard-cos30049hn-grp1-5\\ml\\.venv\\Scripts\\python.exe",
+        "-m",
+        "compileall",
+        "-q",
+        "ml/src",
+        "ml/scripts"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "3bfed14",
+        "--",
+        "ml/experiments",
+        "ml/artifacts/audit",
+        "ml/artifacts/contracts",
+        "ml/artifacts/manifests/bot_iot_secondary_run_archive_20261102.json",
+        "ml/artifacts/manifests/lr_baseline_archive_summary.json",
+        "ml/docs/protocols/primary_experiments_v1.md"
+      ],
+      "exit_code": 0,
+      "output": ""
+    }
+  ],
+  "static_log": {
+    "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\final_static_checks.json",
+    "sha256": "0025787c949f0ff6ac9eb1cdb123d24bc4fe5f5bc1d73ac59af3878a1cb3d747",
+    "bytes": 1020
+  },
+  "independent_final_verification": {
+    "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\independent_final_verification.json",
+    "sha256": "bade58841302197456e219365e11e303bc6baa232a598ce2ef3b5e6cb2be0f61",
+    "bytes": 53553
+  },
+  "standalone_verification": {
+    "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\standalone_verification.json",
+    "sha256": "64f2356d6689c2773fb766fcfcf09a343ac81bc673a16e91774e88e3ac81ca59",
+    "bytes": 650
+  },
+  "standalone_predictions": {
+    "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\standalone_predictions.json",
+    "sha256": "fa3decd93c2b04cef763304444aaaf9c78380f54ef3c173507de3025371ab9eb",
+    "bytes": 228
+  },
+  "no_iotguard_installed_in_standalone_environment": true,
+  "conda_recipe_executed": false,
+  "standalone_environment_basis": "Fresh Python3.11 venv; isolated -I subprocess using relocated copied bundle",
+  "original_error_analysis_AST_unchanged_from_3bfed14": true,
+  "original_checkout_changes_preserved": true,
+  "historical_package_and_receipts_edited": false,
+  "local_classifier_fits": 0,
+  "final_TEST_inference_attempts": 1,
+  "final_TEST_failures": 0,
+  "bot_iot_archived_ZIP_hashes_rechecked": true,
+  "bot_iot_TEST_opened": false,
+  "new_model_selection_after_final_TEST": false
+}

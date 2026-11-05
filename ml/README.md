@@ -26,8 +26,12 @@ Raspberry Pi evaluation is important, but it must not block the core Assignment 
   through A7 dataset-role decision; N-BaIoT is primary and Bot-IoT is secondary
 - **G2 complete, independently verified, and committed:** G2A/G2B implement contracts and
   parsers; G2C reconciles the complete primary corpus and closes the canonical data layer
-- **G3 in progress:** G3A's fixed primary split is ADOPTED and independently verified across all
-  7,062,606 rows; TEST is SEALED. G3B primary preprocessing and independent data handoff are now verified
+- **Primary classifier evaluation complete (2026-11-05):** G3A/G3B remain unchanged.
+  Fourteen received models passed full VALIDATION replay; nine Full candidates entered
+  comparison. A committed validation-only freeze selected XGBoost before one final TEST
+  evaluation. Training/model selection still reject TEST. See the current
+  [A2 classifier handoff](docs/handoffs/A2_CLASSIFIER_EVALUATION.md) for exact evidence,
+  model hash, results, portable inference and remaining teammate responsibilities.
 
 The read-only A1-A4 evidence is stored under `artifacts/manifests/` and `artifacts/audit/`;
 extracted N-BaIoT working files remain outside the repository. A4 measures lexical and
@@ -72,16 +76,18 @@ from `ml/` with `python -m pip install -e ".[dev,kaggle,xgboost]"`, or use
 `uv sync --locked --extra dev --extra kaggle --extra xgboost`.
 The lockfile resolves compatible releases for the selected Python version.
 
-Dependency installation does not approve the legacy RF/XGB runners for an official
-comparison. Their actual TRAIN population identity and Kaggle export still need
-review. All classifier/clustering fitting, including smoke, must run on Kaggle.
+Dependency installation alone does not approve an experiment. The current acceptance
+workflow verifies saved membership and replays received models; subset identities are
+corrected in additive sidecars. Updated RF/XGB runners write actual and parent TRAIN
+identities and refuse local fitting. Every new classifier/clustering fit, including
+smoke, must run on Kaggle. Valid historical experiments were reused without retraining.
 
 ## G3B primary data package
 
-The full primary package is READY_FOR_TEAM after independent relocated loading; TEAM_VERIFIED awaits a recipient run. See [G3B handoff](docs/handoffs/G3B_PRIMARY_DATA_HANDOFF.md) for exact package paths, checksums, commands and raw/scaled loading. The package is stored outside Git. Classification, clustering and final inference packaging remain pending.
+The full primary package is READY_FOR_TEAM after independent relocated loading; TEAM_VERIFIED awaits a recipient run. See [G3B handoff](docs/handoffs/G3B_PRIMARY_DATA_HANDOFF.md) for exact package paths, checksums, commands and raw/scaled loading. The package is stored outside Git. Classifier acceptance/final evaluation and a portable technical inference handoff are complete; clustering and the final group source/model release remain separate owner deliverables.
 
 The builder now emits the portable loader, README and standalone verifier itself; no post-build patching is needed. Experiment results require package version, manifest checksum and boolean dirty-worktree status, and selection enforces package/protocol/population identity. See [build and identity repair](docs/handoffs/G3B_BUILD_IDENTITY_FIX.md) and the updated [primary protocol](docs/protocols/primary_experiments_v1.md) before baseline comparisons.
 
 ## Kaggle LR + Dummy workflow
 
-The [integrated Kaggle guide](docs/experiments/kaggle_lr.md) and [baseline extension protocol](docs/protocols/kaggle_lr_baseline_v1.md) describe the two unexecuted notebooks under `notebooks/kaggle/`. Export a standalone code ZIP with `python scripts/build_kaggle_lr_bundle.py --output <new external ZIP path>`; shared source is copied into the export directly from canonical files. No vendored duplicate implementation is maintained in this checkout. LR/Dummy fitting has not been run locally or on Kaggle as part of integration.
+The [integrated Kaggle guide](docs/experiments/kaggle_lr.md) and [baseline extension protocol](docs/protocols/kaggle_lr_baseline_v1.md) describe the notebooks under `notebooks/kaggle/`. The original Kaggle Full LR/Dummy evidence is preserved in the [LR archive handoff](docs/handoffs/LR_BASELINE_HANDOFF.md) and now has independent model replay in the current A2 handoff. No LR retraining was performed. Exporting a new code ZIP does not reproduce the identity of an old release; keep original snapshots and source revisions with their historical results.

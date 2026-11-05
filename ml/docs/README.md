@@ -2,6 +2,11 @@
 
 This directory holds architecture notes, decision records, protocols, and blank project-management templates. It is engineering support material, not ready-to-submit assessment content. Results and claims must be backed by recorded evidence and reviewed by the project team.
 
+Current classifier acceptance, validation selection, committed freeze, final TEST and
+portable inference are in [A2_CLASSIFIER_EVALUATION.md](handoffs/A2_CLASSIFIER_EVALUATION.md).
+The additive [final evaluation protocol](protocols/primary_final_evaluation_v1.md)
+preserves the original training/selection TEST seal and historical receipts.
+
 Versioned human-readable data-contract explanations live under `contracts/`; their machine-readable
 counterparts live under `artifacts/contracts/`.
 
