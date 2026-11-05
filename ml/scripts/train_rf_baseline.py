@@ -15,7 +15,10 @@ import sklearn
 from sklearn.ensemble import RandomForestClassifier
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+from iotguard.evaluation.population import selected_population
 from iotguard.evaluation.primary import binary_metrics, experiment_result, resolve_configuration
+from iotguard.evaluation.primary_runtime import verified_package
+from iotguard.experiments.kaggle_lr import assert_kaggle
 
 
 def stratified_indices(y, fraction, seed):
@@ -87,13 +90,16 @@ def parse_max_features(text):
     try:
         fraction = float(text)
     except ValueError:
-        raise argparse.ArgumentTypeError("use sqrt, log2, a fraction like 0.3, or a whole number like 20") from None
+        raise argparse.ArgumentTypeError(
+            "use sqrt, log2, a fraction like 0.3, or a whole number like 20"
+        ) from None
     if not 0 < fraction <= 1:
         raise argparse.ArgumentTypeError("a fraction must be in (0, 1]")
     return fraction
 
 
 def main():
+    assert_kaggle()
     # ----- 1. Read command-line arguments -----
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
@@ -107,19 +113,33 @@ def main():
         help="path to seeds.yaml (random_seeds: python/numpy/scikit_learn)",
     )
     ap.add_argument("--trees", type=int, default=100)
-    ap.add_argument("--max-depth", type=int, default=None, help="maximum tree depth (default: no limit)")
-    ap.add_argument("--min-samples-leaf", type=int, default=1, help="minimum rows in a leaf (default 1)")
     ap.add_argument(
-        "--max-features", type=parse_max_features, default="sqrt",
-        help="features tried per split: sqrt, log2, a fraction such as 0.3, or a count (default sqrt)"
+        "--max-depth", type=int, default=None, help="maximum tree depth (default: no limit)"
+    )
+    ap.add_argument(
+        "--min-samples-leaf", type=int, default=1, help="minimum rows in a leaf (default 1)"
+    )
+    ap.add_argument(
+        "--max-features",
+        type=parse_max_features,
+        default="sqrt",
+        help="features tried per split: sqrt, log2, fraction, or count (default sqrt)",
     )
     ap.add_argument("--jobs", type=int, default=2)
     ap.add_argument("--chunk-size", type=int, default=50000)
     ap.add_argument(
         "--out", required=True, type=Path, help="results folder; keep it OUTSIDE the git repo"
     )
-    ap.add_argument("--tag", default="", help="short label added to the run name, e.g. leaf5 (letters, digits, . _ -)")
-    ap.add_argument("--overwrite", action="store_true", help="allow replacing a finished run that has the same name")
+    ap.add_argument(
+        "--tag",
+        default="",
+        help="short label added to the run name, e.g. leaf5 (letters, digits, . _ -)",
+    )
+    ap.add_argument(
+        "--overwrite",
+        action="store_true",
+        help="allow replacing a finished run that has the same name",
+    )
     args = ap.parse_args()
     if not 0 < args.fraction <= 1:
         sys.exit("--fraction must be in (0, 1]")
@@ -159,17 +179,19 @@ def main():
     run_id = f"rf_frac{args.fraction:g}_seed{seed_model}" + (f"_{args.tag}" if args.tag else "")
     run_dir = args.out / run_id
     if (run_dir / "result.json").exists() and not args.overwrite:
-        sys.exit(f"{run_dir} already holds a finished run.\n"
-                 "  Give this run its own name with --tag, or add --overwrite to replace it.")
+        sys.exit(
+            f"{run_dir} already holds a finished run.\n"
+            "  Give this run its own name with --tag, or add --overwrite to replace it."
+        )
     print("1. Read args complete")
 
     # ----- 2. Open the package -----
     sys.path.insert(0, str(args.package.resolve()))
-    from primary_package import PrimaryPackage, sha256_file
+    from primary_package import sha256_file
 
-    package = PrimaryPackage(args.package, verify=False)
+    package, package_verification = verified_package(args.package)
     manifest = package.manifest
-    x_train, y_train, _ = package.load("TRAIN")
+    x_train, y_train, train_metadata = package.load("TRAIN")
     print("2. Open package complete")
 
     # ----- 3. Build training sample -----
@@ -179,6 +201,7 @@ def main():
         idx = np.arange(len(y_train), dtype=np.int64)
     else:
         idx = stratified_indices(np.asarray(y_train), args.fraction, seed_sample)
+    actual_population = selected_population(train_metadata, idx)
     X = gather_float32(x_train, idx)
     y = np.asarray(y_train)[idx]
     t_load = time.perf_counter() - t0
@@ -187,8 +210,12 @@ def main():
 
     # ----- 4. Train Random Forest -----
     model = RandomForestClassifier(
-        n_estimators=args.trees, n_jobs=args.jobs, random_state=seed_model,
-        max_depth=args.max_depth, min_samples_leaf=args.min_samples_leaf, max_features=args.max_features
+        n_estimators=args.trees,
+        n_jobs=args.jobs,
+        random_state=seed_model,
+        max_depth=args.max_depth,
+        min_samples_leaf=args.min_samples_leaf,
+        max_features=args.max_features,
     )
     t0 = time.perf_counter()
     model.fit(X, y)
@@ -239,13 +266,16 @@ def main():
         dirty_worktree=dirty_worktree,
         package_version=manifest["package_version"],
         package_manifest_sha256=sha256_file(package.root / "manifest.json"),
-        train_population_sha256=manifest["files"]["TRAIN_metadata.npy"]["sha256"],
+        train_population_sha256=actual_population["train_population_sha256"],
         validation_population_sha256=manifest["files"]["VALIDATION_metadata.npy"]["sha256"],
     )
 
+    result["parent_train_population_sha256"] = manifest["files"]["TRAIN_metadata.npy"]["sha256"]
+    result["actual_train_membership"] = actual_population
     # ----- 7. Save everything -----
     run_dir.mkdir(parents=True, exist_ok=True)
     np.save(run_dir / "train_sample_indices.npy", idx)
+    (run_dir / "package_verification.json").write_text(json.dumps(package_verification, indent=2))
     joblib.dump(model, run_dir / "model.joblib")
     (run_dir / "result.json").write_text(json.dumps(result, indent=2))
     notes = {

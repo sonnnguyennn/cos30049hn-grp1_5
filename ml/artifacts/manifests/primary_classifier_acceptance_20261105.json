@@ -1,0 +1,1383 @@
+{
+  "schema_version": "primary_final_independent_verification_v1",
+  "status": "PASS",
+  "inventory": {
+    "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\inventory.json",
+    "sha256": "7e27c168ed5771f5e7dab3f9f5c64eacc143406ff6be162a6cfa7ed084037168",
+    "bytes": 28089
+  },
+  "original_received_files_unchanged": 65,
+  "original_package_payloads_unchanged": 17,
+  "original_lr_archive_unchanged": true,
+  "accepted_runs": {
+    "dummy_full_20261102T011513018213Z": {
+      "receipt": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\dummy_full_20261102T011513018213Z\\acceptance.json",
+        "sha256": "2eb9840a8f5a166a38670ae9a88cdfaf610829de3c2d8cc23edef33978d81942",
+        "bytes": 11190
+      },
+      "status": "PASS",
+      "model": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\lr_original_extracted\\dummy_model.joblib",
+        "sha256": "e5216c0287b835ecbbb6d5f4de6c8d9e4c0c44ddc33760969077c8dac373ca46",
+        "bytes": 583
+      },
+      "population": {
+        "kind": "full",
+        "rows": 4944968,
+        "rows_in_train": 4944968,
+        "indices_sha256": "42ec378a8ec868ba237fd999e737f64e3eda27e319aa9bf4c228fd514fa46c2a",
+        "indices_representation": "sorted unique little-endian int64 bytes",
+        "train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "population_representation": "sha256 of NumPy v1 selected metadata array",
+        "class_counts": {
+          "benign": 388965,
+          "malicious": 4556003
+        },
+        "parent_train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "historical_train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "historical_parent_as_subset": false,
+        "basis": "checksummed original Kaggle full workflow plus archive/source/count binding"
+      },
+      "metrics": {
+        "schema_version": "primary_metrics_v1",
+        "partition": "VALIDATION",
+        "threshold": 0.5,
+        "positive_class": "malicious",
+        "confusion_order": [
+          "benign",
+          "malicious"
+        ],
+        "TN": 0,
+        "FP": 83435,
+        "FN": 0,
+        "TP": 972937,
+        "accuracy": 0.9210174067468657,
+        "per_class": {
+          "benign": {
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 83435
+          },
+          "malicious": {
+            "precision": 0.9210174067468657,
+            "recall": 1.0,
+            "f1": 0.958885019482001,
+            "support": 972937
+          }
+        },
+        "macro_f1": 0.4794425097410005,
+        "fpr": 1.0,
+        "undefined_policy": "null"
+      },
+      "original_result": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\lr_original_extracted\\dummy_result.json",
+        "sha256": "d300d8bab4238c8346c63483d2fd3b55011895561276937a6695019ed8ddc9f6",
+        "bytes": 2341
+      },
+      "evaluation_source_revision": "17c37f6eb6d90f3ffae95215b1024f8cf68a595d",
+      "evaluation_dirty_worktree": false,
+      "reported_training_environment": {
+        "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+        "platform": "Linux-6.18.55+-x86_64-with-glibc2.39",
+        "packages": {
+          "numpy": "2.1.3",
+          "scikit-learn": "1.6.1",
+          "PyYAML": "6.0.3",
+          "joblib": "1.6.0",
+          "psutil": "5.9.5",
+          "threadpoolctl": "3.6.0",
+          "jsonschema": "4.26.0"
+        },
+        "KAGGLE_KERNEL_RUN_TYPE": "Interactive"
+      },
+      "evaluation_environment": {
+        "python": "3.11.15",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "packages": {
+          "numpy": "2.1.3",
+          "scikit-learn": "1.6.1",
+          "joblib": "1.6.0",
+          "scipy": "1.17.1",
+          "threadpoolctl": "3.6.0"
+        }
+      },
+      "reload_parity": "PASS",
+      "original_error_row_parity": "not available; independent full replay supplies new row-aligned evidence"
+    },
+    "lr_full_20261102T011513018213Z": {
+      "receipt": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\lr_full_20261102T011513018213Z\\acceptance.json",
+        "sha256": "4b4340b6ffe97566b6f8b1c1e33f27339bd113422cdc5e428cbf276031ff9f71",
+        "bytes": 11563
+      },
+      "status": "PASS",
+      "model": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\lr_original_extracted\\lr_model.joblib",
+        "sha256": "99a766aeec88ba2516fb6d57fe9ce282b1a4124e63631bfab0a523f4d3f29afd",
+        "bytes": 1775
+      },
+      "population": {
+        "kind": "full",
+        "rows": 4944968,
+        "rows_in_train": 4944968,
+        "indices_sha256": "42ec378a8ec868ba237fd999e737f64e3eda27e319aa9bf4c228fd514fa46c2a",
+        "indices_representation": "sorted unique little-endian int64 bytes",
+        "train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "population_representation": "sha256 of NumPy v1 selected metadata array",
+        "class_counts": {
+          "benign": 388965,
+          "malicious": 4556003
+        },
+        "parent_train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "historical_train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "historical_parent_as_subset": false,
+        "basis": "checksummed original Kaggle full workflow plus archive/source/count binding"
+      },
+      "metrics": {
+        "schema_version": "primary_metrics_v1",
+        "partition": "VALIDATION",
+        "threshold": 0.5,
+        "positive_class": "malicious",
+        "confusion_order": [
+          "benign",
+          "malicious"
+        ],
+        "TN": 83189,
+        "FP": 246,
+        "FN": 220,
+        "TP": 972717,
+        "accuracy": 0.9995588675201539,
+        "per_class": {
+          "benign": {
+            "precision": 0.9973623949453896,
+            "recall": 0.9970515970515971,
+            "f1": 0.9972069717820239,
+            "support": 83435
+          },
+          "malicious": {
+            "precision": 0.9997471640750984,
+            "recall": 0.9997738805287496,
+            "f1": 0.999760522123439,
+            "support": 972937
+          }
+        },
+        "macro_f1": 0.9984837469527315,
+        "fpr": 0.0029484029484029483,
+        "undefined_policy": "null"
+      },
+      "original_result": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\lr_original_extracted\\lr_result.json",
+        "sha256": "0f0af82fa628fe946c3c44a4f435818363fe17d9339f8c3d42d1533cad0f2c54",
+        "bytes": 2925
+      },
+      "evaluation_source_revision": "17c37f6eb6d90f3ffae95215b1024f8cf68a595d",
+      "evaluation_dirty_worktree": false,
+      "reported_training_environment": {
+        "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+        "platform": "Linux-6.18.55+-x86_64-with-glibc2.39",
+        "packages": {
+          "numpy": "2.1.3",
+          "scikit-learn": "1.6.1",
+          "PyYAML": "6.0.3",
+          "joblib": "1.6.0",
+          "psutil": "5.9.5",
+          "threadpoolctl": "3.6.0",
+          "jsonschema": "4.26.0"
+        },
+        "KAGGLE_KERNEL_RUN_TYPE": "Interactive"
+      },
+      "evaluation_environment": {
+        "python": "3.11.15",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "packages": {
+          "numpy": "2.1.3",
+          "scikit-learn": "1.6.1",
+          "joblib": "1.6.0",
+          "scipy": "1.17.1",
+          "threadpoolctl": "3.6.0"
+        }
+      },
+      "reload_parity": "PASS",
+      "original_error_row_parity": "not available; independent full replay supplies new row-aligned evidence"
+    },
+    "rf_frac0.05_seed42": {
+      "receipt": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\rf_frac0.05_seed42\\acceptance.json",
+        "sha256": "c96fb3f9e932b59c3c6c9640e0cebe59e63c51a1e91645180a57c19f018cf87e",
+        "bytes": 11307
+      },
+      "status": "PASS",
+      "model": {
+        "path": "E:\\Document\\iotguard-cos30049hn-grp1-5\\xgb-rf-experiments\\rf_frac0.05_seed42\\model.joblib",
+        "sha256": "fa15109e68ea3a11bbeb518f4df8445202695c87b466ab95a198eb00b29ea920",
+        "bytes": 890889
+      },
+      "population": {
+        "kind": "subset",
+        "rows": 247248,
+        "rows_in_train": 4944968,
+        "indices_sha256": "8ac8126e362ef9278d665eb8cd43260e511a04fbd42e11ba3cecd4f138dc2943",
+        "indices_representation": "sorted unique little-endian int64 bytes",
+        "train_population_sha256": "8e62850820dd6f114d1a4a1b22ecf66fc404aee1acbbd1f6c0b9496509e92eb5",
+        "population_representation": "sha256 of NumPy v1 selected metadata array",
+        "class_counts": {
+          "benign": 19448,
+          "malicious": 227800
+        },
+        "parent_train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "historical_train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "historical_parent_as_subset": true,
+        "basis": "exact saved indices plus independent deterministic sampling reconstruction"
+      },
+      "metrics": {
+        "schema_version": "primary_metrics_v1",
+        "partition": "VALIDATION",
+        "threshold": 0.5,
+        "positive_class": "malicious",
+        "confusion_order": [
+          "benign",
+          "malicious"
+        ],
+        "TN": 83407,
+        "FP": 28,
+        "FN": 39,
+        "TP": 972898,
+        "accuracy": 0.9999365753730693,
+        "per_class": {
+          "benign": {
+            "precision": 0.9995326318816959,
+            "recall": 0.9996644094205069,
+            "f1": 0.9995985163080279,
+            "support": 83435
+          },
+          "malicious": {
+            "precision": 0.999971220832828,
+            "recall": 0.999959915184642,
+            "f1": 0.9999655679767795,
+            "support": 972937
+          }
+        },
+        "macro_f1": 0.9997820421424037,
+        "fpr": 0.00033559057949301854,
+        "undefined_policy": "null"
+      },
+      "original_result": {
+        "path": "E:\\Document\\iotguard-cos30049hn-grp1-5\\xgb-rf-experiments\\rf_frac0.05_seed42\\result.json",
+        "sha256": "8847b8cf737a56ce96c192248ba44d002a28fc986ace8069f0bfc2d26622aef7",
+        "bytes": 2150
+      },
+      "evaluation_source_revision": "17c37f6eb6d90f3ffae95215b1024f8cf68a595d",
+      "evaluation_dirty_worktree": false,
+      "reported_training_environment": {
+        "python": "3.12.10",
+        "numpy": "2.5.4",
+        "scikit_learn": "1.9.1"
+      },
+      "evaluation_environment": {
+        "python": "3.11.15",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "packages": {
+          "numpy": "2.4.6",
+          "scikit-learn": "1.9.1",
+          "xgboost": "3.2.0",
+          "joblib": "1.6.0",
+          "scipy": "1.17.1",
+          "threadpoolctl": "3.7.0"
+        }
+      },
+      "reload_parity": "PASS",
+      "original_error_row_parity": "not available; independent full replay supplies new row-aligned evidence"
+    },
+    "rf_frac0.1_seed42": {
+      "receipt": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\rf_frac0.1_seed42\\acceptance.json",
+        "sha256": "a00a57ae0d03893b4af988f1df1e0b229531fd626e606dbeb61e7ea9c86f16bd",
+        "bytes": 11299
+      },
+      "status": "PASS",
+      "model": {
+        "path": "E:\\Document\\iotguard-cos30049hn-grp1-5\\xgb-rf-experiments\\rf_frac0.1_seed42\\model.joblib",
+        "sha256": "bacbe307b18547752a84bbc76544bc97f23208c9d2dc3b980e108626a3f1e014",
+        "bytes": 1099209
+      },
+      "population": {
+        "kind": "subset",
+        "rows": 494496,
+        "rows_in_train": 4944968,
+        "indices_sha256": "ad2af317d4a6c080a82fad603d728970c5cb96d1ecd2af440efd05bc1e1ecc0a",
+        "indices_representation": "sorted unique little-endian int64 bytes",
+        "train_population_sha256": "45fdc4642c42c4d344a9b4e54ef2205926201279e1a1a62b3e276da2bc1e1387",
+        "population_representation": "sha256 of NumPy v1 selected metadata array",
+        "class_counts": {
+          "benign": 38896,
+          "malicious": 455600
+        },
+        "parent_train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "historical_train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "historical_parent_as_subset": true,
+        "basis": "exact saved indices plus independent deterministic sampling reconstruction"
+      },
+      "metrics": {
+        "schema_version": "primary_metrics_v1",
+        "partition": "VALIDATION",
+        "threshold": 0.5,
+        "positive_class": "malicious",
+        "confusion_order": [
+          "benign",
+          "malicious"
+        ],
+        "TN": 83429,
+        "FP": 6,
+        "FN": 57,
+        "TP": 972880,
+        "accuracy": 0.9999403619179608,
+        "per_class": {
+          "benign": {
+            "precision": 0.9993172507965408,
+            "recall": 0.9999280877329658,
+            "f1": 0.9996225759491016,
+            "support": 83435
+          },
+          "malicious": {
+            "precision": 0.9999938327820526,
+            "recall": 0.9999414145006306,
+            "f1": 0.9999676229544002,
+            "support": 972937
+          }
+        },
+        "macro_f1": 0.9997950994517509,
+        "fpr": 7.191226703421825e-05,
+        "undefined_policy": "null"
+      },
+      "original_result": {
+        "path": "E:\\Document\\iotguard-cos30049hn-grp1-5\\xgb-rf-experiments\\rf_frac0.1_seed42\\result.json",
+        "sha256": "9c4ad2e10d855414233946f0593981f55e3a0a499da7c552587cfbd7ba5f684f",
+        "bytes": 2148
+      },
+      "evaluation_source_revision": "17c37f6eb6d90f3ffae95215b1024f8cf68a595d",
+      "evaluation_dirty_worktree": false,
+      "reported_training_environment": {
+        "python": "3.12.10",
+        "numpy": "2.5.4",
+        "scikit_learn": "1.9.1"
+      },
+      "evaluation_environment": {
+        "python": "3.11.15",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "packages": {
+          "numpy": "2.4.6",
+          "scikit-learn": "1.9.1",
+          "xgboost": "3.2.0",
+          "joblib": "1.6.0",
+          "scipy": "1.17.1",
+          "threadpoolctl": "3.7.0"
+        }
+      },
+      "reload_parity": "PASS",
+      "original_error_row_parity": "not available; independent full replay supplies new row-aligned evidence"
+    },
+    "rf_frac0.25_seed42": {
+      "receipt": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\rf_frac0.25_seed42\\acceptance.json",
+        "sha256": "53c08fe801c617bdaa7bd21184b975f3d5c7d6cc5c6e61df18278cb68edbfedb",
+        "bytes": 11310
+      },
+      "status": "PASS",
+      "model": {
+        "path": "E:\\Document\\iotguard-cos30049hn-grp1-5\\xgb-rf-experiments\\rf_frac0.25_seed42\\model.joblib",
+        "sha256": "0a9ff27511b5faadf614d32d372d0119f5564b0164765ab2d6456edd3c86e791",
+        "bytes": 1525289
+      },
+      "population": {
+        "kind": "subset",
+        "rows": 1236242,
+        "rows_in_train": 4944968,
+        "indices_sha256": "f800b71d033716d84abe034a5e4e9c76676a7423f729308dcd86670879dd59cb",
+        "indices_representation": "sorted unique little-endian int64 bytes",
+        "train_population_sha256": "160f5c14bea8a78147043c7a365dcc04cf285d28f551846c3df780d6e3e20ed2",
+        "population_representation": "sha256 of NumPy v1 selected metadata array",
+        "class_counts": {
+          "benign": 97241,
+          "malicious": 1139001
+        },
+        "parent_train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "historical_train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "historical_parent_as_subset": true,
+        "basis": "exact saved indices plus independent deterministic sampling reconstruction"
+      },
+      "metrics": {
+        "schema_version": "primary_metrics_v1",
+        "partition": "VALIDATION",
+        "threshold": 0.5,
+        "positive_class": "malicious",
+        "confusion_order": [
+          "benign",
+          "malicious"
+        ],
+        "TN": 83433,
+        "FP": 2,
+        "FN": 29,
+        "TP": 972908,
+        "accuracy": 0.9999706542770918,
+        "per_class": {
+          "benign": {
+            "precision": 0.9996525364836693,
+            "recall": 0.9999760292443219,
+            "f1": 0.9998142566972444,
+            "support": 83435
+          },
+          "malicious": {
+            "precision": 0.9999979443113957,
+            "recall": 0.9999701933424261,
+            "f1": 0.9999840686343787,
+            "support": 972937
+          }
+        },
+        "macro_f1": 0.9998991626658116,
+        "fpr": 2.3970755678072752e-05,
+        "undefined_policy": "null"
+      },
+      "original_result": {
+        "path": "E:\\Document\\iotguard-cos30049hn-grp1-5\\xgb-rf-experiments\\rf_frac0.25_seed42\\result.json",
+        "sha256": "bd3c628f9cabc1de09193004c6595c8eacdff5fddb3ccd2aad1dd4022e72520a",
+        "bytes": 2153
+      },
+      "evaluation_source_revision": "17c37f6eb6d90f3ffae95215b1024f8cf68a595d",
+      "evaluation_dirty_worktree": false,
+      "reported_training_environment": {
+        "python": "3.12.10",
+        "numpy": "2.5.4",
+        "scikit_learn": "1.9.1"
+      },
+      "evaluation_environment": {
+        "python": "3.11.15",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "packages": {
+          "numpy": "2.4.6",
+          "scikit-learn": "1.9.1",
+          "xgboost": "3.2.0",
+          "joblib": "1.6.0",
+          "scipy": "1.17.1",
+          "threadpoolctl": "3.7.0"
+        }
+      },
+      "reload_parity": "PASS",
+      "original_error_row_parity": "not available; independent full replay supplies new row-aligned evidence"
+    },
+    "rf_frac0.5_seed42": {
+      "receipt": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\rf_frac0.5_seed42\\acceptance.json",
+        "sha256": "66a82bf165828d7639e794d5d1b109eea15d7d8c80ea5c1ac1e8124450cbaddf",
+        "bytes": 11302
+      },
+      "status": "PASS",
+      "model": {
+        "path": "E:\\Document\\iotguard-cos30049hn-grp1-5\\xgb-rf-experiments\\rf_frac0.5_seed42\\model.joblib",
+        "sha256": "a9b81870af07ef2a1e11f0e80ab16bbbfd962d2125f3015391eb3ddc512498f0",
+        "bytes": 1804329
+      },
+      "population": {
+        "kind": "subset",
+        "rows": 2472484,
+        "rows_in_train": 4944968,
+        "indices_sha256": "a5ead1fd2fc354500192643a8e94e4325715d40fbcc824d744706d2b8032125f",
+        "indices_representation": "sorted unique little-endian int64 bytes",
+        "train_population_sha256": "b15d199c17492dd5592819ac692a193681b86d3eab522e75d5c5ce15834b721a",
+        "population_representation": "sha256 of NumPy v1 selected metadata array",
+        "class_counts": {
+          "benign": 194482,
+          "malicious": 2278002
+        },
+        "parent_train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "historical_train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "historical_parent_as_subset": true,
+        "basis": "exact saved indices plus independent deterministic sampling reconstruction"
+      },
+      "metrics": {
+        "schema_version": "primary_metrics_v1",
+        "partition": "VALIDATION",
+        "threshold": 0.5,
+        "positive_class": "malicious",
+        "confusion_order": [
+          "benign",
+          "malicious"
+        ],
+        "TN": 83433,
+        "FP": 2,
+        "FN": 20,
+        "TP": 972917,
+        "accuracy": 0.9999791740030974,
+        "per_class": {
+          "benign": {
+            "precision": 0.9997603441458066,
+            "recall": 0.9999760292443219,
+            "f1": 0.9998681750635157,
+            "support": 83435
+          },
+          "malicious": {
+            "precision": 0.9999979443304119,
+            "recall": 0.9999794436844318,
+            "f1": 0.9999886939218524,
+            "support": 972937
+          }
+        },
+        "macro_f1": 0.999928434492684,
+        "fpr": 2.3970755678072752e-05,
+        "undefined_policy": "null"
+      },
+      "original_result": {
+        "path": "E:\\Document\\iotguard-cos30049hn-grp1-5\\xgb-rf-experiments\\rf_frac0.5_seed42\\result.json",
+        "sha256": "d99e869fbe87cc96bdff24bce95256498c3264de1fa88e4f5259dc6a2827db98",
+        "bytes": 2151
+      },
+      "evaluation_source_revision": "17c37f6eb6d90f3ffae95215b1024f8cf68a595d",
+      "evaluation_dirty_worktree": false,
+      "reported_training_environment": {
+        "python": "3.12.10",
+        "numpy": "2.5.4",
+        "scikit_learn": "1.9.1"
+      },
+      "evaluation_environment": {
+        "python": "3.11.15",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "packages": {
+          "numpy": "2.4.6",
+          "scikit-learn": "1.9.1",
+          "xgboost": "3.2.0",
+          "joblib": "1.6.0",
+          "scipy": "1.17.1",
+          "threadpoolctl": "3.7.0"
+        }
+      },
+      "reload_parity": "PASS",
+      "original_error_row_parity": "not available; independent full replay supplies new row-aligned evidence"
+    },
+    "rf_frac1_seed42": {
+      "receipt": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\rf_frac1_seed42\\acceptance.json",
+        "sha256": "4451587ee328f7595c89e3a33dc9912a2880361a49161e7975640119287cfd1f",
+        "bytes": 11374
+      },
+      "status": "PASS",
+      "model": {
+        "path": "E:\\Document\\iotguard-cos30049hn-grp1-5\\xgb-rf-experiments\\rf_frac1_seed42\\model.joblib",
+        "sha256": "71dea47f2def90aed7ab9b06dfb2b9a49865333bb58e28bbc3354582cbac21ee",
+        "bytes": 2013449
+      },
+      "population": {
+        "kind": "full",
+        "rows": 4944968,
+        "rows_in_train": 4944968,
+        "indices_sha256": "42ec378a8ec868ba237fd999e737f64e3eda27e319aa9bf4c228fd514fa46c2a",
+        "indices_representation": "sorted unique little-endian int64 bytes",
+        "train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "population_representation": "sha256 of NumPy v1 selected metadata array",
+        "class_counts": {
+          "benign": 388965,
+          "malicious": 4556003
+        },
+        "parent_train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "historical_train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "historical_parent_as_subset": false,
+        "basis": "exact saved indices plus independent deterministic sampling reconstruction"
+      },
+      "metrics": {
+        "schema_version": "primary_metrics_v1",
+        "partition": "VALIDATION",
+        "threshold": 0.5,
+        "positive_class": "malicious",
+        "confusion_order": [
+          "benign",
+          "malicious"
+        ],
+        "TN": 83434,
+        "FP": 1,
+        "FN": 29,
+        "TP": 972908,
+        "accuracy": 0.9999716009133146,
+        "per_class": {
+          "benign": {
+            "precision": 0.9996525406467537,
+            "recall": 0.9999880146221609,
+            "f1": 0.9998202494937027,
+            "support": 83435
+          },
+          "malicious": {
+            "precision": 0.9999989721546414,
+            "recall": 0.9999701933424261,
+            "f1": 0.9999845825414755,
+            "support": 972937
+          }
+        },
+        "macro_f1": 0.9999024160175891,
+        "fpr": 1.1985377839036376e-05,
+        "undefined_policy": "null"
+      },
+      "original_result": {
+        "path": "E:\\Document\\iotguard-cos30049hn-grp1-5\\xgb-rf-experiments\\rf_frac1_seed42\\result.json",
+        "sha256": "268b6aa6c4435e4f35f7f4dd1b7ee1d43509eedb59069551c4c62a2534d1f7c4",
+        "bytes": 2150
+      },
+      "evaluation_source_revision": "17c37f6eb6d90f3ffae95215b1024f8cf68a595d",
+      "evaluation_dirty_worktree": false,
+      "reported_training_environment": {
+        "python": "3.12.10",
+        "numpy": "2.5.4",
+        "scikit_learn": "1.9.1"
+      },
+      "evaluation_environment": {
+        "python": "3.11.15",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "packages": {
+          "numpy": "2.4.6",
+          "scikit-learn": "1.9.1",
+          "xgboost": "3.2.0",
+          "joblib": "1.6.0",
+          "scipy": "1.17.1",
+          "threadpoolctl": "3.7.0"
+        }
+      },
+      "reload_parity": "PASS",
+      "original_error_row_parity": "PASS: exact source file and 1-based row match on every original error"
+    },
+    "rf_frac1_seed42_leaf5": {
+      "receipt": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\rf_frac1_seed42_leaf5\\acceptance.json",
+        "sha256": "dd5465d67b67a4f06055ddf78a6f8b14eb7b59f93cb993026adce623c5d8e208",
+        "bytes": 11451
+      },
+      "status": "PASS",
+      "model": {
+        "path": "E:\\Document\\iotguard-cos30049hn-grp1-5\\xgb-rf-experiments\\rf_frac1_seed42_leaf5\\model.joblib",
+        "sha256": "fb12ae7e48fb2ac6e726e46c6c38d2e2736ca7d5426a07ee02f8b94de65e6998",
+        "bytes": 1852649
+      },
+      "population": {
+        "kind": "full",
+        "rows": 4944968,
+        "rows_in_train": 4944968,
+        "indices_sha256": "42ec378a8ec868ba237fd999e737f64e3eda27e319aa9bf4c228fd514fa46c2a",
+        "indices_representation": "sorted unique little-endian int64 bytes",
+        "train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "population_representation": "sha256 of NumPy v1 selected metadata array",
+        "class_counts": {
+          "benign": 388965,
+          "malicious": 4556003
+        },
+        "parent_train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "historical_train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "historical_parent_as_subset": false,
+        "basis": "exact saved indices plus independent deterministic sampling reconstruction"
+      },
+      "metrics": {
+        "schema_version": "primary_metrics_v1",
+        "partition": "VALIDATION",
+        "threshold": 0.5,
+        "positive_class": "malicious",
+        "confusion_order": [
+          "benign",
+          "malicious"
+        ],
+        "TN": 83434,
+        "FP": 1,
+        "FN": 38,
+        "TP": 972899,
+        "accuracy": 0.999963081187309,
+        "per_class": {
+          "benign": {
+            "precision": 0.9995447575234809,
+            "recall": 0.9999880146221609,
+            "f1": 0.9997663369421295,
+            "support": 83435
+          },
+          "malicious": {
+            "precision": 0.9999989721451331,
+            "recall": 0.9999609430004204,
+            "f1": 0.9999799572112156,
+            "support": 972937
+          }
+        },
+        "macro_f1": 0.9998731470766725,
+        "fpr": 1.1985377839036376e-05,
+        "undefined_policy": "null"
+      },
+      "original_result": {
+        "path": "E:\\Document\\iotguard-cos30049hn-grp1-5\\xgb-rf-experiments\\rf_frac1_seed42_leaf5\\result.json",
+        "sha256": "ccba2349437e3d2793915ab47672a2e8e9189e827a352a5095ad44e79317825d",
+        "bytes": 2190
+      },
+      "evaluation_source_revision": "17c37f6eb6d90f3ffae95215b1024f8cf68a595d",
+      "evaluation_dirty_worktree": false,
+      "reported_training_environment": {
+        "python": "3.12.10",
+        "numpy": "2.5.4",
+        "scikit_learn": "1.9.1"
+      },
+      "evaluation_environment": {
+        "python": "3.11.15",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "packages": {
+          "numpy": "2.4.6",
+          "scikit-learn": "1.9.1",
+          "xgboost": "3.2.0",
+          "joblib": "1.6.0",
+          "scipy": "1.17.1",
+          "threadpoolctl": "3.7.0"
+        }
+      },
+      "reload_parity": "PASS",
+      "original_error_row_parity": "PASS: exact source file and 1-based row match on every original error"
+    },
+    "rf_frac1_seed42_mf03": {
+      "receipt": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\rf_frac1_seed42_mf03\\acceptance.json",
+        "sha256": "71621354b9f2df3a5696cb2fe79b403d2699bd376208f0198be54a6d17b876fc",
+        "bytes": 11327
+      },
+      "status": "PASS",
+      "model": {
+        "path": "E:\\Document\\iotguard-cos30049hn-grp1-5\\xgb-rf-experiments\\rf_frac1_seed42_mf03\\model.joblib",
+        "sha256": "ab6a53cba2f4ecf8ade8d0ab35cb4d2f777b67a7e07eefaa721eb2cab6b248d0",
+        "bytes": 1433609
+      },
+      "population": {
+        "kind": "full",
+        "rows": 4944968,
+        "rows_in_train": 4944968,
+        "indices_sha256": "42ec378a8ec868ba237fd999e737f64e3eda27e319aa9bf4c228fd514fa46c2a",
+        "indices_representation": "sorted unique little-endian int64 bytes",
+        "train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "population_representation": "sha256 of NumPy v1 selected metadata array",
+        "class_counts": {
+          "benign": 388965,
+          "malicious": 4556003
+        },
+        "parent_train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "historical_train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "historical_parent_as_subset": false,
+        "basis": "exact saved indices plus independent deterministic sampling reconstruction"
+      },
+      "metrics": {
+        "schema_version": "primary_metrics_v1",
+        "partition": "VALIDATION",
+        "threshold": 0.5,
+        "positive_class": "malicious",
+        "confusion_order": [
+          "benign",
+          "malicious"
+        ],
+        "TN": 83430,
+        "FP": 5,
+        "FN": 47,
+        "TP": 972890,
+        "accuracy": 0.999950774916412,
+        "per_class": {
+          "benign": {
+            "precision": 0.9994369706625778,
+            "recall": 0.9999400731108048,
+            "f1": 0.999688458588957,
+            "support": 83435
+          },
+          "malicious": {
+            "precision": 0.9999948606992533,
+            "recall": 0.9999516926584147,
+            "f1": 0.9999732762129516,
+            "support": 972937
+          }
+        },
+        "macro_f1": 0.9998308674009544,
+        "fpr": 5.992688919518188e-05,
+        "undefined_policy": "null"
+      },
+      "original_result": {
+        "path": "E:\\Document\\iotguard-cos30049hn-grp1-5\\xgb-rf-experiments\\rf_frac1_seed42_mf03\\result.json",
+        "sha256": "3b9abae1bb49a0e572336ac4b3886a0722cdc7367503f7ddf4984266d3109e9b",
+        "bytes": 2184
+      },
+      "evaluation_source_revision": "17c37f6eb6d90f3ffae95215b1024f8cf68a595d",
+      "evaluation_dirty_worktree": false,
+      "reported_training_environment": {
+        "python": "3.12.10",
+        "numpy": "2.5.4",
+        "scikit_learn": "1.9.1"
+      },
+      "evaluation_environment": {
+        "python": "3.11.15",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "packages": {
+          "numpy": "2.4.6",
+          "scikit-learn": "1.9.1",
+          "xgboost": "3.2.0",
+          "joblib": "1.6.0",
+          "scipy": "1.17.1",
+          "threadpoolctl": "3.7.0"
+        }
+      },
+      "reload_parity": "PASS",
+      "original_error_row_parity": "not available; independent full replay supplies new row-aligned evidence"
+    },
+    "xgb_frac0.5_seed42": {
+      "receipt": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\xgb_frac0.5_seed42\\acceptance.json",
+        "sha256": "453734115ef756ab699ee257bc48b92da59f165a03930a4d034c56d64133818b",
+        "bytes": 14075
+      },
+      "status": "PASS",
+      "model": {
+        "path": "E:\\Document\\iotguard-cos30049hn-grp1-5\\xgb-rf-experiments\\xgb_frac0.5_seed42\\model.json",
+        "sha256": "5c9f9f17823272c33cacb9ef40152e6228ea5b9555cedb9aae08f153efaa9695",
+        "bytes": 151764
+      },
+      "population": {
+        "kind": "subset",
+        "rows": 2472484,
+        "rows_in_train": 4944968,
+        "indices_sha256": "a5ead1fd2fc354500192643a8e94e4325715d40fbcc824d744706d2b8032125f",
+        "indices_representation": "sorted unique little-endian int64 bytes",
+        "train_population_sha256": "b15d199c17492dd5592819ac692a193681b86d3eab522e75d5c5ce15834b721a",
+        "population_representation": "sha256 of NumPy v1 selected metadata array",
+        "class_counts": {
+          "benign": 194482,
+          "malicious": 2278002
+        },
+        "parent_train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "historical_train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "historical_parent_as_subset": true,
+        "basis": "exact saved indices plus independent deterministic sampling reconstruction"
+      },
+      "metrics": {
+        "schema_version": "primary_metrics_v1",
+        "partition": "VALIDATION",
+        "threshold": 0.5,
+        "positive_class": "malicious",
+        "confusion_order": [
+          "benign",
+          "malicious"
+        ],
+        "TN": 83434,
+        "FP": 1,
+        "FN": 27,
+        "TP": 972910,
+        "accuracy": 0.9999734941857603,
+        "per_class": {
+          "benign": {
+            "precision": 0.9996764956087274,
+            "recall": 0.9999880146221609,
+            "f1": 0.9998322308503499,
+            "support": 83435
+          },
+          "malicious": {
+            "precision": 0.9999989721567543,
+            "recall": 0.9999722489739828,
+            "f1": 0.9999856103868339,
+            "support": 972937
+          }
+        },
+        "macro_f1": 0.9999089206185918,
+        "fpr": 1.1985377839036376e-05,
+        "undefined_policy": "null"
+      },
+      "original_result": {
+        "path": "E:\\Document\\iotguard-cos30049hn-grp1-5\\xgb-rf-experiments\\xgb_frac0.5_seed42\\result.json",
+        "sha256": "58b665169d0d6d410e1111107a22ec5143560d5d5a905a94dca832118f4dc061",
+        "bytes": 2411
+      },
+      "evaluation_source_revision": "17c37f6eb6d90f3ffae95215b1024f8cf68a595d",
+      "evaluation_dirty_worktree": true,
+      "reported_training_environment": {
+        "python": "3.12.10",
+        "numpy": "2.5.4",
+        "xgboost": "3.4.1"
+      },
+      "evaluation_environment": {
+        "python": "3.11.15",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "packages": {
+          "numpy": "2.4.6",
+          "scikit-learn": "1.9.1",
+          "xgboost": "3.2.0",
+          "joblib": "1.6.0",
+          "scipy": "1.17.1",
+          "threadpoolctl": "3.7.0"
+        }
+      },
+      "reload_parity": "PASS",
+      "original_error_row_parity": "not available; independent full replay supplies new row-aligned evidence"
+    },
+    "xgb_frac1_seed42": {
+      "receipt": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\xgb_frac1_seed42\\acceptance.json",
+        "sha256": "a27db5d2082b9b6abb8f718075867de970a3575f6572846ea086423431ef677b",
+        "bytes": 14146
+      },
+      "status": "PASS",
+      "model": {
+        "path": "E:\\Document\\iotguard-cos30049hn-grp1-5\\xgb-rf-experiments\\xgb_frac1_seed42\\model.json",
+        "sha256": "2e47750d1505095a7b236e2205be25efcddd38960891aafcd68e5e15cc629aa7",
+        "bytes": 170816
+      },
+      "population": {
+        "kind": "full",
+        "rows": 4944968,
+        "rows_in_train": 4944968,
+        "indices_sha256": "42ec378a8ec868ba237fd999e737f64e3eda27e319aa9bf4c228fd514fa46c2a",
+        "indices_representation": "sorted unique little-endian int64 bytes",
+        "train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "population_representation": "sha256 of NumPy v1 selected metadata array",
+        "class_counts": {
+          "benign": 388965,
+          "malicious": 4556003
+        },
+        "parent_train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "historical_train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "historical_parent_as_subset": false,
+        "basis": "exact saved indices plus independent deterministic sampling reconstruction"
+      },
+      "metrics": {
+        "schema_version": "primary_metrics_v1",
+        "partition": "VALIDATION",
+        "threshold": 0.5,
+        "positive_class": "malicious",
+        "confusion_order": [
+          "benign",
+          "malicious"
+        ],
+        "TN": 83434,
+        "FP": 1,
+        "FN": 27,
+        "TP": 972910,
+        "accuracy": 0.9999734941857603,
+        "per_class": {
+          "benign": {
+            "precision": 0.9996764956087274,
+            "recall": 0.9999880146221609,
+            "f1": 0.9998322308503499,
+            "support": 83435
+          },
+          "malicious": {
+            "precision": 0.9999989721567543,
+            "recall": 0.9999722489739828,
+            "f1": 0.9999856103868339,
+            "support": 972937
+          }
+        },
+        "macro_f1": 0.9999089206185918,
+        "fpr": 1.1985377839036376e-05,
+        "undefined_policy": "null"
+      },
+      "original_result": {
+        "path": "E:\\Document\\iotguard-cos30049hn-grp1-5\\xgb-rf-experiments\\xgb_frac1_seed42\\result.json",
+        "sha256": "4dabe11319b737247bab14657a12bef0b765e93137e1a1cbacecbd30b680bfe1",
+        "bytes": 2360
+      },
+      "evaluation_source_revision": "17c37f6eb6d90f3ffae95215b1024f8cf68a595d",
+      "evaluation_dirty_worktree": true,
+      "reported_training_environment": {
+        "python": "3.12.10",
+        "numpy": "2.5.4",
+        "xgboost": "3.4.1"
+      },
+      "evaluation_environment": {
+        "python": "3.11.15",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "packages": {
+          "numpy": "2.4.6",
+          "scikit-learn": "1.9.1",
+          "xgboost": "3.2.0",
+          "joblib": "1.6.0",
+          "scipy": "1.17.1",
+          "threadpoolctl": "3.7.0"
+        }
+      },
+      "reload_parity": "PASS",
+      "original_error_row_parity": "PASS: exact source file and 1-based row match on every original error"
+    },
+    "xgb_frac1_seed42_d4": {
+      "receipt": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\xgb_frac1_seed42_d4\\acceptance.json",
+        "sha256": "4ad4f31772da1dc4de71bacaaa2ecb2734cd549ba71141d9e0e7e89941930951",
+        "bytes": 14124
+      },
+      "status": "PASS",
+      "model": {
+        "path": "E:\\Document\\iotguard-cos30049hn-grp1-5\\xgb-rf-experiments\\xgb_frac1_seed42_d4\\model.json",
+        "sha256": "3690027012aee02e891acf097ef8a3782995bfb2c35e169d8a93687dd2157867",
+        "bytes": 143478
+      },
+      "population": {
+        "kind": "full",
+        "rows": 4944968,
+        "rows_in_train": 4944968,
+        "indices_sha256": "42ec378a8ec868ba237fd999e737f64e3eda27e319aa9bf4c228fd514fa46c2a",
+        "indices_representation": "sorted unique little-endian int64 bytes",
+        "train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "population_representation": "sha256 of NumPy v1 selected metadata array",
+        "class_counts": {
+          "benign": 388965,
+          "malicious": 4556003
+        },
+        "parent_train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "historical_train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "historical_parent_as_subset": false,
+        "basis": "exact saved indices plus independent deterministic sampling reconstruction"
+      },
+      "metrics": {
+        "schema_version": "primary_metrics_v1",
+        "partition": "VALIDATION",
+        "threshold": 0.5,
+        "positive_class": "malicious",
+        "confusion_order": [
+          "benign",
+          "malicious"
+        ],
+        "TN": 83435,
+        "FP": 0,
+        "FN": 20,
+        "TP": 972917,
+        "accuracy": 0.999981067275543,
+        "per_class": {
+          "benign": {
+            "precision": 0.9997603498891618,
+            "recall": 1.0,
+            "f1": 0.9998801605848163,
+            "support": 83435
+          },
+          "malicious": {
+            "precision": 1.0,
+            "recall": 0.9999794436844318,
+            "f1": 0.9999897217365743,
+            "support": 972937
+          }
+        },
+        "macro_f1": 0.9999349411606953,
+        "fpr": 0.0,
+        "undefined_policy": "null"
+      },
+      "original_result": {
+        "path": "E:\\Document\\iotguard-cos30049hn-grp1-5\\xgb-rf-experiments\\xgb_frac1_seed42_d4\\result.json",
+        "sha256": "3b37d89c69f607bfe9c67934556878eb2d3a020ae2b150bd3920a382ca07f27c",
+        "bytes": 2369
+      },
+      "evaluation_source_revision": "17c37f6eb6d90f3ffae95215b1024f8cf68a595d",
+      "evaluation_dirty_worktree": true,
+      "reported_training_environment": {
+        "python": "3.12.10",
+        "numpy": "2.5.4",
+        "xgboost": "3.4.1"
+      },
+      "evaluation_environment": {
+        "python": "3.11.15",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "packages": {
+          "numpy": "2.4.6",
+          "scikit-learn": "1.9.1",
+          "xgboost": "3.2.0",
+          "joblib": "1.6.0",
+          "scipy": "1.17.1",
+          "threadpoolctl": "3.7.0"
+        }
+      },
+      "reload_parity": "PASS",
+      "original_error_row_parity": "PASS: exact source file and 1-based row match on every original error"
+    },
+    "xgb_frac1_seed42_d8": {
+      "receipt": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\xgb_frac1_seed42_d8\\acceptance.json",
+        "sha256": "d59214f17bd3e9d7b911cec86067c3194689707e2ccd5d31d55d5a58b18aee83",
+        "bytes": 14083
+      },
+      "status": "PASS",
+      "model": {
+        "path": "E:\\Document\\iotguard-cos30049hn-grp1-5\\xgb-rf-experiments\\xgb_frac1_seed42_d8\\model.json",
+        "sha256": "4fca9f3a7c10562802dd221c260de11e0acd4cfa34c43a9080a7660198ab953e",
+        "bytes": 197484
+      },
+      "population": {
+        "kind": "full",
+        "rows": 4944968,
+        "rows_in_train": 4944968,
+        "indices_sha256": "42ec378a8ec868ba237fd999e737f64e3eda27e319aa9bf4c228fd514fa46c2a",
+        "indices_representation": "sorted unique little-endian int64 bytes",
+        "train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "population_representation": "sha256 of NumPy v1 selected metadata array",
+        "class_counts": {
+          "benign": 388965,
+          "malicious": 4556003
+        },
+        "parent_train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "historical_train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "historical_parent_as_subset": false,
+        "basis": "exact saved indices plus independent deterministic sampling reconstruction"
+      },
+      "metrics": {
+        "schema_version": "primary_metrics_v1",
+        "partition": "VALIDATION",
+        "threshold": 0.5,
+        "positive_class": "malicious",
+        "confusion_order": [
+          "benign",
+          "malicious"
+        ],
+        "TN": 83434,
+        "FP": 1,
+        "FN": 29,
+        "TP": 972908,
+        "accuracy": 0.9999716009133146,
+        "per_class": {
+          "benign": {
+            "precision": 0.9996525406467537,
+            "recall": 0.9999880146221609,
+            "f1": 0.9998202494937027,
+            "support": 83435
+          },
+          "malicious": {
+            "precision": 0.9999989721546414,
+            "recall": 0.9999701933424261,
+            "f1": 0.9999845825414755,
+            "support": 972937
+          }
+        },
+        "macro_f1": 0.9999024160175891,
+        "fpr": 1.1985377839036376e-05,
+        "undefined_policy": "null"
+      },
+      "original_result": {
+        "path": "E:\\Document\\iotguard-cos30049hn-grp1-5\\xgb-rf-experiments\\xgb_frac1_seed42_d8\\result.json",
+        "sha256": "316081beeb5c6223fb6193fe5bc13930ed5f952b9667fcadf6dc53f0c4c58ea0",
+        "bytes": 2419
+      },
+      "evaluation_source_revision": "17c37f6eb6d90f3ffae95215b1024f8cf68a595d",
+      "evaluation_dirty_worktree": true,
+      "reported_training_environment": {
+        "python": "3.12.10",
+        "numpy": "2.5.4",
+        "xgboost": "3.4.1"
+      },
+      "evaluation_environment": {
+        "python": "3.11.15",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "packages": {
+          "numpy": "2.4.6",
+          "scikit-learn": "1.9.1",
+          "xgboost": "3.2.0",
+          "joblib": "1.6.0",
+          "scipy": "1.17.1",
+          "threadpoolctl": "3.7.0"
+        }
+      },
+      "reload_parity": "PASS",
+      "original_error_row_parity": "not available; independent full replay supplies new row-aligned evidence"
+    },
+    "xgb_frac1_seed42_lr01": {
+      "receipt": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\xgb_frac1_seed42_lr01\\acceptance.json",
+        "sha256": "e083c8ecc6173928d60533c1d51a1536b1d18b8b095bff77ca789d0b5599f384",
+        "bytes": 14142
+      },
+      "status": "PASS",
+      "model": {
+        "path": "E:\\Document\\iotguard-cos30049hn-grp1-5\\xgb-rf-experiments\\xgb_frac1_seed42_lr01\\model.json",
+        "sha256": "cb090afa6ad4c3618e20d7c5d635e89aa2d122667ea00835a0acc2f75a4455e6",
+        "bytes": 508170
+      },
+      "population": {
+        "kind": "full",
+        "rows": 4944968,
+        "rows_in_train": 4944968,
+        "indices_sha256": "42ec378a8ec868ba237fd999e737f64e3eda27e319aa9bf4c228fd514fa46c2a",
+        "indices_representation": "sorted unique little-endian int64 bytes",
+        "train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "population_representation": "sha256 of NumPy v1 selected metadata array",
+        "class_counts": {
+          "benign": 388965,
+          "malicious": 4556003
+        },
+        "parent_train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "historical_train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+        "historical_parent_as_subset": false,
+        "basis": "exact saved indices plus independent deterministic sampling reconstruction"
+      },
+      "metrics": {
+        "schema_version": "primary_metrics_v1",
+        "partition": "VALIDATION",
+        "threshold": 0.5,
+        "positive_class": "malicious",
+        "confusion_order": [
+          "benign",
+          "malicious"
+        ],
+        "TN": 83435,
+        "FP": 0,
+        "FN": 18,
+        "TP": 972919,
+        "accuracy": 0.9999829605479887,
+        "per_class": {
+          "benign": {
+            "precision": 0.999784309731226,
+            "recall": 1.0,
+            "f1": 0.9998921432337855,
+            "support": 83435
+          },
+          "malicious": {
+            "precision": 1.0,
+            "recall": 0.9999814993159886,
+            "f1": 0.9999907495724247,
+            "support": 972937
+          }
+        },
+        "macro_f1": 0.9999414464031051,
+        "fpr": 0.0,
+        "undefined_policy": "null"
+      },
+      "original_result": {
+        "path": "E:\\Document\\iotguard-cos30049hn-grp1-5\\xgb-rf-experiments\\xgb_frac1_seed42_lr01\\result.json",
+        "sha256": "fe12511913c77461ae27381573f171e7aa7c8b92fae8876e80276b92a850ecaa",
+        "bytes": 2371
+      },
+      "evaluation_source_revision": "17c37f6eb6d90f3ffae95215b1024f8cf68a595d",
+      "evaluation_dirty_worktree": true,
+      "reported_training_environment": {
+        "python": "3.12.10",
+        "numpy": "2.5.4",
+        "xgboost": "3.4.1"
+      },
+      "evaluation_environment": {
+        "python": "3.11.15",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "packages": {
+          "numpy": "2.4.6",
+          "scikit-learn": "1.9.1",
+          "xgboost": "3.2.0",
+          "joblib": "1.6.0",
+          "scipy": "1.17.1",
+          "threadpoolctl": "3.7.0"
+        }
+      },
+      "reload_parity": "PASS",
+      "original_error_row_parity": "PASS: exact source file and 1-based row match on every original error"
+    }
+  },
+  "full_ranking": [
+    "xgb_frac1_seed42_lr01",
+    "xgb_frac1_seed42_d4",
+    "xgb_frac1_seed42",
+    "rf_frac1_seed42",
+    "xgb_frac1_seed42_d8",
+    "rf_frac1_seed42_leaf5",
+    "rf_frac1_seed42_mf03",
+    "lr_full_20261102T011513018213Z",
+    "dummy_full_20261102T011513018213Z"
+  ],
+  "excluded_subsets": [
+    {
+      "run_id": "rf_frac0.05_seed42",
+      "reason": "Subset/diagnostic TRAIN: 247248 / 4944968 rows"
+    },
+    {
+      "run_id": "rf_frac0.1_seed42",
+      "reason": "Subset/diagnostic TRAIN: 494496 / 4944968 rows"
+    },
+    {
+      "run_id": "rf_frac0.25_seed42",
+      "reason": "Subset/diagnostic TRAIN: 1236242 / 4944968 rows"
+    },
+    {
+      "run_id": "rf_frac0.5_seed42",
+      "reason": "Subset/diagnostic TRAIN: 2472484 / 4944968 rows"
+    },
+    {
+      "run_id": "xgb_frac0.5_seed42",
+      "reason": "Subset/diagnostic TRAIN: 2472484 / 4944968 rows"
+    }
+  ],
+  "comparison": {
+    "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\comparison_01\\comparison.csv",
+    "sha256": "0b9763d60744a91625d3a6094b1cf8bc4c420e35539372edf089f6ac98844d47",
+    "bytes": 9380
+  },
+  "selection": {
+    "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\comparison_01\\selection.json",
+    "sha256": "1316d36ecf700d59d2e9696feca6393e54713463adab2a1b47926838adbfd830",
+    "bytes": 9382
+  },
+  "freeze": {
+    "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\frozen_model.json",
+    "sha256": "c9d3024579bf68c8c1ac85449a93dcbed07feb745ec89e43d2617c28b33a3397",
+    "bytes": 17105
+  },
+  "freeze_git_blob_sha256": "c9d3024579bf68c8c1ac85449a93dcbed07feb745ec89e43d2617c28b33a3397",
+  "freeze_git_values_match": true,
+  "final_receipt": {
+    "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\final_test_01\\receipt.json",
+    "sha256": "52cf0126b415eb69f1b4459f55ccab21203adb34157457392fe525a3e1a6c459",
+    "bytes": 14893
+  },
+  "final_metrics": {
+    "schema_version": "primary_final_metrics_v1",
+    "partition": "TEST",
+    "threshold": 0.5,
+    "positive_class": "malicious",
+    "confusion_order": [
+      "benign",
+      "malicious"
+    ],
+    "TN": 83531,
+    "FP": 1,
+    "FN": 11,
+    "TP": 977723,
+    "accuracy": 0.9999886927499797,
+    "per_class": {
+      "benign": {
+        "precision": 0.9998683297024251,
+        "recall": 0.9999880285399607,
+        "f1": 0.9999281755389827,
+        "support": 83532
+      },
+      "malicious": {
+        "precision": 0.9999989772164741,
+        "recall": 0.9999887494962842,
+        "f1": 0.9999938633302276,
+        "support": 977734
+      }
+    },
+    "macro_f1": 0.9999610194346051,
+    "fpr": 1.1971460039266389e-05,
+    "undefined_policy": "null"
+  },
+  "independent_sklearn_metrics": {
+    "TN": 83531,
+    "FP": 1,
+    "FN": 11,
+    "TP": 977723,
+    "accuracy": 0.9999886927499797,
+    "macro_f1": 0.9999610194346051,
+    "fpr": 1.1971460039266389e-05,
+    "per_class": {
+      "benign": {
+        "precision": 0.9998683297024251,
+        "recall": 0.9999880285399607,
+        "f1": 0.9999281755389827,
+        "support": 83532
+      },
+      "malicious": {
+        "precision": 0.9999989772164741,
+        "recall": 0.9999887494962842,
+        "f1": 0.9999938633302276,
+        "support": 977734
+      }
+    }
+  },
+  "gate_event_order": [
+    "STARTED",
+    "FREEZE_VALIDATED",
+    "PRETEST_GATE_PASS",
+    "TEST_ACCESS_STARTED",
+    "FINAL_TEST_COMPLETE"
+  ],
+  "metric_agreement_absolute_tolerance": 1e-15,
+  "model_deserialized_by_this_verifier": false,
+  "classifiers_fitted": false,
+  "new_TEST_inference_by_this_verifier": false
+}

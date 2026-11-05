@@ -1,0 +1,239 @@
+{
+  "schema_version": "primary_selection_v1",
+  "status": "VALIDATION_ONLY_SELECTED",
+  "rule": "shared select_validation: max macro-F1, within 1e-6 lower FPR then higher malicious recall; remaining exact ties preserve sorted run_id order",
+  "winner": "xgb_frac1_seed42_lr01",
+  "exact_ties_with_winner": [],
+  "ranking": [
+    "xgb_frac1_seed42_lr01",
+    "xgb_frac1_seed42_d4",
+    "xgb_frac1_seed42",
+    "rf_frac1_seed42",
+    "xgb_frac1_seed42_d8",
+    "rf_frac1_seed42_leaf5",
+    "rf_frac1_seed42_mf03",
+    "lr_full_20261102T011513018213Z",
+    "dummy_full_20261102T011513018213Z"
+  ],
+  "excluded": [
+    {
+      "run_id": "rf_frac0.05_seed42",
+      "reason": "Subset/diagnostic TRAIN: 247248 / 4944968 rows"
+    },
+    {
+      "run_id": "rf_frac0.1_seed42",
+      "reason": "Subset/diagnostic TRAIN: 494496 / 4944968 rows"
+    },
+    {
+      "run_id": "rf_frac0.25_seed42",
+      "reason": "Subset/diagnostic TRAIN: 1236242 / 4944968 rows"
+    },
+    {
+      "run_id": "rf_frac0.5_seed42",
+      "reason": "Subset/diagnostic TRAIN: 2472484 / 4944968 rows"
+    },
+    {
+      "run_id": "xgb_frac0.5_seed42",
+      "reason": "Subset/diagnostic TRAIN: 2472484 / 4944968 rows"
+    }
+  ],
+  "comparison": {
+    "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\comparison_01\\comparison.csv",
+    "sha256": "0b9763d60744a91625d3a6094b1cf8bc4c420e35539372edf089f6ac98844d47",
+    "bytes": 9380
+  },
+  "accepted_candidates": {
+    "dummy_full_20261102T011513018213Z": {
+      "result": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\dummy_full_20261102T011513018213Z\\result.json",
+        "sha256": "d300d8bab4238c8346c63483d2fd3b55011895561276937a6695019ed8ddc9f6",
+        "bytes": 2341
+      },
+      "acceptance": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\dummy_full_20261102T011513018213Z\\acceptance.json",
+        "sha256": "2eb9840a8f5a166a38670ae9a88cdfaf610829de3c2d8cc23edef33978d81942",
+        "bytes": 11190
+      }
+    },
+    "lr_full_20261102T011513018213Z": {
+      "result": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\lr_full_20261102T011513018213Z\\result.json",
+        "sha256": "0f0af82fa628fe946c3c44a4f435818363fe17d9339f8c3d42d1533cad0f2c54",
+        "bytes": 2925
+      },
+      "acceptance": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\lr_full_20261102T011513018213Z\\acceptance.json",
+        "sha256": "4b4340b6ffe97566b6f8b1c1e33f27339bd113422cdc5e428cbf276031ff9f71",
+        "bytes": 11563
+      }
+    },
+    "rf_frac1_seed42": {
+      "result": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\rf_frac1_seed42\\result.json",
+        "sha256": "268b6aa6c4435e4f35f7f4dd1b7ee1d43509eedb59069551c4c62a2534d1f7c4",
+        "bytes": 2150
+      },
+      "acceptance": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\rf_frac1_seed42\\acceptance.json",
+        "sha256": "4451587ee328f7595c89e3a33dc9912a2880361a49161e7975640119287cfd1f",
+        "bytes": 11374
+      }
+    },
+    "rf_frac1_seed42_leaf5": {
+      "result": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\rf_frac1_seed42_leaf5\\result.json",
+        "sha256": "ccba2349437e3d2793915ab47672a2e8e9189e827a352a5095ad44e79317825d",
+        "bytes": 2190
+      },
+      "acceptance": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\rf_frac1_seed42_leaf5\\acceptance.json",
+        "sha256": "dd5465d67b67a4f06055ddf78a6f8b14eb7b59f93cb993026adce623c5d8e208",
+        "bytes": 11451
+      }
+    },
+    "rf_frac1_seed42_mf03": {
+      "result": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\rf_frac1_seed42_mf03\\result.json",
+        "sha256": "3b9abae1bb49a0e572336ac4b3886a0722cdc7367503f7ddf4984266d3109e9b",
+        "bytes": 2184
+      },
+      "acceptance": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\rf_frac1_seed42_mf03\\acceptance.json",
+        "sha256": "71621354b9f2df3a5696cb2fe79b403d2699bd376208f0198be54a6d17b876fc",
+        "bytes": 11327
+      }
+    },
+    "xgb_frac1_seed42": {
+      "result": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\xgb_frac1_seed42\\result.json",
+        "sha256": "4dabe11319b737247bab14657a12bef0b765e93137e1a1cbacecbd30b680bfe1",
+        "bytes": 2360
+      },
+      "acceptance": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\xgb_frac1_seed42\\acceptance.json",
+        "sha256": "a27db5d2082b9b6abb8f718075867de970a3575f6572846ea086423431ef677b",
+        "bytes": 14146
+      }
+    },
+    "xgb_frac1_seed42_d4": {
+      "result": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\xgb_frac1_seed42_d4\\result.json",
+        "sha256": "3b37d89c69f607bfe9c67934556878eb2d3a020ae2b150bd3920a382ca07f27c",
+        "bytes": 2369
+      },
+      "acceptance": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\xgb_frac1_seed42_d4\\acceptance.json",
+        "sha256": "4ad4f31772da1dc4de71bacaaa2ecb2734cd549ba71141d9e0e7e89941930951",
+        "bytes": 14124
+      }
+    },
+    "xgb_frac1_seed42_d8": {
+      "result": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\xgb_frac1_seed42_d8\\result.json",
+        "sha256": "316081beeb5c6223fb6193fe5bc13930ed5f952b9667fcadf6dc53f0c4c58ea0",
+        "bytes": 2419
+      },
+      "acceptance": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\xgb_frac1_seed42_d8\\acceptance.json",
+        "sha256": "d59214f17bd3e9d7b911cec86067c3194689707e2ccd5d31d55d5a58b18aee83",
+        "bytes": 14083
+      }
+    },
+    "xgb_frac1_seed42_lr01": {
+      "result": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\xgb_frac1_seed42_lr01\\result.json",
+        "sha256": "fe12511913c77461ae27381573f171e7aa7c8b92fae8876e80276b92a850ecaa",
+        "bytes": 2371
+      },
+      "acceptance": {
+        "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\xgb_frac1_seed42_lr01\\acceptance.json",
+        "sha256": "e083c8ecc6173928d60533c1d51a1536b1d18b8b095bff77ca789d0b5599f384",
+        "bytes": 14142
+      }
+    }
+  },
+  "selected_result": {
+    "schema_version": "primary_result_v1",
+    "run_id": "xgb_frac1_seed42_lr01",
+    "protocol_revision": "primary_experiments_v1",
+    "code_revision": "4e2761146a610409d7a956cb82b95aee4dadd78e",
+    "package_version": "primary_package_v1",
+    "package_manifest_sha256": "6ab99e86397242e219bfa1f8490d8e03b169ec87a092af80cb3e7aef1e61147b",
+    "dirty_worktree": false,
+    "resolved_configuration": {
+      "seeds": {
+        "python": 42,
+        "numpy": 42,
+        "scikit_learn": 42
+      },
+      "parameters": {
+        "algorithm": "XGBoost",
+        "objective": "binary:logistic",
+        "tree_method": "hist",
+        "num_boost_round": 300,
+        "max_depth": 6,
+        "learning_rate": 0.1,
+        "max_bin": 256,
+        "min_child_weight": 1.0,
+        "subsample": 1.0,
+        "colsample_bytree": 1.0,
+        "reg_lambda": 1.0,
+        "scale_pos_weight": null,
+        "early_stopping": false,
+        "nthread": 2,
+        "seed": 42,
+        "fit_dtype": "float32, quantised into max_bin bins",
+        "train_sampling": {
+          "method": "none: all TRAIN rows",
+          "fraction": 1.0,
+          "seed": null,
+          "rows": 4944968,
+          "rows_in_train": 4944968,
+          "class_counts": {
+            "benign": 388965,
+            "malicious": 4556003
+          },
+          "indices_sha256": "42ec378a8ec868ba237fd999e737f64e3eda27e319aa9bf4c228fd514fa46c2a"
+        }
+      },
+      "input_view": "raw",
+      "threshold": 0.5,
+      "protocol_revision": "primary_experiments_v1"
+    },
+    "metrics": {
+      "schema_version": "primary_metrics_v1",
+      "partition": "VALIDATION",
+      "threshold": 0.5,
+      "positive_class": "malicious",
+      "confusion_order": [
+        "benign",
+        "malicious"
+      ],
+      "TN": 83435,
+      "FP": 0,
+      "FN": 18,
+      "TP": 972919,
+      "accuracy": 0.9999829605479887,
+      "per_class": {
+        "benign": {
+          "precision": 0.999784309731226,
+          "recall": 1.0,
+          "f1": 0.9998921432337855,
+          "support": 83435
+        },
+        "malicious": {
+          "precision": 1.0,
+          "recall": 0.9999814993159886,
+          "f1": 0.9999907495724247,
+          "support": 972937
+        }
+      },
+      "macro_f1": 0.9999414464031051,
+      "fpr": 0.0,
+      "undefined_policy": "null"
+    },
+    "train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+    "validation_population_sha256": "2d44c7b63c3c16fb19105ce504b39f6e31fa4145588c07c1d50f2417fad69103"
+  },
+  "TEST_used": false
+}

@@ -1,0 +1,486 @@
+{
+  "schema_version": "primary_model_freeze_v1",
+  "status": "FROZEN_VALIDATION_ONLY",
+  "created_utc": "2026-11-05T07:30:05.957061+00:00",
+  "selected_run_id": "xgb_frac1_seed42_lr01",
+  "training_source_revision": "4e2761146a610409d7a956cb82b95aee4dadd78e",
+  "training_dirty_worktree": false,
+  "evaluation_source": {
+    "revision": "07ae4615c9c59c52bda60e1530adde28bcf0aff3",
+    "dirty_worktree": false,
+    "implementation": {
+      "primary_runtime.py": {
+        "path": "C:\\Users\\Admin\\.codex\\worktrees\\iotguard-pr1-integration\\iotguard-cos30049hn-grp1-5\\ml\\src\\iotguard\\evaluation\\primary_runtime.py",
+        "sha256": "3f973f261b19523d2113605d46055aac7cbf369cf97541823e5cb717d61de099",
+        "bytes": 10576
+      },
+      "primary.py": {
+        "path": "C:\\Users\\Admin\\.codex\\worktrees\\iotguard-pr1-integration\\iotguard-cos30049hn-grp1-5\\ml\\src\\iotguard\\evaluation\\primary.py",
+        "sha256": "89affbbebae6854ee20142623803d205d6bd1b05b0619ca6c12d9f1e6c01a4cf",
+        "bytes": 6474
+      },
+      "population.py": {
+        "path": "C:\\Users\\Admin\\.codex\\worktrees\\iotguard-pr1-integration\\iotguard-cos30049hn-grp1-5\\ml\\src\\iotguard\\evaluation\\population.py",
+        "sha256": "dcaca231929c92d1246aa32b38d9fe0f0667fadc1970e3bcee175b08f04b84fb",
+        "bytes": 1736
+      },
+      "primary_final_evaluation.py": {
+        "path": "C:\\Users\\Admin\\.codex\\worktrees\\iotguard-pr1-integration\\iotguard-cos30049hn-grp1-5\\ml\\src\\iotguard\\evaluation\\primary_final_evaluation.py",
+        "sha256": "9fd32ce3e7e7c8af62ce1275088ff3e358a1feb1dcbee4eec300fae70b8621e9",
+        "bytes": 12525
+      },
+      "comparison.py": {
+        "path": "C:\\Users\\Admin\\.codex\\worktrees\\iotguard-pr1-integration\\iotguard-cos30049hn-grp1-5\\ml\\src\\iotguard\\evaluation\\comparison.py",
+        "sha256": "0118ee790f88184b527a5844e9128ac59338ad0803e95f3e723d4e4b580bb3df",
+        "bytes": 8342
+      },
+      "primary_acceptance.py": {
+        "path": "C:\\Users\\Admin\\.codex\\worktrees\\iotguard-pr1-integration\\iotguard-cos30049hn-grp1-5\\ml\\src\\iotguard\\evaluation\\primary_acceptance.py",
+        "sha256": "be163ac08f727565bfae9e229d0838632698c7d8c4b09dc54870d048372fdcf1",
+        "bytes": 13945
+      },
+      "final_primary_evaluation.py": {
+        "path": "C:\\Users\\Admin\\.codex\\worktrees\\iotguard-pr1-integration\\iotguard-cos30049hn-grp1-5\\ml\\scripts\\final_primary_evaluation.py",
+        "sha256": "7ea0ab3c4d58fe4644306ad09a3eee94f541a2759e959173e8b6f879e3c00eef",
+        "bytes": 1287
+      },
+      "primary_final_evaluation_v1.md": {
+        "path": "C:\\Users\\Admin\\.codex\\worktrees\\iotguard-pr1-integration\\iotguard-cos30049hn-grp1-5\\ml\\docs\\protocols\\primary_final_evaluation_v1.md",
+        "sha256": "261421706f903827741a9d726171443fb57609834372bda2e75c4ee9cd747dd0",
+        "bytes": 5156
+      }
+    }
+  },
+  "model": {
+    "path": "E:\\Document\\iotguard-cos30049hn-grp1-5\\xgb-rf-experiments\\xgb_frac1_seed42_lr01\\model.json",
+    "sha256": "cb090afa6ad4c3618e20d7c5d635e89aa2d122667ea00835a0acc2f75a4455e6",
+    "bytes": 508170
+  },
+  "selected_result": {
+    "schema_version": "primary_result_v1",
+    "run_id": "xgb_frac1_seed42_lr01",
+    "protocol_revision": "primary_experiments_v1",
+    "code_revision": "4e2761146a610409d7a956cb82b95aee4dadd78e",
+    "package_version": "primary_package_v1",
+    "package_manifest_sha256": "6ab99e86397242e219bfa1f8490d8e03b169ec87a092af80cb3e7aef1e61147b",
+    "dirty_worktree": false,
+    "resolved_configuration": {
+      "seeds": {
+        "python": 42,
+        "numpy": 42,
+        "scikit_learn": 42
+      },
+      "parameters": {
+        "algorithm": "XGBoost",
+        "objective": "binary:logistic",
+        "tree_method": "hist",
+        "num_boost_round": 300,
+        "max_depth": 6,
+        "learning_rate": 0.1,
+        "max_bin": 256,
+        "min_child_weight": 1.0,
+        "subsample": 1.0,
+        "colsample_bytree": 1.0,
+        "reg_lambda": 1.0,
+        "scale_pos_weight": null,
+        "early_stopping": false,
+        "nthread": 2,
+        "seed": 42,
+        "fit_dtype": "float32, quantised into max_bin bins",
+        "train_sampling": {
+          "method": "none: all TRAIN rows",
+          "fraction": 1.0,
+          "seed": null,
+          "rows": 4944968,
+          "rows_in_train": 4944968,
+          "class_counts": {
+            "benign": 388965,
+            "malicious": 4556003
+          },
+          "indices_sha256": "42ec378a8ec868ba237fd999e737f64e3eda27e319aa9bf4c228fd514fa46c2a"
+        }
+      },
+      "input_view": "raw",
+      "threshold": 0.5,
+      "protocol_revision": "primary_experiments_v1"
+    },
+    "metrics": {
+      "schema_version": "primary_metrics_v1",
+      "partition": "VALIDATION",
+      "threshold": 0.5,
+      "positive_class": "malicious",
+      "confusion_order": [
+        "benign",
+        "malicious"
+      ],
+      "TN": 83435,
+      "FP": 0,
+      "FN": 18,
+      "TP": 972919,
+      "accuracy": 0.9999829605479887,
+      "per_class": {
+        "benign": {
+          "precision": 0.999784309731226,
+          "recall": 1.0,
+          "f1": 0.9998921432337855,
+          "support": 83435
+        },
+        "malicious": {
+          "precision": 1.0,
+          "recall": 0.9999814993159886,
+          "f1": 0.9999907495724247,
+          "support": 972937
+        }
+      },
+      "macro_f1": 0.9999414464031051,
+      "fpr": 0.0,
+      "undefined_policy": "null"
+    },
+    "train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+    "validation_population_sha256": "2d44c7b63c3c16fb19105ce504b39f6e31fa4145588c07c1d50f2417fad69103"
+  },
+  "selection": {
+    "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\comparison_01\\selection.json",
+    "sha256": "1316d36ecf700d59d2e9696feca6393e54713463adab2a1b47926838adbfd830",
+    "bytes": 9382
+  },
+  "comparison": {
+    "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\comparison_01\\comparison.csv",
+    "sha256": "0b9763d60744a91625d3a6094b1cf8bc4c420e35539372edf089f6ac98844d47",
+    "bytes": 9380
+  },
+  "selected_acceptance": {
+    "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\xgb_frac1_seed42_lr01\\acceptance.json",
+    "sha256": "e083c8ecc6173928d60533c1d51a1536b1d18b8b095bff77ca789d0b5599f384",
+    "bytes": 14142
+  },
+  "validation_payloads": {
+    "labels.npy": {
+      "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\xgb_frac1_seed42_lr01\\labels.npy",
+      "sha256": "4b0dafa2e0caef115c1474e4caa2c6982f93c743805285c9de703b0823b70d71",
+      "bytes": 1056500
+    },
+    "metadata.npy": {
+      "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\xgb_frac1_seed42_lr01\\metadata.npy",
+      "sha256": "2d44c7b63c3c16fb19105ce504b39f6e31fa4145588c07c1d50f2417fad69103",
+      "bytes": 10563848
+    },
+    "predictions.npy": {
+      "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\xgb_frac1_seed42_lr01\\predictions.npy",
+      "sha256": "83582e87ec37813403a9b0927c3c3e8af885a65035bb781143bff949952a3682",
+      "bytes": 1056500
+    },
+    "probabilities.npy": {
+      "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\xgb_frac1_seed42_lr01\\probabilities.npy",
+      "sha256": "bc68c15d46a4e87ab0af4d64d0f9e53c2b6f74f57bbce52f8a7260817d0139f1",
+      "bytes": 8451104
+    },
+    "result.json": {
+      "path": "E:\\Document\\iotguard_run_reviews\\a2_final_20261105_01\\accepted_01\\xgb_frac1_seed42_lr01\\result.json",
+      "sha256": "fe12511913c77461ae27381573f171e7aa7c8b92fae8876e80276b92a850ecaa",
+      "bytes": 2371
+    }
+  },
+  "package": {
+    "root": "E:\\Document\\iotguard_primary_packages\\g3b_primary_v1",
+    "manifest": {
+      "path": "E:\\Document\\iotguard_primary_packages\\g3b_primary_v1\\manifest.json",
+      "sha256": "6ab99e86397242e219bfa1f8490d8e03b169ec87a092af80cb3e7aef1e61147b",
+      "bytes": 81121
+    },
+    "version": "primary_package_v1",
+    "counts": {
+      "TRAIN": 4944968,
+      "VALIDATION": 1056372,
+      "TEST": 1061266
+    },
+    "partition_payloads": {
+      "TRAIN": {
+        "X": {
+          "bytes": 4549370688,
+          "sha256": "b70dd028f5168881ffd36fd36211c2d6e36086fd590b506d7d8870c5ea5d40e4"
+        },
+        "y": {
+          "bytes": 4945096,
+          "sha256": "e5d8aa74dd9c5dc0c28ef35bb5dd73b0a8f116a708c79076f81cb5d4b683bece"
+        },
+        "metadata": {
+          "bytes": 49449808,
+          "sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080"
+        }
+      },
+      "VALIDATION": {
+        "X": {
+          "bytes": 971862368,
+          "sha256": "061d4cec649d5fd6aa8efa7e49f301962dd0abe969a2512de034449f5943aff3"
+        },
+        "y": {
+          "bytes": 1056500,
+          "sha256": "4b0dafa2e0caef115c1474e4caa2c6982f93c743805285c9de703b0823b70d71"
+        },
+        "metadata": {
+          "bytes": 10563848,
+          "sha256": "2d44c7b63c3c16fb19105ce504b39f6e31fa4145588c07c1d50f2417fad69103"
+        }
+      },
+      "TEST": {
+        "X": {
+          "bytes": 976364848,
+          "sha256": "4aadc25ef8cb22d32c13d9649ad6dbee5072b3b35b94d00e08767615a4d22a20"
+        },
+        "y": {
+          "bytes": 1061394,
+          "sha256": "f33819b4b6ce05117c6d5e3ebd22f99ee86eb4bcf9347d6f30f49fd8745bc673"
+        },
+        "metadata": {
+          "bytes": 10612788,
+          "sha256": "a12cc62efb5dccb68f4a27b1bf1db16529ebd852e6bebeef55c4e77cf31f51be"
+        }
+      }
+    }
+  },
+  "input_contract": {
+    "family": "XGB",
+    "input_view": "raw",
+    "fit_dtype": "float32",
+    "feature_order": [
+      "MI_dir_L5_weight",
+      "MI_dir_L5_mean",
+      "MI_dir_L5_variance",
+      "MI_dir_L3_weight",
+      "MI_dir_L3_mean",
+      "MI_dir_L3_variance",
+      "MI_dir_L1_weight",
+      "MI_dir_L1_mean",
+      "MI_dir_L1_variance",
+      "MI_dir_L0.1_weight",
+      "MI_dir_L0.1_mean",
+      "MI_dir_L0.1_variance",
+      "MI_dir_L0.01_weight",
+      "MI_dir_L0.01_mean",
+      "MI_dir_L0.01_variance",
+      "H_L5_weight",
+      "H_L5_mean",
+      "H_L5_variance",
+      "H_L3_weight",
+      "H_L3_mean",
+      "H_L3_variance",
+      "H_L1_weight",
+      "H_L1_mean",
+      "H_L1_variance",
+      "H_L0.1_weight",
+      "H_L0.1_mean",
+      "H_L0.1_variance",
+      "H_L0.01_weight",
+      "H_L0.01_mean",
+      "H_L0.01_variance",
+      "HH_L5_weight",
+      "HH_L5_mean",
+      "HH_L5_std",
+      "HH_L5_magnitude",
+      "HH_L5_radius",
+      "HH_L5_covariance",
+      "HH_L5_pcc",
+      "HH_L3_weight",
+      "HH_L3_mean",
+      "HH_L3_std",
+      "HH_L3_magnitude",
+      "HH_L3_radius",
+      "HH_L3_covariance",
+      "HH_L3_pcc",
+      "HH_L1_weight",
+      "HH_L1_mean",
+      "HH_L1_std",
+      "HH_L1_magnitude",
+      "HH_L1_radius",
+      "HH_L1_covariance",
+      "HH_L1_pcc",
+      "HH_L0.1_weight",
+      "HH_L0.1_mean",
+      "HH_L0.1_std",
+      "HH_L0.1_magnitude",
+      "HH_L0.1_radius",
+      "HH_L0.1_covariance",
+      "HH_L0.1_pcc",
+      "HH_L0.01_weight",
+      "HH_L0.01_mean",
+      "HH_L0.01_std",
+      "HH_L0.01_magnitude",
+      "HH_L0.01_radius",
+      "HH_L0.01_covariance",
+      "HH_L0.01_pcc",
+      "HH_jit_L5_weight",
+      "HH_jit_L5_mean",
+      "HH_jit_L5_variance",
+      "HH_jit_L3_weight",
+      "HH_jit_L3_mean",
+      "HH_jit_L3_variance",
+      "HH_jit_L1_weight",
+      "HH_jit_L1_mean",
+      "HH_jit_L1_variance",
+      "HH_jit_L0.1_weight",
+      "HH_jit_L0.1_mean",
+      "HH_jit_L0.1_variance",
+      "HH_jit_L0.01_weight",
+      "HH_jit_L0.01_mean",
+      "HH_jit_L0.01_variance",
+      "HpHp_L5_weight",
+      "HpHp_L5_mean",
+      "HpHp_L5_std",
+      "HpHp_L5_magnitude",
+      "HpHp_L5_radius",
+      "HpHp_L5_covariance",
+      "HpHp_L5_pcc",
+      "HpHp_L3_weight",
+      "HpHp_L3_mean",
+      "HpHp_L3_std",
+      "HpHp_L3_magnitude",
+      "HpHp_L3_radius",
+      "HpHp_L3_covariance",
+      "HpHp_L3_pcc",
+      "HpHp_L1_weight",
+      "HpHp_L1_mean",
+      "HpHp_L1_std",
+      "HpHp_L1_magnitude",
+      "HpHp_L1_radius",
+      "HpHp_L1_covariance",
+      "HpHp_L1_pcc",
+      "HpHp_L0.1_weight",
+      "HpHp_L0.1_mean",
+      "HpHp_L0.1_std",
+      "HpHp_L0.1_magnitude",
+      "HpHp_L0.1_radius",
+      "HpHp_L0.1_covariance",
+      "HpHp_L0.1_pcc",
+      "HpHp_L0.01_weight",
+      "HpHp_L0.01_mean",
+      "HpHp_L0.01_std",
+      "HpHp_L0.01_magnitude",
+      "HpHp_L0.01_radius",
+      "HpHp_L0.01_covariance",
+      "HpHp_L0.01_pcc"
+    ],
+    "feature_contract": {
+      "path": "E:\\Document\\iotguard_primary_packages\\g3b_primary_v1\\n_baiot_feature_contract_v1.json",
+      "sha256": "47ca15c45ba9f30182c4762b47f7291d934f6de07270147c844dd5e25e21fd50",
+      "bytes": 5922
+    },
+    "scaler": {
+      "path": "E:\\Document\\iotguard_primary_packages\\g3b_primary_v1\\scaler.json",
+      "sha256": "f166f5982b8b7d6e6809f85047fda727b6523253ce3acef97266ff212161e394",
+      "bytes": 8761
+    },
+    "label_mapping": {
+      "benign": 0,
+      "malicious": 1
+    },
+    "threshold": 0.5
+  },
+  "reported_training_environment": {
+    "python": "3.12.10",
+    "numpy": "2.5.4",
+    "xgboost": "3.4.1"
+  },
+  "accepted_validation_environment": {
+    "python": "3.11.15",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.4.6",
+      "scikit-learn": "1.9.1",
+      "xgboost": "3.2.0",
+      "joblib": "1.6.0",
+      "scipy": "1.17.1",
+      "threadpoolctl": "3.7.0"
+    }
+  },
+  "final_evaluation_environment": {
+    "python": "3.11.15",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.4.6",
+      "scikit-learn": "1.9.1",
+      "xgboost": "3.2.0",
+      "joblib": "1.6.0",
+      "scipy": "1.17.1",
+      "threadpoolctl": "3.7.0"
+    }
+  },
+  "package_pretest_verification": {
+    "status": "PASS",
+    "manifest": {
+      "path": "E:\\Document\\iotguard_primary_packages\\g3b_primary_v1\\manifest.json",
+      "sha256": "6ab99e86397242e219bfa1f8490d8e03b169ec87a092af80cb3e7aef1e61147b",
+      "bytes": 81121
+    },
+    "checked_payloads": {
+      "n_baiot_feature_contract_v1.json": {
+        "bytes": 5922,
+        "sha256": "47ca15c45ba9f30182c4762b47f7291d934f6de07270147c844dd5e25e21fd50"
+      },
+      "n_baiot_label_contract_v1.json": {
+        "bytes": 1030,
+        "sha256": "bdffcdedf675941b9317935b7c124480bf6125092d2de82f49d03fe1aa8b6191"
+      },
+      "n_baiot_primary_split_contract_v1.json": {
+        "bytes": 5811,
+        "sha256": "f9097635b235e69f78c6467e7b97a013a2038504fae9d868d9f0ca52edbe9996"
+      },
+      "n_baiot_record_contract_v1.json": {
+        "bytes": 1626,
+        "sha256": "a076e9e0754dd2a2e693ec187f2daa093f0630cb4e93614d0c698069b29a9594"
+      },
+      "primary_package.py": {
+        "bytes": 5157,
+        "sha256": "2521cc787286964eff8a97836cf407fc1f47d04c80d99bbc32c1a6e21f49e673"
+      },
+      "scaler.json": {
+        "bytes": 8761,
+        "sha256": "f166f5982b8b7d6e6809f85047fda727b6523253ce3acef97266ff212161e394"
+      },
+      "TRAIN_metadata.npy": {
+        "bytes": 49449808,
+        "sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080"
+      },
+      "TRAIN_X.npy": {
+        "bytes": 4549370688,
+        "sha256": "b70dd028f5168881ffd36fd36211c2d6e36086fd590b506d7d8870c5ea5d40e4"
+      },
+      "TRAIN_y.npy": {
+        "bytes": 4945096,
+        "sha256": "e5d8aa74dd9c5dc0c28ef35bb5dd73b0a8f116a708c79076f81cb5d4b683bece"
+      },
+      "VALIDATION_metadata.npy": {
+        "bytes": 10563848,
+        "sha256": "2d44c7b63c3c16fb19105ce504b39f6e31fa4145588c07c1d50f2417fad69103"
+      },
+      "VALIDATION_X.npy": {
+        "bytes": 971862368,
+        "sha256": "061d4cec649d5fd6aa8efa7e49f301962dd0abe969a2512de034449f5943aff3"
+      },
+      "VALIDATION_y.npy": {
+        "bytes": 1056500,
+        "sha256": "4b0dafa2e0caef115c1474e4caa2c6982f93c743805285c9de703b0823b70d71"
+      },
+      "README.md": {
+        "bytes": 2096,
+        "sha256": "e96e82eb00c08cb64c40d5f27ca136529d4c11eac41bab5150cbb8533cd6c5c4"
+      },
+      "verify_primary_package.py": {
+        "bytes": 5404,
+        "sha256": "6ae3acdf644005ea4f90f67a0086cdaa60b396bc643b32b05f2eace5fa4b0cfb"
+      }
+    },
+    "partitions": [
+      "TRAIN",
+      "VALIDATION"
+    ],
+    "TEST_opened": false
+  },
+  "decision_basis": "Accepted full TRAIN and full VALIDATION only; shared selector unchanged",
+  "TEST_opened": false,
+  "TEST_metrics_seen": false,
+  "no_refit": true,
+  "threshold_locked": 0.5,
+  "original_experiment_owner": "Le Minh Hieu",
+  "selection_and_final_evaluation_owner": "Phan Nguyen Son"
+}

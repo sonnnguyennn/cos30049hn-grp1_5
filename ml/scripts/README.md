@@ -1,5 +1,24 @@
 # Utility scripts
 
+Current primary classifier workflow (see
+`docs/handoffs/A2_CLASSIFIER_EVALUATION.md` and the additive final evaluation protocol):
+
+- `inventory_primary_evidence.py`: read-only original file checksums/source lineage.
+- `accept_primary_classifiers.py`: exact actual membership and full VALIDATION replay;
+  separate original-compatible LR runtime, no fitting or TEST access.
+- `compare_runs.py --runs-dir <accepted-root> --out <new-dir>`: receipt-bound Full pool,
+  complete class metrics, strict identity checks and unchanged shared selection policy.
+- `final_primary_evaluation.py freeze`: committed-code, validation-only model freeze;
+  `evaluate`: verifies that freeze and VALIDATION parity before full final TEST inference.
+- `verify_primary_final_evidence.py`: independent sklearn metric/hash verification,
+  without model execution or retraining.
+- `build_primary_inference_handoff.py`: external model/contract/example ZIP and checksum
+  manifest; portable verification requires no raw dataset or checkout.
+
+Acceptance/final outputs use fresh external paths. Original evidence and package
+manifests are immutable. Updated RF/XGB training entry points refuse local fitting,
+record actual subset metadata fingerprints and retain parent TRAIN identity.
+
 All scripts are non-destructive. `check_environment.py` reports local runtime details and `check_data_paths.py` checks configured roots without recursive scanning.
 
 `dataset_inventory.py` implements A1. It recursively inventories both read-only roots, always streams SHA-256 for every regular file, inspects supported archive metadata without extraction, and writes two deterministic manifests plus a provenance summary under `artifacts/`. Configure roots with the environment variables documented in `.env.example`, explicit CLI arguments, or ignored `config/data_paths.local.yaml`. See `docs/protocols/dataset_audit_protocol.md` for the exact contract and rerun commands.

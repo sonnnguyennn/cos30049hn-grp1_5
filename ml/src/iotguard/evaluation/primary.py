@@ -67,6 +67,11 @@ def binary_metrics(y_true, probabilities, *, partition="VALIDATION", threshold=0
     """Undefined rates are JSON null, never invented zeroes."""
     if partition not in {"TRAIN", "VALIDATION"}:
         raise ValueError("TEST evaluation is sealed in G3B")
+    return _binary_metrics_core(y_true, probabilities, partition=partition, threshold=threshold)
+
+
+def _binary_metrics_core(y_true, probabilities, *, partition, threshold=0.5):
+    """Identical arithmetic for training reporting and the separate freeze-gated final workflow."""
     y = np.asarray(y_true)
     p = np.asarray(probabilities, dtype=np.float64)
     if (y.ndim != 1 or p.shape != y.shape or not len(y)
