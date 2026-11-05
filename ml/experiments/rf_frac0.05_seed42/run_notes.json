@@ -1,0 +1,21 @@
+{
+  "run_id": "rf_frac0.05_seed42",
+  "validation_rows": 1056372,
+  "resources": {
+    "load_sample_seconds": 17.7,
+    "fit_seconds": 33.1,
+    "validation_predict_seconds": 4.3,
+    "model_size_mb": 0.8,
+    "peak_memory": {
+      "peak_working_set_mb": 2264.6,
+      "peak_private_mb": 1228.7
+    }
+  },
+  "environment": {
+    "python": "3.12.10",
+    "numpy": "2.5.4",
+    "scikit_learn": "1.9.1"
+  },
+  "uncommitted_files_at_start": [],
+  "test_partition_used": false
+}
