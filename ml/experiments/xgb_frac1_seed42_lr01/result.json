@@ -1,0 +1,83 @@
+{
+  "schema_version": "primary_result_v1",
+  "run_id": "xgb_frac1_seed42_lr01",
+  "protocol_revision": "primary_experiments_v1",
+  "code_revision": "4e2761146a610409d7a956cb82b95aee4dadd78e",
+  "package_version": "primary_package_v1",
+  "package_manifest_sha256": "6ab99e86397242e219bfa1f8490d8e03b169ec87a092af80cb3e7aef1e61147b",
+  "dirty_worktree": false,
+  "resolved_configuration": {
+    "seeds": {
+      "python": 42,
+      "numpy": 42,
+      "scikit_learn": 42
+    },
+    "parameters": {
+      "algorithm": "XGBoost",
+      "objective": "binary:logistic",
+      "tree_method": "hist",
+      "num_boost_round": 300,
+      "max_depth": 6,
+      "learning_rate": 0.1,
+      "max_bin": 256,
+      "min_child_weight": 1.0,
+      "subsample": 1.0,
+      "colsample_bytree": 1.0,
+      "reg_lambda": 1.0,
+      "scale_pos_weight": null,
+      "early_stopping": false,
+      "nthread": 2,
+      "seed": 42,
+      "fit_dtype": "float32, quantised into max_bin bins",
+      "train_sampling": {
+        "method": "none: all TRAIN rows",
+        "fraction": 1.0,
+        "seed": null,
+        "rows": 4944968,
+        "rows_in_train": 4944968,
+        "class_counts": {
+          "benign": 388965,
+          "malicious": 4556003
+        },
+        "indices_sha256": "42ec378a8ec868ba237fd999e737f64e3eda27e319aa9bf4c228fd514fa46c2a"
+      }
+    },
+    "input_view": "raw",
+    "threshold": 0.5,
+    "protocol_revision": "primary_experiments_v1"
+  },
+  "metrics": {
+    "schema_version": "primary_metrics_v1",
+    "partition": "VALIDATION",
+    "threshold": 0.5,
+    "positive_class": "malicious",
+    "confusion_order": [
+      "benign",
+      "malicious"
+    ],
+    "TN": 83435,
+    "FP": 0,
+    "FN": 18,
+    "TP": 972919,
+    "accuracy": 0.9999829605479887,
+    "per_class": {
+      "benign": {
+        "precision": 0.999784309731226,
+        "recall": 1.0,
+        "f1": 0.9998921432337855,
+        "support": 83435
+      },
+      "malicious": {
+        "precision": 1.0,
+        "recall": 0.9999814993159886,
+        "f1": 0.9999907495724247,
+        "support": 972937
+      }
+    },
+    "macro_f1": 0.9999414464031051,
+    "fpr": 0.0,
+    "undefined_policy": "null"
+  },
+  "train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+  "validation_population_sha256": "2d44c7b63c3c16fb19105ce504b39f6e31fa4145588c07c1d50f2417fad69103"
+}

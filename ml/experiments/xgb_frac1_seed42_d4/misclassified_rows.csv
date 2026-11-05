@@ -1,0 +1,21 @@
+type,device,traffic_type,source_file,source_row,p_malicious,vector_id
+FN (missed attack),Danmini_Doorbell,gafgyt_tcp,Danmini_Doorbell/gafgyt_attacks/tcp.csv,20529,0.0716,90bdbc2ff83b6493
+FN (missed attack),Danmini_Doorbell,gafgyt_udp,Danmini_Doorbell/gafgyt_attacks/udp.csv,100322,0.0869,66ce5f802fdae4c5
+FN (missed attack),Ecobee_Thermostat,gafgyt_tcp,Ecobee_Thermostat/gafgyt_attacks/tcp.csv,22110,0.0716,90bdbc2ff83b6493
+FN (missed attack),Ecobee_Thermostat,gafgyt_udp,Ecobee_Thermostat/gafgyt_attacks/udp.csv,93307,0.0869,66ce5f802fdae4c5
+FN (missed attack),Ennio_Doorbell,gafgyt_tcp,Ennio_Doorbell/gafgyt_attacks/tcp.csv,23238,0.0716,90bdbc2ff83b6493
+FN (missed attack),Ennio_Doorbell,gafgyt_udp,Ennio_Doorbell/gafgyt_attacks/udp.csv,96894,0.0869,66ce5f802fdae4c5
+FN (missed attack),Philips_B120N10_Baby_Monitor,gafgyt_tcp,Philips_B120N10_Baby_Monitor/gafgyt_attacks/tcp.csv,23545,0.0716,90bdbc2ff83b6493
+FN (missed attack),Philips_B120N10_Baby_Monitor,gafgyt_udp,Philips_B120N10_Baby_Monitor/gafgyt_attacks/udp.csv,99044,0.0869,66ce5f802fdae4c5
+FN (missed attack),Provision_PT_737E_Security_Camera,gafgyt_tcp,Provision_PT_737E_Security_Camera/gafgyt_attacks/tcp.csv,1834,0.0911,9c1a5ca154a08c93
+FN (missed attack),Provision_PT_737E_Security_Camera,gafgyt_tcp,Provision_PT_737E_Security_Camera/gafgyt_attacks/tcp.csv,26453,0.0716,90bdbc2ff83b6493
+FN (missed attack),Provision_PT_737E_Security_Camera,gafgyt_udp,Provision_PT_737E_Security_Camera/gafgyt_attacks/udp.csv,96958,0.0869,66ce5f802fdae4c5
+FN (missed attack),Provision_PT_838_Security_Camera,gafgyt_tcp,Provision_PT_838_Security_Camera/gafgyt_attacks/tcp.csv,19874,0.0716,90bdbc2ff83b6493
+FN (missed attack),Provision_PT_838_Security_Camera,gafgyt_udp,Provision_PT_838_Security_Camera/gafgyt_attacks/udp.csv,97723,0.0869,66ce5f802fdae4c5
+FN (missed attack),Samsung_SNH_1011_N_Webcam,gafgyt_tcp,Samsung_SNH_1011_N_Webcam/gafgyt_attacks/tcp.csv,20705,0.0716,90bdbc2ff83b6493
+FN (missed attack),Samsung_SNH_1011_N_Webcam,gafgyt_udp,Samsung_SNH_1011_N_Webcam/gafgyt_attacks/udp.csv,97184,0.0869,66ce5f802fdae4c5
+FN (missed attack),SimpleHome_XCS7_1002_WHT_Security_Camera,gafgyt_tcp,SimpleHome_XCS7_1002_WHT_Security_Camera/gafgyt_attacks/tcp.csv,19902,0.0716,90bdbc2ff83b6493
+FN (missed attack),SimpleHome_XCS7_1002_WHT_Security_Camera,gafgyt_udp,SimpleHome_XCS7_1002_WHT_Security_Camera/gafgyt_attacks/udp.csv,93399,0.0869,66ce5f802fdae4c5
+FN (missed attack),SimpleHome_XCS7_1003_WHT_Security_Camera,gafgyt_tcp,SimpleHome_XCS7_1003_WHT_Security_Camera/gafgyt_attacks/tcp.csv,1985,0.0911,9c1a5ca154a08c93
+FN (missed attack),SimpleHome_XCS7_1003_WHT_Security_Camera,gafgyt_tcp,SimpleHome_XCS7_1003_WHT_Security_Camera/gafgyt_attacks/tcp.csv,26604,0.0716,90bdbc2ff83b6493
+FN (missed attack),SimpleHome_XCS7_1003_WHT_Security_Camera,gafgyt_udp,SimpleHome_XCS7_1003_WHT_Security_Camera/gafgyt_attacks/udp.csv,100151,0.0869,66ce5f802fdae4c5

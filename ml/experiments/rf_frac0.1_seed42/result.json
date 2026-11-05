@@ -1,0 +1,72 @@
+{
+  "schema_version": "primary_result_v1",
+  "run_id": "rf_frac0.1_seed42",
+  "protocol_revision": "primary_experiments_v1",
+  "code_revision": "b959b19d31b437009c695c4c037579688e497156",
+  "package_version": "primary_package_v1",
+  "package_manifest_sha256": "6ab99e86397242e219bfa1f8490d8e03b169ec87a092af80cb3e7aef1e61147b",
+  "dirty_worktree": false,
+  "resolved_configuration": {
+    "seeds": {
+      "python": 42,
+      "numpy": 42,
+      "scikit_learn": 42
+    },
+    "parameters": {
+      "algorithm": "RandomForestClassifier",
+      "n_estimators": 100,
+      "class_weight": null,
+      "random_state": 42,
+      "fit_dtype": "float32",
+      "train_sampling": {
+        "method": "random sample inside TRAIN, same fraction per class, seeded, TRAIN only",
+        "fraction": 0.1,
+        "seed": 42,
+        "rows": 494496,
+        "rows_in_train": 4944968,
+        "class_counts": {
+          "benign": 38896,
+          "malicious": 455600
+        },
+        "indices_sha256": "ad2af317d4a6c080a82fad603d728970c5cb96d1ecd2af440efd05bc1e1ecc0a"
+      }
+    },
+    "input_view": "raw",
+    "threshold": 0.5,
+    "protocol_revision": "primary_experiments_v1"
+  },
+  "metrics": {
+    "schema_version": "primary_metrics_v1",
+    "partition": "VALIDATION",
+    "threshold": 0.5,
+    "positive_class": "malicious",
+    "confusion_order": [
+      "benign",
+      "malicious"
+    ],
+    "TN": 83429,
+    "FP": 6,
+    "FN": 57,
+    "TP": 972880,
+    "accuracy": 0.9999403619179608,
+    "per_class": {
+      "benign": {
+        "precision": 0.9993172507965408,
+        "recall": 0.9999280877329658,
+        "f1": 0.9996225759491016,
+        "support": 83435
+      },
+      "malicious": {
+        "precision": 0.9999938327820526,
+        "recall": 0.9999414145006306,
+        "f1": 0.9999676229544002,
+        "support": 972937
+      }
+    },
+    "macro_f1": 0.9997950994517509,
+    "fpr": 7.191226703421825e-05,
+    "undefined_policy": "null"
+  },
+  "train_population_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+  "validation_population_sha256": "2d44c7b63c3c16fb19105ce504b39f6e31fa4145588c07c1d50f2417fad69103"
+}

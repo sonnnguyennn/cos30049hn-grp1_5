@@ -1,0 +1,123 @@
+{
+  "model": "XGBoost",
+  "run_dir": "D:\\Swinburne\\2026 S3 COS30049\\IoTGuard Project\\Experiments\\xgb_frac1_seed42_d4",
+  "validation_rows": 1056372,
+  "wrong_rows": 20,
+  "false_positives": 0,
+  "false_negatives": 20,
+  "detail_truncated": false,
+  "distinct_wrong_vectors": 3,
+  "most_repeated_wrong_vector_counts": [
+    9,
+    9,
+    2
+  ],
+  "false_negatives_within_0.1_of_threshold": 0,
+  "false_positives_within_0.1_of_threshold": 0,
+  "median_p_malicious_of_false_negatives": 0.0869,
+  "median_p_malicious_of_false_positives": null,
+  "by_traffic_type": {
+    "gafgyt_combo": {
+      "rows": 76868,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    "gafgyt_junk": {
+      "rows": 38456,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    "gafgyt_scan": {
+      "rows": 37929,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    "gafgyt_tcp": {
+      "rows": 126931,
+      "errors": 11,
+      "error_rate": 8.666125690335695e-05
+    },
+    "gafgyt_udp": {
+      "rows": 143837,
+      "errors": 9,
+      "error_rate": 6.257082669966698e-05
+    },
+    "mirai_ack": {
+      "rows": 96407,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    "mirai_scan": {
+      "rows": 80314,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    "mirai_syn": {
+      "rows": 110460,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    "mirai_udp": {
+      "rows": 183997,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    "mirai_udpplain": {
+      "rows": 77738,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    "benign": {
+      "rows": 83435,
+      "errors": 0,
+      "error_rate": 0.0
+    }
+  },
+  "by_device": {
+    "Danmini_Doorbell": {
+      "rows": 152579,
+      "FP": 0,
+      "FN": 2
+    },
+    "Ecobee_Thermostat": {
+      "rows": 125090,
+      "FP": 0,
+      "FN": 2
+    },
+    "Ennio_Doorbell": {
+      "rows": 52976,
+      "FP": 0,
+      "FN": 2
+    },
+    "Philips_B120N10_Baby_Monitor": {
+      "rows": 164752,
+      "FP": 0,
+      "FN": 2
+    },
+    "Provision_PT_737E_Security_Camera": {
+      "rows": 123627,
+      "FP": 0,
+      "FN": 3
+    },
+    "Provision_PT_838_Security_Camera": {
+      "rows": 124884,
+      "FP": 0,
+      "FN": 2
+    },
+    "Samsung_SNH_1011_N_Webcam": {
+      "rows": 55976,
+      "FP": 0,
+      "FN": 2
+    },
+    "SimpleHome_XCS7_1002_WHT_Security_Camera": {
+      "rows": 129097,
+      "FP": 0,
+      "FN": 2
+    },
+    "SimpleHome_XCS7_1003_WHT_Security_Camera": {
+      "rows": 127391,
+      "FP": 0,
+      "FN": 3
+    }
+  }
+}

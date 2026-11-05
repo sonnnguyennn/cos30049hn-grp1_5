@@ -1,0 +1,64 @@
+{
+  "generated_utc": "2026-11-04T03:10:29+00:00",
+  "rule": "highest VALIDATION macro-F1; within 1e-6 lower FPR, then higher malicious recall (primary.select_validation)",
+  "pool": "runs trained on fraction 1 with identical training rows",
+  "winner": "xgb_frac1_seed42_lr01",
+  "winner_lead_over_runner_up": {
+    "macro_f1": 6.505242409859946e-06,
+    "about_wrong_rows": 1.9999671319952497
+  },
+  "exact_ties_with_winner": [],
+  "ranking": [
+    {
+      "rank": 1,
+      "run_id": "xgb_frac1_seed42_lr01",
+      "macro_f1": 0.9999414464031051,
+      "wrong_rows": 18
+    },
+    {
+      "rank": 2,
+      "run_id": "xgb_frac1_seed42_d4",
+      "macro_f1": 0.9999349411606953,
+      "wrong_rows": 20
+    },
+    {
+      "rank": 3,
+      "run_id": "xgb_frac1_seed42",
+      "macro_f1": 0.9999089206185918,
+      "wrong_rows": 28
+    },
+    {
+      "rank": 4,
+      "run_id": "rf_frac1_seed42",
+      "macro_f1": 0.9999024160175891,
+      "wrong_rows": 30
+    },
+    {
+      "rank": 5,
+      "run_id": "xgb_frac1_seed42_d8",
+      "macro_f1": 0.9999024160175891,
+      "wrong_rows": 30
+    },
+    {
+      "rank": 6,
+      "run_id": "rf_frac1_seed42_leaf5",
+      "macro_f1": 0.9998731470766725,
+      "wrong_rows": 39
+    },
+    {
+      "rank": 7,
+      "run_id": "rf_frac1_seed42_mf03",
+      "macro_f1": 0.9998308674009544,
+      "wrong_rows": 52
+    }
+  ],
+  "not_in_pool": {
+    "rf_frac0.05_seed42": "trained on 0.05 of TRAIN; the pool is 1",
+    "rf_frac0.1_seed42": "trained on 0.1 of TRAIN; the pool is 1",
+    "rf_frac0.25_seed42": "trained on 0.25 of TRAIN; the pool is 1",
+    "rf_frac0.5_seed42": "trained on 0.5 of TRAIN; the pool is 1",
+    "xgb_frac0.5_seed42": "trained on 0.5 of TRAIN; the pool is 1"
+  },
+  "skipped_files": {},
+  "test_partition_used": false
+}

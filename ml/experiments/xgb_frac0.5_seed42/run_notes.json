@@ -1,0 +1,23 @@
+{
+  "run_id": "xgb_frac0.5_seed42",
+  "validation_rows": 1056372,
+  "resources": {
+    "load_sample_seconds": 0.2,
+    "build_matrix_seconds": 21.0,
+    "fit_seconds": 33.3,
+    "validation_predict_seconds": 4.6,
+    "model_size_mb": 0.1,
+    "peak_memory": {
+      "peak_working_set_mb": 5006.2,
+      "peak_private_mb": 1831.4
+    },
+    "nthread": 2
+  },
+  "environment": {
+    "python": "3.12.10",
+    "numpy": "2.5.4",
+    "xgboost": "3.4.1"
+  },
+  "uncommitted_files_at_start": [],
+  "test_partition_used": false
+}
