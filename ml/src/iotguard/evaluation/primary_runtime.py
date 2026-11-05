@@ -59,6 +59,12 @@ def evaluation_identity():
         Path(__file__).with_name("population.py"),
     ]
     paths += sorted(Path(__file__).parent.glob("primary_*evaluation.py"))
+    paths += [
+        Path(__file__).with_name("comparison.py"),
+        Path(__file__).with_name("primary_acceptance.py"),
+        repo / "ml/scripts/final_primary_evaluation.py",
+        repo / "ml/docs/protocols/primary_final_evaluation_v1.md",
+    ]
     return {
         "revision": subprocess.check_output(
             ["git", "rev-parse", "HEAD"], cwd=repo, text=True
