@@ -1,0 +1,29 @@
+{
+  "figure_id": "fig42a_validation_f1_recall",
+  "run_id": "xgb_frac1_seed42_lr01; xgb_frac1_seed42_d4; xgb_frac1_seed42; rf_frac1_seed42; xgb_frac1_seed42_d8; rf_frac1_seed42_leaf5; rf_frac1_seed42_mf03; lr_full_20261102T011513018213Z; dummy_full_20261102T011513018213Z",
+  "files": [
+    "analysis/duy_a2/outputs/figures/fig42a_validation_f1_recall.png",
+    "analysis/duy_a2/outputs/figures/fig42a_validation_f1_recall.pdf"
+  ],
+  "inputs": [
+    {
+      "label": "primary_classifier_comparison_20261105.csv",
+      "path": "artifacts/manifests/primary_classifier_comparison_20261105.csv",
+      "bytes": 9380,
+      "sha256": "0b9763d60744a91625d3a6094b1cf8bc4c420e35539372edf089f6ac98844d47"
+    },
+    {
+      "label": "primary_classifier_selection_20261105.json",
+      "path": "artifacts/manifests/primary_classifier_selection_20261105.json",
+      "bytes": 9382,
+      "sha256": "1316d36ecf700d59d2e9696feca6393e54713463adab2a1b47926838adbfd830"
+    }
+  ],
+  "dataset": "N-BaIoT",
+  "scope": "VALIDATION (1,056,372 records: 83,435 benign, 972,937 malicious)",
+  "n": "9 Full runs; supports benign 83,435 / malicious 972,937",
+  "weighting": "1 per record",
+  "sampling_transform": "none; 0-1 scale, no axis truncation",
+  "caption": "VALIDATION macro-F1 and per-class recall for the nine Full runs, ranked by the selection rule (0-1 scale; exact values labelled).",
+  "commentary": "On the full 0-1 scale every run except the Dummy is indistinguishable from 1 (even LR reaches macro-F1 0.9985). The Dummy classifier, which predicts malicious for every record, keeps malicious recall 1 but benign recall 0 (macro-F1 0.4794) despite 92.10% accuracy. The seven tree models differ by at most 0.00011 in macro-F1, so Figure fig42b compares their error counts instead."
+}

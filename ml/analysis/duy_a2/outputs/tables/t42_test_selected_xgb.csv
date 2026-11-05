@@ -1,0 +1,16 @@
+run_id,partition,metric,value
+xgb_frac1_seed42_lr01,TEST,TN,83531
+xgb_frac1_seed42_lr01,TEST,FP,1
+xgb_frac1_seed42_lr01,TEST,FN,11
+xgb_frac1_seed42_lr01,TEST,TP,977723
+xgb_frac1_seed42_lr01,TEST,accuracy,0.9999886927499797
+xgb_frac1_seed42_lr01,TEST,macro_f1,0.9999610194346051
+xgb_frac1_seed42_lr01,TEST,fpr,1.1971460039266389e-05
+xgb_frac1_seed42_lr01,TEST,benign_precision,0.9998683297024251
+xgb_frac1_seed42_lr01,TEST,benign_recall,0.9999880285399607
+xgb_frac1_seed42_lr01,TEST,benign_f1,0.9999281755389827
+xgb_frac1_seed42_lr01,TEST,benign_support,83532
+xgb_frac1_seed42_lr01,TEST,malicious_precision,0.9999989772164741
+xgb_frac1_seed42_lr01,TEST,malicious_recall,0.9999887494962842
+xgb_frac1_seed42_lr01,TEST,malicious_f1,0.9999938633302276
+xgb_frac1_seed42_lr01,TEST,malicious_support,977734

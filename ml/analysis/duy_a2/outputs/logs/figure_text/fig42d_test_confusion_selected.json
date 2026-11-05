@@ -1,0 +1,250 @@
+{
+  "figure": "fig42d_test_confusion_selected",
+  "figure_size_in": [
+    3.1,
+    2.25
+  ],
+  "saved_size_in": [
+    2.28,
+    2.19
+  ],
+  "min_fontsize_pt": 6.0,
+  "problems": [],
+  "texts": [
+    {
+      "role": "text",
+      "axes": 0,
+      "axes_title": "XGB selected, TEST\nxgb_frac1_seed42_lr01",
+      "text": "83,531",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        72.86,
+        115.56,
+        100.94,
+        122.56
+      ],
+      "anchor": [
+        0.0,
+        -0.13
+      ]
+    },
+    {
+      "role": "text",
+      "axes": 0,
+      "axes_title": "XGB selected, TEST\nxgb_frac1_seed42_lr01",
+      "text": "99.999%",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        73.94,
+        97.48,
+        99.86,
+        103.48
+      ],
+      "anchor": [
+        0.0,
+        0.19
+      ]
+    },
+    {
+      "role": "text",
+      "axes": 0,
+      "axes_title": "XGB selected, TEST\nxgb_frac1_seed42_lr01",
+      "text": "1",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        142.43,
+        115.56,
+        147.47,
+        122.56
+      ],
+      "anchor": [
+        1.0,
+        -0.13
+      ]
+    },
+    {
+      "role": "text",
+      "axes": 0,
+      "axes_title": "XGB selected, TEST\nxgb_frac1_seed42_lr01",
+      "text": "0.0012%",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        131.99,
+        97.48,
+        157.91,
+        103.48
+      ],
+      "anchor": [
+        1.0,
+        0.19
+      ]
+    },
+    {
+      "role": "text",
+      "axes": 0,
+      "axes_title": "XGB selected, TEST\nxgb_frac1_seed42_lr01",
+      "text": "11",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        81.86,
+        57.5,
+        91.94,
+        64.5
+      ],
+      "anchor": [
+        0.0,
+        0.87
+      ]
+    },
+    {
+      "role": "text",
+      "axes": 0,
+      "axes_title": "XGB selected, TEST\nxgb_frac1_seed42_lr01",
+      "text": "0.00113%",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        72.14,
+        39.42,
+        101.66,
+        45.42
+      ],
+      "anchor": [
+        0.0,
+        1.19
+      ]
+    },
+    {
+      "role": "text",
+      "axes": 0,
+      "axes_title": "XGB selected, TEST\nxgb_frac1_seed42_lr01",
+      "text": "977,723",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        128.39,
+        57.5,
+        161.51,
+        64.5
+      ],
+      "anchor": [
+        1.0,
+        0.87
+      ]
+    },
+    {
+      "role": "text",
+      "axes": 0,
+      "axes_title": "XGB selected, TEST\nxgb_frac1_seed42_lr01",
+      "text": "99.999%",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        131.99,
+        39.42,
+        157.91,
+        45.42
+      ],
+      "anchor": [
+        1.0,
+        1.19
+      ]
+    },
+    {
+      "role": "title",
+      "axes": 0,
+      "axes_title": "XGB selected, TEST\nxgb_frac1_seed42_lr01",
+      "text": "XGB selected, TEST\nxgb_frac1_seed42_lr01",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        57.87,
+        142.15,
+        149.31,
+        159.84
+      ]
+    },
+    {
+      "role": "xlabel",
+      "axes": 0,
+      "axes_title": "XGB selected, TEST\nxgb_frac1_seed42_lr01",
+      "text": "predicted",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        99.08,
+        2.16,
+        132.77,
+        9.6
+      ]
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "XGB selected, TEST\nxgb_frac1_seed42_lr01",
+      "text": "benign",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        75.02,
+        13.6,
+        98.78,
+        20.92
+      ],
+      "tick_loc": 0.0,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "XGB selected, TEST\nxgb_frac1_seed42_lr01",
+      "text": "malicious",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        128.39,
+        13.6,
+        161.51,
+        20.92
+      ],
+      "tick_loc": 1.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ylabel",
+      "axes": 0,
+      "axes_title": "XGB selected, TEST\nxgb_frac1_seed42_lr01",
+      "text": "true class",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        9.81,
+        65.2,
+        17.25,
+        99.76
+      ]
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "XGB selected, TEST\nxgb_frac1_seed42_lr01",
+      "text": "benign",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        30.61,
+        107.07,
+        54.37,
+        114.39
+      ],
+      "tick_loc": 0.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "XGB selected, TEST\nxgb_frac1_seed42_lr01",
+      "text": "malicious",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        21.25,
+        49.01,
+        54.37,
+        56.33
+      ],
+      "tick_loc": 1.0,
+      "scale": "linear"
+    }
+  ]
+}

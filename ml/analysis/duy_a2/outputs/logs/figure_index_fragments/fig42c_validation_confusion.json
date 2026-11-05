@@ -1,0 +1,29 @@
+{
+  "figure_id": "fig42c_validation_confusion",
+  "run_id": "lr_full_20261102T011513018213Z; rf_frac1_seed42; xgb_frac1_seed42_lr01",
+  "files": [
+    "analysis/duy_a2/outputs/figures/fig42c_validation_confusion.png",
+    "analysis/duy_a2/outputs/figures/fig42c_validation_confusion.pdf"
+  ],
+  "inputs": [
+    {
+      "label": "primary_classifier_comparison_20261105.csv",
+      "path": "artifacts/manifests/primary_classifier_comparison_20261105.csv",
+      "bytes": 9380,
+      "sha256": "0b9763d60744a91625d3a6094b1cf8bc4c420e35539372edf089f6ac98844d47"
+    },
+    {
+      "label": "primary_classifier_selection_20261105.json",
+      "path": "artifacts/manifests/primary_classifier_selection_20261105.json",
+      "bytes": 9382,
+      "sha256": "1316d36ecf700d59d2e9696feca6393e54713463adab2a1b47926838adbfd830"
+    }
+  ],
+  "dataset": "N-BaIoT",
+  "scope": "VALIDATION (1,056,372 records: 83,435 benign, 972,937 malicious)",
+  "n": "1,056,372 VALIDATION records per matrix",
+  "weighting": "1 per record",
+  "sampling_transform": "none; colour and percentages are row-normalised (share of each true class)",
+  "caption": "VALIDATION confusion matrices for LR, the RF baseline and the selected XGBoost (rows = true class, columns = prediction; counts with row percentages).",
+  "commentary": "Row normalisation keeps the 83,435 benign records visible next to 972,937 malicious ones: the benign-row error share is the FPR (0.295% for LR, 0.0012% for RF, 0% for the selected XGBoost). LR's errors are spread across both rows, whereas the tree models' few errors are almost all missed malicious records."
+}

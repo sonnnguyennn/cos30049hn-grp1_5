@@ -1,0 +1,35 @@
+{
+  "figure_id": "fig42b_validation_errors_fpr",
+  "run_id": "xgb_frac1_seed42_lr01; xgb_frac1_seed42_d4; xgb_frac1_seed42; rf_frac1_seed42; xgb_frac1_seed42_d8; rf_frac1_seed42_leaf5; rf_frac1_seed42_mf03; lr_full_20261102T011513018213Z; dummy_full_20261102T011513018213Z",
+  "files": [
+    "analysis/duy_a2/outputs/figures/fig42b_validation_errors_fpr.png",
+    "analysis/duy_a2/outputs/figures/fig42b_validation_errors_fpr.pdf"
+  ],
+  "inputs": [
+    {
+      "label": "primary_classifier_comparison_20261105.csv",
+      "path": "artifacts/manifests/primary_classifier_comparison_20261105.csv",
+      "bytes": 9380,
+      "sha256": "0b9763d60744a91625d3a6094b1cf8bc4c420e35539372edf089f6ac98844d47"
+    },
+    {
+      "label": "primary_classifier_selection_20261105.json",
+      "path": "artifacts/manifests/primary_classifier_selection_20261105.json",
+      "bytes": 9382,
+      "sha256": "1316d36ecf700d59d2e9696feca6393e54713463adab2a1b47926838adbfd830"
+    },
+    {
+      "label": "xgb_frac1_seed42_lr01 error_analysis.json",
+      "path": "experiments/xgb_frac1_seed42_lr01/error_analysis.json",
+      "bytes": 2498,
+      "sha256": "cdd3522723ce00cb2a2cb01ccb27065d3462d35a8655452d7dac776cac6211ef"
+    }
+  ],
+  "dataset": "N-BaIoT",
+  "scope": "VALIDATION (1,056,372 records: 83,435 benign, 972,937 malicious)",
+  "n": "9 Full runs; FPR denominator 83,435 benign records",
+  "weighting": "1 per record",
+  "sampling_transform": "none; symmetric log axes (linear below 1 record / 0.001%) so zero is shown",
+  "caption": "VALIDATION false positives (benign flagged malicious) and false negatives (malicious missed) per Full run, and the false-positive rate FP/(FP+TN); symmetric log axes, exact values labelled.",
+  "commentary": "The selected run xgb_frac1_seed42_lr01 makes 0 false positives and 18 false negatives, against 1 and 29 for the RF baseline and 246 and 220 for LR. The seven tree models make between 18 and 52 errors on 1,056,372 records, from a single seed, and the winner's 18 errors are only 2 distinct feature vectors repeated 9 times each (gafgyt tcp and gafgyt udp, per its error_analysis.json), so this ranking is not evidence of a stable advantage."
+}

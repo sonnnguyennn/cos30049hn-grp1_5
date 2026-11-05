@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "manifest_sha256": "9fac1acde3f696bb765937c997977b3d7b1e1c2fa6cd60626e910037ea1fe132",
+  "model_sha256": "cb090afa6ad4c3618e20d7c5d635e89aa2d122667ea00835a0acc2f75a4455e6",
+  "example_rows": 3,
+  "actual_output": {
+    "probabilities": [
+      0.0008694713469594717,
+      0.9999966621398926,
+      0.36534929275512695
+    ],
+    "predictions": [
+      0,
+      1,
+      0
+    ],
+    "labels": [
+      "benign",
+      "malicious",
+      "benign"
+    ]
+  },
+  "numpy": "2.4.6",
+  "xgboost": "3.2.0",
+  "raw_dataset_required": false,
+  "git_checkout_required": false,
+  "classifiers_fitted": false
+}

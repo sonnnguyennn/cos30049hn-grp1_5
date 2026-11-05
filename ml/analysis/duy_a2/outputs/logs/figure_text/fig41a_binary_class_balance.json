@@ -1,0 +1,287 @@
+{
+  "figure": "fig41a_binary_class_balance",
+  "figure_size_in": [
+    6.3,
+    1.9
+  ],
+  "saved_size_in": [
+    6.24,
+    1.84
+  ],
+  "min_fontsize_pt": 6.0,
+  "problems": [],
+  "texts": [
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "N-BaIoT, full corpus: 7,062,606 records",
+      "text": "555,932 (7.87%)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        297.49,
+        110.17,
+        346.45,
+        116.65
+      ],
+      "anchor": [
+        555932.0,
+        1.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "N-BaIoT, full corpus: 7,062,606 records",
+      "text": "6,506,674 (92.13%)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        369.94,
+        93.78,
+        428.26,
+        100.26
+      ],
+      "anchor": [
+        6506674.0,
+        0.0
+      ]
+    },
+    {
+      "role": "title",
+      "axes": 0,
+      "axes_title": "N-BaIoT, full corpus: 7,062,606 records",
+      "text": "N-BaIoT, full corpus: 7,062,606 records",
+      "fontsize_pt": 7.5,
+      "bbox_pt": [
+        38.78,
+        127.08,
+        196.11,
+        134.64
+      ]
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "N-BaIoT, full corpus: 7,062,606 records",
+      "text": "benign",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        11.52,
+        108.97,
+        35.28,
+        116.29
+      ],
+      "tick_loc": 1.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "N-BaIoT, full corpus: 7,062,606 records",
+      "text": "malicious",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        2.16,
+        92.58,
+        35.28,
+        99.9
+      ],
+      "tick_loc": 0.0,
+      "scale": "linear"
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "Bot-IoT, 5% subset (all_features_5pct_shards): 3,668,522 records",
+      "text": "477 (0.013%)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        89.53,
+        53.26,
+        129.13,
+        59.74
+      ],
+      "anchor": [
+        477.0,
+        1.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "Bot-IoT, 5% subset (all_features_5pct_shards): 3,668,522 records",
+      "text": "3,668,045 (99.987%)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        353.06,
+        36.87,
+        414.98,
+        43.35
+      ],
+      "anchor": [
+        3668045.0,
+        0.0
+      ]
+    },
+    {
+      "role": "title",
+      "axes": 1,
+      "axes_title": "Bot-IoT, 5% subset (all_features_5pct_shards): 3,668,522 records",
+      "text": "Bot-IoT, 5% subset (all_features_5pct_shards): 3,668,522 records",
+      "fontsize_pt": 7.5,
+      "bbox_pt": [
+        38.78,
+        70.17,
+        303.39,
+        77.73
+      ]
+    },
+    {
+      "role": "xlabel",
+      "axes": 1,
+      "axes_title": "Bot-IoT, 5% subset (all_features_5pct_shards): 3,668,522 records",
+      "text": "records (log scale); labels: exact count (share of that corpus)",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        133.79,
+        2.16,
+        350.67,
+        9.6
+      ]
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "Bot-IoT, 5% subset (all_features_5pct_shards): 3,668,522 records",
+      "text": "$\\mathdefault{10^{2}}$",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        33.02,
+        13.6,
+        44.54,
+        21.64
+      ],
+      "tick_loc": 100.0,
+      "scale": "log"
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "Bot-IoT, 5% subset (all_features_5pct_shards): 3,668,522 records",
+      "text": "$\\mathdefault{10^{3}}$",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        100.84,
+        13.6,
+        112.36,
+        21.64
+      ],
+      "tick_loc": 1000.0,
+      "scale": "log"
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "Bot-IoT, 5% subset (all_features_5pct_shards): 3,668,522 records",
+      "text": "$\\mathdefault{10^{4}}$",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        168.65,
+        13.6,
+        180.17,
+        21.64
+      ],
+      "tick_loc": 10000.0,
+      "scale": "log"
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "Bot-IoT, 5% subset (all_features_5pct_shards): 3,668,522 records",
+      "text": "$\\mathdefault{10^{5}}$",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        236.47,
+        13.6,
+        247.99,
+        21.64
+      ],
+      "tick_loc": 100000.0,
+      "scale": "log"
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "Bot-IoT, 5% subset (all_features_5pct_shards): 3,668,522 records",
+      "text": "$\\mathdefault{10^{6}}$",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        304.29,
+        13.6,
+        315.81,
+        21.64
+      ],
+      "tick_loc": 1000000.0,
+      "scale": "log"
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "Bot-IoT, 5% subset (all_features_5pct_shards): 3,668,522 records",
+      "text": "$\\mathdefault{10^{7}}$",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        372.1,
+        13.6,
+        383.62,
+        21.64
+      ],
+      "tick_loc": 10000000.0,
+      "scale": "log"
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "Bot-IoT, 5% subset (all_features_5pct_shards): 3,668,522 records",
+      "text": "$\\mathdefault{10^{8}}$",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        439.92,
+        13.6,
+        451.44,
+        21.64
+      ],
+      "tick_loc": 100000000.0,
+      "scale": "log"
+    },
+    {
+      "role": "ytick",
+      "axes": 1,
+      "axes_title": "Bot-IoT, 5% subset (all_features_5pct_shards): 3,668,522 records",
+      "text": "benign",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        11.52,
+        52.06,
+        35.28,
+        59.38
+      ],
+      "tick_loc": 1.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 1,
+      "axes_title": "Bot-IoT, 5% subset (all_features_5pct_shards): 3,668,522 records",
+      "text": "malicious",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        2.16,
+        35.67,
+        35.28,
+        42.99
+      ],
+      "tick_loc": 0.0,
+      "scale": "linear"
+    }
+  ]
+}

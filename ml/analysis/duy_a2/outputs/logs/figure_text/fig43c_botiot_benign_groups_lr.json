@@ -1,0 +1,252 @@
+{
+  "figure": "fig43c_botiot_benign_groups_lr",
+  "figure_size_in": [
+    6.3,
+    1.6
+  ],
+  "saved_size_in": [
+    6.24,
+    1.525
+  ],
+  "min_fontsize_pt": 6.5,
+  "problems": [],
+  "texts": [
+    {
+      "role": "xlabel",
+      "axes": 0,
+      "axes_title": "",
+      "text": "benign exact-X groups ranked by size, 1 = largest (77 groups)",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        131.48,
+        2.16,
+        349.2,
+        9.6
+      ]
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "",
+      "text": "1",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        32.49,
+        13.6,
+        36.81,
+        20.2
+      ],
+      "tick_loc": 0.0,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "",
+      "text": "10",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        79.05,
+        13.6,
+        87.69,
+        20.2
+      ],
+      "tick_loc": 9.0,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "",
+      "text": "20",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        133.18,
+        13.6,
+        141.82,
+        20.2
+      ],
+      "tick_loc": 19.0,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "",
+      "text": "30",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        187.31,
+        13.6,
+        195.95,
+        20.2
+      ],
+      "tick_loc": 29.0,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "",
+      "text": "40",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        241.43,
+        13.6,
+        250.07,
+        20.2
+      ],
+      "tick_loc": 39.0,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "",
+      "text": "50",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        295.56,
+        13.6,
+        304.2,
+        20.2
+      ],
+      "tick_loc": 49.0,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "",
+      "text": "60",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        349.69,
+        13.6,
+        358.33,
+        20.2
+      ],
+      "tick_loc": 59.0,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "",
+      "text": "70",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        403.82,
+        13.6,
+        412.46,
+        20.2
+      ],
+      "tick_loc": 69.0,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "",
+      "text": "77",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        441.71,
+        13.6,
+        450.35,
+        20.2
+      ],
+      "tick_loc": 76.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ylabel",
+      "axes": 0,
+      "axes_title": "",
+      "text": "records in group",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        2.16,
+        33.12,
+        9.6,
+        90.28
+      ]
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "",
+      "text": "0",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        17.92,
+        23.12,
+        22.24,
+        29.72
+      ],
+      "tick_loc": 0.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "",
+      "text": "5",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        17.92,
+        41.37,
+        22.24,
+        47.98
+      ],
+      "tick_loc": 5.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "",
+      "text": "10",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        13.6,
+        59.63,
+        22.24,
+        66.23
+      ],
+      "tick_loc": 10.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "",
+      "text": "15",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        13.6,
+        77.88,
+        22.24,
+        84.48
+      ],
+      "tick_loc": 15.0,
+      "scale": "linear"
+    },
+    {
+      "role": "legend",
+      "axes": null,
+      "axes_title": null,
+      "text": [
+        "LR predicts benign (TN)",
+        "LR predicts malicious (FP)"
+      ],
+      "fontsize_pt": null,
+      "bbox_pt": [
+        233.92,
+        99.43,
+        450.35,
+        111.95
+      ]
+    }
+  ]
+}

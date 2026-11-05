@@ -1,0 +1,525 @@
+{
+  "figure": "fig41c_botiot_train_features",
+  "figure_size_in": [
+    6.3,
+    2.1
+  ],
+  "saved_size_in": [
+    6.24,
+    2.025
+  ],
+  "min_fontsize_pt": 6.5,
+  "problems": [],
+  "texts": [
+    {
+      "role": "title",
+      "axes": 0,
+      "axes_title": "pkts",
+      "text": "pkts",
+      "fontsize_pt": 7.5,
+      "bbox_pt": [
+        31.4,
+        124.64,
+        49.4,
+        132.2
+      ]
+    },
+    {
+      "role": "xlabel",
+      "axes": 0,
+      "axes_title": "pkts",
+      "text": "pkts (packets)",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        67.01,
+        13.8,
+        117.89,
+        21.24
+      ]
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "pkts",
+      "text": "1",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        29.24,
+        25.96,
+        33.56,
+        32.56
+      ],
+      "tick_loc": 0.6931471805599453,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "pkts",
+      "text": "10",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        46.99,
+        25.96,
+        55.63,
+        32.56
+      ],
+      "tick_loc": 2.3978952727983707,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "pkts",
+      "text": "100",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        70.71,
+        25.96,
+        83.67,
+        32.56
+      ],
+      "tick_loc": 4.61512051684126,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "pkts",
+      "text": "1k",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        100.01,
+        25.24,
+        107.93,
+        32.56
+      ],
+      "tick_loc": 6.90875477931522,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "pkts",
+      "text": "10k",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        124.73,
+        25.24,
+        136.97,
+        32.56
+      ],
+      "tick_loc": 9.210440366976517,
+      "scale": "linear"
+    },
+    {
+      "role": "ylabel",
+      "axes": 0,
+      "axes_title": "pkts",
+      "text": "share of class records per bin",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        2.16,
+        29.02,
+        9.6,
+        132.98
+      ]
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "pkts",
+      "text": "0.0",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        13.6,
+        35.48,
+        24.4,
+        42.08
+      ],
+      "tick_loc": 0.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "pkts",
+      "text": "0.2",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        13.6,
+        62.04,
+        24.4,
+        68.64
+      ],
+      "tick_loc": 0.2,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "pkts",
+      "text": "0.4",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        13.6,
+        88.6,
+        24.4,
+        95.2
+      ],
+      "tick_loc": 0.4,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "pkts",
+      "text": "0.6",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        13.6,
+        115.15,
+        24.4,
+        121.75
+      ],
+      "tick_loc": 0.6000000000000001,
+      "scale": "linear"
+    },
+    {
+      "role": "title",
+      "axes": 1,
+      "axes_title": "bytes",
+      "text": "bytes",
+      "fontsize_pt": 7.5,
+      "bbox_pt": [
+        180.37,
+        124.64,
+        203.41,
+        132.2
+      ]
+    },
+    {
+      "role": "xlabel",
+      "axes": 1,
+      "axes_title": "bytes",
+      "text": "bytes",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        231.7,
+        13.8,
+        251.14,
+        21.24
+      ]
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "bytes",
+      "text": "100",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        178.31,
+        25.96,
+        191.27,
+        32.56
+      ],
+      "tick_loc": 4.61512051684126,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "bytes",
+      "text": "10k",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        218.91,
+        25.24,
+        231.15,
+        32.56
+      ],
+      "tick_loc": 9.210440366976517,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "bytes",
+      "text": "1M",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        260.32,
+        25.96,
+        270.4,
+        32.56
+      ],
+      "tick_loc": 13.815511557963774,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 1,
+      "axes_title": "bytes",
+      "text": "0.0",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        162.57,
+        35.48,
+        173.37,
+        42.08
+      ],
+      "tick_loc": 0.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 1,
+      "axes_title": "bytes",
+      "text": "0.1",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        162.57,
+        60.13,
+        173.37,
+        66.73
+      ],
+      "tick_loc": 0.1,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 1,
+      "axes_title": "bytes",
+      "text": "0.2",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        162.57,
+        84.77,
+        173.37,
+        91.37
+      ],
+      "tick_loc": 0.2,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 1,
+      "axes_title": "bytes",
+      "text": "0.3",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        162.57,
+        109.42,
+        173.37,
+        116.02
+      ],
+      "tick_loc": 0.30000000000000004,
+      "scale": "linear"
+    },
+    {
+      "role": "title",
+      "axes": 2,
+      "axes_title": "dur",
+      "text": "dur",
+      "fontsize_pt": 7.5,
+      "bbox_pt": [
+        329.34,
+        124.64,
+        343.02,
+        132.2
+      ]
+    },
+    {
+      "role": "xlabel",
+      "axes": 2,
+      "axes_title": "dur",
+      "text": "dur (seconds)",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        366.27,
+        13.8,
+        414.51,
+        21.24
+      ]
+    },
+    {
+      "role": "xtick",
+      "axes": 2,
+      "axes_title": "dur",
+      "text": "0",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        327.18,
+        25.96,
+        331.5,
+        32.56
+      ],
+      "tick_loc": 0.0,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 2,
+      "axes_title": "dur",
+      "text": "10",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        361.95,
+        25.96,
+        370.59,
+        32.56
+      ],
+      "tick_loc": 2.3978952727983707,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 2,
+      "axes_title": "dur",
+      "text": "100",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        393.94,
+        25.96,
+        406.9,
+        32.56
+      ],
+      "tick_loc": 4.61512051684126,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 2,
+      "axes_title": "dur",
+      "text": "1k",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        431.79,
+        25.24,
+        439.71,
+        32.56
+      ],
+      "tick_loc": 6.90875477931522,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 2,
+      "axes_title": "dur",
+      "text": "0.0",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        311.54,
+        35.48,
+        322.34,
+        42.08
+      ],
+      "tick_loc": 0.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 2,
+      "axes_title": "dur",
+      "text": "0.1",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        311.54,
+        49.42,
+        322.34,
+        56.02
+      ],
+      "tick_loc": 0.1,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 2,
+      "axes_title": "dur",
+      "text": "0.2",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        311.54,
+        63.35,
+        322.34,
+        69.95
+      ],
+      "tick_loc": 0.2,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 2,
+      "axes_title": "dur",
+      "text": "0.3",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        311.54,
+        77.29,
+        322.34,
+        83.89
+      ],
+      "tick_loc": 0.30000000000000004,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 2,
+      "axes_title": "dur",
+      "text": "0.4",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        311.54,
+        91.22,
+        322.34,
+        97.82
+      ],
+      "tick_loc": 0.4,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 2,
+      "axes_title": "dur",
+      "text": "0.5",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        311.54,
+        105.15,
+        322.34,
+        111.76
+      ],
+      "tick_loc": 0.5,
+      "scale": "linear"
+    },
+    {
+      "role": "legend",
+      "axes": null,
+      "axes_title": null,
+      "text": [
+        "benign (n=286)",
+        "malicious (n=2,200,828)"
+      ],
+      "fontsize_pt": null,
+      "bbox_pt": [
+        133.2,
+        135.43,
+        320.4,
+        147.95
+      ]
+    },
+    {
+      "role": "figure_text",
+      "axes": null,
+      "axes_title": null,
+      "text": "x axes: log1p scale, tick labels in raw units; the same 40 bins for both classes",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        92.62,
+        2.16,
+        360.98,
+        9.48
+      ]
+    }
+  ]
+}

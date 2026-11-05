@@ -1,0 +1,1453 @@
+{
+  "script": "t42_classifier_figures",
+  "created_utc": "2026-11-05T14:36:33.363713+00:00",
+  "runtime": {
+    "python": "3.11.18",
+    "platform": "Linux-6.18.44-fc-v236-x86_64-with-glibc2.39",
+    "numpy": "2.4.6",
+    "matplotlib": "3.11.2"
+  },
+  "inputs": [
+    {
+      "label": "primary_classifier_comparison_20261105.csv",
+      "path": "artifacts/manifests/primary_classifier_comparison_20261105.csv",
+      "bytes": 9380,
+      "sha256": "0b9763d60744a91625d3a6094b1cf8bc4c420e35539372edf089f6ac98844d47"
+    },
+    {
+      "label": "primary_classifier_selection_20261105.json",
+      "path": "artifacts/manifests/primary_classifier_selection_20261105.json",
+      "bytes": 9382,
+      "sha256": "1316d36ecf700d59d2e9696feca6393e54713463adab2a1b47926838adbfd830"
+    },
+    {
+      "label": "primary_final_test_receipt_20261105.json",
+      "path": "artifacts/manifests/primary_final_test_receipt_20261105.json",
+      "bytes": 14893,
+      "sha256": "52cf0126b415eb69f1b4459f55ccab21203adb34157457392fe525a3e1a6c459"
+    }
+  ],
+  "outputs": [
+    "analysis/duy_a2/outputs/tables/t42_validation_full_runs_overview.csv",
+    "analysis/duy_a2/outputs/tables/t42_validation_full_runs_per_class.csv",
+    "analysis/duy_a2/outputs/tables/t42_validation_subset_runs_diagnostic.csv",
+    "analysis/duy_a2/outputs/tables/t42_test_selected_xgb.csv",
+    "analysis/duy_a2/outputs/tables/t42_tables.md",
+    "analysis/duy_a2/outputs/figures/fig42a_validation_f1_recall.png",
+    "analysis/duy_a2/outputs/figures/fig42a_validation_f1_recall.pdf",
+    "analysis/duy_a2/outputs/figures/fig42b_validation_errors_fpr.png",
+    "analysis/duy_a2/outputs/figures/fig42b_validation_errors_fpr.pdf",
+    "analysis/duy_a2/outputs/figures/fig42c_validation_confusion.png",
+    "analysis/duy_a2/outputs/figures/fig42c_validation_confusion.pdf",
+    "analysis/duy_a2/outputs/figures/fig42d_test_confusion_selected.png",
+    "analysis/duy_a2/outputs/figures/fig42d_test_confusion_selected.pdf"
+  ],
+  "checks": [
+    {
+      "check": "comparison CSV hash == selection record",
+      "actual": "0b9763d60744a91625d3a6094b1cf8bc4c420e35539372edf089f6ac98844d47",
+      "expected": "0b9763d60744a91625d3a6094b1cf8bc4c420e35539372edf089f6ac98844d47",
+      "status": "PASS"
+    },
+    {
+      "check": "number of Full runs in the main table",
+      "actual": 9,
+      "expected": 9,
+      "status": "PASS"
+    },
+    {
+      "check": "subset runs all carry an exclusion reason",
+      "actual": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "check": "Full-run order == selection ranking",
+      "actual": [
+        "xgb_frac1_seed42_lr01",
+        "xgb_frac1_seed42_d4",
+        "xgb_frac1_seed42",
+        "rf_frac1_seed42",
+        "xgb_frac1_seed42_d8",
+        "rf_frac1_seed42_leaf5",
+        "rf_frac1_seed42_mf03",
+        "lr_full_20261102T011513018213Z",
+        "dummy_full_20261102T011513018213Z"
+      ],
+      "expected": [
+        "xgb_frac1_seed42_lr01",
+        "xgb_frac1_seed42_d4",
+        "xgb_frac1_seed42",
+        "rf_frac1_seed42",
+        "xgb_frac1_seed42_d8",
+        "rf_frac1_seed42_leaf5",
+        "rf_frac1_seed42_mf03",
+        "lr_full_20261102T011513018213Z",
+        "dummy_full_20261102T011513018213Z"
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "TEST receipt model == selection winner",
+      "actual": "xgb_frac1_seed42_lr01",
+      "expected": "xgb_frac1_seed42_lr01",
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_lr01 counts sum to VALIDATION rows",
+      "actual": 1056372,
+      "expected": 1056372,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_lr01 benign support",
+      "actual": 83435,
+      "expected": 83435,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_lr01 accuracy recomputed",
+      "actual": 0.9999829605479887,
+      "expected": 0.9999829605479887,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_lr01 benign_precision recomputed",
+      "actual": 0.999784309731226,
+      "expected": 0.999784309731226,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_lr01 benign_recall recomputed",
+      "actual": 1.0,
+      "expected": 1.0,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_lr01 benign_f1 recomputed",
+      "actual": 0.9998921432337855,
+      "expected": 0.9998921432337855,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_lr01 benign_support",
+      "actual": 83435,
+      "expected": 83435,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_lr01 malicious_precision recomputed",
+      "actual": 1.0,
+      "expected": 1.0,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_lr01 malicious_recall recomputed",
+      "actual": 0.9999814993159886,
+      "expected": 0.9999814993159886,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_lr01 malicious_f1 recomputed",
+      "actual": 0.9999907495724247,
+      "expected": 0.9999907495724247,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_lr01 malicious_support",
+      "actual": 972937,
+      "expected": 972937,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_lr01 fpr recomputed",
+      "actual": 0.0,
+      "expected": 0.0,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_lr01 macro_f1 recomputed",
+      "actual": 0.9999414464031051,
+      "expected": 0.9999414464031051,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_d4 counts sum to VALIDATION rows",
+      "actual": 1056372,
+      "expected": 1056372,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_d4 benign support",
+      "actual": 83435,
+      "expected": 83435,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_d4 accuracy recomputed",
+      "actual": 0.999981067275543,
+      "expected": 0.999981067275543,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_d4 benign_precision recomputed",
+      "actual": 0.9997603498891618,
+      "expected": 0.9997603498891618,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_d4 benign_recall recomputed",
+      "actual": 1.0,
+      "expected": 1.0,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_d4 benign_f1 recomputed",
+      "actual": 0.9998801605848163,
+      "expected": 0.9998801605848163,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_d4 benign_support",
+      "actual": 83435,
+      "expected": 83435,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_d4 malicious_precision recomputed",
+      "actual": 1.0,
+      "expected": 1.0,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_d4 malicious_recall recomputed",
+      "actual": 0.9999794436844318,
+      "expected": 0.9999794436844318,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_d4 malicious_f1 recomputed",
+      "actual": 0.9999897217365743,
+      "expected": 0.9999897217365743,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_d4 malicious_support",
+      "actual": 972937,
+      "expected": 972937,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_d4 fpr recomputed",
+      "actual": 0.0,
+      "expected": 0.0,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_d4 macro_f1 recomputed",
+      "actual": 0.9999349411606953,
+      "expected": 0.9999349411606953,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42 counts sum to VALIDATION rows",
+      "actual": 1056372,
+      "expected": 1056372,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42 benign support",
+      "actual": 83435,
+      "expected": 83435,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42 accuracy recomputed",
+      "actual": 0.9999734941857603,
+      "expected": 0.9999734941857603,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42 benign_precision recomputed",
+      "actual": 0.9996764956087274,
+      "expected": 0.9996764956087274,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42 benign_recall recomputed",
+      "actual": 0.9999880146221609,
+      "expected": 0.9999880146221609,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42 benign_f1 recomputed",
+      "actual": 0.9998322308503499,
+      "expected": 0.9998322308503499,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42 benign_support",
+      "actual": 83435,
+      "expected": 83435,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42 malicious_precision recomputed",
+      "actual": 0.9999989721567543,
+      "expected": 0.9999989721567543,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42 malicious_recall recomputed",
+      "actual": 0.9999722489739828,
+      "expected": 0.9999722489739828,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42 malicious_f1 recomputed",
+      "actual": 0.9999856103868339,
+      "expected": 0.9999856103868339,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42 malicious_support",
+      "actual": 972937,
+      "expected": 972937,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42 fpr recomputed",
+      "actual": 1.1985377839036376e-05,
+      "expected": 1.1985377839036376e-05,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42 macro_f1 recomputed",
+      "actual": 0.9999089206185918,
+      "expected": 0.9999089206185918,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42 counts sum to VALIDATION rows",
+      "actual": 1056372,
+      "expected": 1056372,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42 benign support",
+      "actual": 83435,
+      "expected": 83435,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42 accuracy recomputed",
+      "actual": 0.9999716009133146,
+      "expected": 0.9999716009133146,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42 benign_precision recomputed",
+      "actual": 0.9996525406467537,
+      "expected": 0.9996525406467537,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42 benign_recall recomputed",
+      "actual": 0.9999880146221609,
+      "expected": 0.9999880146221609,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42 benign_f1 recomputed",
+      "actual": 0.9998202494937027,
+      "expected": 0.9998202494937027,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42 benign_support",
+      "actual": 83435,
+      "expected": 83435,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42 malicious_precision recomputed",
+      "actual": 0.9999989721546414,
+      "expected": 0.9999989721546414,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42 malicious_recall recomputed",
+      "actual": 0.9999701933424261,
+      "expected": 0.9999701933424261,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42 malicious_f1 recomputed",
+      "actual": 0.9999845825414755,
+      "expected": 0.9999845825414755,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42 malicious_support",
+      "actual": 972937,
+      "expected": 972937,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42 fpr recomputed",
+      "actual": 1.1985377839036376e-05,
+      "expected": 1.1985377839036376e-05,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42 macro_f1 recomputed",
+      "actual": 0.9999024160175891,
+      "expected": 0.9999024160175891,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_d8 counts sum to VALIDATION rows",
+      "actual": 1056372,
+      "expected": 1056372,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_d8 benign support",
+      "actual": 83435,
+      "expected": 83435,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_d8 accuracy recomputed",
+      "actual": 0.9999716009133146,
+      "expected": 0.9999716009133146,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_d8 benign_precision recomputed",
+      "actual": 0.9996525406467537,
+      "expected": 0.9996525406467537,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_d8 benign_recall recomputed",
+      "actual": 0.9999880146221609,
+      "expected": 0.9999880146221609,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_d8 benign_f1 recomputed",
+      "actual": 0.9998202494937027,
+      "expected": 0.9998202494937027,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_d8 benign_support",
+      "actual": 83435,
+      "expected": 83435,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_d8 malicious_precision recomputed",
+      "actual": 0.9999989721546414,
+      "expected": 0.9999989721546414,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_d8 malicious_recall recomputed",
+      "actual": 0.9999701933424261,
+      "expected": 0.9999701933424261,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_d8 malicious_f1 recomputed",
+      "actual": 0.9999845825414755,
+      "expected": 0.9999845825414755,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_d8 malicious_support",
+      "actual": 972937,
+      "expected": 972937,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_d8 fpr recomputed",
+      "actual": 1.1985377839036376e-05,
+      "expected": 1.1985377839036376e-05,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac1_seed42_d8 macro_f1 recomputed",
+      "actual": 0.9999024160175891,
+      "expected": 0.9999024160175891,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42_leaf5 counts sum to VALIDATION rows",
+      "actual": 1056372,
+      "expected": 1056372,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42_leaf5 benign support",
+      "actual": 83435,
+      "expected": 83435,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42_leaf5 accuracy recomputed",
+      "actual": 0.999963081187309,
+      "expected": 0.999963081187309,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42_leaf5 benign_precision recomputed",
+      "actual": 0.9995447575234809,
+      "expected": 0.9995447575234809,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42_leaf5 benign_recall recomputed",
+      "actual": 0.9999880146221609,
+      "expected": 0.9999880146221609,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42_leaf5 benign_f1 recomputed",
+      "actual": 0.9997663369421295,
+      "expected": 0.9997663369421295,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42_leaf5 benign_support",
+      "actual": 83435,
+      "expected": 83435,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42_leaf5 malicious_precision recomputed",
+      "actual": 0.9999989721451331,
+      "expected": 0.9999989721451331,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42_leaf5 malicious_recall recomputed",
+      "actual": 0.9999609430004204,
+      "expected": 0.9999609430004204,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42_leaf5 malicious_f1 recomputed",
+      "actual": 0.9999799572112156,
+      "expected": 0.9999799572112156,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42_leaf5 malicious_support",
+      "actual": 972937,
+      "expected": 972937,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42_leaf5 fpr recomputed",
+      "actual": 1.1985377839036376e-05,
+      "expected": 1.1985377839036376e-05,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42_leaf5 macro_f1 recomputed",
+      "actual": 0.9998731470766725,
+      "expected": 0.9998731470766725,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42_mf03 counts sum to VALIDATION rows",
+      "actual": 1056372,
+      "expected": 1056372,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42_mf03 benign support",
+      "actual": 83435,
+      "expected": 83435,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42_mf03 accuracy recomputed",
+      "actual": 0.999950774916412,
+      "expected": 0.999950774916412,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42_mf03 benign_precision recomputed",
+      "actual": 0.9994369706625778,
+      "expected": 0.9994369706625778,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42_mf03 benign_recall recomputed",
+      "actual": 0.9999400731108048,
+      "expected": 0.9999400731108048,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42_mf03 benign_f1 recomputed",
+      "actual": 0.999688458588957,
+      "expected": 0.999688458588957,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42_mf03 benign_support",
+      "actual": 83435,
+      "expected": 83435,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42_mf03 malicious_precision recomputed",
+      "actual": 0.9999948606992533,
+      "expected": 0.9999948606992533,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42_mf03 malicious_recall recomputed",
+      "actual": 0.9999516926584147,
+      "expected": 0.9999516926584147,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42_mf03 malicious_f1 recomputed",
+      "actual": 0.9999732762129516,
+      "expected": 0.9999732762129516,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42_mf03 malicious_support",
+      "actual": 972937,
+      "expected": 972937,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42_mf03 fpr recomputed",
+      "actual": 5.992688919518188e-05,
+      "expected": 5.992688919518188e-05,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac1_seed42_mf03 macro_f1 recomputed",
+      "actual": 0.9998308674009544,
+      "expected": 0.9998308674009544,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "lr_full_20261102T011513018213Z counts sum to VALIDATION rows",
+      "actual": 1056372,
+      "expected": 1056372,
+      "status": "PASS"
+    },
+    {
+      "check": "lr_full_20261102T011513018213Z benign support",
+      "actual": 83435,
+      "expected": 83435,
+      "status": "PASS"
+    },
+    {
+      "check": "lr_full_20261102T011513018213Z accuracy recomputed",
+      "actual": 0.9995588675201539,
+      "expected": 0.9995588675201539,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "lr_full_20261102T011513018213Z benign_precision recomputed",
+      "actual": 0.9973623949453896,
+      "expected": 0.9973623949453896,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "lr_full_20261102T011513018213Z benign_recall recomputed",
+      "actual": 0.9970515970515971,
+      "expected": 0.9970515970515971,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "lr_full_20261102T011513018213Z benign_f1 recomputed",
+      "actual": 0.9972069717820239,
+      "expected": 0.9972069717820239,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "lr_full_20261102T011513018213Z benign_support",
+      "actual": 83435,
+      "expected": 83435,
+      "status": "PASS"
+    },
+    {
+      "check": "lr_full_20261102T011513018213Z malicious_precision recomputed",
+      "actual": 0.9997471640750984,
+      "expected": 0.9997471640750984,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "lr_full_20261102T011513018213Z malicious_recall recomputed",
+      "actual": 0.9997738805287496,
+      "expected": 0.9997738805287496,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "lr_full_20261102T011513018213Z malicious_f1 recomputed",
+      "actual": 0.999760522123439,
+      "expected": 0.999760522123439,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "lr_full_20261102T011513018213Z malicious_support",
+      "actual": 972937,
+      "expected": 972937,
+      "status": "PASS"
+    },
+    {
+      "check": "lr_full_20261102T011513018213Z fpr recomputed",
+      "actual": 0.0029484029484029483,
+      "expected": 0.0029484029484029483,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "lr_full_20261102T011513018213Z macro_f1 recomputed",
+      "actual": 0.9984837469527315,
+      "expected": 0.9984837469527315,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy_full_20261102T011513018213Z counts sum to VALIDATION rows",
+      "actual": 1056372,
+      "expected": 1056372,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy_full_20261102T011513018213Z benign support",
+      "actual": 83435,
+      "expected": 83435,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy_full_20261102T011513018213Z accuracy recomputed",
+      "actual": 0.9210174067468657,
+      "expected": 0.9210174067468657,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy_full_20261102T011513018213Z benign_precision undefined in both",
+      "actual": [
+        null,
+        null
+      ],
+      "expected": [
+        null,
+        null
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "dummy_full_20261102T011513018213Z benign_recall recomputed",
+      "actual": 0.0,
+      "expected": 0.0,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy_full_20261102T011513018213Z benign_f1 recomputed",
+      "actual": 0.0,
+      "expected": 0.0,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy_full_20261102T011513018213Z benign_support",
+      "actual": 83435,
+      "expected": 83435,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy_full_20261102T011513018213Z malicious_precision recomputed",
+      "actual": 0.9210174067468657,
+      "expected": 0.9210174067468657,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy_full_20261102T011513018213Z malicious_recall recomputed",
+      "actual": 1.0,
+      "expected": 1.0,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy_full_20261102T011513018213Z malicious_f1 recomputed",
+      "actual": 0.958885019482001,
+      "expected": 0.958885019482001,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy_full_20261102T011513018213Z malicious_support",
+      "actual": 972937,
+      "expected": 972937,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy_full_20261102T011513018213Z fpr recomputed",
+      "actual": 1.0,
+      "expected": 1.0,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy_full_20261102T011513018213Z macro_f1 recomputed",
+      "actual": 0.4794425097410005,
+      "expected": 0.4794425097410005,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.05_seed42 counts sum to VALIDATION rows",
+      "actual": 1056372,
+      "expected": 1056372,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.05_seed42 benign support",
+      "actual": 83435,
+      "expected": 83435,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.05_seed42 accuracy recomputed",
+      "actual": 0.9999365753730693,
+      "expected": 0.9999365753730693,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.05_seed42 benign_precision recomputed",
+      "actual": 0.9995326318816959,
+      "expected": 0.9995326318816959,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.05_seed42 benign_recall recomputed",
+      "actual": 0.9996644094205069,
+      "expected": 0.9996644094205069,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.05_seed42 benign_f1 recomputed",
+      "actual": 0.9995985163080279,
+      "expected": 0.9995985163080279,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.05_seed42 benign_support",
+      "actual": 83435,
+      "expected": 83435,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.05_seed42 malicious_precision recomputed",
+      "actual": 0.999971220832828,
+      "expected": 0.999971220832828,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.05_seed42 malicious_recall recomputed",
+      "actual": 0.999959915184642,
+      "expected": 0.999959915184642,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.05_seed42 malicious_f1 recomputed",
+      "actual": 0.9999655679767795,
+      "expected": 0.9999655679767795,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.05_seed42 malicious_support",
+      "actual": 972937,
+      "expected": 972937,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.05_seed42 fpr recomputed",
+      "actual": 0.00033559057949301854,
+      "expected": 0.00033559057949301854,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.05_seed42 macro_f1 recomputed",
+      "actual": 0.9997820421424037,
+      "expected": 0.9997820421424037,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.1_seed42 counts sum to VALIDATION rows",
+      "actual": 1056372,
+      "expected": 1056372,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.1_seed42 benign support",
+      "actual": 83435,
+      "expected": 83435,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.1_seed42 accuracy recomputed",
+      "actual": 0.9999403619179608,
+      "expected": 0.9999403619179608,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.1_seed42 benign_precision recomputed",
+      "actual": 0.9993172507965408,
+      "expected": 0.9993172507965408,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.1_seed42 benign_recall recomputed",
+      "actual": 0.9999280877329658,
+      "expected": 0.9999280877329658,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.1_seed42 benign_f1 recomputed",
+      "actual": 0.9996225759491016,
+      "expected": 0.9996225759491016,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.1_seed42 benign_support",
+      "actual": 83435,
+      "expected": 83435,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.1_seed42 malicious_precision recomputed",
+      "actual": 0.9999938327820526,
+      "expected": 0.9999938327820526,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.1_seed42 malicious_recall recomputed",
+      "actual": 0.9999414145006306,
+      "expected": 0.9999414145006306,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.1_seed42 malicious_f1 recomputed",
+      "actual": 0.9999676229544002,
+      "expected": 0.9999676229544002,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.1_seed42 malicious_support",
+      "actual": 972937,
+      "expected": 972937,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.1_seed42 fpr recomputed",
+      "actual": 7.191226703421825e-05,
+      "expected": 7.191226703421825e-05,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.1_seed42 macro_f1 recomputed",
+      "actual": 0.9997950994517509,
+      "expected": 0.9997950994517509,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.25_seed42 counts sum to VALIDATION rows",
+      "actual": 1056372,
+      "expected": 1056372,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.25_seed42 benign support",
+      "actual": 83435,
+      "expected": 83435,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.25_seed42 accuracy recomputed",
+      "actual": 0.9999706542770918,
+      "expected": 0.9999706542770918,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.25_seed42 benign_precision recomputed",
+      "actual": 0.9996525364836693,
+      "expected": 0.9996525364836693,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.25_seed42 benign_recall recomputed",
+      "actual": 0.9999760292443219,
+      "expected": 0.9999760292443219,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.25_seed42 benign_f1 recomputed",
+      "actual": 0.9998142566972444,
+      "expected": 0.9998142566972444,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.25_seed42 benign_support",
+      "actual": 83435,
+      "expected": 83435,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.25_seed42 malicious_precision recomputed",
+      "actual": 0.9999979443113957,
+      "expected": 0.9999979443113957,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.25_seed42 malicious_recall recomputed",
+      "actual": 0.9999701933424261,
+      "expected": 0.9999701933424261,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.25_seed42 malicious_f1 recomputed",
+      "actual": 0.9999840686343787,
+      "expected": 0.9999840686343787,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.25_seed42 malicious_support",
+      "actual": 972937,
+      "expected": 972937,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.25_seed42 fpr recomputed",
+      "actual": 2.3970755678072752e-05,
+      "expected": 2.3970755678072752e-05,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.25_seed42 macro_f1 recomputed",
+      "actual": 0.9998991626658116,
+      "expected": 0.9998991626658116,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.5_seed42 counts sum to VALIDATION rows",
+      "actual": 1056372,
+      "expected": 1056372,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.5_seed42 benign support",
+      "actual": 83435,
+      "expected": 83435,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.5_seed42 accuracy recomputed",
+      "actual": 0.9999791740030974,
+      "expected": 0.9999791740030974,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.5_seed42 benign_precision recomputed",
+      "actual": 0.9997603441458066,
+      "expected": 0.9997603441458066,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.5_seed42 benign_recall recomputed",
+      "actual": 0.9999760292443219,
+      "expected": 0.9999760292443219,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.5_seed42 benign_f1 recomputed",
+      "actual": 0.9998681750635157,
+      "expected": 0.9998681750635157,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.5_seed42 benign_support",
+      "actual": 83435,
+      "expected": 83435,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.5_seed42 malicious_precision recomputed",
+      "actual": 0.9999979443304119,
+      "expected": 0.9999979443304119,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.5_seed42 malicious_recall recomputed",
+      "actual": 0.9999794436844318,
+      "expected": 0.9999794436844318,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.5_seed42 malicious_f1 recomputed",
+      "actual": 0.9999886939218524,
+      "expected": 0.9999886939218524,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.5_seed42 malicious_support",
+      "actual": 972937,
+      "expected": 972937,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.5_seed42 fpr recomputed",
+      "actual": 2.3970755678072752e-05,
+      "expected": 2.3970755678072752e-05,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "rf_frac0.5_seed42 macro_f1 recomputed",
+      "actual": 0.999928434492684,
+      "expected": 0.999928434492684,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac0.5_seed42 counts sum to VALIDATION rows",
+      "actual": 1056372,
+      "expected": 1056372,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac0.5_seed42 benign support",
+      "actual": 83435,
+      "expected": 83435,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac0.5_seed42 accuracy recomputed",
+      "actual": 0.9999734941857603,
+      "expected": 0.9999734941857603,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac0.5_seed42 benign_precision recomputed",
+      "actual": 0.9996764956087274,
+      "expected": 0.9996764956087274,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac0.5_seed42 benign_recall recomputed",
+      "actual": 0.9999880146221609,
+      "expected": 0.9999880146221609,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac0.5_seed42 benign_f1 recomputed",
+      "actual": 0.9998322308503499,
+      "expected": 0.9998322308503499,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac0.5_seed42 benign_support",
+      "actual": 83435,
+      "expected": 83435,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac0.5_seed42 malicious_precision recomputed",
+      "actual": 0.9999989721567543,
+      "expected": 0.9999989721567543,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac0.5_seed42 malicious_recall recomputed",
+      "actual": 0.9999722489739828,
+      "expected": 0.9999722489739828,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac0.5_seed42 malicious_f1 recomputed",
+      "actual": 0.9999856103868339,
+      "expected": 0.9999856103868339,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac0.5_seed42 malicious_support",
+      "actual": 972937,
+      "expected": 972937,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac0.5_seed42 fpr recomputed",
+      "actual": 1.1985377839036376e-05,
+      "expected": 1.1985377839036376e-05,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "xgb_frac0.5_seed42 macro_f1 recomputed",
+      "actual": 0.9999089206185918,
+      "expected": 0.9999089206185918,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "TEST confusion counts == expected (brief 2.4)",
+      "actual": {
+        "TN": 83531,
+        "FP": 1,
+        "FN": 11,
+        "TP": 977723
+      },
+      "expected": {
+        "TN": 83531,
+        "FP": 1,
+        "FN": 11,
+        "TP": 977723
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "TEST counts sum to TEST rows",
+      "actual": 1061266,
+      "expected": 1061266,
+      "status": "PASS"
+    },
+    {
+      "check": "TEST accuracy recomputed",
+      "actual": 0.9999886927499797,
+      "expected": 0.9999886927499797,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "TEST macro_f1 recomputed",
+      "actual": 0.9999610194346051,
+      "expected": 0.9999610194346051,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "TEST fpr recomputed",
+      "actual": 1.1971460039266389e-05,
+      "expected": 1.1971460039266389e-05,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "TEST benign_precision recomputed",
+      "actual": 0.9998683297024251,
+      "expected": 0.9998683297024251,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "TEST benign_recall recomputed",
+      "actual": 0.9999880285399607,
+      "expected": 0.9999880285399607,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "TEST benign_f1 recomputed",
+      "actual": 0.9999281755389827,
+      "expected": 0.9999281755389827,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "TEST benign_support",
+      "actual": 83532,
+      "expected": 83532,
+      "status": "PASS"
+    },
+    {
+      "check": "TEST malicious_precision recomputed",
+      "actual": 0.9999989772164741,
+      "expected": 0.9999989772164741,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "TEST malicious_recall recomputed",
+      "actual": 0.9999887494962842,
+      "expected": 0.9999887494962842,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "TEST malicious_f1 recomputed",
+      "actual": 0.9999938633302276,
+      "expected": 0.9999938633302276,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "TEST malicious_support",
+      "actual": 977734,
+      "expected": 977734,
+      "status": "PASS"
+    },
+    {
+      "check": "tree-model Full runs",
+      "actual": 7,
+      "expected": 7,
+      "status": "PASS"
+    },
+    {
+      "check": "winner error analysis: FN count",
+      "actual": 18,
+      "expected": 18,
+      "status": "PASS"
+    },
+    {
+      "check": "winner error analysis: FP count",
+      "actual": 0,
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "winner error analysis: distinct wrong vectors",
+      "actual": 2,
+      "expected": 2,
+      "status": "PASS"
+    },
+    {
+      "check": "winner error analysis: repeats of the wrong vectors add up to the errors",
+      "actual": 18,
+      "expected": 18,
+      "status": "PASS"
+    },
+    {
+      "check": "winner error analysis: errors per traffic type add up",
+      "actual": 18,
+      "expected": 18,
+      "status": "PASS"
+    }
+  ]
+}

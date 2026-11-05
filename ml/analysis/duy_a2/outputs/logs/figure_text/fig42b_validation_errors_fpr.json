@@ -1,0 +1,902 @@
+{
+  "figure": "fig42b_validation_errors_fpr",
+  "figure_size_in": [
+    6.3,
+    3.1
+  ],
+  "saved_size_in": [
+    6.24,
+    3.025
+  ],
+  "min_fontsize_pt": 6.0,
+  "problems": [],
+  "texts": [
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "0",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        130.7,
+        184.2,
+        134.3,
+        190.2
+      ],
+      "anchor": [
+        0.0,
+        8.2
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "0",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        130.7,
+        166.1,
+        134.3,
+        172.1
+      ],
+      "anchor": [
+        0.0,
+        7.2
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "1",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        145.42,
+        148.0,
+        149.02,
+        154.0
+      ],
+      "anchor": [
+        1.0,
+        6.2
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "1",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        145.42,
+        129.9,
+        149.02,
+        135.9
+      ],
+      "anchor": [
+        1.0,
+        5.2
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "1",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        145.42,
+        111.8,
+        149.02,
+        117.8
+      ],
+      "anchor": [
+        1.0,
+        4.2
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "1",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        145.42,
+        93.7,
+        149.02,
+        99.7
+      ],
+      "anchor": [
+        1.0,
+        3.2
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "5",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        160.86,
+        75.6,
+        164.46,
+        81.6
+      ],
+      "anchor": [
+        5.0,
+        2.2
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "246",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        198.22,
+        57.5,
+        209.02,
+        63.5
+      ],
+      "anchor": [
+        246.0,
+        1.2
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "83,435",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        254.1,
+        39.4,
+        274.26,
+        45.4
+      ],
+      "anchor": [
+        83435.0,
+        0.2
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "18",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        173.14,
+        176.96,
+        180.34,
+        182.96
+      ],
+      "anchor": [
+        18.0,
+        7.8
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "20",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        174.15,
+        158.86,
+        181.35,
+        164.86
+      ],
+      "anchor": [
+        20.0,
+        6.8
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "27",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        177.03,
+        140.76,
+        184.23,
+        146.76
+      ],
+      "anchor": [
+        27.0,
+        5.8
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "29",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        177.72,
+        122.66,
+        184.92,
+        128.66
+      ],
+      "anchor": [
+        29.0,
+        4.8
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "29",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        177.72,
+        104.56,
+        184.92,
+        110.56
+      ],
+      "anchor": [
+        29.0,
+        3.8
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "38",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        180.31,
+        86.46,
+        187.51,
+        92.46
+      ],
+      "anchor": [
+        38.0,
+        2.8
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "47",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        182.35,
+        68.36,
+        189.55,
+        74.36
+      ],
+      "anchor": [
+        47.0,
+        1.8
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "220",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        197.15,
+        50.26,
+        207.95,
+        56.26
+      ],
+      "anchor": [
+        220.0,
+        0.8
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "0",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        130.7,
+        32.16,
+        134.3,
+        38.16
+      ],
+      "anchor": [
+        0.0,
+        -0.2
+      ]
+    },
+    {
+      "role": "title",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "(a) Errors on VALIDATION",
+      "fontsize_pt": 7.5,
+      "bbox_pt": [
+        125.96,
+        196.64,
+        229.27,
+        204.2
+      ]
+    },
+    {
+      "role": "xlabel",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "records (symmetric log scale)",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        149.4,
+        2.16,
+        256.4,
+        9.6
+      ]
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "0",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        123.8,
+        14.32,
+        128.12,
+        20.92
+      ],
+      "tick_loc": 0.0,
+      "scale": "symlog"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "1",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        138.52,
+        14.32,
+        142.84,
+        20.92
+      ],
+      "tick_loc": 1.0,
+      "scale": "symlog"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "10",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        158.45,
+        14.32,
+        167.09,
+        20.92
+      ],
+      "tick_loc": 10.0,
+      "scale": "symlog"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "100",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        178.37,
+        14.32,
+        191.33,
+        20.92
+      ],
+      "tick_loc": 100.0,
+      "scale": "symlog"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "1k",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        202.98,
+        13.6,
+        210.9,
+        20.92
+      ],
+      "tick_loc": 1000.0,
+      "scale": "symlog"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "10k",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        222.9,
+        13.6,
+        235.14,
+        20.92
+      ],
+      "tick_loc": 10000.0,
+      "scale": "symlog"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "100k",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        242.83,
+        13.6,
+        259.39,
+        20.92
+      ],
+      "tick_loc": 100000.0,
+      "scale": "symlog"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "1M",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        268.15,
+        14.32,
+        278.23,
+        20.92
+      ],
+      "tick_loc": 1000000.0,
+      "scale": "symlog"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "xgb_frac1_seed42_lr01  [selected]",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        2.16,
+        179.14,
+        120.96,
+        186.46
+      ],
+      "tick_loc": 8.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "xgb_frac1_seed42_d4",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        46.8,
+        161.04,
+        120.96,
+        168.36
+      ],
+      "tick_loc": 7.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "xgb_frac1_seed42 (XGB baseline)",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        5.76,
+        142.94,
+        120.96,
+        150.26
+      ],
+      "tick_loc": 6.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "rf_frac1_seed42 (RF baseline)",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        18.72,
+        124.84,
+        120.96,
+        132.16
+      ],
+      "tick_loc": 5.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "xgb_frac1_seed42_d8",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        46.8,
+        106.74,
+        120.96,
+        114.06
+      ],
+      "tick_loc": 4.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "rf_frac1_seed42_leaf5",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        45.36,
+        88.64,
+        120.96,
+        95.96
+      ],
+      "tick_loc": 3.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "rf_frac1_seed42_mf03",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        45.36,
+        70.54,
+        120.96,
+        77.86
+      ],
+      "tick_loc": 2.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "LR (lr_full_...018213Z)",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        45.36,
+        52.44,
+        120.96,
+        59.76
+      ],
+      "tick_loc": 1.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "(a) Errors on VALIDATION",
+      "text": "Dummy (dummy_full_...018213Z)",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        7.2,
+        34.34,
+        120.96,
+        41.66
+      ],
+      "tick_loc": 0.0,
+      "scale": "linear"
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) FPR = FP / 83,435 benign",
+      "text": "0%",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        295.81,
+        180.58,
+        305.17,
+        186.58
+      ],
+      "anchor": [
+        0.0,
+        8.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) FPR = FP / 83,435 benign",
+      "text": "0%",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        295.81,
+        162.48,
+        305.17,
+        168.48
+      ],
+      "anchor": [
+        0.0,
+        7.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) FPR = FP / 83,435 benign",
+      "text": "0.0012%",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        314.1,
+        144.38,
+        340.02,
+        150.38
+      ],
+      "anchor": [
+        0.0011985377839036377,
+        6.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) FPR = FP / 83,435 benign",
+      "text": "0.0012%",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        314.1,
+        126.28,
+        340.02,
+        132.28
+      ],
+      "anchor": [
+        0.0011985377839036377,
+        5.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) FPR = FP / 83,435 benign",
+      "text": "0.0012%",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        314.1,
+        108.18,
+        340.02,
+        114.18
+      ],
+      "anchor": [
+        0.0011985377839036377,
+        4.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) FPR = FP / 83,435 benign",
+      "text": "0.0012%",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        314.1,
+        90.08,
+        340.02,
+        96.08
+      ],
+      "anchor": [
+        0.0011985377839036377,
+        3.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) FPR = FP / 83,435 benign",
+      "text": "0.00599%",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        331.26,
+        71.98,
+        360.78,
+        77.98
+      ],
+      "anchor": [
+        0.005992688919518188,
+        2.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) FPR = FP / 83,435 benign",
+      "text": "0.295%",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        372.79,
+        53.88,
+        395.11,
+        59.88
+      ],
+      "anchor": [
+        0.29484029484029484,
+        1.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) FPR = FP / 83,435 benign",
+      "text": "100%",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        434.91,
+        35.78,
+        451.47,
+        41.78
+      ],
+      "anchor": [
+        100.0,
+        0.0
+      ]
+    },
+    {
+      "role": "title",
+      "axes": 1,
+      "axes_title": "(b) FPR = FP / 83,435 benign",
+      "text": "(b) FPR = FP / 83,435 benign",
+      "fontsize_pt": 7.5,
+      "bbox_pt": [
+        291.07,
+        196.64,
+        406.27,
+        204.2
+      ]
+    },
+    {
+      "role": "xlabel",
+      "axes": 1,
+      "axes_title": "(b) FPR = FP / 83,435 benign",
+      "text": "FPR, % (symmetric log scale)",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        315.09,
+        2.88,
+        420.93,
+        10.32
+      ]
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "(b) FPR = FP / 83,435 benign",
+      "text": "0",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        288.91,
+        14.32,
+        293.23,
+        20.92
+      ],
+      "tick_loc": 0.0,
+      "scale": "symlog"
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "(b) FPR = FP / 83,435 benign",
+      "text": "0.001",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        297.72,
+        14.32,
+        317.16,
+        20.92
+      ],
+      "tick_loc": 0.001,
+      "scale": "symlog"
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "(b) FPR = FP / 83,435 benign",
+      "text": "0.01",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        324.42,
+        14.32,
+        339.54,
+        20.92
+      ],
+      "tick_loc": 0.01,
+      "scale": "symlog"
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "(b) FPR = FP / 83,435 benign",
+      "text": "0.1",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        351.13,
+        14.32,
+        361.93,
+        20.92
+      ],
+      "tick_loc": 0.1,
+      "scale": "symlog"
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "(b) FPR = FP / 83,435 benign",
+      "text": "1",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        378.92,
+        14.32,
+        383.24,
+        20.92
+      ],
+      "tick_loc": 1.0,
+      "scale": "symlog"
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "(b) FPR = FP / 83,435 benign",
+      "text": "10",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        401.3,
+        14.32,
+        409.94,
+        20.92
+      ],
+      "tick_loc": 10.0,
+      "scale": "symlog"
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "(b) FPR = FP / 83,435 benign",
+      "text": "100",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        423.69,
+        14.32,
+        436.65,
+        20.92
+      ],
+      "tick_loc": 100.0,
+      "scale": "symlog"
+    },
+    {
+      "role": "legend",
+      "axes": null,
+      "axes_title": null,
+      "text": [
+        "FP: benign flagged malicious",
+        "FN: malicious missed"
+      ],
+      "fontsize_pt": null,
+      "bbox_pt": [
+        117.72,
+        207.43,
+        335.88,
+        219.95
+      ]
+    }
+  ]
+}

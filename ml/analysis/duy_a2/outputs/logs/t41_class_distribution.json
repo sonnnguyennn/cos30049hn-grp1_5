@@ -1,0 +1,443 @@
+{
+  "script": "t41_class_distribution",
+  "created_utc": "2026-11-05T14:36:16.106755+00:00",
+  "runtime": {
+    "python": "3.11.18",
+    "platform": "Linux-6.18.44-fc-v236-x86_64-with-glibc2.39",
+    "numpy": "2.4.6",
+    "matplotlib": "3.11.2"
+  },
+  "inputs": [
+    {
+      "label": "n_baiot_label_distribution.csv",
+      "path": "artifacts/audit/n_baiot_label_distribution.csv",
+      "bytes": 962,
+      "sha256": "8db8caa4984e774c3a6ba72d2a63b43d24b909bbdc5e9303f92e6729c2b34433"
+    },
+    {
+      "label": "bot_iot_label_distribution.csv",
+      "path": "artifacts/audit/bot_iot_label_distribution.csv",
+      "bytes": 15081,
+      "sha256": "40da2aa8bd30c6edde5cbe68fa8a370f8217d0d908ad1917ea7f056b5141fd83"
+    },
+    {
+      "label": "g3a_class_distribution.csv",
+      "path": "artifacts/audit/g3a_class_distribution.csv",
+      "bytes": 5213,
+      "sha256": "d4d314218254b4519cc9b25886d18b71b8103947c6ffde5cfe41128b1827ce31"
+    },
+    {
+      "label": "Bot-IoT package manifest",
+      "path": "manifest.json",
+      "bytes": 11948,
+      "sha256": "dd4fdc2551df68f294968f38ca3ecced0c27ac8bc2d1e1ae22239b7d676bae7c"
+    },
+    {
+      "label": "Bot-IoT TRAIN_y.npy",
+      "path": "TRAIN_y.npy",
+      "bytes": 2201242,
+      "sha256": "39aa1fd7179d8c2c87c30d510a4cf6bc67ffd8a75bf6cb3d347f403fabfffd25"
+    },
+    {
+      "label": "Bot-IoT VALIDATION_y.npy",
+      "path": "VALIDATION_y.npy",
+      "bytes": 733832,
+      "sha256": "aee10cb383612e632baeeaef57fa9b1ccc05865b5c1043e7ec0bde96c61c6378"
+    }
+  ],
+  "outputs": [
+    "analysis/duy_a2/outputs/tables/t41_class_counts_corpus.csv",
+    "analysis/duy_a2/outputs/tables/t41_class_counts_partitions.csv",
+    "analysis/duy_a2/outputs/figures/fig41a_binary_class_balance.png",
+    "analysis/duy_a2/outputs/figures/fig41a_binary_class_balance.pdf",
+    "analysis/duy_a2/outputs/figures/fig41b_attack_groups.png",
+    "analysis/duy_a2/outputs/figures/fig41b_attack_groups.pdf"
+  ],
+  "checks": [
+    {
+      "check": "N-BaIoT corpus binary level sums to corpus total",
+      "actual": 7062606,
+      "expected": 7062606,
+      "status": "PASS"
+    },
+    {
+      "check": "N-BaIoT binary/benign percent matches audit",
+      "actual": 7.871485397882878,
+      "expected": 7.871485397882878,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "N-BaIoT binary/malicious percent matches audit",
+      "actual": 92.12851460211712,
+      "expected": 92.12851460211712,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "N-BaIoT corpus family level sums to corpus total",
+      "actual": 7062606,
+      "expected": 7062606,
+      "status": "PASS"
+    },
+    {
+      "check": "N-BaIoT family/benign percent matches audit",
+      "actual": 7.871485397882878,
+      "expected": 7.871485397882878,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "N-BaIoT family/gafgyt percent matches audit",
+      "actual": 40.18731895846944,
+      "expected": 40.18731895846944,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "N-BaIoT family/mirai percent matches audit",
+      "actual": 51.94119564364768,
+      "expected": 51.94119564364768,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "N-BaIoT corpus fine_class level sums to corpus total",
+      "actual": 7062606,
+      "expected": 7062606,
+      "status": "PASS"
+    },
+    {
+      "check": "N-BaIoT fine_class/benign percent matches audit",
+      "actual": 7.871485397882878,
+      "expected": 7.871485397882878,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "N-BaIoT fine_class/gafgyt_combo percent matches audit",
+      "actual": 7.294134771216177,
+      "expected": 7.294134771216177,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "N-BaIoT fine_class/gafgyt_junk percent matches audit",
+      "actual": 3.7066912694832475,
+      "expected": 3.7066912694832475,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "N-BaIoT fine_class/gafgyt_scan percent matches audit",
+      "actual": 3.612136936422618,
+      "expected": 3.612136936422618,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "N-BaIoT fine_class/gafgyt_tcp percent matches audit",
+      "actual": 12.174684528628667,
+      "expected": 12.174684528628667,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "N-BaIoT fine_class/gafgyt_udp percent matches audit",
+      "actual": 13.399671452718728,
+      "expected": 13.399671452718728,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "N-BaIoT fine_class/mirai_ack percent matches audit",
+      "actual": 9.115912738159258,
+      "expected": 9.115912738159258,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "N-BaIoT fine_class/mirai_scan percent matches audit",
+      "actual": 7.617287443190233,
+      "expected": 7.617287443190233,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "N-BaIoT fine_class/mirai_syn percent matches audit",
+      "actual": 10.38283885579912,
+      "expected": 10.38283885579912,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "N-BaIoT fine_class/mirai_udp percent matches audit",
+      "actual": 17.415653655322128,
+      "expected": 17.415653655322128,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "N-BaIoT fine_class/mirai_udpplain percent matches audit",
+      "actual": 7.409502951176945,
+      "expected": 7.409502951176945,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "N-BaIoT benign identical across levels",
+      "actual": [
+        555932
+      ],
+      "expected": [
+        555932
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "N-BaIoT family gafgyt = sum of its fine classes",
+      "actual": 2838272,
+      "expected": 2838272,
+      "status": "PASS"
+    },
+    {
+      "check": "N-BaIoT family mirai = sum of its fine classes",
+      "actual": 3668402,
+      "expected": 3668402,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT corpus attack level sums to corpus total",
+      "actual": 3668522,
+      "expected": 3668522,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT attack/0 percent matches audit",
+      "actual": 0.013002511638201979,
+      "expected": 0.013002511638201979,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT attack/1 percent matches audit",
+      "actual": 99.9869974883618,
+      "expected": 99.9869974883618,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT corpus category level sums to corpus total",
+      "actual": 3668522,
+      "expected": 3668522,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT category/DDoS percent matches audit",
+      "actual": 52.51771694431709,
+      "expected": 52.51771694431709,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT category/DoS percent matches audit",
+      "actual": 44.98432883869853,
+      "expected": 44.98432883869853,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT category/Normal percent matches audit",
+      "actual": 0.013002511638201979,
+      "expected": 0.013002511638201979,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT category/Reconnaissance percent matches audit",
+      "actual": 2.482798249540278,
+      "expected": 2.482798249540278,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT category/Theft percent matches audit",
+      "actual": 0.002153455805907665,
+      "expected": 0.002153455805907665,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT corpus subcategory level sums to corpus total",
+      "actual": 3668522,
+      "expected": 3668522,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT subcategory/Data_Exfiltration percent matches audit",
+      "actual": 0.00016355360551197458,
+      "expected": 0.00016355360551197458,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT subcategory/HTTP percent matches audit",
+      "actual": 0.06743860333943752,
+      "expected": 0.06743860333943752,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT subcategory/Keylogging percent matches audit",
+      "actual": 0.0019899022003956905,
+      "expected": 0.0019899022003956905,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT subcategory/Normal percent matches audit",
+      "actual": 0.013002511638201979,
+      "expected": 0.013002511638201979,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT subcategory/OS_Fingerprint percent matches audit",
+      "actual": 0.4883165481902521,
+      "expected": 0.4883165481902521,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT subcategory/Service_Scan percent matches audit",
+      "actual": 1.994481701350026,
+      "expected": 1.994481701350026,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT subcategory/TCP percent matches audit",
+      "actual": 43.428388871594606,
+      "expected": 43.428388871594606,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT subcategory/UDP percent matches audit",
+      "actual": 54.006218308081564,
+      "expected": 54.006218308081564,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT benign identical across levels",
+      "actual": [
+        477
+      ],
+      "expected": [
+        477
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "N-BaIoT TRAIN total matches Table 1",
+      "actual": 4944968,
+      "expected": 4944968,
+      "status": "PASS"
+    },
+    {
+      "check": "N-BaIoT VALIDATION total matches Table 1",
+      "actual": 1056372,
+      "expected": 1056372,
+      "status": "PASS"
+    },
+    {
+      "check": "N-BaIoT TEST total matches Table 1",
+      "actual": 1061266,
+      "expected": 1061266,
+      "status": "PASS"
+    },
+    {
+      "check": "N-BaIoT benign: TRAIN+VALIDATION+TEST = corpus",
+      "actual": 555932,
+      "expected": 555932,
+      "status": "PASS"
+    },
+    {
+      "check": "N-BaIoT malicious: TRAIN+VALIDATION+TEST = corpus",
+      "actual": 6506674,
+      "expected": 6506674,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT TRAIN_y.npy hash matches manifest",
+      "actual": "39aa1fd7179d8c2c87c30d510a4cf6bc67ffd8a75bf6cb3d347f403fabfffd25",
+      "expected": "39aa1fd7179d8c2c87c30d510a4cf6bc67ffd8a75bf6cb3d347f403fabfffd25",
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT TRAIN y.npy counts == manifest",
+      "actual": {
+        "benign": 286,
+        "malicious": 2200828
+      },
+      "expected": {
+        "benign": 286,
+        "malicious": 2200828
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT TRAIN total == manifest rows",
+      "actual": 2201114,
+      "expected": 2201114,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT VALIDATION_y.npy hash matches manifest",
+      "actual": "aee10cb383612e632baeeaef57fa9b1ccc05865b5c1043e7ec0bde96c61c6378",
+      "expected": "aee10cb383612e632baeeaef57fa9b1ccc05865b5c1043e7ec0bde96c61c6378",
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT VALIDATION y.npy counts == manifest",
+      "actual": {
+        "benign": 96,
+        "malicious": 733608
+      },
+      "expected": {
+        "benign": 96,
+        "malicious": 733608
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT VALIDATION total == manifest rows",
+      "actual": 733704,
+      "expected": 733704,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT TEST total == manifest rows",
+      "actual": 733704,
+      "expected": 733704,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT partitions sum to the 5% corpus",
+      "actual": 3668522,
+      "expected": 3668522,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT benign partitions sum to corpus Normal",
+      "actual": 477,
+      "expected": 477,
+      "status": "PASS"
+    }
+  ],
+  "notes": [
+    "Bot-IoT TEST counts from package manifest; TEST arrays not opened.",
+    "N-BaIoT TEST counts from the G3A split audit only."
+  ]
+}

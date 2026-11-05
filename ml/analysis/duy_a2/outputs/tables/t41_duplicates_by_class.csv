@@ -1,0 +1,5 @@
+dataset,feature_view,class,rows,distinct_vectors,excess_rows,share_of_rows_percent,share_of_distinct_percent,note,source,duplication_factor
+N-BaIoT,115 predictors,benign,555932,513497,42435,7.871485397882878,20.683206346700093,,artifacts/audit/n_baiot_effective_imbalance.csv,1.0826
+N-BaIoT,115 predictors,malicious,6506674,1969179,4537495,92.12851460211712,79.31679365329991,,artifacts/audit/n_baiot_effective_imbalance.csv,3.3043
+Bot-IoT,13 predictors,benign,477,406,71,0.013002511638201979,0.06036205338027499,"1 mixed group (11 benign + 3,733 malicious rows) counted in both classes",artifacts/manifests/bot_iot_candidate_proposed_split_summary.json,1.1749
+Bot-IoT,13 predictors,malicious,3668045,672202,2995843,99.9869974883618,99.93963794661973,"1 mixed group (11 benign + 3,733 malicious rows) counted in both classes",artifacts/manifests/bot_iot_candidate_proposed_split_summary.json,5.4568

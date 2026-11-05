@@ -1,0 +1,345 @@
+{
+  "figure": "fig41e_duplicates_by_class",
+  "figure_size_in": [
+    6.3,
+    2.0
+  ],
+  "saved_size_in": [
+    6.24,
+    1.925
+  ],
+  "min_fontsize_pt": 6.0,
+  "problems": [],
+  "texts": [
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "",
+      "text": "555,932 rows",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        308.23,
+        114.04,
+        347.69,
+        120.04
+      ],
+      "anchor": [
+        555932.0,
+        3.87
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "",
+      "text": "513,497 distinct (×1.08)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        306.37,
+        106.68,
+        376.93,
+        113.16
+      ],
+      "anchor": [
+        513497.0,
+        3.5300000000000002
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "",
+      "text": "6,506,674 rows",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        375.59,
+        93.09,
+        420.82,
+        99.09
+      ],
+      "anchor": [
+        6506674.0,
+        2.87
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "",
+      "text": "1,969,179 distinct (×3.30)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        343.17,
+        85.73,
+        419.49,
+        92.21
+      ],
+      "anchor": [
+        1969179.0,
+        2.5300000000000002
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "",
+      "text": "477 rows",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        114.86,
+        61.67,
+        141.37,
+        67.67
+      ],
+      "anchor": [
+        477.0,
+        1.3699999999999999
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "",
+      "text": "406 distinct (×1.17)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        110.76,
+        54.31,
+        168.36,
+        60.79
+      ],
+      "anchor": [
+        406.0,
+        1.03
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "",
+      "text": "3,668,045 rows",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        359.89,
+        40.72,
+        405.12,
+        46.72
+      ],
+      "anchor": [
+        3668045.0,
+        0.37
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "",
+      "text": "672,202 distinct (×5.46)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        313.74,
+        33.36,
+        384.3,
+        39.84
+      ],
+      "anchor": [
+        672202.0,
+        0.03
+      ]
+    },
+    {
+      "role": "xlabel",
+      "axes": 0,
+      "axes_title": "",
+      "text": "records (log scale); ×N = average rows per distinct vector",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        153.41,
+        2.16,
+        359.61,
+        9.6
+      ]
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "",
+      "text": "$\\mathdefault{10^{2}}$",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        61.58,
+        13.6,
+        73.1,
+        21.64
+      ],
+      "tick_loc": 100.0,
+      "scale": "log"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "",
+      "text": "$\\mathdefault{10^{3}}$",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        124.64,
+        13.6,
+        136.16,
+        21.64
+      ],
+      "tick_loc": 1000.0,
+      "scale": "log"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "",
+      "text": "$\\mathdefault{10^{4}}$",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        187.7,
+        13.6,
+        199.22,
+        21.64
+      ],
+      "tick_loc": 10000.0,
+      "scale": "log"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "",
+      "text": "$\\mathdefault{10^{5}}$",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        250.75,
+        13.6,
+        262.27,
+        21.64
+      ],
+      "tick_loc": 100000.0,
+      "scale": "log"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "",
+      "text": "$\\mathdefault{10^{6}}$",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        313.81,
+        13.6,
+        325.33,
+        21.64
+      ],
+      "tick_loc": 1000000.0,
+      "scale": "log"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "",
+      "text": "$\\mathdefault{10^{7}}$",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        376.86,
+        13.6,
+        388.38,
+        21.64
+      ],
+      "tick_loc": 10000000.0,
+      "scale": "log"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "",
+      "text": "$\\mathdefault{10^{8}}$",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        439.92,
+        13.6,
+        451.44,
+        21.64
+      ],
+      "tick_loc": 100000000.0,
+      "scale": "log"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "",
+      "text": "N-BaIoT benign\n(115 features)",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        11.52,
+        103.75,
+        63.84,
+        120.99
+      ],
+      "tick_loc": 3.7,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "",
+      "text": "N-BaIoT malicious\n(115 features)",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        2.16,
+        82.8,
+        63.84,
+        100.05
+      ],
+      "tick_loc": 2.7,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "",
+      "text": "Bot-IoT benign\n(13 predictors)",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        12.15,
+        51.38,
+        63.84,
+        68.63
+      ],
+      "tick_loc": 1.2,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "",
+      "text": "Bot-IoT malicious\n(13 predictors)",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        4.08,
+        30.44,
+        63.84,
+        47.68
+      ],
+      "tick_loc": 0.2,
+      "scale": "linear"
+    },
+    {
+      "role": "legend",
+      "axes": null,
+      "axes_title": null,
+      "text": [
+        "all rows",
+        "distinct feature vectors"
+      ],
+      "fontsize_pt": null,
+      "bbox_pt": [
+        149.91,
+        128.23,
+        303.69,
+        140.75
+      ]
+    }
+  ]
+}

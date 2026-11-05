@@ -1,0 +1,13 @@
+aspect,N-BaIoT,Bot-IoT
+predictors,115 numeric (float64),"13 raw: 10 numeric + 3 categorical (flgs, proto, state)"
+model input columns,115 (raw for trees; TRAIN-scaled for LR),36 encoded (10 TRAIN-scaled numeric + 26 one-hot incl. 3 UNKNOWN slots)
+records in corpus,"7,062,606","3,668,522 (5% subset)"
+TRAIN / VALIDATION / TEST,"4,944,968 / 1,056,372 / 1,061,266","2,201,114 / 733,704 / 733,704"
+benign share of corpus,"7.87% (555,932)",0.013% (477)
+benign records in VALIDATION,"83,435",96 (77 exact-X groups)
+duplicate excess on model predictors,64.85% of rows (115 features),81.67% of rows (13 predictors); 0% on all 43 source fields
+models evaluated,7 RF/XGB Full runs + LR + Dummy; final TEST for selected XGB only,"Dummy + LR Full baseline; VALIDATION only, TEST not evaluated"
+best VALIDATION macro-F1,0.999941 (xgb_frac1_seed42_lr01),0.566006 row / 0.580328 group (LR)
+benign recall of that model,"1.0 (0 of 83,435 benign flagged)",0.0729 row (7/96) / 0.0909 group (7/77)
+design history,split and policy fixed before any model was fitted,v2 preprocessing revised after structural TEST diagnostics (before any model fit); TEST is not design-blind
+relationship,separate experiment,separate experiment; no model is transferred between datasets
