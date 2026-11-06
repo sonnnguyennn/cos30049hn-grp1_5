@@ -1,9 +1,9 @@
 {
   "script": "t41_duplicates",
-  "created_utc": "2026-11-05T14:36:29.721716+00:00",
+  "created_utc": "2026-11-06T16:05:26.598045+00:00",
   "runtime": {
     "python": "3.11.18",
-    "platform": "Linux-6.18.44-fc-v236-x86_64-with-glibc2.39",
+    "platform": "Linux-6.18.44-fc-v242-x86_64-with-glibc2.39",
     "numpy": "2.4.6",
     "matplotlib": "3.11.2"
   },
@@ -51,6 +51,12 @@
       "check": "N-BaIoT numeric groups == lexical groups",
       "actual": 2482676,
       "expected": 2482676,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT exact-X groups shared by TRAIN and VALIDATION",
+      "actual": 0,
+      "expected": 0,
       "status": "PASS"
     },
     {

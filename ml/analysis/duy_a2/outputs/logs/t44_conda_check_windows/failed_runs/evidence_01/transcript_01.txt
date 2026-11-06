@@ -1,0 +1,42 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261105215232
+Username: SVSTORE-PC\SV STORE
+RunAs User: SVSTORE-PC\SV STORE
+Configuration Name: 
+Machine: SVSTORE-PC (Microsoft Windows NT 10.0.22631.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -File analysis\duy_a2\scripts\t44_handoff_check.ps1 -HandoffZip <path>\IoTGuard_Primary_XGBoost_Handoff.zip -RunId 01
+Process ID: 12348
+PSVersion: 5.1.22621.6133
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.6133
+BuildVersion: 10.0.22621.6133
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+[INFO] operating system - Microsoft Windows 11 Pro 10.0.22631 (build 22631, 64-bit)
+[INFO] PowerShell - 5.1.22621.6133
+Test-Path : Illegal characters in path.
+At C:\Users\SV STORE\OneDrive - Swinburne 
+University\Documents\cos30049hn-grp1_5\ml\analysis\duy_a2\scripts\t44_handoff_check.ps1:89 char:15
++     if (-not (Test-Path -LiteralPath $HandoffZip)) { Add-Step "handof ...
++               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (C:\Users\SV STO...ost_Handoff.zip:String) [Test-Path], ArgumentException
+    + FullyQualifiedErrorId : ItemExistsArgumentError,Microsoft.PowerShell.Commands.TestPathCommand
+Test-Path : Illegal characters in path.
+At C:\Users\SV STORE\OneDrive - Swinburne
+University\Documents\cos30049hn-grp1_5\ml\analysis\duy_a2\scripts\t44_handoff_check.ps1:89 char:15
++     if (-not (Test-Path -LiteralPath $HandoffZip)) { Add-Step "handof ...
++               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (C:\Users\SV STO...ost_Handoff.zip:String) [Test-Path], ArgumentExcepti
+   on
+    + FullyQualifiedErrorId : ItemExistsArgumentError,Microsoft.PowerShell.Commands.TestPathCommand
+
+[FAIL] handoff ZIP found - <path>\IoTGuard_Primary_XGBoost_Handoff.zip
+[FAIL] stopped - ZIP not found
+**********************
+Windows PowerShell transcript end
+End time: 20261105215232
+**********************

@@ -9,12 +9,12 @@ already-extracted package folder, and writes a small extract for the EDA plots:
 
 Integrity: manifest.json must have the published SHA-256; every member that is read is
 hashed while streaming and must match the manifest. TEST members are never opened.
-Needs only Python 3.9+ and NumPy (for example the 4.4 Conda environment).
+Needs only Python 3.9+ and NumPy (for example the EDA environment from requirements-eda.txt).
 
 PowerShell example:
   python -I t41_nbaiot_extract_local.py `
       --package "C:\\...\\Primary Data (N-BaIoT)\\g3b_primary_v1.zip" `
-      --out "C:\\...\\Primary Data (N-BaIoT)\\duy_eda_extract_01"
+      --out "C:\\...\\Primary Data (N-BaIoT)\\nbaiot_extract_01"
 """
 
 from __future__ import annotations
@@ -26,7 +26,7 @@ import platform
 import sys
 import time
 import zipfile
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from pathlib import Path, PurePosixPath
 
 import numpy as np
@@ -246,7 +246,7 @@ def main():
     receipt = {
         "schema": "duy_nbaiot_local_extract_v1",
         "status": "PASS",
-        "created_utc": datetime.now(UTC).isoformat(),
+        "created_utc": datetime.now(timezone.utc).isoformat(),  # noqa: UP017 (Python 3.9+)
         "command": [Path(sys.executable).name, *sys.argv],
         "package_source": {
             "path_name": args.package.name,

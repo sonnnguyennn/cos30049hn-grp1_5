@@ -5,7 +5,7 @@ package (3 TRAIN columns + TRAIN labels, all 4,944,968 rows, hashes in its recei
 Feature names and positions come from the package's own feature contract.
 
 Usage (from ml/):
-  python analysis/duy_a2/scripts/t41_nbaiot_train_features.py --extract-dir <duy_eda_extract_01>
+  python analysis/duy_a2/scripts/t41_nbaiot_train_features.py --extract-dir <nbaiot_extract_01>
 """
 
 from __future__ import annotations
@@ -89,13 +89,26 @@ def main():
     def med(feature, cls):
         return s[(feature, cls)]["median"]
 
+    def overlap(feature):
+        """Histogram overlap: sum over the shared bins of the smaller class share (1 = same)."""
+        share = {(r["class"], r["bin_index"]): r["fraction_of_class"] for r in by_feature[feature]}
+        return sum(min(share[("benign", i)], share[("malicious", i)]) for i in range(F.N_BINS))
+
+    ov = {f: overlap(f) for f in names}
+    if max(ov.values()) - min(ov.values()) < 0.01:
+        ranking = "so none of the three separates the classes clearly better than the others"
+    else:
+        ranking = (
+            f"so {min(ov, key=ov.get)} separates the classes most and {max(ov, key=ov.get)} least"
+        )
     commentary = (
         "Medians (benign vs malicious): "
         + "; ".join(f"{f} {med(f, 'benign'):,.3g} vs {med(f, 'malicious'):,.3g}" for f in names)
-        + ". [Edit after viewing: state where the curves separate or overlap.] "
-        "All TRAIN records are used, so the curves are not a sample; the benign curve is "
-        f"based on {n_b:,} records. The figure describes TRAIN only and says nothing about "
-        "unseen devices."
+        + ". The two class histograms overlap by "
+        + ", ".join(f"{100 * ov[f]:.0f}%" for f in names)
+        + " respectively (sum over the shared bins of the smaller class share; 100% = same "
+        f"shape), {ranking}. All {n_b + n_m:,} TRAIN records are used (no sampling; "
+        f"benign {n_b:,}), and the figure describes TRAIN only, not unseen devices."
     )
     C.register_figure(
         "fig41d_nbaiot_train_features",
@@ -109,9 +122,11 @@ def main():
         n=f"all TRAIN records: benign {n_b:,}, malicious {n_m:,}",
         weighting="1 per record; each class normalised by its own size",
         sampling_transform="no sampling; log1p transform; 40 shared bins per feature",
-        caption="N-BaIoT TRAIN distributions of three features (one each for volume, packet "
-        "size and timing, all at decay window L0.1) by class; raw values on a log1p "
-        "scale, the same 40 bins for both classes, each curve sums to 1 within its class.",
+        caption="N-BaIoT TRAIN distributions by class of three of the 115 features, chosen as one "
+        "each for volume, packet size and timing at the same decay window (L0.1); names and "
+        "positions from the package's feature contract. Raw values on a log1p scale, the same "
+        f"{F.N_BINS} bins for both classes, each curve sums to 1 within its class; benign "
+        f"n={n_b:,}, malicious n={n_m:,} (all TRAIN records).",
         commentary=commentary,
     )
     C.write_log(
@@ -121,6 +136,7 @@ def main():
             "outputs": [C.rel(t_hist), C.rel(t_sum), *files],
             "checks": checks,
             "features": receipt["features"],
+            "histogram_overlap": ov,
             "local_environment": receipt["environment"],
         },
     )

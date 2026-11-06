@@ -461,6 +461,20 @@ def main():
     bi_benign = binary("Bot-IoT", "benign")["rows"]
     bi_benign_pct = C.fmt_pct(100 * bi_benign / BI_TOTAL)
     bi_malicious_pct = C.fmt_pct(100 * binary("Bot-IoT", "malicious")["rows"] / BI_TOTAL)
+
+    def level(dataset, lvl):
+        return {
+            r["class"]: r["rows"] for r in corpus if r["dataset"] == dataset and r["level"] == lvl
+        }
+
+    family, fine = level("N-BaIoT", "family"), level("N-BaIoT", "fine_class")
+    fine_attack = [v for k, v in fine.items() if k != "benign"]
+    cat, sub = level("Bot-IoT", "category"), level("Bot-IoT", "subcategory")
+    C.assert_equal("N-BaIoT families", sorted(family), ["benign", "gafgyt", "mirai"], checks)
+
+    def pct1(count, total):
+        return f"{100 * count / total:.1f}%"
+
     C.register_figure(
         "fig41a_binary_class_balance",
         files=files_a,
@@ -490,15 +504,18 @@ def main():
         n="N-BaIoT 7,062,606; Bot-IoT 3,668,522",
         weighting="1 per record",
         sampling_transform="none; one label level per panel; log-scale x axis",
-        caption="Record counts by attack group: N-BaIoT fine classes (family / attack) and "
-        "Bot-IoT category and subcategory (each panel is a single label level; levels "
-        "are not added together).",
-        commentary="N-BaIoT malicious traffic is spread over ten Gafgyt and Mirai attack "
-        "classes, each between 3.6% and 17.4% of the corpus, with benign at 7.9%. "
-        "Bot-IoT is concentrated in DDoS and DoS (97.5% of records), while Theft "
-        "has only 79 records and Data_Exfiltration only 6. The binary task merges "
-        "all attack groups, so these imbalances within the malicious class are "
-        "not visible in binary metrics.",
+        caption="Record counts by attack group: N-BaIoT fine classes (family / attack; family "
+        "totals in Table t41_class_counts_corpus) and Bot-IoT category and subcategory (each "
+        "panel is a single label level; levels are not added together).",
+        commentary="At family level N-BaIoT malicious traffic is Gafgyt "
+        f"({pct1(family['gafgyt'], NB_TOTAL)}) and Mirai ({pct1(family['mirai'], NB_TOTAL)}), "
+        f"spread over {len(fine_attack)} attack classes of "
+        f"{pct1(min(fine_attack), NB_TOTAL)} to {pct1(max(fine_attack), NB_TOTAL)} of the "
+        f"corpus each, with benign at {pct1(family['benign'], NB_TOTAL)}. Bot-IoT is "
+        f"concentrated in DDoS and DoS ({pct1(cat['DDoS'] + cat['DoS'], BI_TOTAL)} of records), "
+        f"while Theft has only {cat['Theft']} records and Data_Exfiltration only "
+        f"{sub['Data_Exfiltration']}. The binary task merges all attack groups, so these "
+        "imbalances within the malicious class are not visible in binary metrics.",
     )
     C.write_log(
         "t41_class_distribution",

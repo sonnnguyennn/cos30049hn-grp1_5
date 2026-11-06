@@ -1,0 +1,32 @@
+﻿{
+    "run_id":  "01",
+    "overall":  "FAIL",
+    "created":  "2026-11-05T21:52:32.6973119+07:00",
+    "handoff_zip":  "IoTGuard_Primary_XGBoost_Handoff.zip",
+    "conda_env":  "duy-iotguard-check-01",
+    "steps":  [
+                  {
+                      "step":  "operating system",
+                      "status":  "INFO",
+                      "detail":  "Microsoft Windows 11 Pro 10.0.22631 (build 22631, 64-bit)"
+                  },
+                  {
+                      "step":  "PowerShell",
+                      "status":  "INFO",
+                      "detail":  "5.1.22621.6133"
+                  },
+                  {
+                      "step":  "handoff ZIP found",
+                      "status":  "FAIL",
+                      "detail":  "\u003cpath\u003e\\IoTGuard_Primary_XGBoost_Handoff.zip"
+                  },
+                  {
+                      "step":  "stopped",
+                      "status":  "FAIL",
+                      "detail":  "ZIP not found"
+                  }
+              ],
+    "commands":  [
+
+                 ]
+}

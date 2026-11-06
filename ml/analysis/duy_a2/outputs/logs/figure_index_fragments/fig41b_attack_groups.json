@@ -24,6 +24,6 @@
   "n": "N-BaIoT 7,062,606; Bot-IoT 3,668,522",
   "weighting": "1 per record",
   "sampling_transform": "none; one label level per panel; log-scale x axis",
-  "caption": "Record counts by attack group: N-BaIoT fine classes (family / attack) and Bot-IoT category and subcategory (each panel is a single label level; levels are not added together).",
-  "commentary": "N-BaIoT malicious traffic is spread over ten Gafgyt and Mirai attack classes, each between 3.6% and 17.4% of the corpus, with benign at 7.9%. Bot-IoT is concentrated in DDoS and DoS (97.5% of records), while Theft has only 79 records and Data_Exfiltration only 6. The binary task merges all attack groups, so these imbalances within the malicious class are not visible in binary metrics."
+  "caption": "Record counts by attack group: N-BaIoT fine classes (family / attack; family totals in Table t41_class_counts_corpus) and Bot-IoT category and subcategory (each panel is a single label level; levels are not added together).",
+  "commentary": "At family level N-BaIoT malicious traffic is Gafgyt (40.2%) and Mirai (51.9%), spread over 10 attack classes of 3.6% to 17.4% of the corpus each, with benign at 7.9%. Bot-IoT is concentrated in DDoS and DoS (97.5% of records), while Theft has only 79 records and Data_Exfiltration only 6. The binary task merges all attack groups, so these imbalances within the malicious class are not visible in binary metrics."
 }

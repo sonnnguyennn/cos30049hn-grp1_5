@@ -106,13 +106,19 @@ def overall_rows(checks, botiot_package: Path):
 
     manifest = C.read_json(botiot_package / "manifest.json")
     per_partition_class = []
+    loaded = {}
     for partition in ("TRAIN", "VALIDATION"):
         meta = np.load(
             botiot_package / f"{partition}_metadata.npy", mmap_mode="r", allow_pickle=False
         )
         y = np.load(botiot_package / f"{partition}_y.npy", mmap_mode="r", allow_pickle=False)
-        groups = np.asarray(meta["group"])
-        stats = group_stats(groups, np.asarray(meta["group_size"]))
+        loaded[partition] = (np.asarray(meta["group"]), np.asarray(meta["group_size"]), y)
+    # groups shared by TRAIN and VALIDATION (TEST metadata is not opened; the split summary
+    # reports 0 shared groups over all three partitions)
+    shared = int(len(np.intersect1d(loaded["TRAIN"][0], loaded["VALIDATION"][0])))
+    C.assert_equal("Bot-IoT exact-X groups shared by TRAIN and VALIDATION", shared, 0, checks)
+    for partition, (groups, sizes, y) in loaded.items():
+        stats = group_stats(groups, sizes)
         exp = manifest["expected_partitions"][partition]
         C.assert_equal(
             f"Bot-IoT {partition} distinct groups == manifest",
@@ -121,7 +127,6 @@ def overall_rows(checks, botiot_package: Path):
             checks,
         )
         y = np.asarray(y)
-        mixed = 0
         for cls, name in ((0, "benign"), (1, "malicious")):
             cstats = group_stats(groups[y == cls])
             C.assert_equal(
@@ -133,8 +138,7 @@ def overall_rows(checks, botiot_package: Path):
             per_partition_class.append(
                 {"dataset": "Bot-IoT", "partition": partition, "class": name, **cstats}
             )
-        both = len(np.intersect1d(groups[y == 0], groups[y == 1]))
-        mixed = int(both)
+        mixed = int(len(np.intersect1d(groups[y == 0], groups[y == 1])))
         rows.append(
             {
                 "dataset": "Bot-IoT",
@@ -151,8 +155,9 @@ def overall_rows(checks, botiot_package: Path):
                     )
                 },
                 "cross_label_groups": mixed,
-                "cross_partition_group_overlap": 0,
-                "source": f"package {partition}_metadata.npy (group, group_size)",
+                "cross_partition_group_overlap": shared,
+                "source": f"package {partition}_metadata.npy (group, group_size); overlap = "
+                "groups shared by TRAIN and VALIDATION",
             }
         )
     for r in rows:

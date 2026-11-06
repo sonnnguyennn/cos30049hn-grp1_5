@@ -1,0 +1,4 @@
+numpy==2.4.6
+packaging @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_packaging_1785888127/work
+scipy==1.17.1
+xgboost==3.2.0

@@ -1,0 +1,70 @@
+﻿{
+    "run_id":  "06",
+    "overall":  "PASS",
+    "created":  "2026-11-06T22:32:49.0653946+07:00",
+    "handoff_zip":  "IoTGuard_Primary_XGBoost_Handoff.zip",
+    "conda_env":  "duy-iotguard-check-06",
+    "steps":  [
+                  {
+                      "step":  "operating system",
+                      "status":  "INFO",
+                      "detail":  "Microsoft Windows 11 Pro 10.0.22631 (build 22631, 64-bit)"
+                  },
+                  {
+                      "step":  "PowerShell",
+                      "status":  "INFO",
+                      "detail":  "5.1.22621.6133"
+                  },
+                  {
+                      "step":  "ZIP SHA-256",
+                      "status":  "PASS",
+                      "detail":  "6ff11f67d25c75822b51936cfa22a7746b6a28ed7f2cc4de7b39cfee89ed6d77"
+                  },
+                  {
+                      "step":  "extract to new folder + manifest.json SHA-256",
+                      "status":  "PASS",
+                      "detail":  "9fac1acde3f696bb765937c997977b3d7b1e1c2fa6cd60626e910037ea1fe132"
+                  },
+                  {
+                      "step":  "conda executable",
+                      "status":  "INFO",
+                      "detail":  "D:\\miniconda3\\Scripts\\conda.exe"
+                  },
+                  {
+                      "step":  "conda available",
+                      "status":  "PASS",
+                      "detail":  "conda 26.9.4"
+                  },
+                  {
+                      "step":  "conda env create -n duy-iotguard-check-06 -f environment.yml",
+                      "status":  "PASS",
+                      "detail":  "exit code 0"
+                  },
+                  {
+                      "step":  "predict_primary.py --verify",
+                      "status":  "PASS",
+                      "detail":  "status PASS"
+                  },
+                  {
+                      "step":  "predict_primary.py --input example_input.json",
+                      "status":  "PASS",
+                      "detail":  "exit code 0"
+                  },
+                  {
+                      "step":  "outputs match example_expected.json (labels benign, malicious, benign; 3rd = known FN)",
+                      "status":  "PASS",
+                      "detail":  "15 checks"
+                  }
+              ],
+    "commands":  [
+                     "[conda_version] (cwd C:\\Users\\SV STORE\\iotguard_4_4_check\\handoff_06) conda.exe --version",
+                     "[conda_env_list_before] (cwd C:\\Users\\SV STORE\\iotguard_4_4_check\\handoff_06) conda.exe env list",
+                     "[conda_env_create] (cwd C:\\Users\\SV STORE\\iotguard_4_4_check\\handoff_06) conda.exe env create -n duy-iotguard-check-06 -f environment.yml",
+                     "[conda_list] (cwd C:\\Users\\SV STORE\\iotguard_4_4_check\\handoff_06) conda.exe list -n duy-iotguard-check-06 --export",
+                     "[pip_freeze] (cwd C:\\Users\\SV STORE\\iotguard_4_4_check\\handoff_06) conda.exe run -n duy-iotguard-check-06 python -m pip freeze",
+                     "[python_version] (cwd C:\\Users\\SV STORE\\iotguard_4_4_check\\handoff_06) conda.exe run -n duy-iotguard-check-06 python --version",
+                     "[verify] (cwd C:\\Users\\SV STORE\\iotguard_4_4_check\\handoff_06) conda.exe run --no-capture-output -n duy-iotguard-check-06 python -I predict_primary.py --bundle . --expected-manifest 9fac1acde3f696bb765937c997977b3d7b1e1c2fa6cd60626e910037ea1fe132 --verify --output ../evidence_06/duy_verification_06.json",
+                     "[predict] (cwd C:\\Users\\SV STORE\\iotguard_4_4_check\\handoff_06) conda.exe run --no-capture-output -n duy-iotguard-check-06 python -I predict_primary.py --bundle . --expected-manifest 9fac1acde3f696bb765937c997977b3d7b1e1c2fa6cd60626e910037ea1fe132 --input example_input.json --output ../evidence_06/duy_predictions_06.json",
+                     "[compare] (cwd C:\\Users\\SV STORE\\iotguard_4_4_check\\handoff_06) conda.exe run --no-capture-output -n duy-iotguard-check-06 python -I ../t44_compare_outputs_06.py --bundle . --verification ../evidence_06/duy_verification_06.json --predictions ../evidence_06/duy_predictions_06.json --output ../evidence_06/comparison_06.json"
+                 ]
+}

@@ -1,0 +1,1 @@
+{'probabilities': [0.0008694713469594717, 0.9999966621398926, 0.36534929275512695], 'predictions': [0, 1, 0], 'labels': ['benign', 'malicious', 'benign']}

@@ -119,18 +119,21 @@ def main():
         },
     ]
     s = {(r["feature"], r["class"]): r for r in summary}
+    n_b, n_m = (int(v) for v in np.bincount(y, minlength=2))
     C.register_figure(
         "fig41c_botiot_train_features",
         files=files,
         inputs=inputs,
         dataset="Bot-IoT",
         scope="TRAIN partition (package v2), raw numeric values via package.load('TRAIN')",
-        n="all TRAIN records: benign 286, malicious 2,200,828",
+        n=f"all TRAIN records: benign {n_b:,}, malicious {n_m:,}",
         weighting="1 per record; each class normalised by its own size",
-        sampling_transform="no sampling; log1p transform; 40 shared bins per feature",
-        caption="Bot-IoT TRAIN distributions of pkts, bytes and dur by class (raw values, "
-        "log1p scale, same 40 bins for both classes; each curve sums to 1 within its "
-        "class). Benign n=286, malicious n=2,200,828.",
+        sampling_transform=f"no sampling; log1p transform; {F.N_BINS} shared bins per feature",
+        caption="Bot-IoT TRAIN distributions by class of three of the 13 raw predictors, one per "
+        "aspect of a flow: pkts (packet count), bytes (data volume) and dur (duration). Raw "
+        'values from package.load("TRAIN") on a log1p scale, the same '
+        f"{F.N_BINS} bins for both classes, each curve sums to 1 within its class; benign "
+        f"n={n_b:,}, malicious n={n_m:,} (all TRAIN records).",
         commentary=(
             "Benign TRAIN records are mostly short flows (median "
             f"{s[('pkts', 'benign')]['median']:g} packets, "
@@ -142,10 +145,9 @@ def main():
             "the classes. The ranges still overlap, and a small benign tail of very long flows "
             f"(99th percentile about {s[('pkts', 'benign')]['p99']:,.0f} packets) lies beyond "
             f"the malicious maximum of {s[('pkts', 'malicious')]['max']:,.0f}. The benign "
-            "curves rest on only 286 records and are coarse; these are 3 of the 13 predictors "
-            "(10 numeric plus flgs/proto/state)."
+            f"curves rest on only {n_b} records and are coarse; these are 3 of the 13 "
+            "predictors (10 numeric plus flgs/proto/state)."
         ),
-        run_id="N/A (data description)",
     )
     C.write_log(
         "t41_botiot_train_features",

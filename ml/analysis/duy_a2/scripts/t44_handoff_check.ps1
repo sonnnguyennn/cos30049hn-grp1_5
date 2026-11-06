@@ -22,7 +22,8 @@
 param(
     [Parameter(Mandatory = $true)][string]$HandoffZip,
     [string]$WorkRoot = (Join-Path $HOME "iotguard_4_4_check"),
-    [string]$RunId = "01"
+    [string]$RunId = "01",
+    [string]$CondaExe = ""   # optional full path to conda.exe, e.g. D:\miniconda3\Scripts\conda.exe
 )
 
 $ErrorActionPreference = "Continue"   # native tools write progress to stderr; check exit codes instead
@@ -69,8 +70,9 @@ function Write-Checklist([string]$Overall) {
     $md | Set-Content -Encoding UTF8 (Join-Path $Evidence "checklist_$RunId.md")
 }
 
-if (Test-Path $Bundle) { throw "$Bundle already exists. Use a new -RunId (e.g. 02)." }
-if (Test-Path $Evidence) { throw "$Evidence already exists. Use a new -RunId (e.g. 02)." }
+$NextRunId = if ($RunId -match '^\d+$') { "{0:D2}" -f ([int]$RunId + 1) } else { "$RunId-b" }
+if (Test-Path $Bundle) { throw "$Bundle already exists. Use a new -RunId (e.g. $NextRunId)." }
+if (Test-Path $Evidence) { throw "$Evidence already exists. Use a new -RunId (e.g. $NextRunId)." }
 New-Item -ItemType Directory -Force -Path $Evidence | Out-Null
 Start-Transcript -Path (Join-Path $Evidence "transcript_$RunId.txt") | Out-Null
 $overall = "FAIL"
@@ -102,12 +104,26 @@ try {
     Copy-Item (Join-Path $PSScriptRoot "t44_compare_outputs.py") (Join-Path $WorkRoot "t44_compare_outputs_$RunId.py")
 
     # 3. conda + NEW environment
-    $condaExe = $env:CONDA_EXE
+    # order: -CondaExe, $env:CONDA_EXE, PATH, then the usual install folders on every drive
+    $condaExe = $CondaExe
+    if (-not $condaExe) { $condaExe = $env:CONDA_EXE }
     if (-not $condaExe) { $cmd = Get-Command conda.exe -ErrorAction SilentlyContinue; if ($cmd) { $condaExe = $cmd.Source } }
-    if (-not $condaExe -or -not (Test-Path $condaExe)) {
-        Add-Step "conda available" "FAIL" "conda.exe not found; open the 'Anaconda PowerShell Prompt' and rerun"
+    if (-not $condaExe) {
+        $roots = @($HOME, $env:LOCALAPPDATA, $env:ProgramData) + (Get-PSDrive -PSProvider FileSystem | ForEach-Object { $_.Root })
+        foreach ($root in $roots | Where-Object { $_ }) {
+            foreach ($name in @("miniconda3", "anaconda3", "Miniconda3", "Anaconda3", "miniforge3")) {
+                $candidate = Join-Path (Join-Path $root $name) "Scripts\conda.exe"
+                if (Test-Path -LiteralPath $candidate) { $condaExe = $candidate; break }
+            }
+            if ($condaExe) { break }
+        }
+    }
+    if (-not $condaExe -or -not (Test-Path -LiteralPath $condaExe)) {
+        Add-Step "conda available" "FAIL" ("conda.exe not found; rerun with -CondaExe " +
+            "'<install folder>\Scripts\conda.exe' or from the 'Anaconda PowerShell Prompt'")
         throw "conda not found"
     }
+    Add-Step "conda executable" "INFO" $condaExe
     $code = Invoke-Logged $condaExe @("--version") $Bundle "conda_version"
     Add-Step "conda available" "PASS" ((Get-Content (Join-Path $Evidence "conda_version.stdout.txt")) -join " ")
     $code = Invoke-Logged $condaExe @("env", "list") $Bundle "conda_env_list_before"
@@ -149,5 +165,8 @@ finally {
     Stop-Transcript | Out-Null
     Write-Host ""
     Write-Host "OVERALL: $overall   evidence folder: $Evidence"
-    if ($overall -ne "PASS") { Write-Host "Keep this folder, send it to Minh Son, and rerun with -RunId 02 after the fix." }
+    if ($overall -ne "PASS") {
+        Write-Host "Keep this folder (it is evidence). Fix the cause and rerun with -RunId $NextRunId."
+        Write-Host "If a bundle check failed (checksum, verify, outputs), also send this folder to Minh Son."
+    }
 }

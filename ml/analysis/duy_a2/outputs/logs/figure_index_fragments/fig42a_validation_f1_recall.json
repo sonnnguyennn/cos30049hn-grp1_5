@@ -24,6 +24,6 @@
   "n": "9 Full runs; supports benign 83,435 / malicious 972,937",
   "weighting": "1 per record",
   "sampling_transform": "none; 0-1 scale, no axis truncation",
-  "caption": "VALIDATION macro-F1 and per-class recall for the nine Full runs, ranked by the selection rule (0-1 scale; exact values labelled).",
+  "caption": "N-BaIoT VALIDATION (83,435 benign, 972,937 malicious records): macro-F1 and per-class recall of the nine Full runs, ranked by the selection rule; 0-1 scale, 1 per record, exact values labelled.",
   "commentary": "On the full 0-1 scale every run except the Dummy is indistinguishable from 1 (even LR reaches macro-F1 0.9985). The Dummy classifier, which predicts malicious for every record, keeps malicious recall 1 but benign recall 0 (macro-F1 0.4794) despite 92.10% accuracy. The seven tree models differ by at most 0.00011 in macro-F1, so Figure fig42b compares their error counts instead."
 }

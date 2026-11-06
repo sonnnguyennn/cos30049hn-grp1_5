@@ -340,6 +340,7 @@ def main():
     ] + [C.input_record(pkg / "manifest.json", "Bot-IoT package manifest")]
     run_id = lr_row["run_id"]
     big = group_detail[0]
+    n_benign = int((y == 0).sum())
     C.register_figure(
         "fig43a_botiot_confusion_row",
         files=files_a,
@@ -358,7 +359,8 @@ def main():
             "malicious (FPR 92.7%, benign recall 7.3%); the Dummy model scores 99.987% too by "
             "never predicting benign. Because 99.987% of VALIDATION records are malicious, "
             "accuracy is dominated by the malicious row and hides that benign traffic is "
-            "almost never recognised."
+            f"almost never recognised. With only {n_benign} benign VALIDATION records, each one "
+            f"moves benign recall by {100 / n_benign:.2f} percentage points."
         ),
     )
     C.register_figure(

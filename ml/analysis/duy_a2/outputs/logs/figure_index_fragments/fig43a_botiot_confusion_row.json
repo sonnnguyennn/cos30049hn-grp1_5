@@ -55,5 +55,5 @@
   "weighting": "1 per record (row_primary)",
   "sampling_transform": "none; row-normalised colour and percentages",
   "caption": "Bot-IoT VALIDATION confusion matrices for the Full Dummy and LR baselines (integer record counts, rows = true class, percentages of each true class).",
-  "commentary": "LR reaches 99.987% accuracy while flagging 89 of the 96 benign records as malicious (FPR 92.7%, benign recall 7.3%); the Dummy model scores 99.987% too by never predicting benign. Because 99.987% of VALIDATION records are malicious, accuracy is dominated by the malicious row and hides that benign traffic is almost never recognised."
+  "commentary": "LR reaches 99.987% accuracy while flagging 89 of the 96 benign records as malicious (FPR 92.7%, benign recall 7.3%); the Dummy model scores 99.987% too by never predicting benign. Because 99.987% of VALIDATION records are malicious, accuracy is dominated by the malicious row and hides that benign traffic is almost never recognised. With only 96 benign VALIDATION records, each one moves benign recall by 1.04 percentage points."
 }

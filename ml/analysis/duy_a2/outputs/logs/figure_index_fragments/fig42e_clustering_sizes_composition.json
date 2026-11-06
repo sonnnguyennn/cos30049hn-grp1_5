@@ -54,6 +54,6 @@
   "n": "TRAIN 4,944,968; VALIDATION 1,056,372 (every record assigned)",
   "weighting": "1 per record",
   "sampling_transform": "sizes and composition use full partitions; silhouette/DBI/CH in the metrics table use VALIDATION samples",
-  "caption": "K-Means run g3b_standard_k8_seed42 (K=8, TRAIN-only standardisation): cluster sizes on TRAIN and VALIDATION, and the true-label composition of each cluster on the entire VALIDATION partition. Labels were used only after fitting and selection.",
+  "caption": "N-BaIoT K-Means run g3b_standard_k8_seed42 (K=8, TRAIN-only standardisation): (a) cluster sizes on TRAIN (4,944,968 records) and VALIDATION (1,056,372); (b) true-label composition of each cluster on the entire VALIDATION partition (83,435 benign, 972,937 malicious), as shares of that cluster's records. Labels were used only after fitting and selection.",
   "commentary": "Two clusters hold 98.6% of VALIDATION records, and 6 of the 8 clusters each hold under 1%. Clusters 4 and 5 contain no malicious VALIDATION records and cluster 7 is 98.89% benign, but the two large clusters are mixed and mostly malicious, so the partition aligns only weakly with the binary label (ARI 0.0078, NMI 0.0918 on all of VALIDATION). Silhouette 0.432 is a sample estimate (3 x 1,500 records) and K=8 used one seed, so no stability claim is made."
 }

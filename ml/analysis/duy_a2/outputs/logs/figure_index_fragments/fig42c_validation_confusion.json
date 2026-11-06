@@ -24,6 +24,6 @@
   "n": "1,056,372 VALIDATION records per matrix",
   "weighting": "1 per record",
   "sampling_transform": "none; colour and percentages are row-normalised (share of each true class)",
-  "caption": "VALIDATION confusion matrices for LR, the RF baseline and the selected XGBoost (rows = true class, columns = prediction; counts with row percentages).",
-  "commentary": "Row normalisation keeps the 83,435 benign records visible next to 972,937 malicious ones: the benign-row error share is the FPR (0.295% for LR, 0.0012% for RF, 0% for the selected XGBoost). LR's errors are spread across both rows, whereas the tree models' few errors are almost all missed malicious records."
+  "caption": "N-BaIoT VALIDATION confusion matrices for LR (lr_full_20261102T011513018213Z), the RF baseline (rf_frac1_seed42) and the selected XGBoost (xgb_frac1_seed42_lr01): rows = true class (83,435 benign, 972,937 malicious), columns = prediction; counts with row percentages, colour = share of the row.",
+  "commentary": "Row normalisation keeps the 83,435 benign records visible next to 972,937 malicious ones: the benign-row error share is the FPR (0.295% for LR, 0.0012% for RF, 0% for the selected XGBoost). LR's errors are spread across both rows, whereas the tree models' few errors are almost all missed malicious records. Colour compares shares within a row only: the malicious row holds 11.7 times as many records as the benign row."
 }

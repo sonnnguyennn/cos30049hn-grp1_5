@@ -84,7 +84,8 @@ def main():
             "",
             f"**Commentary.** {r['commentary']}",
             "",
-            f"*Scope:* {r['scope']}. *n:* {r['n']}. *Weighting:* {r['weighting']}. "
+            f"*Dataset:* {r['dataset']}. *Scope:* {r['scope']}. *n:* {r['n']}. "
+            f"*Weighting:* {r['weighting']}. "
             f"*Sampling/transform:* {r['sampling_transform']}. "
             f"*Run ID:* {r.get('run_id') or 'N/A'}.",
             "",

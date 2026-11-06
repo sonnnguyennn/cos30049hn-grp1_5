@@ -30,6 +30,6 @@
   "n": "9 Full runs; FPR denominator 83,435 benign records",
   "weighting": "1 per record",
   "sampling_transform": "none; symmetric log axes (linear below 1 record / 0.001%) so zero is shown",
-  "caption": "VALIDATION false positives (benign flagged malicious) and false negatives (malicious missed) per Full run, and the false-positive rate FP/(FP+TN); symmetric log axes, exact values labelled.",
+  "caption": "N-BaIoT VALIDATION false positives (benign flagged malicious) and false negatives (malicious missed) per Full run, and the false-positive rate FP/(FP+TN) over the 83,435 benign records (972,937 malicious); symmetric log axes, exact values labelled.",
   "commentary": "The selected run xgb_frac1_seed42_lr01 makes 0 false positives and 18 false negatives, against 1 and 29 for the RF baseline and 246 and 220 for LR. The seven tree models make between 18 and 52 errors on 1,056,372 records, from a single seed, and the winner's 18 errors are only 2 distinct feature vectors repeated 9 times each (gafgyt tcp and gafgyt udp, per its error_analysis.json), so this ranking is not evidence of a stable advantage."
 }

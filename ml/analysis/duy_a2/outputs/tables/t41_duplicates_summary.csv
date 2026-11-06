@@ -2,5 +2,5 @@ dataset,scope,feature_view,rows,distinct_vectors,repeated_groups,rows_in_repeate
 N-BaIoT,full corpus (historical audit),all 115 predictors (exact values),7062606,2482676,1891636,6471566,4579930,0,0,artifacts/audit/n_baiot_duplicate_summary.json; artifacts/audit/g3a_numeric_equivalence_summary.json,64.8476,91.6314
 Bot-IoT,full 5% corpus (historical audit),all 43 observed non-label source fields,3668522,3668522,0,0,0,0,N/A,artifacts/audit/bot_iot_duplicate_summary.json,0.0,0.0
 Bot-IoT,full 5% corpus (candidate scan),13 model predictors (exact-X groups),3668522,672607,497259,3493174,2995915,1,0,artifacts/manifests/bot_iot_candidate_proposed_split_summary.json,81.6655,95.2202
-Bot-IoT,TRAIN partition (package metadata),13 model predictors (exact-X groups),2201114,396266,292847,2097695,1804848,1,0,"package TRAIN_metadata.npy (group, group_size)",81.997,95.3015
-Bot-IoT,VALIDATION partition (package metadata),13 model predictors (exact-X groups),733704,138060,102093,697737,595644,0,0,"package VALIDATION_metadata.npy (group, group_size)",81.1831,95.0979
+Bot-IoT,TRAIN partition (package metadata),13 model predictors (exact-X groups),2201114,396266,292847,2097695,1804848,1,0,"package TRAIN_metadata.npy (group, group_size); overlap = groups shared by TRAIN and VALIDATION",81.997,95.3015
+Bot-IoT,VALIDATION partition (package metadata),13 model predictors (exact-X groups),733704,138060,102093,697737,595644,0,0,"package VALIDATION_metadata.npy (group, group_size); overlap = groups shared by TRAIN and VALIDATION",81.1831,95.0979

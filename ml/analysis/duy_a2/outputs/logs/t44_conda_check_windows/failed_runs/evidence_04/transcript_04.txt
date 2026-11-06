@@ -1,0 +1,28 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261106220356
+Username: SVSTORE-PC\SV STORE
+RunAs User: SVSTORE-PC\SV STORE
+Configuration Name: 
+Machine: SVSTORE-PC (Microsoft Windows NT 10.0.22631.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -File analysis\duy_a2\scripts\t44_handoff_check.ps1 -HandoffZip C:\Users\SV STORE\Downloads\IoTGuard_Primary_XGBoost_Handoff.zip -RunId 04
+Process ID: 22636
+PSVersion: 5.1.22621.6133
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.6133
+BuildVersion: 10.0.22621.6133
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+[INFO] operating system - Microsoft Windows 11 Pro 10.0.22631 (build 22631, 64-bit)
+[INFO] PowerShell - 5.1.22621.6133
+[PASS] ZIP SHA-256 - 6ff11f67d25c75822b51936cfa22a7746b6a28ed7f2cc4de7b39cfee89ed6d77
+[PASS] extract to new folder + manifest.json SHA-256 - 9fac1acde3f696bb765937c997977b3d7b1e1c2fa6cd60626e910037ea1fe132
+[FAIL] conda available - conda.exe not found; open the 'Anaconda PowerShell Prompt' and rerun
+[FAIL] stopped - conda not found
+**********************
+Windows PowerShell transcript end
+End time: 20261106220358
+**********************

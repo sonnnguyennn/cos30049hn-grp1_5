@@ -358,9 +358,11 @@ def main():
         weighting="1 per record",
         sampling_transform="sizes and composition use full partitions; silhouette/DBI/CH in the "
         "metrics table use VALIDATION samples",
-        caption=f"K-Means run {selected} (K=8, TRAIN-only standardisation): cluster sizes on "
-        "TRAIN and VALIDATION, and the true-label composition of each cluster on the "
-        "entire VALIDATION partition. Labels were used only after fitting and selection.",
+        caption=f"N-BaIoT K-Means run {selected} (K=8, TRAIN-only standardisation): (a) cluster "
+        f"sizes on TRAIN ({ROWS['TRAIN']:,} records) and VALIDATION ({ROWS['VALIDATION']:,}); "
+        "(b) true-label composition of each cluster on the entire VALIDATION partition "
+        "(83,435 benign, 972,937 malicious), as shares of that cluster's records. Labels were "
+        "used only after fitting and selection.",
         commentary=(
             f"Two clusters hold {two_largest_share:.1f}% "
             f"of VALIDATION records, and {small} of the 8 clusters each hold under 1%. "
@@ -374,7 +376,8 @@ def main():
             + ", but the two large clusters are mixed and "
             "mostly malicious, so the partition aligns only weakly with the binary label "
             f"(ARI {e['ari']:.4f}, NMI {e['nmi']:.4f} on all of VALIDATION). Silhouette "
-            f"{i['silhouette_mean']:.3f} is a sample estimate (3 x 1,500 records) and K=8 "
+            f"{i['silhouette_mean']:.3f} is a sample estimate ({i['silhouette_valid_repeats']} x "
+            f"{i['silhouette_rows_per_repeat']:,} records) and K=8 "
             "used one seed, so no stability claim is made."
         ),
     )

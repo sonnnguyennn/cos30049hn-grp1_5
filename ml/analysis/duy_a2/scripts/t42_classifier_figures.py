@@ -26,11 +26,16 @@ TEST_RECEIPT = MANIFESTS / "primary_final_test_receipt_20261105.json"
 EXPECTED_TEST = {"TN": 83_531, "FP": 1, "FN": 11, "TP": 977_723}
 VALIDATION_ROWS, VAL_BENIGN, VAL_MALICIOUS = 1_056_372, 83_435, 972_937
 
-CONFIG = {  # from each run's result.json (resolved_configuration.parameters)
+# From each run's result.json (resolved_configuration.parameters); the RF baseline records only
+# n_estimators, so its other values are the scikit-learn 1.9.1 defaults (see its run_notes.json).
+CONFIG = {
     "xgb_frac1_seed42_lr01": ("XGB", "300 rounds, learning_rate 0.1, max_depth 6"),
     "xgb_frac1_seed42_d4": ("XGB", "100 rounds, learning_rate 0.3, max_depth 4"),
     "xgb_frac1_seed42": ("XGB", "baseline: 100 rounds, learning_rate 0.3, max_depth 6"),
-    "rf_frac1_seed42": ("RF", "baseline: 100 trees, max_features sqrt, min_samples_leaf 1"),
+    "rf_frac1_seed42": (
+        "RF",
+        "baseline: 100 trees (max_features sqrt, min_samples_leaf 1 = scikit-learn defaults)",
+    ),
     "xgb_frac1_seed42_d8": ("XGB", "100 rounds, learning_rate 0.3, max_depth 8"),
     "rf_frac1_seed42_leaf5": ("RF", "100 trees, min_samples_leaf 5"),
     "rf_frac1_seed42_mf03": ("RF", "100 trees, max_features 0.3"),
@@ -498,8 +503,9 @@ def main():
         n="9 Full runs; supports benign 83,435 / malicious 972,937",
         weighting="1 per record",
         sampling_transform="none; 0-1 scale, no axis truncation",
-        caption="VALIDATION macro-F1 and per-class recall for the nine Full runs, ranked by the "
-        "selection rule (0-1 scale; exact values labelled).",
+        caption="N-BaIoT VALIDATION (83,435 benign, 972,937 malicious records): macro-F1 and "
+        "per-class recall of the nine Full runs, ranked by the selection rule; 0-1 scale, "
+        "1 per record, exact values labelled.",
         commentary=(
             "On the full 0-1 scale every run except the Dummy is indistinguishable from 1 "
             f"(even LR reaches macro-F1 {lr['macro_f1']:.4f}). The Dummy classifier, which "
@@ -551,9 +557,10 @@ def main():
         sampling_transform=(
             "none; symmetric log axes (linear below 1 record / 0.001%) so zero is shown"
         ),
-        caption="VALIDATION false positives (benign flagged malicious) and false negatives "
-        "(malicious missed) per Full run, and the false-positive rate FP/(FP+TN); "
-        "symmetric log axes, exact values labelled.",
+        caption="N-BaIoT VALIDATION false positives (benign flagged malicious) and false "
+        "negatives (malicious missed) per Full run, and the false-positive rate FP/(FP+TN) over "
+        "the 83,435 benign records (972,937 malicious); symmetric log axes, exact values "
+        "labelled.",
         commentary=(
             f"The selected run {winner} makes {o[winner]['FP']} false positives and "
             f"{o[winner]['FN']} false negatives, against {o['rf_frac1_seed42']['FP']} and "
@@ -579,8 +586,10 @@ def main():
         sampling_transform=(
             "none; colour and percentages are row-normalised (share of each true class)"
         ),
-        caption="VALIDATION confusion matrices for LR, the RF baseline and the selected XGBoost "
-        "(rows = true class, columns = prediction; counts with row percentages).",
+        caption="N-BaIoT VALIDATION confusion matrices for LR (lr_full_20261102T011513018213Z), "
+        "the RF baseline (rf_frac1_seed42) and the selected XGBoost (xgb_frac1_seed42_lr01): "
+        "rows = true class (83,435 benign, 972,937 malicious), columns = prediction; counts "
+        "with row percentages, colour = share of the row.",
         commentary=(
             "Row normalisation keeps the 83,435 benign records visible next to 972,937 "
             "malicious ones: the benign-row error share is the FPR ("
@@ -588,9 +597,11 @@ def main():
             f"{C.fmt_pct(100 * o['rf_frac1_seed42']['fpr'])} for RF, "
             f"{C.fmt_pct(100 * o[winner]['fpr'])} for the selected XGBoost). LR's errors are "
             "spread across both rows, whereas the tree models' few errors are almost all "
-            "missed malicious records."
+            "missed malicious records. Colour compares shares within a row only: the malicious "
+            f"row holds {VAL_MALICIOUS / VAL_BENIGN:.1f} times as many records as the benign row."
         ),
     )
+    tm = test["metrics"]
     C.register_figure(
         "fig42d_test_confusion_selected",
         files=files_d,
@@ -602,11 +613,14 @@ def main():
         n="1,061,266 TEST records",
         weighting="1 per record",
         sampling_transform="none; row-normalised colour and percentages",
-        caption="Final TEST confusion matrix of the frozen XGBoost (xgb_frac1_seed42_lr01), "
-        "read from the saved TEST receipt; no other model was evaluated on TEST.",
+        caption="N-BaIoT final TEST confusion matrix of the frozen XGBoost "
+        f"({test['selected_run_id']}), read from the saved TEST receipt: rows = true class "
+        f"({tm['TN'] + tm['FP']:,} benign, {tm['FN'] + tm['TP']:,} malicious), columns = "
+        "prediction, counts with row percentages; no other model was evaluated on TEST.",
         commentary=(
-            "On TEST the frozen model misclassifies 1 of 83,532 benign records "
-            "(FPR 0.0012%) and 11 of 977,734 malicious records (macro-F1 0.99996), in line "
+            f"On TEST the frozen model misclassifies {tm['FP']} of {tm['TN'] + tm['FP']:,} benign "
+            f"records (FPR {C.fmt_pct(100 * tm['fpr'])}) and {tm['FN']} of "
+            f"{tm['FN'] + tm['TP']:,} malicious records (macro-F1 {tm['macro_f1']:.5f}), in line "
             "with its VALIDATION result. This is a single within-corpus run: all nine "
             "devices appear in every partition, so it does not show performance on unseen "
             "devices or future traffic. LR and RF have no TEST result in this evaluation."

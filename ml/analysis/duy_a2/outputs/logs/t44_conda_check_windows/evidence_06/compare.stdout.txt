@@ -1,0 +1,16 @@
+[PASS] bundle manifest.json SHA-256: 9fac1acde3f696bb765937c997977b3d7b1e1c2fa6cd60626e910037ea1fe132
+[PASS] verification status: PASS
+[PASS] verification manifest SHA-256: 9fac1acde3f696bb765937c997977b3d7b1e1c2fa6cd60626e910037ea1fe132
+[PASS] verification model SHA-256: cb090afa6ad4c3618e20d7c5d635e89aa2d122667ea00835a0acc2f75a4455e6
+[PASS] example_expected.json labels unchanged: ['benign', 'malicious', 'benign']
+[PASS] verification actual_output: labels == expected: ['benign', 'malicious', 'benign']
+[PASS] verification actual_output: predictions == expected: [0, 1, 0]
+[PASS] verification actual_output: probabilities within 1e-12 of expected: [0.0008694713469594717, 0.9999966621398926, 0.36534929275512695]
+[PASS] prediction output: labels == expected: ['benign', 'malicious', 'benign']
+[PASS] prediction output: predictions == expected: [0, 1, 0]
+[PASS] prediction output: probabilities within 1e-12 of expected: [0.0008694713469594717, 0.9999966621398926, 0.36534929275512695]
+[PASS] third example is the documented false negative (true malicious, predicted benign): {'true_label': 1, 'predicted': 'benign'}
+[PASS] numpy version == pinned 2.4.6: 2.4.6
+[PASS] xgboost version == pinned 3.2.0: 3.2.0
+[PASS] scipy version == pinned 1.17.1: 1.17.1
+OVERALL PASS

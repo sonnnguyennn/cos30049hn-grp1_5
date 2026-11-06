@@ -1,0 +1,49 @@
+﻿{
+    "run_id":  "03",
+    "overall":  "FAIL",
+    "created":  "2026-11-05T21:59:36.7352773+07:00",
+    "handoff_zip":  "IoTGuard_Primary_XGBoost_Handoff.zip",
+    "conda_env":  "duy-iotguard-check-03",
+    "steps":  [
+                  {
+                      "step":  "operating system",
+                      "status":  "INFO",
+                      "detail":  "Microsoft Windows 11 Pro 10.0.22631 (build 22631, 64-bit)"
+                  },
+                  {
+                      "step":  "PowerShell",
+                      "status":  "INFO",
+                      "detail":  "5.1.22621.6133"
+                  },
+                  {
+                      "step":  "ZIP SHA-256",
+                      "status":  "PASS",
+                      "detail":  "6ff11f67d25c75822b51936cfa22a7746b6a28ed7f2cc4de7b39cfee89ed6d77"
+                  },
+                  {
+                      "step":  "extract to new folder + manifest.json SHA-256",
+                      "status":  "PASS",
+                      "detail":  "9fac1acde3f696bb765937c997977b3d7b1e1c2fa6cd60626e910037ea1fe132"
+                  },
+                  {
+                      "step":  "conda available",
+                      "status":  "PASS",
+                      "detail":  "conda 26.9.4"
+                  },
+                  {
+                      "step":  "conda env create",
+                      "status":  "FAIL",
+                      "detail":  "exit code 1 (see conda_env_create.*.txt)"
+                  },
+                  {
+                      "step":  "stopped",
+                      "status":  "FAIL",
+                      "detail":  "env create failed"
+                  }
+              ],
+    "commands":  [
+                     "[conda_version] (cwd C:\\Users\\SV STORE\\iotguard_4_4_check\\handoff_03) conda.exe --version",
+                     "[conda_env_list_before] (cwd C:\\Users\\SV STORE\\iotguard_4_4_check\\handoff_03) conda.exe env list",
+                     "[conda_env_create] (cwd C:\\Users\\SV STORE\\iotguard_4_4_check\\handoff_03) conda.exe env create -n duy-iotguard-check-03 -f environment.yml"
+                 ]
+}
