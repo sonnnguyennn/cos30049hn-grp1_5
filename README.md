@@ -13,4 +13,24 @@ IoTGuard is a group project for classifying structured IoT network traffic. N-Ba
 
 See [repository layout](docs/repository-layout.md) for boundaries and the process for bringing reviewed work into this repository.
 
-Raw datasets, extracted working data, local environments, and generated large artifacts stay outside Git. The existing backend and frontend are early scaffolds; their interfaces and deployment instructions will be documented as they mature.
+## Run the application
+
+Start the [FastAPI backend](backend/README.md) and [Next.js frontend](frontend/README.md)
+in separate terminals. The frontend connects to `http://127.0.0.1:8000` by default.
+The dashboard is at `http://localhost:3000/dashboard`.
+
+The application currently supports upload inspection and log viewing. Connecting the
+accepted classifier to the web application remains separate integration work.
+
+## ML and contribution guides
+
+- [ML setup and workflow](ml/README.md)
+- [Current ML status and historical documentation](ml/docs/README.md)
+- [Accepted classifier and portable inference handoff](ml/docs/handoffs/A2_CLASSIFIER_EVALUATION.md)
+- [Git tracking policy](docs/git-tracking.md)
+- [Optional Git contribution reports](docs/gitinspector.md)
+
+Raw datasets, data packages, environments, and new large experiment payloads belong
+outside Git. Existing tracked experiment arrays remain in place until an independently
+verified artifact migration is complete. Compact contracts, manifests, and evidence
+remain versioned; see the tracking policy before adding or removing generated files.

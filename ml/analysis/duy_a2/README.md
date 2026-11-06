@@ -66,6 +66,9 @@ python $S/t43_botiot_analysis.py --full-outputs $F --botiot-package $P
 python $S/build_figure_index.py      # run last
 ```
 
+For a verified artifact restore, pass `--results-dir <restored-full-directory>`
+to the clustering command. See the [archive guide](../../../docs/experiment-artifacts.md).
+
 Each script stops with an error if any check fails; on success it prints `N checks PASS` and
 writes `outputs/logs/<script>.json` (inputs with SHA-256, outputs, every check, versions).
 Every figure is also checked for text that overlaps or touches other text, dots, bars or axis
