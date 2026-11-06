@@ -25,7 +25,7 @@ param(
     [string]$RunId = "01"
 )
 
-$ErrorActionPreference = "Continue"   # native tools write progress to stderr; check exit codes instead
+$ErrorActionPreference = "Stop"   # native stdout/stderr are redirected and exit codes checked separately
 $ExpectedZip = "6ff11f67d25c75822b51936cfa22a7746b6a28ed7f2cc4de7b39cfee89ed6d77"
 $ExpectedManifest = "9fac1acde3f696bb765937c997977b3d7b1e1c2fa6cd60626e910037ea1fe132"
 $EnvName = "duy-iotguard-check-$RunId"
@@ -109,16 +109,21 @@ try {
         throw "conda not found"
     }
     $code = Invoke-Logged $condaExe @("--version") $Bundle "conda_version"
+    if ($code -ne 0) { throw "conda --version failed with exit code $code" }
     Add-Step "conda available" "PASS" ((Get-Content (Join-Path $Evidence "conda_version.stdout.txt")) -join " ")
     $code = Invoke-Logged $condaExe @("env", "list") $Bundle "conda_env_list_before"
+    if ($code -ne 0) { throw "conda env list failed with exit code $code" }
     $existing = Get-Content (Join-Path $Evidence "conda_env_list_before.stdout.txt") | Where-Object { $_ -match ("^\s*" + [regex]::Escape($EnvName) + "\s") }
     if ($existing) { Add-Step "environment name is new" "FAIL" "$EnvName already exists"; throw "env exists" }
     $code = Invoke-Logged $condaExe @("env", "create", "-n", $EnvName, "-f", "environment.yml") $Bundle "conda_env_create"
     if ($code -ne 0) { Add-Step "conda env create" "FAIL" "exit code $code (see conda_env_create.*.txt)"; throw "env create failed" }
     Add-Step "conda env create -n $EnvName -f environment.yml" "PASS" "exit code 0"
-    $null = Invoke-Logged $condaExe @("list", "-n", $EnvName, "--export") $Bundle "conda_list"
-    $null = Invoke-Logged $condaExe @("run", "-n", $EnvName, "python", "-m", "pip", "freeze") $Bundle "pip_freeze"
-    $null = Invoke-Logged $condaExe @("run", "-n", $EnvName, "python", "--version") $Bundle "python_version"
+    $code = Invoke-Logged $condaExe @("list", "-n", $EnvName, "--export") $Bundle "conda_list"
+    if ($code -ne 0) { throw "conda list --export failed with exit code $code" }
+    $code = Invoke-Logged $condaExe @("run", "-n", $EnvName, "python", "-m", "pip", "freeze") $Bundle "pip_freeze"
+    if ($code -ne 0) { throw "pip freeze failed with exit code $code" }
+    $code = Invoke-Logged $condaExe @("run", "-n", $EnvName, "python", "--version") $Bundle "python_version"
+    if ($code -ne 0) { throw "python --version failed with exit code $code" }
 
     # 4-5. the two README commands, run inside the new env
     $verifyOut = "$EvidenceRel/duy_verification_$RunId.json"
@@ -151,3 +156,4 @@ finally {
     Write-Host "OVERALL: $overall   evidence folder: $Evidence"
     if ($overall -ne "PASS") { Write-Host "Keep this folder, send it to Minh Son, and rerun with -RunId 02 after the fix." }
 }
+if ($overall -ne "PASS") { exit 1 }
