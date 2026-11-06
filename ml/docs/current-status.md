@@ -1,6 +1,6 @@
 # Current engineering status
 
-Status as of 2026-11-05, based on the committed handoffs below. Automated technical
+Status as of 2026-11-06, based on the committed handoffs below. Automated technical
 verification and human teammate acceptance are separate; this guide does not
 grant approval or claim completion of other owners' deliverables.
 
@@ -13,7 +13,9 @@ grant approval or claim completion of other owners' deliverables.
 | Technical inference handoff | Portable model and input contract prepared and independently verified; handoff status remains `PREPARED_FOR_REVIEW`. | [Inference contract](architecture/inference_contract.md), [A2 handoff](handoffs/A2_CLASSIFIER_EVALUATION.md) |
 | Secondary experiments | Bot-IoT evidence archived separately; not pooled into primary selection. | [Bot-IoT archive](handoffs/BOT_IOT_SECONDARY_RUN_ARCHIVE.md) |
 | Web application | Upload inspection and log viewing exist; connecting the accepted predictor remains application integration work. | [Backend](../../backend/README.md), [frontend](../../frontend/README.md) |
-| Clustering, edge and final group deliverables | Separate owner work; the classifier handoff does not certify these as complete. | [Remaining responsibilities](handoffs/A2_CLASSIFIER_EVALUATION.md) |
+| Clustering | Full TRAIN/VALIDATION assignments and metrics are in Git. | [Clustering Full results](../notebooks/Clustering/results/full/) |
+| Evaluation figures | Duy's analysis, 12 figures and checks are integrated. The figure index and README track recipient steps. | [Duy A2 analysis](../analysis/duy_a2/README.md) |
+| Edge and final group deliverables | Separate owner work. | [Remaining responsibilities](handoffs/A2_CLASSIFIER_EVALUATION.md) |
 
 The current core path is external structured features → verified preprocessing/data
 package → accepted classifier → portable inference. FastAPI/React predictor integration

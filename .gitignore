@@ -50,3 +50,4 @@ backend/app/db/traffic.db
 
 # Received experiment evidence is archived outside source control.
 /xgb-rf-experiments/
+/reports/gitinspector/

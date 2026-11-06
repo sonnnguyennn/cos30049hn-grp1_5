@@ -16,9 +16,8 @@ See [repository layout](docs/repository-layout.md) for boundaries and the proces
 ## Run the application
 
 Start the [FastAPI backend](backend/README.md) and [Next.js frontend](frontend/README.md)
-in separate terminals. The frontend uses npm and its committed `package-lock.json`.
-It connects to `http://127.0.0.1:8000` by default; see the frontend guide for local
-configuration. The dashboard is at `http://localhost:3000/dashboard`.
+in separate terminals. The frontend connects to `http://127.0.0.1:8000` by default.
+The dashboard is at `http://localhost:3000/dashboard`.
 
 The application currently supports upload inspection and log viewing. Connecting the
 accepted classifier to the web application remains separate integration work.

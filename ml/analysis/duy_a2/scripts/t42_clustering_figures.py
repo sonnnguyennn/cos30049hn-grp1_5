@@ -1,6 +1,6 @@
 """CODE 4.2.5 - clustering figures from the saved K-Means outputs (no refit, no TEST).
 
-Reads ml/notebooks/Clustering/results/full/ (selected run g3b_standard_k8_seed42 plus the
+Defaults to ml/notebooks/Clustering/results/full/ (selected run g3b_standard_k8_seed42 plus the
 raw_k4_seed42 sensitivity run). Checks before plotting:
   * the outputs name the same G3B package and TRAIN/VALIDATION populations as the
     classifier comparison (metadata SHA-256 fingerprints);
@@ -23,7 +23,7 @@ from pathlib import Path
 import _common as C
 import numpy as np
 
-RESULTS = C.ML_DIR / "notebooks" / "Clustering" / "results" / "full"
+DEFAULT_RESULTS = C.ML_DIR / "notebooks" / "Clustering" / "results" / "full"
 COMPARISON = C.ML_DIR / "artifacts" / "manifests" / "primary_classifier_comparison_20261105.csv"
 PUBLISHED_MANIFEST = "6ab99e86397242e219bfa1f8490d8e03b169ec87a092af80cb3e7aef1e61147b"
 ROWS = {"TRAIN": 4_944_968, "VALIDATION": 1_056_372}
@@ -35,8 +35,8 @@ def read_csv(path):
         return list(csv.DictReader(handle))
 
 
-def check_run(run_id, checks, y_val=None):
-    run = RESULTS / run_id
+def check_run(results_dir, run_id, checks, y_val=None):
+    run = results_dir / run_id
     coverage = C.read_json(run / "prediction_coverage.json")
     assignments = {}
     for partition, rows in ROWS.items():
@@ -98,6 +98,12 @@ def check_run(run_id, checks, y_val=None):
 def main():
     parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     parser.add_argument(
+        "--results-dir",
+        type=Path,
+        default=DEFAULT_RESULTS,
+        help="Full clustering results directory in the checkout or a verified restore",
+    )
+    parser.add_argument(
         "--validation-labels",
         type=Path,
         help="package VALIDATION_y.npy (e.g. copy written by t41_nbaiot_extract_local.py)",
@@ -105,8 +111,11 @@ def main():
     args = parser.parse_args()
     C.ensure_dirs()
     checks = []
-    selection = C.read_json(RESULTS / "selection.json")
+    results_dir = args.results_dir.resolve()
+    selection = C.read_json(results_dir / "selection.json")
     selected = selection["selected_run_id"]
+    if selected != "g3b_standard_k8_seed42":
+        raise ValueError("Unexpected selected run for the A2 clustering figures")
     identity = selection["identity"]
     C.assert_equal(
         "clustering package manifest == published G3B manifest",
@@ -133,7 +142,7 @@ def main():
         "ground truth not used for fitting/selection", selection["ground_truth_used"], False, checks
     )
     y_val = None
-    inputs = [C.input_record(RESULTS / "selection.json")]
+    inputs = [C.input_record(results_dir / "selection.json")]
     if args.validation_labels:
         C.assert_equal(
             "VALIDATION_y.npy == package payload hash",
@@ -153,9 +162,9 @@ def main():
 
     runs = {}
     for run_id in (selected, "raw_k4_seed42"):
-        runs[run_id] = check_run(run_id, checks, y_val)
+        runs[run_id] = check_run(results_dir, run_id, checks, y_val)
         inputs += [
-            C.input_record(RESULTS / run_id / f)
+            C.input_record(results_dir / run_id / f)
             for f in ("prediction_coverage.json", "cluster_composition_validation.csv")
         ]
 
@@ -182,11 +191,11 @@ def main():
                     else "saved composition; totals checked",
                 }
             )
-    internal = {r["run_id"]: r for r in C.read_json(RESULTS / "internal_metrics.json")}
-    external = {r["run_id"]: r for r in C.read_json(RESULTS / "external_metrics.json")}
+    internal = {r["run_id"]: r for r in C.read_json(results_dir / "internal_metrics.json")}
+    external = {r["run_id"]: r for r in C.read_json(results_dir / "external_metrics.json")}
     inputs += [
-        C.input_record(RESULTS / "internal_metrics.json"),
-        C.input_record(RESULTS / "external_metrics.json"),
+        C.input_record(results_dir / "internal_metrics.json"),
+        C.input_record(results_dir / "external_metrics.json"),
     ]
     metric_rows = []
     for run_id in runs:
