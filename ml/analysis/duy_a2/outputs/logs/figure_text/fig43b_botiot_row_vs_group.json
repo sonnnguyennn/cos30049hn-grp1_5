@@ -1,0 +1,565 @@
+{
+  "figure": "fig43b_botiot_row_vs_group",
+  "figure_size_in": [
+    6.3,
+    2.1
+  ],
+  "saved_size_in": [
+    6.24,
+    2.025
+  ],
+  "min_fontsize_pt": 6.0,
+  "problems": [],
+  "texts": [
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Dummy",
+      "text": "0.99987",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        206.93,
+        110.37,
+        230.69,
+        116.37
+      ],
+      "anchor": [
+        0.9998691570442576,
+        3.2
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Dummy",
+      "text": "0.49997",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        130.16,
+        87.69,
+        153.92,
+        93.69
+      ],
+      "anchor": [
+        0.4999672871209395,
+        2.2
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Dummy",
+      "text": "0",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        53.37,
+        65.02,
+        56.97,
+        71.02
+      ],
+      "anchor": [
+        0.0,
+        1.2
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Dummy",
+      "text": "1",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        206.95,
+        42.34,
+        210.55,
+        48.34
+      ],
+      "anchor": [
+        1.0,
+        0.2
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Dummy",
+      "text": "0.99944",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        206.86,
+        101.3,
+        230.62,
+        107.3
+      ],
+      "anchor": [
+        0.9994422714761698,
+        2.8
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Dummy",
+      "text": "0.49986",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        130.14,
+        78.62,
+        153.9,
+        84.62
+      ],
+      "anchor": [
+        0.49986052897555816,
+        1.8
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Dummy",
+      "text": "0",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        53.37,
+        55.95,
+        56.97,
+        61.95
+      ],
+      "anchor": [
+        0.0,
+        0.8
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Dummy",
+      "text": "1",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        206.95,
+        33.27,
+        210.55,
+        39.27
+      ],
+      "anchor": [
+        1.0,
+        -0.2
+      ]
+    },
+    {
+      "role": "title",
+      "axes": 0,
+      "axes_title": "(a) Dummy",
+      "text": "(a) Dummy",
+      "fontsize_pt": 7.5,
+      "bbox_pt": [
+        50.87,
+        124.64,
+        95.51,
+        132.2
+      ]
+    },
+    {
+      "role": "xlabel",
+      "axes": 0,
+      "axes_title": "(a) Dummy",
+      "text": "value (0-1 scale)",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        116.98,
+        2.16,
+        176.74,
+        9.6
+      ]
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "(a) Dummy",
+      "text": "0.00",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        43.31,
+        13.6,
+        58.43,
+        20.2
+      ],
+      "tick_loc": 0.0,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "(a) Dummy",
+      "text": "0.25",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        81.71,
+        13.6,
+        96.83,
+        20.2
+      ],
+      "tick_loc": 0.25,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "(a) Dummy",
+      "text": "0.50",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        120.1,
+        13.6,
+        135.22,
+        20.2
+      ],
+      "tick_loc": 0.5,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "(a) Dummy",
+      "text": "0.75",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        158.49,
+        13.6,
+        173.61,
+        20.2
+      ],
+      "tick_loc": 0.75,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "(a) Dummy",
+      "text": "1.00",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        196.89,
+        13.6,
+        212.01,
+        20.2
+      ],
+      "tick_loc": 1.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "(a) Dummy",
+      "text": "accuracy",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        17.13,
+        104.8,
+        47.37,
+        111.3
+      ],
+      "tick_loc": 3.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "(a) Dummy",
+      "text": "macro-F1",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        15.72,
+        82.08,
+        47.37,
+        88.68
+      ],
+      "tick_loc": 2.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "(a) Dummy",
+      "text": "benign recall",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        2.16,
+        59.04,
+        47.37,
+        66.36
+      ],
+      "tick_loc": 1.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "(a) Dummy",
+      "text": "FPR",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        35.85,
+        36.73,
+        47.37,
+        43.33
+      ],
+      "tick_loc": 0.0,
+      "scale": "linear"
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) LR",
+      "text": "0.99987",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        415.53,
+        110.37,
+        439.29,
+        116.37
+      ],
+      "anchor": [
+        0.9998746088340802,
+        3.2
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) LR",
+      "text": "0.56601",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        348.9,
+        87.69,
+        372.66,
+        93.69
+      ],
+      "anchor": [
+        0.5660063857929672,
+        2.2
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) LR",
+      "text": "0.07292",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        273.17,
+        65.02,
+        296.93,
+        71.02
+      ],
+      "anchor": [
+        0.07291666666666667,
+        1.2
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) LR",
+      "text": "0.92708",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        404.35,
+        42.34,
+        428.11,
+        48.34
+      ],
+      "anchor": [
+        0.9270833333333334,
+        0.2
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) LR",
+      "text": "0.99947",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        415.47,
+        101.3,
+        439.23,
+        107.3
+      ],
+      "anchor": [
+        0.9994712443864986,
+        2.8
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) LR",
+      "text": "0.58033",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        351.1,
+        78.62,
+        374.86,
+        84.62
+      ],
+      "anchor": [
+        0.5803275395483074,
+        1.8
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) LR",
+      "text": "0.09091",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        275.93,
+        55.95,
+        299.69,
+        61.95
+      ],
+      "anchor": [
+        0.09090909090909091,
+        0.8
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) LR",
+      "text": "0.90909",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        401.59,
+        33.27,
+        425.35,
+        39.27
+      ],
+      "anchor": [
+        0.9090909090909091,
+        -0.2
+      ]
+    },
+    {
+      "role": "title",
+      "axes": 1,
+      "axes_title": "(b) LR",
+      "text": "(b) LR",
+      "fontsize_pt": 7.5,
+      "bbox_pt": [
+        259.47,
+        124.64,
+        283.95,
+        132.2
+      ]
+    },
+    {
+      "role": "xlabel",
+      "axes": 1,
+      "axes_title": "(b) LR",
+      "text": "value (0-1 scale)",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        325.58,
+        2.16,
+        385.34,
+        9.6
+      ]
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "(b) LR",
+      "text": "0.00",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        251.91,
+        13.6,
+        267.03,
+        20.2
+      ],
+      "tick_loc": 0.0,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "(b) LR",
+      "text": "0.25",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        290.31,
+        13.6,
+        305.43,
+        20.2
+      ],
+      "tick_loc": 0.25,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "(b) LR",
+      "text": "0.50",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        328.7,
+        13.6,
+        343.82,
+        20.2
+      ],
+      "tick_loc": 0.5,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "(b) LR",
+      "text": "0.75",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        367.09,
+        13.6,
+        382.21,
+        20.2
+      ],
+      "tick_loc": 0.75,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "(b) LR",
+      "text": "1.00",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        405.49,
+        13.6,
+        420.61,
+        20.2
+      ],
+      "tick_loc": 1.0,
+      "scale": "linear"
+    },
+    {
+      "role": "legend",
+      "axes": null,
+      "axes_title": null,
+      "text": [
+        "row-weighted",
+        "group-weighted"
+      ],
+      "fontsize_pt": null,
+      "bbox_pt": [
+        303.76,
+        135.43,
+        450.35,
+        147.95
+      ]
+    }
+  ]
+}

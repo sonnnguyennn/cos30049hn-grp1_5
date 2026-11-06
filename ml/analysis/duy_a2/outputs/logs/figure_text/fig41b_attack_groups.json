@@ -1,0 +1,1044 @@
+{
+  "figure": "fig41b_attack_groups",
+  "figure_size_in": [
+    6.3,
+    3.2
+  ],
+  "saved_size_in": [
+    6.248,
+    3.125
+  ],
+  "min_fontsize_pt": 6.0,
+  "problems": [],
+  "texts": [
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "N-BaIoT fine class (family / attack)",
+      "text": "555,932 (7.87%)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        135.63,
+        187.78,
+        184.59,
+        194.26
+      ],
+      "anchor": [
+        555932.0,
+        10.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "N-BaIoT fine class (family / attack)",
+      "text": "515,156 (7.29%)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        134.3,
+        172.6,
+        183.26,
+        179.08
+      ],
+      "anchor": [
+        515156.0,
+        9.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "N-BaIoT fine class (family / attack)",
+      "text": "261,789 (3.71%)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        122.42,
+        157.43,
+        171.38,
+        163.91
+      ],
+      "anchor": [
+        261789.0,
+        8.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "N-BaIoT fine class (family / attack)",
+      "text": "255,111 (3.61%)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        121.96,
+        142.25,
+        170.92,
+        148.73
+      ],
+      "anchor": [
+        255111.0,
+        7.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "N-BaIoT fine class (family / attack)",
+      "text": "859,850 (12.17%)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        143.29,
+        127.08,
+        195.85,
+        133.56
+      ],
+      "anchor": [
+        859850.0,
+        6.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "N-BaIoT fine class (family / attack)",
+      "text": "946,366 (13.40%)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        144.97,
+        111.9,
+        197.53,
+        118.38
+      ],
+      "anchor": [
+        946366.0,
+        5.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "N-BaIoT fine class (family / attack)",
+      "text": "643,821 (9.12%)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        138.21,
+        96.73,
+        187.17,
+        103.21
+      ],
+      "anchor": [
+        643821.0,
+        4.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "N-BaIoT fine class (family / attack)",
+      "text": "537,979 (7.62%)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        135.06,
+        81.55,
+        184.02,
+        88.03
+      ],
+      "anchor": [
+        537979.0,
+        3.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "N-BaIoT fine class (family / attack)",
+      "text": "733,299 (10.38%)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        140.49,
+        66.38,
+        193.05,
+        72.86
+      ],
+      "anchor": [
+        733299.0,
+        2.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "N-BaIoT fine class (family / attack)",
+      "text": "1,229,999 (17.42%)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        149.57,
+        51.2,
+        207.89,
+        57.68
+      ],
+      "anchor": [
+        1229999.0,
+        1.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "N-BaIoT fine class (family / attack)",
+      "text": "523,304 (7.41%)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        134.57,
+        36.02,
+        183.53,
+        42.51
+      ],
+      "anchor": [
+        523304.0,
+        0.0
+      ]
+    },
+    {
+      "role": "title",
+      "axes": 0,
+      "axes_title": "N-BaIoT fine class (family / attack)",
+      "text": "N-BaIoT fine class (family / attack)",
+      "fontsize_pt": 7.5,
+      "bbox_pt": [
+        60.38,
+        203.84,
+        200.06,
+        211.4
+      ]
+    },
+    {
+      "role": "xlabel",
+      "axes": 0,
+      "axes_title": "N-BaIoT fine class (family / attack)",
+      "text": "records (log scale)",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        88.02,
+        2.16,
+        153.98,
+        9.6
+      ]
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "N-BaIoT fine class (family / attack)",
+      "text": "$\\mathdefault{10^{4}}$",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        54.62,
+        13.6,
+        66.14,
+        21.64
+      ],
+      "tick_loc": 10000.0,
+      "scale": "log"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "N-BaIoT fine class (family / attack)",
+      "text": "$\\mathdefault{10^{5}}$",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        95.03,
+        13.6,
+        106.55,
+        21.64
+      ],
+      "tick_loc": 100000.0,
+      "scale": "log"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "N-BaIoT fine class (family / attack)",
+      "text": "$\\mathdefault{10^{6}}$",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        135.44,
+        13.6,
+        146.96,
+        21.64
+      ],
+      "tick_loc": 1000000.0,
+      "scale": "log"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "N-BaIoT fine class (family / attack)",
+      "text": "$\\mathdefault{10^{7}}$",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        175.85,
+        13.6,
+        187.37,
+        21.64
+      ],
+      "tick_loc": 10000000.0,
+      "scale": "log"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "N-BaIoT fine class (family / attack)",
+      "text": "benign",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        33.12,
+        186.57,
+        56.88,
+        193.9
+      ],
+      "tick_loc": 10.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "N-BaIoT fine class (family / attack)",
+      "text": "gafgyt / combo",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        5.76,
+        171.4,
+        56.88,
+        178.72
+      ],
+      "tick_loc": 9.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "N-BaIoT fine class (family / attack)",
+      "text": "gafgyt / junk",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        14.4,
+        156.22,
+        56.88,
+        163.55
+      ],
+      "tick_loc": 8.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "N-BaIoT fine class (family / attack)",
+      "text": "gafgyt / scan",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        12.96,
+        141.05,
+        56.88,
+        148.37
+      ],
+      "tick_loc": 7.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "N-BaIoT fine class (family / attack)",
+      "text": "gafgyt / tcp",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        18.0,
+        125.87,
+        56.88,
+        133.2
+      ],
+      "tick_loc": 6.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "N-BaIoT fine class (family / attack)",
+      "text": "gafgyt / udp",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        15.84,
+        110.7,
+        56.88,
+        118.02
+      ],
+      "tick_loc": 5.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "N-BaIoT fine class (family / attack)",
+      "text": "mirai / ack",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        20.88,
+        95.52,
+        56.88,
+        102.85
+      ],
+      "tick_loc": 4.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "N-BaIoT fine class (family / attack)",
+      "text": "mirai / scan",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        16.56,
+        80.71,
+        56.88,
+        87.31
+      ],
+      "tick_loc": 3.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "N-BaIoT fine class (family / attack)",
+      "text": "mirai / syn",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        20.88,
+        65.53,
+        56.88,
+        72.14
+      ],
+      "tick_loc": 2.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "N-BaIoT fine class (family / attack)",
+      "text": "mirai / udp",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        19.44,
+        50.0,
+        56.88,
+        57.32
+      ],
+      "tick_loc": 1.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "N-BaIoT fine class (family / attack)",
+      "text": "mirai / udpplain",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        2.16,
+        34.82,
+        56.88,
+        42.15
+      ],
+      "tick_loc": 0.0,
+      "scale": "linear"
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "Bot-IoT category",
+      "text": "477 (0.013%)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        326.02,
+        191.22,
+        365.62,
+        197.71
+      ],
+      "anchor": [
+        477.0,
+        4.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "Bot-IoT category",
+      "text": "1,926,624 (52.52%)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        393.47,
+        180.98,
+        451.79,
+        187.46
+      ],
+      "anchor": [
+        1926624.0,
+        3.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "Bot-IoT category",
+      "text": "1,650,260 (44.98%)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        392.22,
+        170.73,
+        450.54,
+        177.21
+      ],
+      "anchor": [
+        1650260.0,
+        2.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "Bot-IoT category",
+      "text": "91,082 (2.48%)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        368.68,
+        160.48,
+        414.04,
+        166.96
+      ],
+      "anchor": [
+        91082.0,
+        1.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "Bot-IoT category",
+      "text": "79 (0.00215%)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        311.41,
+        150.23,
+        354.61,
+        156.72
+      ],
+      "anchor": [
+        79.0,
+        0.0
+      ]
+    },
+    {
+      "role": "title",
+      "axes": 1,
+      "axes_title": "Bot-IoT category",
+      "text": "Bot-IoT category",
+      "fontsize_pt": 7.5,
+      "bbox_pt": [
+        271.18,
+        203.84,
+        340.3,
+        211.34
+      ]
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "Bot-IoT category",
+      "text": "$\\mathdefault{10^{0}}$",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        265.42,
+        131.26,
+        276.94,
+        139.3
+      ],
+      "tick_loc": 1.0,
+      "scale": "log"
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "Bot-IoT category",
+      "text": "$\\mathdefault{10^{2}}$",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        302.83,
+        131.26,
+        314.35,
+        139.3
+      ],
+      "tick_loc": 100.0,
+      "scale": "log"
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "Bot-IoT category",
+      "text": "$\\mathdefault{10^{4}}$",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        340.24,
+        131.26,
+        351.76,
+        139.3
+      ],
+      "tick_loc": 10000.0,
+      "scale": "log"
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "Bot-IoT category",
+      "text": "$\\mathdefault{10^{6}}$",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        377.65,
+        131.26,
+        389.17,
+        139.3
+      ],
+      "tick_loc": 1000000.0,
+      "scale": "log"
+    },
+    {
+      "role": "ytick",
+      "axes": 1,
+      "axes_title": "Bot-IoT category",
+      "text": "Normal",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        242.6,
+        190.02,
+        267.68,
+        197.35
+      ],
+      "tick_loc": 4.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 1,
+      "axes_title": "Bot-IoT category",
+      "text": "DDoS",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        248.96,
+        180.14,
+        267.68,
+        186.74
+      ],
+      "tick_loc": 3.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 1,
+      "axes_title": "Bot-IoT category",
+      "text": "DoS",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        254.0,
+        169.89,
+        267.68,
+        176.49
+      ],
+      "tick_loc": 2.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 1,
+      "axes_title": "Bot-IoT category",
+      "text": "Reconnaissance",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        212.54,
+        159.64,
+        267.68,
+        166.24
+      ],
+      "tick_loc": 1.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 1,
+      "axes_title": "Bot-IoT category",
+      "text": "Theft",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        249.8,
+        149.03,
+        267.68,
+        156.36
+      ],
+      "tick_loc": 0.0,
+      "scale": "linear"
+    },
+    {
+      "role": "annotation",
+      "axes": 2,
+      "axes_title": "Bot-IoT subcategory",
+      "text": "477 (0.013%)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        326.02,
+        106.56,
+        365.62,
+        113.04
+      ],
+      "anchor": [
+        477.0,
+        7.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 2,
+      "axes_title": "Bot-IoT subcategory",
+      "text": "1,981,230 (54.01%)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        393.7,
+        96.02,
+        452.02,
+        102.5
+      ],
+      "anchor": [
+        1981230.0,
+        6.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 2,
+      "axes_title": "Bot-IoT subcategory",
+      "text": "1,593,180 (43.43%)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        391.93,
+        85.48,
+        450.25,
+        91.96
+      ],
+      "anchor": [
+        1593180.0,
+        5.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 2,
+      "axes_title": "Bot-IoT subcategory",
+      "text": "2,474 (0.0674%)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        339.39,
+        74.94,
+        388.35,
+        81.42
+      ],
+      "anchor": [
+        2474.0,
+        4.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 2,
+      "axes_title": "Bot-IoT subcategory",
+      "text": "73,168 (1.99%)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        366.9,
+        64.4,
+        412.26,
+        70.88
+      ],
+      "anchor": [
+        73168.0,
+        3.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 2,
+      "axes_title": "Bot-IoT subcategory",
+      "text": "17,914 (0.488%)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        355.47,
+        53.86,
+        404.43,
+        60.34
+      ],
+      "anchor": [
+        17914.0,
+        2.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 2,
+      "axes_title": "Bot-IoT subcategory",
+      "text": "73 (0.00199%)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        310.77,
+        43.32,
+        353.97,
+        49.8
+      ],
+      "anchor": [
+        73.0,
+        1.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 2,
+      "axes_title": "Bot-IoT subcategory",
+      "text": "6 (0.000164%)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        290.47,
+        32.78,
+        333.67,
+        39.26
+      ],
+      "anchor": [
+        6.0,
+        0.0
+      ]
+    },
+    {
+      "role": "title",
+      "axes": 2,
+      "axes_title": "Bot-IoT subcategory",
+      "text": "Bot-IoT subcategory",
+      "fontsize_pt": 7.5,
+      "bbox_pt": [
+        271.18,
+        119.38,
+        354.7,
+        126.94
+      ]
+    },
+    {
+      "role": "xlabel",
+      "axes": 2,
+      "axes_title": "Bot-IoT subcategory",
+      "text": "records (log scale)",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        303.67,
+        2.16,
+        369.63,
+        9.6
+      ]
+    },
+    {
+      "role": "xtick",
+      "axes": 2,
+      "axes_title": "Bot-IoT subcategory",
+      "text": "$\\mathdefault{10^{0}}$",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        265.42,
+        13.6,
+        276.94,
+        21.64
+      ],
+      "tick_loc": 1.0,
+      "scale": "log"
+    },
+    {
+      "role": "xtick",
+      "axes": 2,
+      "axes_title": "Bot-IoT subcategory",
+      "text": "$\\mathdefault{10^{2}}$",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        302.83,
+        13.6,
+        314.35,
+        21.64
+      ],
+      "tick_loc": 100.0,
+      "scale": "log"
+    },
+    {
+      "role": "xtick",
+      "axes": 2,
+      "axes_title": "Bot-IoT subcategory",
+      "text": "$\\mathdefault{10^{4}}$",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        340.24,
+        13.6,
+        351.76,
+        21.64
+      ],
+      "tick_loc": 10000.0,
+      "scale": "log"
+    },
+    {
+      "role": "xtick",
+      "axes": 2,
+      "axes_title": "Bot-IoT subcategory",
+      "text": "$\\mathdefault{10^{6}}$",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        377.65,
+        13.6,
+        389.17,
+        21.64
+      ],
+      "tick_loc": 1000000.0,
+      "scale": "log"
+    },
+    {
+      "role": "ytick",
+      "axes": 2,
+      "axes_title": "Bot-IoT subcategory",
+      "text": "Normal",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        242.6,
+        105.36,
+        267.68,
+        112.68
+      ],
+      "tick_loc": 7.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 2,
+      "axes_title": "Bot-IoT subcategory",
+      "text": "UDP",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        254.0,
+        95.18,
+        267.68,
+        101.78
+      ],
+      "tick_loc": 6.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 2,
+      "axes_title": "Bot-IoT subcategory",
+      "text": "TCP",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        255.83,
+        84.64,
+        267.68,
+        91.24
+      ],
+      "tick_loc": 5.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 2,
+      "axes_title": "Bot-IoT subcategory",
+      "text": "HTTP",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        250.52,
+        74.1,
+        267.68,
+        80.7
+      ],
+      "tick_loc": 4.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 2,
+      "axes_title": "Bot-IoT subcategory",
+      "text": "Service Scan",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        223.76,
+        63.56,
+        267.68,
+        70.16
+      ],
+      "tick_loc": 3.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 2,
+      "axes_title": "Bot-IoT subcategory",
+      "text": "OS Fingerprint",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        218.48,
+        53.02,
+        267.68,
+        59.62
+      ],
+      "tick_loc": 2.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 2,
+      "axes_title": "Bot-IoT subcategory",
+      "text": "Keylogging",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        229.85,
+        42.12,
+        267.68,
+        49.44
+      ],
+      "tick_loc": 1.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 2,
+      "axes_title": "Bot-IoT subcategory",
+      "text": "Data Exfiltration",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        210.8,
+        31.58,
+        267.68,
+        38.9
+      ],
+      "tick_loc": 0.0,
+      "scale": "linear"
+    },
+    {
+      "role": "legend",
+      "axes": null,
+      "axes_title": null,
+      "text": [
+        "benign",
+        "malicious"
+      ],
+      "fontsize_pt": null,
+      "bbox_pt": [
+        174.96,
+        214.63,
+        278.64,
+        227.15
+      ]
+    }
+  ]
+}

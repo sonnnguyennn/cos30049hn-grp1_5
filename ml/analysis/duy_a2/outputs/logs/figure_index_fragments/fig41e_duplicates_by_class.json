@@ -1,0 +1,47 @@
+{
+  "figure_id": "fig41e_duplicates_by_class",
+  "run_id": "N/A",
+  "files": [
+    "analysis/duy_a2/outputs/figures/fig41e_duplicates_by_class.png",
+    "analysis/duy_a2/outputs/figures/fig41e_duplicates_by_class.pdf"
+  ],
+  "inputs": [
+    {
+      "label": "n_baiot_duplicate_summary.json",
+      "path": "artifacts/audit/n_baiot_duplicate_summary.json",
+      "bytes": 15378,
+      "sha256": "1ac8e92ad7f837d865f2c1a009c0c3557b979f343c16795de1e9af622d45de34"
+    },
+    {
+      "label": "g3a_numeric_equivalence_summary.json",
+      "path": "artifacts/audit/g3a_numeric_equivalence_summary.json",
+      "bytes": 1094,
+      "sha256": "5c63dddd2d8c0ba0cb3f5ed0da3545297ef4370827cc29c29c9d463da876d835"
+    },
+    {
+      "label": "n_baiot_effective_imbalance.csv",
+      "path": "artifacts/audit/n_baiot_effective_imbalance.csv",
+      "bytes": 2473,
+      "sha256": "324a1cb5a8df98b83ce74ed76ca2c472d99ab22267262ec060466ca02d14e272"
+    },
+    {
+      "label": "bot_iot_duplicate_summary.json",
+      "path": "artifacts/audit/bot_iot_duplicate_summary.json",
+      "bytes": 7418,
+      "sha256": "43409cfc76e0b57cb0f790cc70fd77191b61528c888fe106b91950bd9c00ca03"
+    },
+    {
+      "label": "bot_iot_candidate_proposed_split_summary.json",
+      "path": "artifacts/manifests/bot_iot_candidate_proposed_split_summary.json",
+      "bytes": 11156,
+      "sha256": "9f1b7091d426d7144ed4a833b72fc1e78732862fd42418b52be53552a6d4b1ef"
+    }
+  ],
+  "dataset": "N-BaIoT; Bot-IoT",
+  "scope": "full corpora (historical audit / candidate scan)",
+  "n": "N-BaIoT 7,062,606 rows; Bot-IoT 3,668,522 rows",
+  "weighting": "1 per record (rows) vs 1 per distinct vector",
+  "sampling_transform": "none; log-scale x axis",
+  "caption": "Rows versus distinct feature vectors per class (N-BaIoT: all 115 features; Bot-IoT: the 13 model predictors). Filled dot = all rows, open dot = distinct vectors; ×N = average rows per distinct vector. Bot-IoT has 1 vector that occurs with both labels (11 benign + 3,733 malicious rows); it is counted once in each class.",
+  "commentary": "Duplication is concentrated in the malicious class: N-BaIoT malicious rows repeat on average 3.30 times per distinct vector versus 1.08 for benign, so benign is 7.87% of rows but 20.68% of distinct vectors. On the 13 Bot-IoT predictors benign is 0.013% of rows and 0.060% of distinct vectors; on all 43 source fields Bot-IoT has no duplicates at all. Because identical vectors are kept inside one partition, repeated rows inflate support counts but cannot leak across TRAIN/VALIDATION/TEST."
+}

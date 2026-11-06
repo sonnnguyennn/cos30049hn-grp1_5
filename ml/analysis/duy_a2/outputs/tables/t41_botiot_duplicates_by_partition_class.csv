@@ -1,0 +1,5 @@
+dataset,partition,class,rows,distinct_vectors,repeated_groups,rows_in_repeated_groups,excess_rows,largest_group_rows
+Bot-IoT,TRAIN,benign,286,248,8,46,38,18
+Bot-IoT,TRAIN,malicious,2200828,396019,292840,2097649,1804809,84240
+Bot-IoT,VALIDATION,benign,96,77,3,22,19,18
+Bot-IoT,VALIDATION,malicious,733608,137983,102090,697715,595625,753

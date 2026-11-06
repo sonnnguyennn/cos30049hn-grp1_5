@@ -1,0 +1,442 @@
+{
+  "figure": "fig43a_botiot_confusion_row",
+  "figure_size_in": [
+    4.536,
+    2.15
+  ],
+  "saved_size_in": [
+    4.202,
+    2.09
+  ],
+  "min_fontsize_pt": 6.0,
+  "problems": [],
+  "texts": [
+    {
+      "role": "text",
+      "axes": 0,
+      "axes_title": "Dummy\nVALIDATION, row-weighted",
+      "text": "0",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        79.79,
+        110.05,
+        84.83,
+        117.05
+      ],
+      "anchor": [
+        0.0,
+        -0.13
+      ]
+    },
+    {
+      "role": "text",
+      "axes": 0,
+      "axes_title": "Dummy\nVALIDATION, row-weighted",
+      "text": "0%",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        77.63,
+        93.05,
+        86.99,
+        99.05
+      ],
+      "anchor": [
+        0.0,
+        0.19
+      ]
+    },
+    {
+      "role": "text",
+      "axes": 0,
+      "axes_title": "Dummy\nVALIDATION, row-weighted",
+      "text": "96",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        131.95,
+        110.05,
+        142.03,
+        117.05
+      ],
+      "anchor": [
+        1.0,
+        -0.13
+      ]
+    },
+    {
+      "role": "text",
+      "axes": 0,
+      "axes_title": "Dummy\nVALIDATION, row-weighted",
+      "text": "100%",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        128.71,
+        93.05,
+        145.27,
+        99.05
+      ],
+      "anchor": [
+        1.0,
+        0.19
+      ]
+    },
+    {
+      "role": "text",
+      "axes": 0,
+      "axes_title": "Dummy\nVALIDATION, row-weighted",
+      "text": "0",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        79.79,
+        55.37,
+        84.83,
+        62.37
+      ],
+      "anchor": [
+        0.0,
+        0.87
+      ]
+    },
+    {
+      "role": "text",
+      "axes": 0,
+      "axes_title": "Dummy\nVALIDATION, row-weighted",
+      "text": "0%",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        77.63,
+        38.37,
+        86.99,
+        44.37
+      ],
+      "anchor": [
+        0.0,
+        1.19
+      ]
+    },
+    {
+      "role": "text",
+      "axes": 0,
+      "axes_title": "Dummy\nVALIDATION, row-weighted",
+      "text": "733,608",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        120.43,
+        55.37,
+        153.55,
+        62.37
+      ],
+      "anchor": [
+        1.0,
+        0.87
+      ]
+    },
+    {
+      "role": "text",
+      "axes": 0,
+      "axes_title": "Dummy\nVALIDATION, row-weighted",
+      "text": "100%",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        128.71,
+        38.37,
+        145.27,
+        44.37
+      ],
+      "anchor": [
+        1.0,
+        1.19
+      ]
+    },
+    {
+      "role": "title",
+      "axes": 0,
+      "axes_title": "Dummy\nVALIDATION, row-weighted",
+      "text": "Dummy\nVALIDATION, row-weighted",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        54.98,
+        135.4,
+        164.84,
+        152.64
+      ]
+    },
+    {
+      "role": "xlabel",
+      "axes": 0,
+      "axes_title": "Dummy\nVALIDATION, row-weighted",
+      "text": "predicted",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        92.81,
+        2.16,
+        126.49,
+        9.6
+      ]
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "Dummy\nVALIDATION, row-weighted",
+      "text": "benign",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        70.43,
+        13.6,
+        94.19,
+        20.92
+      ],
+      "tick_loc": 0.0,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "Dummy\nVALIDATION, row-weighted",
+      "text": "malicious",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        120.43,
+        13.6,
+        153.55,
+        20.92
+      ],
+      "tick_loc": 1.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ylabel",
+      "axes": 0,
+      "axes_title": "Dummy\nVALIDATION, row-weighted",
+      "text": "true class",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        6.91,
+        61.82,
+        14.36,
+        96.38
+      ]
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "Dummy\nVALIDATION, row-weighted",
+      "text": "benign",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        27.72,
+        102.0,
+        51.48,
+        109.32
+      ],
+      "tick_loc": 0.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "Dummy\nVALIDATION, row-weighted",
+      "text": "malicious",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        18.36,
+        47.32,
+        51.48,
+        54.64
+      ],
+      "tick_loc": 1.0,
+      "scale": "linear"
+    },
+    {
+      "role": "text",
+      "axes": 1,
+      "axes_title": "LR\nVALIDATION, row-weighted",
+      "text": "7",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        224.42,
+        110.05,
+        229.46,
+        117.05
+      ],
+      "anchor": [
+        0.0,
+        -0.13
+      ]
+    },
+    {
+      "role": "text",
+      "axes": 1,
+      "axes_title": "LR\nVALIDATION, row-weighted",
+      "text": "7.29%",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        217.58,
+        93.05,
+        236.3,
+        99.05
+      ],
+      "anchor": [
+        0.0,
+        0.19
+      ]
+    },
+    {
+      "role": "text",
+      "axes": 1,
+      "axes_title": "LR\nVALIDATION, row-weighted",
+      "text": "89",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        276.58,
+        110.05,
+        286.66,
+        117.05
+      ],
+      "anchor": [
+        1.0,
+        -0.13
+      ]
+    },
+    {
+      "role": "text",
+      "axes": 1,
+      "axes_title": "LR\nVALIDATION, row-weighted",
+      "text": "92.71%",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        270.46,
+        93.05,
+        292.78,
+        99.05
+      ],
+      "anchor": [
+        1.0,
+        0.19
+      ]
+    },
+    {
+      "role": "text",
+      "axes": 1,
+      "axes_title": "LR\nVALIDATION, row-weighted",
+      "text": "3",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        224.42,
+        55.37,
+        229.46,
+        62.37
+      ],
+      "anchor": [
+        0.0,
+        0.87
+      ]
+    },
+    {
+      "role": "text",
+      "axes": 1,
+      "axes_title": "LR\nVALIDATION, row-weighted",
+      "text": "0.000409%",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        210.38,
+        38.37,
+        243.5,
+        44.37
+      ],
+      "anchor": [
+        0.0,
+        1.19
+      ]
+    },
+    {
+      "role": "text",
+      "axes": 1,
+      "axes_title": "LR\nVALIDATION, row-weighted",
+      "text": "733,605",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        265.06,
+        55.37,
+        298.18,
+        62.37
+      ],
+      "anchor": [
+        1.0,
+        0.87
+      ]
+    },
+    {
+      "role": "text",
+      "axes": 1,
+      "axes_title": "LR\nVALIDATION, row-weighted",
+      "text": "99.9996%",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        266.86,
+        38.37,
+        296.38,
+        44.37
+      ],
+      "anchor": [
+        1.0,
+        1.19
+      ]
+    },
+    {
+      "role": "title",
+      "axes": 1,
+      "axes_title": "LR\nVALIDATION, row-weighted",
+      "text": "LR\nVALIDATION, row-weighted",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        199.6,
+        135.4,
+        309.47,
+        152.64
+      ]
+    },
+    {
+      "role": "xlabel",
+      "axes": 1,
+      "axes_title": "LR\nVALIDATION, row-weighted",
+      "text": "predicted",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        237.44,
+        2.16,
+        271.12,
+        9.6
+      ]
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "LR\nVALIDATION, row-weighted",
+      "text": "benign",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        215.06,
+        13.6,
+        238.82,
+        20.92
+      ],
+      "tick_loc": 0.0,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "LR\nVALIDATION, row-weighted",
+      "text": "malicious",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        265.06,
+        13.6,
+        298.18,
+        20.92
+      ],
+      "tick_loc": 1.0,
+      "scale": "linear"
+    }
+  ]
+}

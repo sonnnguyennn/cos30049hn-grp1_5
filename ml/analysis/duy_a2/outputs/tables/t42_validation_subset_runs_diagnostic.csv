@@ -1,0 +1,6 @@
+run_id,algorithm,train_population_kind,actual_train_rows,excluded_reason,macro_f1,fpr,FP,FN,partition,use
+rf_frac0.05_seed42,RF,subset,247248,Subset/diagnostic TRAIN: 247248 / 4944968 rows,0.9997820421424037,0.00033559057949301854,28,39,VALIDATION,diagnostic only; not in the comparison
+rf_frac0.1_seed42,RF,subset,494496,Subset/diagnostic TRAIN: 494496 / 4944968 rows,0.9997950994517509,7.191226703421825e-05,6,57,VALIDATION,diagnostic only; not in the comparison
+rf_frac0.25_seed42,RF,subset,1236242,Subset/diagnostic TRAIN: 1236242 / 4944968 rows,0.9998991626658116,2.3970755678072752e-05,2,29,VALIDATION,diagnostic only; not in the comparison
+rf_frac0.5_seed42,RF,subset,2472484,Subset/diagnostic TRAIN: 2472484 / 4944968 rows,0.999928434492684,2.3970755678072752e-05,2,20,VALIDATION,diagnostic only; not in the comparison
+xgb_frac0.5_seed42,XGB,subset,2472484,Subset/diagnostic TRAIN: 2472484 / 4944968 rows,0.9999089206185918,1.1985377839036376e-05,1,27,VALIDATION,diagnostic only; not in the comparison

@@ -1,0 +1,165 @@
+{
+  "script": "t41_duplicates",
+  "created_utc": "2026-11-05T14:36:29.721716+00:00",
+  "runtime": {
+    "python": "3.11.18",
+    "platform": "Linux-6.18.44-fc-v236-x86_64-with-glibc2.39",
+    "numpy": "2.4.6",
+    "matplotlib": "3.11.2"
+  },
+  "inputs": [
+    {
+      "label": "n_baiot_duplicate_summary.json",
+      "path": "artifacts/audit/n_baiot_duplicate_summary.json",
+      "bytes": 15378,
+      "sha256": "1ac8e92ad7f837d865f2c1a009c0c3557b979f343c16795de1e9af622d45de34"
+    },
+    {
+      "label": "g3a_numeric_equivalence_summary.json",
+      "path": "artifacts/audit/g3a_numeric_equivalence_summary.json",
+      "bytes": 1094,
+      "sha256": "5c63dddd2d8c0ba0cb3f5ed0da3545297ef4370827cc29c29c9d463da876d835"
+    },
+    {
+      "label": "n_baiot_effective_imbalance.csv",
+      "path": "artifacts/audit/n_baiot_effective_imbalance.csv",
+      "bytes": 2473,
+      "sha256": "324a1cb5a8df98b83ce74ed76ca2c472d99ab22267262ec060466ca02d14e272"
+    },
+    {
+      "label": "bot_iot_duplicate_summary.json",
+      "path": "artifacts/audit/bot_iot_duplicate_summary.json",
+      "bytes": 7418,
+      "sha256": "43409cfc76e0b57cb0f790cc70fd77191b61528c888fe106b91950bd9c00ca03"
+    },
+    {
+      "label": "bot_iot_candidate_proposed_split_summary.json",
+      "path": "artifacts/manifests/bot_iot_candidate_proposed_split_summary.json",
+      "bytes": 11156,
+      "sha256": "9f1b7091d426d7144ed4a833b72fc1e78732862fd42418b52be53552a6d4b1ef"
+    }
+  ],
+  "outputs": [
+    "analysis/duy_a2/outputs/tables/t41_duplicates_summary.csv",
+    "analysis/duy_a2/outputs/tables/t41_duplicates_by_class.csv",
+    "analysis/duy_a2/outputs/tables/t41_botiot_duplicates_by_partition_class.csv",
+    "analysis/duy_a2/outputs/figures/fig41e_duplicates_by_class.png",
+    "analysis/duy_a2/outputs/figures/fig41e_duplicates_by_class.pdf"
+  ],
+  "checks": [
+    {
+      "check": "N-BaIoT numeric groups == lexical groups",
+      "actual": 2482676,
+      "expected": 2482676,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT TRAIN distinct groups == manifest",
+      "actual": 396266,
+      "expected": 396266,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT TRAIN benign distinct groups == manifest",
+      "actual": 248,
+      "expected": 248,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT TRAIN malicious distinct groups == manifest",
+      "actual": 396019,
+      "expected": 396019,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT VALIDATION distinct groups == manifest",
+      "actual": 138060,
+      "expected": 138060,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT VALIDATION benign distinct groups == manifest",
+      "actual": 77,
+      "expected": 77,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT VALIDATION malicious distinct groups == manifest",
+      "actual": 137983,
+      "expected": 137983,
+      "status": "PASS"
+    },
+    {
+      "check": "N-BaIoT full corpus (historical audit) all 115 predictors (exact values): rows - distinct == excess",
+      "actual": 4579930,
+      "expected": 4579930,
+      "status": "PASS"
+    },
+    {
+      "check": "N-BaIoT full corpus (historical audit) all 115 predictors (exact values): in-repeated - groups == excess",
+      "actual": 4579930,
+      "expected": 4579930,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT full 5% corpus (historical audit) all 43 observed non-label source fields: rows - distinct == excess",
+      "actual": 0,
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT full 5% corpus (historical audit) all 43 observed non-label source fields: in-repeated - groups == excess",
+      "actual": 0,
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT full 5% corpus (candidate scan) 13 model predictors (exact-X groups): rows - distinct == excess",
+      "actual": 2995915,
+      "expected": 2995915,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT full 5% corpus (candidate scan) 13 model predictors (exact-X groups): in-repeated - groups == excess",
+      "actual": 2995915,
+      "expected": 2995915,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT TRAIN partition (package metadata) 13 model predictors (exact-X groups): rows - distinct == excess",
+      "actual": 1804848,
+      "expected": 1804848,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT TRAIN partition (package metadata) 13 model predictors (exact-X groups): in-repeated - groups == excess",
+      "actual": 1804848,
+      "expected": 1804848,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT VALIDATION partition (package metadata) 13 model predictors (exact-X groups): rows - distinct == excess",
+      "actual": 595644,
+      "expected": 595644,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT VALIDATION partition (package metadata) 13 model predictors (exact-X groups): in-repeated - groups == excess",
+      "actual": 595644,
+      "expected": 595644,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT per-class groups double count exactly the mixed group",
+      "actual": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "check": "Bot-IoT mixed group rows == benign + malicious rows",
+      "actual": 3744,
+      "expected": 3744,
+      "status": "PASS"
+    }
+  ]
+}

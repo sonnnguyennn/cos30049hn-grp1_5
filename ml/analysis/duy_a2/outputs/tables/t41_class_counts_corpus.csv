@@ -1,0 +1,32 @@
+dataset,scope,source_file,representation,level,class,binary_class,rows,level_total,percent
+N-BaIoT,full corpus (historical audit),artifacts/audit/n_baiot_label_distribution.csv,115 numeric features,binary,benign,benign,555932,7062606,7.871485
+N-BaIoT,full corpus (historical audit),artifacts/audit/n_baiot_label_distribution.csv,115 numeric features,binary,malicious,malicious,6506674,7062606,92.128515
+N-BaIoT,full corpus (historical audit),artifacts/audit/n_baiot_label_distribution.csv,115 numeric features,family,benign,benign,555932,7062606,7.871485
+N-BaIoT,full corpus (historical audit),artifacts/audit/n_baiot_label_distribution.csv,115 numeric features,family,gafgyt,malicious,2838272,7062606,40.187319
+N-BaIoT,full corpus (historical audit),artifacts/audit/n_baiot_label_distribution.csv,115 numeric features,family,mirai,malicious,3668402,7062606,51.941196
+N-BaIoT,full corpus (historical audit),artifacts/audit/n_baiot_label_distribution.csv,115 numeric features,fine_class,benign,benign,555932,7062606,7.871485
+N-BaIoT,full corpus (historical audit),artifacts/audit/n_baiot_label_distribution.csv,115 numeric features,fine_class,gafgyt_combo,malicious,515156,7062606,7.294135
+N-BaIoT,full corpus (historical audit),artifacts/audit/n_baiot_label_distribution.csv,115 numeric features,fine_class,gafgyt_junk,malicious,261789,7062606,3.706691
+N-BaIoT,full corpus (historical audit),artifacts/audit/n_baiot_label_distribution.csv,115 numeric features,fine_class,gafgyt_scan,malicious,255111,7062606,3.612137
+N-BaIoT,full corpus (historical audit),artifacts/audit/n_baiot_label_distribution.csv,115 numeric features,fine_class,gafgyt_tcp,malicious,859850,7062606,12.174685
+N-BaIoT,full corpus (historical audit),artifacts/audit/n_baiot_label_distribution.csv,115 numeric features,fine_class,gafgyt_udp,malicious,946366,7062606,13.399671
+N-BaIoT,full corpus (historical audit),artifacts/audit/n_baiot_label_distribution.csv,115 numeric features,fine_class,mirai_ack,malicious,643821,7062606,9.115913
+N-BaIoT,full corpus (historical audit),artifacts/audit/n_baiot_label_distribution.csv,115 numeric features,fine_class,mirai_scan,malicious,537979,7062606,7.617287
+N-BaIoT,full corpus (historical audit),artifacts/audit/n_baiot_label_distribution.csv,115 numeric features,fine_class,mirai_syn,malicious,733299,7062606,10.382839
+N-BaIoT,full corpus (historical audit),artifacts/audit/n_baiot_label_distribution.csv,115 numeric features,fine_class,mirai_udp,malicious,1229999,7062606,17.415654
+N-BaIoT,full corpus (historical audit),artifacts/audit/n_baiot_label_distribution.csv,115 numeric features,fine_class,mirai_udpplain,malicious,523304,7062606,7.409503
+Bot-IoT,full 5% corpus (historical audit),artifacts/audit/bot_iot_label_distribution.csv,all_features_5pct_shards,attack,benign (attack=0),benign,477,3668522,0.013003
+Bot-IoT,full 5% corpus (historical audit),artifacts/audit/bot_iot_label_distribution.csv,all_features_5pct_shards,attack,malicious (attack=1),malicious,3668045,3668522,99.986997
+Bot-IoT,full 5% corpus (historical audit),artifacts/audit/bot_iot_label_distribution.csv,all_features_5pct_shards,category,DDoS,malicious,1926624,3668522,52.517717
+Bot-IoT,full 5% corpus (historical audit),artifacts/audit/bot_iot_label_distribution.csv,all_features_5pct_shards,category,DoS,malicious,1650260,3668522,44.984329
+Bot-IoT,full 5% corpus (historical audit),artifacts/audit/bot_iot_label_distribution.csv,all_features_5pct_shards,category,Normal,benign,477,3668522,0.013003
+Bot-IoT,full 5% corpus (historical audit),artifacts/audit/bot_iot_label_distribution.csv,all_features_5pct_shards,category,Reconnaissance,malicious,91082,3668522,2.482798
+Bot-IoT,full 5% corpus (historical audit),artifacts/audit/bot_iot_label_distribution.csv,all_features_5pct_shards,category,Theft,malicious,79,3668522,0.002153
+Bot-IoT,full 5% corpus (historical audit),artifacts/audit/bot_iot_label_distribution.csv,all_features_5pct_shards,subcategory,Data_Exfiltration,malicious,6,3668522,0.000164
+Bot-IoT,full 5% corpus (historical audit),artifacts/audit/bot_iot_label_distribution.csv,all_features_5pct_shards,subcategory,HTTP,malicious,2474,3668522,0.067439
+Bot-IoT,full 5% corpus (historical audit),artifacts/audit/bot_iot_label_distribution.csv,all_features_5pct_shards,subcategory,Keylogging,malicious,73,3668522,0.00199
+Bot-IoT,full 5% corpus (historical audit),artifacts/audit/bot_iot_label_distribution.csv,all_features_5pct_shards,subcategory,Normal,benign,477,3668522,0.013003
+Bot-IoT,full 5% corpus (historical audit),artifacts/audit/bot_iot_label_distribution.csv,all_features_5pct_shards,subcategory,OS_Fingerprint,malicious,17914,3668522,0.488317
+Bot-IoT,full 5% corpus (historical audit),artifacts/audit/bot_iot_label_distribution.csv,all_features_5pct_shards,subcategory,Service_Scan,malicious,73168,3668522,1.994482
+Bot-IoT,full 5% corpus (historical audit),artifacts/audit/bot_iot_label_distribution.csv,all_features_5pct_shards,subcategory,TCP,malicious,1593180,3668522,43.428389
+Bot-IoT,full 5% corpus (historical audit),artifacts/audit/bot_iot_label_distribution.csv,all_features_5pct_shards,subcategory,UDP,malicious,1981230,3668522,54.006218
