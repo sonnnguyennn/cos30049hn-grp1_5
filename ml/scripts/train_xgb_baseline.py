@@ -13,6 +13,7 @@ import numpy as np
 import xgboost as xgb
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+from iotguard.data.primary_package import sha256_file
 from iotguard.evaluation.population import selected_population
 from iotguard.evaluation.primary import binary_metrics, experiment_result, resolve_configuration
 from iotguard.evaluation.primary_runtime import verified_package
@@ -199,9 +200,6 @@ def main():
     print("1. Read args complete")
 
     # ----- 2. Open the package -----
-    sys.path.insert(0, str(args.package.resolve()))
-    from primary_package import sha256_file
-
     package, package_verification = verified_package(args.package)
     manifest = package.manifest
     x_train, y_train, train_metadata = package.load("TRAIN")
@@ -305,6 +303,7 @@ def main():
 
     result["parent_train_population_sha256"] = manifest["files"]["TRAIN_metadata.npy"]["sha256"]
     result["actual_train_membership"] = actual_population
+    result["diagnostic_only"] = not full_train
     # ----- 8. Save everything -----
     run_dir.mkdir(parents=True, exist_ok=True)
     np.save(run_dir / "train_sample_indices.npy", idx)
