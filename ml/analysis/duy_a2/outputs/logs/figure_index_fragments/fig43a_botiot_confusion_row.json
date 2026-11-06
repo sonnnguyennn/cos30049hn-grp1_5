@@ -1,0 +1,59 @@
+{
+  "figure_id": "fig43a_botiot_confusion_row",
+  "run_id": "bot_iot_secondary_full_20261102T062917639798Z",
+  "files": [
+    "analysis/duy_a2/outputs/figures/fig43a_botiot_confusion_row.png",
+    "analysis/duy_a2/outputs/figures/fig43a_botiot_confusion_row.pdf"
+  ],
+  "inputs": [
+    {
+      "label": "Full output lr_result.json",
+      "path": "lr_result.json",
+      "bytes": 4012,
+      "sha256": "9406fcf33af7719ec63ec727db1f3928c70c5f440a2662a7d52bb977020053ac"
+    },
+    {
+      "label": "Full output dummy_result.json",
+      "path": "dummy_result.json",
+      "bytes": 3720,
+      "sha256": "90fc6e376e711971a6260c73b8d4156bfea6abf7674b0c55a7ac39dbfab85084"
+    },
+    {
+      "label": "Full output VALIDATION_y.npy",
+      "path": "VALIDATION_y.npy",
+      "bytes": 733832,
+      "sha256": "aee10cb383612e632baeeaef57fa9b1ccc05865b5c1043e7ec0bde96c61c6378"
+    },
+    {
+      "label": "Full output VALIDATION_metadata.npy",
+      "path": "VALIDATION_metadata.npy",
+      "bytes": 66033552,
+      "sha256": "13f1f61506e6ff0a083ea9452d448eba31e986f91f31beeded4e2b256eeae7f3"
+    },
+    {
+      "label": "Full output lr_VALIDATION_predictions.npy",
+      "path": "lr_VALIDATION_predictions.npy",
+      "bytes": 733832,
+      "sha256": "e33f636d2e5284ba4730c788643713c000aac44c6bc692e83b29920c17ec35e1"
+    },
+    {
+      "label": "Full output dummy_VALIDATION_predictions.npy",
+      "path": "dummy_VALIDATION_predictions.npy",
+      "bytes": 733832,
+      "sha256": "34585040a3d8eac19c100a681586335ca17f7e1a69b9b4c6ca98421bc53facc9"
+    },
+    {
+      "label": "Bot-IoT package manifest",
+      "path": "manifest.json",
+      "bytes": 11948,
+      "sha256": "dd4fdc2551df68f294968f38ca3ecced0c27ac8bc2d1e1ae22239b7d676bae7c"
+    }
+  ],
+  "dataset": "Bot-IoT",
+  "scope": "VALIDATION (733,704 records: 96 benign, 733,608 malicious)",
+  "n": "733,704 per matrix",
+  "weighting": "1 per record (row_primary)",
+  "sampling_transform": "none; row-normalised colour and percentages",
+  "caption": "Bot-IoT VALIDATION confusion matrices for the Full Dummy and LR baselines (integer record counts, rows = true class, percentages of each true class).",
+  "commentary": "LR reaches 99.987% accuracy while flagging 89 of the 96 benign records as malicious (FPR 92.7%, benign recall 7.3%); the Dummy model scores 99.987% too by never predicting benign. Because 99.987% of VALIDATION records are malicious, accuracy is dominated by the malicious row and hides that benign traffic is almost never recognised."
+}

@@ -1,0 +1,29 @@
+{
+  "figure_id": "fig41a_binary_class_balance",
+  "run_id": "N/A",
+  "files": [
+    "analysis/duy_a2/outputs/figures/fig41a_binary_class_balance.png",
+    "analysis/duy_a2/outputs/figures/fig41a_binary_class_balance.pdf"
+  ],
+  "inputs": [
+    {
+      "label": "n_baiot_label_distribution.csv",
+      "path": "artifacts/audit/n_baiot_label_distribution.csv",
+      "bytes": 962,
+      "sha256": "8db8caa4984e774c3a6ba72d2a63b43d24b909bbdc5e9303f92e6729c2b34433"
+    },
+    {
+      "label": "bot_iot_label_distribution.csv",
+      "path": "artifacts/audit/bot_iot_label_distribution.csv",
+      "bytes": 15081,
+      "sha256": "40da2aa8bd30c6edde5cbe68fa8a370f8217d0d908ad1917ea7f056b5141fd83"
+    }
+  ],
+  "dataset": "N-BaIoT; Bot-IoT",
+  "scope": "full corpus (historical audit), not a partition",
+  "n": "N-BaIoT 7,062,606; Bot-IoT 3,668,522 (all_features_5pct_shards)",
+  "weighting": "1 per record",
+  "sampling_transform": "none; log-scale x axis",
+  "caption": "Benign and malicious record counts in each full corpus: N-BaIoT, and the Bot-IoT 5% subset (all_features_5pct_shards). Audit counts on a log-scale axis; labels give the exact count and its share of that corpus.",
+  "commentary": "Both corpora are dominated by malicious traffic, but at very different levels: benign records are 7.87% of N-BaIoT and only 0.013% (477 records) of the Bot-IoT 5% subset. A classifier that labels everything malicious would therefore reach 92.13% and 99.987% accuracy respectively, so accuracy alone cannot show whether benign traffic is recognised. These are corpus totals from the audit; partition counts are in Table t41_class_counts_partitions."
+}

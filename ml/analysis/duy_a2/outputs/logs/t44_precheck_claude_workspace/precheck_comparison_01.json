@@ -1,0 +1,122 @@
+{
+  "overall": "PASS",
+  "checks": [
+    {
+      "check": "bundle manifest.json SHA-256",
+      "status": "PASS",
+      "detail": "9fac1acde3f696bb765937c997977b3d7b1e1c2fa6cd60626e910037ea1fe132"
+    },
+    {
+      "check": "verification status",
+      "status": "PASS",
+      "detail": "PASS"
+    },
+    {
+      "check": "verification manifest SHA-256",
+      "status": "PASS",
+      "detail": "9fac1acde3f696bb765937c997977b3d7b1e1c2fa6cd60626e910037ea1fe132"
+    },
+    {
+      "check": "verification model SHA-256",
+      "status": "PASS",
+      "detail": "cb090afa6ad4c3618e20d7c5d635e89aa2d122667ea00835a0acc2f75a4455e6"
+    },
+    {
+      "check": "example_expected.json labels unchanged",
+      "status": "PASS",
+      "detail": [
+        "benign",
+        "malicious",
+        "benign"
+      ]
+    },
+    {
+      "check": "verification actual_output: labels == expected",
+      "status": "PASS",
+      "detail": [
+        "benign",
+        "malicious",
+        "benign"
+      ]
+    },
+    {
+      "check": "verification actual_output: predictions == expected",
+      "status": "PASS",
+      "detail": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "check": "verification actual_output: probabilities within 1e-12 of expected",
+      "status": "PASS",
+      "detail": [
+        0.0008694713469594717,
+        0.9999966621398926,
+        0.36534929275512695
+      ]
+    },
+    {
+      "check": "prediction output: labels == expected",
+      "status": "PASS",
+      "detail": [
+        "benign",
+        "malicious",
+        "benign"
+      ]
+    },
+    {
+      "check": "prediction output: predictions == expected",
+      "status": "PASS",
+      "detail": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "check": "prediction output: probabilities within 1e-12 of expected",
+      "status": "PASS",
+      "detail": [
+        0.0008694713469594717,
+        0.9999966621398926,
+        0.36534929275512695
+      ]
+    },
+    {
+      "check": "third example is the documented false negative (true malicious, predicted benign)",
+      "status": "PASS",
+      "detail": {
+        "true_label": 1,
+        "predicted": "benign"
+      }
+    },
+    {
+      "check": "numpy version == pinned 2.4.6",
+      "status": "PASS",
+      "detail": "2.4.6"
+    },
+    {
+      "check": "xgboost version == pinned 3.2.0",
+      "status": "PASS",
+      "detail": "3.2.0"
+    },
+    {
+      "check": "scipy version == pinned 1.17.1",
+      "status": "PASS",
+      "detail": "1.17.1"
+    }
+  ],
+  "environment": {
+    "python": "3.11.18 (main, Oct 26 2026, 15:28:55) [GCC 13.3.0]",
+    "executable_name": "python",
+    "platform": "Linux-6.18.44-fc-v236-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "packages": {
+      "numpy": "2.4.6",
+      "xgboost": "3.2.0",
+      "scipy": "1.17.1"
+    }
+  }
+}

@@ -1,0 +1,827 @@
+{
+  "figure": "fig42a_validation_f1_recall",
+  "figure_size_in": [
+    6.3,
+    3.1
+  ],
+  "saved_size_in": [
+    6.24,
+    3.025
+  ],
+  "min_fontsize_pt": 6.0,
+  "problems": [],
+  "texts": [
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Macro-F1",
+      "text": "0.999941",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        246.32,
+        180.53,
+        273.68,
+        186.53
+      ],
+      "anchor": [
+        0.9999414464031051,
+        8.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Macro-F1",
+      "text": "0.999935",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        246.32,
+        162.35,
+        273.68,
+        168.35
+      ],
+      "anchor": [
+        0.9999349411606953,
+        7.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Macro-F1",
+      "text": "0.999909",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        246.31,
+        144.18,
+        273.67,
+        150.18
+      ],
+      "anchor": [
+        0.9999089206185918,
+        6.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Macro-F1",
+      "text": "0.999902",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        246.31,
+        126.0,
+        273.67,
+        132.0
+      ],
+      "anchor": [
+        0.9999024160175891,
+        5.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Macro-F1",
+      "text": "0.999902",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        246.31,
+        107.82,
+        273.67,
+        113.82
+      ],
+      "anchor": [
+        0.9999024160175891,
+        4.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Macro-F1",
+      "text": "0.999873",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        246.31,
+        89.64,
+        273.67,
+        95.64
+      ],
+      "anchor": [
+        0.9998731470766725,
+        3.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Macro-F1",
+      "text": "0.999831",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        246.3,
+        71.47,
+        273.66,
+        77.47
+      ],
+      "anchor": [
+        0.9998308674009544,
+        2.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Macro-F1",
+      "text": "0.998484",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        246.14,
+        53.29,
+        273.5,
+        59.29
+      ],
+      "anchor": [
+        0.9984837469527315,
+        1.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Macro-F1",
+      "text": "0.4794",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        184.19,
+        35.11,
+        204.35,
+        41.11
+      ],
+      "anchor": [
+        0.4794425097410005,
+        0.0
+      ]
+    },
+    {
+      "role": "title",
+      "axes": 0,
+      "axes_title": "(a) Macro-F1",
+      "text": "(a) Macro-F1",
+      "fontsize_pt": 7.5,
+      "bbox_pt": [
+        124.46,
+        196.64,
+        177.02,
+        204.2
+      ]
+    },
+    {
+      "role": "xlabel",
+      "axes": 0,
+      "axes_title": "(a) Macro-F1",
+      "text": "macro-F1 (0-1 scale)",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        164.62,
+        2.16,
+        239.48,
+        9.6
+      ]
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "(a) Macro-F1",
+      "text": "0.00",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        116.9,
+        13.6,
+        132.02,
+        20.2
+      ],
+      "tick_loc": 0.0,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "(a) Macro-F1",
+      "text": "0.25",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        146.74,
+        13.6,
+        161.86,
+        20.2
+      ],
+      "tick_loc": 0.25,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "(a) Macro-F1",
+      "text": "0.50",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        176.58,
+        13.6,
+        191.7,
+        20.2
+      ],
+      "tick_loc": 0.5,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "(a) Macro-F1",
+      "text": "0.75",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        206.42,
+        13.6,
+        221.54,
+        20.2
+      ],
+      "tick_loc": 0.75,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "(a) Macro-F1",
+      "text": "1.00",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        236.26,
+        13.6,
+        251.38,
+        20.2
+      ],
+      "tick_loc": 1.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "(a) Macro-F1",
+      "text": "xgb_frac1_seed42_lr01  [selected]",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        2.16,
+        179.09,
+        120.96,
+        186.41
+      ],
+      "tick_loc": 8.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "(a) Macro-F1",
+      "text": "xgb_frac1_seed42_d4",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        46.8,
+        160.91,
+        120.96,
+        168.23
+      ],
+      "tick_loc": 7.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "(a) Macro-F1",
+      "text": "xgb_frac1_seed42 (XGB baseline)",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        5.76,
+        142.73,
+        120.96,
+        150.06
+      ],
+      "tick_loc": 6.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "(a) Macro-F1",
+      "text": "rf_frac1_seed42 (RF baseline)",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        18.72,
+        124.56,
+        120.96,
+        131.88
+      ],
+      "tick_loc": 5.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "(a) Macro-F1",
+      "text": "xgb_frac1_seed42_d8",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        46.8,
+        106.38,
+        120.96,
+        113.7
+      ],
+      "tick_loc": 4.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "(a) Macro-F1",
+      "text": "rf_frac1_seed42_leaf5",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        45.36,
+        88.2,
+        120.96,
+        95.52
+      ],
+      "tick_loc": 3.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "(a) Macro-F1",
+      "text": "rf_frac1_seed42_mf03",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        45.36,
+        70.02,
+        120.96,
+        77.35
+      ],
+      "tick_loc": 2.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "(a) Macro-F1",
+      "text": "LR (lr_full_...018213Z)",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        45.36,
+        51.85,
+        120.96,
+        59.17
+      ],
+      "tick_loc": 1.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "(a) Macro-F1",
+      "text": "Dummy (dummy_full_...018213Z)",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        7.2,
+        33.67,
+        120.96,
+        40.99
+      ],
+      "tick_loc": 0.0,
+      "scale": "linear"
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) Recall by true class",
+      "text": "1",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        418.13,
+        184.35,
+        421.73,
+        190.35
+      ],
+      "anchor": [
+        1.0,
+        8.21
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) Recall by true class",
+      "text": "1",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        418.13,
+        166.17,
+        421.73,
+        172.17
+      ],
+      "anchor": [
+        1.0,
+        7.21
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) Recall by true class",
+      "text": "0.999988",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        418.13,
+        147.99,
+        445.49,
+        153.99
+      ],
+      "anchor": [
+        0.9999880146221609,
+        6.21
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) Recall by true class",
+      "text": "0.999988",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        418.13,
+        129.82,
+        445.49,
+        135.82
+      ],
+      "anchor": [
+        0.9999880146221609,
+        5.21
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) Recall by true class",
+      "text": "0.999988",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        418.13,
+        111.64,
+        445.49,
+        117.64
+      ],
+      "anchor": [
+        0.9999880146221609,
+        4.21
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) Recall by true class",
+      "text": "0.999988",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        418.13,
+        93.46,
+        445.49,
+        99.46
+      ],
+      "anchor": [
+        0.9999880146221609,
+        3.21
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) Recall by true class",
+      "text": "0.999940",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        418.12,
+        75.28,
+        445.48,
+        81.28
+      ],
+      "anchor": [
+        0.9999400731108048,
+        2.21
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) Recall by true class",
+      "text": "0.997052",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        417.78,
+        57.1,
+        445.14,
+        63.1
+      ],
+      "anchor": [
+        0.9970515970515971,
+        1.21
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) Recall by true class",
+      "text": "0",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        298.77,
+        38.93,
+        302.37,
+        44.93
+      ],
+      "anchor": [
+        0.0,
+        0.21
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) Recall by true class",
+      "text": "0.999981",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        418.13,
+        176.71,
+        445.49,
+        182.71
+      ],
+      "anchor": [
+        0.9999814993159886,
+        7.79
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) Recall by true class",
+      "text": "0.999979",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        418.13,
+        158.54,
+        445.49,
+        164.54
+      ],
+      "anchor": [
+        0.9999794436844318,
+        6.79
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) Recall by true class",
+      "text": "0.999972",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        418.13,
+        140.36,
+        445.49,
+        146.36
+      ],
+      "anchor": [
+        0.9999722489739828,
+        5.79
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) Recall by true class",
+      "text": "0.999970",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        418.13,
+        122.18,
+        445.49,
+        128.18
+      ],
+      "anchor": [
+        0.9999701933424261,
+        4.79
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) Recall by true class",
+      "text": "0.999970",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        418.13,
+        104.0,
+        445.49,
+        110.0
+      ],
+      "anchor": [
+        0.9999701933424261,
+        3.79
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) Recall by true class",
+      "text": "0.999961",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        418.13,
+        85.83,
+        445.49,
+        91.83
+      ],
+      "anchor": [
+        0.9999609430004204,
+        2.79
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) Recall by true class",
+      "text": "0.999952",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        418.12,
+        67.65,
+        445.48,
+        73.65
+      ],
+      "anchor": [
+        0.9999516926584147,
+        1.79
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) Recall by true class",
+      "text": "0.999774",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        418.1,
+        49.47,
+        445.46,
+        55.47
+      ],
+      "anchor": [
+        0.9997738805287496,
+        0.79
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) Recall by true class",
+      "text": "1",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        418.13,
+        31.29,
+        421.73,
+        37.29
+      ],
+      "anchor": [
+        1.0,
+        -0.21
+      ]
+    },
+    {
+      "role": "title",
+      "axes": 1,
+      "axes_title": "(b) Recall by true class",
+      "text": "(b) Recall by true class",
+      "fontsize_pt": 7.5,
+      "bbox_pt": [
+        296.27,
+        196.64,
+        389.15,
+        204.2
+      ]
+    },
+    {
+      "role": "xlabel",
+      "axes": 1,
+      "axes_title": "(b) Recall by true class",
+      "text": "recall (0-1 scale)",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        343.69,
+        2.16,
+        404.01,
+        9.6
+      ]
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "(b) Recall by true class",
+      "text": "0.00",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        288.71,
+        13.6,
+        303.83,
+        20.2
+      ],
+      "tick_loc": 0.0,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "(b) Recall by true class",
+      "text": "0.25",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        318.55,
+        13.6,
+        333.67,
+        20.2
+      ],
+      "tick_loc": 0.25,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "(b) Recall by true class",
+      "text": "0.50",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        348.39,
+        13.6,
+        363.51,
+        20.2
+      ],
+      "tick_loc": 0.5,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "(b) Recall by true class",
+      "text": "0.75",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        378.23,
+        13.6,
+        393.35,
+        20.2
+      ],
+      "tick_loc": 0.75,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "(b) Recall by true class",
+      "text": "1.00",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        408.07,
+        13.6,
+        423.19,
+        20.2
+      ],
+      "tick_loc": 1.0,
+      "scale": "linear"
+    },
+    {
+      "role": "legend",
+      "axes": null,
+      "axes_title": null,
+      "text": [
+        "benign recall",
+        "malicious recall"
+      ],
+      "fontsize_pt": null,
+      "bbox_pt": [
+        303.76,
+        207.43,
+        450.35,
+        219.95
+      ]
+    }
+  ]
+}

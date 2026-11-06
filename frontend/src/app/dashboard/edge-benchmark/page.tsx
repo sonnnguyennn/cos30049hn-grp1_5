@@ -27,7 +27,7 @@ export default function BenchmarksPage() {
         Demo data. LR = Logistic Regression, RF = Random Forest.
       </p>
 
-      <section className="rounded-lg border p-4">
+      <section className="rounded-lg border p-4 border-black">
         <h2 className="mb-4 text-lg font-semibold text-black">
           Prediction scores — higher is better
         </h2>
@@ -58,6 +58,31 @@ export default function BenchmarksPage() {
           </ResponsiveContainer>
         </div>
       </section>
+
+      <section className="rounded-lg border p-4 border-black">
+        <h2 className="mb-4 text-lg font-semibold text-black">
+            Inference time — lower is better
+        </h2>
+
+        <div style={{ width: "100%", height: 300 }}>
+            <ResponsiveContainer width="100%" height="100%">
+            <BarChart data={results}>
+                <CartesianGrid strokeDasharray="3 3" vertical={false} />
+
+                <XAxis dataKey="model" />
+                <YAxis unit=" ms" />
+
+                <Tooltip />
+
+                <Bar
+                dataKey="inferenceMs"
+                name="Inference time (ms)"
+                fill="#9333ea"
+                />
+            </BarChart>
+            </ResponsiveContainer>
+        </div>
+        </section>
     </main>
   );
 }

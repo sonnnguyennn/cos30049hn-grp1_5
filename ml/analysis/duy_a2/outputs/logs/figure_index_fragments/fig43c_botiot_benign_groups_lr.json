@@ -1,0 +1,59 @@
+{
+  "figure_id": "fig43c_botiot_benign_groups_lr",
+  "run_id": "bot_iot_secondary_full_20261102T062917639798Z",
+  "files": [
+    "analysis/duy_a2/outputs/figures/fig43c_botiot_benign_groups_lr.png",
+    "analysis/duy_a2/outputs/figures/fig43c_botiot_benign_groups_lr.pdf"
+  ],
+  "inputs": [
+    {
+      "label": "Full output lr_result.json",
+      "path": "lr_result.json",
+      "bytes": 4012,
+      "sha256": "9406fcf33af7719ec63ec727db1f3928c70c5f440a2662a7d52bb977020053ac"
+    },
+    {
+      "label": "Full output dummy_result.json",
+      "path": "dummy_result.json",
+      "bytes": 3720,
+      "sha256": "90fc6e376e711971a6260c73b8d4156bfea6abf7674b0c55a7ac39dbfab85084"
+    },
+    {
+      "label": "Full output VALIDATION_y.npy",
+      "path": "VALIDATION_y.npy",
+      "bytes": 733832,
+      "sha256": "aee10cb383612e632baeeaef57fa9b1ccc05865b5c1043e7ec0bde96c61c6378"
+    },
+    {
+      "label": "Full output VALIDATION_metadata.npy",
+      "path": "VALIDATION_metadata.npy",
+      "bytes": 66033552,
+      "sha256": "13f1f61506e6ff0a083ea9452d448eba31e986f91f31beeded4e2b256eeae7f3"
+    },
+    {
+      "label": "Full output lr_VALIDATION_predictions.npy",
+      "path": "lr_VALIDATION_predictions.npy",
+      "bytes": 733832,
+      "sha256": "e33f636d2e5284ba4730c788643713c000aac44c6bc692e83b29920c17ec35e1"
+    },
+    {
+      "label": "Full output dummy_VALIDATION_predictions.npy",
+      "path": "dummy_VALIDATION_predictions.npy",
+      "bytes": 733832,
+      "sha256": "34585040a3d8eac19c100a681586335ca17f7e1a69b9b4c6ca98421bc53facc9"
+    },
+    {
+      "label": "Bot-IoT package manifest",
+      "path": "manifest.json",
+      "bytes": 11948,
+      "sha256": "dd4fdc2551df68f294968f38ca3ecced0c27ac8bc2d1e1ae22239b7d676bae7c"
+    }
+  ],
+  "dataset": "Bot-IoT",
+  "scope": "VALIDATION benign records only (96 records, 77 exact-X groups)",
+  "n": "96 records / 77 groups",
+  "weighting": "sizes are record counts per group",
+  "sampling_transform": "none",
+  "caption": "Sizes of the 77 benign exact-X groups in Bot-IoT VALIDATION and the LR prediction each group received (identical vectors always receive the same prediction). Groups are ranked by size; groups of equal size are listed TN first, then by group hash.",
+  "commentary": "The largest benign group alone holds 18 of the 96 benign records (18.8%) and LR predicts it malicious, which is why row-weighted and group-weighted benign recall differ. All 7 correctly recognised benign records are single-record groups. With only 77 groups, one group more or less changes benign recall by 1.3 percentage points."
+}

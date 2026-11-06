@@ -1,0 +1,35 @@
+{
+  "figure_id": "fig41c_botiot_train_features",
+  "run_id": "N/A (data description)",
+  "files": [
+    "analysis/duy_a2/outputs/figures/fig41c_botiot_train_features.png",
+    "analysis/duy_a2/outputs/figures/fig41c_botiot_train_features.pdf"
+  ],
+  "inputs": [
+    {
+      "label": "Bot-IoT package manifest",
+      "path": "manifest.json",
+      "bytes": 11948,
+      "sha256": "dd4fdc2551df68f294968f38ca3ecced0c27ac8bc2d1e1ae22239b7d676bae7c"
+    },
+    {
+      "label": "Bot-IoT TRAIN_numeric.npy",
+      "path": "TRAIN_numeric.npy",
+      "bytes": 176089248,
+      "sha256": "4c60e9ab0f3f9ececf6ff7fe66612668c1cd0f6e06af30a13cbf2d4a85921b3d"
+    },
+    {
+      "label": "Bot-IoT TRAIN_y.npy",
+      "path": "TRAIN_y.npy",
+      "bytes": 2201242,
+      "sha256": "39aa1fd7179d8c2c87c30d510a4cf6bc67ffd8a75bf6cb3d347f403fabfffd25"
+    }
+  ],
+  "dataset": "Bot-IoT",
+  "scope": "TRAIN partition (package v2), raw numeric values via package.load('TRAIN')",
+  "n": "all TRAIN records: benign 286, malicious 2,200,828",
+  "weighting": "1 per record; each class normalised by its own size",
+  "sampling_transform": "no sampling; log1p transform; 40 shared bins per feature",
+  "caption": "Bot-IoT TRAIN distributions of pkts, bytes and dur by class (raw values, log1p scale, same 40 bins for both classes; each curve sums to 1 within its class). Benign n=286, malicious n=2,200,828.",
+  "commentary": "Benign TRAIN records are mostly short flows (median 2 packets, 201 bytes, 0.17 s), while malicious records centre on 7 packets, 600 bytes and 15.4 s, so all three features shift between the classes. The ranges still overlap, and a small benign tail of very long flows (99th percentile about 53,090 packets) lies beyond the malicious maximum of 6,900. The benign curves rest on only 286 records and are coarse; these are 3 of the 13 predictors (10 numeric plus flgs/proto/state)."
+}

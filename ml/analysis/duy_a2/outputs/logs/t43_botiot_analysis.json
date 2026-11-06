@@ -1,0 +1,550 @@
+{
+  "script": "t43_botiot_analysis",
+  "created_utc": "2026-11-05T14:36:38.555411+00:00",
+  "runtime": {
+    "python": "3.11.18",
+    "platform": "Linux-6.18.44-fc-v236-x86_64-with-glibc2.39",
+    "numpy": "2.4.6",
+    "matplotlib": "3.11.2"
+  },
+  "inputs": [
+    {
+      "label": "Full output lr_result.json",
+      "path": "lr_result.json",
+      "bytes": 4012,
+      "sha256": "9406fcf33af7719ec63ec727db1f3928c70c5f440a2662a7d52bb977020053ac"
+    },
+    {
+      "label": "Full output dummy_result.json",
+      "path": "dummy_result.json",
+      "bytes": 3720,
+      "sha256": "90fc6e376e711971a6260c73b8d4156bfea6abf7674b0c55a7ac39dbfab85084"
+    },
+    {
+      "label": "Full output VALIDATION_y.npy",
+      "path": "VALIDATION_y.npy",
+      "bytes": 733832,
+      "sha256": "aee10cb383612e632baeeaef57fa9b1ccc05865b5c1043e7ec0bde96c61c6378"
+    },
+    {
+      "label": "Full output VALIDATION_metadata.npy",
+      "path": "VALIDATION_metadata.npy",
+      "bytes": 66033552,
+      "sha256": "13f1f61506e6ff0a083ea9452d448eba31e986f91f31beeded4e2b256eeae7f3"
+    },
+    {
+      "label": "Full output lr_VALIDATION_predictions.npy",
+      "path": "lr_VALIDATION_predictions.npy",
+      "bytes": 733832,
+      "sha256": "e33f636d2e5284ba4730c788643713c000aac44c6bc692e83b29920c17ec35e1"
+    },
+    {
+      "label": "Full output dummy_VALIDATION_predictions.npy",
+      "path": "dummy_VALIDATION_predictions.npy",
+      "bytes": 733832,
+      "sha256": "34585040a3d8eac19c100a681586335ca17f7e1a69b9b4c6ca98421bc53facc9"
+    },
+    {
+      "label": "Bot-IoT package manifest",
+      "path": "manifest.json",
+      "bytes": 11948,
+      "sha256": "dd4fdc2551df68f294968f38ca3ecced0c27ac8bc2d1e1ae22239b7d676bae7c"
+    }
+  ],
+  "outputs": [
+    "analysis/duy_a2/outputs/tables/t43_botiot_validation_row_vs_group.csv",
+    "analysis/duy_a2/outputs/tables/t43_botiot_brief_checks.csv",
+    "analysis/duy_a2/outputs/tables/t43_dataset_comparison.csv",
+    "analysis/duy_a2/outputs/tables/t43_botiot_validation_benign_groups_lr.csv",
+    "analysis/duy_a2/outputs/figures/fig43a_botiot_confusion_row.png",
+    "analysis/duy_a2/outputs/figures/fig43a_botiot_confusion_row.pdf",
+    "analysis/duy_a2/outputs/figures/fig43b_botiot_row_vs_group.png",
+    "analysis/duy_a2/outputs/figures/fig43b_botiot_row_vs_group.pdf",
+    "analysis/duy_a2/outputs/figures/fig43c_botiot_benign_groups_lr.png",
+    "analysis/duy_a2/outputs/figures/fig43c_botiot_benign_groups_lr.pdf"
+  ],
+  "checks": [
+    {
+      "check": "Full output lr_result.json hash == run checksum list",
+      "actual": "9406fcf33af7719ec63ec727db1f3928c70c5f440a2662a7d52bb977020053ac",
+      "expected": "9406fcf33af7719ec63ec727db1f3928c70c5f440a2662a7d52bb977020053ac",
+      "status": "PASS"
+    },
+    {
+      "check": "Full output dummy_result.json hash == run checksum list",
+      "actual": "90fc6e376e711971a6260c73b8d4156bfea6abf7674b0c55a7ac39dbfab85084",
+      "expected": "90fc6e376e711971a6260c73b8d4156bfea6abf7674b0c55a7ac39dbfab85084",
+      "status": "PASS"
+    },
+    {
+      "check": "Full output VALIDATION_y.npy hash == run checksum list",
+      "actual": "aee10cb383612e632baeeaef57fa9b1ccc05865b5c1043e7ec0bde96c61c6378",
+      "expected": "aee10cb383612e632baeeaef57fa9b1ccc05865b5c1043e7ec0bde96c61c6378",
+      "status": "PASS"
+    },
+    {
+      "check": "Full output VALIDATION_metadata.npy hash == run checksum list",
+      "actual": "13f1f61506e6ff0a083ea9452d448eba31e986f91f31beeded4e2b256eeae7f3",
+      "expected": "13f1f61506e6ff0a083ea9452d448eba31e986f91f31beeded4e2b256eeae7f3",
+      "status": "PASS"
+    },
+    {
+      "check": "Full output lr_VALIDATION_predictions.npy hash == run checksum list",
+      "actual": "e33f636d2e5284ba4730c788643713c000aac44c6bc692e83b29920c17ec35e1",
+      "expected": "e33f636d2e5284ba4730c788643713c000aac44c6bc692e83b29920c17ec35e1",
+      "status": "PASS"
+    },
+    {
+      "check": "Full output dummy_VALIDATION_predictions.npy hash == run checksum list",
+      "actual": "34585040a3d8eac19c100a681586335ca17f7e1a69b9b4c6ca98421bc53facc9",
+      "expected": "34585040a3d8eac19c100a681586335ca17f7e1a69b9b4c6ca98421bc53facc9",
+      "status": "PASS"
+    },
+    {
+      "check": "VALIDATION_y.npy is the package payload",
+      "actual": "aee10cb383612e632baeeaef57fa9b1ccc05865b5c1043e7ec0bde96c61c6378",
+      "expected": "aee10cb383612e632baeeaef57fa9b1ccc05865b5c1043e7ec0bde96c61c6378",
+      "status": "PASS"
+    },
+    {
+      "check": "VALIDATION_metadata.npy is the package payload",
+      "actual": "13f1f61506e6ff0a083ea9452d448eba31e986f91f31beeded4e2b256eeae7f3",
+      "expected": "13f1f61506e6ff0a083ea9452d448eba31e986f91f31beeded4e2b256eeae7f3",
+      "status": "PASS"
+    },
+    {
+      "check": "stored group_size == size of that group in VALIDATION",
+      "actual": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "check": "VALIDATION distinct exact-X groups == manifest",
+      "actual": 138060,
+      "expected": 138060,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy: mode is Full",
+      "actual": "full",
+      "expected": "full",
+      "status": "PASS"
+    },
+    {
+      "check": "dummy: not diagnostic-only",
+      "actual": false,
+      "expected": false,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy: TRAIN population == package TRAIN membership",
+      "actual": "60113558b7f65dba48c398bd035e538847e5417132b2a3ad514318596d541a3e",
+      "expected": "60113558b7f65dba48c398bd035e538847e5417132b2a3ad514318596d541a3e",
+      "status": "PASS"
+    },
+    {
+      "check": "dummy: VALIDATION population == package VALIDATION membership",
+      "actual": "161376d656b8fe967f6a12549e92f4642c302f9cae46d07980910d16cd6aca1f",
+      "expected": "161376d656b8fe967f6a12549e92f4642c302f9cae46d07980910d16cd6aca1f",
+      "status": "PASS"
+    },
+    {
+      "check": "dummy: one prediction per VALIDATION record",
+      "actual": 733704,
+      "expected": 733704,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy: every exact-X group received one prediction",
+      "actual": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy row_primary TN recomputed",
+      "actual": 0.0,
+      "expected": 0,
+      "tolerance": 1e-06,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy row_primary FP recomputed",
+      "actual": 96.0,
+      "expected": 96,
+      "tolerance": 1e-06,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy row_primary FN recomputed",
+      "actual": 0.0,
+      "expected": 0,
+      "tolerance": 1e-06,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy row_primary TP recomputed",
+      "actual": 733608.0,
+      "expected": 733608,
+      "tolerance": 1e-06,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy row_primary FPR recomputed",
+      "actual": 1.0,
+      "expected": 1.0,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy row_primary accuracy_supplementary recomputed",
+      "actual": 0.9998691570442576,
+      "expected": 0.9998691570442576,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy row_primary benign_recall recomputed",
+      "actual": 0.0,
+      "expected": 0.0,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy row_primary macro_f1 recomputed",
+      "actual": 0.4999672871209395,
+      "expected": 0.4999672871209395,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy row_primary malicious_precision recomputed",
+      "actual": 0.9998691570442576,
+      "expected": 0.9998691570442576,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy row_primary malicious_recall recomputed",
+      "actual": 1.0,
+      "expected": 1.0,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy group_sensitivity TN recomputed",
+      "actual": 0.0,
+      "expected": 0.0,
+      "tolerance": 1e-06,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy group_sensitivity FP recomputed",
+      "actual": 77.0,
+      "expected": 77.0,
+      "tolerance": 1e-06,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy group_sensitivity FN recomputed",
+      "actual": 0.0,
+      "expected": 0.0,
+      "tolerance": 1e-06,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy group_sensitivity TP recomputed",
+      "actual": 137983.0,
+      "expected": 137983.00000000003,
+      "tolerance": 1e-06,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy group_sensitivity FPR recomputed",
+      "actual": 1.0,
+      "expected": 1.0,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy group_sensitivity accuracy_supplementary recomputed",
+      "actual": 0.9994422714761698,
+      "expected": 0.9994422714761698,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy group_sensitivity benign_recall recomputed",
+      "actual": 0.0,
+      "expected": 0.0,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy group_sensitivity macro_f1 recomputed",
+      "actual": 0.49986052897555816,
+      "expected": 0.49986052897555816,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy group_sensitivity malicious_precision recomputed",
+      "actual": 0.9994422714761698,
+      "expected": 0.9994422714761698,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "dummy group_sensitivity malicious_recall recomputed",
+      "actual": 1.0,
+      "expected": 1.0,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "lr: mode is Full",
+      "actual": "full",
+      "expected": "full",
+      "status": "PASS"
+    },
+    {
+      "check": "lr: not diagnostic-only",
+      "actual": false,
+      "expected": false,
+      "status": "PASS"
+    },
+    {
+      "check": "lr: TRAIN population == package TRAIN membership",
+      "actual": "60113558b7f65dba48c398bd035e538847e5417132b2a3ad514318596d541a3e",
+      "expected": "60113558b7f65dba48c398bd035e538847e5417132b2a3ad514318596d541a3e",
+      "status": "PASS"
+    },
+    {
+      "check": "lr: VALIDATION population == package VALIDATION membership",
+      "actual": "161376d656b8fe967f6a12549e92f4642c302f9cae46d07980910d16cd6aca1f",
+      "expected": "161376d656b8fe967f6a12549e92f4642c302f9cae46d07980910d16cd6aca1f",
+      "status": "PASS"
+    },
+    {
+      "check": "lr: one prediction per VALIDATION record",
+      "actual": 733704,
+      "expected": 733704,
+      "status": "PASS"
+    },
+    {
+      "check": "lr: every exact-X group received one prediction",
+      "actual": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "check": "lr row_primary TN recomputed",
+      "actual": 7.0,
+      "expected": 7,
+      "tolerance": 1e-06,
+      "status": "PASS"
+    },
+    {
+      "check": "lr row_primary FP recomputed",
+      "actual": 89.0,
+      "expected": 89,
+      "tolerance": 1e-06,
+      "status": "PASS"
+    },
+    {
+      "check": "lr row_primary FN recomputed",
+      "actual": 3.0,
+      "expected": 3,
+      "tolerance": 1e-06,
+      "status": "PASS"
+    },
+    {
+      "check": "lr row_primary TP recomputed",
+      "actual": 733605.0,
+      "expected": 733605,
+      "tolerance": 1e-06,
+      "status": "PASS"
+    },
+    {
+      "check": "lr row_primary FPR recomputed",
+      "actual": 0.9270833333333334,
+      "expected": 0.9270833333333334,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "lr row_primary accuracy_supplementary recomputed",
+      "actual": 0.9998746088340802,
+      "expected": 0.9998746088340802,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "lr row_primary benign_recall recomputed",
+      "actual": 0.07291666666666667,
+      "expected": 0.07291666666666667,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "lr row_primary macro_f1 recomputed",
+      "actual": 0.5660063857929672,
+      "expected": 0.5660063857929672,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "lr row_primary malicious_precision recomputed",
+      "actual": 0.9998786960231377,
+      "expected": 0.9998786960231377,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "lr row_primary malicious_recall recomputed",
+      "actual": 0.9999959106225669,
+      "expected": 0.9999959106225669,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "lr group_sensitivity TN recomputed",
+      "actual": 7.0,
+      "expected": 7.0,
+      "tolerance": 1e-06,
+      "status": "PASS"
+    },
+    {
+      "check": "lr group_sensitivity FP recomputed",
+      "actual": 70.0,
+      "expected": 70.0,
+      "tolerance": 1e-06,
+      "status": "PASS"
+    },
+    {
+      "check": "lr group_sensitivity FN recomputed",
+      "actual": 3.0,
+      "expected": 3.0,
+      "tolerance": 1e-06,
+      "status": "PASS"
+    },
+    {
+      "check": "lr group_sensitivity TP recomputed",
+      "actual": 137980.0,
+      "expected": 137980.00000000003,
+      "tolerance": 1e-06,
+      "status": "PASS"
+    },
+    {
+      "check": "lr group_sensitivity FPR recomputed",
+      "actual": 0.9090909090909091,
+      "expected": 0.9090909090909091,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "lr group_sensitivity accuracy_supplementary recomputed",
+      "actual": 0.9994712443864986,
+      "expected": 0.9994712443864986,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "lr group_sensitivity benign_recall recomputed",
+      "actual": 0.09090909090909091,
+      "expected": 0.09090909090909091,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "lr group_sensitivity macro_f1 recomputed",
+      "actual": 0.5803275395483074,
+      "expected": 0.5803275395483074,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "lr group_sensitivity malicious_precision recomputed",
+      "actual": 0.9994929373415429,
+      "expected": 0.9994929373415429,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "lr group_sensitivity malicious_recall recomputed",
+      "actual": 0.9999782581912264,
+      "expected": 0.9999782581912264,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    {
+      "check": "brief: row TN/FP/FN/TP",
+      "actual": [
+        7,
+        89,
+        3,
+        733605
+      ],
+      "expected": [
+        7,
+        89,
+        3,
+        733605
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "brief: row accuracy (about 99.9875%)",
+      "actual": 0.9998746088340802,
+      "expected": 0.999875,
+      "tolerance": 5e-07,
+      "status": "PASS"
+    },
+    {
+      "check": "brief: row benign recall 7/96",
+      "actual": 0.07291666666666667,
+      "expected": 0.07291666666666667,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "brief: row FPR 89/96",
+      "actual": 0.9270833333333334,
+      "expected": 0.9270833333333334,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "brief: row macro-F1 (about 0.566006)",
+      "actual": 0.5660063857929672,
+      "expected": 0.566006,
+      "tolerance": 5e-07,
+      "status": "PASS"
+    },
+    {
+      "check": "brief: group macro-F1 (about 0.580328)",
+      "actual": 0.5803275395483074,
+      "expected": 0.580328,
+      "tolerance": 5e-07,
+      "status": "PASS"
+    },
+    {
+      "check": "brief: group benign recall (about 9.09%)",
+      "actual": 0.09090909090909091,
+      "expected": 0.0909,
+      "tolerance": 5e-05,
+      "status": "PASS"
+    },
+    {
+      "check": "brief: VALIDATION benign rows",
+      "actual": 96,
+      "expected": 96,
+      "status": "PASS"
+    },
+    {
+      "check": "brief: VALIDATION benign groups",
+      "actual": 77,
+      "expected": 77,
+      "status": "PASS"
+    }
+  ]
+}

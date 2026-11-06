@@ -1,0 +1,808 @@
+{
+  "figure": "fig42e_clustering_sizes_composition",
+  "figure_size_in": [
+    6.3,
+    3.0
+  ],
+  "saved_size_in": [
+    6.24,
+    2.925
+  ],
+  "min_fontsize_pt": 6.0,
+  "problems": [],
+  "texts": [
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Cluster sizes",
+      "text": "1,673,250",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        156.45,
+        177.28,
+        185.97,
+        183.28
+      ],
+      "anchor": [
+        1673250.0,
+        7.24
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Cluster sizes",
+      "text": "356,197",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        138.24,
+        167.99,
+        162.0,
+        173.99
+      ],
+      "anchor": [
+        356197.0,
+        6.76
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Cluster sizes",
+      "text": "25,665",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        106.7,
+        157.93,
+        126.86,
+        163.93
+      ],
+      "anchor": [
+        25665.0,
+        6.24
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Cluster sizes",
+      "text": "5,608",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        88.81,
+        148.65,
+        105.37,
+        154.65
+      ],
+      "anchor": [
+        5608.0,
+        5.76
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Cluster sizes",
+      "text": "1,361",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        71.73,
+        138.59,
+        88.29,
+        144.59
+      ],
+      "anchor": [
+        1361.0,
+        5.24
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Cluster sizes",
+      "text": "204",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        49.34,
+        129.31,
+        60.14,
+        135.31
+      ],
+      "anchor": [
+        204.0,
+        4.76
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Cluster sizes",
+      "text": "3,205,079",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        164.19,
+        119.25,
+        193.71,
+        125.25
+      ],
+      "anchor": [
+        3205079.0,
+        4.24
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Cluster sizes",
+      "text": "685,835",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        146.05,
+        109.97,
+        169.81,
+        115.97
+      ],
+      "anchor": [
+        685835.0,
+        3.76
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Cluster sizes",
+      "text": "13,879",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        99.38,
+        99.91,
+        119.54,
+        105.91
+      ],
+      "anchor": [
+        13879.0,
+        3.24
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Cluster sizes",
+      "text": "3,012",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        81.4,
+        90.63,
+        97.96,
+        96.63
+      ],
+      "anchor": [
+        3012.0,
+        2.76
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Cluster sizes",
+      "text": "2,153",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        77.19,
+        80.57,
+        93.75,
+        86.57
+      ],
+      "anchor": [
+        2153.0,
+        2.24
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Cluster sizes",
+      "text": "496",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        59.92,
+        71.29,
+        70.72,
+        77.29
+      ],
+      "anchor": [
+        496.0,
+        1.76
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Cluster sizes",
+      "text": "903",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        66.84,
+        61.23,
+        77.64,
+        67.23
+      ],
+      "anchor": [
+        903.0,
+        1.24
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Cluster sizes",
+      "text": "174",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        47.45,
+        51.95,
+        58.25,
+        57.95
+      ],
+      "anchor": [
+        174.0,
+        0.76
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Cluster sizes",
+      "text": "22,678",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        105.23,
+        41.89,
+        125.39,
+        47.89
+      ],
+      "anchor": [
+        22678.0,
+        0.24
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 0,
+      "axes_title": "(a) Cluster sizes",
+      "text": "4,846",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        87.07,
+        32.61,
+        103.63,
+        38.61
+      ],
+      "anchor": [
+        4846.0,
+        -0.24
+      ]
+    },
+    {
+      "role": "title",
+      "axes": 0,
+      "axes_title": "(a) Cluster sizes",
+      "text": "(a) Cluster sizes",
+      "fontsize_pt": 7.5,
+      "bbox_pt": [
+        35.9,
+        189.44,
+        101.42,
+        197.0
+      ]
+    },
+    {
+      "role": "xlabel",
+      "axes": 0,
+      "axes_title": "(a) Cluster sizes",
+      "text": "records per cluster (log scale)",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        51.32,
+        2.16,
+        157.59,
+        9.6
+      ]
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "(a) Cluster sizes",
+      "text": "$\\mathdefault{10^{2}}$",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        30.14,
+        13.6,
+        41.66,
+        21.64
+      ],
+      "tick_loc": 100.0,
+      "scale": "log"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "(a) Cluster sizes",
+      "text": "$\\mathdefault{10^{3}}$",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        57.56,
+        13.6,
+        69.08,
+        21.64
+      ],
+      "tick_loc": 1000.0,
+      "scale": "log"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "(a) Cluster sizes",
+      "text": "$\\mathdefault{10^{4}}$",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        84.98,
+        13.6,
+        96.5,
+        21.64
+      ],
+      "tick_loc": 10000.0,
+      "scale": "log"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "(a) Cluster sizes",
+      "text": "$\\mathdefault{10^{5}}$",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        112.41,
+        13.6,
+        123.93,
+        21.64
+      ],
+      "tick_loc": 100000.0,
+      "scale": "log"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "(a) Cluster sizes",
+      "text": "$\\mathdefault{10^{6}}$",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        139.83,
+        13.6,
+        151.35,
+        21.64
+      ],
+      "tick_loc": 1000000.0,
+      "scale": "log"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "(a) Cluster sizes",
+      "text": "$\\mathdefault{10^{7}}$",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        167.25,
+        13.6,
+        178.77,
+        21.64
+      ],
+      "tick_loc": 10000000.0,
+      "scale": "log"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "(a) Cluster sizes",
+      "text": "cluster 0",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        2.16,
+        171.19,
+        32.4,
+        178.51
+      ],
+      "tick_loc": 7.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "(a) Cluster sizes",
+      "text": "cluster 1",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        2.16,
+        151.85,
+        32.4,
+        159.17
+      ],
+      "tick_loc": 6.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "(a) Cluster sizes",
+      "text": "cluster 2",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        2.16,
+        132.51,
+        32.4,
+        139.83
+      ],
+      "tick_loc": 5.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "(a) Cluster sizes",
+      "text": "cluster 3",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        2.16,
+        113.17,
+        32.4,
+        120.49
+      ],
+      "tick_loc": 4.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "(a) Cluster sizes",
+      "text": "cluster 4",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        2.16,
+        93.83,
+        32.4,
+        101.15
+      ],
+      "tick_loc": 3.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "(a) Cluster sizes",
+      "text": "cluster 5",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        2.16,
+        74.49,
+        32.4,
+        81.81
+      ],
+      "tick_loc": 2.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "(a) Cluster sizes",
+      "text": "cluster 6",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        2.16,
+        55.15,
+        32.4,
+        62.47
+      ],
+      "tick_loc": 1.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "(a) Cluster sizes",
+      "text": "cluster 7",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        2.16,
+        35.81,
+        32.4,
+        43.13
+      ],
+      "tick_loc": 0.0,
+      "scale": "linear"
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) Label composition, all VALIDATION",
+      "text": "98.80% malicious (n=356,197)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        361.44,
+        172.39,
+        451.44,
+        178.87
+      ],
+      "anchor": [
+        1.0,
+        7.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) Label composition, all VALIDATION",
+      "text": "16.14% malicious (n=5,608)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        361.44,
+        153.05,
+        444.24,
+        159.53
+      ],
+      "anchor": [
+        1.0,
+        6.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) Label composition, all VALIDATION",
+      "text": "53.92% malicious (n=204)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        361.44,
+        133.71,
+        438.48,
+        140.19
+      ],
+      "anchor": [
+        1.0,
+        5.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) Label composition, all VALIDATION",
+      "text": "90.38% malicious (n=685,835)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        361.44,
+        114.37,
+        451.44,
+        120.85
+      ],
+      "anchor": [
+        1.0,
+        4.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) Label composition, all VALIDATION",
+      "text": "0% malicious (n=3,012)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        361.44,
+        95.03,
+        431.28,
+        101.51
+      ],
+      "anchor": [
+        1.0,
+        3.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) Label composition, all VALIDATION",
+      "text": "0% malicious (n=496)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        361.44,
+        75.69,
+        425.52,
+        82.17
+      ],
+      "anchor": [
+        1.0,
+        2.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) Label composition, all VALIDATION",
+      "text": "60.92% malicious (n=174)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        361.44,
+        56.35,
+        438.48,
+        62.83
+      ],
+      "anchor": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "role": "annotation",
+      "axes": 1,
+      "axes_title": "(b) Label composition, all VALIDATION",
+      "text": "1.11% malicious (n=4,846)",
+      "fontsize_pt": 6.0,
+      "bbox_pt": [
+        361.44,
+        37.01,
+        440.64,
+        43.49
+      ],
+      "anchor": [
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "role": "title",
+      "axes": 1,
+      "axes_title": "(b) Label composition, all VALIDATION",
+      "text": "(b) Label composition, all VALIDATION",
+      "fontsize_pt": 7.5,
+      "bbox_pt": [
+        208.12,
+        189.44,
+        361.11,
+        197.0
+      ]
+    },
+    {
+      "role": "xlabel",
+      "axes": 1,
+      "axes_title": "(b) Label composition, all VALIDATION",
+      "text": "share of the cluster's VALIDATION records",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        209.07,
+        3.6,
+        357.99,
+        11.04
+      ]
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "(b) Label composition, all VALIDATION",
+      "text": "0.0",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        202.72,
+        15.04,
+        213.52,
+        21.64
+      ],
+      "tick_loc": 0.0,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "(b) Label composition, all VALIDATION",
+      "text": "0.2",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        232.88,
+        15.04,
+        243.68,
+        21.64
+      ],
+      "tick_loc": 0.2,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "(b) Label composition, all VALIDATION",
+      "text": "0.4",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        263.05,
+        15.04,
+        273.85,
+        21.64
+      ],
+      "tick_loc": 0.4,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "(b) Label composition, all VALIDATION",
+      "text": "0.6",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        293.21,
+        15.04,
+        304.01,
+        21.64
+      ],
+      "tick_loc": 0.6000000000000001,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "(b) Label composition, all VALIDATION",
+      "text": "0.8",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        323.38,
+        15.04,
+        334.18,
+        21.64
+      ],
+      "tick_loc": 0.8,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "(b) Label composition, all VALIDATION",
+      "text": "1.0",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        353.54,
+        15.04,
+        364.34,
+        21.64
+      ],
+      "tick_loc": 1.0,
+      "scale": "linear"
+    },
+    {
+      "role": "legend",
+      "axes": null,
+      "axes_title": null,
+      "text": [
+        "TRAIN",
+        "VALIDATION"
+      ],
+      "fontsize_pt": null,
+      "bbox_pt": [
+        3.25,
+        200.23,
+        109.24,
+        212.75
+      ]
+    },
+    {
+      "role": "legend",
+      "axes": null,
+      "axes_title": null,
+      "text": [
+        "benign share of all VALIDATION (7.90%)",
+        "benign",
+        "malicious"
+      ],
+      "fontsize_pt": null,
+      "bbox_pt": [
+        185.05,
+        200.23,
+        450.35,
+        212.75
+      ]
+    }
+  ]
+}

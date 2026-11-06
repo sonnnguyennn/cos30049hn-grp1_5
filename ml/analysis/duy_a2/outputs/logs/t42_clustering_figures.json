@@ -1,0 +1,334 @@
+{
+  "script": "t42_clustering_figures",
+  "created_utc": "2026-11-05T14:36:35.554782+00:00",
+  "runtime": {
+    "python": "3.11.18",
+    "platform": "Linux-6.18.44-fc-v236-x86_64-with-glibc2.39",
+    "numpy": "2.4.6",
+    "matplotlib": "3.11.2"
+  },
+  "inputs": [
+    {
+      "label": "selection.json",
+      "path": "notebooks/Clustering/results/full/selection.json",
+      "bytes": 1016,
+      "sha256": "1c59a844985207fd9f184768c6b16e59eff57381e1efdcbbccccb08e67673c3d"
+    },
+    {
+      "label": "prediction_coverage.json",
+      "path": "notebooks/Clustering/results/full/g3b_standard_k8_seed42/prediction_coverage.json",
+      "bytes": 679,
+      "sha256": "9f79708298a257a8b1999d730fb61e0f8c6f1b37be06b2c8ba9a84415d1c53c1"
+    },
+    {
+      "label": "cluster_composition_validation.csv",
+      "path": "notebooks/Clustering/results/full/g3b_standard_k8_seed42/cluster_composition_validation.csv",
+      "bytes": 608,
+      "sha256": "c827930813b85d3ea46d74638f45f7b63d44f2ce88fb79aa8c045f7896d132c9"
+    },
+    {
+      "label": "prediction_coverage.json",
+      "path": "notebooks/Clustering/results/full/raw_k4_seed42/prediction_coverage.json",
+      "bytes": 599,
+      "sha256": "391d071103ed62c7ab6a1392fc77642abc4cf995a9465ae32c0999b8661d86ff"
+    },
+    {
+      "label": "cluster_composition_validation.csv",
+      "path": "notebooks/Clustering/results/full/raw_k4_seed42/cluster_composition_validation.csv",
+      "bytes": 412,
+      "sha256": "c63648b00f9a224c3b09da2cbd186214c5b5f1cce56f23acec54ac2a98f2db74"
+    },
+    {
+      "label": "internal_metrics.json",
+      "path": "notebooks/Clustering/results/full/internal_metrics.json",
+      "bytes": 1662,
+      "sha256": "c77b8ee6bcc0719cde8a690600fe88397892432d4e1257ccefbf52ce7b5f379e"
+    },
+    {
+      "label": "external_metrics.json",
+      "path": "notebooks/Clustering/results/full/external_metrics.json",
+      "bytes": 518,
+      "sha256": "b3df2aae93b8f3717e6f5d261e10748afe21314bffe927cf9ba188ac6c90f06e"
+    }
+  ],
+  "outputs": [
+    "analysis/duy_a2/outputs/tables/t42_clustering_clusters.csv",
+    "analysis/duy_a2/outputs/tables/t42_clustering_metrics.csv",
+    "analysis/duy_a2/outputs/figures/fig42e_clustering_sizes_composition.png",
+    "analysis/duy_a2/outputs/figures/fig42e_clustering_sizes_composition.pdf"
+  ],
+  "checks": [
+    {
+      "check": "clustering package manifest == published G3B manifest",
+      "actual": "6ab99e86397242e219bfa1f8490d8e03b169ec87a092af80cb3e7aef1e61147b",
+      "expected": "6ab99e86397242e219bfa1f8490d8e03b169ec87a092af80cb3e7aef1e61147b",
+      "status": "PASS"
+    },
+    {
+      "check": "clustering TRAIN population == classifier TRAIN population",
+      "actual": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+      "expected": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080",
+      "status": "PASS"
+    },
+    {
+      "check": "clustering VALIDATION population == classifier VALIDATION population",
+      "actual": "2d44c7b63c3c16fb19105ce504b39f6e31fa4145588c07c1d50f2417fad69103",
+      "expected": "2d44c7b63c3c16fb19105ce504b39f6e31fa4145588c07c1d50f2417fad69103",
+      "status": "PASS"
+    },
+    {
+      "check": "ground truth not used for fitting/selection",
+      "actual": false,
+      "expected": false,
+      "status": "PASS"
+    },
+    {
+      "check": "g3b_standard_k8_seed42 TRAIN assignment file hash == saved",
+      "actual": "aa3278b2d1b6e7ea1564367ce5c5e717903dd091e9a8d90d41401d757d1af032",
+      "expected": "aa3278b2d1b6e7ea1564367ce5c5e717903dd091e9a8d90d41401d757d1af032",
+      "status": "PASS"
+    },
+    {
+      "check": "g3b_standard_k8_seed42 TRAIN one cluster per record",
+      "actual": 4944968,
+      "expected": 4944968,
+      "status": "PASS"
+    },
+    {
+      "check": "g3b_standard_k8_seed42 TRAIN cluster sizes == saved coverage",
+      "actual": [
+        1673250,
+        25665,
+        1361,
+        3205079,
+        13879,
+        2153,
+        903,
+        22678
+      ],
+      "expected": [
+        1673250,
+        25665,
+        1361,
+        3205079,
+        13879,
+        2153,
+        903,
+        22678
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "g3b_standard_k8_seed42 VALIDATION assignment file hash == saved",
+      "actual": "ad8409ebbe7b3dceb2623eab5be739454911350aaa5927dd5e3d967bcefad74a",
+      "expected": "ad8409ebbe7b3dceb2623eab5be739454911350aaa5927dd5e3d967bcefad74a",
+      "status": "PASS"
+    },
+    {
+      "check": "g3b_standard_k8_seed42 VALIDATION one cluster per record",
+      "actual": 1056372,
+      "expected": 1056372,
+      "status": "PASS"
+    },
+    {
+      "check": "g3b_standard_k8_seed42 VALIDATION cluster sizes == saved coverage",
+      "actual": [
+        356197,
+        5608,
+        204,
+        685835,
+        3012,
+        496,
+        174,
+        4846
+      ],
+      "expected": [
+        356197,
+        5608,
+        204,
+        685835,
+        3012,
+        496,
+        174,
+        4846
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "g3b_standard_k8_seed42 composition totals == VALIDATION sizes",
+      "actual": [
+        356197,
+        5608,
+        204,
+        685835,
+        3012,
+        496,
+        174,
+        4846
+      ],
+      "expected": [
+        356197,
+        5608,
+        204,
+        685835,
+        3012,
+        496,
+        174,
+        4846
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "g3b_standard_k8_seed42 composition benign total",
+      "actual": 83435,
+      "expected": 83435,
+      "status": "PASS"
+    },
+    {
+      "check": "g3b_standard_k8_seed42 composition malicious total",
+      "actual": 972937,
+      "expected": 972937,
+      "status": "PASS"
+    },
+    {
+      "check": "raw_k4_seed42 TRAIN assignment file hash == saved",
+      "actual": "fe009630bd2841c362123f726073c7d1c3a77ed8793f196d306dad3943bebdf1",
+      "expected": "fe009630bd2841c362123f726073c7d1c3a77ed8793f196d306dad3943bebdf1",
+      "status": "PASS"
+    },
+    {
+      "check": "raw_k4_seed42 TRAIN one cluster per record",
+      "actual": 4944968,
+      "expected": 4944968,
+      "status": "PASS"
+    },
+    {
+      "check": "raw_k4_seed42 TRAIN cluster sizes == saved coverage",
+      "actual": [
+        4827140,
+        988,
+        10336,
+        106504
+      ],
+      "expected": [
+        4827140,
+        988,
+        10336,
+        106504
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "raw_k4_seed42 VALIDATION assignment file hash == saved",
+      "actual": "86e45b6b53c85b11d0c96cbfb43ff00362057baa8d5e859b75b7169a40813951",
+      "expected": "86e45b6b53c85b11d0c96cbfb43ff00362057baa8d5e859b75b7169a40813951",
+      "status": "PASS"
+    },
+    {
+      "check": "raw_k4_seed42 VALIDATION one cluster per record",
+      "actual": 1056372,
+      "expected": 1056372,
+      "status": "PASS"
+    },
+    {
+      "check": "raw_k4_seed42 VALIDATION cluster sizes == saved coverage",
+      "actual": [
+        1031627,
+        218,
+        2218,
+        22309
+      ],
+      "expected": [
+        1031627,
+        218,
+        2218,
+        22309
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "raw_k4_seed42 composition totals == VALIDATION sizes",
+      "actual": [
+        1031627,
+        218,
+        2218,
+        22309
+      ],
+      "expected": [
+        1031627,
+        218,
+        2218,
+        22309
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "raw_k4_seed42 composition benign total",
+      "actual": 83435,
+      "expected": 83435,
+      "status": "PASS"
+    },
+    {
+      "check": "raw_k4_seed42 composition malicious total",
+      "actual": 972937,
+      "expected": 972937,
+      "status": "PASS"
+    },
+    {
+      "check": "cluster 0 malicious share == saved fraction",
+      "actual": 0.9879869847303598,
+      "expected": 0.9879869847303598,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "cluster 1 malicious share == saved fraction",
+      "actual": 0.161376604850214,
+      "expected": 0.161376604850214,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "cluster 2 malicious share == saved fraction",
+      "actual": 0.5392156862745098,
+      "expected": 0.5392156862745098,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "cluster 3 malicious share == saved fraction",
+      "actual": 0.9037800637179496,
+      "expected": 0.9037800637179496,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "cluster 4 malicious share == saved fraction",
+      "actual": 0.0,
+      "expected": 0.0,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "cluster 5 malicious share == saved fraction",
+      "actual": 0.0,
+      "expected": 0.0,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "cluster 6 malicious share == saved fraction",
+      "actual": 0.6091954022988506,
+      "expected": 0.6091954022988506,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "cluster 7 malicious share == saved fraction",
+      "actual": 0.011143210895583986,
+      "expected": 0.011143210895583986,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    }
+  ]
+}

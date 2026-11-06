@@ -1,0 +1,23 @@
+{
+  "figure_id": "fig42d_test_confusion_selected",
+  "run_id": "xgb_frac1_seed42_lr01",
+  "files": [
+    "analysis/duy_a2/outputs/figures/fig42d_test_confusion_selected.png",
+    "analysis/duy_a2/outputs/figures/fig42d_test_confusion_selected.pdf"
+  ],
+  "inputs": [
+    {
+      "label": "primary_final_test_receipt_20261105.json",
+      "path": "artifacts/manifests/primary_final_test_receipt_20261105.json",
+      "bytes": 14893,
+      "sha256": "52cf0126b415eb69f1b4459f55ccab21203adb34157457392fe525a3e1a6c459"
+    }
+  ],
+  "dataset": "N-BaIoT",
+  "scope": "final TEST, single evaluation of the frozen model (1,061,266 records: 83,532 benign, 977,734 malicious)",
+  "n": "1,061,266 TEST records",
+  "weighting": "1 per record",
+  "sampling_transform": "none; row-normalised colour and percentages",
+  "caption": "Final TEST confusion matrix of the frozen XGBoost (xgb_frac1_seed42_lr01), read from the saved TEST receipt; no other model was evaluated on TEST.",
+  "commentary": "On TEST the frozen model misclassifies 1 of 83,532 benign records (FPR 0.0012%) and 11 of 977,734 malicious records (macro-F1 0.99996), in line with its VALIDATION result. This is a single within-corpus run: all nine devices appear in every partition, so it does not show performance on unseen devices or future traffic. LR and RF have no TEST result in this evaluation."
+}

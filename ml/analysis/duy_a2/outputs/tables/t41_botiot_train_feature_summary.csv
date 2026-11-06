@@ -1,0 +1,7 @@
+dataset,partition,feature,class,n,share_zero,min,p01,p25,median,p75,p99,max,mean,quantile_method
+Bot-IoT,TRAIN,pkts,benign,286,0.0,1.0,1.0,2.0,2.0,2.75,53090.3,69600.0,2342.520979020979,exact (numpy.quantile)
+Bot-IoT,TRAIN,pkts,malicious,2200828,0.0,1.0,1.0,5.0,7.0,9.0,17.0,6900.0,7.302629283160702,exact (numpy.quantile)
+Bot-IoT,TRAIN,bytes,benign,286,0.0,60.0,60.0,172.0,201.0,936.0,53239720.699999966,69187620.0,2003670.5244755244,exact (numpy.quantile)
+Bot-IoT,TRAIN,bytes,malicious,2200828,0.0,60.0,120.0,420.0,600.0,770.0,1044.0,483000.0,592.1877511554742,exact (numpy.quantile)
+Bot-IoT,TRAIN,dur,benign,286,0.15384615384615385,0.0,0.0,0.007203,0.165983,2.50100725,1937.3954649999998,1940.859253,261.4338247762238,exact (numpy.quantile)
+Bot-IoT,TRAIN,dur,malicious,2200828,0.043601317322389574,0.0,0.0,12.384649,15.413901,26.872616,56.550301,2771.485107,19.955677796257135,exact (numpy.quantile)

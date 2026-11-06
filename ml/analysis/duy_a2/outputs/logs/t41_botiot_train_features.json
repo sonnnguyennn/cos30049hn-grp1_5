@@ -1,0 +1,209 @@
+{
+  "script": "t41_botiot_train_features",
+  "created_utc": "2026-11-05T14:36:24.120993+00:00",
+  "runtime": {
+    "python": "3.11.18",
+    "platform": "Linux-6.18.44-fc-v236-x86_64-with-glibc2.39",
+    "numpy": "2.4.6",
+    "matplotlib": "3.11.2"
+  },
+  "inputs": [
+    {
+      "label": "Bot-IoT package manifest",
+      "path": "manifest.json",
+      "bytes": 11948,
+      "sha256": "dd4fdc2551df68f294968f38ca3ecced0c27ac8bc2d1e1ae22239b7d676bae7c"
+    },
+    {
+      "label": "Bot-IoT TRAIN_numeric.npy",
+      "path": "TRAIN_numeric.npy",
+      "bytes": 176089248,
+      "sha256": "4c60e9ab0f3f9ececf6ff7fe66612668c1cd0f6e06af30a13cbf2d4a85921b3d"
+    },
+    {
+      "label": "Bot-IoT TRAIN_y.npy",
+      "path": "TRAIN_y.npy",
+      "bytes": 2201242,
+      "sha256": "39aa1fd7179d8c2c87c30d510a4cf6bc67ffd8a75bf6cb3d347f403fabfffd25"
+    }
+  ],
+  "outputs": [
+    "analysis/duy_a2/outputs/tables/t41_botiot_train_feature_histograms.csv",
+    "analysis/duy_a2/outputs/tables/t41_botiot_train_feature_summary.csv",
+    "analysis/duy_a2/outputs/figures/fig41c_botiot_train_features.png",
+    "analysis/duy_a2/outputs/figures/fig41c_botiot_train_features.pdf"
+  ],
+  "checks": [
+    {
+      "check": "Bot-IoT loader hash matches package manifest",
+      "actual": "4e0fd60bd53a42cf03b2abeee7433ed8b88f885f23d8d5adb8fca2de9caea379",
+      "expected": "4e0fd60bd53a42cf03b2abeee7433ed8b88f885f23d8d5adb8fca2de9caea379",
+      "status": "PASS"
+    },
+    {
+      "check": "nothing written into the package folder by the import",
+      "actual": [
+        "README.md",
+        "TEST_categorical.npy",
+        "TEST_membership.jsonl",
+        "TEST_metadata.npy",
+        "TEST_numeric.npy",
+        "TEST_y.npy",
+        "TRAIN_categorical.npy",
+        "TRAIN_membership.jsonl",
+        "TRAIN_metadata.npy",
+        "TRAIN_numeric.npy",
+        "TRAIN_y.npy",
+        "VALIDATION_categorical.npy",
+        "VALIDATION_membership.jsonl",
+        "VALIDATION_metadata.npy",
+        "VALIDATION_numeric.npy",
+        "VALIDATION_y.npy",
+        "bot_iot_candidate_full_independent_verification.json",
+        "bot_iot_candidate_full_verification.json",
+        "bot_iot_candidate_proposed_split_summary.json",
+        "bot_iot_package_v2.py",
+        "contract_v2.json",
+        "decision.md",
+        "groups.sqlite",
+        "manifest.json",
+        "preprocessing.json",
+        "protocol_v2.md",
+        "verify_package.py"
+      ],
+      "expected": [
+        "README.md",
+        "TEST_categorical.npy",
+        "TEST_membership.jsonl",
+        "TEST_metadata.npy",
+        "TEST_numeric.npy",
+        "TEST_y.npy",
+        "TRAIN_categorical.npy",
+        "TRAIN_membership.jsonl",
+        "TRAIN_metadata.npy",
+        "TRAIN_numeric.npy",
+        "TRAIN_y.npy",
+        "VALIDATION_categorical.npy",
+        "VALIDATION_membership.jsonl",
+        "VALIDATION_metadata.npy",
+        "VALIDATION_numeric.npy",
+        "VALIDATION_y.npy",
+        "bot_iot_candidate_full_independent_verification.json",
+        "bot_iot_candidate_full_verification.json",
+        "bot_iot_candidate_proposed_split_summary.json",
+        "bot_iot_package_v2.py",
+        "contract_v2.json",
+        "decision.md",
+        "groups.sqlite",
+        "manifest.json",
+        "preprocessing.json",
+        "protocol_v2.md",
+        "verify_package.py"
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "package folder unchanged after loading TRAIN",
+      "actual": [
+        "README.md",
+        "TEST_categorical.npy",
+        "TEST_membership.jsonl",
+        "TEST_metadata.npy",
+        "TEST_numeric.npy",
+        "TEST_y.npy",
+        "TRAIN_categorical.npy",
+        "TRAIN_membership.jsonl",
+        "TRAIN_metadata.npy",
+        "TRAIN_numeric.npy",
+        "TRAIN_y.npy",
+        "VALIDATION_categorical.npy",
+        "VALIDATION_membership.jsonl",
+        "VALIDATION_metadata.npy",
+        "VALIDATION_numeric.npy",
+        "VALIDATION_y.npy",
+        "bot_iot_candidate_full_independent_verification.json",
+        "bot_iot_candidate_full_verification.json",
+        "bot_iot_candidate_proposed_split_summary.json",
+        "bot_iot_package_v2.py",
+        "contract_v2.json",
+        "decision.md",
+        "groups.sqlite",
+        "manifest.json",
+        "preprocessing.json",
+        "protocol_v2.md",
+        "verify_package.py"
+      ],
+      "expected": [
+        "README.md",
+        "TEST_categorical.npy",
+        "TEST_membership.jsonl",
+        "TEST_metadata.npy",
+        "TEST_numeric.npy",
+        "TEST_y.npy",
+        "TRAIN_categorical.npy",
+        "TRAIN_membership.jsonl",
+        "TRAIN_metadata.npy",
+        "TRAIN_numeric.npy",
+        "TRAIN_y.npy",
+        "VALIDATION_categorical.npy",
+        "VALIDATION_membership.jsonl",
+        "VALIDATION_metadata.npy",
+        "VALIDATION_numeric.npy",
+        "VALIDATION_y.npy",
+        "bot_iot_candidate_full_independent_verification.json",
+        "bot_iot_candidate_full_verification.json",
+        "bot_iot_candidate_proposed_split_summary.json",
+        "bot_iot_package_v2.py",
+        "contract_v2.json",
+        "decision.md",
+        "groups.sqlite",
+        "manifest.json",
+        "preprocessing.json",
+        "protocol_v2.md",
+        "verify_package.py"
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "loader numeric column order",
+      "actual": [
+        "pkts",
+        "bytes",
+        "dur"
+      ],
+      "expected": [
+        "pkts",
+        "bytes",
+        "dur"
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "TRAIN rows",
+      "actual": 2201114,
+      "expected": 2201114,
+      "status": "PASS"
+    },
+    {
+      "check": "TRAIN class counts",
+      "actual": [
+        286,
+        2200828
+      ],
+      "expected": [
+        286,
+        2200828
+      ],
+      "status": "PASS"
+    }
+  ],
+  "feature_reasons": {
+    "pkts": "packet count of the flow record (traffic volume)",
+    "bytes": "total bytes of the flow record (data volume)",
+    "dur": "flow duration in seconds (timing)"
+  },
+  "notes": [
+    "package.load('TRAIN') raw numeric values; encoded 36-column view not used",
+    "TEST not loaded (loader verify=True hashes payloads only)"
+  ]
+}

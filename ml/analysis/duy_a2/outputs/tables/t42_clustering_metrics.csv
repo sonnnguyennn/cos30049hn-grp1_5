@@ -1,0 +1,13 @@
+run_id,metric,value,spread,computed_on,rows
+g3b_standard_k8_seed42,silhouette (mean of 3 repeats),0.4322408191657537,sample sd 0.013217,SAMPLE,"3 x 1,500 VALIDATION records"
+g3b_standard_k8_seed42,Davies-Bouldin index,1.2073843937770663,,SAMPLE,"10,000 VALIDATION records"
+g3b_standard_k8_seed42,Calinski-Harabasz index,1397.532000845929,,SAMPLE,"10,000 VALIDATION records"
+g3b_standard_k8_seed42,mean squared distance to centre,62.20425324186169,,FULL PARTITION,"1,056,372 VALIDATION records"
+g3b_standard_k8_seed42,ARI vs binary label,0.007820929673264322,,FULL PARTITION,"1,056,372 VALIDATION records"
+g3b_standard_k8_seed42,NMI vs binary label,0.09179198279475591,,FULL PARTITION,"1,056,372 VALIDATION records"
+raw_k4_seed42,silhouette (mean of 3 repeats),0.9887347298652286,sample sd 0.001386,SAMPLE,"3 x 1,500 VALIDATION records"
+raw_k4_seed42,Davies-Bouldin index,0.5960009493921157,,SAMPLE,"10,000 VALIDATION records"
+raw_k4_seed42,Calinski-Harabasz index,81561.34372217367,,SAMPLE,"10,000 VALIDATION records"
+raw_k4_seed42,mean squared distance to centre,4.581548976746486e+32,,FULL PARTITION,"1,056,372 VALIDATION records"
+raw_k4_seed42,ARI vs binary label,-0.025312427092379196,,FULL PARTITION,"1,056,372 VALIDATION records"
+raw_k4_seed42,NMI vs binary label,0.008262341620574818,,FULL PARTITION,"1,056,372 VALIDATION records"
