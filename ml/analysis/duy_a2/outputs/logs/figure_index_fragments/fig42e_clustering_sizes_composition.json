@@ -13,6 +13,12 @@
       "sha256": "1c59a844985207fd9f184768c6b16e59eff57381e1efdcbbccccb08e67673c3d"
     },
     {
+      "label": "package VALIDATION_y.npy",
+      "path": "VALIDATION_y.npy",
+      "bytes": 1056500,
+      "sha256": "4b0dafa2e0caef115c1474e4caa2c6982f93c743805285c9de703b0823b70d71"
+    },
+    {
       "label": "prediction_coverage.json",
       "path": "notebooks/Clustering/results/full/g3b_standard_k8_seed42/prediction_coverage.json",
       "bytes": 679,

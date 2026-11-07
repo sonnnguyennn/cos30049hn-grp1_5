@@ -8,8 +8,8 @@ and no TEST array is opened (TEST values come from the saved final TEST receipt)
 | | |
 |---|---|
 | **Done** | 4.1.1 class counts; 4.1.2 TRAIN features (Bot-IoT; N-BaIoT via the local step, run on Windows); 4.1.3 duplicates; 4.2.1-4.2.5 classifier tables and figures, confusion matrices, final TEST, clustering; 4.3 Bot-IoT Dummy/LR, row vs group; 4.4.1-4.4.3 clean Conda check (PASS, run 06) |
-| **Checked** | Each script re-derives its numbers from the source files and stops on any mismatch (checks in `outputs/logs/<script>.json`), e.g. every 4.2 metric recomputed from the confusion counts, TEST counts 83,531 / 1 / 11 / 977,723, all 4.3 check values from the brief. Input ZIP SHA-256 values match the brief (`outputs/logs/input_zip_checksums.json`). Every figure passes a text-overlap and print-width check. |
-| **Missing** | 4.4.4: the final group package has not been delivered yet (checklist below). 4.2.5 uses `notebooks/Clustering/results/full/`, still to be confirmed as the final clustering outputs. |
+| **Checked** | Each script re-derives its numbers from the source files and stops on any mismatch (checks in `outputs/logs/<script>.json`), e.g. every 4.2 metric recomputed from the confusion counts, TEST counts 83,531 / 1 / 11 / 977,723, all 4.3 check values from the brief. N-BaIoT TRAIN/VALIDATION counts and the cluster composition were also re-counted from the package's own label files. The clustering numbers match Tables C.2–C.3 of the report. Input ZIP SHA-256 values match the brief (`outputs/logs/input_zip_checksums.json`). Every figure passes a text-overlap and print-width check. |
+| **Missing** | 4.4.4: the final group package has not been delivered yet (checklist below). |
 | **Not run** | None. |
 
 ## Environment
@@ -73,8 +73,9 @@ python $S/t41_nbaiot_train_features.py --extract-dir "<...>\nbaiot_extract_01"
 python $S/build_figure_index.py
 ```
 
-The extract (about 100 MB) stays outside Git. With it, the two optional arguments above add a
-record-level cross-check of the N-BaIoT partition counts and the cluster composition.
+The extract (about 77 MB) stays outside Git. With it, the two optional arguments above add a
+record-level cross-check of the N-BaIoT partition counts and the cluster composition (both run
+for the outputs here).
 
 **Features (4.1.2)**, chosen by meaning before looking at any distribution; all TRAIN records,
 raw values, log1p axis, the same 40 bins for both classes, each class normalised by its size:
@@ -96,7 +97,7 @@ raw values, log1p axis, the same 40 bins for both classes, each class normalised
 | `captions.md` | caption and 2-4 sentence commentary per figure |
 | `logs/` | per-script checks and provenance, `figure_text/` layout checks, `input_zip_checksums.json`, `t44_conda_check_windows/` (4.4 evidence) |
 
-All outputs are small (2.3 MB in total), so nothing needs to go to Drive.
+All outputs are small (2.2 MB in total), so nothing needs to go to Drive.
 
 ## Rules applied
 

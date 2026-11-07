@@ -1,9 +1,9 @@
 {
   "script": "t41_class_distribution",
-  "created_utc": "2026-11-06T16:04:46.293957+00:00",
+  "created_utc": "2026-11-07T12:20:20.454915+00:00",
   "runtime": {
     "python": "3.11.18",
-    "platform": "Linux-6.18.44-fc-v242-x86_64-with-glibc2.39",
+    "platform": "Linux-6.18.44-fc-v310-x86_64-with-glibc2.39",
     "numpy": "2.4.6",
     "matplotlib": "3.11.2"
   },
@@ -25,6 +25,12 @@
       "path": "artifacts/audit/g3a_class_distribution.csv",
       "bytes": 5213,
       "sha256": "d4d314218254b4519cc9b25886d18b71b8103947c6ffde5cfe41128b1827ce31"
+    },
+    {
+      "label": "N-BaIoT local package receipt",
+      "path": "nbaiot_local_receipt.json",
+      "bytes": 2751,
+      "sha256": "0b68ff06e2864ae1c9d508dddb96b5210a9f603680db8f580ac02b58a9f9bb5c"
     },
     {
       "label": "Bot-IoT package manifest",
@@ -346,9 +352,33 @@
       "status": "PASS"
     },
     {
+      "check": "N-BaIoT TRAIN counts: package y.npy == G3A audit",
+      "actual": {
+        "benign": 388965,
+        "malicious": 4556003
+      },
+      "expected": {
+        "benign": 388965,
+        "malicious": 4556003
+      },
+      "status": "PASS"
+    },
+    {
       "check": "N-BaIoT VALIDATION total matches Table 1",
       "actual": 1056372,
       "expected": 1056372,
+      "status": "PASS"
+    },
+    {
+      "check": "N-BaIoT VALIDATION counts: package y.npy == G3A audit",
+      "actual": {
+        "benign": 83435,
+        "malicious": 972937
+      },
+      "expected": {
+        "benign": 83435,
+        "malicious": 972937
+      },
       "status": "PASS"
     },
     {

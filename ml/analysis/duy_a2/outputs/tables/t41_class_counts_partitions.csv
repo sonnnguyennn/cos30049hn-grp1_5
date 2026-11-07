@@ -1,8 +1,8 @@
 dataset,partition,source,class,rows,partition_total,percent_within_partition
-N-BaIoT,TRAIN,artifacts/audit/g3a_class_distribution.csv,benign,388965,4944968,7.865875
-N-BaIoT,TRAIN,artifacts/audit/g3a_class_distribution.csv,malicious,4556003,4944968,92.134125
-N-BaIoT,VALIDATION,artifacts/audit/g3a_class_distribution.csv,benign,83435,1056372,7.898259
-N-BaIoT,VALIDATION,artifacts/audit/g3a_class_distribution.csv,malicious,972937,1056372,92.101741
+N-BaIoT,TRAIN,artifacts/audit/g3a_class_distribution.csv + package y.npy (local check),benign,388965,4944968,7.865875
+N-BaIoT,TRAIN,artifacts/audit/g3a_class_distribution.csv + package y.npy (local check),malicious,4556003,4944968,92.134125
+N-BaIoT,VALIDATION,artifacts/audit/g3a_class_distribution.csv + package y.npy (local check),benign,83435,1056372,7.898259
+N-BaIoT,VALIDATION,artifacts/audit/g3a_class_distribution.csv + package y.npy (local check),malicious,972937,1056372,92.101741
 N-BaIoT,TEST,artifacts/audit/g3a_class_distribution.csv (TEST arrays not opened),benign,83532,1061266,7.870977
 N-BaIoT,TEST,artifacts/audit/g3a_class_distribution.csv (TEST arrays not opened),malicious,977734,1061266,92.129023
 Bot-IoT,TRAIN,package TRAIN_y.npy,benign,286,2201114,0.012993

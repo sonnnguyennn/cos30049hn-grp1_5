@@ -1,9 +1,9 @@
 {
   "script": "t42_clustering_figures",
-  "created_utc": "2026-11-06T16:05:33.168425+00:00",
+  "created_utc": "2026-11-07T12:20:22.078052+00:00",
   "runtime": {
     "python": "3.11.18",
-    "platform": "Linux-6.18.44-fc-v242-x86_64-with-glibc2.39",
+    "platform": "Linux-6.18.44-fc-v310-x86_64-with-glibc2.39",
     "numpy": "2.4.6",
     "matplotlib": "3.11.2"
   },
@@ -13,6 +13,12 @@
       "path": "notebooks/Clustering/results/full/selection.json",
       "bytes": 1016,
       "sha256": "1c59a844985207fd9f184768c6b16e59eff57381e1efdcbbccccb08e67673c3d"
+    },
+    {
+      "label": "package VALIDATION_y.npy",
+      "path": "VALIDATION_y.npy",
+      "bytes": 1056500,
+      "sha256": "4b0dafa2e0caef115c1474e4caa2c6982f93c743805285c9de703b0823b70d71"
     },
     {
       "label": "prediction_coverage.json",
@@ -80,6 +86,12 @@
       "check": "ground truth not used for fitting/selection",
       "actual": false,
       "expected": false,
+      "status": "PASS"
+    },
+    {
+      "check": "VALIDATION_y.npy == package payload hash",
+      "actual": "4b0dafa2e0caef115c1474e4caa2c6982f93c743805285c9de703b0823b70d71",
+      "expected": "4b0dafa2e0caef115c1474e4caa2c6982f93c743805285c9de703b0823b70d71",
       "status": "PASS"
     },
     {
@@ -191,6 +203,78 @@
       "status": "PASS"
     },
     {
+      "check": "g3b_standard_k8_seed42 composition recomputed from package VALIDATION_y.npy",
+      "actual": [
+        [
+          4279,
+          351918
+        ],
+        [
+          4703,
+          905
+        ],
+        [
+          94,
+          110
+        ],
+        [
+          65991,
+          619844
+        ],
+        [
+          3012,
+          0
+        ],
+        [
+          496,
+          0
+        ],
+        [
+          68,
+          106
+        ],
+        [
+          4792,
+          54
+        ]
+      ],
+      "expected": [
+        [
+          4279,
+          351918
+        ],
+        [
+          4703,
+          905
+        ],
+        [
+          94,
+          110
+        ],
+        [
+          65991,
+          619844
+        ],
+        [
+          3012,
+          0
+        ],
+        [
+          496,
+          0
+        ],
+        [
+          68,
+          106
+        ],
+        [
+          4792,
+          54
+        ]
+      ],
+      "status": "PASS"
+    },
+    {
       "check": "raw_k4_seed42 TRAIN assignment file hash == saved",
       "actual": "fe009630bd2841c362123f726073c7d1c3a77ed8793f196d306dad3943bebdf1",
       "expected": "fe009630bd2841c362123f726073c7d1c3a77ed8793f196d306dad3943bebdf1",
@@ -272,6 +356,46 @@
       "check": "raw_k4_seed42 composition malicious total",
       "actual": 972937,
       "expected": 972937,
+      "status": "PASS"
+    },
+    {
+      "check": "raw_k4_seed42 composition recomputed from package VALIDATION_y.npy",
+      "actual": [
+        [
+          82970,
+          948657
+        ],
+        [
+          89,
+          129
+        ],
+        [
+          317,
+          1901
+        ],
+        [
+          59,
+          22250
+        ]
+      ],
+      "expected": [
+        [
+          82970,
+          948657
+        ],
+        [
+          89,
+          129
+        ],
+        [
+          317,
+          1901
+        ],
+        [
+          59,
+          22250
+        ]
+      ],
       "status": "PASS"
     },
     {
