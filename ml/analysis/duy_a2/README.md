@@ -7,10 +7,10 @@ and no TEST array is opened (TEST values come from the saved final TEST receipt)
 
 | | |
 |---|---|
-| **Done** | 4.1.1 class counts; 4.1.2 Bot-IoT TRAIN features; 4.1.3 duplicates; 4.2.1-4.2.5 classifier tables and figures, confusion matrices, final TEST, clustering; 4.3 Bot-IoT Dummy/LR, row vs group; 4.4.1-4.4.3 clean Conda check (PASS, run 06) |
+| **Done** | 4.1.1 class counts; 4.1.2 TRAIN features (Bot-IoT; N-BaIoT via the local step, run on Windows); 4.1.3 duplicates; 4.2.1-4.2.5 classifier tables and figures, confusion matrices, final TEST, clustering; 4.3 Bot-IoT Dummy/LR, row vs group; 4.4.1-4.4.3 clean Conda check (PASS, run 06) |
 | **Checked** | Each script re-derives its numbers from the source files and stops on any mismatch (checks in `outputs/logs/<script>.json`), e.g. every 4.2 metric recomputed from the confusion counts, TEST counts 83,531 / 1 / 11 / 977,723, all 4.3 check values from the brief. Input ZIP SHA-256 values match the brief (`outputs/logs/input_zip_checksums.json`). Every figure passes a text-overlap and print-width check. |
 | **Missing** | 4.4.4: the final group package has not been delivered yet (checklist below). 4.2.5 uses `notebooks/Clustering/results/full/`, still to be confirmed as the final clustering outputs. |
-| **Not run** | 4.1.2 N-BaIoT TRAIN features (fig41d): the local step below must run on the PC that holds `g3b_primary_v1.zip`. |
+| **Not run** | None. |
 
 ## Environment
 
@@ -91,7 +91,7 @@ raw values, log1p axis, the same 40 bins for both classes, each class normalised
 | `tables/t41_*.csv` | class counts (corpus from the audit, TRAIN/VALIDATION/TEST from the packages), Bot-IoT TRAIN histograms and quantiles, duplicates |
 | `tables/t42_*.csv`, `t42_tables.md` | 9 Full runs (overview, per class), subset runs kept apart, final TEST of the selected XGBoost, clustering sizes, composition and metrics |
 | `tables/t43_*.csv` | Bot-IoT Dummy/LR row vs group, brief check values, the 77 benign groups, N-BaIoT vs Bot-IoT |
-| `figures/` | fig41a-c, fig41e, fig42a-e, fig43a-c as PNG (300 dpi) and PDF, drawn at print size (at most 6.3 in wide, text 6-7.5 pt): insert at 100%, not stretched |
+| `figures/` | fig41a-e, fig42a-e, fig43a-c as PNG (300 dpi) and PDF, drawn at print size (at most 6.3 in wide, text 6-7.5 pt): insert at 100%, not stretched |
 | `figure_index.csv` | per figure: files, inputs with SHA-256, dataset, run ID, scope, n, weighting, sampling/transform, caption (N/A where not applicable) |
 | `captions.md` | caption and 2-4 sentence commentary per figure |
 | `logs/` | per-script checks and provenance, `figure_text/` layout checks, `input_zip_checksums.json`, `t44_conda_check_windows/` (4.4 evidence) |

@@ -1,0 +1,113 @@
+{
+  "script": "t41_nbaiot_train_features",
+  "created_utc": "2026-11-07T12:08:26.068903+00:00",
+  "runtime": {
+    "python": "3.11.18",
+    "platform": "Windows-10-10.0.22631-SP0",
+    "numpy": "2.4.6",
+    "matplotlib": "3.11.2"
+  },
+  "inputs": [
+    {
+      "label": "nbaiot_local_receipt.json",
+      "path": "nbaiot_local_receipt.json",
+      "bytes": 2751,
+      "sha256": "0b68ff06e2864ae1c9d508dddb96b5210a9f603680db8f580ac02b58a9f9bb5c"
+    },
+    {
+      "label": "nbaiot_train_selected_features.npz",
+      "path": "nbaiot_train_selected_features.npz",
+      "bytes": 76099027,
+      "sha256": "7919cadd1711351b56aec0d620b7809f8d0546e7e508d1ae084c7e7d24d00088"
+    }
+  ],
+  "outputs": [
+    "analysis/duy_a2/outputs/tables/t41_nbaiot_train_feature_histograms.csv",
+    "analysis/duy_a2/outputs/tables/t41_nbaiot_train_feature_summary.csv",
+    "analysis/duy_a2/outputs/figures/fig41d_nbaiot_train_features.png",
+    "analysis/duy_a2/outputs/figures/fig41d_nbaiot_train_features.pdf"
+  ],
+  "checks": [
+    {
+      "check": "local extract status",
+      "actual": "PASS",
+      "expected": "PASS",
+      "status": "PASS"
+    },
+    {
+      "check": "package manifest SHA-256",
+      "actual": "6ab99e86397242e219bfa1f8490d8e03b169ec87a092af80cb3e7aef1e61147b",
+      "expected": "6ab99e86397242e219bfa1f8490d8e03b169ec87a092af80cb3e7aef1e61147b",
+      "status": "PASS"
+    },
+    {
+      "check": "no TEST member opened",
+      "actual": [],
+      "expected": [],
+      "status": "PASS"
+    },
+    {
+      "check": "extract hash matches receipt",
+      "actual": "7919cadd1711351b56aec0d620b7809f8d0546e7e508d1ae084c7e7d24d00088",
+      "expected": "7919cadd1711351b56aec0d620b7809f8d0546e7e508d1ae084c7e7d24d00088",
+      "status": "PASS"
+    },
+    {
+      "check": "rows == TRAIN label count",
+      "actual": 4944968,
+      "expected": 4944968,
+      "status": "PASS"
+    },
+    {
+      "check": "class counts == receipt",
+      "actual": [
+        388965,
+        4556003
+      ],
+      "expected": [
+        388965,
+        4556003
+      ],
+      "status": "PASS"
+    }
+  ],
+  "features": [
+    {
+      "name": "MI_dir_L0.1_weight",
+      "index": 9,
+      "reason": "volume: decayed packet count from the source MAC-IP"
+    },
+    {
+      "name": "H_L0.1_mean",
+      "index": 25,
+      "reason": "size: mean packet size sent from the source IP"
+    },
+    {
+      "name": "HH_jit_L0.1_mean",
+      "index": 75,
+      "reason": "timing: mean inter-packet interval on the source-destination channel"
+    }
+  ],
+  "histogram_overlap": {
+    "MI_dir_L0.1_weight": 0.029242741213770174,
+    "H_L0.1_mean": 0.3364421924061205,
+    "HH_jit_L0.1_mean": 0.1674933126770486
+  },
+  "timing_plausibility": {
+    "HH_jit_L0.1_mean": {
+      "threshold_seconds": 100000000.0,
+      "share_above": {
+        "benign": 0.006105947835923541,
+        "malicious": 0.5565959899499627
+      },
+      "median_of_values_above": 1505913571.624908,
+      "as_unix_time_utc": "2017-09-20T13:19:31.624908+00:00"
+    }
+  },
+  "local_environment": {
+    "python": "3.11.18",
+    "numpy": "2.4.6",
+    "platform": "Windows-10-10.0.22631-SP0",
+    "machine": "AMD64"
+  }
+}

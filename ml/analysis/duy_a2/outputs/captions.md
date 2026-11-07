@@ -30,9 +30,15 @@
 
 *Files:* analysis/duy_a2/outputs/figures/fig41c_botiot_train_features.png, analysis/duy_a2/outputs/figures/fig41c_botiot_train_features.pdf
 
-## fig41d_nbaiot_train_features - PENDING
+## fig41d_nbaiot_train_features
 
-needs t41_nbaiot_extract_local.py run on the machine that holds g3b_primary_v1.zip, then t41_nbaiot_train_features.py
+**Caption.** N-BaIoT TRAIN distributions by class of three of the 115 features, chosen as one each for volume, packet size and timing at the same decay window (L0.1); names and positions from the package's feature contract. Raw values on a log1p scale, the same 40 bins for both classes, each curve sums to 1 within its class; benign n=388,965, malicious n=4,556,003 (all TRAIN records).
+
+**Commentary.** Medians (benign vs malicious): MI_dir_L0.1_weight 6.94 vs 4.01e+03; H_L0.1_mean 86.6 vs 74.1; HH_jit_L0.1_mean 14.1 vs 1.51e+09. The two class histograms overlap by 3%, 34%, 17% respectively (sum over the shared bins of the smaller class share; 100% = same shape), so MI_dir_L0.1_weight separates the classes most and H_L0.1_mean least. HH_jit_L0.1_mean exceeds 10^8 s (over 3 years) for 55.7% of malicious and 0.6% of benign records, and the median of those values is a Unix timestamp in 2017, so they are not real inter-packet gaps. All 4,944,968 TRAIN records are used (no sampling; benign 388,965), and the figure describes TRAIN only, not unseen devices.
+
+*Dataset:* N-BaIoT. *Scope:* TRAIN partition (G3B package, raw float64 values). *n:* all TRAIN records: benign 388,965, malicious 4,556,003. *Weighting:* 1 per record; each class normalised by its own size. *Sampling/transform:* no sampling; log1p transform; 40 shared bins per feature. *Run ID:* N/A.
+
+*Files:* analysis/duy_a2/outputs/figures/fig41d_nbaiot_train_features.png, analysis/duy_a2/outputs/figures/fig41d_nbaiot_train_features.pdf
 
 ## fig41e_duplicates_by_class
 

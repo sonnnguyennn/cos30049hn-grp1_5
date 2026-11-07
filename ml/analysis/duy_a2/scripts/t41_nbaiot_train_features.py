@@ -11,6 +11,7 @@ Usage (from ml/):
 from __future__ import annotations
 
 import argparse
+from datetime import datetime, timezone
 from pathlib import Path
 
 import _common as C
@@ -95,6 +96,26 @@ def main():
         return sum(min(share[("benign", i)], share[("malicious", i)]) for i in range(F.N_BINS))
 
     ov = {f: overlap(f) for f in names}
+    # A mean inter-packet interval above 1e8 s (over 3 years) cannot be a real gap inside the
+    # captures: report how often each class has such values and the date they correspond to.
+    timing_check, caveat = {}, ""
+    for j, f in enumerate(names):
+        big = X[:, j] > 1e8
+        if "_jit_" not in f or not big.any():
+            continue
+        shares = {c: float(big[y == k].mean()) for k, c in ((0, "benign"), (1, "malicious"))}
+        when = datetime.fromtimestamp(float(np.median(X[big, j])), timezone.utc)  # noqa: UP017
+        timing_check[f] = {
+            "threshold_seconds": 1e8,
+            "share_above": shares,
+            "median_of_values_above": float(np.median(X[big, j])),
+            "as_unix_time_utc": when.isoformat(),
+        }
+        caveat += (
+            f" {f} exceeds 10^8 s (over 3 years) for {100 * shares['malicious']:.1f}% of malicious"
+            f" and {100 * shares['benign']:.1f}% of benign records, and the median of those values"
+            f" is a Unix timestamp in {when.year}, so they are not real inter-packet gaps."
+        )
     if max(ov.values()) - min(ov.values()) < 0.01:
         ranking = "so none of the three separates the classes clearly better than the others"
     else:
@@ -107,7 +128,7 @@ def main():
         + ". The two class histograms overlap by "
         + ", ".join(f"{100 * ov[f]:.0f}%" for f in names)
         + " respectively (sum over the shared bins of the smaller class share; 100% = same "
-        f"shape), {ranking}. All {n_b + n_m:,} TRAIN records are used (no sampling; "
+        f"shape), {ranking}.{caveat} All {n_b + n_m:,} TRAIN records are used (no sampling; "
         f"benign {n_b:,}), and the figure describes TRAIN only, not unseen devices."
     )
     C.register_figure(
@@ -137,6 +158,7 @@ def main():
             "checks": checks,
             "features": receipt["features"],
             "histogram_overlap": ov,
+            "timing_plausibility": timing_check,
             "local_environment": receipt["environment"],
         },
     )

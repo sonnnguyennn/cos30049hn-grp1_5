@@ -1,0 +1,510 @@
+{
+  "figure": "fig41d_nbaiot_train_features",
+  "figure_size_in": [
+    6.3,
+    2.1
+  ],
+  "saved_size_in": [
+    6.24,
+    2.025
+  ],
+  "min_fontsize_pt": 6.5,
+  "problems": [],
+  "texts": [
+    {
+      "role": "title",
+      "axes": 0,
+      "axes_title": "MI_dir_L0.1_weight",
+      "text": "MI_dir_L0.1_weight",
+      "fontsize_pt": 7.5,
+      "bbox_pt": [
+        31.4,
+        124.64,
+        107.72,
+        132.2
+      ]
+    },
+    {
+      "role": "xlabel",
+      "axes": 0,
+      "axes_title": "MI_dir_L0.1_weight",
+      "text": "decayed packet count",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        52.97,
+        13.8,
+        131.93,
+        21.24
+      ]
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "MI_dir_L0.1_weight",
+      "text": "1",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        29.24,
+        25.96,
+        33.56,
+        32.56
+      ],
+      "tick_loc": 0.6931471805599453,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "MI_dir_L0.1_weight",
+      "text": "10",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        51.84,
+        25.96,
+        60.48,
+        32.56
+      ],
+      "tick_loc": 2.3978952727983707,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "MI_dir_L0.1_weight",
+      "text": "100",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        81.89,
+        25.96,
+        94.85,
+        32.56
+      ],
+      "tick_loc": 4.61512051684126,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 0,
+      "axes_title": "MI_dir_L0.1_weight",
+      "text": "1k",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        117.72,
+        25.24,
+        125.64,
+        32.56
+      ],
+      "tick_loc": 6.90875477931522,
+      "scale": "linear"
+    },
+    {
+      "role": "ylabel",
+      "axes": 0,
+      "axes_title": "MI_dir_L0.1_weight",
+      "text": "share of class records per bin",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        2.16,
+        29.02,
+        9.6,
+        132.98
+      ]
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "MI_dir_L0.1_weight",
+      "text": "0.0",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        13.6,
+        35.48,
+        24.4,
+        42.08
+      ],
+      "tick_loc": 0.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "MI_dir_L0.1_weight",
+      "text": "0.1",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        13.6,
+        60.11,
+        24.4,
+        66.71
+      ],
+      "tick_loc": 0.1,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "MI_dir_L0.1_weight",
+      "text": "0.2",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        13.6,
+        84.73,
+        24.4,
+        91.33
+      ],
+      "tick_loc": 0.2,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 0,
+      "axes_title": "MI_dir_L0.1_weight",
+      "text": "0.3",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        13.6,
+        109.36,
+        24.4,
+        115.96
+      ],
+      "tick_loc": 0.30000000000000004,
+      "scale": "linear"
+    },
+    {
+      "role": "title",
+      "axes": 1,
+      "axes_title": "H_L0.1_mean",
+      "text": "H_L0.1_mean",
+      "fontsize_pt": 7.5,
+      "bbox_pt": [
+        180.37,
+        124.64,
+        232.93,
+        132.14
+      ]
+    },
+    {
+      "role": "xlabel",
+      "axes": 1,
+      "axes_title": "H_L0.1_mean",
+      "text": "mean packet size",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        210.22,
+        13.8,
+        272.62,
+        21.24
+      ]
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "H_L0.1_mean",
+      "text": "100",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        193.53,
+        25.96,
+        206.49,
+        32.56
+      ],
+      "tick_loc": 4.61512051684126,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 1,
+      "axes_title": "H_L0.1_mean",
+      "text": "1k",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        285.36,
+        25.24,
+        293.28,
+        32.56
+      ],
+      "tick_loc": 6.90875477931522,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 1,
+      "axes_title": "H_L0.1_mean",
+      "text": "0.0",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        162.57,
+        35.48,
+        173.37,
+        42.08
+      ],
+      "tick_loc": 0.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 1,
+      "axes_title": "H_L0.1_mean",
+      "text": "0.1",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        162.57,
+        57.42,
+        173.37,
+        64.02
+      ],
+      "tick_loc": 0.1,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 1,
+      "axes_title": "H_L0.1_mean",
+      "text": "0.2",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        162.57,
+        79.36,
+        173.37,
+        85.96
+      ],
+      "tick_loc": 0.2,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 1,
+      "axes_title": "H_L0.1_mean",
+      "text": "0.3",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        162.57,
+        101.29,
+        173.37,
+        107.89
+      ],
+      "tick_loc": 0.30000000000000004,
+      "scale": "linear"
+    },
+    {
+      "role": "title",
+      "axes": 2,
+      "axes_title": "HH_jit_L0.1_mean",
+      "text": "HH_jit_L0.1_mean",
+      "fontsize_pt": 7.5,
+      "bbox_pt": [
+        329.34,
+        124.64,
+        399.18,
+        132.2
+      ]
+    },
+    {
+      "role": "xlabel",
+      "axes": 2,
+      "axes_title": "HH_jit_L0.1_mean",
+      "text": "mean inter-packet interval",
+      "fontsize_pt": 7.0,
+      "bbox_pt": [
+        342.86,
+        13.8,
+        437.92,
+        21.24
+      ]
+    },
+    {
+      "role": "xtick",
+      "axes": 2,
+      "axes_title": "HH_jit_L0.1_mean",
+      "text": "1",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        331.17,
+        25.96,
+        335.49,
+        32.56
+      ],
+      "tick_loc": 0.6931471805599453,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 2,
+      "axes_title": "HH_jit_L0.1_mean",
+      "text": "100",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        349.49,
+        25.96,
+        362.45,
+        32.56
+      ],
+      "tick_loc": 4.61512051684126,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 2,
+      "axes_title": "HH_jit_L0.1_mean",
+      "text": "10k",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        376.38,
+        25.24,
+        388.62,
+        32.56
+      ],
+      "tick_loc": 9.210440366976517,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 2,
+      "axes_title": "HH_jit_L0.1_mean",
+      "text": "1M",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        404.05,
+        25.96,
+        414.13,
+        32.56
+      ],
+      "tick_loc": 13.815511557963774,
+      "scale": "linear"
+    },
+    {
+      "role": "xtick",
+      "axes": 2,
+      "axes_title": "HH_jit_L0.1_mean",
+      "text": "100M",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        426.32,
+        25.96,
+        445.04,
+        32.56
+      ],
+      "tick_loc": 18.420680753952364,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 2,
+      "axes_title": "HH_jit_L0.1_mean",
+      "text": "0.0",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        311.54,
+        35.48,
+        322.34,
+        42.08
+      ],
+      "tick_loc": 0.0,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 2,
+      "axes_title": "HH_jit_L0.1_mean",
+      "text": "0.1",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        311.54,
+        50.34,
+        322.34,
+        56.94
+      ],
+      "tick_loc": 0.1,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 2,
+      "axes_title": "HH_jit_L0.1_mean",
+      "text": "0.2",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        311.54,
+        65.19,
+        322.34,
+        71.79
+      ],
+      "tick_loc": 0.2,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 2,
+      "axes_title": "HH_jit_L0.1_mean",
+      "text": "0.3",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        311.54,
+        80.05,
+        322.34,
+        86.65
+      ],
+      "tick_loc": 0.30000000000000004,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 2,
+      "axes_title": "HH_jit_L0.1_mean",
+      "text": "0.4",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        311.54,
+        94.9,
+        322.34,
+        101.5
+      ],
+      "tick_loc": 0.4,
+      "scale": "linear"
+    },
+    {
+      "role": "ytick",
+      "axes": 2,
+      "axes_title": "HH_jit_L0.1_mean",
+      "text": "0.5",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        311.54,
+        109.76,
+        322.34,
+        116.36
+      ],
+      "tick_loc": 0.5,
+      "scale": "linear"
+    },
+    {
+      "role": "legend",
+      "axes": null,
+      "axes_title": null,
+      "text": [
+        "benign (n=388,965)",
+        "malicious (n=4,556,003)"
+      ],
+      "fontsize_pt": null,
+      "bbox_pt": [
+        125.64,
+        135.43,
+        327.96,
+        147.95
+      ]
+    },
+    {
+      "role": "figure_text",
+      "axes": null,
+      "axes_title": null,
+      "text": "x axes: log1p scale, tick labels in raw units; the same 40 bins for both classes",
+      "fontsize_pt": 6.5,
+      "bbox_pt": [
+        92.62,
+        2.16,
+        360.98,
+        9.48
+      ]
+    }
+  ]
+}
