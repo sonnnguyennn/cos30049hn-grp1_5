@@ -1,0 +1,23 @@
+{
+  "scaling": "standard",
+  "k": 12,
+  "seed": 42,
+  "stage": "pilot",
+  "unique_fit_rows": 100000,
+  "fit_seconds": 0.1257810120000613,
+  "full_epochs": null,
+  "estimator_parameters": {
+    "batch_size": 4096,
+    "compute_labels": false,
+    "init_size": null,
+    "max_iter": 100,
+    "max_no_improvement": 20,
+    "n_clusters": 12,
+    "n_init": 5,
+    "random_state": 42,
+    "reassignment_ratio": 0.0,
+    "tol": 0.0,
+    "verbose": 0
+  },
+  "initialization": "k-means++ on sample"
+}

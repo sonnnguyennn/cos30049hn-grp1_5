@@ -1,0 +1,2 @@
+{"time_utc": "2026-11-08T02:18:32.471040+00:00", "event": "pilot_fit_complete", "unique_fit_rows": 100000, "minibatch_updates": 23}
+{"time_utc": "2026-11-08T02:18:32.483782+00:00", "event": "saved_and_reload_verified", "fit_seconds": 0.0859387880000213, "total_seconds": 0.09860813000000235, "coverage": {}}

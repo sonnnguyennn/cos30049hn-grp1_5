@@ -1,0 +1,82 @@
+{
+  "identity": {
+    "manifest_relative_path": "manifest.json",
+    "manifest_sha256": "6ab99e86397242e219bfa1f8490d8e03b169ec87a092af80cb3e7aef1e61147b",
+    "partitions": {
+      "TRAIN": {
+        "shape": [
+          4944968,
+          115
+        ],
+        "dtype": "float64",
+        "metadata_relative_path": "TRAIN_metadata.npy",
+        "metadata_sha256": "d98a4e6e6058ec476065811a4d30a30682d13952ee0e49af4ffc57a219984080"
+      },
+      "VALIDATION": {
+        "shape": [
+          1056372,
+          115
+        ],
+        "dtype": "float64",
+        "metadata_relative_path": "VALIDATION_metadata.npy",
+        "metadata_sha256": "2d44c7b63c3c16fb19105ce504b39f6e31fa4145588c07c1d50f2417fad69103"
+      }
+    }
+  },
+  "comparison_policy": {
+    "protocol_id": "unsupervised_v1_proposal",
+    "expected_manifest_sha256": "6ab99e86397242e219bfa1f8490d8e03b169ec87a092af80cb3e7aef1e61147b",
+    "expected_shapes": {
+      "TRAIN": [
+        4944968,
+        115
+      ],
+      "VALIDATION": [
+        1056372,
+        115
+      ]
+    },
+    "scalings": [
+      "standard",
+      "raw"
+    ],
+    "k_values": [
+      2,
+      4,
+      8,
+      12
+    ],
+    "seeds": [
+      42
+    ],
+    "sample_seed": 42,
+    "pilot_train_rows": 100000,
+    "validation_eval_rows": 10000,
+    "silhouette_rows": 1500,
+    "silhouette_repeats": 3,
+    "batch_size": 4096,
+    "shuffle_buffer_batches": 8,
+    "initialization_rows": 8192,
+    "full_epochs": 2,
+    "pilot_max_iter": 100,
+    "pilot_n_init": 5,
+    "reassignment_ratio": 0.0,
+    "threads": 2,
+    "benign_label": 0,
+    "malicious_label": 1
+  },
+  "finalists": [
+    {
+      "scaling": "standard",
+      "k": 8,
+      "seed": 42
+    },
+    {
+      "scaling": "raw",
+      "k": 4,
+      "seed": 42
+    }
+  ],
+  "rule": "within each scaling, max silhouette rounded to 6 decimals, then smaller K, then seed",
+  "ground_truth_used": false
+}

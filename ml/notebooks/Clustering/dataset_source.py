@@ -1,4 +1,4 @@
-"""Fetch the configured G3B package only when the local copy is missing."""
+"""Fetch the configured dataset package only when the local copy is missing."""
 import os
 import re
 import shutil
@@ -44,7 +44,7 @@ def extract_archive(archive_path, destination):
                     raise ValueError("The downloaded ZIP contains an unsafe path.")
             required = sum(member.file_size for member in members)
             if required > shutil.disk_usage(destination).free:
-                raise OSError(f"Need {required / 2**30:.1f} GiB of free space to unpack G3B.")
+                raise OSError(f"Need {required / 2**30:.1f} GiB of free space to unpack the dataset.")
             for member in members:
                 if not member.is_dir():
                     print("Extracting", member.filename, flush=True)
@@ -60,20 +60,20 @@ def extract_archive(archive_path, destination):
                     print("Extracting", member.name, flush=True)
                 archive.extract(member, destination, filter="data")
     except tarfile.ReadError as error:
-        raise ValueError("The Drive file must be a ZIP or tar archive of the full G3B package.") from error
+        raise ValueError("The Drive file must be a ZIP or tar archive of the full dataset package.") from error
 
 
 def prepare_package(cfg, drive_url):
     """Download, check the expected manifest, and place the package at package_dir."""
     target = Path(cfg["package_dir"])
     if (target / "primary_package.py").is_file():
-        print("Using local G3B package at", target, flush=True)
+        print("Using local dataset package at", target, flush=True)
         return target
     if target.exists():
         raise FileExistsError(f"{target} exists without primary_package.py. "
                               "Move the incomplete folder aside before running again.")
     if not drive_url:
-        raise FileNotFoundError("G3B is missing locally. Set drive_url in experiment_config.json.")
+        raise FileNotFoundError("The dataset is missing locally. Set drive_url in experiment_config.json.")
     kind, url = drive_source(drive_url.strip())
     try:
         import gdown
@@ -81,16 +81,16 @@ def prepare_package(cfg, drive_url):
         raise ModuleNotFoundError("Install the updated requirements.txt in your notebook environment.") from error
 
     target.parent.mkdir(parents=True, exist_ok=True)
-    with tempfile.TemporaryDirectory(prefix=".g3b-download-", dir=target.parent) as temporary:
+    with tempfile.TemporaryDirectory(prefix=".dataset-download-", dir=target.parent) as temporary:
         staging = Path(temporary)
         extracted = staging / "package"
         extracted.mkdir()
-        print("Downloading G3B from Google Drive. The first download is several GiB.", flush=True)
+        print("Downloading the dataset from Google Drive. The first download is several GiB.", flush=True)
         try:
             if kind == "folder":
                 result = gdown.download_folder(url=url, output=str(extracted) + os.sep, quiet=False)
             else:
-                archive_path = staging / "g3b.archive"
+                archive_path = staging / "dataset.archive"
                 result = gdown.download(url=url, output=str(archive_path), quiet=False)
         except gdown.exceptions.DownloadError as error:
             raise RuntimeError("Google Drive download failed. Check link access and download limits.") from error
@@ -101,10 +101,10 @@ def prepare_package(cfg, drive_url):
 
         loaders = list(extracted.rglob("primary_package.py"))
         if len(loaders) != 1:
-            raise ValueError("Expected exactly one primary_package.py in the downloaded G3B package.")
+            raise ValueError("Expected exactly one primary_package.py in the downloaded dataset package.")
         package = loaders[0].parent
         matching_manifest(package, cfg["expected_manifest_sha256"])
         package.rename(target)
 
-    print("Saved G3B package at", target, flush=True)
+    print("Saved dataset package at", target, flush=True)
     return target

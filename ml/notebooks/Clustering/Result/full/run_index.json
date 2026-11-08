@@ -1,0 +1,22 @@
+[
+  {
+    "run_id": "standard_k8_seed42",
+    "scaling": "standard",
+    "k": 8,
+    "seed": 42,
+    "stage": "full",
+    "unique_fit_rows": 4944968,
+    "fit_seconds": 24.786379075000013,
+    "model_sha256": "92f365c4e9b6d55940c9bb3045afac998a709ee18850a1a80da3a65fd3fbd738"
+  },
+  {
+    "run_id": "raw_k4_seed42",
+    "scaling": "raw",
+    "k": 4,
+    "seed": 42,
+    "stage": "full",
+    "unique_fit_rows": 4944968,
+    "fit_seconds": 12.266891348999934,
+    "model_sha256": "dc71ffd653722cac2139c791ca1c2224ddebaf6aa16fa53a44e55bcbfb533256"
+  }
+]

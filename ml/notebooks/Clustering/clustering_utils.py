@@ -30,6 +30,15 @@ def write_json(path, data):
     temporary.replace(path)
 
 
+def uses_standard_scaling(scaling):
+    """Resolve the TRAIN-only transform, including names in archived model bundles."""
+    if scaling == "raw":
+        return False
+    if scaling == "standard" or scaling.endswith("_standard"):
+        return True
+    raise ValueError("Unknown scaling")
+
+
 def read_config(path="experiment_config.json"):
     cfg = json.loads(Path(path).read_text(encoding="utf-8"))
     cfg.pop("drive_url", None)  # The delivery link is separate from the archived fit settings.
@@ -37,7 +46,8 @@ def read_config(path="experiment_config.json"):
     cfg["output_root"] = str(Path(cfg["output_root"]).expanduser().resolve())
     if cfg["stage"] not in {"pilot", "full"}:
         raise ValueError("stage must be pilot or full")
-    if cfg["scalings"] != ["g3b_standard", "raw"]:
+    if (len(cfg["scalings"]) != 2 or not uses_standard_scaling(cfg["scalings"][0])
+            or cfg["scalings"][1] != "raw"):
         raise ValueError("This protocol requires the primary scaling and raw ablation")
     if not all(2 <= k <= 32767 for k in cfg["k_values"]):
         raise ValueError("K must be >=2 and fit in int16 prediction files")
@@ -85,7 +95,7 @@ def open_package(cfg):
     root = Path(cfg["package_dir"])
     loader = root / "primary_package.py"
     if not loader.is_file():
-        raise FileNotFoundError(f"Copy the COMPLETE G3B directory here first: {root}")
+        raise FileNotFoundError(f"Copy the COMPLETE dataset package directory here first: {root}")
     manifest = matching_manifest(root, cfg["expected_manifest_sha256"])
     # Only use the documented, supplied loader; never allow TEST.
     sys.path.insert(0, str(root))
@@ -102,14 +112,13 @@ def open_package(cfg):
 def feature_chunks(package, split, scaling, chunk_size):
     if split not in {"TRAIN", "VALIDATION"}:
         raise ValueError("This workflow never opens TEST")
-    if scaling not in {"g3b_standard", "raw"}:
-        raise ValueError("Unknown scaling")
+    scaled = uses_standard_scaling(scaling)
     position = 0
     for X_chunk, _unused_y in package.chunks(
-            split, scaled=(scaling == "g3b_standard"), chunk_size=chunk_size):
+            split, scaled=scaled, chunk_size=chunk_size):
         X_chunk = np.asarray(X_chunk, dtype=np.float64, order="C")
         if X_chunk.ndim != 2 or not np.isfinite(X_chunk).all():
-            raise ValueError("Non-finite or malformed G3B features; do not silently impute or drop rows")
+            raise ValueError("Non-finite or malformed dataset features; do not silently impute or drop rows")
         end = position + len(X_chunk)
         yield position, end, X_chunk
         position = end
@@ -303,8 +312,8 @@ def train_and_save(stage_dir, cfg, identity, package, cache, spec, fit):
             model_path = run_dir / "model.joblib"
             bundle = {
                 "estimator": model, "scaling": scaling, "identity": identity,
-                "feature_policy": "all 115 canonical G3B predictors, original order, float64",
-                "transform": f"PrimaryPackage.chunks(scaled={scaling == 'g3b_standard'})",
+                "feature_policy": "all 115 canonical predictors, original order, float64",
+                "transform": f"PrimaryPackage.chunks(scaled={uses_standard_scaling(scaling)})",
                 "config": cfg, "spec": spec,
             }
             joblib.dump(bundle, model_path)
@@ -475,7 +484,7 @@ def save_profiles(STAGE_DIR, primary_id):
     axes[1].set_xticks(range(len(top_positions)), [str(j) for j in top_positions])
     axes[1].set(title="Primary centroids: largest between-center spread", xlabel="Zero-based feature position",
                 ylabel="Cluster ID", yticks=range(len(centers)))
-    fig.colorbar(image, ax=axes[1], label="G3B standardized coordinate")
+    fig.colorbar(image, ax=axes[1], label="Standardized coordinate")
     fig.savefig(STAGE_DIR / "cluster_interpretation.png", dpi=160)
     plt.show()
 
@@ -490,13 +499,13 @@ def save_analysis(STAGE_DIR, CFG, selection, comparison, composition):
     text = f"""# Clustering experiment: measured validation analysis
 
 Primary run: {primary['run_id']}. Protocol: {CFG['protocol_id']}.
-All 115 ordered G3B numeric predictors were used. Labels, source identity and device strings
+All 115 ordered numeric predictors were used. Labels, source identity and device strings
 were excluded from fitting. The complete TRAIN population ({int(primary['unique_fit_rows']):,} rows)
 was processed for {CFG['full_epochs']} epochs with batch size {CFG['batch_size']}.
-Standardization reused G3B's TRAIN-only scaler. TEST was not opened.
+Standardization reused the dataset's TRAIN-only scaler. TEST was not opened.
 
 ## Experiment design and selection
-The pilot compared K={CFG['k_values']} for both G3B standardization and raw features, using the
+The pilot compared K={CFG['k_values']} for both standardization and raw features, using the
 same {CFG['pilot_train_rows']:,}-row uniform TRAIN sample and seed(s) {CFG['seeds']}.
 It shortlisted one K per scaling using internal VALIDATION silhouette only. Each finalist was then
 trained on all TRAIN rows. Standardized geometry was the primary analysis by prior policy.
@@ -533,8 +542,8 @@ The full stream used local buffer shuffling rather than a global permutation; or
 Two epochs are a budget, not evidence of full convergence. Default seed 42 provides no seed stability claim.
 Uniform evaluation samples can miss rare groups; sample variation is not a confidence interval.
 Binary-label agreement does not establish separation of attack types, unseen devices or future traffic.
-G3B preserves duplicates and original splits; this evaluation does not remove leakage/source risks.
-The supplied handoff's verification does not by itself prove this receiving machine is TEAM_VERIFIED.
+The dataset preserves duplicates and original splits; this evaluation does not remove leakage/source risks.
+The supplied handoff's verification does not by itself establish verification on this receiving machine.
 
 Before submission, map the largest-spread centroid feature positions to canonical feature names,
 describe the observed direction and support of at least two clusters, and state whether mixed

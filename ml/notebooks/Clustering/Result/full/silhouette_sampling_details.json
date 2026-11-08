@@ -1,0 +1,56 @@
+[
+  {
+    "run_id": "standard_k8_seed42",
+    "repeat": 0,
+    "rows": 1500,
+    "represented_clusters": 5,
+    "requested_k": 8,
+    "score": 0.4308256432476604,
+    "reason": null
+  },
+  {
+    "run_id": "standard_k8_seed42",
+    "repeat": 1,
+    "rows": 1500,
+    "represented_clusters": 5,
+    "requested_k": 8,
+    "score": 0.4461082174296386,
+    "reason": null
+  },
+  {
+    "run_id": "standard_k8_seed42",
+    "repeat": 2,
+    "rows": 1500,
+    "represented_clusters": 8,
+    "requested_k": 8,
+    "score": 0.41978859681996217,
+    "reason": null
+  },
+  {
+    "run_id": "raw_k4_seed42",
+    "repeat": 0,
+    "rows": 1500,
+    "represented_clusters": 3,
+    "requested_k": 4,
+    "score": 0.9885150870999214,
+    "reason": null
+  },
+  {
+    "run_id": "raw_k4_seed42",
+    "repeat": 1,
+    "rows": 1500,
+    "represented_clusters": 3,
+    "requested_k": 4,
+    "score": 0.9874720534819516,
+    "reason": null
+  },
+  {
+    "run_id": "raw_k4_seed42",
+    "repeat": 2,
+    "rows": 1500,
+    "represented_clusters": 4,
+    "requested_k": 4,
+    "score": 0.9902170490138127,
+    "reason": null
+  }
+]

@@ -1,0 +1,218 @@
+[
+  {
+    "run_id": "standard_k2_seed42",
+    "repeat": 0,
+    "rows": 1500,
+    "represented_clusters": 2,
+    "requested_k": 2,
+    "score": 0.5273832752336272,
+    "reason": null
+  },
+  {
+    "run_id": "standard_k2_seed42",
+    "repeat": 1,
+    "rows": 1500,
+    "represented_clusters": 2,
+    "requested_k": 2,
+    "score": 0.5289815593914503,
+    "reason": null
+  },
+  {
+    "run_id": "standard_k2_seed42",
+    "repeat": 2,
+    "rows": 1500,
+    "represented_clusters": 2,
+    "requested_k": 2,
+    "score": 0.5193409757660651,
+    "reason": null
+  },
+  {
+    "run_id": "standard_k4_seed42",
+    "repeat": 0,
+    "rows": 1500,
+    "represented_clusters": 4,
+    "requested_k": 4,
+    "score": 0.5537165163716953,
+    "reason": null
+  },
+  {
+    "run_id": "standard_k4_seed42",
+    "repeat": 1,
+    "rows": 1500,
+    "represented_clusters": 4,
+    "requested_k": 4,
+    "score": 0.5722520548992729,
+    "reason": null
+  },
+  {
+    "run_id": "standard_k4_seed42",
+    "repeat": 2,
+    "rows": 1500,
+    "represented_clusters": 4,
+    "requested_k": 4,
+    "score": 0.5289690964424,
+    "reason": null
+  },
+  {
+    "run_id": "standard_k8_seed42",
+    "repeat": 0,
+    "rows": 1500,
+    "represented_clusters": 7,
+    "requested_k": 8,
+    "score": 0.6145126866080742,
+    "reason": null
+  },
+  {
+    "run_id": "standard_k8_seed42",
+    "repeat": 1,
+    "rows": 1500,
+    "represented_clusters": 7,
+    "requested_k": 8,
+    "score": 0.6187003332686191,
+    "reason": null
+  },
+  {
+    "run_id": "standard_k8_seed42",
+    "repeat": 2,
+    "rows": 1500,
+    "represented_clusters": 8,
+    "requested_k": 8,
+    "score": 0.5929046782792977,
+    "reason": null
+  },
+  {
+    "run_id": "standard_k12_seed42",
+    "repeat": 0,
+    "rows": 1500,
+    "represented_clusters": 12,
+    "requested_k": 12,
+    "score": 0.5458845027555337,
+    "reason": null
+  },
+  {
+    "run_id": "standard_k12_seed42",
+    "repeat": 1,
+    "rows": 1500,
+    "represented_clusters": 12,
+    "requested_k": 12,
+    "score": 0.5478914315447363,
+    "reason": null
+  },
+  {
+    "run_id": "standard_k12_seed42",
+    "repeat": 2,
+    "rows": 1500,
+    "represented_clusters": 12,
+    "requested_k": 12,
+    "score": 0.5328718920194992,
+    "reason": null
+  },
+  {
+    "run_id": "raw_k2_seed42",
+    "repeat": 0,
+    "rows": 1500,
+    "represented_clusters": 2,
+    "requested_k": 2,
+    "score": 0.9952226008279116,
+    "reason": null
+  },
+  {
+    "run_id": "raw_k2_seed42",
+    "repeat": 1,
+    "rows": 1500,
+    "represented_clusters": 2,
+    "requested_k": 2,
+    "score": 0.992237300749162,
+    "reason": null
+  },
+  {
+    "run_id": "raw_k2_seed42",
+    "repeat": 2,
+    "rows": 1500,
+    "represented_clusters": 2,
+    "requested_k": 2,
+    "score": 0.9931368962046373,
+    "reason": null
+  },
+  {
+    "run_id": "raw_k4_seed42",
+    "repeat": 0,
+    "rows": 1500,
+    "represented_clusters": 3,
+    "requested_k": 4,
+    "score": 0.9987280829737979,
+    "reason": null
+  },
+  {
+    "run_id": "raw_k4_seed42",
+    "repeat": 1,
+    "rows": 1500,
+    "represented_clusters": 3,
+    "requested_k": 4,
+    "score": 0.9953803747817573,
+    "reason": null
+  },
+  {
+    "run_id": "raw_k4_seed42",
+    "repeat": 2,
+    "rows": 1500,
+    "represented_clusters": 4,
+    "requested_k": 4,
+    "score": 0.996719391171071,
+    "reason": null
+  },
+  {
+    "run_id": "raw_k8_seed42",
+    "repeat": 0,
+    "rows": 1500,
+    "represented_clusters": 4,
+    "requested_k": 8,
+    "score": 0.9987114561792908,
+    "reason": null
+  },
+  {
+    "run_id": "raw_k8_seed42",
+    "repeat": 1,
+    "rows": 1500,
+    "represented_clusters": 6,
+    "requested_k": 8,
+    "score": 0.9951623098812015,
+    "reason": null
+  },
+  {
+    "run_id": "raw_k8_seed42",
+    "repeat": 2,
+    "rows": 1500,
+    "represented_clusters": 6,
+    "requested_k": 8,
+    "score": 0.9953681654356141,
+    "reason": null
+  },
+  {
+    "run_id": "raw_k12_seed42",
+    "repeat": 0,
+    "rows": 1500,
+    "represented_clusters": 5,
+    "requested_k": 12,
+    "score": 0.9962943719440795,
+    "reason": null
+  },
+  {
+    "run_id": "raw_k12_seed42",
+    "repeat": 1,
+    "rows": 1500,
+    "represented_clusters": 6,
+    "requested_k": 12,
+    "score": 0.9932594764215618,
+    "reason": null
+  },
+  {
+    "run_id": "raw_k12_seed42",
+    "repeat": 2,
+    "rows": 1500,
+    "represented_clusters": 7,
+    "requested_k": 12,
+    "score": 0.9959600793605713,
+    "reason": null
+  }
+]

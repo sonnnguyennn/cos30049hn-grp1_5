@@ -1,0 +1,18 @@
+[
+  {
+    "run_id": "standard_k8_seed42",
+    "ari": 0.007820929673264322,
+    "nmi": 0.09179198279475591,
+    "external_eval_rows": 1056372,
+    "external_scope": "entire VALIDATION, post-selection",
+    "overall_malicious_fraction": 0.9210174067468657
+  },
+  {
+    "run_id": "raw_k4_seed42",
+    "ari": -0.025312427092379196,
+    "nmi": 0.008262341620574818,
+    "external_eval_rows": 1056372,
+    "external_scope": "entire VALIDATION, post-selection",
+    "overall_malicious_fraction": 0.9210174067468657
+  }
+]

@@ -1,6 +1,6 @@
 {
-  "protocol_id": "g3b_unsupervised_v1_proposal",
-  "experiment_id": "g3b_clustering_001",
+  "protocol_id": "unsupervised_v1_proposal",
+  "experiment_id": "clustering_001",
   "stage": "full",
   "drive_url": "https://drive.google.com/file/d/1D6sXnp8l7-7YwBaonKoTZKcPG1ULKAuL/view?usp=drive_link",
   "package_dir": "../g3b_primary_v1",
@@ -10,7 +10,7 @@
     "TRAIN": [4944968, 115],
     "VALIDATION": [1056372, 115]
   },
-  "scalings": ["g3b_standard", "raw"],
+  "scalings": ["standard", "raw"],
   "k_values": [2, 4, 8, 12],
   "seeds": [42],
   "sample_seed": 42,

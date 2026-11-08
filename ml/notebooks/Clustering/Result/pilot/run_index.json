@@ -1,0 +1,82 @@
+[
+  {
+    "run_id": "standard_k2_seed42",
+    "scaling": "standard",
+    "k": 2,
+    "seed": 42,
+    "stage": "pilot",
+    "unique_fit_rows": 100000,
+    "fit_seconds": 0.16721047200007888,
+    "model_sha256": "beca158f7da5b48ccd530302c99558da879e0354df806edb56531e0995c7aaca"
+  },
+  {
+    "run_id": "standard_k4_seed42",
+    "scaling": "standard",
+    "k": 4,
+    "seed": 42,
+    "stage": "pilot",
+    "unique_fit_rows": 100000,
+    "fit_seconds": 0.0859387880000213,
+    "model_sha256": "a640f2610415afc12b68720cc24f1740bbf7a86187634a2f01717a16fcabefea"
+  },
+  {
+    "run_id": "standard_k8_seed42",
+    "scaling": "standard",
+    "k": 8,
+    "seed": 42,
+    "stage": "pilot",
+    "unique_fit_rows": 100000,
+    "fit_seconds": 0.10139496699980555,
+    "model_sha256": "f4586f6b0831dd81f632ba6d3e7b6108312e38c763ebc5709705d80e59d6876e"
+  },
+  {
+    "run_id": "standard_k12_seed42",
+    "scaling": "standard",
+    "k": 12,
+    "seed": 42,
+    "stage": "pilot",
+    "unique_fit_rows": 100000,
+    "fit_seconds": 0.1257810120000613,
+    "model_sha256": "95d6c1756d10781bf5cf0c23b3463c56e2f0697fb536eb14cb9320a4f4d843e6"
+  },
+  {
+    "run_id": "raw_k2_seed42",
+    "scaling": "raw",
+    "k": 2,
+    "seed": 42,
+    "stage": "pilot",
+    "unique_fit_rows": 100000,
+    "fit_seconds": 0.09031618700009858,
+    "model_sha256": "da44d465e66d9110c77424bef765042cc5f9dfce7058c2286b049b15e2b1512a"
+  },
+  {
+    "run_id": "raw_k4_seed42",
+    "scaling": "raw",
+    "k": 4,
+    "seed": 42,
+    "stage": "pilot",
+    "unique_fit_rows": 100000,
+    "fit_seconds": 0.2958570119999422,
+    "model_sha256": "0c0d4352c2e2974165afb10ae59b3258cd3d8b985751f14982de461718326785"
+  },
+  {
+    "run_id": "raw_k8_seed42",
+    "scaling": "raw",
+    "k": 8,
+    "seed": 42,
+    "stage": "pilot",
+    "unique_fit_rows": 100000,
+    "fit_seconds": 0.15669715100011672,
+    "model_sha256": "39d19cc3c6c443d0e798b920c993eb846fe7b79f89889c7b602fbf80eff05753"
+  },
+  {
+    "run_id": "raw_k12_seed42",
+    "scaling": "raw",
+    "k": 12,
+    "seed": 42,
+    "stage": "pilot",
+    "unique_fit_rows": 100000,
+    "fit_seconds": 0.18299439099996562,
+    "model_sha256": "bb0a5dfd674bb7bec0b14fce55bb61d1b2e6cfd722d850bb42a645c84bb72bd0"
+  }
+]
