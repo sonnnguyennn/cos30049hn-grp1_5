@@ -7,7 +7,7 @@ type DatasetSwitchProps = {
 
 export default function DatasetSwitch({ currentDataset, setDataset }: DatasetSwitchProps) {
     return (
-        <div className='flex w-100 h-15 bg-[#FFFFFF] rounded-4xl absolute right-20 p-2'>
+        <div className='flex w-100 h-15 bg-[#FFFFFF] rounded-4xl absolute right-0 p-2'>
             <button type='button' onClick={() => setDataset(1)}
                 className={
                 clsx("rounded-4xl h-full w-50", 

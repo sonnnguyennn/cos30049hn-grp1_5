@@ -21,6 +21,7 @@
     "recharts": "^3.10.1"
   },
   "devDependencies": {
+    "@recharts/devtools": "^0.0.19",
     "@tailwindcss/turbopack": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

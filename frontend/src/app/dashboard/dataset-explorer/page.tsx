@@ -4,6 +4,7 @@ import { inter } from '@/app/ui/fonts';
 import DatasetSwitch from '@/app/ui/dataset-explorer/dataset-switch';
 import { useState } from 'react';
 import RecordsFeaturesClasses from '@/app/ui/dataset-explorer/records-features-classes';
+import ClassDistribution from '@/app/ui/dataset-explorer/class-distribution';
 
 const datasetSummaries = [
   // Dataset 1 — N-BaIoT (Primary)
@@ -36,13 +37,14 @@ export default function Page() {
     const [currentDataset, setDataset] = useState(1);
 
     return (
-        <main className='grid gap-y-5'>
+        <main className='grid gap-y-5 relative'>
             <h1 className={`${inter.className} text-5xl text-black`}>Dataset explorer</h1>
             <h2 className={`${inter.className} text-2xl text-gray-500`}>Summaries of the processed dataset. Raw records are not displayed.</h2>
             <div className="page-break h-5"></div>
 
             <DatasetSwitch currentDataset={currentDataset} setDataset={setDataset} />
             <RecordsFeaturesClasses currentDataset={currentDataset} data={datasetSummaries} />
+            <ClassDistribution />
         </main>
     );
 }

@@ -20,7 +20,7 @@ export default function RecordsFeaturesClasses({ currentDataset, data }: Props) 
   const summary = data[currentDataset - 1];
 
   return (
-    <div className="flex h-40 w-full justify-evenly gap-10">
+    <div className="flex h-40 w-full justify-evenly gap-5">
       {types.map(({ name, description }) => {
         const value = summary?.find((field) => field.label === name)?.value;
 
