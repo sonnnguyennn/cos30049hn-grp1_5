@@ -3,6 +3,7 @@
 import { inter } from '@/app/ui/fonts';
 import NewAnal from '../ui/dashboard/new-analysis';
 import MoreLinks from '../ui/dashboard/more-links';
+import RecentActivities from '../ui/dashboard/recent-activities';
 
 export default function Page() {
     return (
@@ -12,6 +13,7 @@ export default function Page() {
             <div className="page-break h-5"></div>
             <NewAnal />
             <MoreLinks />
+            <RecentActivities />
         </main>
     );
 }

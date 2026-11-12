@@ -20,7 +20,7 @@ export default function MoreLinks() {
                         href={link.href}
                         className={`relative w-full h-full rounded-4xl justify-center flex flex-col px-10 ${link.color}`}
                         >
-                            <p className="text-black text-3xl">{link.Name}</p>
+                            <p className="text-black text-2xl">{link.Name}</p>
                             <p className="text-gray-400">{link.des}</p>
                             <ArrowRight stroke="gray" size={30} className="absolute top-5 right-5" />
                         </Link>
