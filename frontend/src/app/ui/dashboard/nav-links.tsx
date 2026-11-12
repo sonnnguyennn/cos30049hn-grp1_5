@@ -23,13 +23,13 @@ export default function NavLinks() {
                         <Link
                         key={link.Name}
                         href={link.href}
-                        className={clsx("flex w-full rounded-2xl",
+                        className={clsx("flex rounded-2xl",
                             {"flex w-full rounded-2xl bg-[#ddf1ea]" : pathname === link.href}
                         )}
                         >
                             <p className={clsx(
-                                "text-[#3d3d3d] text-xl py-2 px-8",
-                                {"text-[#05bb7e] text-xl py-2 px-8" : pathname === link.href}
+                                "text-[#3d3d3d] text-lg py-2 px-8",
+                                {"text-[#127A63] text-lg py-2 px-8" : pathname === link.href}
                             )}>{link.Name}</p>
                         </Link>
                     )
