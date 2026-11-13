@@ -6,6 +6,7 @@ import { useState } from 'react';
 import RecordsFeaturesClasses from '@/app/ui/dataset-explorer/records-features-classes';
 import ClassDistribution from '@/app/ui/dataset-explorer/class-distribution';
 import ClassBalance from '@/app/ui/dataset-explorer/class-balance';
+import DataQuality from '@/app/ui/dataset-explorer/data-quality';
 
 const datasetSummaries = [
   // Dataset 1 — N-BaIoT (Primary)
@@ -45,11 +46,15 @@ export default function Page() {
 
             <DatasetSwitch currentDataset={currentDataset} setDataset={setDataset} />
             <RecordsFeaturesClasses currentDataset={currentDataset} data={datasetSummaries} />
+
             <div className="page-break h-1"></div>
             <div className='flex flex-row gap-5'>
               <ClassDistribution currentDataset={currentDataset} />
               <ClassBalance currentDataset={currentDataset} data={datasetSummaries} />
             </div>
+
+            <div className="page-break h-1"></div>
+            <DataQuality currentDataset={currentDataset}/>
             
         </main>
     );

@@ -27,7 +27,7 @@ export default function ClassBalance({ currentDataset, data }: Props) {
         name,
         value: selectedDataset.find(field => field.label === `${name} records`)?.value ?? 0,
     }));
-    
+
     const total = pieData.reduce((sum, entry) => sum + entry.value, 0);
     const formatPercentage = (value: number) =>
         total > 0
@@ -35,14 +35,15 @@ export default function ClassBalance({ currentDataset, data }: Props) {
             : 'N/A';
 
     return (
-        <div className='flex flex-col bg-[#ddf1ea] w-full h-auto rounded-4xl px-10 py-10 relative basis-1/2'>
+        <div className='flex flex-col bg-[#ddf1ea] w-full h-auto rounded-4xl px-10 py-10 gap-10 relative basis-1/2'>
             <p className='text-2xl text-black'>Class balance</p>
-            <PieChart style={{ width: '100%', height: '100%'}} responsive>
+            <PieChart style={{ width: '100%', height: 240, flexShrink: 1 }} responsive>
                 <Pie data={pieData} dataKey="value" innerRadius={70} outerRadius={100} isAnimationActive={true} shape={MyCustomPie}>
                     <LabelList content={MyCustomLabel} />
                 </Pie>
                 <RechartsDevtools />
             </PieChart>
+
             <div className='flex gap-10'>
                 {pieData.map(entry => (
                     <p key={entry.name} className='text-gray-500'>
