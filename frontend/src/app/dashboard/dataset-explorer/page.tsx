@@ -5,6 +5,7 @@ import DatasetSwitch from '@/app/ui/dataset-explorer/dataset-switch';
 import { useState } from 'react';
 import RecordsFeaturesClasses from '@/app/ui/dataset-explorer/records-features-classes';
 import ClassDistribution from '@/app/ui/dataset-explorer/class-distribution';
+import ClassBalance from '@/app/ui/dataset-explorer/class-balance';
 
 const datasetSummaries = [
   // Dataset 1 — N-BaIoT (Primary)
@@ -15,8 +16,8 @@ const datasetSummaries = [
     { label: 'Train records', value: 4_944_968 },
     { label: 'Validation records', value: 1_056_372 },
     { label: 'Test records', value: 1_061_266 },
-    { label: 'Benign records', value: null },
-    { label: 'Malicious records', value: null },
+    { label: 'Benign records', value: 6700 },
+    { label: 'Malicious records', value: 3300 },
   ],
 
   // Dataset 2 — Bot-IoT (Secondary, mock data)
@@ -37,14 +38,19 @@ export default function Page() {
     const [currentDataset, setDataset] = useState(1);
 
     return (
-        <main className='grid gap-y-5 relative'>
-            <h1 className={`${inter.className} text-5xl text-black`}>Dataset explorer</h1>
+        <main className='grid gap-y-2 relative'>
+            <h1 className={`${inter.className} text-4xl text-black`}>Dataset explorer</h1>
             <h2 className={`${inter.className} text-2xl text-gray-500`}>Summaries of the processed dataset. Raw records are not displayed.</h2>
-            <div className="page-break h-5"></div>
+            <div className="page-break h-3"></div>
 
             <DatasetSwitch currentDataset={currentDataset} setDataset={setDataset} />
             <RecordsFeaturesClasses currentDataset={currentDataset} data={datasetSummaries} />
-            <ClassDistribution />
+            <div className="page-break h-1"></div>
+            <div className='flex flex-row gap-5'>
+              <ClassDistribution currentDataset={currentDataset} />
+              <ClassBalance currentDataset={currentDataset} data={datasetSummaries} />
+            </div>
+            
         </main>
     );
 }
