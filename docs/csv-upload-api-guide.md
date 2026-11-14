@@ -220,7 +220,7 @@ For a minimal working form, replace that page's contents with:
 ```tsx
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState, type SubmitEvent } from "react";
 
 type Analysis = {
   summary: { rows: number; features: number; benign: number; malicious: number };
@@ -237,7 +237,7 @@ export default function Page() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  async function analyze(event: FormEvent<HTMLFormElement>) {
+  async function analyze(event: SubmitEvent<HTMLFormElement>) {
     event.preventDefault();
     if (!file || loading) return;
     setLoading(true);

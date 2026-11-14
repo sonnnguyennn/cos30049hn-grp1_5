@@ -5,6 +5,7 @@ from contextlib import asynccontextmanager
 from starlette.concurrency import run_in_threadpool
 from .log_store import init_db, read_logs, write_log
 from .upload_limits import MAX_UPLOAD_BYTES, UPLOAD_LIMIT_MESSAGE
+from .analyze_csv import analyze_file
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -88,3 +89,21 @@ async def inspect_file(file: UploadFile) -> FileInfo:
         size_bytes=size,
         content_type=content_type,
     )
+
+
+@app.post("/predict")
+async def predict_file(file: UploadFile):
+    # Read in chunks so an oversized upload is rejected early.
+    content = bytearray()
+    try:
+        while chunk := await file.read(CHUNK_BYTES):
+            content.extend(chunk)
+            if len(content) > MAX_UPLOAD_BYTES:
+                raise HTTPException(413, UPLOAD_LIMIT_MESSAGE)
+    finally:
+        await file.close()
+
+    try:
+        return await run_in_threadpool(analyze_file, content, file.filename or "")
+    except ValueError as error:
+        raise HTTPException(400, str(error))
