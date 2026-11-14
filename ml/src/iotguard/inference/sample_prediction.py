@@ -23,7 +23,7 @@ DEFAULT_MODEL = ML_ROOT / "experiments/xgb_frac1_seed42_lr01/model.json"
 DEFAULT_PACKAGE = ML_ROOT.parent.parent / "g3b_primary_v1"
 
 
-def sample_predictions(package_root, model_path, *, per_class=3):
+def sample_predictions(package_root, model_path, *, per_class=67):
     """Select the first rows of each class without using predictions to choose them."""
     if isinstance(per_class, bool) or not isinstance(per_class, int) or not 1 <= per_class <= 100:
         raise ValueError("Choose between 1 and 100 samples per class")
