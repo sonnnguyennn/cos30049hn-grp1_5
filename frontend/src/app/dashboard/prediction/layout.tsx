@@ -1,6 +1,7 @@
 "use client";
 
 import { inter } from '@/app/ui/fonts';
+import AnalysisSwitch from '@/app/ui/prediction/analysis-switch';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -11,6 +12,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <p className='text-gray-700 text-2xl'>Model service operational</p>
       </div>
       <h2 className={`${inter.className} text-2xl text-gray-500`}>Classify pre-extracted N-BaIoT feature records as benign or malicious.</h2>
+      
+      <div className="page-break h-3"></div>
+      <AnalysisSwitch />
       <div className="page-break h-3"></div>
       
       <div>{children}</div>

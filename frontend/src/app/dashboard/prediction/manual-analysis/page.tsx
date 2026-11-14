@@ -4,7 +4,7 @@ import { inter } from '@/app/ui/fonts';
 export default function Page() {
     return (
         <main>
-            <h1 className={`${inter.className} text-4xl text-black`}>Model Evaluation</h1>
+            <h1 className={`${inter.className} text-2xl text-black`}>Manual</h1>
         </main>
     );
 }

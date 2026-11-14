@@ -22,6 +22,9 @@ The dashboard is at `http://localhost:3000/dashboard`.
 The application currently supports upload inspection and log viewing. Connecting the
 accepted classifier to the web application remains separate integration work.
 
+To test the accepted model directly with real benign and malicious examples, see
+the [sample prediction guide](ml/docs/experiments/sample_prediction.md).
+
 ## ML and contribution guides
 
 - [ML setup and workflow](ml/README.md)
