@@ -1,4 +1,4 @@
-# Upload a CSV and display model results
+# Upload CSV or JSON and display model results
 
 This guide connects `backend/app/analyze_csv.py` to your existing FastAPI backend
 and Next.js website. The analyzer is implemented. The API and React code below
@@ -7,15 +7,15 @@ are examples for you to add; they are not installed in the application yet.
 The flow is:
 
 ```text
-Choose CSV in browser
+Choose CSV or JSON in browser
   -> POST /predict (file upload)
-  -> analyze_csv(csv_text) in Python
+  -> analyze_file(content, filename) in Python
   -> saved XGBoost model predicts each row
   -> API returns JSON
   -> React displays the counts and predictions
 ```
 
-## 1. Understand the CSV
+## 1. Understand the input files
 
 Each data row describes one traffic observation. The first line must contain the
 exact 115 feature names, in the model's order. Every data cell must be a finite
@@ -30,10 +30,58 @@ To generate another example, run from the repository root:
 ml/.venv/bin/python ml/scripts/sample_prediction.py --out ml/data/samples/upload-demo
 ```
 
-Use a new output directory each time. Upload the generated `sample_input.csv`.
-Limits are 10 MiB and 10,000 data rows. Empty cells, blank data rows, wrong
+Use a new output directory each time. Upload the generated `sample_input.csv`
+or `sample_input.json`. Defaults are 100 MiB and 100,000 data rows. Empty cells, blank data rows, wrong
 headers, NaN, infinity and values overflowing float32 are rejected.
 Raw packet captures and Bot-IoT CSVs are not compatible with this N-BaIoT model.
+
+JSON uses the same structure as the generated `sample_input.json`:
+
+```json
+{
+  "feature_order": ["MI_dir_L5_weight", "MI_dir_L5_mean", "...remaining feature names..."],
+  "rows": [[1.0, 2.0, 3.0]]
+}
+```
+
+This is a shortened illustration: your real file needs all 115 names and 115
+numbers in every row. JSON values must be numbers; strings, booleans and null
+are rejected. Both formats return the same analysis structure. Arbitrary JSON
+objects such as a previous prediction report are not model inputs.
+
+### Change the size and row limits
+
+Both the analyzer and the backend read these settings when the process starts:
+
+| Environment variable | Default | Meaning |
+| --- | --- | --- |
+| `IOTGUARD_MAX_UPLOAD_MB` | `100` | Maximum file size in MiB (1 MiB = 1,048,576 bytes). |
+| `IOTGUARD_MAX_ANALYSIS_ROWS` | `100000` | Maximum number of observations in either format. |
+
+For example, allow 250 MiB and 250,000 rows on Linux:
+
+```bash
+export IOTGUARD_MAX_UPLOAD_MB=250
+export IOTGUARD_MAX_ANALYSIS_ROWS=250000
+```
+
+Or in Windows PowerShell:
+
+```powershell
+$env:IOTGUARD_MAX_UPLOAD_MB = "250"
+$env:IOTGUARD_MAX_ANALYSIS_ROWS = "250000"
+```
+
+Then run the script or start/restart Uvicorn in that terminal. Set both variables
+in your hosting service's environment for deployment. Your reverse proxy or
+hosting platform may have its own request-size and timeout settings to raise too.
+The old 10,000-row cap is now 100,000, so it will not block moderately larger files.
+
+The current example reads the file and returns all predictions in memory. A
+100 MiB file can consume substantially more RAM when parsed. For much larger
+uploads or many simultaneous users, use a background analysis job, batch
+processing and paginated results. The example UI below shows only the first
+100 predictions while the counts cover every row.
 
 ## 2. Try the script without a website
 
@@ -42,6 +90,12 @@ the inference dependencies installed in this workspace:
 
 ```bash
 ml/.venv/bin/python backend/app/analyze_csv.py ml/data/samples/primary-prediction/sample_input.csv
+```
+
+The same script automatically detects JSON from the filename:
+
+```bash
+ml/.venv/bin/python backend/app/analyze_csv.py ml/data/samples/primary-prediction/sample_input.json
 ```
 
 To save the JSON instead of printing it:
@@ -57,10 +111,11 @@ local output path instead of `/tmp/csv-results.json`.
 The main function you will reuse is:
 
 ```python
-result = analyze_csv(csv_text)
+result = analyze_file(content, filename)
 ```
 
-It reads and validates the CSV, loads the saved model, predicts labels, and
+Here `content` is file bytes and `filename` ends in `.csv` or `.json`.
+It reads and validates either format, loads the saved model, predicts labels, and
 returns a Python dictionary. It also calculates each feature's minimum, maximum
 and mean. It does not need the full validation dataset. Model and contract paths
 are resolved relative to the repository, so keep `backend/` and `ml/` together.
@@ -111,32 +166,28 @@ on Windows. This local demo is not a replacement for that acceptance evidence.
 Add this import to `backend/app/main.py`:
 
 ```python
-from .analyze_csv import analyze_csv
+from .analyze_csv import analyze_file
 ```
 
 Then append this route. `UploadFile`, `HTTPException`, `MAX_UPLOAD_BYTES`,
-`CHUNK_BYTES` and `run_in_threadpool` already exist in that file:
+`UPLOAD_LIMIT_MESSAGE`, `CHUNK_BYTES` and `run_in_threadpool` already exist
+in that file. `MAX_UPLOAD_BYTES` now comes from the shared `upload_limits.py`:
 
 ```python
 @app.post("/predict")
-async def predict_csv(file: UploadFile):
+async def predict_file(file: UploadFile):
     # Read in chunks so an oversized upload is rejected early.
     content = bytearray()
     try:
         while chunk := await file.read(CHUNK_BYTES):
             content.extend(chunk)
             if len(content) > MAX_UPLOAD_BYTES:
-                raise HTTPException(413, "Choose a CSV no larger than 10 MiB")
+                raise HTTPException(413, UPLOAD_LIMIT_MESSAGE)
     finally:
         await file.close()
 
     try:
-        csv_text = content.decode("utf-8-sig")
-    except UnicodeDecodeError:
-        raise HTTPException(400, "Save the CSV using UTF-8 encoding")
-
-    try:
-        return await run_in_threadpool(analyze_csv, csv_text)
+        return await run_in_threadpool(analyze_file, content, file.filename or "")
     except ValueError as error:
         raise HTTPException(400, str(error))
 ```
@@ -153,7 +204,7 @@ backend/.venv/bin/python -m uvicorn app.main:app --app-dir backend --reload --ho
 ```
 
 Open `http://127.0.0.1:8000/docs`, expand **POST /predict**, click **Try it out**,
-select your CSV and click **Execute**. Get this working before adding the UI.
+select your CSV or JSON and click **Execute**. Get this working before adding the UI.
 Alternatively, from the repository root:
 
 ```bash
@@ -216,12 +267,12 @@ export default function Page() {
 
   return (
     <main className="space-y-4 p-6">
-      <h1 className="text-2xl font-semibold">Analyze traffic CSV</h1>
+      <h1 className="text-2xl font-semibold">Analyze traffic file</h1>
       <form onSubmit={analyze} className="flex gap-4">
         <input
           type="file"
-          accept=".csv"
-          aria-label="Traffic CSV"
+          accept=".csv,.json"
+          aria-label="Traffic CSV or JSON"
           disabled={loading}
           onChange={(event) => {
             setFile(event.target.files?.[0] ?? null);
@@ -240,12 +291,13 @@ export default function Page() {
             {result.summary.rows} rows: {result.summary.benign} benign,
             {" "}{result.summary.malicious} malicious
           </p>
+          {result.summary.rows > 100 && <p>Showing the first 100 predictions.</p>}
           <table>
             <thead>
               <tr><th>Row</th><th>Prediction</th><th>Malicious probability</th></tr>
             </thead>
             <tbody>
-              {result.results.map((row) => (
+              {result.results.slice(0, 100).map((row) => (
                 <tr key={row.row}>
                   <td>{row.row}</td>
                   <td>{row.label}</td>
@@ -278,8 +330,10 @@ origins if you host the website elsewhere.
 | --- | --- |
 | Header must contain exactly 115 model features | Use `sample_input.csv`; remove labels/metadata and preserve column order. |
 | All values must be numeric | Remove text and fill missing values using your agreed preprocessing process. |
-| CSV has no data rows | Include observations after the header. |
-| HTTP 413 | Choose a file below 10 MiB. |
+| CSV has no data rows / JSON rows is empty | Include at least one observation. |
+| JSON feature_order mismatch | Use the full ordered list from `sample_input.json`. |
+| Too many data rows | Raise `IOTGUARD_MAX_ANALYSIS_ROWS` and restart, or split the file. |
+| HTTP 413 | Check `IOTGUARD_MAX_UPLOAD_MB` (default 100 MiB) and your proxy limit. |
 | HTTP 422 | The multipart form field must be named `file`. |
 | Failed to fetch | Confirm the backend URL, running server and allowed CORS origin. |
 | ModuleNotFoundError | Install dependencies using the Python environment that runs Uvicorn. |

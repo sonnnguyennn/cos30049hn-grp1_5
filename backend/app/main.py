@@ -4,6 +4,7 @@ from pydantic import BaseModel, Field
 from contextlib import asynccontextmanager
 from starlette.concurrency import run_in_threadpool
 from .log_store import init_db, read_logs, write_log
+from .upload_limits import MAX_UPLOAD_BYTES, UPLOAD_LIMIT_MESSAGE
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -23,7 +24,6 @@ app.add_middleware(
     allow_headers=["Content-Type"],
 )
 
-MAX_UPLOAD_BYTES = 10 * 1024 * 1024
 CHUNK_BYTES = 64 * 1024
 
 class GoonRequest(BaseModel):
@@ -65,7 +65,7 @@ async def inspect_file(file: UploadFile) -> FileInfo:
             if size > MAX_UPLOAD_BYTES:
                 raise HTTPException(
                     status_code=413,
-                    detail="Choose a file no larger than 10 MiB",
+                    detail=UPLOAD_LIMIT_MESSAGE,
                 )
 
         if size == 0:

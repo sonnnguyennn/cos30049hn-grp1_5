@@ -1,4 +1,4 @@
-"""Analyze a feature CSV with the team's saved model. Also importable by FastAPI."""
+"""Analyze CSV or JSON features with the team's saved model; importable by FastAPI."""
 
 import argparse
 import csv
@@ -12,11 +12,14 @@ from pathlib import Path
 import numpy as np
 import xgboost as xgb
 
+if __package__:
+    from .upload_limits import MAX_ROWS, MAX_UPLOAD_BYTES, UPLOAD_LIMIT_MESSAGE
+else:
+    from upload_limits import MAX_ROWS, MAX_UPLOAD_BYTES, UPLOAD_LIMIT_MESSAGE
+
 REPO_ROOT = Path(__file__).resolve().parents[2]
 FREEZE = REPO_ROOT / "ml/artifacts/manifests/primary_model_freeze_20261105.json"
 MODEL = REPO_ROOT / "ml/experiments/xgb_frac1_seed42_lr01/model.json"
-MAX_CSV_BYTES = 10 * 1024 * 1024
-MAX_ROWS = 10_000
 
 
 def feature_names():
@@ -38,8 +41,7 @@ def load_model():
 
 def analyze_csv(csv_text):
     """CSV text in -> JSON-compatible dictionary out. Does not train or save uploads."""
-    if len(csv_text.encode("utf-8")) > MAX_CSV_BYTES:
-        raise ValueError("CSV must be no larger than 10 MiB")
+    check_text_size(csv_text)
     names = feature_names()
     reader = csv.reader(io.StringIO(csv_text.removeprefix("\ufeff")), strict=True)
     rows = []
@@ -59,14 +61,63 @@ def analyze_csv(csv_text):
         raise ValueError(f"Invalid CSV: {error}") from error
     if not rows:
         raise ValueError("CSV has no data rows")
+    return analyze_rows(rows, names)
 
-    values = np.asarray(rows, dtype=np.float64)
+
+def check_text_size(text):
+    if len(text.encode("utf-8")) > MAX_UPLOAD_BYTES:
+        raise ValueError(UPLOAD_LIMIT_MESSAGE)
+
+
+def analyze_json(json_text):
+    """Accept {\"feature_order\": [115 names], \"rows\": [[115 numbers], ...]}."""
+    check_text_size(json_text)
+    try:
+        data = json.loads(json_text.removeprefix("\ufeff"))
+    except (ValueError, RecursionError) as error:
+        raise ValueError("Invalid JSON file") from error
+    names = feature_names()
+    if not isinstance(data, dict) or data.get("feature_order") != names:
+        raise ValueError("JSON feature_order must contain exactly the 115 model features in order")
+    rows = data.get("rows")
+    if not isinstance(rows, list) or not rows:
+        raise ValueError("JSON rows must be a nonempty array of numeric rows")
+    if len(rows) > MAX_ROWS:
+        raise ValueError(f"JSON must contain at most {MAX_ROWS} data rows")
+    for number, row in enumerate(rows, start=1):
+        if not isinstance(row, list) or len(row) != len(names):
+            raise ValueError(f"Data row {number}: expected an array of 115 values")
+        if any(type(value) not in (int, float) for value in row):
+            raise ValueError(f"Data row {number}: use JSON numbers, not strings, booleans or null")
+    return analyze_rows(rows, names)
+
+
+def analyze_file(content, filename):
+    """Uploaded bytes and filename in -> analysis dictionary out."""
+    if len(content) > MAX_UPLOAD_BYTES:
+        raise ValueError(UPLOAD_LIMIT_MESSAGE)
+    extension = Path(filename).suffix.lower()
+    if extension not in {".csv", ".json"}:
+        raise ValueError("Choose a .csv or .json file")
+    try:
+        text = content.decode("utf-8-sig")
+    except UnicodeDecodeError as error:
+        raise ValueError("Save the CSV or JSON file using UTF-8 encoding") from error
+    return analyze_json(text) if extension == ".json" else analyze_csv(text)
+
+
+def analyze_rows(rows, names):
+    """Shared numeric validation, inference and statistics for both formats."""
+    try:
+        values = np.asarray(rows, dtype=np.float64)
+    except (ValueError, OverflowError) as error:
+        raise ValueError("File contains values too large for numeric analysis") from error
     if not np.isfinite(values).all():
-        raise ValueError("CSV cannot contain NaN or infinity")
+        raise ValueError("File cannot contain NaN or infinity")
     with np.errstate(over="ignore"):
         model_values = values.astype(np.float32)
     if not np.isfinite(model_values).all():
-        raise ValueError("CSV contains values too large for the model's float32 input")
+        raise ValueError("File contains values too large for the model's float32 input")
 
     # This tree model uses raw values: do not apply a scaler.
     probabilities = load_model().predict(xgb.DMatrix(model_values, nthread=2))
@@ -99,15 +150,13 @@ def analyze_csv(csv_text):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("csv_file", type=Path)
+    parser.add_argument("input_file", type=Path, help="UTF-8 .csv or .json file")
     parser.add_argument("--output", type=Path, help="New JSON file; otherwise print JSON")
     args = parser.parse_args()
     try:
-        with args.csv_file.open("rb") as stream:
-            content = stream.read(MAX_CSV_BYTES + 1)
-        if len(content) > MAX_CSV_BYTES:
-            raise ValueError("CSV must be no larger than 10 MiB")
-        result = analyze_csv(content.decode("utf-8-sig"))
+        with args.input_file.open("rb") as stream:
+            content = stream.read(MAX_UPLOAD_BYTES + 1)
+        result = analyze_file(content, args.input_file.name)
         output = json.dumps(result, indent=2, allow_nan=False) + "\n"
         if args.output:
             with args.output.open("x", encoding="utf-8") as stream:

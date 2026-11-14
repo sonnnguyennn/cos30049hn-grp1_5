@@ -20,12 +20,12 @@ Open [interactive API docs](http://127.0.0.1:8000/docs) for the request/response
 schemas. The [frontend](../frontend/README.md) connects to this address by default.
 CORS permits the frontend on `localhost:3000` and `127.0.0.1:3000`.
 
-For a standalone CSV analysis script and steps to connect it to an upload API and
-React page, see the [CSV upload API guide](../docs/csv-upload-api-guide.md).
+For a standalone CSV/JSON analysis script and steps to connect it to an upload API and
+React page, see the [CSV/JSON upload API guide](../docs/csv-upload-api-guide.md).
 
 | Endpoint | Current behavior |
 | --- | --- |
-| `POST /files/inspect` | Inspect a nonempty upload of at most 10 MiB and log the event; does not classify traffic. |
+| `POST /files/inspect` | Inspect a nonempty upload of at most 100 MiB by default (configurable via `IOTGUARD_MAX_UPLOAD_MB`) and log the event; does not classify traffic. |
 | `GET /logs` | Return recent activity, with a `limit` between 1 and 200. |
 | `POST /goon` | Existing demonstration request/response flow used by the dashboard demo route. |
 
