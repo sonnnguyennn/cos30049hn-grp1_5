@@ -7,7 +7,7 @@ import RecentActivities from '../ui/dashboard/recent-activities';
 
 export default function Page() {
     return (
-        <main className='grid gap-y-5'>
+        <main className='flex flex-col gap-5'>
             <h1 className={`${inter.className} text-5xl text-black`}>Dashboard</h1>
             <h2 className={`${inter.className} text-2xl text-gray-500`}>Service Status: [Status]</h2>
             <div className="page-break h-5"></div>

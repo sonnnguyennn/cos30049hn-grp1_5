@@ -62,7 +62,7 @@ export default function DataQuality({currentDataset} : Props) {
                 {
                     data[currentDataset-1].map(({label, description, status}) => {
                         return (
-                            <div className='flex flex-col w-full h-full gap-5'>
+                            <div key={label} className='flex flex-col w-full h-full gap-5'>
                                 <div className='flex w-full h-full items-center gap-5'>
                                     <div className={clsx('flex flex-col w-5 h-5 rounded-full',
                                         {'flex flex-col w-5 h-5 bg-amber-300 rounded-full': status === "pending"},

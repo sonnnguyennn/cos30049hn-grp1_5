@@ -1,11 +1,7 @@
 "use client";
-import { inter } from '@/app/ui/fonts';
+import { redirect } from "next/navigation";
 
 export default function Page() {
-    return (
-        <main>
-            <h1 className={`${inter.className} text-4xl text-black`}>Prediction</h1>
-        </main>
-    );
+    redirect("/dashboard/prediction/manual-analysis");
 }
 

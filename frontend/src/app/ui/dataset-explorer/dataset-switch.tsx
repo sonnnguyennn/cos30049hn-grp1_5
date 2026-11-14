@@ -1,4 +1,7 @@
+'use client';
+
 import clsx from 'clsx';
+import { usePathname } from "next/navigation";
 
 type DatasetSwitchProps = {
     currentDataset: number;
