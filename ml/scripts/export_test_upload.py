@@ -19,7 +19,7 @@ FREEZE_PATH = ML_ROOT / "artifacts/manifests/primary_model_freeze_20261105.json"
 
 
 def export_test_upload(package_root, output, *, rows=1000, seed=42, chunk_size=10000,
-                       include_metadata=False):
+                       include_metadata=False, traffic_class="all"):
     """Sample without replacement, or export all rows when rows is None; no inference."""
     if rows is not None and (type(rows) is not int or rows < 1):
         raise ValueError("rows must be a positive integer, or None for the full TEST split")
@@ -27,6 +27,8 @@ def export_test_upload(package_root, output, *, rows=1000, seed=42, chunk_size=1
         raise ValueError("seed must be a nonnegative integer")
     if type(chunk_size) is not int or not 1 <= chunk_size <= 10000:
         raise ValueError("chunk_size must be between 1 and 10000")
+    if traffic_class not in {"all", "benign", "malicious"}:
+        raise ValueError("traffic_class must be all, benign or malicious")
     output = Path(output)
     if output.exists():
         raise FileExistsError(f"Choose a new output directory: {output}")
@@ -37,12 +39,15 @@ def export_test_upload(package_root, output, *, rows=1000, seed=42, chunk_size=1
         raise ValueError("Package feature order differs from the web classifier")
     # The user's explicit TEST export request authorizes read-only TEST access.
     x, y, metadata = package.load("TEST", allow_test=True)
-    count = len(y) if rows is None else rows
-    if not 1 <= count <= len(y):
-        raise ValueError(f"Choose between 1 and {len(y)} TEST rows")
+    eligible = (np.arange(len(y)) if traffic_class == "all"
+                else np.flatnonzero(y == (0 if traffic_class == "benign" else 1)))
+    count = len(eligible) if rows is None else rows
+    if not 1 <= count <= len(eligible):
+        raise ValueError(f"Choose between 1 and {len(eligible)} TEST rows "
+                         f"for traffic class {traffic_class}")
     indices = (
-        np.arange(len(y)) if count == len(y)
-        else np.sort(np.random.default_rng(seed).choice(len(y), count, replace=False))
+        eligible if count == len(eligible)
+        else np.sort(np.random.default_rng(seed).choice(eligible, count, replace=False))
     )
 
     output.mkdir(parents=True, exist_ok=False)
@@ -95,9 +100,12 @@ def export_test_upload(package_root, output, *, rows=1000, seed=42, chunk_size=1
     report = {
         "partition": "TEST",
         "available_rows": len(y),
+        "eligible_rows": len(eligible),
+        "traffic_class": traffic_class,
         "exported_rows": count,
         "features": len(names),
-        "selection": "all rows" if count == len(y) else "random sample without replacement",
+        "selection": "all eligible rows" if count == len(eligible)
+                     else "random sample without replacement",
         "seed": seed,
         "order": "original TEST index ascending",
         "input_view": "raw",
@@ -124,6 +132,8 @@ def main():
                            help="Number of randomly sampled TEST rows (default: 1000)")
     selection.add_argument("--all", action="store_true", help="Export the entire TEST split")
     parser.add_argument("--seed", type=int, default=42, help="Random seed (default: 42)")
+    parser.add_argument("--traffic-class", choices=("all", "benign", "malicious"), default="all",
+                        help="Filter by dataset ground truth before sampling (default: all)")
     parser.add_argument("--include-metadata", action="store_true",
                         help="Include sample names and ground truth for display in the web results")
     parser.add_argument("--chunk-size", type=int, default=10000,
@@ -135,7 +145,8 @@ def main():
         report = export_test_upload(args.package, args.out,
                                     rows=None if args.all else args.rows,
                                     seed=args.seed, chunk_size=args.chunk_size,
-                                    include_metadata=args.include_metadata)
+                                    include_metadata=args.include_metadata,
+                                    traffic_class=args.traffic_class)
     except (OSError, ValueError, KeyError) as error:
         print(f"TEST export failed: {error}", file=sys.stderr)
         return 1

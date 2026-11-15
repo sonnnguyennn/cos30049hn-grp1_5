@@ -75,4 +75,12 @@ ml/.venv/bin/python ml/scripts/export_test_upload.py --include-metadata --out ml
 Choose a new output directory for every export. Upload either generated
 `test_input.csv` or `test_input.json`. The website shows names, scores, confidence,
 ground truth and per-row matches, plus summary agreement on the supplied labels.
-The table displays the first 100 rows; summary statistics cover the entire upload.
+The predictions table browses the entire upload with 10, 25, 50 or 100 rows per page.
+Search by sample name or row number, filter by prediction and ground-truth match,
+or sort by sample name, malicious score and confidence. Summary statistics always
+cover the entire upload, independently of the table's filters.
+
+The Results panel's **Export** button downloads the complete JSON report as
+`<input-name>-analysis.json`, including summary, model/preprocessor information,
+all predictions, ground truth and feature statistics. Table filters and pagination
+do not limit the exported report.

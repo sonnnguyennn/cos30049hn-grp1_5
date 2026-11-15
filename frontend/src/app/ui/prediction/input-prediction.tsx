@@ -47,7 +47,7 @@ export default function InputPrediction({ error, setResult, setError }: Props) {
         }
     }
     return (
-        <div className='flex min-w-0 flex-1 flex-col bg-[#FFFFFF] w-full h-full rounded-4xl px-10 py-10 gap-5 basis-1/2'>
+        <div className='flex min-w-0 flex-1 flex-col bg-[#FFFFFF] w-full h-full rounded-4xl px-10 py-10 gap-5 basis-1/3'>
             <p className='text-2xl text-black'>Input</p>
             <p className='text-xl text-gray-400'>Upload a CSV or JSON file to analyze traffic records.</p>
 
@@ -94,7 +94,6 @@ export default function InputPrediction({ error, setResult, setError }: Props) {
                     </button>
                 </form>
                 <p className='text-xl text-gray-400'>Accepts pre-extracted N-BaIoT feature records. PCAP files are not supported.</p>
-                <p className="text-sm text-gray-500">Optional sample names and ground-truth labels in the file will appear in the results.</p>
                 {error && <p role="alert">{error}</p>}
             </div>
         </div>

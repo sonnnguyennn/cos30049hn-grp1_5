@@ -48,6 +48,17 @@ The output directory must be new; previous exports are preserved. The default
 sample follows the TEST class distribution approximately; it is not deliberately
 balanced. The manifest reports the actual class counts.
 
+To export **only benign traffic**, filtered by the original dataset labels:
+
+```bash
+ml/.venv/bin/python ml/scripts/export_test_upload.py --traffic-class benign --include-metadata --out ml/data/samples/test-benign
+```
+
+This creates 1,000 benign TEST examples in matching CSV and JSON files, with sample
+names and ground truth for the website. Use `--traffic-class malicious` for attack-only
+examples, or combine the filter with `--all` to export all TEST rows of that class.
+Rows are selected by dataset labels, independently of the model's predictions.
+
 To export the entire TEST split:
 
 ```bash
