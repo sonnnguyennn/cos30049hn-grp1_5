@@ -17,6 +17,17 @@ Choose CSV or JSON in browser
 
 ## 1. Understand the input files
 
+To export real **TEST** rows as upload-ready CSV and JSON, run from the repository root:
+
+```bash
+ml/.venv/bin/python ml/scripts/export_test_upload.py
+```
+
+Upload `ml/data/samples/test-upload/test_input.csv` or `test_input.json`.
+The separate `expected_labels.csv` lets you check the predictions. See the
+[TEST export guide](../ml/docs/experiments/test_upload_export.md) for sample sizes,
+full-split exports and source paths.
+
 Each data row describes one traffic observation. The first line must contain the
 exact 115 feature names, in the model's order. Every data cell must be a finite
 number. Labels, device names and source metadata must not be additional columns.

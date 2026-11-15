@@ -1,5 +1,9 @@
 # Utility scripts
 
+- `export_test_upload.py`: export reproducible TEST samples, or the full TEST split
+  in chunks, as matching web-upload CSV/JSON pairs with separate expected labels.
+  See [TEST upload export](../docs/experiments/test_upload_export.md).
+
 Current primary classifier workflow (see
 `docs/handoffs/A2_CLASSIFIER_EVALUATION.md` and the additive final evaluation protocol):
 
