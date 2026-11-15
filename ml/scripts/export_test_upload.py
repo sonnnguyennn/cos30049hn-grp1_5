@@ -18,7 +18,8 @@ DEFAULT_OUT = ML_ROOT / "data/samples/test-upload"
 FREEZE_PATH = ML_ROOT / "artifacts/manifests/primary_model_freeze_20261105.json"
 
 
-def export_test_upload(package_root, output, *, rows=1000, seed=42, chunk_size=10000):
+def export_test_upload(package_root, output, *, rows=1000, seed=42, chunk_size=10000,
+                       include_metadata=False):
     """Sample without replacement, or export all rows when rows is None; no inference."""
     if rows is not None and (type(rows) is not int or rows < 1):
         raise ValueError("rows must be a positive integer, or None for the full TEST split")
@@ -61,17 +62,26 @@ def export_test_upload(package_root, output, *, rows=1000, seed=42, chunk_size=1
             if not np.isin(y[chosen], [0, 1]).all():
                 raise ValueError("TEST labels must be 0 (benign) or 1 (malicious)")
             stem = "test_input" if count <= chunk_size else f"test_input_{part:03d}"
+            sample_metadata = [
+                {"sample_name": f"N-BaIoT TEST {int(index)}",
+                 "ground_truth": "malicious" if y[index] else "benign"}
+                for index in chosen
+            ]
+            payload = {"feature_order": names, "rows": block.tolist()}
+            if include_metadata:
+                payload["sample_metadata"] = sample_metadata
             json_path = output / f"{stem}.json"
             with json_path.open("x", encoding="utf-8") as json_stream:
-                json.dump({"feature_order": names, "rows": block.tolist()}, json_stream,
-                          allow_nan=False, separators=(",", ":"))
+                json.dump(payload, json_stream, allow_nan=False, separators=(",", ":"))
                 json_stream.write("\n")
             csv_path = output / f"{stem}.csv"
             with csv_path.open("x", newline="", encoding="utf-8") as csv_stream:
                 writer = csv.writer(csv_stream)
-                writer.writerow(names)
-                for row in block:
-                    writer.writerow([format(float(value), ".17g") for value in row])
+                extra_names = ["sample_name", "ground_truth"] if include_metadata else []
+                writer.writerow(names + extra_names)
+                for row, item in zip(block, sample_metadata, strict=True):
+                    extra = [item["sample_name"], item["ground_truth"]] if include_metadata else []
+                    writer.writerow([format(float(value), ".17g") for value in row] + extra)
             for row_number, index in enumerate(chosen, start=1):
                 target = int(y[index])
                 label = "malicious" if target else "benign"
@@ -94,10 +104,12 @@ def export_test_upload(package_root, output, *, rows=1000, seed=42, chunk_size=1
         "class_counts": class_counts,
         "uploads": uploads,
         "expected_labels": "expected_labels.csv",
+        "includes_sample_metadata": include_metadata,
         "label_row_numbering": "1-based data row within each upload; test_index is 0-based",
         "package_verification": verification,
         "note": "Upload either CSV or JSON from each pair; they contain identical rows. "
-                "Labels are separate. No training, scaling or model inference was performed.",
+                "Labels are also saved separately. "
+                "No training, scaling or inference was performed.",
     }
     write_json(output / "export_manifest.json", report)
     return report
@@ -112,6 +124,8 @@ def main():
                            help="Number of randomly sampled TEST rows (default: 1000)")
     selection.add_argument("--all", action="store_true", help="Export the entire TEST split")
     parser.add_argument("--seed", type=int, default=42, help="Random seed (default: 42)")
+    parser.add_argument("--include-metadata", action="store_true",
+                        help="Include sample names and ground truth for display in the web results")
     parser.add_argument("--chunk-size", type=int, default=10000,
                         help="Maximum rows per upload pair, 1..10000 (default: 10000)")
     parser.add_argument("--out", type=Path, default=DEFAULT_OUT,
@@ -120,7 +134,8 @@ def main():
     try:
         report = export_test_upload(args.package, args.out,
                                     rows=None if args.all else args.rows,
-                                    seed=args.seed, chunk_size=args.chunk_size)
+                                    seed=args.seed, chunk_size=args.chunk_size,
+                                    include_metadata=args.include_metadata)
     except (OSError, ValueError, KeyError) as error:
         print(f"TEST export failed: {error}", file=sys.stderr)
         return 1

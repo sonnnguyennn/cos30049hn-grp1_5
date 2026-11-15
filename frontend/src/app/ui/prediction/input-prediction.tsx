@@ -2,21 +2,21 @@
 
 import { useId, useState, type SubmitEvent } from "react";
 import FileUploadOutlinedIcon from "@mui/icons-material/FileUploadOutlined";
+import type { Analysis } from "./types";
 
-type Analysis = {
-    summary: { rows: number; features: number; benign: number; malicious: number };
-    results: { row: number; label: string; probability_malicious: number }[];
-};
+type Props = {
+    error: string;
+    setResult: (result: Analysis | null) => void;
+    setError: (error: string) => void;
+}
 
 const API_URL = (
     process.env.NEXT_PUBLIC_API_URL ?? "http://127.0.0.1:8000"
 ).replace(/\/$/, "");
 
-export default function InputPrediction() {
+export default function InputPrediction({ error, setResult, setError }: Props) {
     const fileInputId = useId();
     const [file, setFile] = useState<File | null>(null);
-    const [result, setResult] = useState<Analysis | null>(null);
-    const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
 
     async function analyze(event: SubmitEvent<HTMLFormElement>) {
@@ -47,7 +47,7 @@ export default function InputPrediction() {
         }
     }
     return (
-        <div className='flex flex-1 flex-col bg-[#FFFFFF] w-full h-full rounded-4xl px-10 py-10 gap-5 basis-1/2'>
+        <div className='flex min-w-0 flex-1 flex-col bg-[#FFFFFF] w-full h-full rounded-4xl px-10 py-10 gap-5 basis-1/2'>
             <p className='text-2xl text-black'>Input</p>
             <p className='text-xl text-gray-400'>Upload a CSV or JSON file to analyze traffic records.</p>
 
@@ -94,30 +94,8 @@ export default function InputPrediction() {
                     </button>
                 </form>
                 <p className='text-xl text-gray-400'>Accepts pre-extracted N-BaIoT feature records. PCAP files are not supported.</p>
+                <p className="text-sm text-gray-500">Optional sample names and ground-truth labels in the file will appear in the results.</p>
                 {error && <p role="alert">{error}</p>}
-                {result && (
-                    <section aria-live="polite" className="overflow-x-auto">
-                        <p>
-                            {result.summary.rows} rows: {result.summary.benign} benign,
-                            {" "}{result.summary.malicious} malicious
-                        </p>
-                        {result.summary.rows > 100 && <p>Showing the first 100 predictions.</p>}
-                        <table>
-                            <thead>
-                                <tr><th>Row</th><th>Prediction</th><th>Malicious probability</th></tr>
-                            </thead>
-                            <tbody>
-                                {result.results.slice(0, 100).map((row) => (
-                                    <tr key={row.row}>
-                                        <td>{row.row}</td>
-                                        <td>{row.label}</td>
-                                        <td>{(row.probability_malicious * 100).toFixed(4)}%</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </section>
-                )}
             </div>
         </div>
     );

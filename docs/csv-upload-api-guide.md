@@ -30,7 +30,10 @@ full-split exports and source paths.
 
 Each data row describes one traffic observation. The first line must contain the
 exact 115 feature names, in the model's order. Every data cell must be a finite
-number. Labels, device names and source metadata must not be additional columns.
+number. Optional `sample_name` and `ground_truth` columns may follow the 115 features;
+these are display/evaluation metadata and never enter the model. Other extra columns
+are rejected. JSON may contain an optional row-aligned `sample_metadata` array.
+See the [detailed response and metadata contract](analysis-response.md).
 Use raw feature values; the script converts them to float32 without scaling.
 
 The sample file generated earlier is ready to use:
@@ -132,6 +135,10 @@ and mean. It does not need the full validation dataset. Model and contract paths
 are resolved relative to the repository, so keep `backend/` and `ml/` together.
 
 The result has this structure (shortened for readability):
+
+The response also includes sample names, scores, confidence, optional ground truth,
+model/preprocessor details and processing timestamps. See the
+[full field reference](analysis-response.md) for `traffic_analysis_v2`.
 
 ```json
 {

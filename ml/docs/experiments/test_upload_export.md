@@ -26,6 +26,17 @@ Match each returned prediction's 1-based `row` to `expected_labels.csv`. For mul
 upload pairs, also match `upload_stem` to the input filename without its extension.
 The `test_index` field is the original 0-based TEST array index.
 
+To show names and ground truth directly in the website, include upload metadata:
+
+```bash
+ml/.venv/bin/python ml/scripts/export_test_upload.py --include-metadata --out ml/data/samples/test-detailed
+```
+
+This appends `sample_name` and `ground_truth` CSV columns and adds the same values
+in a JSON `sample_metadata` array. The backend keeps metadata separate from model
+features and reports per-row matches plus accuracy over the supplied labels.
+See the [analysis response contract](../../../docs/analysis-response.md).
+
 Change the sample size, seed or source location:
 
 ```bash

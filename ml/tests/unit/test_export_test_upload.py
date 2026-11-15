@@ -74,6 +74,27 @@ def test_existing_output_preserved_and_invalid_count_writes_nothing(tmp_path, pa
     assert not destination.exists()
 
 
+def test_metadata_export_matches_separate_ground_truth(tmp_path, package):
+    destination = tmp_path / "export"
+    report = exporter.export_test_upload("unused", destination, rows=7, chunk_size=4,
+                                         include_metadata=True)
+    assert report["includes_sample_metadata"] is True
+    with (destination / "expected_labels.csv").open(newline="") as stream:
+        labels = list(csv.DictReader(stream))
+    for upload in report["uploads"]:
+        data = json.loads((destination / upload["json"]).read_text())
+        with (destination / upload["csv"]).open(newline="") as stream:
+            header, *values = list(csv.reader(stream))
+        assert header == data["feature_order"] + ["sample_name", "ground_truth"]
+        selected = [row for row in labels if row["upload_stem"] == Path(upload["csv"]).stem]
+        for actual, metadata, expected in zip(
+            values, data["sample_metadata"], selected, strict=True
+        ):
+            assert metadata == {"sample_name": f"N-BaIoT TEST {expected['test_index']}",
+                                "ground_truth": expected["actual_label"]}
+            assert actual[-2:] == [metadata["sample_name"], metadata["ground_truth"]]
+
+
 @pytest.mark.parametrize("kwargs", [{"rows": 0}, {"rows": True}, {"seed": -1},
                                    {"chunk_size": 0}, {"chunk_size": 10001}])
 def test_invalid_options_rejected_before_package_access(tmp_path, kwargs):
