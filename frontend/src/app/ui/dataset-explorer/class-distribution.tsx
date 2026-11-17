@@ -51,7 +51,7 @@ export default function ClassDistribution({ currentDataset }: Props) {
                 <XAxis
                     dataKey="device"
                     interval={0}
-                    tick={{ width: 100, maxLines: 1, fontSize: 14 }}
+                    tick={{ width: 100, maxLines: 1, fontSize: 12 }}
                     axisLine={false}
                     tickLine={false}
                 />
@@ -73,11 +73,11 @@ export default function ClassDistribution({ currentDataset }: Props) {
                 />
                 {/* LabelList with a formatter covers the common case ... */}
                 <Bar dataKey="benign" stackId="goon" fill='#BFE5D7' barSize={40} radius={[0, 0, 5, 5]}>
-                    <LabelList dataKey="benign" position="bottom" fontSize={11} offset={-10} fill='#127A63' />
+                    <LabelList dataKey="benign" position="bottom" fontSize={10} offset={-10} fill='#127A63' />
                 </Bar>
                 {/* ... and a `content` component covers everything else. */}
                 <Bar dataKey="malicious" stackId="goon" fill='#E9EEED' radius={[5, 5, 0, 0]}>
-                    <LabelList dataKey="malicious" fontSize={11} position="top" offset={-10} />
+                    <LabelList dataKey="malicious" fontSize={10} position="top" offset={-10} />
                 </Bar>
                 <RechartsDevtools />
             </BarChart>

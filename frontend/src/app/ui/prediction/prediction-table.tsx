@@ -9,7 +9,7 @@ import type { Analysis, TrafficLabel } from './types';
 
 type SortField = 'row' | 'sample_name' | 'score' | 'confidence';
 const emptyFilters = { query: '', prediction: 'all', match: 'all' };
-const menuItemSx = { '&.Mui-selected, &.Mui-selected:hover': { bgcolor: '#DDF1EA' } };
+const menuItemSx = { fontSize: '0.875rem', '&.Mui-selected, &.Mui-selected:hover': { bgcolor: '#DDF1EA' } };
 
 function Label({ label }: { label: TrafficLabel | null }) {
     if (label === null) return <span className="text-gray-400">Not provided</span>;
@@ -62,7 +62,7 @@ export default function PredictionTable({ rows }: { rows: Analysis['results'] })
     return (
         <Box component="section" className="min-w-0 overflow-hidden rounded-3xl border border-[#E3EBE7]" sx={{
             fontFamily: 'inherit', color: '#3D3D3D',
-            '& .MuiTableCell-root, & .MuiInputBase-root, & .MuiFormLabel-root, & .MuiTablePagination-root, & .MuiTablePagination-selectLabel, & .MuiTablePagination-displayedRows': { fontFamily: 'inherit', fontSize: '1rem' },
+            '& .MuiTableCell-root, & .MuiInputBase-root, & .MuiFormLabel-root, & .MuiTablePagination-root, & .MuiTablePagination-selectLabel, & .MuiTablePagination-displayedRows': { fontFamily: 'inherit', fontSize: 'var(--text-base)' },
             '& .MuiOutlinedInput-root': { bgcolor: 'white', borderRadius: '12px' },
             '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline': { borderColor: '#127A63' },
             '& .MuiInputLabel-root.Mui-focused': { color: '#127A63' },
@@ -147,6 +147,7 @@ export default function PredictionTable({ rows }: { rows: Analysis['results'] })
             <TablePagination
                 component="div" count={filtered.length} page={currentPage} rowsPerPage={rowsPerPage}
                 rowsPerPageOptions={[10, 25, 50, 100]} showFirstButton showLastButton
+                slotProps={{ menuItem: { sx: menuItemSx } }}
                 onPageChange={(_, nextPage) => setPage(nextPage)}
                 onRowsPerPageChange={(event) => { setRowsPerPage(Number(event.target.value)); setPage(0); }}
                 sx={{
