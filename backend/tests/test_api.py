@@ -42,3 +42,13 @@ def test_missing_model_rejected(tmp_path, monkeypatch):
     analyzer.load_model.cache_clear()
     with pytest.raises(FileNotFoundError):
         analyzer.load_model()
+
+
+def test_startup_inspection_and_logs_use_isolated_database(tmp_path, monkeypatch):
+    from backend.app import log_store
+    monkeypatch.setattr(log_store, "DB_PATH", tmp_path / "traffic.db")
+    with TestClient(app) as client:
+        assert client.get("/logs").json() == []
+        result = client.post("/files/inspect", files={"file": ("sample.csv", b"a,b\n")})
+        assert result.status_code == 200 and result.json()["size_bytes"] == 4
+        assert client.get("/logs").json()[0]["event"] == "upload_inspected"
