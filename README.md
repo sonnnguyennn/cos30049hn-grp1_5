@@ -2,9 +2,6 @@
 
 IoTGuard is a group project for classifying structured IoT network traffic. N-BaIoT is the primary dataset; Bot-IoT is used for separate supporting experiments. The application combines a machine-learning pipeline, a FastAPI backend, and a React frontend.
 
-Track cleanup tasks, review evidence and local-agent handoffs in the
-[project coordination guide](docs/project-management/README.md).
-
 ## Repository layout
 
 | Path | Purpose |
