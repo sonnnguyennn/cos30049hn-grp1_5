@@ -52,3 +52,15 @@ def test_startup_inspection_and_logs_use_isolated_database(tmp_path, monkeypatch
         result = client.post("/files/inspect", files={"file": ("sample.csv", b"a,b\n")})
         assert result.status_code == 200 and result.json()["size_bytes"] == 4
         assert client.get("/logs").json()[0]["event"] == "upload_inspected"
+
+
+def test_xgboost_prediction_failure_is_service_error(monkeypatch):
+    class BrokenModel:
+        def predict(self, _data):
+            raise analyzer.xgb.core.XGBoostError("internal/private-runtime")
+
+    content = input_file()
+    monkeypatch.setattr(analyzer, "load_model", lambda: BrokenModel())
+    result = TestClient(app).post("/predict", files={"file": ("data.json", content)})
+    assert result.status_code == 503
+    assert "private-runtime" not in result.text

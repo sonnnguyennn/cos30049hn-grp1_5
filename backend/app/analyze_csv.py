@@ -186,7 +186,10 @@ def analyze_rows(rows, names, *, metadata=None, filename=None, input_format=None
     # This tree model uses raw values: do not apply a scaler.
     model = load_model()
     inference_started = perf_counter()
-    probabilities = model.predict(xgb.DMatrix(model_values, nthread=2))
+    try:
+        probabilities = model.predict(xgb.DMatrix(model_values, nthread=2))
+    except xgb.core.XGBoostError as error:
+        raise RuntimeError("Frozen model prediction failed") from error
     inference_ms = round((perf_counter() - inference_started) * 1000, 3)
     if (probabilities.shape != (len(rows),) or not np.isfinite(probabilities).all()
             or np.any((probabilities < 0) | (probabilities > 1))):
