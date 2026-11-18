@@ -26,7 +26,10 @@ MODEL = REPO_ROOT / "ml/experiments/xgb_frac1_seed42_lr01/model.json"
 
 def feature_names():
     """The names and order expected in the CSV header."""
-    return json.loads(FREEZE.read_text(encoding="utf-8"))["input_contract"]["feature_order"]
+    try:
+        return json.loads(FREEZE.read_text(encoding="utf-8"))["input_contract"]["feature_order"]
+    except (OSError, ValueError, KeyError) as error:
+        raise RuntimeError("Frozen input contract unavailable") from error
 
 
 @lru_cache(maxsize=1)
@@ -35,8 +38,11 @@ def load_model():
     freeze = json.loads(FREEZE.read_text(encoding="utf-8"))
     if hashlib.sha256(MODEL.read_bytes()).hexdigest() != freeze["model"]["sha256"]:
         raise RuntimeError("Saved model does not match the team's frozen model")
-    model = xgb.Booster()
-    model.load_model(MODEL)
+    try:
+        model = xgb.Booster()
+        model.load_model(MODEL)
+    except xgb.core.XGBoostError as error:
+        raise RuntimeError("Frozen model could not be loaded") from error
     model.set_param({"nthread": 2})
     return model
 
