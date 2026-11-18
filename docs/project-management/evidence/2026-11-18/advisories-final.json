@@ -1,0 +1,74 @@
+{
+  "advisories": {
+    "1247710": {
+      "findings": [
+        {
+          "version": "2.3.2",
+          "paths": [
+            ".>eslint-config-next>@next/eslint-plugin-next>fast-glob>micromatch>picomatch"
+          ],
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "version": "4.0.7",
+          "paths": [
+            ".>eslint-config-next>eslint-import-resolver-typescript>tinyglobby>fdir>picomatch",
+            ".>eslint-config-next>eslint-import-resolver-typescript>tinyglobby>picomatch",
+            ".>eslint-config-next>eslint-import-resolver-typescript>eslint-plugin-import>eslint-module-utils>@typescript-eslint/parser>@typescript-eslint/typescript-estree>tinyglobby>fdir>picomatch",
+            ".>eslint-config-next>eslint-import-resolver-typescript>eslint-plugin-import>eslint-module-utils>@typescript-eslint/parser>@typescript-eslint/typescript-estree>tinyglobby>picomatch",
+            ".>eslint-config-next>eslint-import-resolver-typescript>eslint-plugin-import>@typescript-eslint/parser>@typescript-eslint/typescript-estree>tinyglobby>fdir>picomatch",
+            ".>eslint-config-next>eslint-import-resolver-typescript>eslint-plugin-import>@typescript-eslint/parser>@typescript-eslint/typescript-estree>tinyglobby>picomatch",
+            ".>eslint-config-next>eslint-plugin-import>eslint-module-utils>@typescript-eslint/parser>@typescript-eslint/typescript-estree>tinyglobby>fdir>picomatch",
+            ".>eslint-config-next>eslint-plugin-import>eslint-module-utils>@typescript-eslint/parser>@typescript-eslint/typescript-estree>tinyglobby>picomatch",
+            ".>eslint-config-next>eslint-plugin-import>eslint-module-utils>eslint-import-resolver-typescript>tinyglobby>fdir>picomatch",
+            ".>eslint-config-next>eslint-plugin-import>eslint-module-utils>eslint-import-resolver-typescript>tinyglobby>picomatch",
+            ".>eslint-config-next>eslint-plugin-import>@typescript-eslint/parser>@typescript-eslint/typescript-estree>tinyglobby>fdir>picomatch",
+            ".>eslint-config-next>eslint-plugin-import>@typescript-eslint/parser>@typescript-eslint/typescript-estree>tinyglobby>picomatch",
+            ".>eslint-config-next>typescript-eslint>@typescript-eslint/eslint-plugin>@typescript-eslint/parser>@typescript-eslint/typescript-estree>tinyglobby>fdir>picomatch",
+            ".>eslint-config-next>typescript-eslint>@typescript-eslint/eslint-plugin>@typescript-eslint/parser>@typescript-eslint/typescript-estree>tinyglobby>picomatch",
+            ".>eslint-config-next>typescript-eslint>@typescript-eslint/eslint-plugin>@typescript-eslint/type-utils>@typescript-eslint/typescript-estree>tinyglobby>fdir>picomatch",
+            ".>eslint-config-next>typescript-eslint>@typescript-eslint/eslint-plugin>@typescript-eslint/type-utils>@typescript-eslint/typescript-estree>tinyglobby>picomatch",
+            ".>eslint-config-next>typescript-eslint>@typescript-eslint/eslint-plugin>@typescript-eslint/type-utils>@typescript-eslint/utils>@typescript-eslint/typescript-estree>tinyglobby>fdir>picomatch",
+            ".>eslint-config-next>typescript-eslint>@typescript-eslint/eslint-plugin>@typescript-eslint/type-utils>@typescript-eslint/utils>@typescript-eslint/typescript-estree>tinyglobby>picomatch",
+            ".>eslint-config-next>typescript-eslint>@typescript-eslint/eslint-plugin>@typescript-eslint/utils>@typescript-eslint/typescript-estree>tinyglobby>fdir>picomatch",
+            ".>eslint-config-next>typescript-eslint>@typescript-eslint/eslint-plugin>@typescript-eslint/utils>@typescript-eslint/typescript-estree>tinyglobby>picomatch",
+            ".>eslint-config-next>typescript-eslint>@typescript-eslint/parser>@typescript-eslint/typescript-estree>tinyglobby>fdir>picomatch",
+            ".>eslint-config-next>typescript-eslint>@typescript-eslint/parser>@typescript-eslint/typescript-estree>tinyglobby>picomatch",
+            ".>eslint-config-next>typescript-eslint>@typescript-eslint/typescript-estree>tinyglobby>fdir>picomatch",
+            ".>eslint-config-next>typescript-eslint>@typescript-eslint/typescript-estree>tinyglobby>picomatch",
+            ".>eslint-config-next>typescript-eslint>@typescript-eslint/utils>@typescript-eslint/typescript-estree>tinyglobby>fdir>picomatch",
+            ".>eslint-config-next>typescript-eslint>@typescript-eslint/utils>@typescript-eslint/typescript-estree>tinyglobby>picomatch"
+          ],
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        }
+      ],
+      "id": 1247710,
+      "title": "picomatch vulnerable to ReDoS through single-branch repeated extglobs",
+      "module_name": "picomatch",
+      "vulnerable_versions": "<=4.0.7",
+      "patched_versions": null,
+      "severity": "high",
+      "cwe": "CWE-1333",
+      "github_advisory_id": "GHSA-fc5q-39xc-vjpf",
+      "url": "https://github.com/advisories/GHSA-fc5q-39xc-vjpf",
+      "patched_versions_unpublished": true
+    }
+  },
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 1,
+      "critical": 0
+    },
+    "dependencies": 121,
+    "devDependencies": 322,
+    "optionalDependencies": 87,
+    "totalDependencies": 480
+  }
+}
