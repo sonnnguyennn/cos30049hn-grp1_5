@@ -39,16 +39,20 @@ export default function Page() {
     const [currentDataset, setDataset] = useState(1);
 
     return (
-        <main className='grid gap-y-2 relative'>
-            <h1 className={`${inter.className} text-4xl text-black`}>Dataset explorer</h1>
-            <h2 className={`${inter.className} text-2xl text-gray-500`}>Summaries of the processed dataset. Raw records are not displayed.</h2>
+        <main className='@container grid min-w-0 grid-cols-1 gap-y-2'>
+            <div className='flex min-w-0 flex-col gap-4 @min-[64rem]:flex-row @min-[64rem]:items-start @min-[64rem]:justify-between'>
+              <div className='min-w-0'>
+                <h1 className={`${inter.className} text-4xl text-black`}>Dataset explorer</h1>
+                <h2 className={`${inter.className} text-2xl text-gray-500`}>Summaries of the processed dataset. Raw records are not displayed.</h2>
+              </div>
+              <DatasetSwitch currentDataset={currentDataset} setDataset={setDataset} />
+            </div>
             <div className="page-break h-3"></div>
 
-            <DatasetSwitch currentDataset={currentDataset} setDataset={setDataset} />
             <RecordsFeaturesClasses currentDataset={currentDataset} data={datasetSummaries} />
 
             <div className="page-break h-1"></div>
-            <div className='flex flex-row gap-5'>
+            <div className='grid min-w-0 grid-cols-1 gap-5 @min-[64rem]:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]'>
               <ClassDistribution currentDataset={currentDataset} />
               <ClassBalance currentDataset={currentDataset} data={datasetSummaries} />
             </div>

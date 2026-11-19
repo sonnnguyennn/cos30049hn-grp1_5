@@ -15,7 +15,7 @@ export default function AnalysisSwitch() {
         <div className='flex w-100 h-15 bg-[#FFFFFF] rounded-4xl p-2'>
             <Link href = "/dashboard/prediction/manual-analysis"
                 className={
-                clsx("rounded-4xl h-full w-50 flex justify-center items-center", 
+                clsx("rounded-4xl h-full w-50 flex cursor-pointer justify-center items-center hover:bg-[#BFE5D7]",
                     {"rounded-4xl h-full w-50 bg-[#ddf1ea]" : pathname === "/dashboard/prediction/manual-analysis"}
                 )}>
                 <p className={clsx(
@@ -26,7 +26,7 @@ export default function AnalysisSwitch() {
 
             <Link href = "/dashboard/prediction/replay-monitoring"
                 className={
-                clsx("rounded-4xl h-full w-50 flex justify-center items-center", 
+                clsx("rounded-4xl h-full w-50 flex cursor-pointer justify-center items-center hover:bg-[#BFE5D7]",
                     {"rounded-4xl h-full w-50 bg-[#ddf1ea]" : pathname === "/dashboard/prediction/replay-monitoring"}
                 )}>
                 <p className={clsx(

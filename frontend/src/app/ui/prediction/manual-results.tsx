@@ -87,7 +87,7 @@ export default function ManualResults({ result }: Props) {
                 <div><dt className="text-xl">Malicious records</dt><dd className="text-2xl font-semibold">{(summary.malicious_rate * 100).toFixed(2)}%</dd></div>
             </dl>
 
-            <button type="button" onClick={exportReport} title="Download full analysis as JSON" className="mt-10 h-15 cursor-pointer rounded-4xl bg-gray-900 text-2xl text-amber-50">Export</button>
+            <button type="button" onClick={exportReport} title="Download full analysis as JSON" className="mt-10 h-15 cursor-pointer rounded-4xl bg-gray-900 text-2xl text-amber-50 hover:bg-gray-800">Export</button>
             <button
                 type="button" onClick={() => setShowDetails(!showDetails)}
                 aria-expanded={showDetails} aria-controls={detailsId}
@@ -113,7 +113,7 @@ export default function ManualResults({ result }: Props) {
                     </section>
                 ))}
                 <details className="rounded-2xl border border-[#E3EBE7] p-5 text-base">
-                    <summary className="cursor-pointer font-medium text-[#127A63]">Technical details</summary>
+                    <summary className="cursor-pointer font-medium text-[#127A63] hover:text-[#0E5F4D]">Technical details</summary>
                     <dl className="mt-4 space-y-3">
                         <div><dt>Model SHA-256</dt><dd className="break-all font-mono text-sm">{summary.model.sha256}</dd></div>
                         <div><dt>Objective</dt><dd>{summary.model.objective}</dd></div>

@@ -18,7 +18,7 @@ export default function MoreLinks() {
                         <Link
                         key={link.Name}
                         href={link.href}
-                        className={`relative w-full h-full rounded-4xl justify-center flex flex-col p-10 ${link.color}`}
+                        className={`relative w-full h-full cursor-pointer rounded-4xl justify-center flex flex-col p-10 hover:bg-[#DDF1EA] ${link.color}`}
                         >
                             <p className="text-black text-xl lg:text-2xl">{link.Name}</p>
                             <p className="text-gray-400 text-sm lg:text-xl">{link.des}</p>

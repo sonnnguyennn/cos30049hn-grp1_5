@@ -1,7 +1,6 @@
 'use client';
 
 import clsx from 'clsx';
-import Link from 'next/link';
 
 const data = [
     [
@@ -56,15 +55,15 @@ type Props = {
 
 export default function DataQuality({currentDataset} : Props) {
     return (
-        <div className='flex flex-col bg-[#FFFFFF] w-full h-auto rounded-4xl px-10 py-10 gap-5'>
+        <div className='flex min-w-0 flex-col bg-[#FFFFFF] w-full h-auto rounded-4xl p-5 sm:p-8 gap-5'>
             <p className='text-2xl text-black'>Data Quality</p>
-            <div className='w-full h-auto p-5 flex justify-evenly gap-5'>
+            <div className='grid min-w-0 grid-cols-1 gap-5 @min-[40rem]:grid-cols-2 @min-[64rem]:grid-cols-4'>
                 {
                     data[currentDataset-1].map(({label, description, status}) => {
                         return (
-                            <div key={label} className='flex flex-col w-full h-full gap-5'>
-                                <div className='flex w-full h-full items-center gap-5'>
-                                    <div className={clsx('flex flex-col w-5 h-5 rounded-full',
+                            <div key={label} className='flex min-w-0 flex-col gap-5'>
+                                <div className='flex items-center gap-3'>
+                                    <div className={clsx('flex shrink-0 flex-col w-5 h-5 rounded-full',
                                         {'flex flex-col w-5 h-5 bg-amber-300 rounded-full': status === "pending"},
                                         {'flex flex-col w-5 h-5 bg-amber-300 rounded-full': status === "caution"},
                                         {'flex flex-col w-5 h-5 bg-green-500 rounded-full': status === "verified"}

@@ -78,7 +78,7 @@ export default function InputPrediction({ error, setResult, setError }: Props) {
 
                         <label
                             htmlFor={fileInputId}
-                            className="flex cursor-pointer w-15 h-15 aspect-square items-center justify-center rounded-2xl bg-[#ddf1ea] text-emerald-700"
+                            className="flex cursor-pointer w-15 h-15 aspect-square items-center justify-center rounded-2xl bg-[#ddf1ea] text-emerald-700 hover:bg-[#BFE5D7]"
                         >
                             <FileUploadOutlinedIcon fontSize="large" />
                         </label>
@@ -88,7 +88,7 @@ export default function InputPrediction({ error, setResult, setError }: Props) {
                     <button
                         type="submit"
                         disabled={!file || loading}
-                        className="rounded-4xl cursor-pointer bg-gray-900 text-amber-50 px-4 py-2 w-full text-2xl"
+                        className="rounded-4xl cursor-pointer bg-gray-900 text-amber-50 px-4 py-2 w-full text-2xl enabled:hover:bg-gray-800"
                     >
                         {loading ? "Analyzing..." : "Run analysis"}
                     </button>

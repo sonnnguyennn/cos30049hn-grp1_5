@@ -28,7 +28,7 @@ export default function NavLinks() {
                         key={link.Name}
                         href={link.href}
                         aria-current={isActive ? 'location' : undefined}
-                        className={clsx("flex rounded-2xl",
+                        className={clsx("flex cursor-pointer rounded-2xl hover:bg-[#BFE5D7]",
                             {"flex w-full rounded-2xl bg-[#ddf1ea]" : isActive}
                         )}
                         >

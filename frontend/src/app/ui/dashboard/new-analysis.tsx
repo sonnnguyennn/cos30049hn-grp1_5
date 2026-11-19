@@ -12,7 +12,7 @@ export default function NewAnal() {
                 <h1 className={`${inter.className} text-xl text-gray-400`}>Run a prediction on a sample, CSV file or JSON record.</h1>
                 <div className="page-break"></div>
 
-                <Link href='/dashboard/prediction' className='flex justify-center items-center rounded-4xl w-45 h-15 text-xl text-white bg-black'>
+                <Link href='/dashboard/prediction' className='flex cursor-pointer justify-center items-center rounded-4xl w-45 h-15 text-xl text-white bg-black hover:bg-gray-800'>
                     Start analysis
                 </Link>
 

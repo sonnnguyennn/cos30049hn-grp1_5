@@ -90,7 +90,7 @@ export default function PredictionTable({ rows }: { rows: Analysis['results'] })
                 </div>
                 <div className="flex flex-wrap items-center justify-between gap-3 text-base">
                     <p role="status" className="text-gray-500">{filtered.length.toLocaleString()} of {rows.length.toLocaleString()} records</p>
-                    <button type="button" onClick={clearFilters} className="cursor-pointer font-medium text-[#127A63] hover:underline">Clear filters</button>
+                    <button type="button" onClick={clearFilters} className="cursor-pointer font-medium text-[#127A63] hover:text-[#0E5F4D] hover:underline">Clear filters</button>
                 </div>
             </div>
 

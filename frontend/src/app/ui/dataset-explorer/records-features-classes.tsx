@@ -20,14 +20,14 @@ export default function RecordsFeaturesClasses({ currentDataset, data }: Props) 
   const summary = data[currentDataset - 1];
 
   return (
-    <div className="flex h-40 w-full justify-evenly gap-5">
+    <div className="grid min-w-0 grid-cols-1 gap-5 @min-[40rem]:grid-cols-3">
       {types.map(({ name, description }) => {
         const value = summary?.find((field) => field.label === name)?.value;
 
         return (
           <div
             key={name}
-            className="flex h-full w-full flex-col justify-center gap-1.5 rounded-4xl bg-white px-10 py-5"
+            className="flex min-w-0 flex-col justify-center gap-1.5 rounded-4xl bg-white px-5 py-5 @min-[64rem]:px-10"
           >
             <p className="text-2xl text-gray-500">{name}</p>
             <p className="text-2xl font-semibold text-gray-900">

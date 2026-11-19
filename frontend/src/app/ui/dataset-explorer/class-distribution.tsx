@@ -1,7 +1,7 @@
 'use client';
 
-import { Bar, BarChart, LabelList, XAxis, Tooltip } from 'recharts';
-import { RechartsDevtools } from '@recharts/devtools';
+import { useState } from 'react';
+import { Bar, BarChart, LabelList, ResponsiveContainer, XAxis, YAxis, Tooltip } from 'recharts';
 
 const data = [
     [
@@ -32,62 +32,85 @@ type Props = {
 };
 
 export default function ClassDistribution({ currentDataset }: Props) {
+    const [isCompact, setIsCompact] = useState(true);
+
     return (
-        <div className='flex flex-col bg-[#FFFFFF] w-full h-auto rounded-4xl px-10 py-10 gap-5 relative'>
-            <p className='text-2xl text-black'>Class distribution by device</p>
-            <div className='bg-[#DDF1EA] w-auto h-10 absolute top-5 right-5 rounded-4xl flex p-3 items-center gap-3'>
-                <div className='bg-[#127A63] h-full aspect-square rounded-full'></div>
-                <p className='text-[#127A63]'>Available</p>
+        <div className='flex min-w-0 flex-col bg-[#FFFFFF] rounded-4xl p-5 sm:p-8 gap-5'>
+            <div className='flex flex-wrap items-start justify-between gap-3'>
+                <p className='text-2xl text-black'>Class distribution by device</p>
+                <div className='bg-[#DDF1EA] h-10 shrink-0 rounded-4xl flex p-3 items-center gap-3'>
+                    <div className='bg-[#127A63] h-3 w-3 rounded-full'></div>
+                    <p className='text-[#127A63]'>Available</p>
+                </div>
             </div>
 
-            <BarChart
-                style={{ width: '100%', maxHeight: '30vh', aspectRatio: 1.618 }}
-                responsive
-                data={data[currentDataset-1]}
-                margin={{ top: 25, right: 30, left: 20, bottom: 25 }}
-            >
-                {/* Axis titles are the `label` prop; tick text goes through `tickFormatter`. */}
+            <div className='h-90 w-full min-w-0'>
+                <ResponsiveContainer width="100%" height="100%" minWidth={0} onResize={(width) => setIsCompact(width < 560)}>
+                    <BarChart
+                        data={data[currentDataset-1]}
+                        layout={isCompact ? 'vertical' : 'horizontal'}
+                        margin={isCompact
+                            ? { top: 8, right: 8, left: 0, bottom: 8 }
+                            : { top: 25, right: 8, left: 30, bottom: 8 }}
+                    >
+                        {/* Horizontal bars leave room for device names in narrow cards. */}
+                        {isCompact ? (
+                            <>
+                                <XAxis type="number" hide />
+                                <YAxis
+                                    type="category"
+                                    dataKey="device"
+                                    width={110}
+                                    interval={0}
+                                    tick={{ width: 100, fontSize: 11 }}
+                                    axisLine={false}
+                                    tickLine={false}
+                                />
+                            </>
+                        ) : <XAxis
+                            dataKey="device"
+                            interval={0}
+                            height={90}
+                            angle={-45}
+                            textAnchor="end"
+                            tick={{ width: 70, fontSize: 11 }}
+                            axisLine={false}
+                            tickLine={false}
+                        />}
+                        <Tooltip
+                            cursor={{ fill: '#F0F8F4' }}
+                            contentStyle={{
+                                backgroundColor: '#FFFFFF',
+                                border: '2px solid #BFE5D7',
+                                borderRadius: 12,
+                                padding: '12px 16px',
+                            }}
+                            labelStyle={{ color: '#164B3E', fontWeight: 600, marginBottom: 6 }}
+                            itemStyle={{ color: '#127A63' }}
+                            formatter={(value, name) => [
+                                Number(value).toLocaleString('en-US'),
+                                name === 'benign' ? 'Benign' : 'Malicious',
+                            ]}
+                        />
+                        <Bar dataKey="benign" stackId="classes" fill='#BFE5D7' maxBarSize={40} radius={isCompact ? [5, 0, 0, 5] : [0, 0, 5, 5]}>
+                            {!isCompact && <LabelList dataKey="benign" position="bottom" fontSize={10} offset={-10} fill='#127A63' />}
+                        </Bar>
+                        <Bar dataKey="malicious" stackId="classes" fill='#E9EEED' maxBarSize={40} radius={isCompact ? [0, 5, 5, 0] : [5, 5, 0, 0]}>
+                            {!isCompact && <LabelList dataKey="malicious" fontSize={10} position="top" offset={-10} />}
+                        </Bar>
+                    </BarChart>
+                </ResponsiveContainer>
+            </div>
 
-                <XAxis
-                    dataKey="device"
-                    interval={0}
-                    tick={{ width: 100, maxLines: 1, fontSize: 12 }}
-                    axisLine={false}
-                    tickLine={false}
-                />
-                <Tooltip
-                    defaultIndex={2}
-                    cursor={{ fill: '#F0F8F4' }}
-                    contentStyle={{
-                        backgroundColor: '#FFFFFF',
-                        border: '2px solid #BFE5D7',
-                        borderRadius: 12,
-                        padding: '12px 16px',
-                    }}
-                    labelStyle={{ color: '#164B3E', fontWeight: 600, marginBottom: 6 }}
-                    itemStyle={{ color: '#127A63' }}
-                    formatter={(value, name) => [
-                        Number(value).toLocaleString('en-US'),
-                        name === 'benign' ? 'Benign' : 'Malicious',
-                    ]}
-                />
-                {/* LabelList with a formatter covers the common case ... */}
-                <Bar dataKey="benign" stackId="goon" fill='#BFE5D7' barSize={40} radius={[0, 0, 5, 5]}>
-                    <LabelList dataKey="benign" position="bottom" fontSize={10} offset={-10} fill='#127A63' />
-                </Bar>
-                {/* ... and a `content` component covers everything else. */}
-                <Bar dataKey="malicious" stackId="goon" fill='#E9EEED' radius={[5, 5, 0, 0]}>
-                    <LabelList dataKey="malicious" fontSize={10} position="top" offset={-10} />
-                </Bar>
-                <RechartsDevtools />
-            </BarChart>
-
-            <div className='flex gap-3 items-center'>
-                <div className='bg-[#BFE5D7] w-5 h-5 rounded-full'></div>
-                <p className='text-gray-500'>Benign</p>
-                <div className='w-5'></div>
-                <div className='bg-[#E9EEED] w-5 h-5 rounded-full'></div>
-                <p className='text-gray-500'>Malicious</p>
+            <div className='mt-auto flex flex-wrap gap-x-6 gap-y-2'>
+                <div className='flex items-center gap-3'>
+                    <div className='bg-[#BFE5D7] w-5 h-5 shrink-0 rounded-full'></div>
+                    <p className='text-gray-500'>Benign</p>
+                </div>
+                <div className='flex items-center gap-3'>
+                    <div className='bg-[#E9EEED] w-5 h-5 shrink-0 rounded-full'></div>
+                    <p className='text-gray-500'>Malicious</p>
+                </div>
             </div>
         </div>
     );

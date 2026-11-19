@@ -57,7 +57,7 @@ export default function LogsPage() {
         type="button"
         onClick={loadLogs}
         disabled={busy}
-        className="rounded bg-blue-600 px-4 py-2 text-white disabled:opacity-50"
+        className="cursor-pointer rounded bg-blue-600 px-4 py-2 text-white enabled:hover:bg-blue-700 disabled:opacity-50"
       >
         {busy ? "Loading..." : "Load / refresh logs"}
       </button>
