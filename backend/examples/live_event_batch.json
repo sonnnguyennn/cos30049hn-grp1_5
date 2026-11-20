@@ -1,0 +1,38 @@
+{
+  "model_sha256": "cb090afa6ad4c3618e20d7c5d635e89aa2d122667ea00835a0acc2f75a4455e6",
+  "events": [
+    {
+      "event_id": "pi4-0000",
+      "pi_seq": 0,
+      "sample_name": "Synthetic all-zero row",
+      "source_row": 0,
+      "label": "benign",
+      "probability_malicious": 3.159569814670249e-06,
+      "ground_truth": null,
+      "predicted_at": "2026-11-21T09:00:01Z",
+      "inference_ms": 1.8
+    },
+    {
+      "event_id": "pi4-0001",
+      "pi_seq": 1,
+      "sample_name": "Synthetic low-score row",
+      "source_row": 1,
+      "label": "benign",
+      "probability_malicious": 0.168740913271904,
+      "ground_truth": null,
+      "predicted_at": "2026-11-21T09:00:02Z",
+      "inference_ms": 1.8
+    },
+    {
+      "event_id": "pi4-0002",
+      "pi_seq": 2,
+      "sample_name": "Synthetic attack-like row",
+      "source_row": 2,
+      "label": "malicious",
+      "probability_malicious": 0.996326744556427,
+      "ground_truth": null,
+      "predicted_at": "2026-11-21T09:00:03Z",
+      "inference_ms": 1.8
+    }
+  ]
+}
