@@ -1,0 +1,20 @@
+{
+  "model_id": "xgb_frac1_seed42_lr01",
+  "model_sha256": "cb090afa6ad4c3618e20d7c5d635e89aa2d122667ea00835a0acc2f75a4455e6",
+  "threshold": 0.5,
+  "probabilities": [
+    3.159569814670249e-06,
+    0.168740913271904,
+    0.996326744556427
+  ],
+  "predictions": [
+    0,
+    0,
+    1
+  ],
+  "labels": [
+    "benign",
+    "benign",
+    "malicious"
+  ]
+}

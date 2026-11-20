@@ -2,12 +2,10 @@
 
 import argparse
 import csv
-import hashlib
 import io
 import json
 import sys
 from datetime import UTC, datetime
-from functools import lru_cache
 from pathlib import Path
 from time import perf_counter
 
@@ -15,13 +13,15 @@ import numpy as np
 import xgboost as xgb
 
 if __package__:
+    from .predictor import FREEZE_PATH, MODEL_PATH, get_predictor
     from .upload_limits import MAX_ROWS, MAX_UPLOAD_BYTES, UPLOAD_LIMIT_MESSAGE
 else:
+    from predictor import FREEZE_PATH, MODEL_PATH, get_predictor
     from upload_limits import MAX_ROWS, MAX_UPLOAD_BYTES, UPLOAD_LIMIT_MESSAGE
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
-FREEZE = REPO_ROOT / "ml/artifacts/manifests/primary_model_freeze_20261105.json"
-MODEL = REPO_ROOT / "ml/experiments/xgb_frac1_seed42_lr01/model.json"
+# Paths and the SHA-256 check now live in predictor.py (shared with the Raspberry Pi).
+FREEZE = FREEZE_PATH
+MODEL = MODEL_PATH
 
 
 def feature_names():
@@ -29,16 +29,9 @@ def feature_names():
     return json.loads(FREEZE.read_text(encoding="utf-8"))["input_contract"]["feature_order"]
 
 
-@lru_cache(maxsize=1)
 def load_model():
-    """Check the saved model once, then reuse it across uploads."""
-    freeze = json.loads(FREEZE.read_text(encoding="utf-8"))
-    if hashlib.sha256(MODEL.read_bytes()).hexdigest() != freeze["model"]["sha256"]:
-        raise RuntimeError("Saved model does not match the team's frozen model")
-    model = xgb.Booster()
-    model.load_model(MODEL)
-    model.set_param({"nthread": 2})
-    return model
+    """The shared predictor's verified booster; the model is checked once, then reused."""
+    return get_predictor().booster
 
 
 def analyze_csv(csv_text, *, filename=None):
