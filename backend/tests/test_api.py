@@ -1,9 +1,11 @@
+import hashlib
 import json
+from types import SimpleNamespace
 
 import pytest
 from fastapi.testclient import TestClient
 
-from backend.app import analyze_csv as analyzer
+from backend.app import analyze_csv as analyzer, predictor
 from backend.app.main import app
 
 
@@ -28,20 +30,41 @@ def test_openapi_declares_success_schema():
     assert {"400", "413", "503"} <= schema.keys()
 
 
-def test_tampered_model_rejected_before_loading(tmp_path, monkeypatch):
-    model = tmp_path / "model.json"
-    model.write_text("{}")
-    monkeypatch.setattr(analyzer, "MODEL", model)
-    analyzer.load_model.cache_clear()
-    with pytest.raises(RuntimeError, match="frozen model"):
-        analyzer.load_model()
+@pytest.mark.parametrize("condition", ["missing", "tampered", "unreadable_by_xgboost"])
+def test_unavailable_shared_model_returns_503(tmp_path, monkeypatch, condition):
+    content = input_file()
+    model_path = tmp_path / "private-model.json"
+    freeze_path = analyzer.FREEZE
+    if condition != "missing":
+        model_path.write_bytes(b"{}")
+    if condition == "unreadable_by_xgboost":
+        # A matching digest lets the corrupt payload reach the actual XGBoost loader.
+        freeze = json.loads(freeze_path.read_text(encoding="utf-8"))
+        freeze["model"]["sha256"] = hashlib.sha256(model_path.read_bytes()).hexdigest()
+        freeze_path = tmp_path / "freeze.json"
+        freeze_path.write_text(json.dumps(freeze), encoding="utf-8")
+
+    original = predictor.FrozenPredictor
+    monkeypatch.setattr(predictor, "FrozenPredictor", lambda: original(model_path, freeze_path))
+    predictor.get_predictor.cache_clear()
+    try:
+        result = TestClient(app).post("/predict", files={"file": ("data.json", content)})
+    finally:
+        predictor.get_predictor.cache_clear()
+    assert result.status_code == 503
+    assert result.json() == {"detail": "The prediction model is unavailable; contact the operator"}
 
 
-def test_missing_model_rejected(tmp_path, monkeypatch):
-    monkeypatch.setattr(analyzer, "MODEL", tmp_path / "absent.json")
-    analyzer.load_model.cache_clear()
-    with pytest.raises(FileNotFoundError):
-        analyzer.load_model()
+def test_invalid_frozen_feature_order_returns_503(tmp_path, monkeypatch):
+    content = input_file()
+    freeze = json.loads(analyzer.FREEZE.read_text(encoding="utf-8"))
+    freeze["input_contract"]["feature_order"] = None
+    path = tmp_path / "freeze.json"
+    path.write_text(json.dumps(freeze), encoding="utf-8")
+    monkeypatch.setattr(analyzer, "FREEZE", path)
+    result = TestClient(app).post("/predict", files={"file": ("data.json", content)})
+    assert result.status_code == 503
+    assert result.json() == {"detail": "The prediction model is unavailable; contact the operator"}
 
 
 def test_startup_inspection_and_logs_use_isolated_database(tmp_path, monkeypatch):
@@ -60,7 +83,8 @@ def test_xgboost_prediction_failure_is_service_error(monkeypatch):
             raise analyzer.xgb.core.XGBoostError("internal/private-runtime")
 
     content = input_file()
-    monkeypatch.setattr(analyzer, "load_model", lambda: BrokenModel())
+    shared = SimpleNamespace(booster=BrokenModel(), feature_order=analyzer.feature_names())
+    monkeypatch.setattr(analyzer, "load_model", lambda: shared)
     result = TestClient(app).post("/predict", files={"file": ("data.json", content)})
     assert result.status_code == 503
     assert "private-runtime" not in result.text

@@ -7,11 +7,23 @@ import os
 import subprocess
 import sys
 from datetime import datetime
+from types import SimpleNamespace
 
 import numpy as np
 import pytest
 
 from backend.app import analyze_csv as analyzer
+
+
+def use_model_stub(monkeypatch, booster):
+    freeze = json.loads(analyzer.FREEZE.read_text(encoding="utf-8"))
+    shared = SimpleNamespace(
+        booster=booster,
+        feature_order=freeze["input_contract"]["feature_order"],
+        model_id=freeze["selected_run_id"],
+        model_sha256=freeze["model"]["sha256"],
+    )
+    monkeypatch.setattr(analyzer, "load_model", lambda: shared)
 
 
 def make_csv(rows, header=None):
@@ -71,7 +83,7 @@ def test_threshold_raw_values_and_statistics(monkeypatch):
             np.testing.assert_array_equal(matrix.get_data().toarray(), [[-2] * 115, [4] * 115])
             return np.asarray([0.49, 0.5])
 
-    monkeypatch.setattr(analyzer, "load_model", lambda: Model())
+    use_model_stub(monkeypatch, Model())
     result = analyzer.analyze_csv("\ufeff" + make_csv([[-2] * 115, [4] * 115]))
     assert {key: result["summary"][key] for key in ("rows", "features", "benign", "malicious")} == {
         "rows": 2, "features": 115, "benign": 1, "malicious": 1,
@@ -168,7 +180,7 @@ def test_metadata_stays_out_of_model_and_partial_ground_truth_metrics(monkeypatc
             np.testing.assert_array_equal(matrix.get_data().toarray(), [[2] * 115] * 3)
             return np.asarray([0.1, 0.9, 0.8])
 
-    monkeypatch.setattr(analyzer, "load_model", lambda: Model())
+    use_model_stub(monkeypatch, Model())
     payload = {
         "feature_order": analyzer.feature_names(), "rows": [[2] * 115] * 3,
         "sample_metadata": [

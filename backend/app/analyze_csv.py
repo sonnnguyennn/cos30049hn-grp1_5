@@ -2,12 +2,10 @@
 
 import argparse
 import csv
-import hashlib
 import io
 import json
 import sys
 from datetime import UTC, datetime
-from functools import lru_cache
 from pathlib import Path
 from time import perf_counter
 
@@ -15,36 +13,41 @@ import numpy as np
 import xgboost as xgb
 
 if __package__:
+    from .predictor import FREEZE_PATH, N_FEATURES, get_predictor
     from .upload_limits import MAX_ROWS, MAX_UPLOAD_BYTES, UPLOAD_LIMIT_MESSAGE
 else:
+    from predictor import FREEZE_PATH, N_FEATURES, get_predictor
     from upload_limits import MAX_ROWS, MAX_UPLOAD_BYTES, UPLOAD_LIMIT_MESSAGE
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
-FREEZE = REPO_ROOT / "ml/artifacts/manifests/primary_model_freeze_20261105.json"
-MODEL = REPO_ROOT / "ml/experiments/xgb_frac1_seed42_lr01/model.json"
+# Paths and the SHA-256 check now live in predictor.py (shared with the Raspberry Pi).
+FREEZE = FREEZE_PATH
 
 
 def feature_names():
     """The names and order expected in the CSV header."""
     try:
-        return json.loads(FREEZE.read_text(encoding="utf-8"))["input_contract"]["feature_order"]
-    except (OSError, ValueError, KeyError) as error:
+        names = json.loads(FREEZE.read_text(encoding="utf-8"))["input_contract"]["feature_order"]
+        if (
+            not isinstance(names, list)
+            or len(names) != N_FEATURES
+            or not all(isinstance(name, str) and name for name in names)
+            or len(set(names)) != N_FEATURES
+        ):
+            raise ValueError("Expected 115 unique feature names")
+        return names
+    except (OSError, ValueError, KeyError, TypeError) as error:
         raise RuntimeError("Frozen input contract unavailable") from error
 
 
-@lru_cache(maxsize=1)
 def load_model():
-    """Check the saved model once, then reuse it across uploads."""
-    freeze = json.loads(FREEZE.read_text(encoding="utf-8"))
-    if hashlib.sha256(MODEL.read_bytes()).hexdigest() != freeze["model"]["sha256"]:
-        raise RuntimeError("Saved model does not match the team's frozen model")
+    """Get the cached, verified predictor for the upload endpoint."""
     try:
-        model = xgb.Booster()
-        model.load_model(MODEL)
-    except xgb.core.XGBoostError as error:
+        predictor = get_predictor()
+    except (ValueError, KeyError, TypeError) as error:
         raise RuntimeError("Frozen model could not be loaded") from error
-    model.set_param({"nthread": 2})
-    return model
+    if not isinstance(predictor.model_id, str) or not predictor.model_id:
+        raise RuntimeError("Frozen model ID unavailable")
+    return predictor
 
 
 def analyze_csv(csv_text, *, filename=None):
@@ -184,10 +187,12 @@ def analyze_rows(rows, names, *, metadata=None, filename=None, input_format=None
         raise ValueError("File contains values too large for the model's float32 input")
 
     # This tree model uses raw values: do not apply a scaler.
-    model = load_model()
+    predictor = load_model()
+    if names != predictor.feature_order:
+        raise RuntimeError("Frozen model feature order differs from the upload contract")
     inference_started = perf_counter()
     try:
-        probabilities = model.predict(xgb.DMatrix(model_values, nthread=2))
+        probabilities = predictor.booster.predict(xgb.DMatrix(model_values, nthread=2))
     except xgb.core.XGBoostError as error:
         raise RuntimeError("Frozen model prediction failed") from error
     inference_ms = round((perf_counter() - inference_started) * 1000, 3)
@@ -195,7 +200,6 @@ def analyze_rows(rows, names, *, metadata=None, filename=None, input_format=None
             or np.any((probabilities < 0) | (probabilities > 1))):
         raise RuntimeError("Model returned invalid probabilities")
     malicious = probabilities >= 0.5
-    freeze = json.loads(FREEZE.read_text(encoding="utf-8"))
     results = []
     for i, probability in enumerate(probabilities):
         score = float(probability)
@@ -216,7 +220,7 @@ def analyze_rows(rows, names, *, metadata=None, filename=None, input_format=None
     correct = sum(row["correct"] for row in labeled)
     response = {
         "schema_version": "traffic_analysis_v2",
-        "model": "xgb_frac1_seed42_lr01",
+        "model": predictor.model_id,
         "threshold": 0.5,
         "runtime": {"numpy": np.__version__, "xgboost": xgb.__version__},
         "summary": {
@@ -236,11 +240,11 @@ def analyze_rows(rows, names, *, metadata=None, filename=None, input_format=None
             "score_type": "probability_malicious",
             "threshold": 0.5,
             "model": {
-                "id": freeze["selected_run_id"],
+                "id": predictor.model_id,
                 "name": "XGBoost binary traffic classifier",
                 "algorithm": "XGBoost",
                 "objective": "binary:logistic",
-                "sha256": freeze["model"]["sha256"],
+                "sha256": predictor.model_sha256,
             },
             "preprocessor": {
                 "name": "Raw N-BaIoT features → float32",

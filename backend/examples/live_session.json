@@ -1,0 +1,9 @@
+{
+  "session_id": "ses_01",
+  "source_name": "raspberry-pi-4",
+  "state": "active",
+  "created_at": "2026-11-21T09:00:00Z",
+  "stopped_at": null,
+  "model_id": "xgb_frac1_seed42_lr01",
+  "model_sha256": "cb090afa6ad4c3618e20d7c5d635e89aa2d122667ea00835a0acc2f75a4455e6"
+}
