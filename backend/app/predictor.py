@@ -71,8 +71,16 @@ class FrozenPredictor:
 
     def validate(self, rows) -> np.ndarray:
         """Return a float32 (n, 115) matrix, or raise ValueError with a clear reason."""
+        nonnumeric_scalars = (bool, np.bool_, str, bytes)
         try:
-            values = np.asarray(rows, dtype=np.float64)
+            # Object dtype preserves scalar types in mixed Python rows.
+            raw = rows if isinstance(rows, np.ndarray) else np.asarray(rows, dtype=object)
+            if raw.dtype.kind in "bSUT" or (
+                raw.dtype.kind == "O"
+                and any(isinstance(value, nonnumeric_scalars) for value in raw.flat)
+            ):
+                raise TypeError("Boolean and string features are not supported")
+            values = np.asarray(raw, dtype=np.float64)
         except (TypeError, ValueError, OverflowError) as error:
             raise ValueError("Rows must contain only numbers") from error
         if values.ndim != 2 or values.shape[0] == 0:

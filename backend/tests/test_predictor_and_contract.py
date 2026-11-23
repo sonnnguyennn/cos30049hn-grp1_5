@@ -54,6 +54,8 @@ def test_prediction_is_deterministic_and_batch_independent():
 @pytest.mark.parametrize("rows", [
     [], [[]], [[0] * 114], [[0] * 116], [[float("nan")] + [0] * 114],
     [[float("inf")] + [0] * 114], [["a"] + [0] * 114], [[1e100] + [0] * 114], 5, None,
+    pytest.param([[True] + [0] * 114], id="boolean_feature"),
+    pytest.param([["12.5"] + [0] * 114], id="numeric_string_feature"),
 ])
 def test_invalid_rows_rejected(rows):
     with pytest.raises(ValueError):
