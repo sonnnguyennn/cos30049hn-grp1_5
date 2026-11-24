@@ -1,0 +1,8 @@
+{
+  "code": "model_mismatch",
+  "message": "Pi model hash differs from the backend's frozen model; events were not stored.",
+  "detail": [
+    "expected cb090afa6ad4c3618e20d7c5d635e89aa2d122667ea00835a0acc2f75a4455e6",
+    "received 0000..."
+  ]
+}

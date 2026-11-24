@@ -4,6 +4,7 @@ from pydantic import BaseModel, Field
 from contextlib import asynccontextmanager
 from starlette.concurrency import run_in_threadpool
 from .log_store import init_db, read_logs, write_log
+from .responses import AnalysisResponse
 from .upload_limits import MAX_UPLOAD_BYTES, UPLOAD_LIMIT_MESSAGE
 from .analyze_csv import analyze_file
 
@@ -91,7 +92,10 @@ async def inspect_file(file: UploadFile) -> FileInfo:
     )
 
 
-@app.post("/predict")
+@app.post("/predict", response_model=AnalysisResponse,
+          responses={400: {"description": "Invalid feature input"},
+                     413: {"description": "Upload exceeds limit"},
+                     503: {"description": "Frozen model unavailable"}})
 async def predict_file(file: UploadFile):
     # Read in chunks so an oversized upload is rejected early.
     content = bytearray()
@@ -107,3 +111,7 @@ async def predict_file(file: UploadFile):
         return await run_in_threadpool(analyze_file, content, file.filename or "")
     except ValueError as error:
         raise HTTPException(400, str(error))
+    except (OSError, RuntimeError) as error:
+        import logging
+        logging.getLogger(__name__).error("Prediction resource unavailable: %s", error)
+        raise HTTPException(503, "The prediction model is unavailable; contact the operator") from error
