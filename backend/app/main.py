@@ -12,6 +12,7 @@ from .log_store import init_db, read_logs, write_log
 from .responses import AnalysisResponse
 from .upload_limits import MAX_UPLOAD_BYTES, UPLOAD_LIMIT_MESSAGE
 from .analyze_csv import analyze_file, load_model
+from .live import register_live
 from .live_schemas import ModelInfo
 from .predictor import N_FEATURES, THRESHOLD
 
@@ -21,6 +22,7 @@ async def lifespan(app: FastAPI):
     yield
 
 app = FastAPI(title="Goon Cave", lifespan=lifespan)
+register_live(app)
 
 app.add_middleware(
     CORSMiddleware,
