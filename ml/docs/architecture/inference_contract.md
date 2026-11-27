@@ -1,34 +1,23 @@
 # Frozen primary classifier inference contract
 
-The accepted N-BaIoT classifier is `xgb_frac1_seed42_lr01`. Its versioned
-`primary_classifier_input_v1` contract and exact model travel together in the
-[A2 technical inference handoff](../handoffs/A2_CLASSIFIER_EVALUATION.md).
-This is a structured-feature inference contract; raw packet extraction, FastAPI,
-React and Raspberry Pi execution are separate integration work.
+The accepted N-BaIoT classifier is `xgb_frac1_seed42_lr01`. The [freeze manifest](../../artifacts/manifests/primary_model_freeze_20261105.json) records the model hash and the `primary_classifier_input_v1` contract.
 
 | Field | Frozen behavior |
-|---|---|
-| Predictors | Exact 115 ordered names from the original G3B feature contract; no labels/device/source IDs in X |
-| Input | Nonempty numeric matrix, n by 115; require the complete ordered name list |
-| View | Original raw values; cast to float32 for the selected tree model |
-| Scaling | Do not scale this model's inputs; package TRAIN scaler retained for lineage and LR only |
-| Invalid input | Reject order/shape mismatch, text, booleans, NaN/infinity and float32 overflow |
-| Labels | benign=0, malicious=1; malicious is the positive class |
-| Decision | malicious when probability >= 0.5, otherwise benign |
-| Outputs | Aligned malicious probabilities, numeric predictions and label strings |
-| Integrity | Require externally published inference manifest SHA-256 and verify every payload |
-| Model SHA-256 | cb090afa6ad4c3618e20d7c5d635e89aa2d122667ea00835a0acc2f75a4455e6 |
-| Runtime verified | Python3.11.15, NumPy2.4.6, XGBoost3.2.0, SciPy1.17.1; no fitting |
-| Errors | CLI exits nonzero with an explicit ValueError; HTTP error schema remains an application task |
+| --- | --- |
+| Features | Exactly 115 numeric predictors in `input_contract.feature_order`. Pass the order alongside inputs to the portable handoff. The shared predictor takes rows in that order. |
+| Input | A nonempty matrix of raw values cast to float32. The TRAIN scaler remains for lineage and LR. |
+| Invalid input | Reject shape or order mismatch when the caller supplies names, text, booleans, NaN, infinity and float32 overflow. |
+| Labels | `benign` = 0 and `malicious` = 1. Malicious is the positive class. |
+| Decision | `malicious` when malicious probability is at least 0.5, otherwise `benign`. |
+| Outputs | Aligned malicious probabilities, numeric predictions and labels. |
+| Model SHA-256 | `cb090afa6ad4c3618e20d7c5d635e89aa2d122667ea00835a0acc2f75a4455e6` |
 
-`iotguard.inference.primary_classifier` is self-contained and copied by the
-handoff builder; recipients do not need IoTGuard installed, raw datasets or a Git
-checkout. Three executable VALIDATION examples include both classes and a real
-false negative. Unit checks cover reordered, malformed, nonnumeric, nonfinite and
-overflowing inputs, manifest substitution and payload tampering. The relocated
-handoff passed inference and checksum verification in an isolated environment.
+## Application and Raspberry Pi
 
-Historical training reported XGBoost3.4.1; 3.2.0 inference independently reproduced
-the full VALIDATION metrics and original source-row errors before the freeze.
-Do not silently substitute a different runtime or model. Changes require a new
-compatibility receipt and must not use final TEST to make selection decisions.
+The [shared predictor](../../../backend/app/predictor.py) loads the model after verifying its SHA-256 against the freeze manifest. Manual Analysis checks the supplied feature names before calling it and returns the [versioned response](../../../docs/analysis-response.md). The [upload guide](../../../docs/csv-upload-api-guide.md) documents HTTP errors. Both the shared predictor and portable handoff expect pre-extracted features.
+
+## Portable A2 handoff
+
+The [A2 handoff](../handoffs/A2_CLASSIFIER_EVALUATION.md) packages `iotguard.inference.primary_classifier`, the model and three VALIDATION examples covering both classes and a recorded false negative. Supply the published inference manifest SHA-256. The loader verifies the manifest and its payloads. The CLI exits with an error for invalid input or a failed integrity check.
+
+Relocated verification used Python 3.11.15, NumPy 2.4.6, XGBoost 3.2.0 and SciPy 1.17.1. Training reported XGBoost 3.4.1. XGBoost 3.2.0 independently reproduced the full VALIDATION metrics and source-row errors before the freeze. Qualify runtime changes on VALIDATION. A different model requires a new freeze under the [final evaluation protocol](../protocols/primary_final_evaluation_v1.md).

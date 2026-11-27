@@ -14,7 +14,7 @@ package manifests).
 | 4.1.2 N-BaIoT TRAIN features | **Pending local step** - the 1.6 GB package is on Duy's PC; run `t41_nbaiot_extract_local.py` there | fig41d (PENDING in `figure_index.csv`) |
 | 4.1.3 duplicates | **Done** - both definitions for Bot-IoT (43 source fields vs 13 predictors) | `t41_duplicates_*.csv`, fig41e |
 | 4.2.1-4.2.4 classifier tables, figures, CMs, final TEST | **Done** - 9 Full runs, 206 checks incl. recomputing every metric from counts | `t42_*.csv`, `t42_tables.md`, fig42a-d |
-| 4.2.5 clustering | **Done from `notebooks/Clustering/results/full`** - confirm with Minh Son that these are the final outputs | `t42_clustering_*.csv`, fig42e |
+| 4.2.5 clustering | **Done from the original `results/full` snapshot** - confirm the final outputs with Minh Son | `t42_clustering_*.csv`, fig42e |
 | 4.3 Bot-IoT Dummy/LR, row vs group | **Done** - every brief check value matched; 71 checks | `t43_*.csv`, fig43a-c |
 | 4.4.1-4.4.3 clean-env handoff check | **Ready to run on Duy's PC** (`t44_handoff_check.ps1`). Pre-check in Claude's Linux venv PASSED - this is not the Conda PASS | `outputs/logs/t44_precheck_claude_workspace/` |
 | 4.4.4 final group package | **Waiting for Minh Son** | checklist below |
@@ -43,7 +43,7 @@ python -m pip install -r analysis/duy_a2/requirements-eda.txt
 | Audit, contracts, manifests | `ml/artifacts/audit/`, `ml/artifacts/contracts/`, `ml/artifacts/manifests/` (in Git) | all |
 | Official classifier comparison | `artifacts/manifests/primary_classifier_comparison_20261105.csv` (SHA-256 `0b9763d6...4d47`, matches the selection record) | 4.2 |
 | Final TEST receipt | `artifacts/manifests/primary_final_test_receipt_20261105.json` | 4.2.4 |
-| Clustering outputs | `notebooks/Clustering/results/full/` (in Git) | 4.2.5 |
+| Clustering outputs | Original `results/full/` snapshot with `g3b_standard_k8_seed42` | 4.2.5 |
 | Bot-IoT package v2 | extracted `Bot_IoT_processed_package_v2.zip` (ZIP SHA-256 `06cc1208...7566`) | 4.1, 4.3 |
 | Bot-IoT Full outputs | extracted `Bot_IoT_Full_experiment_outputs.zip` (ZIP SHA-256 `dc7ca7e5...f377`) | 4.3 |
 | G3B primary package | `g3b_primary_v1.zip`, read in place (manifest SHA-256 `6ab99e86...147b`) | 4.1.2 local step |
@@ -61,13 +61,14 @@ python $S/t41_class_distribution.py --botiot-package $P [--nbaiot-local-receipt 
 python $S/t41_botiot_train_features.py --botiot-package $P
 python $S/t41_duplicates.py --botiot-package $P
 python $S/t42_classifier_figures.py
-python $S/t42_clustering_figures.py [--validation-labels <extract>/VALIDATION_y.npy]
+python $S/t42_clustering_figures.py --results-dir <restored-full-directory> [--validation-labels <extract>/VALIDATION_y.npy]
 python $S/t43_botiot_analysis.py --full-outputs $F --botiot-package $P
 python $S/build_figure_index.py      # run last
 ```
 
-For a verified artifact restore, pass `--results-dir <restored-full-directory>`
-to the clustering command. See the [archive guide](../../../docs/experiment-artifacts.md).
+Use the [archive guide](../../../docs/experiment-artifacts.md) for the clustering command.
+The [checked-in results](../../notebooks/Clustering/Result/full/analysis.md) use `standard_k8_seed42`.
+The report script expects `g3b_standard_k8_seed42` from the original snapshot.
 
 Each script stops with an error if any check fails; on success it prints `N checks PASS` and
 writes `outputs/logs/<script>.json` (inputs with SHA-256, outputs, every check, versions).

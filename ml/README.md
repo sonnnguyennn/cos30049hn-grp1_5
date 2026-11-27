@@ -1,93 +1,30 @@
-# IoTGuard
+# IoTGuard ML
 
-> **Internal engineering documentation â€” not assessment submission content.**
+Internal engineering guide for data contracts, experiments and frozen inference. N-BaIoT is the primary dataset. The [dataset decision](docs/decisions/ADR-001-dataset-role-selection.md) assigns Bot-IoT to separate supporting experiments.
 
-**Topic:** Network Traffic Classification for Anomaly Detection
+## Set up
 
-## Engineering objective
-
-Build a reproducible network-traffic machine-learning pipeline, evaluate supervised and unsupervised approaches, package a final inference pipeline, evaluate edge feasibility on Raspberry Pi 4, and integrate the final Assignment 2 model with a React/FastAPI application.
-
-## Delivery paths
-
-Core path:
-
-`dataset â†’ preprocessing â†’ ML evaluation â†’ packaged inference â†’ FastAPI â†’ React`
-
-Parallel edge path:
-
-`candidate/final models â†’ Raspberry Pi compatibility â†’ latency/resource benchmark`
-
-Raspberry Pi evaluation is important, but it must not block the core Assignment 2 â†’ Assignment 3 path. Raw datasets remain outside this Git repository. ADR-001 assigns N-BaIoT as the primary dataset and Bot-IoT as the secondary dataset for this project-specific workflow.
-
-## Current status
-
-- **G1 complete, independently verified, accepted, and committed:** A0 source/protocol freeze
-  through A7 dataset-role decision; N-BaIoT is primary and Bot-IoT is secondary
-- **G2 complete, independently verified, and committed:** G2A/G2B implement contracts and
-  parsers; G2C reconciles the complete primary corpus and closes the canonical data layer
-- **Primary classifier evaluation complete (2026-11-05):** G3A/G3B remain unchanged.
-  Fourteen received models passed full VALIDATION replay; nine Full candidates entered
-  comparison. A committed validation-only freeze selected XGBoost before one final TEST
-  evaluation. Training/model selection still reject TEST. See the current
-  [A2 classifier handoff](docs/handoffs/A2_CLASSIFIER_EVALUATION.md) for exact evidence,
-  model hash, results, portable inference and remaining teammate responsibilities.
-
-The read-only A1-A4 evidence is stored under `artifacts/manifests/` and `artifacts/audit/`;
-extracted N-BaIoT working files remain outside the repository. A4 measures lexical and
-numeric quality, exact duplicate groups, and record lineage without cleaning data or choosing
-predictors, a split, or dataset roles. Its `PASS` status means the audit completed and
-reconciled; it does not mean the datasets contain no quality or duplicate findings. A5 remains
-diagnostic: it may simulate candidates but cannot adopt a split or predictor set.
-A6 compares both datasets against the fixed project requirements without a numeric score, winner,
-role assignment, final split, or final predictor decision.
-A7 applies a requirements gate without numeric scoring. N-BaIoT passes the P1-P3 primary gates;
-Bot-IoT remains required for at least one bounded secondary ML experiment. ADR-001 does not adopt
-a final split, predictor set, preprocessing policy, clustering algorithm, or model.
-G2A locks version `1.0.0` source, feature-order, label, record, field-role, exact-vector grouping,
-and lexical port contracts. It does not materialize processed data or fit any transform.
-G2B implements strict streaming parsers and bounded smoke verification without splitting,
-deduplicating, fitting, resampling, encoding a final matrix, or training.
-G2C validates all 89 primary logical sources and 7,062,606 observations without materializing a
-processed dataset. Stable row identity, deterministic traversal, record digests, secondary header
-and port behavior, and source immutability are independently verified.
-
-## Quick start
-
-Run these commands from the team repository's `ml/` directory (`Set-Location ml`). Use Python 3.11 or newer. Copy `config/data_paths.example.yaml` to the ignored `config/data_paths.local.yaml` only when machine-local paths differ.
+Use Python 3.11 or later. From `ml/` in PowerShell:
 
 ```powershell
 python -m venv .venv
-.venv\Scripts\Activate.ps1
-python -m pip install -e ".[dev]"
-python scripts/check_environment.py
-python scripts/check_data_paths.py
-pytest
+.\.venv\Scripts\python.exe -m pip install -e ".[dev]"
+.\.venv\Scripts\python.exe scripts/check_environment.py
+.\.venv\Scripts\python.exe scripts/check_data_paths.py
+.\.venv\Scripts\python.exe -m pytest
 ```
 
-Do not place raw datasets, generated model files, secrets, or assessment prose in this repository.
+If dataset paths differ, copy `config/data_paths.example.yaml` to `config/data_paths.local.yaml` and set the local paths. Keep raw data, packages and new large experiment outputs outside Git. See the [tracking policy](../docs/git-tracking.md) and [G3A import handoff](docs/handoffs/G3A_IMPORT_HANDOFF.md) for path overrides and original audit evidence.
 
-Historical audit evidence is preserved byte-for-byte from the source checkout. Some historical records include absolute Windows paths; use CLI arguments, documented environment variables, or ignored local YAML for current paths. The bounded G2/G3 tools also recover historical roots from evidence by default; override their documented root arguments or G3A `--n-baiot-raw-root`, `--n-baiot-extracted-root`, and `--bot-iot-root` arguments when relocating datasets. See `docs/handoffs/G3A_IMPORT_HANDOFF.md` for migration validation and limitations.
+## Use the accepted model
 
-## Optional XGBoost dependency
+The frozen XGBoost model takes 115 ordered N-BaIoT features. See the [inference contract](docs/architecture/inference_contract.md), [real VALIDATION examples](docs/experiments/sample_prediction.md) and [Manual Analysis upload guide](../docs/csv-upload-api-guide.md).
 
-The primary XGBoost script requires XGBoost 2.x or 3.x. Install its optional extra
-from `ml/` with `python -m pip install -e ".[dev,kaggle,xgboost]"`, or use
-`uv sync --locked --extra dev --extra kaggle --extra xgboost`.
-The lockfile resolves compatible releases for the selected Python version.
+## Work with experiment artifacts
 
-Dependency installation alone does not approve an experiment. The current acceptance
-workflow verifies saved membership and replays received models; subset identities are
-corrected in additive sidecars. Updated RF/XGB runners write actual and parent TRAIN
-identities and refuse local fitting. Every new classifier/clustering fit, including
-smoke, must run on Kaggle. Valid historical experiments were reused without retraining.
+- **Primary package.** The independently verified G3B package is `READY_FOR_TEAM`. `TEAM_VERIFIED` requires a recipient run. Follow the [G3B handoff](docs/handoffs/G3B_PRIMARY_DATA_HANDOFF.md) and [build identity repair](docs/handoffs/G3B_BUILD_IDENTITY_FIX.md) for checksums, raw/scaled views and provenance.
+- **Classifiers.** Follow the [primary experiment protocol](docs/protocols/primary_experiments_v1.md) and [Kaggle LR and Dummy guide](docs/experiments/kaggle_lr.md). Run new classifier fits on Kaggle. A2 acceptance replays saved models. The [A2 handoff](docs/handoffs/A2_CLASSIFIER_EVALUATION.md) records the selected model, final results and portable package.
+- **Dependencies.** Install the optional training extras with `python -m pip install -e ".[dev,kaggle,xgboost]"` in the ML environment or `uv sync --locked --extra dev --extra kaggle --extra xgboost`. Keep the frozen inference runtime documented separately.
+- **Evaluation.** Fit on TRAIN and select on VALIDATION. Follow the [final evaluation protocol](docs/protocols/primary_final_evaluation_v1.md) for the frozen-model TEST gate. Retain original package IDs and receipts with archived results.
 
-## G3B primary data package
-
-The full primary package is READY_FOR_TEAM after independent relocated loading; TEAM_VERIFIED awaits a recipient run. See [G3B handoff](docs/handoffs/G3B_PRIMARY_DATA_HANDOFF.md) for exact package paths, checksums, commands and raw/scaled loading. The package is stored outside Git. Classifier acceptance/final evaluation and a portable technical inference handoff are complete; clustering and the final group source/model release remain separate owner deliverables.
-
-The builder now emits the portable loader, README and standalone verifier itself; no post-build patching is needed. Experiment results require package version, manifest checksum and boolean dirty-worktree status, and selection enforces package/protocol/population identity. See [build and identity repair](docs/handoffs/G3B_BUILD_IDENTITY_FIX.md) and the updated [primary protocol](docs/protocols/primary_experiments_v1.md) before baseline comparisons.
-
-## Kaggle LR + Dummy workflow
-
-The [integrated Kaggle guide](docs/experiments/kaggle_lr.md) and [baseline extension protocol](docs/protocols/kaggle_lr_baseline_v1.md) describe the notebooks under `notebooks/kaggle/`. The original Kaggle Full LR/Dummy evidence is preserved in the [LR archive handoff](docs/handoffs/LR_BASELINE_HANDOFF.md) and now has independent model replay in the current A2 handoff. No LR retraining was performed. Exporting a new code ZIP does not reproduce the identity of an old release; keep original snapshots and source revisions with their historical results.
+See the [documentation index](docs/README.md) for protocols and historical handoffs.

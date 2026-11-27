@@ -1,39 +1,18 @@
 # IoTGuard
 
-IoTGuard is a group project for classifying structured IoT network traffic. N-BaIoT is the primary dataset; Bot-IoT is used for separate supporting experiments. The application combines a machine-learning pipeline, a FastAPI backend, and a React frontend.
+IoTGuard classifies IoT traffic from structured features. N-BaIoT is the primary dataset. Bot-IoT supports separate experiments.
 
-## Repository layout
-
-| Path | Purpose |
+| Area | Start here |
 | --- | --- |
-| `ml/` | Dataset audit, data contracts, preprocessing, experiments, evaluation, and the versioned inference package. |
-| `backend/` | FastAPI service and application integration. |
-| `frontend/` | React/Next.js user interface. |
-| `docs/` | Shared repository and integration decisions. Component-specific documentation stays with its component. |
-
-See [repository layout](docs/repository-layout.md) for boundaries and the process for bringing reviewed work into this repository.
+| FastAPI service | [Backend setup](backend/README.md) |
+| Next.js dashboard | [Frontend setup](frontend/README.md) |
+| Model, datasets and experiments | [ML setup](ml/README.md) and [current status](ml/docs/current-status.md) |
+| Cross-component changes | [Repository layout](docs/repository-layout.md) and [Git tracking policy](docs/git-tracking.md) |
 
 ## Run the application
 
-Start the [FastAPI backend](backend/README.md) and [Next.js frontend](frontend/README.md)
-in separate terminals. The frontend connects to `http://127.0.0.1:8000` by default.
-The dashboard is at `http://localhost:3000/dashboard`.
+Start the backend and frontend in separate terminals, then open the [dashboard](http://localhost:3000/dashboard). The frontend calls the backend at `http://127.0.0.1:8000` by default.
 
-The application currently supports upload inspection and log viewing. Connecting the
-accepted classifier to the web application remains separate integration work.
+Manual Analysis uploads a CSV or JSON file to `POST /predict`. It requires 115 pre-extracted features in the frozen order. Use the [upload guide](docs/csv-upload-api-guide.md) for a quick check and the [response contract](docs/analysis-response.md) for report fields.
 
-To test the accepted model directly with real benign and malicious examples, see
-the [sample prediction guide](ml/docs/experiments/sample_prediction.md).
-
-## ML and contribution guides
-
-- [ML setup and workflow](ml/README.md)
-- [Current ML status and historical documentation](ml/docs/README.md)
-- [Accepted classifier and portable inference handoff](ml/docs/handoffs/A2_CLASSIFIER_EVALUATION.md)
-- [Git tracking policy](docs/git-tracking.md)
-- [Optional Git contribution reports](docs/gitinspector.md)
-
-Raw datasets, data packages, environments, and new large experiment payloads belong
-outside Git. Existing tracked experiment arrays remain in place until an independently
-verified artifact migration is complete. Compact contracts, manifests, and evidence
-remain versioned; see the tracking policy before adding or removing generated files.
+The [live monitoring contract](docs/live-api-contract.md) covers Pi event batches and sessions. The [A2 classifier handoff](ml/docs/handoffs/A2_CLASSIFIER_EVALUATION.md) records the accepted model and evaluation.
