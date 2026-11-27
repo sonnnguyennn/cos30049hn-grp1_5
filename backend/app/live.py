@@ -104,6 +104,20 @@ def register_live(app: FastAPI) -> None:
     app.add_exception_handler(LiveError, _live_error_handler)
     app.add_exception_handler(RequestValidationError, _validation_handler)
 
+    original_openapi = app.openapi
+
+    def openapi_with_event_batch():
+        document = original_openapi()
+        schemas = document.setdefault("components", {}).setdefault("schemas", {})
+        if "EventBatch" not in schemas:
+            schema = EventBatch.model_json_schema(ref_template="#/components/schemas/{model}")
+            for name, definition in schema.pop("$defs", {}).items():
+                schemas.setdefault(name, definition)
+            schemas["EventBatch"] = schema
+        return document
+
+    app.openapi = openapi_with_event_batch
+
 
 # --- Session store ----------------------------------------------------------------------
 
@@ -223,9 +237,35 @@ def stop_session(session_id: str):
         return state.session
 
 
-@router.post("/sessions/{session_id}/events", response_model=EventBatchResult,
-             responses={k: _ERRORS[k] for k in (404, 409, 422, 503)}
-             | {413: {"model": ApiError, "description": "payload_too_large"}})
+@router.post(
+    "/sessions/{session_id}/events",
+    response_model=EventBatchResult,
+    responses={k: _ERRORS[k] for k in (404, 409, 422, 503)}
+    | {413: {"model": ApiError, "description": "payload_too_large"}},
+    # Document the body without FastAPI validating it ahead of the 413 check.
+    openapi_extra={
+        "requestBody": {
+            "required": True,
+            "content": {
+                "application/json": {
+                    "schema": {"$ref": "#/components/schemas/EventBatch"},
+                    "example": {
+                        "model_sha256": "cb090afa6ad4c3618e20d7c5d635e89aa2d122667ea00835a0acc2f75a4455e6",
+                        "events": [
+                            {
+                                "event_id": "swagger-demo-0001",
+                                "pi_seq": 0,
+                                "label": "malicious",
+                                "probability_malicious": 0.9,
+                                "predicted_at": "2026-11-25T09:00:00Z",
+                            },
+                        ],
+                    },
+                },
+            },
+        },
+    },
+)
 async def post_events(session_id: str, request: Request):
     """Receive a batch of 1-100 events already predicted on the Pi (see EventBatch).
 

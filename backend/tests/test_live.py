@@ -324,3 +324,30 @@ def test_openapi_lists_the_live_endpoints():
                  "/live/sessions/{session_id}/heartbeat",
                  "/live/sessions/{session_id}/status"]:
         assert path in paths
+
+
+def test_openapi_events_declares_event_batch_and_a_postable_example(client, session_id):
+    response = client.get("/openapi.json")
+    assert response.status_code == 200
+    document = response.json()
+    operation = document["paths"]["/live/sessions/{session_id}/events"]["post"]
+    body = operation["requestBody"]
+    assert body["required"] is True
+    json_body = body["content"]["application/json"]
+    assert json_body["schema"] == {"$ref": "#/components/schemas/EventBatch"}
+
+    schemas = document["components"]["schemas"]
+    batch_schema = schemas["EventBatch"]
+    assert set(batch_schema["required"]) == {"model_sha256", "events"}
+    events = batch_schema["properties"]["events"]
+    assert events["minItems"] == 1
+    assert events["maxItems"] == s.MAX_EVENTS_PER_BATCH
+    assert events["items"] == {"$ref": "#/components/schemas/LiveEvent"}
+    assert "probability_malicious" in schemas["LiveEvent"]["required"]
+
+    example = json_body["example"]
+    assert s.EventBatch.model_validate(example).model_sha256 == SHA
+    post = post_events(client, session_id, example)
+    assert post.status_code == 200
+    assert post.json()["accepted"] == len(example["events"])
+    assert {"404", "409", "413", "422", "503"} <= operation["responses"].keys()
