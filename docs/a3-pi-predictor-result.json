@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "source_commit": "807345b9ec84fd5f5857912e3ec0d458bbbe2817",
+  "run_at": "2026-11-27T22:43:47+07:00",
+  "architecture": "aarch64",
+  "python": "3.11.9",
+  "libraries": {
+    "numpy": "2.4.6",
+    "xgboost": "3.2.0",
+    "scipy": "1.17.1"
+  },
+  "input_sha256": "2a26de0a973f72df6c74376eba4acd720eeaf52dd97bdccc9237d00accf16ed3",
+  "expected_output_sha256": "fa3decd93c2b04cef763304444aaaf9c78380f54ef3c173507de3025371ab9eb",
+  "artifact_sha256": {
+    "predictor.py": "6975f6ac90564c884ac442dfd4bd60e436aaec3be319ef6f045ae80da8d0a6b6",
+    "model.json": "cb090afa6ad4c3618e20d7c5d635e89aa2d122667ea00835a0acc2f75a4455e6",
+    "freeze.json": "c9d3024579bf68c8c1ac85449a93dcbed07feb745ec89e43d2617c28b33a3397"
+  },
+  "validation": {
+    "model_id": "xgb_frac1_seed42_lr01",
+    "model_sha256": "cb090afa6ad4c3618e20d7c5d635e89aa2d122667ea00835a0acc2f75a4455e6",
+    "threshold": 0.5,
+    "probabilities": [
+      0.0008694713469594717,
+      0.9999966621398926,
+      0.36534929275512695
+    ],
+    "predictions": [
+      0,
+      1,
+      0
+    ],
+    "labels": [
+      "benign",
+      "malicious",
+      "benign"
+    ]
+  },
+  "rejected_inputs": {
+    "true": {
+      "error": "ValueError",
+      "message": "Rows must contain only numbers"
+    },
+    "\"12.5\"": {
+      "error": "ValueError",
+      "message": "Rows must contain only numbers"
+    }
+  }
+}
