@@ -1,3 +1,8 @@
+import json
+import logging
+
+import numpy as np
+import xgboost as xgb
 from fastapi import FastAPI, HTTPException, UploadFile, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
@@ -6,7 +11,10 @@ from starlette.concurrency import run_in_threadpool
 from .log_store import init_db, read_logs, write_log
 from .responses import AnalysisResponse
 from .upload_limits import MAX_UPLOAD_BYTES, UPLOAD_LIMIT_MESSAGE
-from .analyze_csv import analyze_file
+from .analyze_csv import analyze_file, load_model
+from .live import register_live
+from .live_schemas import ModelInfo
+from .predictor import N_FEATURES, THRESHOLD
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -14,6 +22,7 @@ async def lifespan(app: FastAPI):
     yield
 
 app = FastAPI(title="Goon Cave", lifespan=lifespan)
+register_live(app)
 
 app.add_middleware(
     CORSMiddleware,
@@ -27,6 +36,7 @@ app.add_middleware(
 )
 
 CHUNK_BYTES = 64 * 1024
+MODEL_UNAVAILABLE_MESSAGE = "The prediction model is unavailable; contact the operator"
 
 class GoonRequest(BaseModel):
     name: str = Field(min_length=1, max_length=67)
@@ -49,6 +59,30 @@ class LogEntry(BaseModel):
 @app.post("/goon")
 def goon(body: GoonRequest) -> GoonResponse:
     return GoonResponse(message=f"Message from server: Currently gooning {body.name} at the moment :3")
+
+
+@app.get("/model/info", response_model=ModelInfo,
+         responses={503: {"description": "Frozen model unavailable"}})
+def get_model_info():
+    """Describe the frozen model the backend serves (name, hash, 115-column input order)."""
+    try:
+        predictor = load_model()
+        objective = json.loads(predictor.booster.save_config())["learner"]["objective"]["name"]
+    except (OSError, RuntimeError, ValueError, KeyError, TypeError) as error:
+        logging.getLogger(__name__).error("Model information unavailable: %s", error)
+        raise HTTPException(503, MODEL_UNAVAILABLE_MESSAGE) from error
+    return ModelInfo(
+        model_id=predictor.model_id,
+        model_sha256=predictor.model_sha256,
+        algorithm="XGBoost",
+        objective=objective,
+        threshold=THRESHOLD,
+        feature_count=N_FEATURES,
+        feature_order=predictor.feature_order,
+        input_view="raw",
+        scaling_applied=False,
+        runtime={"numpy": np.__version__, "xgboost": xgb.__version__},
+    )
 
 
 @app.get("/logs", response_model=list[LogEntry])

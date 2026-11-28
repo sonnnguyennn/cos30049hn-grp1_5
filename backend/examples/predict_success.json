@@ -1,0 +1,782 @@
+{
+  "schema_version": "traffic_analysis_v2",
+  "model": "xgb_frac1_seed42_lr01",
+  "threshold": 0.5,
+  "runtime": {
+    "numpy": "2.5.4",
+    "xgboost": "3.2.0"
+  },
+  "summary": {
+    "rows": 3,
+    "features": 115,
+    "benign": 2,
+    "malicious": 1,
+    "file_name": "predict_input.csv",
+    "input_format": "csv",
+    "file_size_bytes": 4142,
+    "mode": "manual_analysis",
+    "started_at": "2026-11-25T06:19:45.981268+00:00",
+    "inference_ms": 0.867,
+    "malicious_rate": 0.3333333333333333,
+    "mean_score": 0.38835693913271524,
+    "mean_confidence": 0.9425275572382361,
+    "score_type": "probability_malicious",
+    "threshold": 0.5,
+    "model": {
+      "id": "xgb_frac1_seed42_lr01",
+      "name": "XGBoost binary traffic classifier",
+      "algorithm": "XGBoost",
+      "objective": "binary:logistic",
+      "sha256": "cb090afa6ad4c3618e20d7c5d635e89aa2d122667ea00835a0acc2f75a4455e6"
+    },
+    "preprocessor": {
+      "name": "Raw N-BaIoT features → float32",
+      "feature_count": 115,
+      "input_dtype": "float64",
+      "model_dtype": "float32",
+      "scaling_applied": false,
+      "steps": [
+        "Validate feature order",
+        "Validate finite numeric values",
+        "Cast to float32"
+      ]
+    },
+    "ground_truth": {
+      "source": null,
+      "provided_rows": 0,
+      "missing_rows": 3,
+      "correct": 0,
+      "incorrect": 0,
+      "accuracy": null
+    },
+    "completed_at": "2026-11-25T06:19:46.018925+00:00",
+    "processing_ms": 38.303
+  },
+  "results": [
+    {
+      "row": 1,
+      "sample_name": "Synthetic all-zero row",
+      "label": "benign",
+      "score": 3.159569814670249e-06,
+      "probability_malicious": 3.159569814670249e-06,
+      "probability_benign": 0.9999968404301853,
+      "confidence": 0.9999968404301853,
+      "ground_truth": null,
+      "correct": null
+    },
+    {
+      "row": 2,
+      "sample_name": "Synthetic low-score row",
+      "label": "benign",
+      "score": 0.168740913271904,
+      "probability_malicious": 0.168740913271904,
+      "probability_benign": 0.831259086728096,
+      "confidence": 0.831259086728096,
+      "ground_truth": null,
+      "correct": null
+    },
+    {
+      "row": 3,
+      "sample_name": "Synthetic attack-like row",
+      "label": "malicious",
+      "score": 0.996326744556427,
+      "probability_malicious": 0.996326744556427,
+      "probability_benign": 0.003673255443572998,
+      "confidence": 0.996326744556427,
+      "ground_truth": null,
+      "correct": null
+    }
+  ],
+  "feature_stats": [
+    {
+      "feature": "MI_dir_L5_weight",
+      "min": 0.0,
+      "max": 1723.28,
+      "mean": 914.2933333333334
+    },
+    {
+      "feature": "MI_dir_L5_mean",
+      "min": 0.0,
+      "max": 87.3158,
+      "mean": 35.7075
+    },
+    {
+      "feature": "MI_dir_L5_variance",
+      "min": 0.0,
+      "max": 1475.47,
+      "mean": 492.5797766666667
+    },
+    {
+      "feature": "MI_dir_L3_weight",
+      "min": 0.0,
+      "max": 550.343,
+      "mean": 202.5936
+    },
+    {
+      "feature": "MI_dir_L3_mean",
+      "min": 0.0,
+      "max": 1629.94,
+      "mean": 601.5753333333333
+    },
+    {
+      "feature": "MI_dir_L3_variance",
+      "min": 0.0,
+      "max": 673.583,
+      "mean": 437.74466666666666
+    },
+    {
+      "feature": "MI_dir_L1_weight",
+      "min": 0.0,
+      "max": 888.714,
+      "mean": 548.005
+    },
+    {
+      "feature": "MI_dir_L1_mean",
+      "min": 0.0,
+      "max": 2816.79,
+      "mean": 1279.0233333333333
+    },
+    {
+      "feature": "MI_dir_L1_variance",
+      "min": 0.0,
+      "max": 6057.75,
+      "mean": 2232.240333333333
+    },
+    {
+      "feature": "MI_dir_L0.1_weight",
+      "min": 0.0,
+      "max": 3286.43,
+      "mean": 1998.93
+    },
+    {
+      "feature": "MI_dir_L0.1_mean",
+      "min": 0.0,
+      "max": 333.57,
+      "mean": 111.61925000000001
+    },
+    {
+      "feature": "MI_dir_L0.1_variance",
+      "min": 0.0,
+      "max": 2269.09,
+      "mean": 1088.3803333333333
+    },
+    {
+      "feature": "MI_dir_L0.01_weight",
+      "min": 0.0,
+      "max": 277.808,
+      "mean": 116.76856666666667
+    },
+    {
+      "feature": "MI_dir_L0.01_mean",
+      "min": 0.0,
+      "max": 1069.4,
+      "mean": 548.687
+    },
+    {
+      "feature": "MI_dir_L0.01_variance",
+      "min": 0.0,
+      "max": 848.933,
+      "mean": 290.04356666666666
+    },
+    {
+      "feature": "H_L5_weight",
+      "min": 0.0,
+      "max": 3149.91,
+      "mean": 1085.336
+    },
+    {
+      "feature": "H_L5_mean",
+      "min": 0.0,
+      "max": 2368.19,
+      "mean": 907.4
+    },
+    {
+      "feature": "H_L5_variance",
+      "min": 0.0,
+      "max": 307.111,
+      "mean": 186.91099999999997
+    },
+    {
+      "feature": "H_L3_weight",
+      "min": 0.0,
+      "max": 2467.33,
+      "mean": 1319.8500000000001
+    },
+    {
+      "feature": "H_L3_mean",
+      "min": 0.0,
+      "max": 1478.96,
+      "mean": 505.32140000000004
+    },
+    {
+      "feature": "H_L3_variance",
+      "min": 0.0,
+      "max": 451.336,
+      "mean": 195.55566666666667
+    },
+    {
+      "feature": "H_L1_weight",
+      "min": 0.0,
+      "max": 1030.2,
+      "mean": 517.8383333333334
+    },
+    {
+      "feature": "H_L1_mean",
+      "min": 0.0,
+      "max": 1265.81,
+      "mean": 680.1193333333333
+    },
+    {
+      "feature": "H_L1_variance",
+      "min": 0.0,
+      "max": 1737.68,
+      "mean": 792.332
+    },
+    {
+      "feature": "H_L0.1_weight",
+      "min": 0.0,
+      "max": 1902.0,
+      "mean": 771.89
+    },
+    {
+      "feature": "H_L0.1_mean",
+      "min": 0.0,
+      "max": 2489.99,
+      "mean": 979.4003333333334
+    },
+    {
+      "feature": "H_L0.1_variance",
+      "min": 0.0,
+      "max": 1852.09,
+      "mean": 793.9073333333332
+    },
+    {
+      "feature": "H_L0.01_weight",
+      "min": 0.0,
+      "max": 1725.21,
+      "mean": 814.9163333333332
+    },
+    {
+      "feature": "H_L0.01_mean",
+      "min": 0.0,
+      "max": 1984.94,
+      "mean": 769.4663333333333
+    },
+    {
+      "feature": "H_L0.01_variance",
+      "min": 0.0,
+      "max": 776.137,
+      "mean": 328.96599999999995
+    },
+    {
+      "feature": "HH_L5_weight",
+      "min": 0.0,
+      "max": 1223.29,
+      "mean": 747.6166666666667
+    },
+    {
+      "feature": "HH_L5_mean",
+      "min": 0.0,
+      "max": 538.324,
+      "mean": 257.762
+    },
+    {
+      "feature": "HH_L5_std",
+      "min": 0.0,
+      "max": 1399.66,
+      "mean": 751.4483333333334
+    },
+    {
+      "feature": "HH_L5_magnitude",
+      "min": 0.0,
+      "max": 2753.87,
+      "mean": 1267.53
+    },
+    {
+      "feature": "HH_L5_radius",
+      "min": 0.0,
+      "max": 1232.17,
+      "mean": 450.83933333333334
+    },
+    {
+      "feature": "HH_L5_covariance",
+      "min": 0.0,
+      "max": 3778.08,
+      "mean": 2235.4166666666665
+    },
+    {
+      "feature": "HH_L5_pcc",
+      "min": 0.0,
+      "max": 153.689,
+      "mean": 81.91476666666667
+    },
+    {
+      "feature": "HH_L3_weight",
+      "min": 0.0,
+      "max": 1465.8,
+      "mean": 494.12986666666666
+    },
+    {
+      "feature": "HH_L3_mean",
+      "min": 0.0,
+      "max": 1140.01,
+      "mean": 754.75
+    },
+    {
+      "feature": "HH_L3_std",
+      "min": 0.0,
+      "max": 3990.93,
+      "mean": 1962.993333333333
+    },
+    {
+      "feature": "HH_L3_magnitude",
+      "min": 0.0,
+      "max": 806.842,
+      "mean": 468.6113333333333
+    },
+    {
+      "feature": "HH_L3_radius",
+      "min": 0.0,
+      "max": 662.251,
+      "mean": 376.97866666666664
+    },
+    {
+      "feature": "HH_L3_covariance",
+      "min": 0.0,
+      "max": 817.107,
+      "mean": 304.64476666666667
+    },
+    {
+      "feature": "HH_L3_pcc",
+      "min": 0.0,
+      "max": 838.488,
+      "mean": 367.6523333333334
+    },
+    {
+      "feature": "HH_L1_weight",
+      "min": 0.0,
+      "max": 2529.52,
+      "mean": 1091.7806666666668
+    },
+    {
+      "feature": "HH_L1_mean",
+      "min": 0.0,
+      "max": 772.764,
+      "mean": 292.942
+    },
+    {
+      "feature": "HH_L1_std",
+      "min": 0.0,
+      "max": 1646.95,
+      "mean": 623.028
+    },
+    {
+      "feature": "HH_L1_magnitude",
+      "min": 0.0,
+      "max": 4073.31,
+      "mean": 2117.5166666666664
+    },
+    {
+      "feature": "HH_L1_radius",
+      "min": 0.0,
+      "max": 1596.5,
+      "mean": 716.2006666666666
+    },
+    {
+      "feature": "HH_L1_covariance",
+      "min": 0.0,
+      "max": 3162.73,
+      "mean": 1684.8066666666666
+    },
+    {
+      "feature": "HH_L1_pcc",
+      "min": 0.0,
+      "max": 2686.7,
+      "mean": 931.4676666666666
+    },
+    {
+      "feature": "HH_L0.1_weight",
+      "min": 0.0,
+      "max": 1783.16,
+      "mean": 687.5676666666667
+    },
+    {
+      "feature": "HH_L0.1_mean",
+      "min": 0.0,
+      "max": 1049.75,
+      "mean": 448.99966666666666
+    },
+    {
+      "feature": "HH_L0.1_std",
+      "min": 0.0,
+      "max": 763.557,
+      "mean": 508.528
+    },
+    {
+      "feature": "HH_L0.1_magnitude",
+      "min": 0.0,
+      "max": 935.745,
+      "mean": 382.82633333333337
+    },
+    {
+      "feature": "HH_L0.1_radius",
+      "min": 0.0,
+      "max": 5984.85,
+      "mean": 2173.597666666667
+    },
+    {
+      "feature": "HH_L0.1_covariance",
+      "min": 0.0,
+      "max": 163.378,
+      "mean": 95.97733333333333
+    },
+    {
+      "feature": "HH_L0.1_pcc",
+      "min": 0.0,
+      "max": 1997.99,
+      "mean": 1078.2833333333333
+    },
+    {
+      "feature": "HH_L0.01_weight",
+      "min": 0.0,
+      "max": 497.464,
+      "mean": 265.695
+    },
+    {
+      "feature": "HH_L0.01_mean",
+      "min": 0.0,
+      "max": 855.624,
+      "mean": 323.06466666666665
+    },
+    {
+      "feature": "HH_L0.01_std",
+      "min": 0.0,
+      "max": 1159.21,
+      "mean": 643.482
+    },
+    {
+      "feature": "HH_L0.01_magnitude",
+      "min": 0.0,
+      "max": 296.5,
+      "mean": 187.14933333333332
+    },
+    {
+      "feature": "HH_L0.01_radius",
+      "min": 0.0,
+      "max": 1174.7,
+      "mean": 530.2073333333334
+    },
+    {
+      "feature": "HH_L0.01_covariance",
+      "min": 0.0,
+      "max": 954.784,
+      "mean": 402.2183333333333
+    },
+    {
+      "feature": "HH_L0.01_pcc",
+      "min": 0.0,
+      "max": 1146.11,
+      "mean": 553.7586666666666
+    },
+    {
+      "feature": "HH_jit_L5_weight",
+      "min": 0.0,
+      "max": 997.705,
+      "mean": 609.419
+    },
+    {
+      "feature": "HH_jit_L5_mean",
+      "min": 0.0,
+      "max": 1236.43,
+      "mean": 444.4184
+    },
+    {
+      "feature": "HH_jit_L5_variance",
+      "min": 0.0,
+      "max": 1182.53,
+      "mean": 527.7623333333333
+    },
+    {
+      "feature": "HH_jit_L3_weight",
+      "min": 0.0,
+      "max": 2880.1,
+      "mean": 1910.4466666666667
+    },
+    {
+      "feature": "HH_jit_L3_mean",
+      "min": 0.0,
+      "max": 864.743,
+      "mean": 517.9780000000001
+    },
+    {
+      "feature": "HH_jit_L3_variance",
+      "min": 0.0,
+      "max": 3697.53,
+      "mean": 1357.4133333333334
+    },
+    {
+      "feature": "HH_jit_L1_weight",
+      "min": 0.0,
+      "max": 506.897,
+      "mean": 250.50266666666667
+    },
+    {
+      "feature": "HH_jit_L1_mean",
+      "min": 0.0,
+      "max": 1285.85,
+      "mean": 613.8116666666666
+    },
+    {
+      "feature": "HH_jit_L1_variance",
+      "min": 0.0,
+      "max": 2018.82,
+      "mean": 808.216
+    },
+    {
+      "feature": "HH_jit_L0.1_weight",
+      "min": 0.0,
+      "max": 845.992,
+      "mean": 438.0113333333333
+    },
+    {
+      "feature": "HH_jit_L0.1_mean",
+      "min": 0.0,
+      "max": 1748.25,
+      "mean": 830.7716666666666
+    },
+    {
+      "feature": "HH_jit_L0.1_variance",
+      "min": 0.0,
+      "max": 2029.49,
+      "mean": 876.7373333333334
+    },
+    {
+      "feature": "HH_jit_L0.01_weight",
+      "min": 0.0,
+      "max": 1130.05,
+      "mean": 400.90906666666666
+    },
+    {
+      "feature": "HH_jit_L0.01_mean",
+      "min": 0.0,
+      "max": 4452.58,
+      "mean": 1795.5286666666668
+    },
+    {
+      "feature": "HH_jit_L0.01_variance",
+      "min": 0.0,
+      "max": 1670.32,
+      "mean": 800.1456666666667
+    },
+    {
+      "feature": "HpHp_L5_weight",
+      "min": 0.0,
+      "max": 1492.06,
+      "mean": 671.3306666666666
+    },
+    {
+      "feature": "HpHp_L5_mean",
+      "min": 0.0,
+      "max": 1755.03,
+      "mean": 641.297
+    },
+    {
+      "feature": "HpHp_L5_std",
+      "min": 0.0,
+      "max": 1014.91,
+      "mean": 470.75233333333335
+    },
+    {
+      "feature": "HpHp_L5_magnitude",
+      "min": 0.0,
+      "max": 166.37,
+      "mean": 59.47313333333333
+    },
+    {
+      "feature": "HpHp_L5_radius",
+      "min": 0.0,
+      "max": 1370.32,
+      "mean": 763.1546666666667
+    },
+    {
+      "feature": "HpHp_L5_covariance",
+      "min": 0.0,
+      "max": 1413.67,
+      "mean": 736.7126666666667
+    },
+    {
+      "feature": "HpHp_L5_pcc",
+      "min": 0.0,
+      "max": 505.146,
+      "mean": 318.194
+    },
+    {
+      "feature": "HpHp_L3_weight",
+      "min": 0.0,
+      "max": 670.287,
+      "mean": 227.87570000000002
+    },
+    {
+      "feature": "HpHp_L3_mean",
+      "min": 0.0,
+      "max": 2732.6,
+      "mean": 1015.8679999999999
+    },
+    {
+      "feature": "HpHp_L3_std",
+      "min": 0.0,
+      "max": 2087.28,
+      "mean": 910.565
+    },
+    {
+      "feature": "HpHp_L3_magnitude",
+      "min": 0.0,
+      "max": 3804.53,
+      "mean": 1298.3881666666668
+    },
+    {
+      "feature": "HpHp_L3_radius",
+      "min": 0.0,
+      "max": 73.0527,
+      "mean": 39.61573333333333
+    },
+    {
+      "feature": "HpHp_L3_covariance",
+      "min": 0.0,
+      "max": 2890.0,
+      "mean": 1617.8933333333334
+    },
+    {
+      "feature": "HpHp_L3_pcc",
+      "min": 0.0,
+      "max": 2644.29,
+      "mean": 1467.0733333333335
+    },
+    {
+      "feature": "HpHp_L1_weight",
+      "min": 0.0,
+      "max": 3185.4,
+      "mean": 1090.3190333333334
+    },
+    {
+      "feature": "HpHp_L1_mean",
+      "min": 0.0,
+      "max": 2188.62,
+      "mean": 802.197
+    },
+    {
+      "feature": "HpHp_L1_std",
+      "min": 0.0,
+      "max": 881.417,
+      "mean": 409.1366666666667
+    },
+    {
+      "feature": "HpHp_L1_magnitude",
+      "min": 0.0,
+      "max": 2341.91,
+      "mean": 1369.4466666666667
+    },
+    {
+      "feature": "HpHp_L1_radius",
+      "min": 0.0,
+      "max": 2349.97,
+      "mean": 955.4386666666666
+    },
+    {
+      "feature": "HpHp_L1_covariance",
+      "min": 0.0,
+      "max": 609.29,
+      "mean": 298.93533333333335
+    },
+    {
+      "feature": "HpHp_L1_pcc",
+      "min": 0.0,
+      "max": 1437.65,
+      "mean": 549.759
+    },
+    {
+      "feature": "HpHp_L0.1_weight",
+      "min": 0.0,
+      "max": 1239.23,
+      "mean": 692.5203333333334
+    },
+    {
+      "feature": "HpHp_L0.1_mean",
+      "min": 0.0,
+      "max": 1521.76,
+      "mean": 795.4103333333333
+    },
+    {
+      "feature": "HpHp_L0.1_std",
+      "min": 0.0,
+      "max": 330.876,
+      "mean": 144.92466666666667
+    },
+    {
+      "feature": "HpHp_L0.1_magnitude",
+      "min": 0.0,
+      "max": 710.988,
+      "mean": 260.5181
+    },
+    {
+      "feature": "HpHp_L0.1_radius",
+      "min": 0.0,
+      "max": 3774.81,
+      "mean": 1740.5533333333333
+    },
+    {
+      "feature": "HpHp_L0.1_covariance",
+      "min": 0.0,
+      "max": 233.743,
+      "mean": 107.83083333333333
+    },
+    {
+      "feature": "HpHp_L0.1_pcc",
+      "min": 0.0,
+      "max": 1552.5,
+      "mean": 561.9540000000001
+    },
+    {
+      "feature": "HpHp_L0.01_weight",
+      "min": 0.0,
+      "max": 1496.48,
+      "mean": 504.11803333333336
+    },
+    {
+      "feature": "HpHp_L0.01_mean",
+      "min": 0.0,
+      "max": 3504.37,
+      "mean": 1738.0600000000002
+    },
+    {
+      "feature": "HpHp_L0.01_std",
+      "min": 0.0,
+      "max": 1470.34,
+      "mean": 694.6676666666666
+    },
+    {
+      "feature": "HpHp_L0.01_magnitude",
+      "min": 0.0,
+      "max": 1051.63,
+      "mean": 413.50066666666675
+    },
+    {
+      "feature": "HpHp_L0.01_radius",
+      "min": 0.0,
+      "max": 218.406,
+      "mean": 124.37
+    },
+    {
+      "feature": "HpHp_L0.01_covariance",
+      "min": 0.0,
+      "max": 2505.51,
+      "mean": 1167.7496666666668
+    },
+    {
+      "feature": "HpHp_L0.01_pcc",
+      "min": 0.0,
+      "max": 832.167,
+      "mean": 343.44166666666666
+    }
+  ]
+}
