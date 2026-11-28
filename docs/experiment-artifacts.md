@@ -24,7 +24,8 @@ Add `--validation-labels` with the original G3B `VALIDATION_y.npy` to recompute
 the label composition. To keep regenerated figures separate, set
 `DUY_A2_OUTPUT_DIR` to an external directory before running.
 
-The repo's tracked experiment payloads are the default inputs. A later migration
-requires a retrieval location approved by the team and a successful restore and
-report run by a recipient. Cluster assignments and centres support the report.
-Prediction replay additionally requires the saved estimators.
+Use the archive version that contains `g3b_standard_k8_seed42`, which the report script expects. The checked-in [clustering results](../ml/notebooks/Clustering/Result/full/analysis.md) use `standard_k8_seed42` and fail that identity check.
+
+Cluster assignments and centres support figure generation. Prediction replay also
+requires the saved estimators. Before migrating tracked payloads, agree on a retrieval
+location and have a recipient verify the restore and report.

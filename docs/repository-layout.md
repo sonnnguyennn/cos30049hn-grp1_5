@@ -1,21 +1,14 @@
 # Repository layout and contribution boundaries
 
-The top level has four areas: `ml/`, `backend/`, `frontend/`, and `docs/`. Each component keeps its own dependencies, tests, and detailed documentation. `docs/` holds decisions that affect more than one component, especially the inference request/response contract and integration instructions.
+| Path | Responsibility |
+| --- | --- |
+| [`ml/`](../ml/README.md) | Dataset contracts, preprocessing, evaluation, frozen model and portable inference. Keep its relative artifact, configuration and source paths together. |
+| [`backend/`](../backend/README.md) | HTTP validation, shared predictor and API responses. |
+| [`frontend/`](../frontend/README.md) | Dashboard and API client. |
+| [`docs/`](.) | Cross-component contracts and integration guides. |
 
-Reviewed dataset-audit and ML work lives under `ml/`; its relative `artifacts/`,
-`config/`, `data/`, `docs/`, `scripts/`, `src/`, and `tests/` paths stay together.
-The original foundation import is recorded in the ML historical handoffs. New work
-can use a topic branch or isolated worktree based on current `origin/main`; a separate
-source checkout is not required. Each Python component keeps its own `pyproject.toml`.
+Each component maintains its own dependencies, tests and setup guide. Changes to the [frozen model contract](../ml/docs/architecture/inference_contract.md) or [Manual Analysis response](analysis-response.md) need review from the affected components.
 
-Before merging a contribution, compare it with current `origin/main`, review the exact file list and diff, and run checks relevant to the changed component. Bring across only source, documentation, configuration examples, and compact evidence needed for reproducibility. Do not copy a checkout's `.git` directory, virtual environment, raw datasets, extracted data, temporary indexes, secrets, or observation-scale outputs.
+Base new work on current `origin/main`. Review the exact diff and run the checks for the components you changed. Use the [Git tracking policy](git-tracking.md) for datasets, generated payloads, local environments and evidence. The [ML documentation index](../ml/docs/README.md) links to earlier handoffs and current instructions.
 
-The ML package provides an accepted classifier, a versioned input contract, and a
-portable technical inference handoff. See the [inference contract](../ml/docs/architecture/inference_contract.md).
-Connecting that predictor to FastAPI is separate application work. The backend owns
-HTTP validation and responses; the frontend calls that API. A change to the shared
-contract needs coordinated review across the affected components.
-
-Use the [Git tracking policy](git-tracking.md) for payload, lockfile, notebook, and
-historical evidence rules. Use the [ML documentation index](../ml/docs/README.md) to
-distinguish current instructions from records of earlier checkpoints.
+For optional contribution reports, see the [Gitinspector guide](gitinspector.md).

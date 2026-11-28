@@ -1,5 +1,8 @@
 # Export TEST data for web uploads
 
+Use [VALIDATION samples](sample_prediction.md) for routine upload checks. Follow the
+[final evaluation protocol](../protocols/primary_final_evaluation_v1.md) for any final TEST claim.
+
 From the repository root:
 
 ```bash

@@ -49,8 +49,8 @@ $env:IOTGUARD_FREEZE_PATH = "C:\path\to\primary_model_freeze_20261105.json"
 ```
 
 If the model file is missing, unreadable or its SHA-256 differs from the manifest,
-`/predict` and the live endpoints answer **503** ("The prediction model is
-unavailable; contact the operator").
+`/predict`, `/model/info`, session creation, event ingestion and heartbeat requests
+answer **503** ("The prediction model is unavailable; contact the operator").
 
 ### Settings
 
@@ -72,17 +72,17 @@ From the repository root:
 
 ## 2. Install and run the frontend
 
-> Commands below come from `frontend/package.json`; confirm them with Duy.
+Use Node.js 20.9 or later and a compatible pnpm version. From the repository root:
 
 ```powershell
 cd frontend
-npm install
-npm run dev
+pnpm install --frozen-lockfile
+pnpm dev
 ```
 
 Open <http://localhost:3000/dashboard>. The frontend calls the backend at
-`http://127.0.0.1:8000`. To use another address, set `NEXT_PUBLIC_API_URL` before
-`npm run dev`.
+`http://127.0.0.1:8000`. To use another address, set `NEXT_PUBLIC_API_URL` in
+`frontend/.env.local` and restart `pnpm dev`. See the [frontend guide](../frontend/README.md).
 
 ## 3. Manual Analysis: upload a CSV or JSON file
 
@@ -150,7 +150,9 @@ response for `predict_input.csv`); `results` is cut to the third row.
 `results` has one entry per row. A row is `malicious` when
 `probability_malicious >= 0.5`. `feature_stats` has one entry per feature (115).
 `summary` also holds the preprocessing steps, timings and the ground-truth accuracy,
-which is `null` unless the file supplied `ground_truth`.
+which is `null` unless the file supplied `ground_truth`. The versions and timings
+shown above describe the saved example response; they are not measurements of your
+current machine.
 
 **Errors.** `/predict` returns FastAPI's standard `{"detail": "..."}` body.
 
@@ -228,8 +230,11 @@ Rules the Pi must follow:
 - `label` must agree with `probability_malicious` at the 0.5 threshold.
 - `ground_truth` is `null` unless the labelled replay file supplied it. Accuracy is
   calculated only from events that carry ground truth.
-- Sessions are kept in memory. If the server restarts, a 404 on a session means the
-  frontend must start a new one.
+- Sessions and event history are kept in memory. Run one backend worker. A restart
+  or development reload clears the sessions, so the frontend must create a new one.
+- The `127.0.0.1` address in these examples works on the laptop running the server.
+  A Pi needs a backend address reachable from the Pi, such as the laptop's Tailscale
+  address, with the server listening on that interface.
 
 **Live errors** use `{"code": "...", "message": "...", "detail": [...]}`:
 
@@ -241,11 +246,12 @@ Rules the Pi must follow:
 | 413 | `payload_too_large` | More than 100 events in one batch |
 | 422 | `validation_error` | Invalid body, for example a probability outside 0 to 1 |
 
-Live endpoints also return a plain 503 `{"detail": "..."}` if the model cannot be
-loaded.
+Session creation, event ingestion and heartbeat requests also return a plain 503
+`{"detail": "..."}` if the model cannot be loaded.
 
-Setting up and running the Pi side is described in the Raspberry Pi guide:
-**TODO: add link to Minh Sơn's Pi guide.**
+The [verified Pi predictor handoff](https://github.com/sonnnguyennn/cos30049hn-grp1_5/blob/c03e7b733c4de63322709b3a8ffb5390cc067a5e/docs/a3-pi-predictor-handoff.md)
+covers standalone predictions from pre-extracted feature rows. Minh Sơn's Pi sender
+and a full Pi-to-backend-to-UI run still need to be completed and verified.
 
 ## 5. All endpoints
 
@@ -265,7 +271,7 @@ Setting up and running the Pi side is described in the Raspberry Pi guide:
 
 The full request and response schemas are in the interactive documentation at
 <http://127.0.0.1:8000/docs>. Design details for the live API are in
-`docs/live-api-contract.md`.
+the [live API contract](live-api-contract.md).
 
 ## 6. Troubleshooting
 

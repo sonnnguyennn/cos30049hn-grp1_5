@@ -29,8 +29,8 @@ The output directory contains:
 
 Inputs use raw values cast to float32, without scaling. Malicious probability
 at least 0.5 means malicious. These are a few deliberately balanced examples;
-their correctness does not estimate general model performance. The dashboard's
-upload inspection endpoint does not yet classify files.
+their correctness does not estimate general model performance. Both exported input
+files can be used in [Manual Analysis](../../../docs/csv-upload-api-guide.md).
 
 If setting up a new environment on Linux, use:
 
