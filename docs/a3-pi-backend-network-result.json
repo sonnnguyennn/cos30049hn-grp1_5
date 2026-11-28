@@ -1,0 +1,355 @@
+{
+  "status": "PASS",
+  "scope": "approved VALIDATION replay on Pi over Tailscale IPv4",
+  "source_commit": "48a0a5125a108da3a076a78f95b0d5bfeb66266a",
+  "started_at_utc": "2026-11-28T03:24:34.249142+00:00",
+  "finished_at_utc": "2026-11-28T03:24:36.850250+00:00",
+  "pi": {
+    "ip": "100.70.95.30",
+    "machine": "aarch64",
+    "device": "Raspberry Pi 4 Model B Rev 1.4",
+    "kernel": "6.12.47+rpt-rpi-v8",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "python": "3.11.9",
+    "libraries": {
+      "numpy": "2.4.6",
+      "xgboost": "3.2.0",
+      "scipy": "1.17.1"
+    },
+    "command": "\"$HOME/.local/share/iotguard-a3/pi-frozen-handoff-20261123-135517/.venv/bin/python\" -I -B \"$HOME/.local/share/iotguard-a3/pi-backend-network-20261128-102421/check_pi_backend_network.py\" --pi-ip 100.70.95.30 --backend-ip 100.122.150.69 --port 18080 --artifacts \"$HOME/.local/share/iotguard-a3/pi-backend-network-20261128-102421\" --bundle \"$HOME/.local/share/iotguard-a3/pi-frozen-handoff-20261123-135517/bundle\""
+  },
+  "backend": {
+    "ip": "100.122.150.69",
+    "port": 18080,
+    "source_commit": "48a0a5125a108da3a076a78f95b0d5bfeb66266a",
+    "merge_parents": [
+      "807345b9ec84fd5f5857912e3ec0d458bbbe2817",
+      "466494aec5b81d80b368946bca672e78f13cbc26"
+    ],
+    "clean_source_worktree": true,
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.13",
+    "libraries": {
+      "fastapi": "0.163.1",
+      "uvicorn": "0.54.0",
+      "pydantic": "2.14.3",
+      "numpy": "2.4.6",
+      "xgboost": "3.2.0"
+    },
+    "workers": 1,
+    "cwd": "worktree root",
+    "python_executable": "E:/Document/iotguard-cos30049hn-grp1-5/backend/.venv/Scripts/python.exe",
+    "argv_after_python": [
+      "-B",
+      "-m",
+      "uvicorn",
+      "backend.app.main:app",
+      "--host",
+      "100.122.150.69",
+      "--port",
+      "18080",
+      "--workers",
+      "1",
+      "--no-proxy-headers"
+    ],
+    "model_env_relative_to_worktree": {
+      "IOTGUARD_MODEL_PATH": "ml/experiments/xgb_frac1_seed42_lr01/model.json",
+      "IOTGUARD_FREEZE_PATH": "ml/artifacts/manifests/primary_model_freeze_20261105.json"
+    },
+    "started_at_utc": "2026-11-28T03:24:31.099102+00:00",
+    "port_closed_after_run": true,
+    "pi_access_log_requests_matched": 15
+  },
+  "script_sha256": "b5559e8964a8ff7f27787d4c8b88b5e8a69efcd6755739ce07c9fe74ddfcdb4f",
+  "artifact_sha256": {
+    "predictor.py": "6975f6ac90564c884ac442dfd4bd60e436aaec3be319ef6f045ae80da8d0a6b6",
+    "model.json": "cb090afa6ad4c3618e20d7c5d635e89aa2d122667ea00835a0acc2f75a4455e6",
+    "freeze.json": "c9d3024579bf68c8c1ac85449a93dcbed07feb745ec89e43d2617c28b33a3397"
+  },
+  "bundle_manifest_sha256": "9fac1acde3f696bb765937c997977b3d7b1e1c2fa6cd60626e910037ea1fe132",
+  "fixture_sha256": {
+    "example_input.json": "2a26de0a973f72df6c74376eba4acd720eeaf52dd97bdccc9237d00accf16ed3",
+    "example_expected.json": "fa3decd93c2b04cef763304444aaaf9c78380f54ef3c173507de3025371ab9eb",
+    "example_lineage.json": "b3982f6cfd82b2d35462b78cd266159a3d6fe1c8ee298b6554e8617ff40af26f"
+  },
+  "pi_prediction": {
+    "model_id": "xgb_frac1_seed42_lr01",
+    "model_sha256": "cb090afa6ad4c3618e20d7c5d635e89aa2d122667ea00835a0acc2f75a4455e6",
+    "threshold": 0.5,
+    "probabilities": [
+      0.0008694713469594717,
+      0.9999966621398926,
+      0.36534929275512695
+    ],
+    "predictions": [
+      0,
+      1,
+      0
+    ],
+    "labels": [
+      "benign",
+      "malicious",
+      "benign"
+    ]
+  },
+  "checks": {
+    "backend_model": {
+      "model_id": "xgb_frac1_seed42_lr01",
+      "model_sha256": "cb090afa6ad4c3618e20d7c5d635e89aa2d122667ea00835a0acc2f75a4455e6",
+      "threshold": 0.5,
+      "feature_count": 115,
+      "runtime": {
+        "numpy": "2.4.6",
+        "xgboost": "3.2.0"
+      }
+    },
+    "session_id": "ses_4a7bd139",
+    "initial_connection": "connecting",
+    "event_batch_sha256": "0ff99f124bf5a45fd04156adccfd6bb688f2fea3eeb03e20e94ea9e6d5ee9e86",
+    "first_ingest": {
+      "accepted": 3,
+      "duplicates": 0,
+      "dropped_from_history": 0,
+      "last_pi_seq": 2,
+      "gap_detected": false
+    },
+    "resend": {
+      "accepted": 0,
+      "duplicates": 3,
+      "dropped_from_history": 0,
+      "last_pi_seq": 2,
+      "gap_detected": false
+    },
+    "total_before_and_after_resend": [
+      3,
+      3
+    ],
+    "cursor_pages": [
+      {
+        "after_seq": 0,
+        "next_after_seq": 2,
+        "server_seq": [
+          1,
+          2
+        ]
+      },
+      {
+        "after_seq": 2,
+        "next_after_seq": 3,
+        "server_seq": [
+          3
+        ]
+      },
+      {
+        "after_seq": 3,
+        "next_after_seq": 3,
+        "server_seq": []
+      }
+    ],
+    "stored_events": [
+      {
+        "event_id": "ses_4a7bd139-validation-1",
+        "pi_seq": 0,
+        "sample_name": null,
+        "source_row": null,
+        "label": "benign",
+        "probability_malicious": 0.0008694713469594717,
+        "ground_truth": null,
+        "predicted_at": "2026-11-28T03:24:35.091380Z",
+        "inference_ms": null,
+        "server_seq": 1,
+        "received_at": "2026-11-28T03:24:38.723783Z",
+        "correct": null
+      },
+      {
+        "event_id": "ses_4a7bd139-validation-2",
+        "pi_seq": 1,
+        "sample_name": null,
+        "source_row": null,
+        "label": "malicious",
+        "probability_malicious": 0.9999966621398926,
+        "ground_truth": null,
+        "predicted_at": "2026-11-28T03:24:35.091380Z",
+        "inference_ms": null,
+        "server_seq": 2,
+        "received_at": "2026-11-28T03:24:38.723783Z",
+        "correct": null
+      },
+      {
+        "event_id": "ses_4a7bd139-validation-3",
+        "pi_seq": 2,
+        "sample_name": null,
+        "source_row": null,
+        "label": "benign",
+        "probability_malicious": 0.36534929275512695,
+        "ground_truth": null,
+        "predicted_at": "2026-11-28T03:24:35.091380Z",
+        "inference_ms": null,
+        "server_seq": 3,
+        "received_at": "2026-11-28T03:24:38.723783Z",
+        "correct": null
+      }
+    ],
+    "heartbeat": {
+      "http_status": 204,
+      "connection": "connected",
+      "last_seen_before": "2026-11-28T03:24:38.782509Z",
+      "last_seen_after": "2026-11-28T03:24:38.911825Z"
+    },
+    "stop": {
+      "http_status": 200,
+      "state": "stopped",
+      "stopped_at": "2026-11-28T03:24:38.955555Z"
+    },
+    "post_stop": {
+      "http_status": 409,
+      "code": "session_stopped"
+    },
+    "final_counts": {
+      "total_received": 3,
+      "benign": 2,
+      "malicious": 1,
+      "duplicates_ignored": 3
+    }
+  },
+  "http_trace": [
+    {
+      "at_utc": "2026-11-28T03:24:36.467598+00:00",
+      "method": "GET",
+      "path": "/model/info",
+      "http_status": 200,
+      "source_port": 54779
+    },
+    {
+      "at_utc": "2026-11-28T03:24:36.503499+00:00",
+      "method": "POST",
+      "path": "/live/sessions",
+      "http_status": 201,
+      "source_port": 47477
+    },
+    {
+      "at_utc": "2026-11-28T03:24:36.531872+00:00",
+      "method": "GET",
+      "path": "/live/sessions/ses_4a7bd139/status",
+      "http_status": 200,
+      "source_port": 39667
+    },
+    {
+      "at_utc": "2026-11-28T03:24:36.569297+00:00",
+      "method": "POST",
+      "path": "/live/sessions/ses_4a7bd139/events",
+      "http_status": 200,
+      "source_port": 54613
+    },
+    {
+      "at_utc": "2026-11-28T03:24:36.598383+00:00",
+      "method": "GET",
+      "path": "/live/sessions/ses_4a7bd139/status",
+      "http_status": 200,
+      "source_port": 46369
+    },
+    {
+      "at_utc": "2026-11-28T03:24:36.624271+00:00",
+      "method": "POST",
+      "path": "/live/sessions/ses_4a7bd139/events",
+      "http_status": 200,
+      "source_port": 48627
+    },
+    {
+      "at_utc": "2026-11-28T03:24:36.649860+00:00",
+      "method": "GET",
+      "path": "/live/sessions/ses_4a7bd139/status",
+      "http_status": 200,
+      "source_port": 39963
+    },
+    {
+      "at_utc": "2026-11-28T03:24:36.675897+00:00",
+      "method": "GET",
+      "path": "/live/sessions/ses_4a7bd139/events?after_seq=0&limit=2",
+      "http_status": 200,
+      "source_port": 40315
+    },
+    {
+      "at_utc": "2026-11-28T03:24:36.701826+00:00",
+      "method": "GET",
+      "path": "/live/sessions/ses_4a7bd139/events?after_seq=2&limit=2",
+      "http_status": 200,
+      "source_port": 53833
+    },
+    {
+      "at_utc": "2026-11-28T03:24:36.727561+00:00",
+      "method": "GET",
+      "path": "/live/sessions/ses_4a7bd139/events?after_seq=3&limit=2",
+      "http_status": 200,
+      "source_port": 48451
+    },
+    {
+      "at_utc": "2026-11-28T03:24:36.745462+00:00",
+      "method": "POST",
+      "path": "/live/sessions/ses_4a7bd139/heartbeat",
+      "http_status": 204,
+      "source_port": 59483
+    },
+    {
+      "at_utc": "2026-11-28T03:24:36.770847+00:00",
+      "method": "GET",
+      "path": "/live/sessions/ses_4a7bd139/status",
+      "http_status": 200,
+      "source_port": 35755
+    },
+    {
+      "at_utc": "2026-11-28T03:24:36.796529+00:00",
+      "method": "POST",
+      "path": "/live/sessions/ses_4a7bd139/stop",
+      "http_status": 200,
+      "source_port": 44125
+    },
+    {
+      "at_utc": "2026-11-28T03:24:36.822686+00:00",
+      "method": "POST",
+      "path": "/live/sessions/ses_4a7bd139/events",
+      "http_status": 409,
+      "source_port": 51699
+    },
+    {
+      "at_utc": "2026-11-28T03:24:36.849843+00:00",
+      "method": "GET",
+      "path": "/live/sessions/ses_4a7bd139/status",
+      "http_status": 200,
+      "source_port": 41681
+    }
+  ],
+  "network": {
+    "transport": "direct TCP to Tailscale IPv4; client bound to Pi Tailscale IPv4",
+    "pi_interface": "tailscale0",
+    "pi_route": [
+      "Linux aarch64",
+      "100.70.95.30",
+      "100.122.150.69 dev tailscale0 table 52 src 100.70.95.30 uid 1000 ",
+      "    cache "
+    ],
+    "configuration_changed": false
+  },
+  "evidence": [
+    {
+      "path": "E:/Document/IoTGuard-Local/audits/a3-pi-backend-network-check-20261128/run-20261128-102421/backend-uvicorn.log",
+      "sha256": "05e800bfe1166f61c160a141638e332d868a5da764f6ce62318d3bdecf04aabd",
+      "bytes": 1655
+    },
+    {
+      "path": "E:/Document/IoTGuard-Local/audits/a3-pi-backend-network-check-20261128/run-20261128-102421/pi-route.log",
+      "sha256": "62328675e089d3226862ead4e60f1e2a59097d4d73045acfe1a459ca5c3431a8",
+      "bytes": 104
+    },
+    {
+      "path": "E:/Document/IoTGuard-Local/audits/a3-pi-backend-network-check-20261128/run-20261128-102421/pi-result.json",
+      "sha256": "e4d4d4f02a1cd72bee32518e195ecabd0002792f5d25203001475dc40c64b536",
+      "bytes": 7902
+    },
+    {
+      "path": "E:/Document/IoTGuard-Local/audits/a3-pi-backend-network-check-20261128/run-20261128-102421/pi-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  ]
+}
