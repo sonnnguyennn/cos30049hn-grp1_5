@@ -19,8 +19,9 @@ Start the [FastAPI backend](backend/README.md) and [Next.js frontend](frontend/R
 in separate terminals. The frontend connects to `http://127.0.0.1:8000` by default.
 The dashboard is at `http://localhost:3000/dashboard`.
 
-The application currently supports upload inspection and log viewing. Connecting the
-accepted classifier to the web application remains separate integration work.
+The backend classifies uploaded CSV/JSON files (Manual Analysis) with the accepted
+XGBoost model and receives live predictions from a Raspberry Pi. For installation,
+running and API examples, see the [install and API guide](docs/api-and-install-guide.md).
 
 To test the accepted model directly with real benign and malicious examples, see
 the [sample prediction guide](ml/docs/experiments/sample_prediction.md).

@@ -64,11 +64,14 @@ Set them before starting the server. CORS allows the frontend on
 
 ### Run the tests
 
-From the repository root:
+Run from the repository root (the folder that contains `backend/`, `frontend/` and
+`ml/`), and use `python -m pytest`, so that `backend` can be imported:
 
 ```powershell
 .\backend\.venv\Scripts\python.exe -m pytest backend/tests -q
 ```
+
+Expected result: `145 passed`.
 
 ## 2. Install and run the frontend
 

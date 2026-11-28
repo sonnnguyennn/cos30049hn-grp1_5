@@ -1,8 +1,9 @@
 # IoTGuard backend
 
-FastAPI service for upload inspection and SQLite-backed activity logs. Accepted
-classifier inference is a separate integration task; its input contract is in the
-[ML inference guide](../ml/docs/architecture/inference_contract.md).
+FastAPI service that serves the frozen XGBoost classifier for CSV/JSON uploads
+(`POST /predict`), stores live predictions sent by the Raspberry Pi, and keeps
+SQLite-backed activity logs. Full install steps, model file locations and API
+examples are in the [install and API guide](../docs/api-and-install-guide.md).
 
 Requires Python 3.12 or later, as declared in `pyproject.toml`. From `backend/`
 on Windows:
@@ -23,10 +24,19 @@ CORS permits the frontend on `localhost:3000` and `127.0.0.1:3000`.
 For a standalone CSV/JSON analysis script and steps to connect it to an upload API and
 React page, see the [CSV/JSON upload API guide](../docs/csv-upload-api-guide.md).
 
-| Endpoint | Current behavior |
+| Endpoint | Purpose |
 | --- | --- |
-| `POST /files/inspect` | Inspect a nonempty upload of at most 100 MiB by default (configurable via `IOTGUARD_MAX_UPLOAD_MB`) and log the event; does not classify traffic. |
-| `GET /logs` | Return recent activity, with a `limit` between 1 and 200. |
+| `POST /predict` | Classify an uploaded CSV/JSON file (115 features per row) |
+| `GET /model/info` | Model id, SHA-256, threshold, feature names |
+| `GET /live/limits` | Live batch/history limits and connection thresholds |
+| `POST /live/sessions` | Start a live session |
+| `POST /live/sessions/{id}/stop` | Stop a session |
+| `POST /live/sessions/{id}/events` | Pi sends a batch of predictions |
+| `POST /live/sessions/{id}/heartbeat` | Pi keep-alive |
+| `GET /live/sessions/{id}/events?after_seq=N` | Frontend polls new events |
+| `GET /live/sessions/{id}/status` | Connection state and counters |
+| `POST /files/inspect` | Check and log an upload; does not classify |
+| `GET /logs` | Recent activity (`limit` 1 to 200) |
 | `POST /goon` | Existing demonstration request/response flow used by the dashboard demo route. |
 
 Startup creates `app/db/traffic.db` if needed. This database contains local activity;
