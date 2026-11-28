@@ -1,6 +1,6 @@
 # Live monitoring API contract
 
-`main` contains the [live schemas](../backend/app/live_schemas.py), examples and contract tests. Live route implementation is tracked in [PR #30](https://github.com/sonnnguyennn/cos30049hn-grp1_5/pull/30).
+The live routes, [schemas](../backend/app/live_schemas.py), examples and tests are on `main` through [PR #30](https://github.com/sonnnguyennn/cos30049hn-grp1_5/pull/30). Use the [API and installation guide](api-and-install-guide.md) for runnable requests. The backend API has been checked independently; a Pi client and Replay UI still need an end-to-end integration check.
 
 ## Prediction on the Pi
 
@@ -14,20 +14,22 @@ result = predict(rows)
 
 ## Session flow
 
-The frontend starts a session. The Pi sends [event batches](../backend/examples/live_event_batch.json) and heartbeats. The frontend polls events and status, then stops the session. The backend stores the predictions sent by the Pi. [Manual Analysis](csv-upload-api-guide.md) works independently.
+The intended client flow is as follows. The frontend starts a session. The Pi sends [event batches](../backend/examples/live_event_batch.json) and heartbeats. The frontend polls events and status, then stops the session. The backend stores the predictions sent by the Pi. [Manual Analysis](csv-upload-api-guide.md) works independently.
 
 | Method and path | Request | Success | Contract errors |
 | --- | --- | --- | --- |
-| `GET /model/info` | None | [`ModelInfo`](../backend/examples/live_model_info.json) | |
+| `GET /model/info` | None | [`ModelInfo`](../backend/examples/live_model_info.json) | 503 |
 | `GET /live/limits` | None | [`LiveLimits`](../backend/examples/live_limits.json) | |
-| `POST /live/sessions` | [`SessionCreate`](../backend/examples/live_session_create.json) | 201 `Session` | 422 `validation_error` |
-| `POST /live/sessions/{session_id}/events` | [`EventBatch`](../backend/examples/live_event_batch.json) | `EventBatchResult` | 404, 409 `session_stopped` or `model_mismatch`, 413 `payload_too_large`, 422 |
-| `POST /live/sessions/{session_id}/heartbeat` | [`Heartbeat`](../backend/examples/live_heartbeat.json) | 204 | 404, 409 `model_mismatch` |
-| `GET /live/sessions/{session_id}/events?after_seq=0&limit=100` | Query | [`EventPage`](../backend/examples/live_event_page.json) | 404 |
+| `POST /live/sessions` | [`SessionCreate`](../backend/examples/live_session_create.json) | 201 `Session` | 422 `validation_error`, 503 |
+| `POST /live/sessions/{session_id}/events` | [`EventBatch`](../backend/examples/live_event_batch.json) | `EventBatchResult` | 404, 409 `session_stopped` or `model_mismatch`, 413 `payload_too_large`, 422, 503 |
+| `POST /live/sessions/{session_id}/heartbeat` | [`Heartbeat`](../backend/examples/live_heartbeat.json) | 204 | 404, 409 `session_stopped` or `model_mismatch`, 422, 503 |
+| `GET /live/sessions/{session_id}/events?after_seq=0&limit=100` | Query | [`EventPage`](../backend/examples/live_event_page.json) | 404, 422 for invalid query values |
 | `GET /live/sessions/{session_id}/status` | None | [`SessionStatus`](../backend/examples/live_status.json) | 404 |
 | `POST /live/sessions/{session_id}/stop` | None | `Session` with `state: stopped` | 404 |
 
-The `ApiError` schema has `code`, `message` and optional `detail`. An unknown session returns `session_not_found`.
+The `ApiError` schema has `code`, `message` and optional `detail`. An unknown session returns `session_not_found`. A model-unavailable response uses HTTP 503 with FastAPI's `{"detail": "..."}` body.
+
+Sessions and their event history are held in memory. Run one backend worker. A restart or development reload clears every session; clients must create a new session after that.
 
 ## Event rules
 
@@ -35,17 +37,17 @@ The `ApiError` schema has `code`, `message` and optional `detail`. An unknown se
 - **Gaps.** The Pi increments `pi_seq` by one per record. A jump sets `gap_detected` and increments `gaps_detected` in the session status.
 - **Model identity.** A mismatched `model_sha256` rejects the batch with 409. Each event's label must agree with the 0.5 probability threshold.
 - **Ground truth.** Use the label supplied by the replay source, or `null`. The backend calculates agreement for labeled events only.
-- **History.** The proposed limits are 100 events per batch and 1,000 stored events per session. Evictions are counted in `dropped_from_history`. Poll with `after_seq=next_after_seq` to continue from the backend's `server_seq`.
-- **Connection.** The backend uses the last event or heartbeat to report `connecting`, `connected`, `stale` after 15 s or `offline` after 45 s. Read the configured values with `GET /live/limits`.
+- **History.** The implemented limits are 100 events per batch and 1,000 stored events per session. Evictions are counted in `dropped_from_history`. Poll with `after_seq=next_after_seq` to continue from the backend's `server_seq`.
+- **Connection.** The backend uses the last event or heartbeat to report `connecting`, `connected`, `stale` after 15 s or `offline` after 45 s. Read these limits with `GET /live/limits`.
 
-Other open design proposals include one active session per source, an unauthenticated LAN demo and frontend polling every 1–2 s. The `inference_ms` in the fixtures is example data.
+The current API has no authentication and is intended for the agreed demo environment. It does not enforce one active session per source. Frontend polling every 1–2 s remains a client design choice. The `inference_ms` in the fixtures is example data.
 
 ## Verify the contract
 
 From the repository root with the backend environment active:
 
 ```bash
-python -m pytest backend/tests/test_predictor_and_contract.py -q
+python -m pytest backend/tests -q
 ```
 
 To regenerate the fixtures, run `python backend/examples/generate_examples.py`.

@@ -88,3 +88,62 @@ def test_xgboost_prediction_failure_is_service_error(monkeypatch):
     result = TestClient(app).post("/predict", files={"file": ("data.json", content)})
     assert result.status_code == 503
     assert "private-runtime" not in result.text
+
+
+def test_model_info_describes_the_frozen_model():
+    from backend.app.live_schemas import ModelInfo
+
+    response = TestClient(app).get("/model/info")
+    assert response.status_code == 200
+    info = ModelInfo.model_validate(response.json())
+    freeze = json.loads(analyzer.FREEZE.read_text(encoding="utf-8"))
+    assert info.model_id == freeze["selected_run_id"]
+    assert info.model_sha256 == freeze["model"]["sha256"]
+    assert info.feature_count == 115 == len(info.feature_order)
+    assert info.feature_order == analyzer.feature_names()
+    assert (info.algorithm, info.objective, info.threshold) == ("XGBoost", "binary:logistic", 0.5)
+    assert info.input_view == "raw" and info.scaling_applied is False
+    assert set(info.runtime) == {"numpy", "xgboost"}
+
+
+def test_model_info_matches_prediction_summary():
+    client = TestClient(app)
+    info = client.get("/model/info").json()
+    summary = client.post("/predict", files={"file": ("data.json", input_file())}).json()["summary"]
+    assert summary["model"]["id"] == info["model_id"]
+    assert summary["model"]["sha256"] == info["model_sha256"]
+    assert summary["features"] == info["feature_count"]
+
+
+def test_openapi_declares_model_info_schema():
+    schema = app.openapi()["paths"]["/model/info"]["get"]["responses"]
+    assert schema["200"]["content"]["application/json"]["schema"]["$ref"].endswith("ModelInfo")
+    assert "503" in schema
+
+
+@pytest.mark.parametrize("failure", [FileNotFoundError("private/path"), RuntimeError("tampered")])
+def test_model_info_resource_failure_is_503_without_path_disclosure(monkeypatch, failure):
+    from backend.app import main as main_module
+
+    def fail():
+        raise failure
+    monkeypatch.setattr(main_module, "load_model", fail)
+    response = TestClient(app).get("/model/info")
+    assert response.status_code == 503
+    assert response.json() == {"detail": "The prediction model is unavailable; contact the operator"}
+    assert "private" not in response.text and "tampered" not in response.text
+
+
+def test_model_info_with_tampered_model_file_is_503(tmp_path, monkeypatch):
+    model_path = tmp_path / "private-model.json"
+    model_path.write_bytes(b"{}")
+    original = predictor.FrozenPredictor
+    monkeypatch.setattr(predictor, "FrozenPredictor", lambda: original(model_path, analyzer.FREEZE))
+    predictor.get_predictor.cache_clear()
+    try:
+        response = TestClient(app).get("/model/info")
+    finally:
+        predictor.get_predictor.cache_clear()
+    assert response.status_code == 503
+    assert "private-model" not in response.text
+
